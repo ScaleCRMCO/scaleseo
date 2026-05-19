@@ -1,3 +1,7 @@
+@keyframes rotate {
+  to { transform: rotate(360deg); }
+}
+
 .section {
   border-bottom: 1px solid var(--line);
 }
