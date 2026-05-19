@@ -13,18 +13,23 @@ export default function Hero() {
 
       <h1 className={styles.title}>
         <span className={styles.reveal}>
-          <span>Search that</span>
+          <span style={{ animationDelay: "0.1s" }}>Search that</span>
         </span>
         <br />
         <span className={styles.reveal}>
-          <span>moves </span>
+          <span style={{ animationDelay: "0.25s" }}>moves </span>
         </span>
         <span className={styles.reveal}>
-          <span className={styles.italic}>revenue,</span>
+          <span
+            className={styles.italic}
+            style={{ animationDelay: "0.4s" }}
+          >
+            revenue,
+          </span>
         </span>
         <br />
         <span className={styles.reveal}>
-          <span>not vanity.</span>
+          <span style={{ animationDelay: "0.55s" }}>not vanity.</span>
         </span>
       </h1>
 
