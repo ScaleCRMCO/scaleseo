@@ -1,0 +1,124 @@
+.case {
+  border-bottom: 1px solid var(--line);
+}
+
+.eyebrow {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  margin-bottom: 80px;
+  gap: 40px;
+}
+
+.title {
+  font-family: var(--display);
+  font-weight: 300;
+  font-size: clamp(36px, 5.5vw, 76px);
+  line-height: 1;
+  letter-spacing: -0.025em;
+  max-width: 900px;
+}
+
+.title em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.meta {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ink-dim);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: right;
+  line-height: 1.8;
+}
+
+.meta strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.numbers {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--line-strong);
+  border-bottom: 1px solid var(--line-strong);
+}
+
+.num {
+  padding: 50px 30px;
+  border-right: 1px solid var(--line);
+}
+
+.num:last-child {
+  border-right: none;
+}
+
+.value {
+  font-family: var(--display);
+  font-weight: 300;
+  font-size: clamp(40px, 5.5vw, 72px);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  margin-bottom: 14px;
+}
+
+.accent {
+  color: var(--accent);
+  font-style: italic;
+}
+
+.label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+}
+
+.quote {
+  margin-top: 80px;
+  max-width: 900px;
+  font-family: var(--display);
+  font-weight: 300;
+  font-style: italic;
+  font-size: clamp(22px, 2.6vw, 32px);
+  line-height: 1.4;
+  color: var(--ink);
+}
+
+.attr {
+  margin-top: 28px;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ink-dim);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-style: normal;
+}
+
+.attr a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s;
+}
+
+.attr a:hover {
+  border-color: var(--accent);
+}
+
+@media (max-width: 900px) {
+  .eyebrow { grid-template-columns: 1fr; }
+  .meta { text-align: left; }
+  .numbers { grid-template-columns: repeat(2, 1fr); }
+  .num {
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+  }
+  .num:nth-child(odd) { border-right: 1px solid var(--line); }
+  .num:nth-last-child(-n+2) { border-bottom: none; }
+}
