@@ -4,7 +4,7 @@ const steps = [
   {
     num: "01",
     name: "Conversation",
-    body: "A 30-minute call. I learn your business, you learn whether I'm the right fit. No deck, no pitch.",
+    body: "A 30-minute call. I learn your business, you learn whether I'm the right fit.",
     time: "Week 1",
   },
   {
@@ -16,7 +16,7 @@ const steps = [
   {
     num: "03",
     name: "Execution",
-    body: "I do the work. On-page, local, technical, content, links — handled directly, not delegated.",
+    body: "I do the work. On-page, local, technical, content, and useful links — handled directly, not delegated.",
     time: "Month 1–3",
   },
   {
