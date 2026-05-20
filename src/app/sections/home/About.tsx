@@ -25,8 +25,8 @@ export default function About() {
             and professional services.
           </p>
           <p>
-            I learned this craft by doing it. My first major client was my
-            dad&rsquo;s concrete company. In sixty days the work I did there
+            I learned this craft by doing it. My first major client was Kinsmen Consulting Ltd
+            in Canada. In sixty days the work I did there
             generated over a quarter of a million dollars in revenue.
             That&rsquo;s the kind of outcome I look to repeat.
           </p>
