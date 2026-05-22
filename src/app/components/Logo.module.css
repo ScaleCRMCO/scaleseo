@@ -1,0 +1,30 @@
+.logo {
+  display: inline-block;
+  color: var(--ink);
+  transition: transform 0.4s ease;
+  flex-shrink: 0;
+}
+
+.logo:hover {
+  transform: rotate(15deg);
+}
+
+/* Spin-in animation - plays on load and when scrolled back into view */
+@keyframes spinIn {
+  0% {
+    opacity: 0;
+    transform: rotate(-180deg) scale(0.5);
+  }
+  60% {
+    opacity: 1;
+    transform: rotate(10deg) scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+.spinIn {
+  animation: spinIn 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
