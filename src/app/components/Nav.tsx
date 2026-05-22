@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Logo from "./Logo";
 import styles from "./Nav.module.css";
 
 export default function Nav() {
@@ -15,7 +16,10 @@ export default function Nav() {
   return (
     <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ""}`}>
       <a href="#" className={styles.brand}>
-        Scale<span style={{ fontStyle: "italic" }}>SEO</span>
+        <Logo size={26} />
+        <span className={styles.wordmark}>
+          Scale<span style={{ fontStyle: "italic" }}>SEO</span>
+        </span>
         <span className={styles.mark}>/ Corbin Jensen</span>
       </a>
       <div className={styles.links}>
