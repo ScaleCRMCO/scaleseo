@@ -26,7 +26,7 @@ export default function Logo({ size = 28, animate = true }: LogoProps) {
           if (entry.isIntersecting) {
             el.classList.remove(styles.spinIn);
             // Force reflow so animation can replay
-            void el.offsetWidth;
+            void el.getBoundingClientRect();
             el.classList.add(styles.spinIn);
           }
         });
