@@ -32,7 +32,7 @@ export default function Hero() {
       {/* Four corner labels */}
       <div className={`${styles.corner} ${styles.topLeft}`}>
         <span className={styles.dot} />
-        Available — 1 spot, Q3 2026
+        Available — 2 spots, Q2 2026
       </div>
       <div className={`${styles.corner} ${styles.topRight}`}>
         Brisbane &nbsp;27.46°S / 153.02°E
