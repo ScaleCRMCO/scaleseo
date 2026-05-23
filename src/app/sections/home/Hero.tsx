@@ -1,50 +1,85 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import styles from "./Hero.module.css";
 
+const ROTATING_WORDS = ["accounting firms", "contractors", "established firms"];
+
 export default function Hero() {
+  const [wordIndex, setWordIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setWordIndex((i) => (i + 1) % ROTATING_WORDS.length);
+    }, 3500);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <header className={styles.hero}>
-      <div className={styles.meta}>
-        <span>
-          <span className={styles.dot} />
-          Available — 1 spot, Q3 2026
-        </span>
-        <span>Australia &nbsp;/&nbsp; Canada &nbsp;/&nbsp; Remote</span>
+      {/* Curtain reveal panel */}
+      <div className={styles.curtain} aria-hidden="true" />
+
+      {/* Background grid */}
+      <div className={styles.grid} aria-hidden="true">
+        <div className={styles.gridLine} />
+        <div className={styles.gridLine} />
+        <div className={styles.gridLine} />
+        <div className={styles.gridLine} />
+        <div className={styles.gridLine} />
       </div>
 
-      <h1 className={styles.title}>
-        <span className={styles.reveal}>
-          <span style={{ animationDelay: "0.1s" }}>Search that</span>
-        </span>
-        <br />
-        <span className={styles.reveal}>
-          <span style={{ animationDelay: "0.25s" }}>moves </span>
-        </span>
-        <span className={styles.reveal}>
-          <span
-            className={styles.italic}
-            style={{ animationDelay: "0.4s" }}
-          >
-            revenue,
-          </span>
-        </span>
-        <br />
-        <span className={styles.reveal}>
-          <span style={{ animationDelay: "0.55s" }}>not vanity.</span>
-        </span>
-      </h1>
+      {/* Four corner labels */}
+      <div className={`${styles.corner} ${styles.topLeft}`}>
+        <span className={styles.dot} />
+        Available — 1 spot, Q3 2026
+      </div>
+      <div className={`${styles.corner} ${styles.topRight}`}>
+        Brisbane &nbsp;27.46°S / 153.02°E
+      </div>
+      <div className={`${styles.corner} ${styles.bottomLeft}`}>
+        <span className={styles.scrollLabel}>Scroll</span>
+        <span className={styles.scrollArrow}>↓</span>
+      </div>
+      <div className={`${styles.corner} ${styles.bottomRight}`}>
+        Index &nbsp;/&nbsp; 2026
+      </div>
 
-      <div className={styles.bottom}>
-        <p className={styles.sub}>
-          A specialist SEO freelancer for <em>trade contractors</em> and{" "}
-          <em>accounting firms</em>. I take on a handful of clients at a time.
-          Each one gets all of me — strategy, execution, reporting, the lot.
-        </p>
-        <div className={styles.ctaGroup}>
-          <a href="#contact" className={styles.cta}>
-            <span>Start a conversation</span>
-            <span className={styles.arrow}>→</span>
-          </a>
-          <span className={styles.availability}>Reply within 24 hours</span>
+      {/* Main content */}
+      <div className={styles.content}>
+        <h1 className={styles.title}>
+          <span className={styles.line}>
+            <span className={styles.lineInner}>Search that</span>
+          </span>
+          <span className={styles.line}>
+            <span className={styles.lineInner}>
+              moves <span className={styles.italic}>revenue,</span>
+            </span>
+          </span>
+          <span className={styles.line}>
+            <span className={styles.lineInner}>not vanity.</span>
+          </span>
+        </h1>
+
+        <div className={styles.bottom}>
+          <p className={styles.sub}>
+            I help{" "}
+            <span className={styles.rotator}>
+              <span key={wordIndex} className={styles.rotatorWord}>
+                {ROTATING_WORDS[wordIndex]}
+              </span>
+            </span>
+            <br />
+            turn search into revenue.
+          </p>
+
+          <div className={styles.ctaGroup}>
+            <a href="#contact" className={styles.cta}>
+              <span>Start a conversation</span>
+              <span className={styles.arrow}>→</span>
+            </a>
+            <span className={styles.availability}>Reply within 24 hours</span>
+          </div>
         </div>
       </div>
     </header>
