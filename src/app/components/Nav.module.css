@@ -8,17 +8,20 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  mix-blend-mode: difference;
-  transition: padding 0.4s ease;
+  transition: all 0.4s ease;
 }
 
 .scrolled {
   padding: 14px 40px;
+  background: rgba(245, 241, 234, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
 }
 
 .brand {
   font-family: var(--display);
-  font-weight: 400;
+  font-weight: 500;
   font-size: 19px;
   letter-spacing: -0.01em;
   color: var(--ink);
@@ -34,6 +37,7 @@
 
 .mark {
   font-family: var(--mono);
+  font-weight: 400;
   font-size: 10px;
   color: var(--ink-dim);
   letter-spacing: 0.15em;
@@ -53,7 +57,7 @@
   color: var(--ink);
   text-decoration: none;
   position: relative;
-  transition: opacity 0.2s;
+  transition: color 0.2s;
 }
 
 .links a::after {
@@ -63,8 +67,12 @@
   left: 0;
   width: 0;
   height: 1px;
-  background: var(--ink);
+  background: var(--accent);
   transition: width 0.3s ease;
+}
+
+.links a:hover {
+  color: var(--accent);
 }
 
 .links a:hover::after {
