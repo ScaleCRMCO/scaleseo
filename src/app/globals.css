@@ -5,14 +5,14 @@
 
 :root {
   /* Colors */
-  --bg: #0B0B0C;
-  --bg-elev: #131315;
-  --ink: #ECEAE5;
-  --ink-dim: #8A867E;
-  --ink-faint: #4A4842;
-  --accent: #C9A961;             /* warm gold — change here for site-wide accent */
-  --line: rgba(236, 234, 229, 0.08);
-  --line-strong: rgba(236, 234, 229, 0.18);
+  --bg: #F5F1EA;
+  --bg-elev: #EBE5DA;
+  --ink: #1A1714;
+  --ink-dim: #6B6259;
+  --ink-faint: #B5AEA3;
+  --accent: #991B1B;             /* crimson — change here for site-wide accent */
+  --line: rgba(26, 23, 20, 0.08);
+  --line-strong: rgba(26, 23, 20, 0.18);
 
   /* Fonts */
   --display: 'Fraunces', 'Times New Roman', serif;
