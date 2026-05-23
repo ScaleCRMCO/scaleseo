@@ -1,56 +1,120 @@
 .footer {
-  border-top: 1px solid var(--line);
-  padding: 40px;
+  background: var(--bg-dark);
+  color: var(--ink-on-dark);
+  padding: 80px 40px 32px;
+  position: relative;
 }
 
-.grid {
+/* === TOP ROW: brand + socials === */
+.top {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 40px;
-  align-items: end;
+  grid-template-columns: 1fr auto;
+  gap: 60px;
+  align-items: center;
+  padding-bottom: 60px;
+  border-bottom: 1px solid var(--line-on-dark);
 }
 
 .brand {
   font-family: var(--display);
-  font-weight: 300;
-  font-size: 24px;
+  font-weight: 500;
+  font-size: 28px;
+  letter-spacing: -0.01em;
   display: flex;
   align-items: center;
   gap: 14px;
+  color: var(--ink-on-dark);
 }
 
-.center {
-  text-align: center;
+.brand :global(svg) {
+  color: var(--ink-on-dark);
+}
+
+.wordmark em {
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* === SOCIALS === */
+.socials {
+  display: flex;
+  gap: 36px;
   font-family: var(--mono);
-  font-size: 10px;
-  color: var(--ink-dim);
-  letter-spacing: 0.15em;
+  font-size: 12px;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
-.right {
-  text-align: right;
-  font-family: var(--mono);
-  font-size: 11px;
-  color: var(--ink-dim);
-  letter-spacing: 0.1em;
-}
-
-.right a {
-  color: var(--ink-dim);
+.socials a {
+  color: var(--ink-on-dark);
   text-decoration: none;
-  transition: color 0.3s;
+  position: relative;
+  transition: color 0.3s ease;
 }
 
-.right a:hover {
+.socials a::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.socials a:hover {
   color: var(--accent);
 }
 
+.socials a:hover::after {
+  width: 100%;
+}
+
+/* === BOTTOM ROW: copy + tagline === */
+.bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  padding-top: 32px;
+  align-items: center;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ink-dim-on-dark);
+}
+
+.copy {
+  text-align: left;
+}
+
+.tagline {
+  text-align: right;
+}
+
+/* === RESPONSIVE === */
 @media (max-width: 900px) {
-  .grid {
+  .footer { padding: 60px 24px 28px; }
+
+  .top {
     grid-template-columns: 1fr;
+    gap: 36px;
+    padding-bottom: 40px;
+  }
+
+  .socials {
+    flex-wrap: wrap;
     gap: 24px;
+    font-size: 11px;
+  }
+
+  .bottom {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .tagline {
     text-align: left;
   }
-  .center, .right { text-align: left; }
 }
