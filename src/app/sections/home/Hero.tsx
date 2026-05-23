@@ -53,11 +53,8 @@ export default function Hero() {
           </span>
           <span className={styles.line}>
             <span className={styles.lineInner}>
-              moves <span className={styles.italic}>revenue,</span>
+              moves <span className={styles.italic}>revenue.</span>
             </span>
-          </span>
-          <span className={styles.line}>
-            <span className={styles.lineInner}>not vanity.</span>
           </span>
         </h1>
 
