@@ -4,15 +4,22 @@
    ========================================================================== */
 
 :root {
-  /* Colors */
+  /* Light theme colors */
   --bg: #F5F1EA;
   --bg-elev: #EBE5DA;
   --ink: #1A1714;
   --ink-dim: #6B6259;
   --ink-faint: #B5AEA3;
-  --accent: #991B1B;             /* crimson — change here for site-wide accent */
+  --accent: #991B1B;
   --line: rgba(26, 23, 20, 0.08);
   --line-strong: rgba(26, 23, 20, 0.18);
+
+  /* Dark section variants (used on alternating sections) */
+  --bg-dark: #1A1714;
+  --ink-on-dark: #F5F1EA;
+  --ink-dim-on-dark: #8B8378;
+  --line-on-dark: rgba(245, 241, 234, 0.1);
+  --line-strong-on-dark: rgba(245, 241, 234, 0.22);
 
   /* Fonts */
   --display: 'Fraunces', 'Times New Roman', serif;
@@ -41,29 +48,39 @@ body {
   cursor: default;
 }
 
-/* Grain overlay */
+/* Grain overlay - lighter on the cream theme */
 body::before {
   content: '';
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 100;
-  opacity: 0.04;
+  opacity: 0.025;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 ::selection {
   background: var(--accent);
-  color: var(--bg);
+  color: #F5F1EA;
 }
 
 /* ==========================================================================
-   Section frame — used across all sections
+   Section frame
    ========================================================================== */
 
 section {
   padding: 140px 40px;
   position: relative;
+}
+
+/* Dark section variant - use class "section-dark" on sections that should invert */
+.section-dark {
+  background: var(--bg-dark);
+  color: var(--ink-on-dark);
+}
+
+.section-dark .section-label {
+  color: var(--ink-dim-on-dark);
 }
 
 .section-label {
@@ -123,10 +140,6 @@ section {
   opacity: 1;
   transform: translateY(0);
 }
-
-/* ==========================================================================
-   Responsive
-   ========================================================================== */
 
 @media (max-width: 900px) {
   section { padding: 80px 24px; }
