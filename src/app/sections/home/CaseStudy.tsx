@@ -2,7 +2,7 @@ import styles from "./CaseStudy.module.css";
 
 export default function CaseStudy() {
   return (
-    <section className={styles.case} id="work">
+    <section className={`${styles.case} section-dark`} id="work">
       <div className="section-label reveal-up">Case Study · 01</div>
 
       <div className={`${styles.eyebrow} reveal-up`}>
