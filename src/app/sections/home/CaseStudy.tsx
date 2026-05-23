@@ -38,7 +38,7 @@ export default function CaseStudy() {
           <div className={styles.value}>
             #<span className={styles.accent}>1</span>
           </div>
-          <div className={styles.label}>Map Pack Rankings</div>
+          <div className={styles.label}>ON ONE SERVICE</div>
         </div>
         <div className={styles.num}>
           <div className={styles.value}>
