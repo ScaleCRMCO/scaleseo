@@ -13,7 +13,7 @@ export default function Footer() {
         </div>
         <div className={styles.center}>© 2026 Scale SEO · Corbin Jensen</div>
         <div className={styles.right}>
-          <a href="mailto:hello@scaleseo.co">team@scaleseo.co</a>
+          <a href="mailto:team@scaleseo.co">team@scaleseo.co</a>
         </div>
       </div>
     </footer>
