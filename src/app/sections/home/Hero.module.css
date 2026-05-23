@@ -60,8 +60,8 @@
   align-items: center;
   gap: 8px;
 }
-.topLeft { top: 32px; left: 40px; }
-.topRight { top: 32px; right: 40px; }
+.topLeft { top: 90px; left: 40px; }
+.topRight { top: 90px; right: 40px; }
 .bottomLeft { bottom: 32px; left: 40px; }
 .bottomRight { bottom: 32px; right: 40px; }
 
