@@ -45,18 +45,20 @@ export default function Hero() {
         Index &nbsp;/&nbsp; 2026
       </div>
 
-      {/* Main content */}
+     {/* Main content */}
       <div className={styles.content}>
+        {/* Portrait */}
+        <div className={styles.portrait} aria-hidden="true">
+          <div className={styles.portraitInner}>
+            {/* Replace this with: <img src="/images/corbin-hero.jpg" alt="Corbin Jensen" className={styles.portraitImg} /> */}
+            <div className={styles.portraitPlaceholder}>
+              <span>PORTRAIT</span>
+              <span className={styles.placeholderSub}>add /public/images/corbin-hero.jpg</span>
+            </div>
+          </div>
+        </div>
+
         <h1 className={styles.title}>
-          <span className={styles.line}>
-            <span className={styles.lineInner}>Search that</span>
-          </span>
-          <span className={styles.line}>
-            <span className={styles.lineInner}>
-              moves <span className={styles.italic}>revenue.</span>
-            </span>
-          </span>
-        </h1>
 
         <div className={styles.bottom}>
           <p className={styles.sub}>
