@@ -51,7 +51,7 @@ export default function CaseStudy() {
       <blockquote className={`${styles.quote} reveal-up`}>
         &ldquo;We don&rsquo;t chase volume — we take on the right projects.
         Corbin understood that from day one. Inside two months he&rsquo;d
-        turned our new site into the phone-ringing engine we&rsquo;d been
+        turned our website around through SEO we&rsquo;d been
         missing for years.&rdquo;
         <div className={styles.attr}>
           Kinsmen Consulting&nbsp;&nbsp;·&nbsp;&nbsp;
