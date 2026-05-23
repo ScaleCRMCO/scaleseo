@@ -281,11 +281,10 @@
 /* Placeholder until you upload a real photo */
 .portrait {
   position: absolute;
-  top: 120px;
-  right: 4vw;
-  width: 22vw;
-  max-width: 320px;
-  aspect-ratio: 3 / 4;
+  top: 130px;
+  right: 5vw;
+  width: 280px;
+  height: 360px;
   z-index: 1;
   opacity: 0;
   animation: fadeUp 1.4s ease 2.6s forwards;
