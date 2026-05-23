@@ -111,6 +111,51 @@
   border-color: var(--accent);
 }
 
+/* ==========================================================================
+   Dark section overrides — applied when parent has .section-dark
+   ========================================================================== */
+
+:global(.section-dark) .title {
+  color: var(--ink-on-dark);
+}
+
+:global(.section-dark) .title em {
+  color: var(--accent);
+}
+
+:global(.section-dark) .meta {
+  color: var(--ink-dim-on-dark);
+}
+
+:global(.section-dark) .meta strong {
+  color: var(--ink-on-dark);
+}
+
+:global(.section-dark) .numbers {
+  border-top-color: var(--line-strong-on-dark);
+  border-bottom-color: var(--line-strong-on-dark);
+}
+
+:global(.section-dark) .num {
+  border-right-color: var(--line-on-dark);
+}
+
+:global(.section-dark) .value {
+  color: var(--ink-on-dark);
+}
+
+:global(.section-dark) .label {
+  color: var(--ink-dim-on-dark);
+}
+
+:global(.section-dark) .quote {
+  color: var(--ink-on-dark);
+}
+
+:global(.section-dark) .attr {
+  color: var(--ink-dim-on-dark);
+}
+
 @media (max-width: 900px) {
   .eyebrow { grid-template-columns: 1fr; }
   .meta { text-align: left; }
