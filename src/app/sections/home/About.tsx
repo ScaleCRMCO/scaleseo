@@ -20,18 +20,18 @@ export default function About() {
             About
           </div>
           <p>
-            I&rsquo;m a <em>freelancer</em>, not an agency. I work with four
-            clients at a time — two in Australia, two in Canada — across trades
+            I&rsquo;m a <em>freelancer</em>, not an agency. I work with select
+            clients at a time in both Australia & Canada — across trades
             and professional services.
           </p>
           <p>
             I learned this craft by doing it. My first major client was Kinsmen Consulting Ltd
-            in Canada. In sixty days the work I did there
+            in Calgary, Canada. In sixty days the work I did there
             generated over a quarter of a million dollars in revenue.
             That&rsquo;s the kind of outcome I look to repeat.
           </p>
           <p>
-            If you&rsquo;d rather hire a 40-person agency with a slide deck, I
+            If you&rsquo;d rather hire a 40-person general agency, I
             respect it. If you&rsquo;d rather work directly with the person
             doing the work — that&rsquo;s me.
           </p>
