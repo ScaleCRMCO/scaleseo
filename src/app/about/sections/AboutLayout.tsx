@@ -39,19 +39,19 @@ export default function AboutLayout() {
               <ul className={styles.currentlyList}>
                 <li>
                   <span className={styles.cKey}>Working on</span>
-                  <span className={styles.cVal}>Local SEO for an accounting firm in BC</span>
+                  <span className={styles.cVal}>Local SEO for an accounting firm in Brisbane</span>
                 </li>
                 <li>
                   <span className={styles.cKey}>Based in</span>
-                  <span className={styles.cVal}>Brisbane, AU</span>
+                  <span className={styles.cVal}>Australia/Canada, AU</span>
                 </li>
                 <li>
-                  <span className={styles.cKey}>Learning</span>
-                  <span className={styles.cVal}>AI search optimisation</span>
+                  <span className={styles.cKey}>Developing</span>
+                  <span className={styles.cVal}>Google Ads</span>
                 </li>
                 <li>
                   <span className={styles.cKey}>Reading</span>
-                  <span className={styles.cVal}>Obviously Awesome — April Dunford</span>
+                  <span className={styles.cVal}>AI Overview</span>
                 </li>
                 <li>
                   <span className={styles.cKey}>Listening</span>
