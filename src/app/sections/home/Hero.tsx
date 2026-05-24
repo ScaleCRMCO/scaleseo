@@ -35,14 +35,14 @@ export default function Hero() {
         Available — 1 spot, Q3 2026
       </div>
       <div className={`${styles.corner} ${styles.topRight}`}>
-        Brisbane &nbsp;27.46°S / 153.02°E
+        Canada &nbsp;·&nbsp; Australia &nbsp;·&nbsp; Remote
       </div>
       <div className={`${styles.corner} ${styles.bottomLeft}`}>
         <span className={styles.scrollLabel}>Scroll</span>
         <span className={styles.scrollArrow}>↓</span>
       </div>
       <div className={`${styles.corner} ${styles.bottomRight}`}>
-        Index &nbsp;/&nbsp; 2026
+        Est. Canada &nbsp;·&nbsp; 2026
       </div>
 
       {/* Main content */}
