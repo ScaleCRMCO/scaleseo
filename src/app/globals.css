@@ -143,6 +143,19 @@ section {
   opacity: 1;
   transform: translateY(0);
 }
+/* ==========================================================================
+   Dark page theme — used by About page
+   ========================================================================== */
+
+.about-page {
+  background: var(--bg-dark);
+  color: var(--ink-on-dark);
+}
+
+.about-page section {
+  background: var(--bg-dark);
+  color: var(--ink-on-dark);
+}
 
 @media (max-width: 900px) {
   section { padding: 80px 24px; }
