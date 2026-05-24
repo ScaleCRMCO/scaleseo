@@ -1,7 +1,7 @@
 .curtain {
   position: fixed;
   inset: 0;
-  background: #1A1714;
+  background: var(--accent);
   z-index: 9999;
   transform: translateY(-100%);
   pointer-events: none;
