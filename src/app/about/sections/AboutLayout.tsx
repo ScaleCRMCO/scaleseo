@@ -191,6 +191,7 @@ export default function AboutLayout() {
               <span className={styles.locC}>Brisbane</span>
               <span className={styles.locD}>Kuala Lumpur</span>
               <span className={styles.locE}>Calgary</span>
+              <span className={styles.locF}>Vancouver</span>
             </div>
 
             <h2 className={`${styles.headline} reveal-up`}>
