@@ -28,7 +28,7 @@ export default function Footer() {
       <div className={styles.bottom}>
         <div className={styles.copy}>© 2026 Scale SEO · Corbin Jensen</div>
         <div className={styles.tagline}>
-          Built in Brisbane &nbsp;·&nbsp; Serving Australia &amp; Canada
+          Built in Calgary &nbsp;·&nbsp; Serving Australia &amp; Canada
         </div>
       </div>
     </footer>
