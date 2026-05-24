@@ -81,7 +81,7 @@ export default function Hero() {
               </span>
             </span>
             <br />
-            turn search into revenue.
+            turn organic search into revenue.
           </p>
 
           <div className={styles.ctaGroup}>
