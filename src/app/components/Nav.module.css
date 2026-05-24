@@ -78,6 +78,27 @@
 .links a:hover::after {
   width: 100%;
 }
+/* ============ DARK PAGE STYLES ============ */
+.onDark .brand {
+  color: var(--ink-on-dark);
+}
+
+.onDark .mark {
+  color: var(--ink-dim-on-dark);
+}
+
+.onDark .links a {
+  color: var(--ink-on-dark);
+}
+
+.onDark .links a:hover {
+  color: var(--accent);
+}
+
+.onDark.scrolled {
+  background: rgba(26, 23, 20, 0.85);
+  border-bottom: 1px solid var(--line-on-dark);
+}
 
 @media (max-width: 900px) {
   .nav { padding: 16px 24px; }
