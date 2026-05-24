@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "./About.module.css";
 
 export default function About() {
@@ -5,12 +6,22 @@ export default function About() {
     <section className={styles.section} id="about">
       <div className={styles.grid}>
         <div className={`${styles.stamp} reveal-up`}>
-          <div className={styles.circle}>
-            <div className={styles.initials}>CJ</div>
-            <div>
-              Corbin Jensen
-              <br />
-              Est. Brisbane · AU
+          <div className={styles.circleOuter}>
+            <svg className={styles.circleText} viewBox="0 0 240 240" aria-hidden="true">
+              <defs>
+                <path
+                  id="aboutCirclePath"
+                  d="M 120,120 m -100,0 a 100,100 0 1,1 200,0 a 100,100 0 1,1 -200,0"
+                />
+              </defs>
+              <text className={styles.circleTextInner}>
+                <textPath href="#aboutCirclePath" startOffset="0%">
+                  CORBIN JENSEN · EST. BRISBANE · AU · CORBIN JENSEN · EST. BRISBANE · AU ·&nbsp;
+                </textPath>
+              </text>
+            </svg>
+            <div className={styles.photo}>
+              <div className={styles.photoPlaceholder}>CJ</div>
             </div>
           </div>
         </div>
@@ -20,22 +31,26 @@ export default function About() {
             About
           </div>
           <p>
-            I&rsquo;m a <em>freelancer</em>, not an agency. I work with select
-            clients at a time in both Australia & Canada — across trades
-            and professional services.
+            I&rsquo;m a <em>freelancer</em>, not an agency. I work with a small
+            roster of clients across trades and professional services in
+            Australia and Canada.
           </p>
           <p>
-            I learned this craft by doing it. My first major client was Kinsmen Consulting Ltd
-            in Calgary, Canada. In sixty days the work I did there
-            generated over a quarter of a million dollars in revenue.
-            That&rsquo;s the kind of outcome I look to repeat.
+            I learned this craft by doing it. My first major project generated
+            over a quarter of a million dollars in revenue for the client in
+            sixty days. That&rsquo;s the kind of outcome I look to repeat.
           </p>
           <p>
-            If you&rsquo;d rather hire a 40-person general agency, I
+            If you&rsquo;d rather hire a 40-person agency with a slide deck, I
             respect it. If you&rsquo;d rather work directly with the person
             doing the work — that&rsquo;s me.
           </p>
           <div className={styles.sig}>— Corbin</div>
+
+          <Link href="/about" className={styles.cta}>
+            <span>Read the full story</span>
+            <span className={styles.arrow}>→</span>
+          </Link>
         </div>
       </div>
     </section>
