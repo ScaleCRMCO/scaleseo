@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import Logo from "./Logo";
 import styles from "./Nav.module.css";
 
@@ -15,18 +16,18 @@ export default function Nav() {
 
   return (
     <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ""}`}>
-      <a href="#" className={styles.brand}>
+      <Link href="/" className={styles.brand}>
         <Logo size={26} />
         <span className={styles.wordmark}>
           Scale<span style={{ fontStyle: "italic" }}>SEO</span>
         </span>
         <span className={styles.mark}>/ Corbin Jensen</span>
-      </a>
+      </Link>
       <div className={styles.links}>
-        <a href="#work">Work</a>
-        <a href="#services">Services</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+        <Link href="/#work">Work</Link>
+        <Link href="/#services">Services</Link>
+        <Link href="/about">About</Link>
+        <Link href="/#contact">Contact</Link>
       </div>
     </nav>
   );
