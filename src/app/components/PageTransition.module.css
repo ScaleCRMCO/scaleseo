@@ -8,11 +8,10 @@
 }
 
 .active {
-  animation: curtainSweep 0.9s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+  animation: curtainUp 0.9s cubic-bezier(0.76, 0, 0.24, 1) forwards;
 }
 
-@keyframes curtainSweep {
-  0%   { transform: translateY(-100%); }
-  50%  { transform: translateY(0); }
-  100% { transform: translateY(100%); }
+@keyframes curtainUp {
+  0%   { transform: translateY(0); }
+  100% { transform: translateY(-100%); }
 }
