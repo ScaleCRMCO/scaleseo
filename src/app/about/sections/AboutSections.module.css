@@ -200,4 +200,21 @@
     gap: 12px;
     padding: 24px 0;
   }
+
+  .numbersGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .numItem {
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .numItem:nth-child(odd) {
+    border-right: 1px solid var(--line);
+  }
+
+  .numItem:nth-last-child(-n+2) {
+    border-bottom: none;
+  }
 }
