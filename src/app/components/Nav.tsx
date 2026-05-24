@@ -2,11 +2,14 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import Logo from "./Logo";
 import styles from "./Nav.module.css";
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+  const isDarkPage = pathname?.startsWith("/about");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
@@ -15,7 +18,11 @@ export default function Nav() {
   }, []);
 
   return (
-    <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ""}`}>
+    <nav
+      className={`${styles.nav} ${scrolled ? styles.scrolled : ""} ${
+        isDarkPage ? styles.onDark : ""
+      }`}
+    >
       <Link href="/" className={styles.brand}>
         <Logo size={26} />
         <span className={styles.wordmark}>
