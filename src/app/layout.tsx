@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
+import PageTransition from "./components/PageTransition";
 
 export const metadata: Metadata = {
   title: "Scale SEO — Corbin Jensen | SEO for Trades & Accounting Firms",
@@ -45,6 +46,7 @@ export default function RootLayout({
         />
       </head>
       <body>
+        <PageTransition />
         <Nav />
         {children}
         <Footer />
