@@ -72,6 +72,9 @@ section {
   padding: 140px 40px;
   position: relative;
 }
+.page-top {
+  padding-top: 200px;
+}
 
 /* Dark section variant - use class "section-dark" on sections that should invert */
 .section-dark {
