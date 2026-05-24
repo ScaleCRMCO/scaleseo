@@ -14,12 +14,11 @@ export default function AboutLayout() {
             <div className={styles.portrait}>
               {/* When you have a photo, replace this with: */}
               {/* <img src="/images/corbin-about.jpg" alt="Corbin Jensen" className={styles.portraitImg} /> */}
-              <div className={styles.portraitPlaceholder}>
-                <span>PORTRAIT</span>
-                <span className={styles.placeholderSub}>
-                  /public/images/corbin-about.jpg
-                </span>
-              </div>
+              <img
+                src="/images/corbin-about.jpg"
+                alt="Corbin Jensen"
+                className={styles.portraitImg}
+              />
             </div>
 
             {/* Metadata */}
