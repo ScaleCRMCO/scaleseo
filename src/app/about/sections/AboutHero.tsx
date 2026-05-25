@@ -9,7 +9,7 @@ export default function AboutHero() {
       {/* Corner labels */}
       <div className={`${styles.corner} ${styles.topLeft}`}>
         <span className={styles.dot} />
-        Available — 1 spot, Q3 2026
+        Available — 2 spots, Q2 2026
       </div>
       <div className={`${styles.corner} ${styles.topRight}`}>
         About &nbsp;—&nbsp; Index 02
