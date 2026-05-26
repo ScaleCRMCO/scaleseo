@@ -49,7 +49,7 @@ export default function CaseStudy() {
       </div>
 
       <blockquote className={`${styles.quote} reveal-up`}>
-        "Corbin understood our business from day one. Two months later, we're booked out.";
+        "Corbin understood our business from day one. Two months later, we're booked out."
         <div className={styles.attr}>
           Kinsmen Consulting&nbsp;&nbsp;·&nbsp;&nbsp;
           <a
