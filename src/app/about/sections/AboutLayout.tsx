@@ -195,12 +195,12 @@ export default function AboutLayout() {
             </div>
 
             <h2 className={`${styles.headline} reveal-up`}>
-              Born in Calgary. <em>Currently in Brisbane.</em> Often somewhere else.
+              Born in Canada. <em>Currently Serving Globally.</em> Often Travel
             </h2>
 
             <div className={`${styles.body} reveal-up`}>
               <p>
-                Born and raised in Calgary, Alberta. Living in Australia for the last three years. The two-country thing isn&apos;t a marketing line — it&apos;s just where my life is.
+                Born and raised in Calgary, Alberta. I developed Scale SEO to bring established companies high value clientele through organic SEO practice.
               </p>
               <p>
                 When I&apos;m not working, I&apos;m travelling. Singapore, Japan, and Malaysia have been favourites lately. The fully-remote nature of this business is the whole point.
