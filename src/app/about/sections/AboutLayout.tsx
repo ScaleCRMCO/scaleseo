@@ -43,7 +43,7 @@ export default function AboutLayout() {
                 </li>
                 <li>
                   <span className={styles.cKey}>Based in</span>
-                  <span className={styles.cVal}>Canada, Serving Worldwide, AU</span>
+                  <span className={styles.cVal}>Canada - Serving Worldwide</span>
                 </li>
                 <li>
                   <span className={styles.cKey}>Developing</span>
