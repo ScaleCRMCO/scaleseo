@@ -49,10 +49,7 @@ export default function CaseStudy() {
       </div>
 
       <blockquote className={`${styles.quote} reveal-up`}>
-        &ldquo;We don&rsquo;t chase volume — we take on the right projects.
-        Corbin understood that from day one. Inside two months he&rsquo;d
-        turned our website around through SEO we&rsquo;d been
-        missing for years.&rdquo;
+        "Corbin understood our business from day one. Two months later, we're booked out.";
         <div className={styles.attr}>
           Kinsmen Consulting&nbsp;&nbsp;·&nbsp;&nbsp;
           <a
