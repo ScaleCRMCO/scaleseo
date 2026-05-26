@@ -19,7 +19,7 @@ export default function AboutHero() {
         <span className={styles.scrollArrow}>↓</span>
       </div>
       <div className={`${styles.corner} ${styles.bottomRight}`}>
-        Est. Canada &nbsp;·&nbsp; 2025
+        Est. Canada &nbsp;·&nbsp; 2026
       </div>
 
       <div className={styles.content}>
@@ -37,7 +37,7 @@ export default function AboutHero() {
         </h1>
 
         <p className={styles.sub}>
-          Canadian by birth, Australian by address. I take a few service
+          Founded in Canada & serving worldwide, I take a few service
           businesses each year and turn search into the channel that actually
           pays them back.
         </p>
