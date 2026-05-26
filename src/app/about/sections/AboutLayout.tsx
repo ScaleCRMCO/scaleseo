@@ -25,7 +25,7 @@ export default function AboutLayout() {
             <div className={styles.meta}>
               <div className={styles.metaName}>Corbin Jensen</div>
               <div className={styles.metaRole}>SEO Specialist · Freelance</div>
-              <div className={styles.metaRoute}>Calgary → Brisbane</div>
+              <div className={styles.metaRoute}>Canada & Australia</div>
               <div className={styles.metaCoords}>
                 51.04°N / 114.07°W
                 <br />
@@ -39,7 +39,7 @@ export default function AboutLayout() {
               <ul className={styles.currentlyList}>
                 <li>
                   <span className={styles.cKey}>Working on</span>
-                  <span className={styles.cVal}>Local SEO for an accounting firm in Brisbane</span>
+                  <span className={styles.cVal}>Local SEO for an accounting firm in Calgary</span>
                 </li>
                 <li>
                   <span className={styles.cKey}>Based in</span>
@@ -80,7 +80,7 @@ export default function AboutLayout() {
                 The breakthrough came when I stopped trying to sell what I thought people wanted and started solving what they actually needed: visibility. People searching for them, finding them, calling them. That&apos;s when SEO clicked.
               </p>
               <p>
-                My first real client was a plumber in Brisbane. Then an accounting firm in the same city. Then a concrete contractor in Calgary — the one that changed everything. In sixty days the work generated over $250,000 in revenue.
+                My first real client was a concrete contractor in Calgary, the one that changed everything. In sixty days the work generated over $250,000 in revenue.
               </p>
               <p>That&apos;s when I stopped pivoting.</p>
             </div>
