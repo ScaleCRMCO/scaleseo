@@ -195,7 +195,7 @@ export default function AboutLayout() {
             </div>
 
             <h2 className={`${styles.headline} reveal-up`}>
-              Born in Canada. <em>Currently Serving Globally.</em> Often Travel
+              Born in Canada. <em>Travelling Often.</em> Global Work.
             </h2>
 
             <div className={`${styles.body} reveal-up`}>
