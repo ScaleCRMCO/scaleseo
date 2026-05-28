@@ -3,46 +3,58 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "./ScrollSpine.module.css";
 
+const SECTIONS = 6;
+
 export default function ScrollSpine() {
   const [progress, setProgress] = useState(0);
   const [visible, setVisible] = useState(false);
+  const easedRef = useRef(0);
+  const targetRef = useRef(0);
   const rafRef = useRef<number | null>(null);
 
   useEffect(() => {
-    // Respect reduced-motion preference
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduced) return;
 
-    const update = () => {
-      const scrollTop = window.scrollY;
-      const docHeight =
-        document.documentElement.scrollHeight - window.innerHeight;
-      const pct = docHeight > 0 ? scrollTop / docHeight : 0;
-      setProgress(pct);
-      setVisible(scrollTop > window.innerHeight * 0.6);
-      rafRef.current = null;
+    const tick = () => {
+      // Ease the eased value toward the target (momentum/lag)
+      easedRef.current += (targetRef.current - easedRef.current) * 0.08;
+      if (Math.abs(targetRef.current - easedRef.current) < 0.0002) {
+        easedRef.current = targetRef.current;
+      }
+      setProgress(easedRef.current);
+      rafRef.current = requestAnimationFrame(tick);
     };
 
     const onScroll = () => {
-      if (rafRef.current === null) {
-        rafRef.current = requestAnimationFrame(update);
-      }
+      const scrollTop = window.scrollY;
+      const docHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+      targetRef.current = docHeight > 0 ? scrollTop / docHeight : 0;
+      setVisible(scrollTop > window.innerHeight * 0.6);
     };
 
     window.addEventListener("scroll", onScroll, { passive: true });
-    update();
+    onScroll();
+    rafRef.current = requestAnimationFrame(tick);
+
     return () => {
       window.removeEventListener("scroll", onScroll);
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
     };
   }, []);
 
-  // Spine geometry
-  const LINE_TOP = 0;
-  const LINE_HEIGHT = 100; // percentage units in the SVG viewBox
-  const tipY = LINE_TOP + progress * LINE_HEIGHT;
+  const LINE_HEIGHT = 100;
+  const tipY = progress * LINE_HEIGHT;
   const dashOffset = (1 - progress) * LINE_HEIGHT;
-  const compassRotation = progress * 540; // 1.5 full turns over the page
+
+  // Needle-lock: compass rotates faster near section boundaries, settles between
+  const sectionProgress = progress * SECTIONS;
+  const intoSection = sectionProgress - Math.floor(sectionProgress);
+  // ease-out curve makes it "snap" then settle within each section
+  const settle = 1 - Math.pow(1 - intoSection, 3);
+  const compassRotation =
+    Math.floor(sectionProgress) * 90 + settle * 90 + progress * 180;
 
   return (
     <div
@@ -55,7 +67,6 @@ export default function ScrollSpine() {
         preserveAspectRatio="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        {/* Faint full-length track */}
         <line
           x1="5"
           y1="0"
@@ -64,7 +75,6 @@ export default function ScrollSpine() {
           className={styles.track}
           vectorEffect="non-scaling-stroke"
         />
-        {/* Drawn orange progress line */}
         <line
           x1="5"
           y1="0"
@@ -79,15 +89,29 @@ export default function ScrollSpine() {
         />
       </svg>
 
-      {/* Traveling compass at the tip */}
-      <div
-        className={styles.compass}
-        style={{
-          top: `${tipY}%`,
-          transform: `transl(-50%, -50%) rotate(${compassRotation}deg)`,
-        }}
-      >
-        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      {/* Section marker dots */}
+      <div className={styles.markers}>
+        {Array.from({ length: SECTIONS + 1 }).map((_, i) => {
+          const markerPos = (i / SECTIONS) * 100;
+          const filled = progress * 100 >= markerPos - 0.5;
+          return (
+            <span
+              key={i}
+              className={`${styles.marker} ${filled ? styles.markerFilled : ""}`}
+              style={{ top: `${markerPos}%` }}
+            />
+          );
+        })}
+      </div>
+
+      {/* Traveling compass with glow */}
+      <div className={styles.compass} style={{ top: `${tipY}%` }}>
+        <span className={styles.glow} />
+        <svg
+          viewBox="0 0 100 100"
+          xmlns="http://www.w3.org/2000/svg"
+          style={{ transform: `rotate(${compassRotation}deg)` }}
+        >
           <circle
             cx="50"
             cy="50"
