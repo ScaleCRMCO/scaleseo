@@ -1,4 +1,5 @@
 import Hero from "./sections/home/Hero";
+import ScrollSpine from "./components/ScrollSpine";
 import Marquee from "./sections/home/Marquee";
 import CaseStudy from "./sections/home/CaseStudy";
 import Services from "./sections/home/Services";
@@ -11,6 +12,7 @@ import RevealOnScroll from "./components/RevealOnScroll";
 export default function Home() {
   return (
     <main>
+      <ScrollSpine />
       <Hero />
       <Marquee />
       <CaseStudy />
