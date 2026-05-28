@@ -1,0 +1,62 @@
+.spine {
+  position: fixed;
+  top: 0;
+  left: 24px;
+  width: 40px;
+  height: 100vh;
+  z-index: 30;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.spine.visible {
+  opacity: 1;
+}
+
+.svg {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 100%;
+}
+
+.track {
+  stroke: var(--line-strong);
+  stroke-width: 1;
+}
+
+.drawn {
+  stroke: var(--accent);
+  stroke-width: 2;
+  transition: stroke-dashoffset 0.1s linear;
+}
+
+.compass {
+  position: absolute;
+  left: 50%;
+  width: 28px;
+  height: 28px;
+  color: var(--ink);
+  transition: top 0.1s linear;
+}
+
+.compass svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Dark pages: compass ring needs to be light */
+:global(.about-page) .compass {
+  color: var(--ink-on-dark);
+}
+
+/* Hide on mobile / tablet — no room for a side spine */
+@media (max-width: 1100px) {
+  .spine {
+    display: none;
+  }
+}
