@@ -5,8 +5,8 @@ const items = [
   "Local SEO",
   "Google Business Profile",
   "AI Search Optimisation",
-  "Backlink Acquisition",
-  "Technical Audits",
+  "Monthly Reports",
+  "Technical SEO",
   "Content Strategy",
 ];
 
