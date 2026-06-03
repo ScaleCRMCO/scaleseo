@@ -23,7 +23,6 @@ const services = [
     num: "04",
     name: "SEO Reporting & Strategy",
     desc: "Clear monthly Reporting — rankings, keywords, and future process.",
-",
     tag: "Ongoing",
   },
   {
