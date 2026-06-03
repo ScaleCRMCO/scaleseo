@@ -22,7 +22,7 @@ export default function Footer() {
           <a href="https://share.google/zj7YeUAnnpFse6phm" target="_blank" rel="noopener noreferrer">
             Google ↗
           </a>
-          <a href="mailto:hello@scaleseo.co">
+          <a href="mailto:team@scaleseo.co">
             Email ↗
           </a>
         </nav>
@@ -32,7 +32,7 @@ export default function Footer() {
         <div className={styles.napCol}>
           <div className={styles.napLabel}>Contact</div>
           <a href="tel:+61468028886" className={styles.napLink}>0468 028 886</a>
-          <a href="mailto:hello@scaleseo.co" className={styles.napLink}>hello@scaleseo.co</a>
+          <a href="mailto:hello@scaleseo.co" className={styles.napLink}>team@scaleseo.co</a>
         </div>
 
         <div className={styles.napCol}>
