@@ -54,6 +54,27 @@
   border: 1px solid var(--line);
   transition: transform 0.5s ease;
 }
+.photoLogo {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-elev);
+  color: var(--ink);
+  padding: 20px;
+  transition: transform 0.5s ease;
+}
+
+.photoLogo svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.circleOuter:hover .photoLogo {
+  transform: scale(1.04);
+}
 
 .circleOuter:hover .photo {
   transform: translate(-50%, -50%) scale(1.05);
