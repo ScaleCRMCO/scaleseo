@@ -15,15 +15,16 @@ const services = [
   },
   {
     num: "03",
-    name: "Technical Audits",
+    name: "Technical",
     desc: "Site speed, crawlability, schema, indexation. The plumbing that decides whether anything else you do gets credit.",
     tag: "Core",
   },
   {
     num: "04",
-    name: "Backlink Acquisition",
-    desc: "Earned, contextually relevant links from real sites in your industry. No PBNs, no link schemes, no shortcuts that age badly.",
-    tag: "Growth",
+    name: "SEO Reporting & Strategy",
+    desc: "Clear monthly Reporting — rankings, keywords, and future process.",
+",
+    tag: "Ongoing",
   },
   {
     num: "05",
