@@ -8,7 +8,7 @@ export default function CaseStudy() {
       <div className={`${styles.eyebrow} reveal-up`}>
         <h2 className={styles.title}>
           How a concrete contractor went from invisible to{" "}
-          <em>booked solid</em> in 60 days.
+          <em>booked solid</em> in 90 days.
         </h2>
         <div className={styles.meta}>
           <strong>Kinsmen Consulting</strong>
