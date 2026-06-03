@@ -4,7 +4,6 @@ import styles from "./Footer.module.css";
 export default function Footer() {
   return (
     <footer className={styles.footer}>
-      {/* TOP: brand + socials */}
       <div className={styles.top}>
         <div className={styles.brand}>
           <Logo size={32} />
@@ -29,7 +28,6 @@ export default function Footer() {
         </nav>
       </div>
 
-      {/* MIDDLE: NAP block */}
       <div className={styles.nap}>
         <div className={styles.napCol}>
           <div className={styles.napLabel}>Contact</div>
@@ -45,18 +43,12 @@ export default function Footer() {
 
         <div className={styles.napCol}>
           <div className={styles.napLabel}>Find Us On Google</div>
-          
-            href="https://share.google/zj7YeUAnnpFse6phm"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.napLink}
-          >
+          <a href="https://share.google/zj7YeUAnnpFse6phm" target="_blank" rel="noopener noreferrer" className={styles.napLink}>
             View our Google Business Profile ↗
           </a>
         </div>
       </div>
 
-      {/* BOTTOM: copyright + tagline */}
       <div className={styles.bottom}>
         <div className={styles.copy}>© 2026 Scale SEO · Corbin Jensen</div>
         <div className={styles.tagline}>
