@@ -30,7 +30,7 @@ export default function CaseStudy() {
         </div>
         <div className={styles.num}>
           <div className={styles.value}>
-            60<span className={styles.accent}>d</span>
+            90<span className={styles.accent}>d</span>
           </div>
           <div className={styles.label}>From Launch</div>
         </div>
