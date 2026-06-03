@@ -35,7 +35,6 @@
   font-weight: 400;
 }
 
-/* === SOCIALS === */
 .socials {
   display: flex;
   gap: 36px;
@@ -63,15 +62,55 @@
   transition: width 0.3s ease;
 }
 
-.socials a:hover {
-  color: var(--accent);
+.socials a:hover { color: var(--accent); }
+.socials a:hover::after { width: 100%; }
+
+/* === MIDDLE: NAP block === */
+.nap {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
+  padding: 60px 0;
+  border-bottom: 1px solid var(--line-on-dark);
 }
 
-.socials a:hover::after {
-  width: 100%;
+.napCol {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-/* === BOTTOM ROW: copy + tagline === */
+.napLabel {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-dim-on-dark);
+  margin-bottom: 6px;
+}
+
+.napText {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.4;
+  color: var(--ink-on-dark);
+}
+
+.napLink {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.4;
+  color: var(--ink-on-dark);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  width: fit-content;
+}
+
+.napLink:hover { color: var(--accent); }
+
+/* === BOTTOM ROW === */
 .bottom {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -85,13 +124,8 @@
   color: var(--ink-dim-on-dark);
 }
 
-.copy {
-  text-align: left;
-}
-
-.tagline {
-  text-align: right;
-}
+.copy { text-align: left; }
+.tagline { text-align: right; }
 
 /* === RESPONSIVE === */
 @media (max-width: 900px) {
@@ -109,12 +143,16 @@
     font-size: 11px;
   }
 
+  .nap {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding: 40px 0;
+  }
+
   .bottom {
     grid-template-columns: 1fr;
     gap: 12px;
   }
 
-  .tagline {
-    text-align: left;
-  }
+  .tagline { text-align: left; }
 }
