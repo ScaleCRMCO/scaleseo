@@ -71,7 +71,7 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 60px;
   padding: 60px 0;
-  border-bottom: 1px solid var(--line-on-dark);
+  border-bottom: none;
 }
 
 .napCol {
@@ -110,6 +110,27 @@
 
 .napLink:hover { color: var(--accent); }
 
+/* === LARGE WORDMARK === */
+.wordmarkLarge {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: clamp(80px, 16vw, 220px);
+  line-height: 0.85;
+  letter-spacing: -0.045em;
+  color: rgba(245, 241, 234, 0.07);
+  white-space: nowrap;
+  overflow: hidden;
+  margin: 0 -40px;
+  padding: 24px 0 24px 40px;
+  user-select: none;
+  pointer-events: none;
+}
+
+.wordmarkLarge em {
+  font-style: italic;
+  font-weight: 400;
+}
+
 /* === BOTTOM ROW === */
 .bottom {
   display: grid;
@@ -147,6 +168,11 @@
     grid-template-columns: 1fr;
     gap: 36px;
     padding: 40px 0;
+  }
+
+  .wordmarkLarge {
+    margin: 0 -24px;
+    padding: 16px 0 16px 24px;
   }
 
   .bottom {
