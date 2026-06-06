@@ -48,6 +48,12 @@ export default function Footer() {
           </a>
         </div>
       </div>
+
+      {/* Large blended wordmark */}
+      <div className={styles.wordmarkLarge} aria-hidden="true">
+        Scale<em>SEO</em>
+      </div>
+
       <div className={styles.bottom}>
         <div className={styles.copy}>© 2026 Scale SEO · Corbin Jensen</div>
         <div className={styles.tagline}>
