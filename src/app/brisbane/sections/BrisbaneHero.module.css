@@ -1,11 +1,11 @@
-/* BrisbaneHero.module.css — mirrors Hero.module.css exactly, dark background */
+/* BrisbaneHero.module.css — spacing matched to Hero.module.css exactly */
 
 .hero {
   min-height: 100vh;
   padding: 90px 40px 50px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   position: relative;
   border-bottom: 1px solid var(--line-on-dark);
   overflow: hidden;
@@ -83,6 +83,11 @@
   z-index: 2;
   max-width: 1400px;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-between;
+  padding-top: 80px;
 }
 
 .title {
