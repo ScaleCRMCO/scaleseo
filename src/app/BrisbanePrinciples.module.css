@@ -1,0 +1,71 @@
+/* BrisbanePrinciples.module.css */
+
+.section {
+  background: var(--bg-elev);
+  border-bottom: 1px solid var(--line);
+}
+
+.heading {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  margin-bottom: 80px;
+  max-width: 720px;
+}
+
+.heading em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.list {
+  border-top: 1px solid var(--line);
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 40px;
+  padding: 48px 0;
+  border-bottom: 1px solid var(--line);
+  align-items: start;
+  transition-property: opacity, transform;
+}
+
+.num {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--ink-faint);
+  padding-top: 4px;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.title {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.text {
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--ink-dim);
+  max-width: 640px;
+}
+
+@media (max-width: 600px) {
+  .item { grid-template-columns: 1fr; gap: 12px; }
+}
