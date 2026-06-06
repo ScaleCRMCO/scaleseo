@@ -5,6 +5,7 @@ import BrisbaneForWhom from "./sections/BrisbaneForWhom";
 import BrisbanePrinciples from "./sections/BrisbanePrinciples";
 import BrisbaneProcess from "./sections/BrisbaneProcess";
 import BrisbaneCTA from "./sections/BrisbaneCTA";
+import RevealOnScroll from "../components/RevealOnScroll";
 
 export const metadata: Metadata = {
   title: "SEO for Brisbane Businesses | Scale SEO — Corbin Jensen",
@@ -67,6 +68,7 @@ export default function BrisbanePage() {
       <BrisbanePrinciples />
       <BrisbaneProcess />
       <BrisbaneCTA />
+      <RevealOnScroll />
     </>
   );
 }
