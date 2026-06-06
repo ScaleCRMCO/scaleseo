@@ -19,7 +19,7 @@ export default function Footer() {
           <a href="https://www.instagram.com/scaleseo.co/" target="_blank" rel="noopener noreferrer">
             Instagram ↗
           </a>
-          <a href="https://share.google/zj7YeUAnnpFse6phm" target="_blank" rel="noopener noreferrer">
+          <a href="https://maps.app.goo.gl/Lbyio2SoqzhDjttT8">View our Google Business Profile ↗</a>
             Google ↗
           </a>
           <a href="mailto:team@scaleseo.co">
