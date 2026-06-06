@@ -9,7 +9,7 @@ import styles from "./Nav.module.css";
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
-  const isDarkPage = pathname?.startsWith("/about");
+  const isDarkPage = pathname?.startsWith("/about") || pathname?.startsWith("/brisbane");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
