@@ -1,0 +1,103 @@
+/* BrisbaneCTA.module.css */
+
+.section {
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line-on-dark);
+}
+
+.inner {
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.heading {
+  font-family: var(--display);
+  font-weight: 300;
+  font-size: clamp(48px, 8vw, 120px);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  color: var(--ink-on-dark);
+}
+
+.heading em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.sub {
+  font-family: var(--display);
+  font-weight: 300;
+  font-size: 19px;
+  line-height: 1.5;
+  color: var(--ink-dim-on-dark);
+  max-width: 480px;
+}
+
+.ctaGroup {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px 36px;
+  background: var(--ink-on-dark);
+  color: var(--bg-dark);
+  text-decoration: none;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border: 1px solid var(--ink-on-dark);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--accent);
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+}
+
+.cta span { position: relative; z-index: 1; }
+.cta:hover::before { transform: translateY(0); }
+.cta:hover { border-color: var(--accent); color: var(--ink-on-dark); }
+.arrow { transition: transform 0.4s ease; }
+.cta:hover .arrow { transform: translateX(4px); }
+
+.reply {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ink-dim-on-dark);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.coordBl,
+.coordBr {
+  position: absolute;
+  bottom: 40px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ink-dim-on-dark);
+}
+
+.coordBl { left: 40px; }
+.coordBr { right: 40px; }
+
+@media (max-width: 900px) {
+  .coordBr { display: none; }
+}
