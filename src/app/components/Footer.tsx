@@ -1,4 +1,5 @@
 import Logo from "./Logo";
+import Link from "next/link";
 import styles from "./Footer.module.css";
 
 export default function Footer() {
@@ -34,7 +35,10 @@ export default function Footer() {
         </div>
         <div className={styles.napCol}>
           <div className={styles.napLabel}>Service Area</div>
-          <div className={styles.napText}>Brisbane &nbsp;·&nbsp; Calgary &nbsp;·&nbsp; Remote</div>
+          <div className={styles.napText}>
+            <Link href="/brisbane" className={styles.napLink}>Brisbane</Link>
+            &nbsp;·&nbsp; Calgary &nbsp;·&nbsp; Remote
+          </div>
           <div className={styles.napText}>Australia &amp; Canada</div>
         </div>
         <div className={styles.napCol}>
