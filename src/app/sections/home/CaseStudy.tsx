@@ -42,7 +42,11 @@ export default function CaseStudy() {
       </div>
 
       <div className={styles.inner}>
-        <div className="section-label reveal-up">Success Stories · $250K+ generated for clients</div>
+       <div className="section-label reveal-up">Success Stories · $250K+ generated for clients</div>
+
+        <h2 className={`${styles.heading} reveal-up`}>
+          Work that <em>speaks for itself.</em>
+        </h2>
 
         <div className={styles.stories}>
           {cases.map((c, i) => (
