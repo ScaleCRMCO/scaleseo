@@ -8,9 +8,9 @@ const cases = [
     location: "Calgary, Alberta",
     industry: "Concrete & Construction",
     description:
-      "From invisible to booked solid. Full SEO build that took a concrete contractor from zero online presence to #1 on their primary service term — in 90 days.",
-    metric: "$250K+",
-    metricLabel: "Revenue generated in 90 days",
+    "Positioned a premium concrete contractor to attract high-value residential and commercial projects",
+    metric: "#1",
+    metricLabel: "Ranked on primary high-value service term",
     image: "/images/kinsmen-hero.jpg",
     url: "https://www.kinsmenconsulting.ca",
     urlLabel: "kinsmenconsulting.ca",
