@@ -20,7 +20,6 @@ export default function CaseStudy() {
           Engagement: Ongoing
         </div>
       </div>
-
       <div className={`${styles.numbers} reveal-up`}>
         <div className={styles.num}>
           <div className={styles.value}>
