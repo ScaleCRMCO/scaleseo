@@ -1,16 +1,18 @@
+/* =====================================================
+   CaseStudy.module.css
+   Monolog-exact layout: image left 65%, content right
+   ===================================================== */
+
 .case {
   position: relative;
   border-bottom: 1px solid var(--line-on-dark);
   overflow: hidden;
 }
 
-/* === BACKGROUND GRID LINES === */
+/* === GRID LINES === */
 .grid {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   pointer-events: none;
@@ -19,7 +21,6 @@
 
 .gridLine {
   border-right: 1px solid rgba(245, 241, 234, 0.04);
-  height: 100%;
 }
 
 .gridLine:first-child {
@@ -30,70 +31,20 @@
 .inner {
   position: relative;
   z-index: 1;
-  padding: 80px 40px 100px;
+  padding: 80px 40px 0;
 }
 
-/* === HEADER === */
-.header {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: end;
-  gap: 60px;
-  margin-bottom: 60px;
-}
-
-.heading {
-  font-family: var(--display);
-  font-weight: 300;
-  font-size: clamp(36px, 5vw, 72px);
-  line-height: 1;
-  letter-spacing: -0.03em;
-  color: var(--ink-on-dark);
-}
-
-.heading em {
-  font-style: italic;
-  color: var(--accent);
-}
-
-.globalStat {
-  text-align: right;
-  flex-shrink: 0;
-}
-
-.globalValue {
-  font-family: var(--display);
-  font-weight: 300;
-  font-size: clamp(36px, 4vw, 56px);
-  line-height: 1;
-  letter-spacing: -0.03em;
-  color: var(--ink-on-dark);
-  font-style: italic;
-}
-
-.globalLabel {
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--ink-dim-on-dark);
-  margin-top: 8px;
-}
-
-/* === STORY ROWS === */
+/* === STORIES === */
 .stories {
-  display: flex;
-  flex-direction: column;
+  margin-top: 40px;
   border-top: 1px solid var(--line-on-dark);
 }
 
 .story {
   display: grid;
-  grid-template-columns: 1fr 380px;
-  gap: 0;
+  grid-template-columns: 1.8fr 1fr;
   border-bottom: 1px solid var(--line-on-dark);
-  padding: 48px 0;
-  align-items: center;
+  min-height: 420px;
 }
 
 /* === IMAGE === */
@@ -102,21 +53,18 @@
   position: relative;
   overflow: hidden;
   cursor: pointer;
-  max-height: 340px;
+  min-height: 420px;
 }
 
 .image {
-  width: 100%;
-  height: 340px;
   object-fit: cover;
   object-position: top;
-  display: block;
-  filter: grayscale(20%) contrast(0.92) brightness(0.88);
+  filter: grayscale(15%) brightness(0.88);
   transition: filter 0.6s ease, transform 0.8s ease;
 }
 
 .imageWrap:hover .image {
-  filter: grayscale(0%) contrast(1) brightness(0.45);
+  filter: grayscale(0%) brightness(0.55);
   transform: scale(1.02);
 }
 
@@ -125,81 +73,57 @@
   position: absolute;
   inset: 0;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 16px;
   opacity: 0;
-  transition: opacity 0.5s ease;
+  transition: opacity 0.4s ease;
 }
 
 .imageWrap:hover .overlay {
   opacity: 1;
 }
 
-.logoImg {
-  width: auto;
-  height: 48px;
-  object-fit: contain;
-  filter: brightness(0) invert(1);
-}
-
-.overlayLink {
+.overlayText {
   font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.14em;
+  font-size: 11px;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(245, 241, 234, 0.55);
-  border-bottom: 1px solid rgba(245, 241, 234, 0.25);
-  padding-bottom: 2px;
+  color: rgba(245, 241, 234, 0.85);
+  border-bottom: 1px solid rgba(245, 241, 234, 0.4);
+  padding-bottom: 3px;
 }
 
 /* === CONTENT === */
 .content {
-  padding: 0 0 0 52px;
+  padding: 48px 40px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
-}
-
-.contentTop {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 4px;
+  gap: 16px;
+  border-left: 1px solid var(--line-on-dark);
 }
 
 .index {
   font-family: var(--mono);
   font-size: 10px;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--ink-dim-on-dark);
-}
-
-.tag {
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--accent);
-  border: 1px solid var(--accent);
-  padding: 3px 10px;
 }
 
 .client {
   font-family: var(--display);
   font-weight: 400;
-  font-size: clamp(22px, 2.2vw, 32px);
+  font-size: clamp(24px, 2.4vw, 36px);
   line-height: 1.1;
   letter-spacing: -0.02em;
   color: var(--ink-on-dark);
+  margin-top: 4px;
 }
 
 .location {
   font-family: var(--mono);
   font-size: 10px;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--ink-dim-on-dark);
 }
@@ -207,71 +131,57 @@
 .description {
   font-family: var(--display);
   font-weight: 300;
-  font-size: clamp(14px, 1.2vw, 16px);
+  font-size: clamp(14px, 1.2vw, 17px);
   line-height: 1.6;
   color: var(--ink-dim-on-dark);
   flex: 1;
 }
 
-/* === METRIC BUBBLE === */
+/* === METRIC === */
 .metric {
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.metricBubble {
-  display: inline-flex;
-  align-items: center;
-  background: rgba(194, 65, 12, 0.12);
-  border: 1px solid rgba(194, 65, 12, 0.3);
-  padding: 10px 20px;
-  align-self: flex-start;
+  margin-top: auto;
+  padding-top: 24px;
+  border-top: 1px solid var(--line-on-dark);
 }
 
 .metricValue {
   font-family: var(--display);
   font-weight: 300;
-  font-size: clamp(24px, 2.5vw, 36px);
-  line-height: 1;
-  letter-spacing: -0.02em;
-  color: var(--accent);
   font-style: italic;
+  font-size: clamp(28px, 3vw, 44px);
+  line-height: 1;
+  letter-spacing: -0.025em;
+  color: var(--ink-on-dark);
 }
 
 .metricLabel {
   font-family: var(--mono);
   font-size: 10px;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.13em;
   text-transform: uppercase;
   color: var(--ink-dim-on-dark);
+  margin-top: 10px;
 }
 
 /* === RESPONSIVE === */
 @media (max-width: 900px) {
-  .inner { padding: 60px 24px 80px; }
+  .inner { padding: 60px 24px 0; }
 
   .grid { display: none; }
 
-  .header {
-    grid-template-columns: 1fr;
-    gap: 24px;
-    margin-bottom: 40px;
-  }
-
-  .globalStat { text-align: left; }
-
   .story {
     grid-template-columns: 1fr;
-    gap: 28px;
-    padding: 36px 0;
+    min-height: auto;
   }
 
-  .imageWrap { max-height: 240px; }
-  .image { height: 240px; }
+  .imageWrap {
+    min-height: 260px;
+    height: 260px;
+  }
 
-  .content { padding: 0; }
-
-  .metricBubble { padding: 8px 16px; }
+  .content {
+    padding: 32px 0;
+    border-left: none;
+    border-top: 1px solid var(--line-on-dark);
+  }
 }
