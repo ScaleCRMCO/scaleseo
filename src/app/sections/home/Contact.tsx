@@ -1,78 +1,114 @@
-import { NextResponse } from "next/server";
-import { getResend } from "@/lib/resend";
+"use client";
 
-export const runtime = "nodejs";
+import { useState, FormEvent } from "react";
+import styles from "./Contact.module.css";
 
-type Body = {
-  name?: string;
-  email?: string;
-  business?: string;
-  industry?: string;
-  website?: string;
-  message?: string;
-};
+type Status = "idle" | "sending" | "success" | "error";
 
-function escapeHtml(s: string): string {
-  return s
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#39;");
-}
+export default function Contact() {
+  const [status, setStatus] = useState<Status>("idle");
+  const [message, setMessage] = useState("");
 
-export async function POST(req: Request) {
-  try {
-    const body = (await req.json()) as Body;
-    const { name, email, business, industry, website, message } = body;
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setStatus("sending");
+    setMessage("Sending...");
 
-    if (!name || !email || !business || !industry || !message) {
-      return NextResponse.json(
-        { error: "Missing required fields" },
-        { status: 400 }
-      );
+    const form = e.currentTarget;
+    const data = Object.fromEntries(new FormData(form));
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (res.ok) {
+        setStatus("success");
+        setMessage("Thanks — I'll reply within 24 hours.");
+        form.reset();
+      } else {
+        throw new Error("Request failed");
+      }
+    } catch {
+      setStatus("error");
+      setMessage("Something went wrong. Email hello@scaleseo.co directly.");
     }
-
-    const to = process.env.CONTACT_TO_EMAIL;
-    const from = process.env.CONTACT_FROM_EMAIL;
-    if (!to || !from) {
-      return NextResponse.json(
-        { error: "Server not configured" },
-        { status: 500 }
-      );
-    }
-
-    const html = `
-      <div style="font-family: -apple-system, sans-serif; max-width: 600px; padding: 24px; color: #111;">
-        <h2 style="margin: 0 0 16px;">New enquiry from scaleseo.co</h2>
-        <table style="border-collapse: collapse; width: 100%;">
-          <tr><td style="padding:8px 0; color:#666; width:140px;">Name</td><td>${escapeHtml(name)}</td></tr>
-          <tr><td style="padding:8px 0; color:#666;">Email</td><td><a href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a></td></tr>
-          <tr><td style="padding:8px 0; color:#666;">Business</td><td>${escapeHtml(business)}</td></tr>
-          <tr><td style="padding:8px 0; color:#666;">Industry</td><td>${escapeHtml(industry)}</td></tr>
-          <tr><td style="padding:8px 0; color:#666;">Website</td><td>${website ? `<a href="${escapeHtml(website)}">${escapeHtml(website)}</a>` : "—"}</td></tr>
-        </table>
-        <h3 style="margin: 24px 0 8px;">Message</h3>
-        <div style="white-space: pre-wrap; background: #f6f6f6; padding: 16px; border-radius: 6px;">${escapeHtml(message)}</div>
-      </div>
-    `;
-
-    const resend = getResend();
-    const result = await resend.emails.send({
-      from: `Scale SEO Enquiries <${from}>`,
-      to: [to],
-      replyTo: email,
-      subject: `New enquiry — ${business}`,
-      html,
-    });
-
-    if (result.error) {
-      return NextResponse.json({ error: result.error.message }, { status: 502 });
-    }
-
-    return NextResponse.json({ ok: true });
-  } catch (err) {
-    const msg = err instanceof Error ? err.message : "Unknown error";
-    return NextResponse.json({ error: msg }, { status: 500 });
   }
+
+  return (
+    <section className={styles.contact} id="contact">
+      <div className={styles.eyebrow}>
+        <span className={styles.dot} />
+        Now booking · 1 spot Q3 2026
+      </div>
+      <h2 className={styles.headline}>
+        Let&rsquo;s see if we&rsquo;re <em>a fit.</em>
+      </h2>
+
+      <form className={styles.form} onSubmit={handleSubmit}>
+        <div className={styles.row}>
+          <div className={styles.group}>
+            <label htmlFor="name">Your Name</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div className={styles.group}>
+            <label htmlFor="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+        </div>
+
+        <div className={styles.row}>
+          <div className={styles.group}>
+            <label htmlFor="business">Business Name</label>
+            <input type="text" id="business" name="business" required />
+          </div>
+          <div className={styles.group}>
+            <label htmlFor="industry">Industry</label>
+            <select id="industry" name="industry" required defaultValue="">
+              <option value="" disabled>
+                Select one
+              </option>
+              <option value="trade-contractor">Trade Contractor</option>
+              <option value="accounting">Accounting / Advisory</option>
+              <option value="other">Other Service Business</option>
+            </select>
+          </div>
+        </div>
+
+        <div className={styles.group}>
+          <label htmlFor="website">Current Website (if any)</label>
+          <input type="url" id="website" name="website" placeholder="https://" />
+        </div>
+
+        <div className={styles.group}>
+          <label htmlFor="message">What are you trying to solve?</label>
+          <textarea
+            id="message"
+            name="message"
+            required
+            placeholder="Where are you stuck, where do you want to be in 12 months, anything else I should know..."
+          />
+        </div>
+
+        <button type="submit" className={styles.submit} disabled={status === "sending"}>
+          <span>Send enquiry</span>
+          <span>→</span>
+        </button>
+
+        <div
+          className={`${styles.status} ${
+            status === "success"
+              ? styles.success
+              : status === "error"
+              ? styles.error
+              : ""
+          }`}
+        >
+          {message}
+        </div>
+      </form>
+    </section>
+  );
 }
