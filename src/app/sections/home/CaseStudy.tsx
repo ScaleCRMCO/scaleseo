@@ -1,6 +1,5 @@
 import Image from "next/image";
 import styles from "./CaseStudy.module.css";
-
 export default function CaseStudy() {
   return (
     <section className={`${styles.case} section-dark`} id="work">
