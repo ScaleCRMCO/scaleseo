@@ -1,114 +1,116 @@
-"use client";
+import Image from "next/image";
+import styles from "./CaseStudy.module.css";
 
-import { useState, FormEvent } from "react";
-import styles from "./Contact.module.css";
+const cases = [
+  {
+    index: "01",
+    client: "Kinsmen Consulting",
+    location: "Calgary, Alberta",
+    industry: "Concrete & Construction",
+    description:
+      "From invisible to booked solid. A full SEO build that took a concrete contractor from no online presence to #1 on their primary service term in 90 days.",
+    metric: "$250K+",
+    metricLabel: "Revenue generated in 90 days",
+    image: "/kinsmen-hero.jpg",
+    logo: "/images/Kinsmen Consulting LTD Logo.png",
+    url: "https://www.kinsmenconsulting.ca",
+    urlLabel: "kinsmenconsulting.ca",
+  },
+  {
+    index: "02",
+    client: "MSV Plumbing Services",
+    location: "Brisbane, Queensland",
+    industry: "Plumbing & Trade Services",
+    description:
+      "Built from zero. A new website and local SEO strategy that took MSV from no clients to consistent weekly bookings — enough to hire staff and expand the business.",
+    metric: "0 → Booked",
+    metricLabel: "Consistent weekly clients from scratch",
+    image: "/images/MSV Plumbing Website Screenshot.png",
+    logo: "/images/msv-hero.png",
+    url: "#",
+    urlLabel: "msvplumbing.com.au",
+  },
+];
 
-type Status = "idle" | "sending" | "success" | "error";
-
-export default function Contact() {
-  const [status, setStatus] = useState<Status>("idle");
-  const [message, setMessage] = useState("");
-
-  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    setStatus("sending");
-    setMessage("Sending...");
-
-    const form = e.currentTarget;
-    const data = Object.fromEntries(new FormData(form));
-
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-
-      if (res.ok) {
-        setStatus("success");
-        setMessage("Thanks — I'll reply within 24 hours.");
-        form.reset();
-      } else {
-        throw new Error("Request failed");
-      }
-    } catch {
-      setStatus("error");
-      setMessage("Something went wrong. Email hello@scaleseo.co directly.");
-    }
-  }
-
+export default function CaseStudy() {
   return (
-    <section className={styles.contact} id="contact">
-      <div className={styles.eyebrow}>
-        <span className={styles.dot} />
-        Now booking · 1 spot Q3 2026
+    <section className={`${styles.case} section-dark`} id="work">
+
+      <div className={styles.grid} aria-hidden="true">
+        <div className={styles.gridLine} />
+        <div className={styles.gridLine} />
+        <div className={styles.gridLine} />
+        <div className={styles.gridLine} />
+        <div className={styles.gridLine} />
       </div>
-      <h2 className={styles.headline}>
-        Let&rsquo;s see if we&rsquo;re <em>a fit.</em>
-      </h2>
 
-      <form className={styles.form} onSubmit={handleSubmit}>
-        <div className={styles.row}>
-          <div className={styles.group}>
-            <label htmlFor="name">Your Name</label>
-            <input type="text" id="name" name="name" required />
-          </div>
-          <div className={styles.group}>
-            <label htmlFor="email">Email</label>
-            <input type="email" id="email" name="email" required />
+      <div className={styles.inner}>
+        <div className="section-label reveal-up">Success Stories</div>
+
+        <div className={`${styles.header} reveal-up`}>
+          <h2 className={styles.heading}>
+            Real businesses. <em>Real revenue.</em>
+          </h2>
+          <div className={styles.globalStat}>
+            <div className={styles.globalValue}>$250K+</div>
+            <div className={styles.globalLabel}>Revenue generated across all clients</div>
           </div>
         </div>
 
-        <div className={styles.row}>
-          <div className={styles.group}>
-            <label htmlFor="business">Business Name</label>
-            <input type="text" id="business" name="business" required />
-          </div>
-          <div className={styles.group}>
-            <label htmlFor="industry">Industry</label>
-            <select id="industry" name="industry" required defaultValue="">
-              <option value="" disabled>
-                Select one
-              </option>
-              <option value="trade-contractor">Trade Contractor</option>
-              <option value="accounting">Accounting / Advisory</option>
-              <option value="other">Other Service Business</option>
-            </select>
-          </div>
-        </div>
+        <div className={styles.stories}>
+          {cases.map((c, i) => (
+            <div
+              key={c.index}
+              className={`${styles.story} reveal-up`}
+              style={{ transitionDelay: `${i * 0.1}s` }}
+            >
+              <a
+                href={c.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.imageWrap}
+              >
+                <Image
+                  src={c.image}
+                  alt={`${c.client} website`}
+                  width={1400}
+                  height={900}
+                  className={styles.image}
+                  priority={i === 0}
+                />
+                <div className={styles.overlay}>
+                  <div className={styles.overlayLogo}>
+                    <Image
+                      src={c.logo}
+                      alt={`${c.client} logo`}
+                      width={200}
+                      height={80}
+                      className={styles.logoImg}
+                    />
+                  </div>
+                  <div className={styles.overlayLink}>
+                    {c.urlLabel} →
+                  </div>
+                </div>
+              </a>
 
-        <div className={styles.group}>
-          <label htmlFor="website">Current Website (if any)</label>
-          <input type="url" id="website" name="website" placeholder="https://" />
+              <div className={styles.content}>
+                <div className={styles.contentTop}>
+                  <span className={styles.index}>SS — {c.index}</span>
+                  <span className={styles.tag}>{c.industry}</span>
+                </div>
+                <h3 className={styles.client}>{c.client}</h3>
+                <p className={styles.location}>{c.location}</p>
+                <p className={styles.description}>{c.description}</p>
+                <div className={styles.metric}>
+                  <div className={styles.metricValue}>{c.metric}</div>
+                  <div className={styles.metricLabel}>{c.metricLabel}</div>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
-
-        <div className={styles.group}>
-          <label htmlFor="message">What are you trying to solve?</label>
-          <textarea
-            id="message"
-            name="message"
-            required
-            placeholder="Where are you stuck, where do you want to be in 12 months, anything else I should know..."
-          />
-        </div>
-
-        <button type="submit" className={styles.submit} disabled={status === "sending"}>
-          <span>Send enquiry</span>
-          <span>→</span>
-        </button>
-
-        <div
-          className={`${styles.status} ${
-            status === "success"
-              ? styles.success
-              : status === "error"
-              ? styles.error
-              : ""
-          }`}
-        >
-          {message}
-        </div>
-      </form>
+      </div>
     </section>
   );
 }
