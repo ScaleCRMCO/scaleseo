@@ -42,7 +42,7 @@ export default function CaseStudy() {
       </div>
 
       <div className={styles.inner}>
-        <div className="section-label reveal-up">Success Stories</div>
+        <div className="section-label reveal-up">Success Stories · $250K+ generated for clients</div>
 
         <div className={styles.stories}>
           {cases.map((c, i) => (
