@@ -1,116 +1,78 @@
-import Image from "next/image";
-import styles from "./CaseStudy.module.css";
+import { NextResponse } from "next/server";
+import { getResend } from "@/lib/resend";
 
-const cases = [
-  {
-    index: "01",
-    client: "Kinsmen Consulting",
-    location: "Calgary, Alberta",
-    industry: "Concrete & Construction",
-    description:
-      "From invisible to booked solid. A full SEO build that took a concrete contractor from no online presence to #1 on their primary service term in 90 days.",
-    metric: "$250K+",
-    metricLabel: "Revenue generated in 90 days",
-    image: "/kinsmen-hero.jpg",
-    logo: "/images/Kinsmen Consulting LTD Logo.png",
-    url: "https://www.kinsmenconsulting.ca",
-    urlLabel: "kinsmenconsulting.ca",
-  },
-  {
-    index: "02",
-    client: "MSV Plumbing Services",
-    location: "Brisbane, Queensland",
-    industry: "Plumbing & Trade Services",
-    description:
-      "Built from zero. A new website and local SEO strategy that took MSV from no clients to consistent weekly bookings — enough to hire staff and expand the business.",
-    metric: "0 → Booked",
-    metricLabel: "Consistent weekly clients from scratch",
-    image: "/images/MSV Plumbing Website Screenshot.png",
-    logo: "/images/msv-hero.png",
-    url: "#",
-    urlLabel: "msvplumbing.com.au",
-  },
-];
+export const runtime = "nodejs";
 
-export default function CaseStudy() {
-  return (
-    <section className={`${styles.case} section-dark`} id="work">
+type Body = {
+  name?: string;
+  email?: string;
+  business?: string;
+  industry?: string;
+  website?: string;
+  message?: string;
+};
 
-      <div className={styles.grid} aria-hidden="true">
-        <div className={styles.gridLine} />
-        <div className={styles.gridLine} />
-        <div className={styles.gridLine} />
-        <div className={styles.gridLine} />
-        <div className={styles.gridLine} />
+function escapeHtml(s: string): string {
+  return s
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+export async function POST(req: Request) {
+  try {
+    const body = (await req.json()) as Body;
+    const { name, email, business, industry, website, message } = body;
+
+    if (!name || !email || !business || !industry || !message) {
+      return NextResponse.json(
+        { error: "Missing required fields" },
+        { status: 400 }
+      );
+    }
+
+    const to = process.env.CONTACT_TO_EMAIL;
+    const from = process.env.CONTACT_FROM_EMAIL;
+    if (!to || !from) {
+      return NextResponse.json(
+        { error: "Server not configured" },
+        { status: 500 }
+      );
+    }
+
+    const html = `
+      <div style="font-family: -apple-system, sans-serif; max-width: 600px; padding: 24px; color: #111;">
+        <h2 style="margin: 0 0 16px;">New enquiry from scaleseo.co</h2>
+        <table style="border-collapse: collapse; width: 100%;">
+          <tr><td style="padding:8px 0; color:#666; width:140px;">Name</td><td>${escapeHtml(name)}</td></tr>
+          <tr><td style="padding:8px 0; color:#666;">Email</td><td><a href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a></td></tr>
+          <tr><td style="padding:8px 0; color:#666;">Business</td><td>${escapeHtml(business)}</td></tr>
+          <tr><td style="padding:8px 0; color:#666;">Industry</td><td>${escapeHtml(industry)}</td></tr>
+          <tr><td style="padding:8px 0; color:#666;">Website</td><td>${website ? `<a href="${escapeHtml(website)}">${escapeHtml(website)}</a>` : "—"}</td></tr>
+        </table>
+        <h3 style="margin: 24px 0 8px;">Message</h3>
+        <div style="white-space: pre-wrap; background: #f6f6f6; padding: 16px; border-radius: 6px;">${escapeHtml(message)}</div>
       </div>
+    `;
 
-      <div className={styles.inner}>
-        <div className="section-label reveal-up">Success Stories</div>
+    const resend = getResend();
+    const result = await resend.emails.send({
+      from: `Scale SEO Enquiries <${from}>`,
+      to: [to],
+      replyTo: email,
+      subject: `New enquiry — ${business}`,
+      html,
+    });
 
-        <div className={`${styles.header} reveal-up`}>
-          <h2 className={styles.heading}>
-            Real businesses. <em>Real revenue.</em>
-          </h2>
-          <div className={styles.globalStat}>
-            <div className={styles.globalValue}>$250K+</div>
-            <div className={styles.globalLabel}>Revenue generated across all clients</div>
-          </div>
-        </div>
+    if (result.error) {
+      return NextResponse.json({ error: result.error.message }, { status: 502 });
+    }
 
-        <div className={styles.stories}>
-          {cases.map((c, i) => (
-            <div
-              key={c.index}
-              className={`${styles.story} reveal-up`}
-              style={{ transitionDelay: `${i * 0.1}s` }}
-            >
-              <a
-                href={c.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.imageWrap}
-              >
-                <Image
-                  src={c.image}
-                  alt={`${c.client} website`}
-                  width={1400}
-                  height={900}
-                  className={styles.image}
-                  priority={i === 0}
-                />
-                <div className={styles.overlay}>
-                  <div className={styles.overlayLogo}>
-                    <Image
-                      src={c.logo}
-                      alt={`${c.client} logo`}
-                      width={200}
-                      height={80}
-                      className={styles.logoImg}
-                    />
-                  </div>
-                  <div className={styles.overlayLink}>
-                    {c.urlLabel} →
-                  </div>
-                </div>
-              </a>
-
-              <div className={styles.content}>
-                <div className={styles.contentTop}>
-                  <span className={styles.index}>SS — {c.index}</span>
-                  <span className={styles.tag}>{c.industry}</span>
-                </div>
-                <h3 className={styles.client}>{c.client}</h3>
-                <p className={styles.location}>{c.location}</p>
-                <p className={styles.description}>{c.description}</p>
-                <div className={styles.metric}>
-                  <div className={styles.metricValue}>{c.metric}</div>
-                  <div className={styles.metricLabel}>{c.metricLabel}</div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
+    return NextResponse.json({ ok: true });
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : "Unknown error";
+    return NextResponse.json({ error: msg }, { status: 500 });
+  }
 }
