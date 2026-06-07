@@ -11,7 +11,7 @@ const cases = [
       "From invisible to booked solid. Full SEO build that took a concrete contractor from zero online presence to #1 on their primary service term — in 90 days.",
     metric: "$250K+",
     metricLabel: "Revenue generated in 90 days",
-    image: "/kinsmen-hero.jpg",
+    image: "/images/kinsmen-hero.jpg",
     url: "https://www.kinsmenconsulting.ca",
     urlLabel: "kinsmenconsulting.ca",
   },
