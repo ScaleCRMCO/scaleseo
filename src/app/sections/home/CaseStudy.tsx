@@ -47,15 +47,14 @@ export default function CaseStudy() {
         </div>
       </div>
 
-      {/* Browser mockup */}
       <div className={`${styles.mockup} reveal-up`}>
         <div className={styles.mockupChrome}>
           <div className={styles.mockupDots}>
-            <span /><span /><span />
+            <span />
+            <span />
+            <span />
           </div>
-          <div className={styles.mockupUrl}>
-            kinsmenconsulting.ca
-          </div>
+          <div className={styles.mockupUrl}>kinsmenconsulting.ca</div>
         </div>
         <div className={styles.mockupScreen}>
           <Image
@@ -70,11 +69,11 @@ export default function CaseStudy() {
       </div>
 
       <blockquote className={`${styles.quote} reveal-up`}>
-        &ldquo;Corbin understood our business from day one. Three months later, we&rsquo;re getting more clients.&rdquo;
+        &ldquo;Corbin understood our business from day one. Three months
+        later, we&rsquo;re getting more clients.&rdquo;
         <div className={styles.attr}>
           Kinsmen Consulting&nbsp;&nbsp;·&nbsp;&nbsp;
-          Kinsmen Consulting&nbsp;&nbsp;·&nbsp;&nbsp;
-          
+          <a
             href="https://www.kinsmenconsulting.ca"
             target="_blank"
             rel="noopener"
