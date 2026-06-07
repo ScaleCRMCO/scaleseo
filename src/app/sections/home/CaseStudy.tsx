@@ -73,6 +73,7 @@ export default function CaseStudy() {
         &ldquo;Corbin understood our business from day one. Three months later, we&rsquo;re getting more clients.&rdquo;
         <div className={styles.attr}>
           Kinsmen Consulting&nbsp;&nbsp;·&nbsp;&nbsp;
+          Kinsmen Consulting&nbsp;&nbsp;·&nbsp;&nbsp;
           
             href="https://www.kinsmenconsulting.ca"
             target="_blank"
