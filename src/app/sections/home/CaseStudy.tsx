@@ -12,7 +12,7 @@ const cases = [
     metric: "$250K+",
     metricLabel: "Revenue generated in 90 days",
     image: "/kinsmen-hero.jpg",
-    logo: "/images/Kinsmen Consulting LTD Logo.png",
+    logo: "/images/kinsmen-logo.png",
     url: "https://www.kinsmenconsulting.ca",
     urlLabel: "kinsmenconsulting.ca",
   },
@@ -25,8 +25,8 @@ const cases = [
       "Built from zero. A new website and local SEO strategy that took MSV from no clients to consistent weekly bookings — enough to hire staff and expand the business.",
     metric: "0 → Booked",
     metricLabel: "Consistent weekly clients from scratch",
-    image: "/images/MSV Plumbing Website Screenshot.png",
-    logo: "/images/msv-hero.png",
+    image: "/images/msv-screenshot.png",
+    logo: "/images/msv-logo.png",
     url: "#",
     urlLabel: "msvplumbing.com.au",
   },
@@ -73,24 +73,22 @@ export default function CaseStudy() {
                 <Image
                   src={c.image}
                   alt={`${c.client} website`}
-                  width={1400}
-                  height={900}
+                  width={1200}
+                  height={750}
                   className={styles.image}
                   priority={i === 0}
+                  unoptimized
                 />
                 <div className={styles.overlay}>
-                  <div className={styles.overlayLogo}>
-                    <Image
-                      src={c.logo}
-                      alt={`${c.client} logo`}
-                      width={200}
-                      height={80}
-                      className={styles.logoImg}
-                    />
-                  </div>
-                  <div className={styles.overlayLink}>
-                    {c.urlLabel} →
-                  </div>
+                  <Image
+                    src={c.logo}
+                    alt={`${c.client} logo`}
+                    width={180}
+                    height={60}
+                    className={styles.logoImg}
+                    unoptimized
+                  />
+                  <div className={styles.overlayLink}>{c.urlLabel} →</div>
                 </div>
               </a>
 
@@ -103,7 +101,9 @@ export default function CaseStudy() {
                 <p className={styles.location}>{c.location}</p>
                 <p className={styles.description}>{c.description}</p>
                 <div className={styles.metric}>
-                  <div className={styles.metricValue}>{c.metric}</div>
+                  <div className={styles.metricBubble}>
+                    <span className={styles.metricValue}>{c.metric}</span>
+                  </div>
                   <div className={styles.metricLabel}>{c.metricLabel}</div>
                 </div>
               </div>
