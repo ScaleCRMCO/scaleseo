@@ -25,7 +25,7 @@ const cases = [
     metric: "0 → Weekly",
     metricLabel: "Consistent booked clients from scratch",
     image: "/images/msv-screenshot.png",
-    url: "#",
+    url: "https://msvplumbingservices.com.au/",
     urlLabel: "msvplumbing.com.au",
   },
 ];
