@@ -31,6 +31,21 @@
   gap: 12px;
 }
 
+.brandDeer {
+  height: 32px;
+  width: auto;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.brand:hover .brandDeer {
+  transform: rotate(-4deg) scale(1.05);
+}
+
+.wordmark {
+  font-family: var(--display);
+}
+
 .wordmark {
   font-family: var(--display);
 }
