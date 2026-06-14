@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import Logo from "./Logo";
 import styles from "./Nav.module.css";
 
 export default function Nav() {
@@ -24,7 +23,11 @@ export default function Nav() {
       }`}
     >
       <Link href="/" className={styles.brand}>
-        <Logo size={26} />
+        <img
+          src="/images/scaleseo-deer-removedbackground.png"
+          alt="Scale SEO"
+          className={styles.brandDeer}
+        />
         <span className={styles.wordmark}>
           Scale<span style={{ fontStyle: "italic" }}>SEO</span>
         </span>
