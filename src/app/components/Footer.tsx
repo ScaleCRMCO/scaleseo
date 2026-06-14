@@ -49,9 +49,16 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Large blended wordmark */}
+     {/* Large blended wordmark + deer */}
       <div className={styles.wordmarkLarge} aria-hidden="true">
-        Scale<em>SEO</em>
+        <img
+          src="/images/scaleseo-deer-removedbackground.png"
+          alt=""
+          className={styles.wordmarkDeer}
+        />
+        <span className={styles.wordmarkText}>
+          Scale<em>SEO</em>
+        </span>
       </div>
 
       <div className={styles.bottom}>
