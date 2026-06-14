@@ -98,6 +98,10 @@
   color: var(--ink-on-dark);
 }
 
+.onDark .brandDeer {
+  filter: brightness(0) invert(1);
+}
+
 .onDark .mark {
   color: var(--ink-dim-on-dark);
 }
