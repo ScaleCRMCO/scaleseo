@@ -22,12 +22,7 @@ export default function Nav() {
         isDarkPage ? styles.onDark : ""
       }`}
     >
-      <Link href="/" className={styles.brand}>
-        <img
-          src="/images/scaleseo-deer-removedbackground.png"
-          alt="Scale SEO"
-          className={styles.brandDeer}
-        />
+     <Link href="/" className={styles.brand}>
         <span className={styles.wordmark}>
           Scale<span style={{ fontStyle: "italic" }}>SEO</span>
         </span>
