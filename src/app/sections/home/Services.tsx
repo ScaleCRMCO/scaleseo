@@ -59,7 +59,7 @@ export default function Services() {
           <li key={s.num} className={`${styles.item} reveal-up`}>
             <span className={styles.itemNum}>{s.num}</span>
             <span className={styles.itemName}>{s.name}</span>
-            <span className={styles.itemDesc}>{s.itemDesc ?? s.desc}</span>
+            <span className={styles.itemDesc}>{s.desc}</span>
             <span className={styles.itemTag}>{s.tag}</span>
           </li>
         ))}
