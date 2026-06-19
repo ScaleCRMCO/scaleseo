@@ -31,10 +31,10 @@ export default function Footer() {
           <div className={styles.napText}>EST. 2025</div>
         </div>
       </div>
-     {/* Large blended wordmark + deer */}
+     {/* Large blended wordmark + crow */}
       <div className={styles.wordmarkLarge} aria-hidden="true">
         <img
-          src="/images/scaleseo-deer-removedbackground.png"
+          src="/images/scaleseo-logo-crow.png"
           alt=""
           className={styles.wordmarkDeer}
         />
