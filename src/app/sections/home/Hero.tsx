@@ -54,7 +54,7 @@ export default function Hero() {
         </div>
         <h1 className={styles.title}>
           <span className={styles.line}>
-            <span className={styles.lineInner}>Calgary search</span>
+            <span className={styles.lineInner}>Calgary SEO</span>
           </span>
           <span className={styles.line}>
             <span className={styles.lineInner}>
