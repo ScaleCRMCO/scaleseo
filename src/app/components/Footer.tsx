@@ -24,7 +24,7 @@ export default function Footer() {
       <div className={styles.nap}>
         <div className={styles.napCol}>
           <div className={styles.napLabel}>Contact</div>
-          <a href="tel:+61492251241" className={styles.napLink}>0492 251 241</a>
+          <a href="tel:+14038751110" className={styles.napLink}>(403) 875-1110</a>
           <a href="mailto:team@scaleseo.co" className={styles.napLink}>team@scaleseo.co</a>
         </div>
         <div className={styles.napCol}>
