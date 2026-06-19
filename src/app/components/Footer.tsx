@@ -30,8 +30,7 @@ export default function Footer() {
         <div className={styles.napCol}>
           <div className={styles.napLabel}>Service Area</div>
           <div className={styles.napText}>
-            <Link href="/brisbane" className={styles.napLink}>Brisbane</Link>
-            &nbsp;·&nbsp; Calgary &nbsp;·&nbsp; Remote
+          Calgary &nbsp;·&nbsp; Alberta &nbsp;·&nbsp; Remote
           </div>
           <div className={styles.napText}>Australia &amp; Canada</div>
         </div>
@@ -58,7 +57,7 @@ export default function Footer() {
       <div className={styles.bottom}>
         <div className={styles.copy}>© 2026 Scale SEO · Corbin Jensen</div>
         <div className={styles.tagline}>
-          SEO for Brisbane &amp; Calgary &nbsp;·&nbsp; Serving AU &amp; Canada
+          SEO for Calgary &nbsp; Serving Canada
         </div>
       </div>
     </footer>
