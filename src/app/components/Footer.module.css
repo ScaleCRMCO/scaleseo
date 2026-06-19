@@ -187,9 +187,10 @@
     padding: 40px 0;
   }
 
-  .wordmarkLarge {
+.wordmarkLarge {
     margin: 0 -24px;
-    padding: 16px 0 16px 24px;
+    padding: 16px 24px;
+    font-size: clamp(48px, 17vw, 90px);
   }
 
   .bottom {
