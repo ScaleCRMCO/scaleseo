@@ -113,6 +113,7 @@
 .wordmarkLarge {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.15em;
   font-family: var(--display);
   font-weight: 500;
@@ -123,7 +124,7 @@
   white-space: nowrap;
   overflow: hidden;
   margin: 0 -40px;
-  padding: 24px 0 24px 40px;
+  padding: 24px 40px;
   user-select: none;
   pointer-events: none;
 }
