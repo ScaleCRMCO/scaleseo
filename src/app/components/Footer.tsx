@@ -12,6 +12,9 @@ export default function Footer() {
           <a href="https://www.instagram.com/scaleseo.co/" target="_blank" rel="noopener noreferrer">
             Instagram ↗
           </a>
+          <a href="https://maps.app.goo.gl/87SRRBXuZPeywLJH8" target="_blank" rel="noopener noreferrer">
+            Google ↗
+          </a>
           <a href="mailto:team@scaleseo.co">
             Email ↗
           </a>
@@ -29,6 +32,12 @@ export default function Footer() {
           Calgary &nbsp;·&nbsp; Alberta &nbsp;·&nbsp; Canada &nbsp;·&nbsp; Remote
           </div>
           <div className={styles.napText}>EST. 2025</div>
+        </div>
+        <div className={styles.napCol}>
+          <div className={styles.napLabel}>Find Us On Google</div>
+          <a href="https://maps.app.goo.gl/87SRRBXuZPeywLJH8" target="_blank" rel="noopener noreferrer" className={styles.napLink}>
+            View our Google Business Profile ↗
+          </a>
         </div>
       </div>
      {/* Large blended wordmark + crow */}
