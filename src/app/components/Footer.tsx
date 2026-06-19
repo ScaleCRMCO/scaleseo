@@ -30,7 +30,7 @@ export default function Footer() {
         <div className={styles.napCol}>
           <div className={styles.napLabel}>Service Area</div>
           <div className={styles.napText}>
-          Calgary &nbsp;·&nbsp; Alberta &nbsp;·&nbsp; Remote
+          Calgary &nbsp;·&nbsp; Alberta ·&nbsp; Canada ·&nbsp; Remote
           </div>
           <div className={styles.napText}>EST. 2025</div>
         </div>
