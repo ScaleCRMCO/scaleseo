@@ -5,22 +5,20 @@
 
 :root {
   /* Light theme colors */
-  --bg: #F5F1EA;
-  --bg-elev: #EBE5DA;
-  --ink: #1A1714;
+  --bg: #FAF8F4;
+  --bg-elev: #F0EBE2;
+  --ink: #0F0D0B;
   --ink-dim: #6B6259;
   --ink-faint: #B5AEA3;
   --accent: #C2410C;
-  --line: rgba(26, 23, 20, 0.08);
-  --line-strong: rgba(26, 23, 20, 0.18);
-
+  --line: rgba(15, 13, 11, 0.08);
+  --line-strong: rgba(15, 13, 11, 0.18);
   /* Dark section variants (used on alternating sections) */
-  --bg-dark: #1A1714;
-  --ink-on-dark: #F5F1EA;
+  --bg-dark: #0F0D0B;
+  --ink-on-dark: #FAF8F4;
   --ink-dim-on-dark: #8B8378;
-  --line-on-dark: rgba(245, 241, 234, 0.1);
-  --line-strong-on-dark: rgba(245, 241, 234, 0.22);
-
+  --line-on-dark: rgba(250, 248, 244, 0.1);
+  --line-strong-on-dark: rgba(250, 248, 244, 0.22);
   /* Fonts */
   --display: 'Fraunces', 'Times New Roman', serif;
   --sans: 'Inter Tight', system-ui, sans-serif;
