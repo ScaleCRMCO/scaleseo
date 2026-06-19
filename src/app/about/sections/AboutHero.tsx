@@ -19,7 +19,7 @@ export default function AboutHero() {
         <span className={styles.scrollArrow}>↓</span>
       </div>
       <div className={`${styles.corner} ${styles.bottomRight}`}>
-        Est. Canada &nbsp;·&nbsp; 2026
+        Est. Canada &nbsp;·&nbsp; 2025
       </div>
 
       <div className={styles.content}>
