@@ -36,7 +36,7 @@ export default function Footer() {
         <div className={styles.napCol}>
           <div className={styles.napLabel}>Find Us On Google</div>
           <a href="https://maps.app.goo.gl/87SRRBXuZPeywLJH8" target="_blank" rel="noopener noreferrer" className={styles.napLink}>
-            View our Google Business Profile ↗
+           View our Google Business Profile ↗&#xFE0E;
           </a>
         </div>
       </div>
