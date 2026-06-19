@@ -16,8 +16,8 @@ export default function About() {
               </defs>
               <text className={styles.circleTextInner}>
                 <textPath href="#aboutCirclePath" startOffset="0%">
-                  CORBIN JENSEN · EST. CANADA · CA · CORBIN JENSEN · SRV. BRISBANE · AU ·&nbsp;
-                </textPath>
+               CORBIN JENSEN · EST. CANADA · CA · CORBIN JENSEN · SEO SPECIALIST · CALGARY ·&nbsp;
+               </textPath>
               </text>
             </svg>
            <div className={styles.photo}>
@@ -40,9 +40,11 @@ export default function About() {
             About
           </div>
           <p>
-            I&rsquo;m a <em>freelancer</em>, not an agency. I work with a small
-            roster of clients across trades and professional services in
-            Australia and Canada.
+            <p>
+             I&rsquo;m a <em>freelancer</em>, not an agency. I work with a small
+              roster of established Calgary businesses across trades and professional
+              services.
+              </p>
           </p>
           <p>
             I learned this craft by doing it. My first major project generated
