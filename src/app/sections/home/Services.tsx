@@ -14,7 +14,7 @@ const services = [
   },
   {
     num: "03",
-    name: "Technical",
+    name: "Technical SEO",
     desc: "Speed, crawlability, schema, indexing. The unglamorous groundwork that decides whether the rest of your SEO counts for anything.",
     tag: "Core",
   },
@@ -40,33 +40,39 @@ const services = [
 export default function Services() {
   return (
     <section className={`${styles.services} section-dark`} id="services">
-      <div className="section-label reveal-up">What I Do</div>
-      <div className={`${styles.intro} reveal-up`}>
-        <h2 className={styles.heading}>
-          Six things, done <em>properly.</em>
-        </h2>
-        <p className={styles.body}>
-          <strong>I don&rsquo;t do everything &mdash; on purpose.</strong> I do
-          the handful of things that actually bring established Calgary
-          businesses more leads, and I do them myself. No juniors, no offshore
-          team, no account manager between you and the person doing the work. If
-          you want a 40-person agency, I&rsquo;m not your guy. If you want one
-          specialist who learns your business and owns the result, keep reading.
-        </p>
-      </div>
-      <ul className={styles.list}>
-        {services.map((s) => (
-          <li key={s.num} className={`${styles.item} reveal-up`}>
-            <span className={styles.itemNum}>{s.num}</span>
-            <div className={styles.itemBody}>
-              <span className={styles.itemName}>{s.name}</span>
-              <span className={styles.itemDesc}>{s.desc}</span>
+      <div className={styles.split}>
+        {/* LEFT — sticky anchor */}
+        <div className={styles.left}>
+          <div className="section-label">What I Do</div>
+          <h2 className={styles.heading}>
+            Six things,<br />done <em>properly.</em>
+          </h2>
+          <p className={styles.body}>
+            <strong>I don&rsquo;t do everything &mdash; on purpose.</strong> I do
+            the handful of things that bring established Calgary businesses more
+            leads, and I do them myself. No juniors, no offshore team, no account
+            manager between you and the person doing the work.
+          </p>
+          <a href="#contact" className={styles.cta}>
+            <span>Start a conversation</span>
+            <span className={styles.ctaArrow}>→</span>
+          </a>
+        </div>
+
+        {/* RIGHT — scrolling list */}
+        <div className={styles.right}>
+          {services.map((s) => (
+            <div key={s.num} className={`${styles.item} reveal-up`}>
+              <div className={styles.itemTop}>
+                <span className={styles.itemNum}>{s.num}</span>
+                <span className={styles.itemTag}>{s.tag}</span>
+              </div>
+              <h3 className={styles.itemName}>{s.name}</h3>
+              <p className={styles.itemDesc}>{s.desc}</p>
             </div>
-            <span className={styles.itemTag}>{s.tag}</span>
-            <span className={styles.itemArrow} aria-hidden="true">→</span>
-          </li>
-        ))}
-      </ul>
+          ))}
+        </div>
+      </div>
     </section>
   );
 }
