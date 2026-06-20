@@ -1,39 +1,16 @@
 .footer {
   background: var(--bg-dark);
   color: var(--ink-on-dark);
-  padding: 80px 40px 32px;
+  padding: 100px 40px 32px;
   position: relative;
 }
 
-/* === TOP ROW: brand + socials === */
+/* === TOP: socials row === */
 .top {
   display: flex;
   justify-content: flex-end;
-  align-items: center;
-  padding-bottom: 60px;
-  border-bottom: 1px solid var(--line-on-dark);
+  padding-bottom: 48px;
 }
-
-.brand {
-  font-family: var(--display);
-  font-weight: 500;
-  font-size: 28px;
-  letter-spacing: -0.01em;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  color: var(--ink-on-dark);
-}
-
-.brand :global(svg) {
-  color: var(--ink-on-dark);
-}
-
-.wordmark em {
-  font-style: italic;
-  font-weight: 400;
-}
-
 .socials {
   display: flex;
   gap: 36px;
@@ -42,14 +19,12 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
-
 .socials a {
   color: var(--ink-on-dark);
   text-decoration: none;
   position: relative;
   transition: color 0.3s ease;
 }
-
 .socials a::after {
   content: '';
   position: absolute;
@@ -60,91 +35,83 @@
   background: var(--accent);
   transition: width 0.3s ease;
 }
-
 .socials a:hover { color: var(--accent); }
 .socials a:hover::after { width: 100%; }
 
-/* === MIDDLE: NAP block === */
+/* === MIDDLE: NAP column grid === */
 .nap {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 60px;
-  padding: 60px 0;
-  border-bottom: none;
+  padding: 56px 0;
 }
-
 .napCol {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 14px;
 }
-
 .napLabel {
   font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.18em;
+  font-size: 11px;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--ink-dim-on-dark);
-  margin-bottom: 6px;
+  padding-bottom: 16px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid var(--line-on-dark);
 }
-
 .napText {
   font-family: var(--display);
   font-weight: 400;
-  font-size: 18px;
+  font-size: 19px;
   line-height: 1.4;
   color: var(--ink-on-dark);
 }
-
 .napLink {
   font-family: var(--display);
   font-weight: 400;
-  font-size: 18px;
+  font-size: 19px;
   line-height: 1.4;
   color: var(--ink-on-dark);
   text-decoration: none;
   transition: color 0.3s ease;
   width: fit-content;
 }
-
 .napLink:hover { color: var(--accent); }
 
-/* === LARGE WORDMARK + DEER LOCKUP === */
+/* === Hairline before the giant wordmark === */
+.nap + * { position: relative; }
+
+/* === LARGE WORDMARK + CROW (full-width, like Neue Montreal) === */
 .wordmarkLarge {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.15em;
+  gap: 0.12em;
   font-family: var(--display);
   font-weight: 500;
-  font-size: clamp(80px, 16vw, 220px);
-  line-height: 0.85;
-  letter-spacing: -0.045em;
-  color: rgba(245, 241, 234, 0.07);
+  font-size: clamp(90px, 21vw, 320px);
+  line-height: 0.82;
+  letter-spacing: -0.05em;
+  color: var(--ink-on-dark);
   white-space: nowrap;
   overflow: hidden;
   margin: 0 -40px;
-  padding: 24px 40px;
+  padding: 40px 40px 16px;
+  border-top: 1px solid var(--line-on-dark);
   user-select: none;
   pointer-events: none;
 }
-
-.wordmarkText {
-  display: inline-block;
-}
-
+.wordmarkText { display: inline-block; }
 .wordmarkLarge em {
   font-style: italic;
   font-weight: 400;
+  color: var(--accent);
 }
-
 .wordmarkDeer {
-  height: 1.1em;
+  height: 0.9em;
   width: auto;
   display: block;
-  /* Force black-line PNG to render as cream + match wordmark opacity */
-  filter: brightness(0) invert(1);
-  opacity: 0.07;
   flex-shrink: 0;
 }
 
@@ -153,7 +120,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 40px;
-  padding-top: 32px;
+  padding-top: 24px;
   align-items: center;
   font-family: var(--mono);
   font-size: 10px;
@@ -161,42 +128,19 @@
   text-transform: uppercase;
   color: var(--ink-dim-on-dark);
 }
-
 .copy { text-align: left; }
 .tagline { text-align: right; }
 
-/* === RESPONSIVE === */
 @media (max-width: 900px) {
-  .footer { padding: 60px 24px 28px; }
-
-  .top {
-    grid-template-columns: 1fr;
-    gap: 36px;
-    padding-bottom: 40px;
-  }
-
-  .socials {
-    flex-wrap: wrap;
-    gap: 24px;
-    font-size: 11px;
-  }
-
-  .nap {
-    grid-template-columns: 1fr;
-    gap: 36px;
-    padding: 40px 0;
-  }
-
-.wordmarkLarge {
+  .footer { padding: 64px 24px 28px; }
+  .top { justify-content: flex-start; padding-bottom: 36px; }
+  .socials { flex-wrap: wrap; gap: 20px; font-size: 11px; }
+  .nap { grid-template-columns: 1fr; gap: 36px; padding: 40px 0; }
+  .wordmarkLarge {
     margin: 0 -24px;
-    padding: 16px 24px;
-    font-size: clamp(48px, 17vw, 90px);
+    padding: 28px 24px 12px;
+    font-size: clamp(56px, 19vw, 130px);
   }
-
-  .bottom {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-
+  .bottom { grid-template-columns: 1fr; gap: 12px; }
   .tagline { text-align: left; }
 }
