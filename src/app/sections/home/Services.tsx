@@ -39,7 +39,7 @@ const services = [
 ];
 export default function Services() {
   return (
-    <section className={styles.services} id="services">
+    <section className={`${styles.services} section-dark`} id="services">
       <div className="section-label reveal-up">What I Do</div>
       <div className={`${styles.intro} reveal-up`}>
         <h2 className={styles.heading}>
@@ -58,9 +58,12 @@ export default function Services() {
         {services.map((s) => (
           <li key={s.num} className={`${styles.item} reveal-up`}>
             <span className={styles.itemNum}>{s.num}</span>
-            <span className={styles.itemName}>{s.name}</span>
-            <span className={styles.itemDesc}>{s.desc}</span>
+            <div className={styles.itemBody}>
+              <span className={styles.itemName}>{s.name}</span>
+              <span className={styles.itemDesc}>{s.desc}</span>
+            </div>
             <span className={styles.itemTag}>{s.tag}</span>
+            <span className={styles.itemArrow} aria-hidden="true">→</span>
           </li>
         ))}
       </ul>
