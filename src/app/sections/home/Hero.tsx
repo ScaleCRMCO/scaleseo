@@ -35,7 +35,7 @@ export default function Hero() {
         <span className={styles.scrollArrow}>↓</span>
       </div>
       <div className={`${styles.corner} ${styles.bottomRight}`}>
-        Calgary, Canada &nbsp;·&nbsp; Est. 2025
+       Est. 2025
       </div>
       {/* Main content */}
       <div className={styles.content}>
