@@ -22,7 +22,7 @@ export default function About() {
            <div className={styles.photo}>
               <div className={styles.photoLogo}>
                 <img
-                  src="/images/scaleseo-logo-crow.png"
+                  src="/images/scaleseo-logo.png"
                   alt=""
                   className={styles.photoLogoImg}
                 />
