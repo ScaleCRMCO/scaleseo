@@ -49,8 +49,8 @@
   text-transform: uppercase;
 }
 .leaf {
-  width: 20px;
-  height: 20px;
+  width: 23px;
+  height: 23px;
   color: var(--accent);
   flex-shrink: 0;
   display: block;
