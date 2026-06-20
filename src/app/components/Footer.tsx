@@ -15,6 +15,15 @@ export default function Footer() {
           <a href="https://maps.app.goo.gl/87SRRBXuZPeywLJH8" target="_blank" rel="noopener noreferrer">
             Google ↗
           </a>
+          
+            href="https://clutch.co/profile/scale-seo"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.clutchLink}
+            aria-label="Scale SEO on Clutch"
+          >
+            <img src="/images/clutch-logo.png" alt="Clutch" className={styles.clutchLogo} />
+          </a>
           <a href="mailto:team@scaleseo.co">
             Email ↗
           </a>
