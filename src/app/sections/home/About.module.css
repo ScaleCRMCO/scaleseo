@@ -16,38 +16,23 @@
 .stamp {
   position: sticky;
   top: 120px;
+  display: flex;
+  justify-content: center;
 }
-
 /* === ROTATING CIRCLE === */
 .circleOuter {
-  width: 240px;
-  height: 240px;
+  width: clamp(300px, 26vw, 460px);
+  aspect-ratio: 1;
+  height: auto;
   position: relative;
 }
-
-.circleText {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  animation: rotate 40s linear infinite;
-}
-
-.circleTextInner {
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.18em;
-  fill: var(--ink-dim);
-  text-transform: uppercase;
-}
-
 .photo {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 170px;
-  height: 170px;
+  width: 68%;
+  height: 68%;
   border-radius: 50%;
   overflow: hidden;
   background: var(--bg-elev);
