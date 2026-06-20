@@ -10,7 +10,6 @@
   align-items: center;
   transition: all 0.4s ease;
 }
-
 .scrolled {
   padding: 14px 40px;
   background: rgba(245, 241, 234, 0.85);
@@ -18,7 +17,6 @@
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--line);
 }
-
 .brand {
   font-family: var(--display);
   font-weight: 500;
@@ -30,26 +28,18 @@
   align-items: center;
   gap: 12px;
 }
-
 .brandDeer {
   height: 32px;
   width: auto;
   display: block;
   transition: transform 0.4s ease;
 }
-
 .brand:hover .brandDeer {
   transform: rotate(-4deg) scale(1.05);
 }
-
 .wordmark {
   font-family: var(--display);
 }
-
-.wordmark {
-  font-family: var(--display);
-}
-
 .mark {
   font-family: var(--mono);
   font-weight: 400;
@@ -58,7 +48,6 @@
   letter-spacing: 0.15em;
   text-transform: uppercase;
 }
-
 .links {
   display: flex;
   gap: 32px;
@@ -67,14 +56,12 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
-
 .links a {
   color: var(--ink);
   text-decoration: none;
   position: relative;
   transition: color 0.2s;
 }
-
 .links a::after {
   content: '';
   position: absolute;
@@ -85,11 +72,9 @@
   background: var(--accent);
   transition: width 0.3s ease;
 }
-
 .links a:hover {
   color: var(--accent);
 }
-
 .links a:hover::after {
   width: 100%;
 }
@@ -97,31 +82,29 @@
 .onDark .brand {
   color: var(--ink-on-dark);
 }
-
 .onDark .brandDeer {
   filter: brightness(0) invert(1);
 }
-
 .onDark .mark {
   color: var(--ink-dim-on-dark);
 }
-
 .onDark .links a {
   color: var(--ink-on-dark);
 }
-
 .onDark .links a:hover {
   color: var(--accent);
 }
-
 .onDark.scrolled {
   background: rgba(26, 23, 20, 0.85);
   border-bottom: 1px solid var(--line-on-dark);
 }
-
-@media (max-width: 900px) {
-  .nav { padding: 16px 24px; }
-  .links { display: none; }
+/* When the mobile menu is open, drop the blur so the full-screen
+   overlay isn't trapped inside the nav's containing block */
+.menuOpen.scrolled {
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-bottom: none;
 }
 /* === Hamburger button (hidden on desktop) === */
 .burger {
@@ -145,7 +128,6 @@
   transition: transform 0.35s ease, opacity 0.3s ease;
 }
 .onDark .burgerLine { background: var(--ink-on-dark); }
-
 /* animate into an X when open */
 .menuOpen .burgerLine:nth-child(1) {
   transform: translateY(3.75px) rotate(45deg);
@@ -154,7 +136,6 @@
   transform: translateY(-3.75px) rotate(-45deg);
 }
 .menuOpen .burgerLine { background: var(--ink-on-dark); }
-
 /* === Full-screen mobile menu === */
 .mobileMenu {
   position: fixed;
@@ -191,7 +172,6 @@
 .mobileMenu a:active {
   color: var(--accent);
 }
-
 @media (max-width: 900px) {
   .nav { padding: 16px 24px; }
   .links { display: none; }
