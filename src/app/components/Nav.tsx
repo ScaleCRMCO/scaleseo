@@ -25,10 +25,13 @@ export default function Nav() {
         isDarkPage ? styles.onDark : ""
       } ${open ? styles.menuOpen : ""}`}
     >
-      <Link href="/" className={styles.brand} onClick={close}>
+    <Link href="/" className={styles.brand} onClick={close}>
         <span className={styles.wordmark}>
           Scale<span style={{ fontStyle: "italic" }}>SEO</span>
         </span>
+        <svg className={styles.leaf} viewBox="0 0 512 512" aria-hidden="true">
+          <path d="M256 32l-24 96-72-40 24 88-96-16 64 72-88 40 96 24-56 72 96-16-8 96 64-72 64 72-8-96 96 16-56-72 96-24-88-40 64-72-96 16 24-88-72 40z" fill="currentColor"/>
+        </svg>
         <span className={styles.mark}>/ Corbin Jensen</span>
       </Link>
 
