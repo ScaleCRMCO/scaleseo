@@ -15,7 +15,7 @@ export default function About() {
               </defs>
               <text className={styles.circleTextInner}>
                 <textPath href="#aboutCirclePath" startOffset="0%">
-               CORBIN JENSEN · EST. CANADA · CA · CORBIN JENSEN · SEO SPECIALIST · CALGARY ·&nbsp;
+               SCALE SEO · EST. CANADA · CORBIN JENSEN · SEO SPECIALIST · CALGARY ·&nbsp;
                </textPath>
               </text>
             </svg>
