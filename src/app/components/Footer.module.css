@@ -5,52 +5,29 @@
   position: relative;
 }
 
-/* === TOP: socials row === */
-.top {
-  display: flex;
-  justify-content: flex-end;
-  padding-bottom: 48px;
-}
-.socials {
-  display: flex;
-  gap: 36px;
-  font-family: var(--mono);
-  font-size: 12px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-.socials a {
-  color: var(--ink-on-dark);
-  text-decoration: none;
-  position: relative;
-  transition: color 0.3s ease;
-}
-.socials a::after {
-  content: '';
-  position: absolute;
-  bottom: -6px;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background: var(--accent);
-  transition: width 0.3s ease;
-}
-.socials a:hover { color: var(--accent); }
-.socials a:hover::after { width: 100%; }
-
-/* === MIDDLE: NAP column grid === */
-.nap {
+/* === Aligned column grid: logo + 3 columns === */
+.grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 60px;
-  padding: 56px 0;
+  grid-template-columns: 1.2fr 1fr 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+  padding-bottom: 64px;
 }
-.napCol {
+.brandCol {
+  display: flex;
+  align-items: flex-start;
+}
+.brandMark {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+}
+.col {
   display: flex;
   flex-direction: column;
   gap: 14px;
 }
-.napLabel {
+.colLabel {
   font-family: var(--mono);
   font-size: 11px;
   letter-spacing: 0.16em;
@@ -60,42 +37,36 @@
   margin-bottom: 4px;
   border-bottom: 1px solid var(--line-on-dark);
 }
-.napText {
+.colText {
   font-family: var(--display);
   font-weight: 400;
-  font-size: 19px;
+  font-size: 18px;
   line-height: 1.4;
   color: var(--ink-on-dark);
 }
-.napLink {
+.colLink {
   font-family: var(--display);
   font-weight: 400;
-  font-size: 19px;
+  font-size: 18px;
   line-height: 1.4;
   color: var(--ink-on-dark);
   text-decoration: none;
-  transition: color 0.3s ease;
   width: fit-content;
+  transition: color 0.3s ease;
 }
-.napLink:hover { color: var(--accent); }
+.colLink:hover { color: var(--accent); }
 
-/* === Hairline before the giant wordmark === */
-.nap + * { position: relative; }
-
-/* === LARGE WORDMARK + CROW (full-width, like Neue Montreal) === */
+/* === Giant full-width wordmark === */
 .wordmarkLarge {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.12em;
   font-family: var(--display);
   font-weight: 500;
-  font-size: clamp(90px, 21vw, 320px);
+  font-size: clamp(90px, 22vw, 340px);
   line-height: 0.82;
   letter-spacing: -0.05em;
   color: var(--ink-on-dark);
   white-space: nowrap;
   overflow: hidden;
+  text-align: center;
   margin: 0 -40px;
   padding: 40px 40px 16px;
   border-top: 1px solid var(--line-on-dark);
@@ -108,14 +79,8 @@
   font-weight: 400;
   color: var(--accent);
 }
-.wordmarkDeer {
-  height: 0.9em;
-  width: auto;
-  display: block;
-  flex-shrink: 0;
-}
 
-/* === BOTTOM ROW === */
+/* === Bottom bar === */
 .bottom {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -133,13 +98,16 @@
 
 @media (max-width: 900px) {
   .footer { padding: 64px 24px 28px; }
-  .top { justify-content: flex-start; padding-bottom: 36px; }
-  .socials { flex-wrap: wrap; gap: 20px; font-size: 11px; }
-  .nap { grid-template-columns: 1fr; gap: 36px; padding: 40px 0; }
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px 24px;
+    padding-bottom: 40px;
+  }
+  .brandCol { grid-column: 1 / -1; }
   .wordmarkLarge {
     margin: 0 -24px;
     padding: 28px 24px 12px;
-    font-size: clamp(56px, 19vw, 130px);
+    font-size: clamp(64px, 21vw, 150px);
   }
   .bottom { grid-template-columns: 1fr; gap: 12px; }
   .tagline { text-align: left; }
