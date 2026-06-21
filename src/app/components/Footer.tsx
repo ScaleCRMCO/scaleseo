@@ -2,61 +2,53 @@ import styles from "./Footer.module.css";
 export default function Footer() {
   return (
     <footer className={styles.footer}>
-       <div className={styles.top}>
-        <nav className={styles.socials}>
-          <a href="https://www.linkedin.com/in/corbin-jensen-9a9b77127/" target="_blank" rel="noopener noreferrer">
-            LinkedIn ↗
-          </a>
-          <a href="https://www.instagram.com/scaleseo.co/" target="_blank" rel="noopener noreferrer">
-            Instagram ↗
-          </a>
-          <a href="https://maps.app.goo.gl/87SRRBXuZPeywLJH8" target="_blank" rel="noopener noreferrer">
-            Google ↗
-          </a>
-          <a href="https://clutch.co/profile/scale-seo" target="_blank" rel="noopener noreferrer">
-            Clutch ↗
-          </a>
-          <a href="mailto:team@scaleseo.co">
-            Email ↗
-          </a>
-        </nav>
-      </div>
-      <div className={styles.nap}>
-        <div className={styles.napCol}>
-          <div className={styles.napLabel}>Contact</div>
-          <a href="tel:+14038751110" className={styles.napLink}>(403) 875-1110</a>
-          <a href="mailto:team@scaleseo.co" className={styles.napLink}>team@scaleseo.co</a>
+      <div className={styles.grid}>
+        {/* Left: crow brand mark */}
+        <div className={styles.brandCol}>
+          <img
+            src="/images/scaleseo-logo.png"
+            alt="Scale SEO"
+            className={styles.brandMark}
+          />
         </div>
-        <div className={styles.napCol}>
-          <div className={styles.napLabel}>Service Area</div>
-          <div className={styles.napText}>
-          Calgary &nbsp;·&nbsp; Alberta &nbsp;·&nbsp; Canada &nbsp;·&nbsp; Remote
-          </div>
-          <div className={styles.napText}>EST. 2025</div>
+
+        {/* Contact */}
+        <div className={styles.col}>
+          <div className={styles.colLabel}>Contact</div>
+          <a href="tel:+14038751110" className={styles.colLink}>(403) 875-1110</a>
+          <a href="mailto:team@scaleseo.co" className={styles.colLink}>team@scaleseo.co</a>
         </div>
-        <div className={styles.napCol}>
-          <div className={styles.napLabel}>Find Us On Google</div>
-          <a href="https://maps.app.goo.gl/87SRRBXuZPeywLJH8" target="_blank" rel="noopener noreferrer" className={styles.napLink}>
-           View our Google Business Profile ↗&#xFE0E;
-          </a>
+
+        {/* Service Area */}
+        <div className={styles.col}>
+          <div className={styles.colLabel}>Service Area</div>
+          <span className={styles.colText}>Calgary</span>
+          <span className={styles.colText}>Alberta · Canada</span>
+          <span className={styles.colText}>Remote · Est. 2025</span>
+        </div>
+
+        {/* Connect */}
+        <div className={styles.col}>
+          <div className={styles.colLabel}>Connect</div>
+          <a href="https://www.linkedin.com/in/corbin-jensen-9a9b77127/" target="_blank" rel="noopener noreferrer" className={styles.colLink}>LinkedIn</a>
+          <a href="https://www.instagram.com/scaleseo.co/" target="_blank" rel="noopener noreferrer" className={styles.colLink}>Instagram</a>
+          <a href="https://maps.app.goo.gl/87SRRBXuZPeywLJH8" target="_blank" rel="noopener noreferrer" className={styles.colLink}>Google Profile</a>
+          <a href="https://clutch.co/profile/scale-seo" target="_blank" rel="noopener noreferrer" className={styles.colLink}>Clutch</a>
+          <a href="mailto:team@scaleseo.co" className={styles.colLink}>Email</a>
         </div>
       </div>
-     {/* Large blended wordmark + crow */}
+
+      {/* Giant wordmark */}
       <div className={styles.wordmarkLarge} aria-hidden="true">
-        <img
-          src="/images/scaleseo-logo-crow.png"
-          alt=""
-          className={styles.wordmarkDeer}
-        />
         <span className={styles.wordmarkText}>
           Scale<em>SEO</em>
         </span>
       </div>
+
+      {/* Bottom bar */}
       <div className={styles.bottom}>
         <div className={styles.copy}>© 2026 Scale SEO · Corbin Jensen</div>
-        <div className={styles.tagline}>
-          SEO for Calgary &nbsp;·&nbsp; Serving Canada
-        </div>
+        <div className={styles.tagline}>SEO for Calgary · Serving Canada</div>
       </div>
     </footer>
   );
