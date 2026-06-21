@@ -15,8 +15,8 @@
   --line-strong: rgba(15, 13, 11, 0.18);
   /* Dark section variants (used on alternating sections) */
   --bg-dark: #020202;
-  --ink-on-dark: #020202;
-  --ink-dim-on-dark: #020202;
+  --ink-on-dark: #FAF8F4;
+  --ink-dim-on-dark: #8B8378;
   --line-on-dark: rgba(250, 248, 244, 0.1);
   --line-strong-on-dark: rgba(250, 248, 244, 0.22);
   /* Fonts */
