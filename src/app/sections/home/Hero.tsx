@@ -58,7 +58,7 @@ export default function Hero() {
               </svg>
             </span>
             . I help established contractors and accounting firms turn organic
-            search into real revenue — working <strong>one-on-one</strong>, no
+            search into real revenue — working <strong>one-on-one</strong> with no
             agency between you and the person doing the work.
           </p>
 
