@@ -29,17 +29,17 @@ export default function Hero() {
       {/* Main content — split layout */}
       <div className={styles.content}>
         {/* LEFT: stacked service headline */}
-        <h1 className={styles.title}>
+      <h1 className={styles.title}>
           <span className={styles.line}>
             <span className={styles.lineInner}>Freelance</span>
           </span>
           <span className={styles.line}>
             <span className={styles.lineInner}>
-              <span className={styles.italic}>Web Development,</span>
+              <span className={styles.italic}>Calgary SEO,</span>
             </span>
           </span>
           <span className={styles.line}>
-            <span className={styles.lineInner}>SEO,</span>
+            <span className={styles.lineInner}>Content</span>
           </span>
           <span className={styles.line}>
             <span className={styles.lineInner}>
