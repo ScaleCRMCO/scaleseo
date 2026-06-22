@@ -35,11 +35,11 @@ export default function Hero() {
           </span>
           <span className={styles.line}>
             <span className={styles.lineInner}>
-              <span className={styles.italic}>Local SEO,</span>
+              <span className={styles.italic}>Web Development,</span>
             </span>
           </span>
           <span className={styles.line}>
-            <span className={styles.lineInner}>Content, Technical</span>
+            <span className={styles.lineInner}>SEO,</span>
           </span>
           <span className={styles.line}>
             <span className={styles.lineInner}>
