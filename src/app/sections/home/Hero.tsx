@@ -58,8 +58,7 @@ export default function Hero() {
               </svg>
             </span>
             . I help established contractors and accounting firms turn organic
-            search into real revenue — working <strong>one-on-one</strong> with no
-            agency between you and the person doing the work.
+            search into real revenue, working <strong>one-on-one.</strong> Own your industry. Win high value clients. 
           </p>
 
           <div className={styles.ctaGroup}>
