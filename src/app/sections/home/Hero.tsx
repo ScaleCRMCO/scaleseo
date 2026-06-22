@@ -59,7 +59,7 @@ export default function Hero() {
             </span>
             . I help established contractors and accounting firms turn organic
             search into real revenue — working <strong>one-on-one</strong>, no
-            agency, no account managers between you and the person doing the work.
+            agency between you and the person doing the work.
           </p>
 
           <div className={styles.ctaGroup}>
@@ -74,7 +74,7 @@ export default function Hero() {
           <div className={styles.proof}>
             <div className={styles.proofItem}>
               <span className={styles.proofNum}>$250K+</span>
-              <span className={styles.proofLabel}>generated in 60 days</span>
+              <span className={styles.proofLabel}>generated for clients</span>
             </div>
             <div className={styles.proofDivider} />
             <div className={styles.proofItem}>
@@ -83,7 +83,7 @@ export default function Hero() {
             </div>
             <div className={styles.proofDivider} />
             <div className={styles.proofItem}>
-              <span className={styles.proofNum}>Calgary</span>
+              <span className={styles.proofNum}>Serving</span>
               <span className={styles.proofLabel}>Canada · Remote</span>
             </div>
           </div>
