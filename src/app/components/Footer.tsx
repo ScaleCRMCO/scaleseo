@@ -32,7 +32,7 @@ export default function Footer() {
           <div className={styles.colLabel}>Connect</div>
           <a href="https://www.linkedin.com/in/corbin-jensen-9a9b77127/" target="_blank" rel="noopener noreferrer" className={styles.colLink}>LinkedIn</a>
           <a href="https://www.instagram.com/scaleseo.co/" target="_blank" rel="noopener noreferrer" className={styles.colLink}>Instagram</a>
-          <a href="https://maps.app.goo.gl/87SRRBXuZPeywLJH8" target="_blank" rel="noopener noreferrer" className={styles.colLink}>Google Profile</a>
+          <a href="https://maps.app.goo.gl/87SRRBXuZPeywLJH8" target="_blank" rel="noopener noreferrer" className={styles.colLink}>Google Business</a>
           <a href="https://clutch.co/profile/scale-seo" target="_blank" rel="noopener noreferrer" className={styles.colLink}>Clutch</a>
           <a href="mailto:team@scaleseo.co" className={styles.colLink}>Email</a>
         </div>
