@@ -4,13 +4,13 @@ import styles from "./CaseStudy.module.css";
 const cases = [
   {
     index: "01",
-    client: "Kinsmen Consulting",
+    client: "Kinsmen Consulting Ltd",
     location: "Calgary, Alberta",
     industry: "Concrete & Construction",
     description:
-    "Positioned a premium concrete contractor to attract high-value residential and commercial projects",
-    metric: "#1",
-    metricLabel: "Ranked on primary high-value service term",
+    "Positioned a premium concrete contractor in Calgary to attract high-value residential and commercial projects",
+    metric: "26%",
+    metricLabel: "Revenue Growth",
     image: "/images/kinsmen-hero.jpg",
     url: "https://www.kinsmenconsulting.ca",
     urlLabel: "kinsmenconsulting.ca",
