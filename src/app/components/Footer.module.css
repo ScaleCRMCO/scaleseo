@@ -60,7 +60,7 @@
 .wordmarkLarge {
   font-family: var(--display);
   font-weight: 500;
-  font-size: clamp(90px, 22vw, 340px);
+  font-size: clamp(64px, 15vw, 220px);
   line-height: 0.82;
   letter-spacing: -0.05em;
   color: var(--ink-on-dark);
