@@ -6,6 +6,7 @@ export default function Hero() {
     <header className={styles.hero}>
       {/* Curtain reveal panel */}
       <div className={styles.curtain} aria-hidden="true" />
+
       {/* Background grid */}
       <div className={styles.grid} aria-hidden="true">
         <div className={styles.gridLine} />
@@ -18,7 +19,7 @@ export default function Hero() {
       {/* Corner labels */}
       <div className={`${styles.corner} ${styles.topLeft}`}>
         <span className={styles.dot} />
-        Available — 2 spots, Q2 2026
+        Currently onboarding new clients
       </div>
       <div className={`${styles.corner} ${styles.bottomLeft}`}>
         <span className={styles.scrollLabel}>Scroll</span>
@@ -29,7 +30,7 @@ export default function Hero() {
       {/* Main content — split layout */}
       <div className={styles.content}>
         {/* LEFT: stacked service headline */}
-      <h1 className={styles.title}>
+        <h1 className={styles.title}>
           <span className={styles.line}>
             <span className={styles.lineInner}>Freelance</span>
           </span>
@@ -51,14 +52,16 @@ export default function Hero() {
         {/* RIGHT: intro + CTA + proof */}
         <div className={styles.right}>
           <p className={styles.intro}>
-            I&rsquo;m Corbin, a freelance SEO specialist in Calgary, Canada
+            I&rsquo;m Corbin, a freelance SEO specialist based in Calgary
             <span className={styles.leaf} aria-hidden="true">
               <svg viewBox="0 0 1024 1024" fill="currentColor">
                 <path d="M512 73l-50 93c-6 11-16 10-27 4l-36-19 27 143c6 27-13 27-22 15l-50-56-8 29c-1 4-5 8-12 7l-60-13 19 70c4 15 7 22-4 26l-25 11 118 96c5 4 7 10 5 16l-10 34 105-9c4 0 7 3 7 7l-3 124h21l-3-124c0-4 3-7 7-7l105 9-10-34c-2-6 0-12 5-16l118-96-25-11c-11-4-8-11-4-26l19-70-60 13c-7 1-11-3-12-7l-8-29-50 56c-9 12-28 12-22-15l27-143-36 19c-11 6-21 7-27-4z" />
               </svg>
             </span>
-            . I help established contractors and accounting firms turn organic
-            search into real revenue, working <strong>one-on-one.</strong> Own your industry. Win high value clients. 
+            . I help Calgary businesses turn organic search into their
+            highest-value clients &mdash; strategy, content, and technical
+            SEO, handled directly by me. <strong>No account managers, no
+            juniors, no hand-offs.</strong>
           </p>
 
           <div className={styles.ctaGroup}>
@@ -77,13 +80,13 @@ export default function Hero() {
             </div>
             <div className={styles.proofDivider} />
             <div className={styles.proofItem}>
-              <span className={styles.proofNum}>1</span>
-              <span className={styles.proofLabel}>firm per city</span>
+              <span className={styles.proofNum}>100%</span>
+              <span className={styles.proofLabel}>direct with your specialist</span>
             </div>
             <div className={styles.proofDivider} />
             <div className={styles.proofItem}>
               <span className={styles.proofNum}>Serving</span>
-              <span className={styles.proofLabel}>Canada · Remote</span>
+              <span className={styles.proofLabel}>Canada &middot; Remote</span>
             </div>
           </div>
         </div>
