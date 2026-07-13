@@ -13,7 +13,7 @@ const jsonLd = {
   "@type": "ProfessionalService",
   name: "Scale SEO",
   description:
-    "SEO specialist helping established Calgary contractors and accounting firms turn organic search into revenue. One specialist, working directly with each client.",
+    "Independent SEO specialist helping established Canadian businesses — accounting firms and other premium service industries — turn organic search into revenue. One specialist, working directly with each client.",
   url: "https://scaleseo.co",
   email: "team@scaleseo.co",
   telephone: "+14038751110",
@@ -50,8 +50,8 @@ export default function Home() {
       <Hero />
       <Marquee />
       <CaseStudy />
-      <Services />
       <ForWhom />
+      <Services />
       <Process />
       <About />
       <Contact />

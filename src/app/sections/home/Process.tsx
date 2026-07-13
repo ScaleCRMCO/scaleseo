@@ -33,7 +33,7 @@ export default function Process() {
       <div className="section-label reveal-up">How It Works</div>
 
       <h2 className={`${styles.heading} reveal-up`}>
-        A simple, <em>uncomplicated</em> rhythm.
+        Four steps. <em>No surprises.</em>
       </h2>
 
       <div className={`${styles.grid} reveal-up`}>

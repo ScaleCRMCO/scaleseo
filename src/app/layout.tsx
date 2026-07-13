@@ -5,24 +5,24 @@ import Footer from "./components/Footer";
 import PageTransition from "./components/PageTransition";
 
 export const metadata: Metadata = {
-  title: "Scale SEO — Corbin Jensen | SEO for Trades & Accounting Firms",
+  title: "Scale SEO — Corbin Jensen | Independent SEO Specialist, Canada",
   description:
-    "A specialist SEO freelancer for trade contractors and accounting firms across Australia and Canada. Built by Corbin Jensen. Few clients. Real revenue.",
+    "An independent SEO specialist for established Canadian businesses — accounting firms and other premium service industries. Built by Corbin Jensen. Few clients. Real revenue.",
   metadataBase: new URL("https://scaleseo.co"),
   openGraph: {
     title: "Scale SEO — Corbin Jensen",
     description:
-      "Specialist SEO freelancer for trade contractors and accounting firms. Few clients. Real revenue.",
+      "Independent SEO specialist for established Canadian businesses. Few clients. Real revenue.",
     url: "https://scaleseo.co",
     siteName: "Scale SEO",
-    locale: "en_AU",
+    locale: "en_CA",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "Scale SEO — Corbin Jensen",
     description:
-      "Specialist SEO freelancer for trade contractors and accounting firms.",
+      "Independent SEO specialist for established Canadian businesses.",
   },
 };
 

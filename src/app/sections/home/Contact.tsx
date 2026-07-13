@@ -70,8 +70,8 @@ export default function Contact() {
               <option value="" disabled>
                 Select one
               </option>
-              <option value="trade-contractor">Trade Contractor</option>
               <option value="accounting">Accounting / Advisory</option>
+              <option value="professional-services">Other Professional Services</option>
               <option value="other">Other Service Business</option>
             </select>
           </div>

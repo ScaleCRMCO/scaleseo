@@ -45,7 +45,7 @@ export default function CaseStudy() {
        <div className="section-label reveal-up">Success Stories · $250K+ generated for clients</div>
 
         <h2 className={`${styles.heading} reveal-up`}>
-          A proven track record<em> in SEO.</em>
+          Real clients,<em> real revenue.</em>
         </h2>
 
         <div className={styles.stories}>
