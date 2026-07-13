@@ -37,7 +37,7 @@ const cases = [
       "Ongoing SEO for a Brisbane accounting firm — technical fixes, on-page structure, and content built around the terms their clients actually search.",
     metric: "Ongoing",
     metricLabel: "Monthly SEO partner",
-    image: "/images/empire-accountants.jpg",
+    image: "/images/empireaccountants-hero-image.png",
     url: "https://www.empireaccountants.com.au/",
     urlLabel: "empireaccountants.com.au",
   },
