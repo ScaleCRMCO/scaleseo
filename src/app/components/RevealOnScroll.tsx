@@ -16,7 +16,9 @@ export default function RevealOnScroll() {
       { threshold: 0.12, rootMargin: "0px 0px -80px 0px" }
     );
 
-    document.querySelectorAll(".reveal-up").forEach((el) => observer.observe(el));
+    document
+      .querySelectorAll(".reveal-up, .reveal-left")
+      .forEach((el) => observer.observe(el));
 
     return () => observer.disconnect();
   }, []);

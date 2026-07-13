@@ -66,8 +66,8 @@ export default function CaseStudy() {
               href={c.url}
               target="_blank"
               rel="noopener noreferrer"
-              className={`${styles.tile} reveal-up`}
-              style={{ transitionDelay: `${i * 0.1}s` }}
+              className={`${styles.tile} reveal-left`}
+              style={{ transitionDelay: `${i * 0.14}s` }}
             >
               <div className={styles.imageWrap}>
                 <Image
