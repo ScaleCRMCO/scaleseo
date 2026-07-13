@@ -4,21 +4,21 @@
    ========================================================================== */
 
 :root {
-  /* Light theme colors */
-  --bg: #FAF8F4;
-  --bg-elev: #F0EBE2;
-  --ink: #0F0D0B;
-  --ink-dim: #6B6259;
-  --ink-faint: #B5AEA3;
+  /* Dark theme colors (default) */
+  --bg: #0a0a0a;
+  --bg-elev: #131313;
+  --ink: #F5F3EF;
+  --ink-dim: #8B8680;
+  --ink-faint: #4A4742;
   --accent: #fa4c15;
-  --line: rgba(15, 13, 11, 0.08);
-  --line-strong: rgba(15, 13, 11, 0.18);
-  /* Dark section variants (used on alternating sections) */
-  --bg-dark: #020202;
-  --ink-on-dark: #FAF8F4;
-  --ink-dim-on-dark: #8B8378;
-  --line-on-dark: rgba(250, 248, 244, 0.1);
-  --line-strong-on-dark: rgba(250, 248, 244, 0.22);
+  --line: rgba(245, 243, 239, 0.1);
+  --line-strong: rgba(245, 243, 239, 0.2);
+  /* Alternate section variants (used on inverted sections) */
+  --bg-dark: #0a0a0a;
+  --ink-on-dark: #F5F3EF;
+  --ink-dim-on-dark: #8B8680;
+  --line-on-dark: rgba(245, 243, 239, 0.1);
+  --line-strong-on-dark: rgba(245, 243, 239, 0.2);
   /* Fonts */
   --display: 'Fraunces', 'Times New Roman', serif;
   --sans: 'Inter Tight', system-ui, sans-serif;
