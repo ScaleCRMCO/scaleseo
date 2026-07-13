@@ -1,17 +1,36 @@
 .curtain {
   position: fixed;
   inset: 0;
-  background: var(--accent);
+  background: var(--bg);
   z-index: 9999;
-  transform: translateY(-100%);
+  transform: translateY(100%);
   pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mark {
+  opacity: 0;
+  display: flex;
 }
 
 .active {
-  animation: curtainUp 0.9s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+  animation: sweep 1.1s cubic-bezier(0.76, 0, 0.24, 1) forwards;
 }
 
-@keyframes curtainUp {
-  0%   { transform: translateY(0); }
-  100% { transform: translateY(-100%); }
+.active .mark {
+  animation: markFade 1.1s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+}
+
+@keyframes sweep {
+  0%        { transform: translateY(100%); }
+  38%, 62%  { transform: translateY(0%); }
+  100%      { transform: translateY(-100%); }
+}
+
+@keyframes markFade {
+  0%, 34%   { opacity: 0; transform: scale(0.8); }
+  44%, 56%  { opacity: 1; transform: scale(1); }
+  66%, 100% { opacity: 0; transform: scale(0.8); }
 }

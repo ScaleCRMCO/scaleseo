@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import Logo from "./Logo";
 import styles from "./PageTransition.module.css";
 
 export default function PageTransition() {
@@ -15,7 +16,7 @@ export default function PageTransition() {
       const t = setTimeout(() => {
         setCurrentPath(pathname);
         setAnimating(false);
-      }, 900);
+      }, 1100);
       return () => clearTimeout(t);
     }
   }, [pathname, currentPath]);
@@ -24,6 +25,10 @@ export default function PageTransition() {
     <div
       className={`${styles.curtain} ${animating ? styles.active : ""}`}
       aria-hidden="true"
-    />
+    >
+      <div className={styles.mark}>
+        <Logo size={44} animate={false} />
+      </div>
+    </div>
   );
 }
