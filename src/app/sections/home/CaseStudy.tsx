@@ -65,7 +65,7 @@ export default function CaseStudy() {
               key={c.index}
               href={c.url}
               target="_blank"
-              rel="noopener noreferrer"
+              rel="nofollow noopener noreferrer"
               className={`${styles.tile} reveal-left`}
               style={{ transitionDelay: `${i * 0.14}s` }}
             >
