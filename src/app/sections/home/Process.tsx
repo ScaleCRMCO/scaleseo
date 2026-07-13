@@ -29,7 +29,7 @@ const steps = [
 
 export default function Process() {
   return (
-    <section className={styles.section}>
+    <section className={styles.section} id="process">
       <div className="section-label reveal-up">How It Works</div>
 
       <h2 className={`${styles.heading} reveal-up`}>
