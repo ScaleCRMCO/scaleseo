@@ -7,22 +7,9 @@ export default function ForWhom() {
 
       <div className={`${styles.grid} reveal-up`}>
         <div className={styles.card}>
-          <div className={styles.vertical}>Vertical 01</div>
+          <div className={styles.vertical}>Proven vertical</div>
           <h3 className={styles.title}>
-            Trade Contractors &amp; <em>Specialists</em>
-          </h3>
-          <ul className={styles.list}>
-            <li>Concrete contractors</li>
-            <li>Plumbers</li>
-            <li>Electricians &amp; HVAC</li>
-            <li>Roofing &amp; landscaping</li>
-            <li>Premium custom builds</li>
-          </ul>
-        </div>
-        <div className={styles.card}>
-          <div className={styles.vertical}>Vertical 02</div>
-          <h3 className={styles.title}>
-            Accounting &amp; <em>Advisory Firms</em>
+            Accounting &amp; <em>advisory firms</em>
           </h3>
           <ul className={styles.list}>
             <li>Boutique accounting practices</li>
@@ -32,12 +19,25 @@ export default function ForWhom() {
             <li>Financial planning practices</li>
           </ul>
         </div>
+        <div className={styles.card}>
+          <div className={styles.vertical}>Open to</div>
+          <h3 className={styles.title}>
+            Any established <em>service business</em>
+          </h3>
+          <ul className={styles.list}>
+            <li>Healthy margins on each client</li>
+            <li>A sales process that can handle more leads</li>
+            <li>No more than two direct competitors as clients per city</li>
+            <li>Comfortable investing months, not days, in results</li>
+            <li>Wants one specialist, not a rotating team</li>
+          </ul>
+        </div>
       </div>
 
       <p className={`${styles.not} reveal-up`}>
-        <strong>Not on this list?</strong> Reach out anyway — but only if
-        you&rsquo;re an established service business with healthy margins and
-        the patience for work that compounds.
+        <strong>Industry isn&rsquo;t the filter — fit is.</strong> I take on a
+        small number of clients at a time so each one gets full attention. If
+        that&rsquo;s what you&rsquo;re looking for, reach out.
       </p>
     </section>
   );

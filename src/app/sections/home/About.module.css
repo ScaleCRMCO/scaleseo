@@ -99,7 +99,7 @@
   align-items: center;
   justify-content: center;
   font-family: var(--display);
-  font-style: italic;
+  font-weight: 600;
   font-size: 56px;
   color: var(--accent);
   background: repeating-linear-gradient(
@@ -126,15 +126,15 @@
 }
 
 .text em {
-  font-style: italic;
+  font-style: normal;
+  font-weight: 600;
   color: var(--accent);
 }
 
 .sig {
   margin-top: 40px;
   font-family: var(--display);
-  font-style: italic;
-  font-weight: 400;
+  font-weight: 600;
   font-size: 32px;
   color: var(--ink);
 }

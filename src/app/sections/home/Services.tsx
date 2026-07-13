@@ -15,7 +15,7 @@ const services = [
   {
     num: "02",
     name: "Local SEO",
-    desc: "Getting you into the Calgary map pack: Google Business Profile, reviews, citations, and location pages that win the searches near you.",
+    desc: "Google Business Profile, reviews, citations, and location pages built to win the map pack in every city you actually serve.",
     tag: "Core",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -82,13 +82,14 @@ export default function Services() {
         <div className={styles.left}>
           <div className="section-label">What I Do</div>
           <h2 className={styles.heading}>
-            Six things,<br />done <em>properly.</em>
+            Six things,<br />done <em>myself.</em>
           </h2>
           <p className={styles.body}>
-            <strong>I don&rsquo;t do everything &mdash; on purpose.</strong> I do
-            the handful of things that bring established Calgary businesses more
-            leads, and I do them myself. No juniors, no offshore team, no account
-            manager between you and the person doing the work.
+            <strong>I don&rsquo;t do everything &mdash; on purpose.</strong> I
+            focus on the handful of things that move rankings and revenue for
+            established businesses across Canada, and I do them myself. No
+            juniors, no offshore team, no account manager between you and the
+            work.
           </p>
           <a href="#contact" className={styles.cta}>
             <span>Start a conversation</span>

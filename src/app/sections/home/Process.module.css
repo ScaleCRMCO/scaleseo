@@ -12,7 +12,8 @@
 }
 
 .heading em {
-  font-style: italic;
+  font-style: normal;
+  font-weight: 600;
   color: var(--accent);
 }
 
@@ -35,8 +36,7 @@
 
 .num {
   font-family: var(--display);
-  font-weight: 300;
-  font-style: italic;
+  font-weight: 600;
   font-size: 64px;
   line-height: 1;
   color: var(--accent);

@@ -12,7 +12,7 @@
 }
 .scrolled {
   padding: 14px 40px;
-  background: rgba(245, 241, 234, 0.85);
+  background: rgba(26, 26, 26, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--line);
@@ -72,6 +72,46 @@
   text-decoration: none;
   position: relative;
   transition: color 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.num {
+  color: var(--ink-faint);
+}
+.onDark .num {
+  color: var(--ink-dim-on-dark);
+}
+.navCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 22px;
+  border: 1px solid var(--line-strong);
+  color: var(--ink);
+  text-decoration: none;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+.navCta:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.navCtaArrow {
+  transition: transform 0.3s ease;
+}
+.navCta:hover .navCtaArrow {
+  transform: translateX(3px);
+}
+.onDark .navCta {
+  color: var(--ink-on-dark);
+  border-color: var(--line-strong-on-dark);
+}
+@media (max-width: 1080px) {
+  .navCta { display: none; }
 }
 .links a::after {
   content: '';
@@ -106,7 +146,7 @@
   color: var(--accent);
 }
 .onDark.scrolled {
-  background: rgba(26, 23, 20, 0.85);
+  background: rgba(26, 26, 26, 0.85);
   border-bottom: 1px solid var(--line-on-dark);
 }
 /* When the mobile menu is open, drop the blur so the full-screen

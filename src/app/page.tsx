@@ -6,6 +6,7 @@ import ForWhom from "./sections/home/ForWhom";
 import Process from "./sections/home/Process";
 import About from "./sections/home/About";
 import Contact from "./sections/home/Contact";
+import Interstitial from "./sections/home/Interstitial";
 import RevealOnScroll from "./components/RevealOnScroll";
 
 const jsonLd = {
@@ -13,7 +14,7 @@ const jsonLd = {
   "@type": "ProfessionalService",
   name: "Scale SEO",
   description:
-    "SEO specialist helping established Calgary contractors and accounting firms turn organic search into revenue. One specialist, working directly with each client.",
+    "Independent SEO specialist helping established Canadian businesses — accounting firms and other premium service industries — turn organic search into revenue. One specialist, working directly with each client.",
   url: "https://scaleseo.co",
   email: "team@scaleseo.co",
   telephone: "+14038751110",
@@ -50,8 +51,16 @@ export default function Home() {
       <Hero />
       <Marquee />
       <CaseStudy />
-      <Services />
+      <Interstitial eyebrow="Why work this way">
+        I keep a <strong>small roster on purpose</strong> — every client gets
+        the person actually doing the work, <em>not a rotating team</em>.
+      </Interstitial>
       <ForWhom />
+      <Services />
+      <Interstitial eyebrow="How I measure it">
+        Rankings are a means, not the goal. <strong>Calls, leads, revenue</strong> —
+        that&rsquo;s <em>what gets reported</em>, every month.
+      </Interstitial>
       <Process />
       <About />
       <Contact />

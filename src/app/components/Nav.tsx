@@ -32,17 +32,21 @@ export default function Nav() {
           className={styles.brandCrow}
         />
         <span className={styles.wordmark}>
-          Scale<span style={{ fontStyle: "italic" }}>SEO</span>
+          Scale<span style={{ color: "var(--accent)" }}>SEO</span>
         </span>
         <span className={styles.mark}>/ Corbin Jensen</span>
       </Link>
       {/* Desktop links */}
       <div className={styles.links}>
-        <Link href="/#work">Work</Link>
-        <Link href="/#services">Services</Link>
-        <Link href="/about">About</Link>
-        <Link href="/#contact">Contact</Link>
+        <Link href="/#work"><span className={styles.num}>01</span> Work</Link>
+        <Link href="/#services"><span className={styles.num}>02</span> Services</Link>
+        <Link href="/#process"><span className={styles.num}>03</span> Process</Link>
+        <Link href="/about"><span className={styles.num}>04</span> About</Link>
       </div>
+      <Link href="/contact" className={styles.navCta} onClick={close}>
+        <span>Start a project</span>
+        <span className={styles.navCtaArrow}>&rarr;</span>
+      </Link>
       {/* Hamburger button (mobile only) */}
       <button
         className={styles.burger}
@@ -55,10 +59,11 @@ export default function Nav() {
       </button>
       {/* Full-screen mobile menu */}
       <div className={`${styles.mobileMenu} ${open ? styles.mobileMenuOpen : ""}`}>
-        <Link href="/#work" onClick={close}>Work</Link>
-        <Link href="/#services" onClick={close}>Services</Link>
-        <Link href="/about" onClick={close}>About</Link>
-        <Link href="/#contact" onClick={close}>Contact</Link>
+        <Link href="/#work" onClick={close}><span className={styles.num}>01</span> Work</Link>
+        <Link href="/#services" onClick={close}><span className={styles.num}>02</span> Services</Link>
+        <Link href="/#process" onClick={close}><span className={styles.num}>03</span> Process</Link>
+        <Link href="/about" onClick={close}><span className={styles.num}>04</span> About</Link>
+        <Link href="/contact" onClick={close}>Contact</Link>
       </div>
     </nav>
   );

@@ -24,7 +24,8 @@
   margin-bottom: 36px;
 }
 .heading em {
-  font-style: italic;
+  font-style: normal;
+  font-weight: 600;
   color: var(--accent);
 }
 .body {
