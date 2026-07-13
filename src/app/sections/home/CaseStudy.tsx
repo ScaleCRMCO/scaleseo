@@ -8,9 +8,9 @@ const cases = [
     location: "Calgary, Alberta",
     industry: "Concrete & Construction",
     description:
-    "Positioned a premium concrete contractor in Calgary to attract high-value residential and commercial projects",
+      "Positioned a premium concrete contractor in Calgary to attract high-value residential and commercial projects.",
     metric: "26%",
-    metricLabel: "Revenue Growth",
+    metricLabel: "Revenue growth",
     image: "/images/kinsmen-hero.jpg",
     url: "https://www.kinsmenconsulting.ca",
     urlLabel: "kinsmenconsulting.ca",
@@ -19,11 +19,11 @@ const cases = [
     index: "02",
     client: "MSV Plumbing Services",
     location: "Brisbane, Queensland",
-    industry: "Plumbing & Trade Services",
+    industry: "Plumbing Services",
     description:
-      "Built from zero. A new website and local SEO strategy that took MSV from no clients to consistent weekly bookings — enough to hire staff and expand the business.",
+      "Built from zero — a new website and local SEO strategy that took MSV from no clients to consistent weekly bookings.",
     metric: "0 → Weekly",
-    metricLabel: "Consistent booked clients from scratch",
+    metricLabel: "Consistent bookings",
     image: "/images/msv-screenshot.png",
     url: "https://msvplumbingservices.com.au/",
     urlLabel: "msvplumbing.com.au",
@@ -33,34 +33,30 @@ const cases = [
 export default function CaseStudy() {
   return (
     <section className={`${styles.case} section-dark`} id="work">
-      <div className={styles.grid} aria-hidden="true">
-        <div className={styles.gridLine} />
-        <div className={styles.gridLine} />
-        <div className={styles.gridLine} />
-        <div className={styles.gridLine} />
-        <div className={styles.gridLine} />
-      </div>
-
       <div className={styles.inner}>
-       <div className="section-label reveal-up">Success Stories · $250K+ generated for clients</div>
+        <div className={styles.top}>
+          <div>
+            <div className="section-label reveal-up">Featured Work</div>
+            <h2 className={`${styles.heading} reveal-up`}>
+              Real clients,<em> real revenue.</em>
+            </h2>
+          </div>
+          <span className={`${styles.proofLine} reveal-up`}>
+            $250K+ generated for clients
+          </span>
+        </div>
 
-        <h2 className={`${styles.heading} reveal-up`}>
-          Real clients,<em> real revenue.</em>
-        </h2>
-
-        <div className={styles.stories}>
+        <div className={styles.grid}>
           {cases.map((c, i) => (
-            <div
+            <a
               key={c.index}
-              className={`${styles.story} reveal-up`}
+              href={c.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${styles.tile} reveal-up`}
               style={{ transitionDelay: `${i * 0.1}s` }}
             >
-              <a
-                href={c.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.imageWrap}
-              >
+              <div className={styles.imageWrap}>
                 <Image
                   src={c.image}
                   alt={`${c.client} website`}
@@ -69,26 +65,22 @@ export default function CaseStudy() {
                   priority={i === 0}
                   unoptimized
                 />
-                <div className={styles.overlay}>
-                  <span className={styles.overlayText}>
-                    {c.urlLabel} →
-                  </span>
+              </div>
+              <div className={styles.tileFooter}>
+                <div>
+                  <h3 className={styles.client}>{c.client}</h3>
+                  <p className={styles.location}>
+                    {c.location} &middot; {c.industry}
+                  </p>
                 </div>
-              </a>
-
-              <div className={styles.content}>
-                <div className={styles.index}>SS — {c.index}</div>
-                <h3 className={styles.client}>{c.client}</h3>
-                <p className={styles.location}>
-                  {c.location}&nbsp;&nbsp;·&nbsp;&nbsp;{c.industry}
-                </p>
-                <p className={styles.description}>{c.description}</p>
                 <div className={styles.metric}>
                   <div className={styles.metricValue}>{c.metric}</div>
                   <div className={styles.metricLabel}>{c.metricLabel}</div>
                 </div>
               </div>
-            </div>
+              <p className={styles.description}>{c.description}</p>
+              <span className={styles.visit}>{c.urlLabel} →</span>
+            </a>
           ))}
         </div>
       </div>
