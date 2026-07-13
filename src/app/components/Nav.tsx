@@ -32,7 +32,7 @@ export default function Nav() {
           className={styles.brandCrow}
         />
         <span className={styles.wordmark}>
-          Scale<span style={{ fontStyle: "italic" }}>SEO</span>
+          Scale<span style={{ color: "var(--accent)" }}>SEO</span>
         </span>
         <span className={styles.mark}>/ Corbin Jensen</span>
       </Link>

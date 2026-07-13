@@ -4,24 +4,24 @@
    ========================================================================== */
 
 :root {
-  /* Dark theme colors (default) */
-  --bg: #0a0a0a;
-  --bg-elev: #131313;
+  /* Dark theme colors (default) — lighter charcoal, not pure black */
+  --bg: #1a1a1a;
+  --bg-elev: #232323;
   --ink: #F5F3EF;
-  --ink-dim: #8B8680;
-  --ink-faint: #4A4742;
+  --ink-dim: #9A9691;
+  --ink-faint: #5C5854;
   --accent: #fa4c15;
   --line: rgba(245, 243, 239, 0.1);
   --line-strong: rgba(245, 243, 239, 0.2);
   /* Alternate section variants (used on inverted sections) */
-  --bg-dark: #0a0a0a;
+  --bg-dark: #1a1a1a;
   --ink-on-dark: #F5F3EF;
-  --ink-dim-on-dark: #8B8680;
+  --ink-dim-on-dark: #9A9691;
   --line-on-dark: rgba(245, 243, 239, 0.1);
   --line-strong-on-dark: rgba(245, 243, 239, 0.2);
   /* Fonts */
-  --display: 'Fraunces', 'Times New Roman', serif;
-  --sans: 'Inter Tight', system-ui, sans-serif;
+  --display: 'Space Grotesk', system-ui, sans-serif;
+  --sans: 'Inter', system-ui, sans-serif;
   --mono: 'JetBrains Mono', monospace;
 }
 
