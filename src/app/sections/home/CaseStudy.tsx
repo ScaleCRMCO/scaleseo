@@ -28,6 +28,19 @@ const cases = [
     url: "https://msvplumbingservices.com.au/",
     urlLabel: "msvplumbing.com.au",
   },
+  {
+    index: "03",
+    client: "Empire Accountants",
+    location: "Brisbane, Queensland",
+    industry: "Accounting & Advisory",
+    description:
+      "Ongoing SEO for a Brisbane accounting firm — technical fixes, on-page structure, and content built around the terms their clients actually search.",
+    metric: "Ongoing",
+    metricLabel: "Monthly SEO partner",
+    image: "/images/empire-accountants.jpg",
+    url: "https://www.empireaccountants.com.au/",
+    urlLabel: "empireaccountants.com.au",
+  },
 ];
 
 export default function CaseStudy() {
