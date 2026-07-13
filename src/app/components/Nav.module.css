@@ -12,7 +12,7 @@
 }
 .scrolled {
   padding: 14px 40px;
-  background: rgba(245, 241, 234, 0.85);
+  background: rgba(26, 26, 26, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--line);
@@ -146,7 +146,7 @@
   color: var(--accent);
 }
 .onDark.scrolled {
-  background: rgba(26, 23, 20, 0.85);
+  background: rgba(26, 26, 26, 0.85);
   border-bottom: 1px solid var(--line-on-dark);
 }
 /* When the mobile menu is open, drop the blur so the full-screen

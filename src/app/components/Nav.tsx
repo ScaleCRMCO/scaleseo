@@ -43,7 +43,7 @@ export default function Nav() {
         <Link href="/#process"><span className={styles.num}>03</span> Process</Link>
         <Link href="/about"><span className={styles.num}>04</span> About</Link>
       </div>
-      <Link href="/#contact" className={styles.navCta} onClick={close}>
+      <Link href="/contact" className={styles.navCta} onClick={close}>
         <span>Start a project</span>
         <span className={styles.navCtaArrow}>&rarr;</span>
       </Link>
@@ -63,7 +63,7 @@ export default function Nav() {
         <Link href="/#services" onClick={close}><span className={styles.num}>02</span> Services</Link>
         <Link href="/#process" onClick={close}><span className={styles.num}>03</span> Process</Link>
         <Link href="/about" onClick={close}><span className={styles.num}>04</span> About</Link>
-        <Link href="/#contact" onClick={close}>Contact</Link>
+        <Link href="/contact" onClick={close}>Contact</Link>
       </div>
     </nav>
   );
