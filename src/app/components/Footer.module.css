@@ -8,8 +8,8 @@
 /* === Aligned column grid: logo + 3 columns === */
 .grid {
   display: grid;
-  grid-template-columns: 1.2fr 1fr 1fr 1fr;
-  gap: 48px;
+  grid-template-columns: 1.2fr 1fr 1fr 1fr 1fr;
+  gap: 40px;
   align-items: start;
   padding-bottom: 64px;
 }
@@ -63,7 +63,7 @@
   font-size: clamp(64px, 15vw, 220px);
   line-height: 0.82;
   letter-spacing: -0.05em;
-  color: var(--ink-on-dark);
+  color: var(--ink-faint);
   white-space: nowrap;
   overflow: hidden;
   text-align: center;
@@ -75,9 +75,9 @@
 }
 .wordmarkText { display: inline-block; }
 .wordmarkLarge em {
-  font-style: italic;
-  font-weight: 400;
-  color: var(--accent);
+  font-style: normal;
+  font-weight: 600;
+  color: var(--ink-faint);
 }
 
 /* === Bottom bar === */

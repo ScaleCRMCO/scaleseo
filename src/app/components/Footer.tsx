@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "./Footer.module.css";
 export default function Footer() {
   return (
@@ -10,6 +11,15 @@ export default function Footer() {
             alt="Scale SEO"
             className={styles.brandMark}
           />
+        </div>
+
+        {/* Quick Links */}
+        <div className={styles.col}>
+          <div className={styles.colLabel}>Quick Links</div>
+          <Link href="/" className={styles.colLink}>Home</Link>
+          <Link href="/#services" className={styles.colLink}>Services</Link>
+          <Link href="/about" className={styles.colLink}>About</Link>
+          <Link href="/contact" className={styles.colLink}>Contact</Link>
         </div>
 
         {/* Contact */}
