@@ -4,9 +4,9 @@ import AboutCTA from "./sections/AboutCTA";
 import RevealOnScroll from "../components/RevealOnScroll";
 
 export const metadata = {
-  title: "About — Corbin Jensen | Scale SEO",
+  title: "About Corbin Jensen — Scale SEO",
   description:
-    "Canadian by birth, Australian by address. Corbin Jensen runs Scale SEO — a specialist SEO freelancer practice serving trade contractors and accounting firms across Canada and Australia.",
+    "Corbin Jensen is an independent SEO specialist based in Calgary, Alberta, working with a small number of established Canadian businesses. No agency, no account managers — just the work.",
 };
 
 export default function AboutPage() {

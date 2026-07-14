@@ -25,12 +25,8 @@ export default function AboutLayout() {
             <div className={styles.meta}>
               <div className={styles.metaName}>Corbin Jensen</div>
               <div className={styles.metaRole}>SEO Specialist · Freelance</div>
-              <div className={styles.metaRoute}>Canada & Australia</div>
-              <div className={styles.metaCoords}>
-                51.04°N / 114.07°W
-                <br />
-                27.46°S / 153.02°E
-              </div>
+              <div className={styles.metaRoute}>Calgary, Canada · Worldwide</div>
+              <div className={styles.metaCoords}>51.04°N / 114.07°W</div>
             </div>
 
             {/* Currently widget */}
@@ -43,7 +39,7 @@ export default function AboutLayout() {
                 </li>
                 <li>
                   <span className={styles.cKey}>Based in</span>
-                  <span className={styles.cVal}>Canada - Serving Worldwide</span>
+                  <span className={styles.cVal}>Calgary, Alberta — serving Canada &amp; beyond</span>
                 </li>
                 <li>
                   <span className={styles.cKey}>Developing</span>
@@ -90,14 +86,14 @@ export default function AboutLayout() {
           <article className={styles.block}>
             <div className={`${styles.label} reveal-up`}>The Work · 02</div>
             <h2 className={`${styles.headline} reveal-up`}>
-              A few clients. Two countries. <em>One pair of hands.</em>
+              A small roster. <em>One pair of hands.</em>
             </h2>
             <div className={`${styles.body} reveal-up`}>
               <p>
-                I run a small roster at a time, split between Canada and Australia. Each client gets the same thing: me, doing the work. Not a junior. Not an offshore team. Not a project manager forwarding emails.
+                I work with a small number of established businesses at a time, based mostly across Canada, with a few long-standing clients internationally. Every one of them gets the same thing: me, doing the work. Not a junior. Not an offshore team. Not a project manager forwarding emails.
               </p>
               <p>
-                A typical month: a detailed audit early on, then on-page work, technical fixes, content strategy, local SEO setup, earned backlinks from real publications. Monthly strategy calls. Reporting in plain English.
+                A typical month: a detailed audit early on, then on-page work, technical fixes, content strategy, local SEO setup, and earned backlinks from real publications. Monthly strategy calls. Reporting in plain English.
               </p>
             </div>
 
@@ -107,7 +103,7 @@ export default function AboutLayout() {
 
             <div className={`${styles.body} reveal-up`}>
               <p>
-                I focus on accounting practices and trade contractors because they&apos;re &ldquo;big-ticket&rdquo; businesses. The deals are large. The work compounds. The math works.
+                I focus on accounting practices and other high-margin service businesses because the deals are large and the work compounds. Good SEO on a $50 job doesn&rsquo;t move the needle. Good SEO on a $5,000 client does.
               </p>
             </div>
           </article>
@@ -158,8 +154,8 @@ export default function AboutLayout() {
             <div className={styles.numLabel}>Revenue for one client in 60 days</div>
           </div>
           <div className={styles.numItem}>
-            <div className={styles.numValue}><span className={styles.numAccent}>2</span></div>
-            <div className={styles.numLabel}>Countries · Australia &amp; Canada</div>
+            <div className={`${styles.numValue} ${styles.numValueSmall}`}>30 → <span className={styles.numAccent}>14.2</span></div>
+            <div className={styles.numLabel}>Avg. search position moved for one client in 6 months</div>
           </div>
           <div className={styles.numItem}>
             <div className={styles.numValue}>1<span className={styles.numAccent}>yr+</span></div>

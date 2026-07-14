@@ -10,10 +10,10 @@ export default function AboutCTA() {
       </div>
 
       <h2 className={styles.headline}>
-        Two countries. A few clients. <em>One conversation away.</em>
+        A small roster. <em>One conversation away.</em>
       </h2>
 
-      <Link href="/#contact" className={styles.button}>
+      <Link href="/contact" className={styles.button}>
         <span>Start a conversation</span>
         <span className={styles.arrow}>→</span>
       </Link>
