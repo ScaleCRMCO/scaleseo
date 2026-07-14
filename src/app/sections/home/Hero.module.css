@@ -88,8 +88,23 @@
 .content {
   position: relative;
   z-index: 2;
-  max-width: 1100px;
+  max-width: 1400px;
   width: 100%;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.left {
+  min-width: 0;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  padding-top: 0.35em;
 }
 
 .eyebrow {
@@ -110,7 +125,7 @@
   font-size: clamp(48px, 7vw, 116px);
   line-height: 0.98;
   letter-spacing: -0.04em;
-  margin-bottom: 56px;
+  margin-bottom: 0;
   color: var(--ink);
 }
 .line {
@@ -136,13 +151,8 @@
   color: var(--accent);
 }
 
-/* === BOTTOM ROW: intro + CTA === */
-.bottomRow {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 60px;
-  flex-wrap: wrap;
+/* === RIGHT COLUMN: intro + CTA === */
+.right {
   opacity: 0;
   animation: fadeUp 1s ease 2.1s forwards;
 }
@@ -152,7 +162,7 @@
   font-size: clamp(16px, 1.2vw, 18px);
   line-height: 1.6;
   color: var(--ink-dim);
-  max-width: 480px;
+  max-width: 440px;
 }
 
 /* === CTA === */
@@ -201,8 +211,9 @@
 /* === RESPONSIVE === */
 @media (max-width: 900px) {
   .hero { padding: 110px 24px 80px; }
-  .title { font-size: clamp(40px, 11vw, 64px); margin-bottom: 40px; }
-  .bottomRow { flex-direction: column; align-items: flex-start; gap: 32px; }
+  .content { grid-template-columns: 1fr; gap: 40px; }
+  .right { padding-top: 0; }
+  .title { font-size: clamp(40px, 11vw, 64px); margin-bottom: 0; }
   .bottomRight { display: none; }
   .corner { font-size: 10px; }
   .watermark { font-size: clamp(60px, 22vw, 140px); bottom: -3vw; }

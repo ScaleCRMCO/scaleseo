@@ -25,25 +25,27 @@ export default function Hero() {
         Freelance &middot; Canada &amp; Remote
       </div>
 
-      {/* Main content — single column */}
+      {/* Main content — split layout */}
       <div className={styles.content}>
-        <p className={styles.eyebrow}>SEO Strategy &amp; Execution</p>
+        <div className={styles.left}>
+          <p className={styles.eyebrow}>SEO Strategy &amp; Execution</p>
 
-        <h1 className={styles.title}>
-          <span className={styles.line}>
-            <span className={styles.lineInner}>Search growth,</span>
-          </span>
-          <span className={styles.line}>
-            <span className={styles.lineInner}>
-              run <span className={styles.italic}>directly</span> by
+          <h1 className={styles.title}>
+            <span className={styles.line}>
+              <span className={styles.lineInner}>Search growth,</span>
             </span>
-          </span>
-          <span className={styles.line}>
-            <span className={styles.lineInner}>your specialist.</span>
-          </span>
-        </h1>
+            <span className={styles.line}>
+              <span className={styles.lineInner}>
+                run <span className={styles.italic}>directly</span> by
+              </span>
+            </span>
+            <span className={styles.line}>
+              <span className={styles.lineInner}>your specialist.</span>
+            </span>
+          </h1>
+        </div>
 
-        <div className={styles.bottomRow}>
+        <div className={styles.right}>
           <p className={styles.intro}>
             I&rsquo;m Corbin, an independent SEO specialist working with a
             small number of established businesses across Canada.
