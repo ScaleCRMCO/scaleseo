@@ -1,25 +1,25 @@
 import styles from "./ForWhom.module.css";
 
-const criteria = [
+const industries = [
   {
-    num: "01",
-    title: "Healthy margins",
-    body: "Enough room per client that ranking higher actually moves revenue, not just traffic.",
+    tag: "01 / Professional & Financial Services",
+    title: "Corporate & Financial Practices",
+    body: "We build high-intent search authority for accounting firms, corporate consultancies, and private practices looking to secure institutional retainers and advisory clients.",
   },
   {
-    num: "02",
-    title: "Room to grow",
-    body: "A sales process that can absorb more leads without falling over.",
+    tag: "02 / Commercial & Premium Contracting",
+    title: "High-Ticket Trade Operations",
+    body: "Re-engineering search visibility for established commercial contractors and premium home service brands where a single inbound lead translates into a five or six-figure contract.",
   },
   {
-    num: "03",
-    title: "Exclusivity",
-    body: "No more than two direct competitors as clients in the same city.",
+    tag: "03 / High-Margin B2B Enterprises",
+    title: "B2B & Enterprise Services",
+    body: "Optimizing complex digital footprints to capture B2B decision-makers at the precise moment they search for operational solutions, software integrations, or corporate logistics.",
   },
   {
-    num: "04",
-    title: "Patience",
-    body: "Comfortable investing months, not days, in results that compound.",
+    tag: "04 / The Revenue Fit (Your Qualifier)",
+    title: "Maximum Scalability",
+    body: "We exclusively partner with businesses that have the operational infrastructure and sales capacity to handle a substantial, predictable influx of inbound pipeline traffic.",
   },
 ];
 
@@ -29,23 +29,17 @@ export default function ForWhom() {
       <div className="section-label reveal-up">Who I Work With</div>
 
       <h2 className={`${styles.statement} reveal-up`}>
-        I don&rsquo;t specialize in an industry &mdash;{" "}
-        <em>I specialize in fit.</em>
+        Industries built for <em>volume &amp; margin.</em>
       </h2>
 
-      <p className={`${styles.sub} reveal-up`}>
-        Right now that&rsquo;s accounting firms, home service businesses, and
-        trade contractors across Canada and Australia. The industry matters
-        less than whether the business is ready for what SEO actually
-        delivers.
-      </p>
-
-      <div className={`${styles.grid} reveal-up`}>
-        {criteria.map((c) => (
-          <div key={c.num} className={styles.item}>
-            <span className={styles.num}>{c.num}</span>
-            <h3 className={styles.itemTitle}>{c.title}</h3>
-            <p className={styles.itemBody}>{c.body}</p>
+      <div className={styles.list}>
+        {industries.map((item) => (
+          <div key={item.tag} className={`${styles.item} reveal-up`}>
+            <div className={styles.itemTag}>{item.tag}</div>
+            <div className={styles.itemMain}>
+              <h3 className={styles.itemTitle}>{item.title}</h3>
+              <p className={styles.itemBody}>{item.body}</p>
+            </div>
           </div>
         ))}
       </div>
