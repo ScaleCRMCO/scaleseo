@@ -29,7 +29,7 @@ export default function Hero() {
       <div className={styles.content}>
         <div className={styles.left}>
           <p className={styles.eyebrow}>
-            Calgary SEO Specialist &amp; Organic Growth Strategy
+            Bespoke search engine optimization engineered for Canadian businesses.
           </p>
 
           <h1 className={styles.title}>
@@ -46,9 +46,7 @@ export default function Hero() {
 
         <div className={styles.right}>
           <p className={styles.intro}>
-            Bespoke search engine optimization engineered for established
-            businesses. We position your brand in front of high-intent
-            buyers to build a predictable pipeline of high-margin customers.
+            We build high-performance organic search strategies by aligning your digital footprint with the exact terms your clients are searching for, turning visibility into enterprise value.
           </p>
 
           <div className={styles.ctaGroup}>
