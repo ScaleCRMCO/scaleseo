@@ -34,8 +34,8 @@ const cases = [
     location: "Brisbane, Queensland",
     industry: "Accounting & Advisory",
     description:
-      "Six months of technical fixes, on-page structure, and content built around the terms their clients actually search — average search position moved from 30 to 14.2, doubling impressions and clicks. Now booking new clients weekly.",
-    metric: "30 → 14.2",
+      "Six months of technical fixes, on-page structure, and content built around the terms their clients search — average search position moved from 30 to 14.0, doubling impressions and clicks. Now booking new clients weekly.",
+    metric: "30 → 14.0",
     metricLabel: "Avg. search position (6 months)",
     image: "/images/empireaccountants-hero-image.png",
     url: "https://www.empireaccountants.com.au/",
