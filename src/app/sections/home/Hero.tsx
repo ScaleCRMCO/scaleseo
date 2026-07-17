@@ -46,7 +46,7 @@ export default function Hero() {
 
         <div className={styles.right}>
           <p className={styles.intro}>
-            We build high-performance organic search strategies by aligning your digital footprint with the exact terms your clients are searching for, turning visibility into enterprise value.
+            I build high-performance organic search strategies by aligning your digital footprint with the exact terms your clients are searching for, turning visibility into enterprise value.
           </p>
 
           <div className={styles.ctaGroup}>
