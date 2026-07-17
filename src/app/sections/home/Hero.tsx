@@ -38,7 +38,7 @@ export default function Hero() {
             </span>
             <span className={styles.line}>
               <span className={styles.lineInner}>
-                &amp; Organic Growth <span className={styles.italic}>Partner</span>
+                &amp; Growth <span className={styles.italic}>Partner</span>
               </span>
             </span>
           </h1>
