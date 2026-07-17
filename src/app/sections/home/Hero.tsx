@@ -28,29 +28,27 @@ export default function Hero() {
       {/* Main content — split layout */}
       <div className={styles.content}>
         <div className={styles.left}>
-          <p className={styles.eyebrow}>SEO Strategy &amp; Execution</p>
+          <p className={styles.eyebrow}>
+            Calgary SEO Specialist &amp; Organic Growth Strategy
+          </p>
 
           <h1 className={styles.title}>
             <span className={styles.line}>
-              <span className={styles.lineInner}>Search growth,</span>
+              <span className={styles.lineInner}>Calgary SEO Specialist</span>
             </span>
             <span className={styles.line}>
               <span className={styles.lineInner}>
-                run <span className={styles.italic}>directly</span> by
+                &amp; Organic Growth <span className={styles.italic}>Partner</span>
               </span>
-            </span>
-            <span className={styles.line}>
-              <span className={styles.lineInner}>your specialist.</span>
             </span>
           </h1>
         </div>
 
         <div className={styles.right}>
           <p className={styles.intro}>
-            I&rsquo;m Corbin, an independent SEO specialist working with a
-            small number of established businesses across Canada.
-            Strategy, content, and technical SEO &mdash; handled by me,
-            not handed off.
+            Bespoke search engine optimization engineered for established
+            businesses. We position your brand in front of high-intent
+            buyers to build a predictable pipeline of high-margin customers.
           </p>
 
           <div className={styles.ctaGroup}>
