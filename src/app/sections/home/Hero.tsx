@@ -29,7 +29,7 @@ export default function Hero() {
       <div className={styles.content}>
         <div className={styles.left}>
           <p className={styles.eyebrow}>
-            Bespoke search engine optimization engineered for Canadian businesses.
+            Bespoke search engine optimization engineered for Canadian & global businesses.
           </p>
 
           <h1 className={styles.title}>
