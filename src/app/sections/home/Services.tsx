@@ -82,14 +82,10 @@ export default function Services() {
         <div className={styles.left}>
           <div className="section-label">What I Do</div>
           <h2 className={styles.heading}>
-            Six things,<br />done <em>myself.</em>
+            A hyper-focused framework,<br />engineered <em>for scale.</em>
           </h2>
           <p className={styles.body}>
-            <strong>I don&rsquo;t do everything &mdash; on purpose.</strong> I
-            focus on the handful of things that move rankings and revenue for
-            established businesses across Canada, and I do them myself. No
-            juniors, no offshore team, no account manager between you and the
-            work.
+            <strong>I eliminate typical agency overhead and fluff to focus strictly on the core variables that move search rankings and corporate revenue. By aligning technical execution, data-driven content strategy, and visibility engines into one unified framework, we deliver direct, partner-level accountability that protects your return on investment.
           </p>
           <a href="#contact" className={styles.cta}>
             <span>Start a conversation</span>
