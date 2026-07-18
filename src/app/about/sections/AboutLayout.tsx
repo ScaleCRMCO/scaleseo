@@ -82,72 +82,50 @@ export default function AboutLayout() {
             </div>
           </article>
 
-          {/* ====== SECTION 02 — WORK with pull quote ====== */}
+          {/* ====== SECTION 02 — APPROACH (values list) ====== */}
           <article className={styles.block}>
-            <div className={`${styles.label} reveal-up`}>The Work · 02</div>
+            <div className={`${styles.label} reveal-up`}>The Approach · 02</div>
             <h2 className={`${styles.headline} reveal-up`}>
-              A small roster. <em>One pair of hands.</em>
+              What I value while <em>I work.</em>
             </h2>
-            <div className={`${styles.body} reveal-up`}>
-              <p>
-                I work with a small number of established businesses at a time, based mostly across Canada, with a few long-standing clients internationally. Every one of them gets the same thing: me, doing the work. Not a junior. Not an offshore team. Not a project manager forwarding emails.
-              </p>
-              <p>
-                A typical month: a detailed audit early on, then on-page work, technical fixes, content strategy, local SEO setup, and earned backlinks from real publications. Monthly strategy calls. Reporting in plain English.
-              </p>
+            <p className={`${styles.blockSub} reveal-up`}>
+              The principles that shape every engagement, whether it&rsquo;s
+              month one or year three.
+            </p>
+
+            <div className={`${styles.values} reveal-up`}>
+              <div className={styles.valueItem}>
+                <h3 className={styles.valueTitle}>Directness</h3>
+                <p className={styles.valueBody}>
+                  You work with me, not a rotating team. Every email, every
+                  call, every audit — handled personally, not passed down to
+                  a junior or an offshore contractor.
+                </p>
+              </div>
+              <div className={styles.valueItem}>
+                <h3 className={styles.valueTitle}>Longevity</h3>
+                <p className={styles.valueBody}>
+                  No black-hat shortcuts. No PBNs, no link farms, no schemes
+                  that age into a penalty. Work I do today should still be
+                  working three years from now.
+                </p>
+              </div>
+              <div className={styles.valueItem}>
+                <h3 className={styles.valueTitle}>Real Results</h3>
+                <p className={styles.valueBody}>
+                  Rankings are a means, not the goal. If your position
+                  improved but your phone isn&rsquo;t ringing, the job isn&rsquo;t
+                  done — I report on leads and revenue, not vanity metrics.
+                </p>
+              </div>
             </div>
-
-            <blockquote className={`${styles.pullquote} reveal-up`}>
-              &ldquo;Three good leads a month means more for them than three hundred bad leads means for most.&rdquo;
-            </blockquote>
-
-            <div className={`${styles.body} reveal-up`}>
-              <p>
-                I focus on accounting practices and other high-margin service businesses because the deals are large and the work compounds. Good SEO on a $50 job doesn&rsquo;t move the needle. Good SEO on a $5,000 client does.
-              </p>
-            </div>
-          </article>
-
-          {/* ====== SECTION 03 — PRINCIPLES (numbered list) ====== */}
-          <article className={styles.block}>
-            <div className={`${styles.label} reveal-up`}>The Principles · 03</div>
-            <h2 className={`${styles.headline} reveal-up`}>
-              Most of what gives SEO a bad name, I <em>won&apos;t do.</em>
-            </h2>
-
-            <ol className={`${styles.principles} reveal-up`}>
-              <li>
-                <span className={styles.pNum}>01</span>
-                <span className={styles.pText}>
-                  <strong>No 40-person agencies pretending to be specialists.</strong> You&apos;ll work directly with me — every email, every call, every audit.
-                </span>
-              </li>
-              <li>
-                <span className={styles.pNum}>02</span>
-                <span className={styles.pText}>
-                  <strong>No volume play.</strong> I keep my roster small. If you need someone who&apos;ll squeeze you into slot #47, that&apos;s not me.
-                </span>
-              </li>
-              <li>
-                <span className={styles.pNum}>03</span>
-                <span className={styles.pText}>
-                  <strong>No black-hat shortcuts.</strong> No PBNs, no link farms, no schemes that age into a penalty. Work I do today should still be working in three years.
-                </span>
-              </li>
-              <li>
-                <span className={styles.pNum}>04</span>
-                <span className={styles.pText}>
-                  <strong>No vanity reports.</strong> If your rankings improved but your phone isn&apos;t ringing, the job isn&apos;t done.
-                </span>
-              </li>
-            </ol>
           </article>
         </div>
       </div>
 
-      {/* ====== SECTION 04 — NUMBERS (full bleed, breaks out) ====== */}
+      {/* ====== SECTION 03 — NUMBERS (full bleed, breaks out) ====== */}
       <div className={`${styles.numbersBleed} reveal-up`}>
-        <div className={styles.numbersLabel}>The Numbers · 04</div>
+        <div className={styles.numbersLabel}>The Numbers · 03</div>
         <div className={styles.numbersGrid}>
           <div className={styles.numItem}>
             <div className={styles.numValue}>$<span className={styles.numAccent}>250K+</span></div>
@@ -177,9 +155,9 @@ export default function AboutLayout() {
 
         <div className={styles.content}>
 
-          {/* ====== SECTION 05 — OFF THE CLOCK ====== */}
+          {/* ====== SECTION 04 — OFF THE CLOCK ====== */}
           <article className={styles.block}>
-            <div className={`${styles.label} reveal-up`}>Off The Clock · 05</div>
+            <div className={`${styles.label} reveal-up`}>Off The Clock · 04</div>
 
             <div className={`${styles.locations} reveal-up`}>
               <span className={styles.locA}>Singapore</span>
