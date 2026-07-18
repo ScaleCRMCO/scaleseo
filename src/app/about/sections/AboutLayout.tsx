@@ -207,29 +207,6 @@ export default function AboutLayout() {
             </div>
           </article>
 
-          {/* ====== SECTION 06 — PLAN ====== */}
-          <article className={styles.block}>
-            <div className={`${styles.label} reveal-up`}>The Plan · 06</div>
-            <h2 className={`${styles.headline} reveal-up`}>
-              Solo today. <em>Selective</em> tomorrow.
-            </h2>
-
-            <ul className={`${styles.plan} reveal-up`}>
-              <li><span className={styles.planArrow}>→</span> A third country in the roster</li>
-              <li><span className={styles.planArrow}>→</span> A second specialist alongside me</li>
-              <li><span className={styles.planArrow}>→</span> Never an agency</li>
-            </ul>
-
-            <div className={`${styles.body} reveal-up`}>
-              <p>
-                The current shape works. Growth happens only in ways I can control. The goal isn&apos;t to scale headcount — it&apos;s to be the freelancer that established businesses think of first when they&apos;re tired of being burned by agencies.
-              </p>
-              <p>
-                If that&apos;s the working relationship you&apos;ve been looking for, we should talk.
-              </p>
-            </div>
-          </article>
-
         </div>
       </div>
     </section>

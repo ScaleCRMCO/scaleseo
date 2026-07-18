@@ -1,4 +1,3 @@
-import Link from "next/link";
 import styles from "./AboutCTA.module.css";
 
 export default function AboutCTA() {
@@ -10,13 +9,18 @@ export default function AboutCTA() {
       </div>
 
       <h2 className={styles.headline}>
-        A small roster. <em>One conversation away.</em>
+        A small roster. <em>One call away.</em>
       </h2>
 
-      <Link href="/contact" className={styles.button}>
-        <span>Start a conversation</span>
+      <a
+        href="https://cal.com/corbinjensen-scaleseo/30min"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={styles.button}
+      >
+        <span>Book a call</span>
         <span className={styles.arrow}>→</span>
-      </Link>
+      </a>
 
       <div className={styles.note}>Reply within 24 hours</div>
     </section>
