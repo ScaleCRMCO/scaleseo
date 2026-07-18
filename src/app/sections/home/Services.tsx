@@ -39,7 +39,7 @@ const services = [
   {
     num: "04",
     name: "Reporting & Strategy",
-    desc: "A monthly call where I show you what moved, what's next, and what it means for leads — in plain English, not a dashboard you'll never open.",
+    desc: "A monthly call where I show you what moved, what's next, and what it means for leads.",
     tag: "Ongoing",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -51,7 +51,7 @@ const services = [
   {
     num: "05",
     name: "AI Search Optimisation",
-    desc: "Setting up your site so ChatGPT, Perplexity, and Google's AI answers name you — not the competitor down the road — when buyers ask.",
+    desc: "Setting up your site so ChatGPT, Perplexity, and Google's AI answers name you.",
     tag: "Emerging",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
