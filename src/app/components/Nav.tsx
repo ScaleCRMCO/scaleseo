@@ -43,10 +43,16 @@ export default function Nav() {
         <Link href="/#process"><span className={styles.num}>03</span> Process</Link>
         <Link href="/about"><span className={styles.num}>04</span> About</Link>
       </div>
-      <Link href="/contact" className={styles.navCta} onClick={close}>
-        <span>Start a project</span>
+      <a
+        href="https://cal.com/corbinjensen-scaleseo/30min"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={styles.navCta}
+        onClick={close}
+      >
+        <span>Book a call</span>
         <span className={styles.navCtaArrow}>&rarr;</span>
-      </Link>
+      </a>
       {/* Hamburger button (mobile only) */}
       <button
         className={styles.burger}
