@@ -2,7 +2,6 @@ import Hero from "./sections/home/Hero";
 import Marquee from "./sections/home/Marquee";
 import CaseStudy from "./sections/home/CaseStudy";
 import Services from "./sections/home/Services";
-import ForWhom from "./sections/home/ForWhom";
 import Process from "./sections/home/Process";
 import About from "./sections/home/About";
 import Contact from "./sections/home/Contact";
@@ -19,12 +18,7 @@ export default function Home() {
         I keep a <strong>small roster on purpose</strong> — every client gets
         the person actually doing the work, <em>not a rotating team</em>.
       </Interstitial>
-      <ForWhom />
       <Services />
-      <Interstitial eyebrow="How I measure it">
-        Rankings are a means, not the goal. <strong>Calls, leads, revenue</strong> —
-        that&rsquo;s <em>what gets reported</em>, every month.
-      </Interstitial>
       <Process />
       <About />
       <Contact />
