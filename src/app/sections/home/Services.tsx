@@ -85,7 +85,12 @@ export default function Services() {
             A hyper-focused framework,<br />engineered <em>for scale.</em>
           </h2>
           <p className={styles.body}>
-            <strong>I eliminate typical agency overhead and fluff to focus strictly on the core variables that move search rankings and corporate revenue. By aligning technical execution, data-driven content strategy, and visibility engines into one unified framework, we deliver direct, partner-level accountability that protects your return on investment.
+            We eliminate typical agency overhead and fluff to focus strictly
+            on the core variables that move search rankings and corporate
+            revenue. By aligning technical execution, data-driven content
+            strategy, and visibility engines into one unified framework, we
+            deliver direct, partner-level accountability that protects your
+            return on investment.
           </p>
           <a href="#contact" className={styles.cta}>
             <span>Start a conversation</span>
