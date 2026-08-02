@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import RevealOnScroll from "../components/RevealOnScroll";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
@@ -97,11 +98,9 @@ export default function ServicesPage() {
             <span>Book a call</span>
             <span className={styles.arrow}>→</span>
           </a>
-          <a href="/contact" className={styles.ctaSecondary}>
-            Or send a message →
-          </a>
         </div>
       </section>
+      <RevealOnScroll />
     </main>
   );
 }
