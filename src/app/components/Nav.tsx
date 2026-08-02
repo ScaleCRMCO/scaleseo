@@ -39,7 +39,7 @@ export default function Nav() {
       {/* Desktop links */}
       <div className={styles.links}>
         <Link href="/#work"><span className={styles.num}>01</span> Work</Link>
-        <Link href="/#services"><span className={styles.num}>02</span> Services</Link>
+        <Link href="/services"><span className={styles.num}>02</span> Services</Link>
         <Link href="/#process"><span className={styles.num}>03</span> Process</Link>
         <Link href="/about"><span className={styles.num}>04</span> About</Link>
       </div>
@@ -66,7 +66,7 @@ export default function Nav() {
       {/* Full-screen mobile menu */}
       <div className={`${styles.mobileMenu} ${open ? styles.mobileMenuOpen : ""}`}>
         <Link href="/#work" onClick={close}><span className={styles.num}>01</span> Work</Link>
-        <Link href="/#services" onClick={close}><span className={styles.num}>02</span> Services</Link>
+        <Link href="/services" onClick={close}><span className={styles.num}>02</span> Services</Link>
         <Link href="/#process" onClick={close}><span className={styles.num}>03</span> Process</Link>
         <Link href="/about" onClick={close}><span className={styles.num}>04</span> About</Link>
         <Link href="/contact" onClick={close}>Contact</Link>
