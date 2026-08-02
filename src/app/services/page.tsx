@@ -3,7 +3,7 @@ import RevealOnScroll from "../components/RevealOnScroll";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: "SEO Services in Calgary | Scale SEO — Corbin Jensen",
+  title: "SEO Services in Calgary | Scale SEO",
   description:
     "SEO services for established businesses, based in Calgary and working across Canada and internationally. On-page, local, technical SEO, content strategy, and AI search optimization — handled by one specialist.",
 };
