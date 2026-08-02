@@ -62,15 +62,13 @@ export default function ServicesPage() {
       </header>
 
       <section className={styles.list}>
-        <div className={styles.listInner}>
-          <div className="section-label reveal-up">What I Do</div>
+        <div className="section-label reveal-up">What I Do</div>
+        <div className={styles.grid}>
           {services.map((s) => (
             <div key={s.num} className={`${styles.item} reveal-up`}>
               <div className={styles.itemNum}>{s.num}</div>
-              <div className={styles.itemMain}>
-                <h2 className={styles.itemName}>{s.name}</h2>
-                <p className={styles.itemDesc}>{s.desc}</p>
-              </div>
+              <h2 className={styles.itemName}>{s.name}</h2>
+              <p className={styles.itemDesc}>{s.desc}</p>
             </div>
           ))}
         </div>
