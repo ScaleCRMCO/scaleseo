@@ -40,8 +40,9 @@ export default function Nav() {
       <div className={styles.links}>
         <Link href="/#work"><span className={styles.num}>01</span> Work</Link>
         <Link href="/services"><span className={styles.num}>02</span> Services</Link>
-        <Link href="/#process"><span className={styles.num}>03</span> Process</Link>
-        <Link href="/about"><span className={styles.num}>04</span> About</Link>
+        <Link href="/industries"><span className={styles.num}>03</span> Industries</Link>
+        <Link href="/#process"><span className={styles.num}>04</span> Process</Link>
+        <Link href="/about"><span className={styles.num}>05</span> About</Link>
       </div>
       <a
         href="https://cal.com/corbinjensen-scaleseo/30min"
@@ -67,8 +68,9 @@ export default function Nav() {
       <div className={`${styles.mobileMenu} ${open ? styles.mobileMenuOpen : ""}`}>
         <Link href="/#work" onClick={close}><span className={styles.num}>01</span> Work</Link>
         <Link href="/services" onClick={close}><span className={styles.num}>02</span> Services</Link>
-        <Link href="/#process" onClick={close}><span className={styles.num}>03</span> Process</Link>
-        <Link href="/about" onClick={close}><span className={styles.num}>04</span> About</Link>
+        <Link href="/industries" onClick={close}><span className={styles.num}>03</span> Industries</Link>
+        <Link href="/#process" onClick={close}><span className={styles.num}>04</span> Process</Link>
+        <Link href="/about" onClick={close}><span className={styles.num}>05</span> About</Link>
         <Link href="/contact" onClick={close}>Contact</Link>
       </div>
     </nav>
