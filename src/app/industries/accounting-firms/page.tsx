@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import Breadcrumbs from "../../components/Breadcrumbs";
 import RevealOnScroll from "../../components/RevealOnScroll";
 import styles from "./page.module.css";
 
@@ -46,6 +48,13 @@ export default function AccountingFirmsPage() {
     <main>
       <header className={styles.hero}>
         <div className={styles.heroContent}>
+          <Breadcrumbs
+            items={[
+              { name: "Home", href: "/" },
+              { name: "Industries", href: "/industries" },
+              { name: "Accounting Firms" },
+            ]}
+          />
           <p className={styles.eyebrow}>Industries / Accounting Firms</p>
           <h1 className={styles.title}>
             SEO for Accounting Firms,{" "}
@@ -127,6 +136,15 @@ export default function AccountingFirmsPage() {
               now booking new clients weekly.
             </p>
           </div>
+          <p className={styles.proofNote}>
+            Read the full breakdown:{" "}
+            <Link
+              href="/blog/how-accounting-firms-rank-on-google-in-canada"
+              className={styles.proofLink}
+            >
+              How Accounting Firms Can Rank on Google in Canada →
+            </Link>
+          </p>
         </div>
       </section>
 

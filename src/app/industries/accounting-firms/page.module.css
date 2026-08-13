@@ -197,6 +197,23 @@
   color: var(--ink-dim);
 }
 
+.proofNote {
+  margin-top: 24px;
+  font-family: var(--sans);
+  font-size: 15px;
+  color: var(--ink-dim);
+}
+
+.proofLink {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.proofLink:hover {
+  text-decoration: underline;
+}
+
 /* === CTA === */
 .cta {
   padding: 140px 40px;

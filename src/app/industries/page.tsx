@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Breadcrumbs from "../components/Breadcrumbs";
 import RevealOnScroll from "../components/RevealOnScroll";
 import styles from "./page.module.css";
 
@@ -35,6 +36,7 @@ export default function IndustriesPage() {
     <main>
       <header className={styles.hero}>
         <div className={styles.heroContent}>
+          <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Industries" }]} />
           <p className={styles.eyebrow}>Industries</p>
           <h1 className={styles.title}>
             SEO for Financial &amp;{" "}

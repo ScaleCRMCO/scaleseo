@@ -19,6 +19,7 @@ export default function Footer() {
           <Link href="/" className={styles.colLink}>Home</Link>
           <Link href="/services" className={styles.colLink}>Services</Link>
           <Link href="/industries" className={styles.colLink}>Industries</Link>
+          <Link href="/blog" className={styles.colLink}>Blog</Link>
           <Link href="/about" className={styles.colLink}>About</Link>
           <Link href="/contact" className={styles.colLink}>Contact</Link>
         </div>
@@ -41,6 +42,7 @@ export default function Footer() {
         {/* Connect */}
         <div className={styles.col}>
           <div className={styles.colLabel}>Connect</div>
+          <Link href="/corbin-jensen" className={styles.colLink}>Corbin Jensen</Link>
           <a href="https://www.linkedin.com/in/corbin-jensen-9a9b77127/" target="_blank" rel="noopener noreferrer" className={styles.colLink}>LinkedIn</a>
           <a href="https://www.instagram.com/scaleseo.co/" target="_blank" rel="noopener noreferrer" className={styles.colLink}>Instagram</a>
           <a href="https://maps.app.goo.gl/FYWSaQ3p81VFnNcc7" target="_blank" rel="noopener noreferrer" className={styles.colLink}>Google Business</a>

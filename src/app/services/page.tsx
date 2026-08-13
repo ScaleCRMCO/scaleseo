@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Breadcrumbs from "../components/Breadcrumbs";
 import RevealOnScroll from "../components/RevealOnScroll";
 import styles from "./page.module.css";
 
@@ -46,6 +47,7 @@ export default function ServicesPage() {
     <main>
       <header className={styles.hero}>
         <div className={styles.heroContent}>
+          <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Services" }]} />
           <p className={styles.eyebrow}>Services</p>
           <h1 className={styles.title}>
             SEO Services in <span className={styles.accent}>Calgary</span>,
