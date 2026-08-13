@@ -15,7 +15,7 @@ export const posts: Post[] = [
     title: "How Accounting Firms Can Rank on Google in Canada",
     description:
       "Why generic SEO fails accounting and advisory firms, and what actually moves rankings and revenue for a trust-driven service business.",
-    date: "2026-08-01",
+    date: "2026-08-13",
     readTime: "6 min read",
     category: "Accounting Firms",
     excerpt:
