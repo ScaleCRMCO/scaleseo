@@ -18,6 +18,7 @@ export default function Footer() {
           <div className={styles.colLabel}>Quick Links</div>
           <Link href="/" className={styles.colLink}>Home</Link>
           <Link href="/services" className={styles.colLink}>Services</Link>
+          <Link href="/industries" className={styles.colLink}>Industries</Link>
           <Link href="/about" className={styles.colLink}>About</Link>
           <Link href="/contact" className={styles.colLink}>Contact</Link>
         </div>

@@ -41,7 +41,7 @@
   max-width: 700px;
 }
 
-/* === SERVICE LIST === */
+/* === INDUSTRY LIST === */
 .list {
   padding: 100px 40px 120px;
   border-bottom: 1px solid var(--line);
@@ -63,14 +63,37 @@
   display: flex;
   flex-direction: column;
   min-height: 260px;
+  text-decoration: none;
+  color: inherit;
 }
 
-.itemNum {
+.itemLinked {
+  transition: background 0.3s ease;
+  cursor: pointer;
+}
+
+.itemLinked:hover {
+  background: var(--bg);
+}
+
+.itemTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.itemStatus {
+  flex-shrink: 0;
   font-family: var(--mono);
-  font-size: 13px;
+  font-size: 10px;
   letter-spacing: 0.1em;
-  color: var(--accent);
-  margin-bottom: 24px;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+  border: 1px solid var(--line-strong);
+  padding: 4px 10px;
+  border-radius: 100px;
 }
 
 .itemName {
@@ -79,7 +102,6 @@
   font-size: clamp(21px, 2vw, 25px);
   letter-spacing: -0.01em;
   color: var(--ink);
-  margin-bottom: 14px;
 }
 
 .itemDesc {
@@ -88,23 +110,19 @@
   font-size: 15.5px;
   line-height: 1.6;
   color: var(--ink-dim);
+  flex-grow: 1;
 }
 
-.industriesNote {
-  margin-top: 40px;
-  font-family: var(--sans);
-  font-size: 15px;
-  color: var(--ink-dim);
-}
-
-.industriesLink {
+.itemLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 24px;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   color: var(--accent);
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.industriesLink:hover {
-  text-decoration: underline;
 }
 
 /* === CTA === */
@@ -188,20 +206,6 @@
 
 .ctaButton:hover .arrow {
   transform: translateX(4px);
-}
-
-.ctaSecondary {
-  font-family: var(--mono);
-  font-size: 12px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--ink-dim);
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.ctaSecondary:hover {
-  color: var(--accent);
 }
 
 @media (max-width: 1100px) {

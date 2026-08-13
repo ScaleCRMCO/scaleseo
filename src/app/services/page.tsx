@@ -72,6 +72,12 @@ export default function ServicesPage() {
             </div>
           ))}
         </div>
+        <p className={styles.industriesNote}>
+          Looking for something specific to your industry?{" "}
+          <a href="/industries" className={styles.industriesLink}>
+            See who I work with →
+          </a>
+        </p>
       </section>
 
       <section className={styles.cta}>
