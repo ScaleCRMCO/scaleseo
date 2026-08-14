@@ -43,6 +43,13 @@ const included = [
 export default function SeoServicePage() {
   return (
     <ServicePage
+      schema={{
+        name: "SEO Services",
+        description:
+          "Technical, on-page, and local SEO built to improve real website performance — faster sites, better rankings, and more qualified organic traffic.",
+        serviceType: "Search Engine Optimization",
+        url: "https://scaleseo.co/services/seo",
+      }}
       breadcrumbs={[
         { name: "Home", href: "/" },
         { name: "Services", href: "/services" },

@@ -27,6 +27,13 @@ export function ProofBadge({ children }: { children: ReactNode }) {
   return <span className={styles.proofBadge}>{children}</span>;
 }
 
+export type ServicePageSchema = {
+  name: string;
+  description: string;
+  serviceType: string;
+  url: string; // e.g. "https://scaleseo.co/services/seo"
+};
+
 export type ServicePageProps = {
   breadcrumbs: Crumb[];
   eyebrow: string;
@@ -41,7 +48,35 @@ export type ServicePageProps = {
   ctaHeadline: ReactNode;
   ctaSub: string;
   relatedNote?: ReactNode;
+  schema: ServicePageSchema;
 };
+
+// Builds a consistent Service schema for every /services/* page — same
+// provider/area-served shape as the site-wide LocalBusiness schema in layout.tsx.
+function buildServiceSchema(schema: ServicePageSchema) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: schema.name,
+    description: schema.description,
+    serviceType: schema.serviceType,
+    url: schema.url,
+    provider: {
+      "@type": "ProfessionalService",
+      name: "Scale SEO",
+      url: "https://scaleseo.co",
+      founder: {
+        "@type": "Person",
+        name: "Corbin Jensen",
+        url: "https://scaleseo.co/corbin-jensen",
+      },
+    },
+    areaServed: [
+      { "@type": "City", name: "Calgary" },
+      { "@type": "Country", name: "Canada" },
+    ],
+  };
+}
 
 export default function ServicePage({
   breadcrumbs,
@@ -57,9 +92,16 @@ export default function ServicePage({
   ctaHeadline,
   ctaSub,
   relatedNote,
+  schema,
 }: ServicePageProps) {
+  const jsonLd = buildServiceSchema(schema);
+
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <header className={styles.hero}>
         <div className={styles.heroContent}>
           <Breadcrumbs items={breadcrumbs} />

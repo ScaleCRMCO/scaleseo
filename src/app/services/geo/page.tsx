@@ -43,6 +43,13 @@ const included = [
 export default function GeoServicePage() {
   return (
     <ServicePage
+      schema={{
+        name: "GEO (Generative Engine Optimization) Services",
+        description:
+          "Generative Engine Optimization built to get your business cited by Google AI Overviews, ChatGPT, Perplexity, and Microsoft Copilot.",
+        serviceType: "Generative Engine Optimization",
+        url: "https://scaleseo.co/services/geo",
+      }}
       breadcrumbs={[
         { name: "Home", href: "/" },
         { name: "Services", href: "/services" },
