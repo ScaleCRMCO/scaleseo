@@ -174,12 +174,27 @@
 }
 
 .proofAccent {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
   font-family: var(--display);
   font-weight: 600;
-  font-size: clamp(36px, 4vw, 52px);
+  font-size: clamp(30px, 3.4vw, 44px);
   letter-spacing: -0.02em;
-  color: var(--accent);
+  color: var(--ink);
   line-height: 1;
+}
+
+.proofBadge {
+  display: inline-flex;
+  align-items: center;
+  background: var(--accent);
+  color: var(--bg);
+  font-size: clamp(24px, 2.6vw, 34px);
+  padding: 4px 16px 6px;
+  border-radius: 100px;
+  line-height: 1.2;
 }
 
 .proofMetricLabel {

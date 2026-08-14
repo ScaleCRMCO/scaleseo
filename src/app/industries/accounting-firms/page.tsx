@@ -123,17 +123,20 @@ export default function AccountingFirmsPage() {
           <div className="section-label reveal-up">Proof</div>
           <div className={`${styles.proofCard} reveal-up`}>
             <div className={styles.proofMetric}>
-              <span className={styles.proofAccent}>30 → 14.0</span>
+              <span className={styles.proofAccent}>
+                30 → <span className={styles.proofBadge}>Top 10</span>
+              </span>
               <span className={styles.proofMetricLabel}>
-                Avg. search position, 6 months
+                Search ranking, target keywords, 6 months
               </span>
             </div>
             <p className={styles.proofBody}>
               Six months of technical fixes, on-page structure, and content
               built around the terms their clients actually search moved
-              this accounting &amp; advisory firm&rsquo;s average position
-              from 30 to 14.0 — doubling impressions and clicks. They&rsquo;re
-              now booking new clients weekly.
+              this accounting &amp; advisory firm from position 30 into the
+              top 10 search results for their target keywords — doubling
+              impressions and clicks. They&rsquo;re now booking new clients
+              weekly.
             </p>
           </div>
           <p className={styles.proofNote}>
