@@ -5,44 +5,38 @@ import RevealOnScroll from "../components/RevealOnScroll";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: "SEO Services in Calgary | Scale SEO",
+  title: "SEO & Web Development Services in Calgary | Scale SEO",
   description:
-    "SEO services for established businesses, based in Calgary and working across Canada and internationally. On-page, local, technical SEO, content strategy, and AI search optimization — handled by one specialist.",
+    "SEO, web development, and AI search optimization for established businesses, based in Calgary and working across Canada and internationally. Handled directly by one specialist.",
 };
 
 const services = [
   {
     num: "01",
-    name: "On-Page SEO",
-    desc: "Titles, structure, and internal links rebuilt around what your buyers actually search — so the right pages rank for the right terms.",
+    name: "SEO",
+    desc: "Technical, on-page, and local SEO built to improve real rankings and revenue — not just a checklist of tasks.",
     href: "/services/seo",
   },
   {
     num: "02",
-    name: "Local SEO",
-    desc: "Google Business Profile, reviews, citations, and location pages built to win the map pack in every city you serve — starting with Calgary.",
-    href: "/services/seo",
+    name: "Web Development & Design",
+    desc: "Fast, clean websites for accounting and professional service businesses — designed and built with SEO in from the start.",
+    href: "/services/web-development",
   },
   {
     num: "03",
-    name: "Technical SEO",
-    desc: "Speed, crawlability, schema, indexing. The unglamorous groundwork that decides whether the rest of your SEO counts for anything.",
-    href: "/services/seo",
-  },
-  {
-    num: "04",
     name: "Content Strategy",
     desc: "Content built around real search intent and buyer questions, not filler — the kind that ranks and actually converts.",
     href: "/services/seo",
   },
   {
-    num: "05",
+    num: "04",
     name: "AI Search Optimization (GEO)",
     desc: "Positioning your site so ChatGPT, Perplexity, and Google's AI answers name you when buyers ask.",
     href: "/services/geo",
   },
   {
-    num: "06",
+    num: "05",
     name: "Reporting & Strategy",
     desc: "Monthly calls and plain-English reporting on what moved, what's next, and what it means for leads and revenue.",
     href: null,

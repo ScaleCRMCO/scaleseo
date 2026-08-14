@@ -58,6 +58,8 @@ const jsonLd = {
     "Local SEO",
     "Technical SEO",
     "AI Search Optimization",
+    "Web Development",
+    "Web Design",
   ],
   openingHoursSpecification: {
     "@type": "OpeningHoursSpecification",
