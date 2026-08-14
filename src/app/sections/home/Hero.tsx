@@ -2,9 +2,9 @@
 import styles from "./Hero.module.css";
 
 const checkpoints = [
-  "Independent specialist — no outsourcing, no offshore team",
+  "Independent specialist — no outsourcing",
   "Work directly with me, not an account manager",
-  "Focused on accounting firms & financial service businesses",
+  "Focused on accounting firms & professional service businesses",
   "No lock-in contracts",
 ];
 
@@ -51,10 +51,11 @@ export default function Hero() {
           </h1>
 
           <p className={styles.intro}>
-            I&rsquo;m Corbin — an independent SEO specialist working with
-            accounting firms and other high-margin financial service
-            businesses across Canada. Data-driven strategy that turns search
-            visibility into real, bookable revenue.
+            Hi, I&rsquo;m Corbin! An independent SEO specialist with a strong
+            background in technical SEO, content strategy, and local search.
+            I help accounting firms and professional service businesses
+            across Canada with data-driven strategies to hit real growth
+            targets.
           </p>
 
           <div className={styles.ctaGroup}>
