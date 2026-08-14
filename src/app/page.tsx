@@ -6,6 +6,7 @@ import IndustriesTeaser from "./sections/home/IndustriesTeaser";
 import Process from "./sections/home/Process";
 import About from "./sections/home/About";
 import BlogTeaser from "./sections/home/BlogTeaser";
+import FAQ from "./sections/home/FAQ";
 import Contact from "./sections/home/Contact";
 import Interstitial from "./sections/home/Interstitial";
 import RevealOnScroll from "./components/RevealOnScroll";
@@ -24,6 +25,7 @@ export default function Home() {
       <IndustriesTeaser />
       <Process />
       <About />
+      <FAQ />
       <BlogTeaser />
       <Contact />
       <RevealOnScroll />
