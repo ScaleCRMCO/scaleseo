@@ -5,42 +5,48 @@ import RevealOnScroll from "../../components/RevealOnScroll";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: "SEO for Accounting Firms in Canada | Scale SEO",
+  title: "SEO for Accounting Firms & CPA Practices in Canada | Scale SEO",
   description:
-    "SEO built for accounting and advisory firms across Canada — designed to attract institutional retainers and higher-value clients, not tax-season foot traffic. One specialist, a strict two-firms-per-city cap.",
+    "SEO built for accounting firms and CPA practices across Canada — designed to attract institutional retainers, fractional CFO leads, and advisory relationships, not tax-season foot traffic. Run personally by one specialist, with a strict two-firms-per-city cap.",
 };
 
 const included = [
   {
     num: "01",
-    name: "Advisory-Intent Content",
-    desc: "Content and on-page structure built around what corporate and high-net-worth clients search for — not generic tax-season keywords.",
+    name: "Corporate & Advisory-Intent Content",
+    desc: "I build your content strategy around the technical, complex search terms high-net-worth individuals and business owners actually use — not low-margin, seasonal tax-return queries.",
   },
   {
     num: "02",
-    name: "Local SEO, Every Office",
-    desc: "Google Business Profile, citations, and location pages built out for every office you operate, wherever in Canada that is.",
+    name: "Multi-Office Local SEO & Maps Domination",
+    desc: "I optimize your Google Business Profiles, clean up citations, and build out localized landing pages for every office you operate across Canada.",
   },
   {
     num: "03",
-    name: "Technical & Trust Signals",
-    desc: "Speed, schema, and the E-E-A-T groundwork Google expects from a firm handling other people's money.",
+    name: "Financial E-E-A-T & Trust Infrastructure",
+    desc: "Google holds financial sites to a higher standard under its Your Money or Your Life (YMYL) guidelines. I implement schema markup, speed fixes, and author trust signals that protect your organic authority.",
   },
   {
     num: "04",
-    name: "AI Search Optimization",
-    desc: "Positioning so ChatGPT, Perplexity, and Google's AI answers name your firm when a prospect asks who to trust.",
+    name: "Generative AI Search Optimization (GEO)",
+    desc: "I structure your site so AI tools like ChatGPT, Perplexity, and Google's AI Overviews actually cite and name your firm when someone asks for an advisory recommendation.",
   },
   {
     num: "05",
-    name: "Reporting Tied to Retainer Value",
-    desc: "Monthly, plain-English reporting on what moved and what it means for new client value — not vanity ranking screenshots.",
+    name: "Bottom-Line Revenue Reporting",
+    desc: "Monthly, plain-English reporting focused on what actually matters — qualified inquiries, calls, and pipeline value — not empty keyword screenshots.",
   },
   {
     num: "06",
-    name: "Direct Access to Me",
-    desc: "Every audit, every call, every piece of content — handled personally. No account manager relaying to an offshore team.",
+    name: "Direct Partner Accountability",
+    desc: "You work directly with me. Every audit, every strategy shift, every piece of content — executed personally, with no outsourcing and no rotating junior account managers.",
   },
+];
+
+const targetQueries = [
+  "Corporate Structuring & Multi-Provincial Tax Strategies",
+  "Fractional CFO Services & Virtual Bookkeeping Infrastructure",
+  "M&A Advisory Support & Specialized Corporate Auditing",
 ];
 
 export default function AccountingFirmsPage() {
@@ -57,15 +63,16 @@ export default function AccountingFirmsPage() {
           />
           <p className={styles.eyebrow}>Industries / Accounting Firms</p>
           <h1 className={styles.title}>
-            SEO for Accounting Firms,{" "}
-            <span className={styles.accent}>Built for Canada.</span>
+            SEO for Accounting Firms{" "}
+            <span className={styles.accent}>&amp; CPA Practices in Canada.</span>
           </h1>
           <p className={styles.sub}>
-            This isn&rsquo;t a Calgary-only offer — it&rsquo;s built for
-            accounting and advisory firms anywhere in Canada. The goal isn&rsquo;t
-            more traffic, it&rsquo;s more of the clients worth having:
-            institutional retainers and advisory relationships that compound,
-            not a spike of tax-season walk-ins.
+            This isn&rsquo;t a Calgary-only, local offer — I build national
+            search visibility for accounting and financial advisory
+            practices anywhere in Canada. The goal isn&rsquo;t a superficial
+            traffic spike; it&rsquo;s securing the high-value corporate
+            retainers, fractional CFO leads, and tax advisory relationships
+            that compound long after tax season ends.
           </p>
         </div>
       </header>
@@ -74,17 +81,21 @@ export default function AccountingFirmsPage() {
         <div className={styles.problemInner}>
           <div className="section-label reveal-up">The Problem</div>
           <h2 className={`${styles.problemHeadline} reveal-up`}>
-            Most SEO is built for volume. <span className={styles.accent}>Accounting firms need trust.</span>
+            Generic SEO fails{" "}
+            <span className={styles.accent}>modern accounting practices.</span>
           </h2>
           <p className={`${styles.problemBody} reveal-up`}>
-            A generic agency optimizes an accounting firm the same way it
-            optimizes a plumber — chase volume, chase rankings, move on.
-            But the client you actually want doesn&rsquo;t make a snap
-            decision from a Google Ads click. They research, they compare,
-            they check who else the firm works with. That&rsquo;s a
-            different search journey, and it needs a different strategy:
-            content and technical work built to earn trust before the first
-            call, not just traffic before the first click.
+            Traditional agencies optimize an accounting firm&rsquo;s website
+            the same way they&rsquo;d optimize a home service
+            contractor&rsquo;s — chase raw traffic volume, then move on. But
+            your ideal corporate or high-net-worth client doesn&rsquo;t make
+            a snap decision off a generic ad click. They research your
+            firm&rsquo;s governance, compare advisory backgrounds, and
+            evaluate authority before they ever pick up the phone. That
+            sophisticated search journey needs strategic on-page content and
+            technical work engineered to earn trust before the first
+            consultation call — and it&rsquo;s exactly the work I do
+            personally, for every firm I take on.
           </p>
         </div>
       </section>
@@ -102,18 +113,44 @@ export default function AccountingFirmsPage() {
         </div>
       </section>
 
+      <section className={styles.targets}>
+        <div className={styles.targetsInner}>
+          <div className="section-label reveal-up">The Focus</div>
+          <h2 className={`${styles.targetsHeadline} reveal-up`}>
+            Direct targeting for{" "}
+            <span className={styles.accent}>high-margin advisory queries.</span>
+          </h2>
+          <p className={`${styles.targetsBody} reveal-up`}>
+            I don&rsquo;t spend your retainer chasing low-value traffic. My
+            content frameworks are built to position your firm directly in
+            front of businesses searching for specialized expertise,
+            including:
+          </p>
+          <ul className={`${styles.targetsList} reveal-up`}>
+            {targetQueries.map((q) => (
+              <li key={q} className={styles.targetsItem}>
+                <span className={styles.targetsArrow}>→</span>
+                <span>{q}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
       <section className={styles.exclusivity}>
         <div className={styles.exclusivityInner}>
           <div className="section-label reveal-up">The Cap</div>
           <h2 className={`${styles.exclusivityHeadline} reveal-up`}>
-            Two firms per city. <span className={styles.accent}>Never competitors.</span>
+            Two firms per city. <span className={styles.accent}>A strict hard cap.</span>
           </h2>
           <p className={`${styles.exclusivityBody} reveal-up`}>
-            I work with a maximum of two accounting firms in any one city.
-            That&rsquo;s a hard cap, not a marketing line — it means I&rsquo;m
-            never building search visibility for a firm and then handing the
-            same playbook to the firm across the street. If your city is
-            already spoken for, I&rsquo;ll tell you honestly on the call.
+            I maintain a strict maximum of two accounting firm clients per
+            Canadian city. That&rsquo;s an operational guarantee, not a
+            marketing line — it means I&rsquo;m never building dominant
+            local rankings for your practice while handing the same
+            competitive strategy to the firm across the street. If your
+            market&rsquo;s already spoken for, I&rsquo;ll tell you directly
+            on our first call.
           </p>
         </div>
       </section>
@@ -121,6 +158,10 @@ export default function AccountingFirmsPage() {
       <section className={styles.proof}>
         <div className={styles.proofInner}>
           <div className="section-label reveal-up">Proof</div>
+          <h2 className={`${styles.proofHeadline} reveal-up`}>
+            Case study: moving an advisory firm{" "}
+            <span className={styles.accent}>to the top 10.</span>
+          </h2>
           <div className={`${styles.proofCard} reveal-up`}>
             <div className={styles.proofMetric}>
               <span className={styles.proofAccent}>
@@ -131,12 +172,14 @@ export default function AccountingFirmsPage() {
               </span>
             </div>
             <p className={styles.proofBody}>
-              Six months of technical fixes, on-page structure, and content
-              built around the terms their clients actually search moved
-              this accounting &amp; advisory firm from position 30 into the
-              top 10 search results for their target keywords — doubling
-              impressions and clicks. They&rsquo;re now booking new clients
-              weekly.
+              Over a six-month engagement, a combination of technical fixes,
+              restructured page hierarchy, and intentional content
+              optimization moved a premium accounting &amp; advisory
+              practice from position 30 into the top 10 search results for
+              their highest-intent target keywords. It doubled organic
+              impressions, scaled clicks, and continues to bring in new
+              advisory bookings weekly — the same process I&rsquo;d run for
+              your firm.
             </p>
           </div>
           <p className={styles.proofNote}>
@@ -175,6 +218,10 @@ export default function AccountingFirmsPage() {
             <span className={styles.arrow}>→</span>
           </a>
         </div>
+        <p className={styles.signature}>
+          — <Link href="/corbin-jensen">Corbin Jensen</Link>, SEO Specialist
+          &amp; Founder, Scale SEO
+        </p>
       </section>
       <RevealOnScroll />
     </main>
