@@ -212,14 +212,15 @@
 .checklist {
   list-style: none;
   margin: 0;
-  padding: 28px 0 0;
+  padding: 24px 0 0;
   border-top: 1px solid var(--line-strong);
   display: flex;
   flex-direction: column;
   gap: 14px;
-  max-width: 520px;
+  width: 100%;
+  max-width: 400px;
   opacity: 0;
-  animation: fadeUp 0.9s ease 2.3s forwards;
+  animation: fadeUp 0.9s ease 2.1s forwards;
 }
 .checkItem {
   display: flex;

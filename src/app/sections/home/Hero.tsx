@@ -6,7 +6,6 @@ const checkpoints = [
   "Work directly with me, not an account manager",
   "Focused on accounting firms & financial service businesses",
   "No lock-in contracts",
-  "Two firms per city, so I'm never working against your competitor",
 ];
 
 export default function Hero() {
@@ -73,14 +72,7 @@ export default function Hero() {
             </a>
           </div>
 
-          <ul className={styles.checklist}>
-            {checkpoints.map((point) => (
-              <li key={point} className={styles.checkItem}>
-                <span className={styles.checkMark} aria-hidden="true">✓</span>
-                <span>{point}</span>
-              </li>
-            ))}
-          </ul>
+          <span className={styles.availability}>Reply within 24 hours</span>
         </div>
 
         <div className={styles.right}>
@@ -91,7 +83,15 @@ export default function Hero() {
               className={styles.portraitImg}
             />
           </div>
-          <span className={styles.availability}>Reply within 24 hours</span>
+
+          <ul className={styles.checklist}>
+            {checkpoints.map((point) => (
+              <li key={point} className={styles.checkItem}>
+                <span className={styles.checkMark} aria-hidden="true">✓</span>
+                <span>{point}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </header>
