@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "./Services.module.css";
 
 const services = [
@@ -96,6 +97,9 @@ export default function Services() {
             <span>Start a conversation</span>
             <span>→</span>
           </a>
+          <Link href="/services" className={styles.servicesLink}>
+            View all SEO services →
+          </Link>
         </div>
 
         <div className={styles.right}>

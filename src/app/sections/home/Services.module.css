@@ -61,6 +61,23 @@
   gap: 20px;
 }
 
+.servicesLink {
+  display: inline-block;
+  margin-top: 24px;
+  margin-left: 4px;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-dim-on-dark);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.servicesLink:hover {
+  color: var(--accent);
+}
+
 /* === RIGHT (scrolling items) === */
 .right {
   display: flex;
