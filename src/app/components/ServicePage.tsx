@@ -1,7 +1,8 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
-import Breadcrumbs, { type Crumb } from "./Breadcrumbs";
+import { type Crumb } from "./Breadcrumbs";
 import RevealOnScroll from "./RevealOnScroll";
+import SellingHero from "./SellingHero";
 import styles from "./ServicePage.module.css";
 
 export type IncludedItem = {
@@ -49,6 +50,7 @@ export type ServicePageProps = {
   ctaSub: string;
   relatedNote?: ReactNode;
   schema: ServicePageSchema;
+  checkpoints?: string[];
 };
 
 // Builds a consistent Service schema for every /services/* page — same
@@ -93,6 +95,7 @@ export default function ServicePage({
   ctaSub,
   relatedNote,
   schema,
+  checkpoints,
 }: ServicePageProps) {
   const jsonLd = buildServiceSchema(schema);
 
@@ -102,14 +105,13 @@ export default function ServicePage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <header className={styles.hero}>
-        <div className={styles.heroContent}>
-          <Breadcrumbs items={breadcrumbs} />
-          <p className={styles.eyebrow}>{eyebrow}</p>
-          <h1 className={styles.title}>{title}</h1>
-          <p className={styles.sub}>{sub}</p>
-        </div>
-      </header>
+      <SellingHero
+        breadcrumbs={breadcrumbs}
+        eyebrow={eyebrow}
+        title={title}
+        sub={sub}
+        checkpoints={checkpoints}
+      />
 
       <section className={styles.problem}>
         <div className={styles.problemInner}>

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Breadcrumbs from "../../components/Breadcrumbs";
 import RevealOnScroll from "../../components/RevealOnScroll";
+import SellingHero from "../../components/SellingHero";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
@@ -52,30 +52,27 @@ const targetQueries = [
 export default function AccountingFirmsPage() {
   return (
     <main>
-      <header className={styles.hero}>
-        <div className={styles.heroContent}>
-          <Breadcrumbs
-            items={[
-              { name: "Home", href: "/" },
-              { name: "Industries", href: "/industries" },
-              { name: "Accounting Firms" },
-            ]}
-          />
-          <p className={styles.eyebrow}>Industries / Accounting Firms</p>
-          <h1 className={styles.title}>
+      <SellingHero
+        breadcrumbs={[
+          { name: "Home", href: "/" },
+          { name: "Industries", href: "/industries" },
+          { name: "Accounting Firms" },
+        ]}
+        eyebrow="Industries / Accounting Firms"
+        title={
+          <>
             SEO for Accounting Firms{" "}
             <span className={styles.accent}>&amp; CPA Practices in Canada.</span>
-          </h1>
-          <p className={styles.sub}>
-            This isn&rsquo;t a Calgary-only, local offer — I build national
-            search visibility for accounting and financial advisory
-            practices anywhere in Canada. The goal isn&rsquo;t a superficial
-            traffic spike; it&rsquo;s securing the high-value corporate
-            retainers, fractional CFO leads, and tax advisory relationships
-            that compound long after tax season ends.
-          </p>
-        </div>
-      </header>
+          </>
+        }
+        sub="This isn't a Calgary-only, local offer — I build national search visibility for accounting and financial advisory practices anywhere in Canada. The goal isn't a superficial traffic spike; it's securing the high-value corporate retainers, fractional CFO leads, and tax advisory relationships that compound long after tax season ends."
+        checkpoints={[
+          "Independent specialist — no outsourcing",
+          "Work directly with me, not an account manager",
+          "Two accounting firms per city, so I'm never working against your competitor",
+          "No lock-in contracts",
+        ]}
+      />
 
       <section className={styles.problem}>
         <div className={styles.problemInner}>
