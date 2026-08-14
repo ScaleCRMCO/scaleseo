@@ -84,11 +84,25 @@
   flex-direction: column;
 }
 .item {
+  display: block;
   padding: 48px 0;
   border-top: 1px solid var(--line-on-dark);
+  text-decoration: none;
+  color: inherit;
 }
 .item:first-child { padding-top: 0; border-top: none; }
 .item:last-child { padding-bottom: 0; }
+
+.itemLinked {
+  cursor: pointer;
+  transition: padding-left 0.3s ease;
+}
+.itemLinked:hover {
+  padding-left: 12px;
+}
+.itemLinked:hover .itemName {
+  color: var(--accent);
+}
 .itemTop {
   display: flex;
   justify-content: space-between;

@@ -20,8 +20,8 @@
 .title {
   font-family: var(--display);
   font-weight: 500;
-  font-size: clamp(38px, 5.5vw, 76px);
-  line-height: 1.05;
+  font-size: clamp(36px, 5vw, 70px);
+  line-height: 1.08;
   letter-spacing: -0.03em;
   color: var(--ink);
   margin-bottom: 32px;
@@ -41,7 +41,35 @@
   max-width: 700px;
 }
 
-/* === SERVICE LIST === */
+/* === PROBLEM === */
+.problem {
+  padding: 100px 40px;
+  border-bottom: 1px solid var(--line);
+}
+
+.problemInner {
+  max-width: 800px;
+}
+
+.problemHeadline {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: clamp(28px, 3.6vw, 46px);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 28px 0 28px;
+}
+
+.problemBody {
+  font-family: var(--sans);
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--ink-dim);
+}
+
+/* === WHAT'S INCLUDED === */
 .list {
   padding: 100px 40px 120px;
   border-bottom: 1px solid var(--line);
@@ -62,38 +90,7 @@
   padding: 44px 36px;
   display: flex;
   flex-direction: column;
-  min-height: 260px;
-  text-decoration: none;
-  color: inherit;
-}
-
-.itemLinked {
-  transition: background 0.3s ease;
-  cursor: pointer;
-}
-
-.itemLinked:hover {
-  background: var(--bg);
-}
-
-.itemLink {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 20px;
-  font-family: var(--mono);
-  font-size: 12px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--accent);
-}
-
-.itemArrow {
-  transition: transform 0.3s ease;
-}
-
-.itemLinked:hover .itemArrow {
-  transform: translateX(4px);
+  min-height: 240px;
 }
 
 .itemNum {
@@ -107,7 +104,7 @@
 .itemName {
   font-family: var(--display);
   font-weight: 500;
-  font-size: clamp(21px, 2vw, 25px);
+  font-size: clamp(20px, 1.8vw, 23px);
   letter-spacing: -0.01em;
   color: var(--ink);
   margin-bottom: 14px;
@@ -116,26 +113,90 @@
 .itemDesc {
   font-family: var(--sans);
   font-weight: 400;
-  font-size: 15.5px;
+  font-size: 15px;
   line-height: 1.6;
   color: var(--ink-dim);
-  flex-grow: 1;
 }
 
-.industriesNote {
+/* === PROOF === */
+.proof {
+  padding: 100px 40px;
+  border-bottom: 1px solid var(--line);
+}
+
+.proofInner {
+  max-width: 900px;
+}
+
+.proofCard {
   margin-top: 40px;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 48px;
+  align-items: center;
+  border: 1px solid var(--line-strong);
+  padding: 48px;
+}
+
+.proofMetric {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.proofAccent {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(30px, 3.4vw, 44px);
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  line-height: 1;
+}
+
+.proofBadge {
+  display: inline-flex;
+  align-items: center;
+  background: var(--accent);
+  color: var(--bg);
+  font-size: clamp(24px, 2.6vw, 34px);
+  padding: 4px 16px 6px;
+  border-radius: 100px;
+  line-height: 1.2;
+}
+
+.proofMetricLabel {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--ink-dim);
+}
+
+.proofBody {
+  font-family: var(--sans);
+  font-weight: 400;
+  font-size: 16.5px;
+  line-height: 1.65;
+  color: var(--ink-dim);
+}
+
+.proofNote {
+  margin-top: 24px;
   font-family: var(--sans);
   font-size: 15px;
   color: var(--ink-dim);
 }
 
-.industriesLink {
+.proofLink {
   color: var(--accent);
   text-decoration: none;
   font-weight: 500;
 }
 
-.industriesLink:hover {
+.proofLink:hover {
   text-decoration: underline;
 }
 
@@ -222,18 +283,21 @@
   transform: translateX(4px);
 }
 
-.ctaSecondary {
-  font-family: var(--mono);
-  font-size: 12px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+.relatedNote {
+  margin-top: 32px;
+  font-family: var(--sans);
+  font-size: 14.5px;
   color: var(--ink-dim);
-  text-decoration: none;
-  transition: color 0.3s ease;
 }
 
-.ctaSecondary:hover {
+.relatedNote a {
   color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.relatedNote a:hover {
+  text-decoration: underline;
 }
 
 @media (max-width: 1100px) {
@@ -242,8 +306,11 @@
 
 @media (max-width: 900px) {
   .hero { padding: 120px 24px 70px; }
+  .problem { padding: 70px 24px; }
   .list { padding: 70px 24px 90px; }
+  .proof { padding: 70px 24px; }
   .grid { grid-template-columns: 1fr; margin-top: 32px; }
   .item { padding: 32px 28px; min-height: auto; }
+  .proofCard { grid-template-columns: 1fr; padding: 32px 28px; gap: 24px; }
   .cta { padding: 90px 24px; }
 }

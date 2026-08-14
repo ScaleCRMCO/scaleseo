@@ -7,6 +7,7 @@ const services = [
     name: "On-Page SEO",
     desc: "I rewrite your titles, structure, and internal links around what your buyers actually search — so the right pages rank for the right terms.",
     tag: "Core",
+    href: "/services/seo",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <path d="M4 5h16M4 12h10M4 19h7" strokeLinecap="round" />
@@ -18,6 +19,7 @@ const services = [
     name: "Local SEO",
     desc: "Google Business Profile, reviews, citations, and location pages built to win the map pack in every city you actually serve.",
     tag: "Core",
+    href: "/services/seo",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <path d="M12 21s-7-6.5-7-11a7 7 0 1114 0c0 4.5-7 11-7 11z" strokeLinejoin="round" />
@@ -30,6 +32,7 @@ const services = [
     name: "Technical SEO",
     desc: "Speed, crawlability, schema, indexing. The unglamorous groundwork that decides whether the rest of your SEO counts for anything.",
     tag: "Core",
+    href: "/services/seo",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <path d="M10.3 5.7a3.5 3.5 0 00-4.6 4.6l-2.4 2.4a2 2 0 102.8 2.8l2.4-2.4a3.5 3.5 0 004.6-4.6l-2 2-1.4-1.4 2-2z" strokeLinejoin="round" />
@@ -42,6 +45,7 @@ const services = [
     name: "Reporting & Strategy",
     desc: "A monthly call where I show you what moved, what's next, and what it means for leads.",
     tag: "Ongoing",
+    href: null,
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <path d="M4 20V4M4 20h16" strokeLinecap="round" />
@@ -51,9 +55,10 @@ const services = [
   },
   {
     num: "05",
-    name: "AI Search Optimisation",
+    name: "AI Search Optimisation (GEO)",
     desc: "Setting up your site so ChatGPT, Perplexity, and Google's AI answers name you.",
     tag: "Emerging",
+    href: "/services/geo",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <path d="M12 3l1.6 4.4L18 9l-4.4 1.6L12 15l-1.6-4.4L6 9l4.4-1.6L12 3z" strokeLinejoin="round" />
@@ -66,6 +71,7 @@ const services = [
     name: "Google Ads",
     desc: "Paid search to bring in leads while your SEO builds. In active development — open to current clients on request.",
     tag: "2026",
+    href: null,
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <circle cx="12" cy="12" r="9" />
@@ -103,19 +109,34 @@ export default function Services() {
         </div>
 
         <div className={styles.right}>
-          {services.map((s) => (
-            <div key={s.num} className={`${styles.item} reveal-up`}>
-              <div className={styles.itemTop}>
-                <div className={styles.itemTopLeft}>
-                  <span className={styles.itemIcon}>{s.icon}</span>
-                  <span className={styles.itemNum}>{s.num}</span>
+          {services.map((s) => {
+            const content = (
+              <>
+                <div className={styles.itemTop}>
+                  <div className={styles.itemTopLeft}>
+                    <span className={styles.itemIcon}>{s.icon}</span>
+                    <span className={styles.itemNum}>{s.num}</span>
+                  </div>
+                  <span className={styles.itemTag}>{s.tag}</span>
                 </div>
-                <span className={styles.itemTag}>{s.tag}</span>
+                <h3 className={styles.itemName}>{s.name}</h3>
+                <p className={styles.itemDesc}>{s.desc}</p>
+              </>
+            );
+            return s.href ? (
+              <Link
+                key={s.num}
+                href={s.href}
+                className={`${styles.item} ${styles.itemLinked} reveal-up`}
+              >
+                {content}
+              </Link>
+            ) : (
+              <div key={s.num} className={`${styles.item} reveal-up`}>
+                {content}
               </div>
-              <h3 className={styles.itemName}>{s.name}</h3>
-              <p className={styles.itemDesc}>{s.desc}</p>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
