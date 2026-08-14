@@ -9,7 +9,12 @@ export default function BlogTeaser() {
   return (
     <section className={styles.section}>
       <div className={styles.top}>
-        <div className="section-label reveal-up">From the Blog</div>
+        <div>
+          <div className="section-label reveal-up">Recent Articles</div>
+          <h2 className={`${styles.heading} reveal-up`}>
+            Insights on SEO, growth, and search strategy.
+          </h2>
+        </div>
         <Link href="/blog" className={`${styles.viewAll} reveal-up`}>
           View all articles →
         </Link>
@@ -22,12 +27,28 @@ export default function BlogTeaser() {
             href={`/blog/${post.slug}`}
             className={`${styles.card} reveal-up`}
           >
-            <span className={styles.category}>{post.category}</span>
+            <div className={styles.tags}>
+              <span className={styles.tag}>{post.category}</span>
+              <span className={styles.tag}>{post.readTime}</span>
+            </div>
+
+            <span className={styles.date}>
+              {new Date(post.date).toLocaleDateString("en-CA", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}
+            </span>
+
             <h3 className={styles.title}>{post.title}</h3>
             <p className={styles.excerpt}>{post.excerpt}</p>
-            <span className={styles.link}>
-              Read article <span className={styles.arrow}>→</span>
-            </span>
+
+            <div className={styles.footer}>
+              <span className={styles.author}>By Corbin Jensen</span>
+              <span className={styles.link}>
+                Read article <span className={styles.arrow}>→</span>
+              </span>
+            </div>
           </Link>
         ))}
       </div>
