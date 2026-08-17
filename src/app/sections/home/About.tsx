@@ -35,20 +35,27 @@ export default function About() {
             About
           </div>
           <p>
-            Based in <em>Calgary, Alberta</em>, I operate completely remote
-            to scale organic rankings and lead pipelines for established
-            professional service firms across Toronto, Vancouver, Edmonton,
-            and globally.
+            Based in <em>Calgary, Alberta</em>, I operate as an independent
+            search engine optimization specialist and digital growth
+            partner for elite professional service firms. I deliver remote
+            SEO architecture, conversion-focused web development, and
+            precision Google Ads management for high-tier accounting firms,
+            legal practices, and corporate consultancies across Toronto,
+            Vancouver, Edmonton, and global markets.
           </p>
           <p>
-            I learned this by doing it. My first major project generated over
-            a quarter of a million dollars in revenue for the client in sixty
-            days. That&rsquo;s the kind of outcome I look to repeat.
+            My methodology is rooted in absolute transparency and
+            measurable performance. I eliminate the overhead, communication
+            gaps, and rotating junior staff characteristic of traditional
+            marketing agencies. Instead, clients receive direct, hands-on
+            advisory and rigorous data strategy designed exclusively to
+            scale high-intent organic traffic, capture market share, and
+            convert visitors into qualified lead pipelines.
           </p>
           <p>
-            If you&rsquo;d rather hire a large agency with a slide deck and a
-            rotating cast of juniors, I respect it. If you&rsquo;d rather work
-            directly with the person doing the work — that&rsquo;s me.
+            Every architectural change, content asset, and search campaign
+            is engineered to protect your brand&rsquo;s reputation while
+            driving predictable, high-margin revenue growth.
           </p>
           <div className={styles.sig}>— Corbin</div>
           <Link href="/about" className={styles.cta}>
