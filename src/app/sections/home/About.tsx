@@ -35,22 +35,18 @@ export default function About() {
             About
           </div>
           <p>
-            Based in <em>Calgary, Alberta</em>, I operate as an independent
-            search engine optimization specialist and digital growth
-            partner for elite professional service firms. I deliver remote
-            SEO architecture, conversion-focused web development, and
-            precision Google Ads management for high-tier accounting firms,
-            legal practices, and corporate consultancies across Calgary, Toronto,
-            Vancouver, and global markets.
+            Based in <em>Calgary, Alberta</em>, I deliver remote SEO
+            architecture, web development, and Google Ads management for
+            high-tier accounting firms, legal practices, and corporate
+            consultancies across Calgary, Toronto, Vancouver, and global
+            markets.
           </p>
           <p>
-            My methodology centers on direct accountability and transparent, measurable data. By removing agency layers, I provide high-margin professional practices with hands-on strategy engineered exclusively to scale high-intent organic traffic and build predictable, high-value lead pipelines. 
-            Every architectural change, content asset, and search campaign is engineered to protect your brand's reputation while driving predictable, high-margin revenue growth.
-          </p>
-          <p>
-            Every change, content asset, and search campaign
-            is engineered to protect your brand&rsquo;s reputation while
-            driving revenue growth.
+            My methodology removes agency layers to provide direct
+            accountability and transparent data. Every architectural
+            change, content asset, and search campaign is engineered to
+            scale high-intent organic traffic, protect your brand&rsquo;s
+            reputation, and drive predictable revenue growth.
           </p>
           <div className={styles.sig}>— Corbin</div>
           <Link href="/about" className={styles.cta}>
