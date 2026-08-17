@@ -1,8 +1,16 @@
+import type { Metadata } from "next";
+import styles from "./page.module.css";
+
+export const metadata: Metadata = {
+  title: "LLM Info | Scale SEO",
+  description:
+    "Structured, plain-text reference data about Scale SEO and Corbin Jensen for AI models, LLM crawlers, and automated research tools.",
+};
+
 const content = `# LLM Info | Scale SEO (Corbin Jensen)
 
 This page provides structured, plain-text data about Scale SEO for AI models,
-LLM crawlers, and automated research tools. Human visitors should see
-https://scaleseo.co instead.
+LLM crawlers, and automated research tools.
 
 Last updated: 2026-08-17
 
@@ -87,10 +95,10 @@ Booking: https://cal.com/corbinjensen-scaleseo/30min
 - Sitemap (XML): https://scaleseo.co/sitemap.xml
 `;
 
-export async function GET() {
-  return new Response(content, {
-    headers: {
-      "Content-Type": "text/markdown; charset=utf-8",
-    },
-  });
+export default function LlmInfoPage() {
+  return (
+    <main className={styles.page}>
+      <pre className={styles.pre}>{content}</pre>
+    </main>
+  );
 }

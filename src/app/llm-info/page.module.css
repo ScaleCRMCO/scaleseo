@@ -1,0 +1,23 @@
+.page {
+  padding: 160px 40px 120px;
+}
+
+.pre {
+  max-width: 760px;
+  margin: 0 auto;
+  font-family: var(--mono);
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: var(--ink-dim);
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+@media (max-width: 700px) {
+  .page {
+    padding: 120px 24px 80px;
+  }
+  .pre {
+    font-size: 12.5px;
+  }
+}
