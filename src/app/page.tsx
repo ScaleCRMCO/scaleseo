@@ -1,10 +1,10 @@
 import Hero from "./sections/home/Hero";
-import Marquee from "./sections/home/Marquee";
-import CaseStudy from "./sections/home/CaseStudy";
+import About from "./sections/home/About";
 import Services from "./sections/home/Services";
+import CaseStudy from "./sections/home/CaseStudy";
+import Marquee from "./sections/home/Marquee";
 import IndustriesTeaser from "./sections/home/IndustriesTeaser";
 import Process from "./sections/home/Process";
-import About from "./sections/home/About";
 import BlogTeaser from "./sections/home/BlogTeaser";
 import FAQ from "./sections/home/FAQ";
 import Contact from "./sections/home/Contact";
@@ -15,16 +15,16 @@ export default function Home() {
   return (
     <main>
       <Hero />
-      <Marquee />
+      <About />
+      <Services />
       <CaseStudy />
+      <Marquee />
       <Interstitial eyebrow="Why work this way">
         I keep a <strong>small roster on purpose</strong> — every client gets
         the person actually doing the work, <em>not a rotating team</em>.
       </Interstitial>
-      <Services />
       <IndustriesTeaser />
       <Process />
-      <About />
       <FAQ />
       <BlogTeaser />
       <Contact />

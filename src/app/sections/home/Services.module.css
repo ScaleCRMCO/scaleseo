@@ -160,9 +160,81 @@
   max-width: 560px;
 }
 
+/* === DUAL-LIST MATRIX (offer / outcomes) === */
+.matrix {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  max-width: 640px;
+}
+
+.matrixCol {
+  min-width: 0;
+}
+
+.matrixLabel {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+
+.matrixList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.matrixList li {
+  position: relative;
+  padding-left: 18px;
+  font-family: var(--sans);
+  font-weight: 400;
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--ink-dim-on-dark);
+}
+
+.matrixList li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--ink-dim-on-dark);
+}
+
+.itemLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 28px;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.itemArrow {
+  transition: transform 0.3s ease;
+}
+
+.itemLinked:hover .itemArrow {
+  transform: translateX(4px);
+}
+
 @media (max-width: 900px) {
   .split { grid-template-columns: 1fr; gap: 56px; }
   .left { position: static; top: auto; }
   .heading { font-size: clamp(36px, 9vw, 52px); }
   .item { padding: 36px 0; }
+  .matrix { grid-template-columns: 1fr; gap: 24px; }
 }

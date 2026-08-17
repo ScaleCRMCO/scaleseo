@@ -35,10 +35,10 @@ export default function About() {
             About
           </div>
           <p>
-            I&rsquo;m a <em>freelancer</em>, not an agency. I work with a small
-            roster of established businesses across Canada — accounting firms
-            first, and a handful of other industries where I know I can move
-            the needle.
+            Based in <em>Calgary, Alberta</em>, I operate completely remote
+            to scale organic rankings and lead pipelines for established
+            professional service firms across Toronto, Vancouver, Edmonton,
+            and globally.
           </p>
           <p>
             I learned this by doing it. My first major project generated over

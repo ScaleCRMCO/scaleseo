@@ -4,10 +4,17 @@ import styles from "./Services.module.css";
 const services = [
   {
     num: "01",
-    name: "SEO",
-    desc: "Technical, on-page, and local SEO built to improve real rankings and revenue — not just a checklist of tasks.",
-    tag: "Core",
+    name: "Search Engine Optimisation (SEO)",
     href: "/services/seo",
+    offer: [
+      "Technical SEO audits",
+      "Intent-based keyword architecture",
+      "Local search map scaling",
+    ],
+    outcomes: [
+      "Increased high-intent organic traffic",
+      "Top positions across high-margin target terms",
+    ],
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <circle cx="10.5" cy="10.5" r="6.5" />
@@ -18,9 +25,16 @@ const services = [
   {
     num: "02",
     name: "Web Development & Design",
-    desc: "Fast, clean websites for accounting and professional service businesses — designed and built with SEO in from the start.",
-    tag: "Core",
     href: "/services/web-development",
+    offer: [
+      "Conversion-optimized site design",
+      "Clean speed budgets",
+      "Integrated schema markup",
+    ],
+    outcomes: [
+      "Faster loading speeds",
+      "Higher visitor-to-lead conversion rates",
+    ],
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <path d="M8 8l-4 4 4 4M16 8l4 4-4 4M13.5 6l-3 12" strokeLinecap="round" strokeLinejoin="round" />
@@ -29,36 +43,18 @@ const services = [
   },
   {
     num: "03",
-    name: "AI Search Optimisation (GEO)",
-    desc: "Setting up your site so ChatGPT, Perplexity, and Google's AI answers name you.",
-    tag: "Emerging",
-    href: "/services/geo",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M12 3l1.6 4.4L18 9l-4.4 1.6L12 15l-1.6-4.4L6 9l4.4-1.6L12 3z" strokeLinejoin="round" />
-        <path d="M18 14l.8 2.2L21 17l-2.2.8L18 20l-.8-2.2L15 17l2.2-.8L18 14z" strokeLinejoin="round" />
-      </svg>
-    ),
-  },
-  {
-    num: "04",
-    name: "Reporting & Strategy",
-    desc: "A monthly call where I show you what moved, what's next, and what it means for leads.",
-    tag: "Ongoing",
+    name: "Google Ads Management",
     href: null,
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M4 20V4M4 20h16" strokeLinecap="round" />
-        <path d="M8 16l3.5-4 3 2.5L20 7" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
-  },
-  {
-    num: "05",
-    name: "Google Ads",
-    desc: "Paid search to bring in leads while your SEO builds. In active development — open to current clients on request.",
-    tag: "2026",
-    href: null,
+    offer: [
+      "Strict query mapping",
+      "Custom landing pages",
+      "Automated lead quality tracking",
+    ],
+    outcomes: [
+      "Immediate inbound leads",
+      "Reduced ad spend waste",
+      "Lower cost-per-acquisition",
+    ],
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <circle cx="12" cy="12" r="9" />
@@ -104,10 +100,33 @@ export default function Services() {
                     <span className={styles.itemIcon}>{s.icon}</span>
                     <span className={styles.itemNum}>{s.num}</span>
                   </div>
-                  <span className={styles.itemTag}>{s.tag}</span>
                 </div>
                 <h3 className={styles.itemName}>{s.name}</h3>
-                <p className={styles.itemDesc}>{s.desc}</p>
+
+                <div className={styles.matrix}>
+                  <div className={styles.matrixCol}>
+                    <div className={styles.matrixLabel}>What I Offer</div>
+                    <ul className={styles.matrixList}>
+                      {s.offer.map((line) => (
+                        <li key={line}>{line}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className={styles.matrixCol}>
+                    <div className={styles.matrixLabel}>Expected Outcomes</div>
+                    <ul className={styles.matrixList}>
+                      {s.outcomes.map((line) => (
+                        <li key={line}>{line}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+                {s.href && (
+                  <span className={styles.itemLink}>
+                    Learn more <span className={styles.itemArrow}>→</span>
+                  </span>
+                )}
               </>
             );
             return s.href ? (

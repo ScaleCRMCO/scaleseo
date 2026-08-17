@@ -135,6 +135,7 @@
 }
 .line:nth-child(1) .lineInner { animation-delay: 1.55s; }
 .line:nth-child(2) .lineInner { animation-delay: 1.70s; }
+.line:nth-child(3) .lineInner { animation-delay: 1.85s; }
 @keyframes maskReveal {
   to { transform: translateY(0); }
 }

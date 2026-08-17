@@ -41,20 +41,22 @@ export default function Hero() {
 
           <h1 className={styles.title}>
             <span className={styles.line}>
-              <span className={styles.lineInner}>Calgary SEO Specialist</span>
+              <span className={styles.lineInner}>SEO Specialist</span>
             </span>
             <span className={styles.line}>
               <span className={styles.lineInner}>
                 &amp; Growth <span className={styles.italic}>Partner</span>
               </span>
             </span>
+            <span className={styles.line}>
+              <span className={styles.lineInner}>for Professional Services</span>
+            </span>
           </h1>
 
           <p className={styles.intro}>
-            Hi, I&rsquo;m Corbin! An independent SEO specialist with a strong
-            background in technical SEO, content strategy, and local search.
-            I help professional service businesses across Canada with
-            data-driven strategies to hit real growth targets.
+            Hi, I&rsquo;m Corbin! An independent SEO specialist delivering
+            data-driven strategies for accounting firms and high-margin
+            professional service businesses across Canada and globally.
           </p>
 
           <div className={styles.ctaGroup}>
@@ -64,11 +66,16 @@ export default function Hero() {
               rel="noopener noreferrer"
               className={styles.cta}
             >
-              <span>Book a call</span>
+              <span>Request a Free Audit</span>
               <span className={styles.arrow}>→</span>
             </a>
-            <a href="mailto:team@scaleseo.co" className={styles.ctaSecondary}>
-              <span>Email me</span>
+            <a
+              href="https://cal.com/corbinjensen-scaleseo/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.ctaSecondary}
+            >
+              <span>Book a Strategy Call</span>
             </a>
           </div>
 
