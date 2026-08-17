@@ -71,9 +71,7 @@ export default function Services() {
       <div className={styles.split}>
         <div className={styles.left}>
           <div className="section-label">What I Do</div>
-          <h2 className={styles.heading}>
-            A hyper-focused framework,<br />engineered <em>for scale.</em>
-          </h2>
+          <h2 className={styles.heading}>Core Services</h2>
           <p className={styles.body}>
              SEO solutions to drive measurable growth across paid and organic channels.
           </p>
