@@ -48,6 +48,7 @@ export default function Footer() {
           <a href="https://maps.app.goo.gl/FYWSaQ3p81VFnNcc7" target="_blank" rel="noopener noreferrer" className={styles.colLink}>Google Business</a>
           <a href="https://clutch.co/profile/scale-seo" target="_blank" rel="noopener noreferrer" className={styles.colLink}>Clutch</a>
           <a href="mailto:team@scaleseo.co" className={styles.colLink}>Email</a>
+          <a href="/llm-info" className={styles.colLink}>LLM Info</a>
         </div>
       </div>
 

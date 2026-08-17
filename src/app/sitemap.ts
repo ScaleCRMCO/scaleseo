@@ -25,5 +25,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/corbin-jensen`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
     { url: `${base}/about`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/contact`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${base}/llm-info`, lastModified: now, changeFrequency: "monthly", priority: 0.3 },
   ];
 }
