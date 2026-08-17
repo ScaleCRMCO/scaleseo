@@ -75,12 +75,7 @@ export default function Services() {
             A hyper-focused framework,<br />engineered <em>for scale.</em>
           </h2>
           <p className={styles.body}>
-            I specialize in ranking your business on the first page of
-            Google to bring you high-value leads automatically. To
-            complete your digital setup, I also build fast, custom
-            websites and run profitable Google Ads. Working directly with
-            me means no slow agencies, transparent data, and real business
-            growth.
+             SEO solutions to drive measurable growth across paid and organic channels.
           </p>
           <a href="#contact" className={styles.cta}>
             <span>Start a conversation</span>
