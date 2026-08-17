@@ -40,22 +40,17 @@ export default function About() {
             partner for elite professional service firms. I deliver remote
             SEO architecture, conversion-focused web development, and
             precision Google Ads management for high-tier accounting firms,
-            legal practices, and corporate consultancies across Toronto,
-            Vancouver, Edmonton, and global markets.
+            legal practices, and corporate consultancies across Calgary, Toronto,
+            Vancouver, and global markets.
           </p>
           <p>
-            My methodology is rooted in absolute transparency and
-            measurable performance. I eliminate the overhead, communication
-            gaps, and rotating junior staff characteristic of traditional
-            marketing agencies. Instead, clients receive direct, hands-on
-            advisory and rigorous data strategy designed exclusively to
-            scale high-intent organic traffic, capture market share, and
-            convert visitors into qualified lead pipelines.
+            My methodology centers on direct accountability and transparent, measurable data. By removing agency layers, I provide high-margin professional practices with hands-on strategy engineered exclusively to scale high-intent organic traffic and build predictable, high-value lead pipelines. 
+            Every architectural change, content asset, and search campaign is engineered to protect your brand's reputation while driving predictable, high-margin revenue growth.
           </p>
           <p>
-            Every architectural change, content asset, and search campaign
+            Every change, content asset, and search campaign
             is engineered to protect your brand&rsquo;s reputation while
-            driving predictable, high-margin revenue growth.
+            driving revenue growth.
           </p>
           <div className={styles.sig}>— Corbin</div>
           <Link href="/about" className={styles.cta}>
