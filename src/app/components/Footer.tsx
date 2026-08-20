@@ -17,11 +17,19 @@ export default function Footer() {
         <div className={styles.col}>
           <div className={styles.colLabel}>Quick Links</div>
           <Link href="/" className={styles.colLink}>Home</Link>
-          <Link href="/services" className={styles.colLink}>Services</Link>
           <Link href="/industries" className={styles.colLink}>Industries</Link>
           <Link href="/blog" className={styles.colLink}>Blog</Link>
           <Link href="/about" className={styles.colLink}>About</Link>
           <Link href="/contact" className={styles.colLink}>Contact</Link>
+        </div>
+
+        {/* Services */}
+        <div className={styles.col}>
+          <div className={styles.colLabel}>Services</div>
+          <Link href="/services" className={styles.colLink}>All Services</Link>
+          <Link href="/services/seo" className={styles.colLink}>SEO</Link>
+          <Link href="/services/geo" className={styles.colLink}>GEO (AI Search)</Link>
+          <Link href="/services/web-development" className={styles.colLink}>Web Development</Link>
         </div>
 
         {/* Contact */}
