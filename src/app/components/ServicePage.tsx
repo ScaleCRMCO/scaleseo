@@ -178,6 +178,9 @@ export default function ServicePage({
             <span>Book a call</span>
             <span className={styles.arrow}>→</span>
           </a>
+          <Link href="/contact" className={styles.ctaButtonSecondary}>
+            <span>Send a Message</span>
+          </Link>
         </div>
         {relatedNote && <p className={styles.relatedNote}>{relatedNote}</p>}
       </section>

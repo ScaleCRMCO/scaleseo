@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Link from "next/link";
 import Breadcrumbs, { type Crumb } from "./Breadcrumbs";
 import styles from "./SellingHero.module.css";
 
@@ -47,9 +48,9 @@ export default function SellingHero({
               <span>Book a call</span>
               <span className={styles.arrow}>→</span>
             </a>
-            <a href="mailto:team@scaleseo.co" className={styles.ctaSecondary}>
-              <span>Email me</span>
-            </a>
+            <Link href="/contact" className={styles.ctaSecondary}>
+              <span>Send a Message</span>
+            </Link>
           </div>
 
           <span className={styles.availability}>Reply within 24 hours</span>

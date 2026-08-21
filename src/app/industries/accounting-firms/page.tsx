@@ -214,6 +214,9 @@ export default function AccountingFirmsPage() {
             <span>Book a call</span>
             <span className={styles.arrow}>→</span>
           </a>
+          <Link href="/contact" className={styles.ctaButtonSecondary}>
+            <span>Send a Message</span>
+          </Link>
         </div>
         <p className={styles.signature}>
           — <Link href="/corbin-jensen">Corbin Jensen</Link>, SEO Specialist

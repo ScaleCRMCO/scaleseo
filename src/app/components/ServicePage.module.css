@@ -275,6 +275,27 @@
   color: var(--accent);
 }
 
+.ctaButtonSecondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px 40px;
+  background: transparent;
+  color: var(--ink);
+  text-decoration: none;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border: 1px solid var(--line-strong);
+  transition: all 0.3s ease;
+}
+
+.ctaButtonSecondary:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
 .arrow {
   transition: transform 0.4s ease;
 }
