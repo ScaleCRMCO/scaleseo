@@ -5,9 +5,9 @@ import Footer from "./components/Footer";
 import PageTransition from "./components/PageTransition";
 
 export const metadata: Metadata = {
-  title: "Scale SEO — Corbin Jensen | Independent SEO Specialist, Canada",
+  title: "Calgary SEO Specialist | Professional Services | Scale SEO",
   description:
-    "An independent SEO specialist for established Canadian businesses — accounting firms and other premium service industries. Built by Corbin Jensen. Few clients. Real revenue.",
+    "Bespoke SEO architecture & Google Ads management for accounting firms, legal practices, and professional services in Calgary & across Canada. Request a free audit.",
   metadataBase: new URL("https://scaleseo.co"),
   openGraph: {
     title: "Scale SEO — Corbin Jensen",

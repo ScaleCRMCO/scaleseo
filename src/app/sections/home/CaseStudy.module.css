@@ -104,6 +104,15 @@
   color: var(--ink-on-dark);
 }
 
+.subhead {
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--accent);
+  margin-top: 8px;
+}
+
 .location {
   font-family: var(--mono);
   font-size: 10px;

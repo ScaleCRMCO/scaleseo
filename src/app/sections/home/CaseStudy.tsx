@@ -5,6 +5,7 @@ const cases = [
   {
     index: "01",
     client: "Kinsmen Consulting Ltd",
+    subhead: "Kinsmen Consulting: Local SEO & Web Optimization for Construction",
     location: "Calgary, Alberta",
     industry: "Concrete & Construction",
     description:
@@ -18,6 +19,7 @@ const cases = [
   {
     index: "02",
     client: "MSV Plumbing Services",
+    subhead: "MSV Plumbing: Organic Growth & Map Pack Scaling",
     location: "Brisbane, Queensland",
     industry: "Plumbing Services",
     description:
@@ -31,6 +33,7 @@ const cases = [
   {
     index: "03",
     client: "Empire Accountants",
+    subhead: "Empire Accountants: SEO Strategy for Accounting Firms",
     location: "Brisbane, Queensland",
     industry: "Accounting & Advisory",
     description:
@@ -82,6 +85,7 @@ export default function CaseStudy() {
               <div className={styles.tileFooter}>
                 <div>
                   <h3 className={styles.client}>{c.client}</h3>
+                  <p className={styles.subhead}>{c.subhead}</p>
                   <p className={styles.location}>
                     {c.location} &middot; {c.industry}
                   </p>

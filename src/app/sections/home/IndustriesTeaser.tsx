@@ -8,14 +8,15 @@ export default function IndustriesTeaser() {
 
       <div className={`${styles.row} reveal-up`}>
         <h2 className={styles.heading}>
-          Built for accounting firms and{" "}
-          <em>high-margin professional services.</em>
+          SEO Solutions Built for Accounting Firms{" "}
+          <em>&amp; Professional Services.</em>
         </h2>
 
         <p className={styles.body}>
-          I keep a small roster on purpose, focused on accounting practices
-          and other professional &amp; financial service businesses across
-          Canada &mdash; where good SEO compounds instead of chasing volume.
+          I keep a small roster on purpose, focused on accounting firms,
+          legal practices, corporate consultancies, and other financial
+          service firms across Canada &mdash; where good SEO compounds
+          instead of chasing volume.
         </p>
       </div>
 

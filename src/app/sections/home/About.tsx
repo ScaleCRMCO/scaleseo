@@ -31,15 +31,18 @@ export default function About() {
           </div>
         </div>
         <div className={`${styles.text} reveal-up`}>
-          <div className="section-label" style={{ marginBottom: 40 }}>
+          <div className="section-label" style={{ marginBottom: 24 }}>
             About
           </div>
+          <h2 className={styles.headline}>
+            Bespoke SEO Architecture Designed in Calgary
+          </h2>
           <p>
-            Based in <em>Calgary, Alberta</em>, I deliver remote SEO
-            architecture, web development, and Google Ads management for
-            high-tier accounting firms, legal practices, and corporate
-            consultancies across Calgary, Toronto, Vancouver, and global
-            markets.
+            Based in <em>Calgary, Alberta</em>, I deliver remote search
+            engine optimization (SEO), web development, and Google Ads
+            management for high-tier accounting firms, legal practices, and
+            corporate consultancies across Calgary, Toronto, Vancouver, and
+            global markets.
           </p>
           <p>
             My methodology removes agency layers to provide direct

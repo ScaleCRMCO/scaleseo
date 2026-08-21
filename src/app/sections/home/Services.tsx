@@ -8,7 +8,7 @@ const services = [
     href: "/services/seo",
     offer: [
       "Technical SEO audits",
-      "Intent-based keyword architecture",
+      "Intent-based keyword architecture for B2B & financial firms",
       "Local search map scaling",
     ],
     outcomes: [
@@ -27,7 +27,7 @@ const services = [
     name: "Web Development & Design",
     href: "/services/web-development",
     offer: [
-      "Conversion-optimized site design",
+      "Conversion-optimized web design for corporate practices",
       "Clean speed budgets",
       "Integrated schema markup",
     ],
@@ -46,7 +46,7 @@ const services = [
     name: "Google Ads Management",
     href: null,
     offer: [
-      "Strict query mapping",
+      "Google Ads management & strict PPC query mapping",
       "Custom landing pages",
       "Automated lead quality tracking",
     ],

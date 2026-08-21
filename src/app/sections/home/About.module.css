@@ -112,6 +112,16 @@
 }
 
 /* === TEXT COLUMN === */
+.headline {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: clamp(26px, 3vw, 40px);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 32px;
+}
+
 .text {
   font-family: var(--display);
   font-weight: 300;
