@@ -60,12 +60,7 @@ export default function Hero() {
           </p>
 
           <div className={styles.ctaGroup}>
-            <a
-              href="https://cal.com/corbinjensen-scaleseo/30min"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.cta}
-            >
+            <a href="#contact" className={styles.cta}>
               <span>Request a Free Audit</span>
               <span className={styles.arrow}>→</span>
             </a>
