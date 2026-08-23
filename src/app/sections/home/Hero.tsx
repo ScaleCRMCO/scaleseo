@@ -20,10 +20,6 @@ export default function Hero() {
       </div>
 
       {/* Corner labels */}
-      <div className={`${styles.corner} ${styles.topLeft}`}>
-        <span className={styles.dot} />
-        Currently onboarding new clients
-      </div>
       <div className={`${styles.corner} ${styles.bottomLeft}`}>
         <span className={styles.scrollLabel}>Scroll</span>
         <span className={styles.scrollArrow}>↓</span>
@@ -35,10 +31,6 @@ export default function Hero() {
       {/* Main content — split layout */}
       <div className={styles.content}>
         <div className={styles.left}>
-          <p className={styles.eyebrow}>
-            Bespoke search engine optimization engineered for Canadian & global businesses.
-          </p>
-
           <h1 className={styles.title}>
             <span className={styles.line}>
               <span className={styles.lineInner}>Calgary SEO Specialist</span>
