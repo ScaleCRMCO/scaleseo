@@ -4,8 +4,9 @@ import styles from "./Services.module.css";
 const services = [
   {
     num: "01",
-    name: "Search Engine Optimisation (SEO)",
+    name: "Organic & Technical SEO Services",
     href: "/services/seo",
+    linkText: "Explore my Technical SEO Audit services",
     offer: [
       "Technical SEO audits",
       "Intent-based keyword architecture for B2B & financial firms",
@@ -24,8 +25,9 @@ const services = [
   },
   {
     num: "02",
-    name: "Web Development & Design",
+    name: "Conversion-Optimized Web Development & Design",
     href: "/services/web-development",
+    linkText: "See how I build conversion-focused websites",
     offer: [
       "Conversion-optimized web design for corporate practices",
       "Clean speed budgets",
@@ -43,8 +45,9 @@ const services = [
   },
   {
     num: "03",
-    name: "Google Ads Management",
+    name: "Google Ads (PPC) Lead Generation Management",
     href: null,
+    linkText: "",
     offer: [
       "Google Ads management & strict PPC query mapping",
       "Custom landing pages",
@@ -80,7 +83,7 @@ export default function Services() {
             <span>→</span>
           </a>
           <Link href="/services" className={styles.servicesLink}>
-            View all SEO services →
+            Explore all SEO, web development &amp; Google Ads services →
           </Link>
         </div>
 
@@ -117,7 +120,7 @@ export default function Services() {
 
                 {s.href && (
                   <span className={styles.itemLink}>
-                    Learn more <span className={styles.itemArrow}>→</span>
+                    {s.linkText} <span className={styles.itemArrow}>→</span>
                   </span>
                 )}
               </>

@@ -16,7 +16,7 @@ export default function BlogTeaser() {
           </h2>
         </div>
         <Link href="/blog" className={`${styles.viewAll} reveal-up`}>
-          View all articles →
+          Read more SEO &amp; Google Ads insights →
         </Link>
       </div>
 

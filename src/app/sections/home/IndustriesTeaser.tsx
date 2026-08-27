@@ -13,15 +13,16 @@ export default function IndustriesTeaser() {
         </h2>
 
         <p className={styles.body}>
-          I keep a small roster on purpose, focused on accounting firms,
-          legal practices, corporate consultancies, and other financial
-          service firms across Canada &mdash; where good SEO compounds
-          instead of chasing volume.
+          My core framework is optimized for the complex compliance and
+          high-margin environments of accounting firms and legal practices
+          &mdash; but I also partner with B2B corporations, premium
+          contractors, and other professional service providers looking to
+          build predictable revenue through search.
         </p>
       </div>
 
       <Link href="/industries" className={`${styles.link} reveal-up`}>
-        <span>See who I work with</span>
+        <span>See how I optimize by industry</span>
         <span className={styles.arrow}>→</span>
       </Link>
     </section>

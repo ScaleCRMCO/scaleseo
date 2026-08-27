@@ -37,18 +37,16 @@ export default function Hero() {
             </span>
             <span className={styles.line}>
               <span className={styles.lineInner}>
-                &amp; Growth <span className={styles.italic}>Partner</span>
+                &amp; Organic Search <span className={styles.italic}>Strategist</span>
               </span>
-            </span>
-            <span className={styles.line}>
-              <span className={styles.lineInner}>for Professional Services</span>
             </span>
           </h1>
 
           <p className={styles.intro}>
-            Hi, I&rsquo;m Corbin! An independent SEO specialist delivering
-            data-driven strategies for accounting firms and high-margin
-            professional service businesses across Canada and globally.
+            Data-driven SEO architecture, local search scaling, and Google
+            Ads management engineered for high-margin professional
+            services, accounting firms, and growing B2B brands across
+            Canada.
           </p>
 
           <div className={styles.ctaGroup}>

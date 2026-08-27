@@ -40,9 +40,9 @@ export default function About() {
           <p>
             Based in <em>Calgary, Alberta</em>, I deliver remote search
             engine optimization (SEO), web development, and Google Ads
-            management for high-tier accounting firms, legal practices, and
-            corporate consultancies across Calgary, Toronto, Vancouver, and
-            global markets.
+            management for high-tier accounting firms, legal practices,
+            corporate consultancies, and growing B2B brands across Calgary,
+            Toronto, Vancouver, and global markets.
           </p>
           <p>
             My methodology removes agency layers to provide direct
