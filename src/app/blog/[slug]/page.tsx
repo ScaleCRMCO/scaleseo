@@ -64,8 +64,9 @@ export default function BlogPostPage({
     "@type": "BlogPosting",
     headline: post.title,
     description: post.description,
+    image: "https://scaleseo.co/images/scaleseo-logo.png",
     datePublished: post.date,
-    dateModified: post.date,
+    dateModified: post.updated || post.date,
     author: {
       "@type": "Person",
       name: "Corbin Jensen",
@@ -75,8 +76,15 @@ export default function BlogPostPage({
       "@type": "Organization",
       name: "Scale SEO",
       url: "https://scaleseo.co",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://scaleseo.co/images/scaleseo-logo.png",
+      },
     },
-    mainEntityOfPage: `https://scaleseo.co/blog/${post.slug}`,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://scaleseo.co/blog/${post.slug}`,
+    },
   };
 
   return (
@@ -113,11 +121,31 @@ export default function BlogPostPage({
 
       <article className={styles.body}>
         <div className={styles.bodyInner}>
-          {post.body.map((para, i) => (
-            <p key={i} className={styles.paragraph}>
-              {renderInline(para)}
-            </p>
-          ))}
+          {post.body.map((block, i) => {
+            if (block.type === "h3") {
+              return (
+                <h3 key={i} className={styles.subheading}>
+                  {renderInline(block.text)}
+                </h3>
+              );
+            }
+            if (block.type === "ul") {
+              return (
+                <ul key={i} className={styles.list}>
+                  {block.items.map((item, j) => (
+                    <li key={j} className={styles.listItem}>
+                      {renderInline(item)}
+                    </li>
+                  ))}
+                </ul>
+              );
+            }
+            return (
+              <p key={i} className={styles.paragraph}>
+                {renderInline(block.text)}
+              </p>
+            );
+          })}
         </div>
       </article>
 
