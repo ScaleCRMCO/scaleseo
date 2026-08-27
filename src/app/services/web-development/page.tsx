@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Web Development & Design Services | Scale SEO",
   description:
     "Websites built for accounting firms and professional service businesses across Canada — fast, clean, and SEO-ready from the first line of code. Design and development handled directly by one specialist.",
+  alternates: { canonical: "/services/web-development" },
 };
 
 const included = [

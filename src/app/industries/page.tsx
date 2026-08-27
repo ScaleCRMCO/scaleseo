@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "SEO for Financial Services Businesses in Canada | Scale SEO",
   description:
     "SEO built for accounting firms, financial advisors, and other high-margin professional service businesses across Canada — not tied to one city, run by one specialist.",
+  alternates: { canonical: "/industries" },
 };
 
 const industries = [

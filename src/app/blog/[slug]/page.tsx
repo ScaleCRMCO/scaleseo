@@ -20,6 +20,7 @@ export function generateMetadata({
   return {
     title: `${post.title} | Scale SEO Blog`,
     description: post.description,
+    alternates: { canonical: `/blog/${post.slug}` },
   };
 }
 

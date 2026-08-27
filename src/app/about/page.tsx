@@ -7,6 +7,7 @@ export const metadata = {
   title: "About Corbin Jensen — Scale SEO",
   description:
     "Corbin Jensen is an independent SEO specialist based in Calgary, Alberta, working with a small number of established Canadian businesses. No agency, no account managers — just the work.",
+  alternates: { canonical: "/about" },
 };
 
 export default function AboutPage() {

@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "LLM Info | Scale SEO",
   description:
     "Structured, plain-text reference data about Scale SEO and Corbin Jensen for AI models, LLM crawlers, and automated research tools.",
+  alternates: { canonical: "/llm-info" },
 };
 
 const content = `# LLM Info | Scale SEO (Corbin Jensen)

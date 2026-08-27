@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: "Client Results & Case Studies | Scale SEO",
   description:
     "Real client results from Corbin Jensen — SEO case studies spanning trades and service businesses in Australia to accounting and professional service firms across Canada.",
+  alternates: { canonical: "/results" },
 };
 
 export default function ResultsPage() {

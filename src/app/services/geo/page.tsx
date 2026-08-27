@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "GEO Services | Get Cited by AI Search & ChatGPT | Scale SEO",
   description:
     "Generative Engine Optimization (GEO) built to get your business cited by Google AI Overviews, ChatGPT, Perplexity, and Copilot — not just ranked on a results page. Based in Calgary, working across Canada.",
+  alternates: { canonical: "/services/geo" },
 };
 
 const included = [

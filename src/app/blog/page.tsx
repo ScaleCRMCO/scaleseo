@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "SEO Insights & Strategy | Scale SEO Blog",
   description:
     "Notes on what actually moves search rankings and revenue for accounting firms and professional service businesses in Canada — written by Corbin Jensen.",
+  alternates: { canonical: "/blog" },
 };
 
 export default function BlogPage() {

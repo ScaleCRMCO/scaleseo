@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "SEO for Accounting Firms & CPA Practices in Canada | Scale SEO",
   description:
     "SEO built for accounting firms and CPA practices across Canada — designed to attract institutional retainers, fractional CFO leads, and advisory relationships, not tax-season foot traffic. Run personally by one specialist, with a strict two-firms-per-city cap.",
+  alternates: { canonical: "/industries/accounting-firms" },
 };
 
 const included = [

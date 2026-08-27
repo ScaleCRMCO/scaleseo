@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Corbin Jensen | SEO Specialist, Scale SEO",
   description:
     "Corbin Jensen is an independent SEO specialist based in Calgary, Alberta, working with accounting firms and established service businesses across Canada.",
+  alternates: { canonical: "/corbin-jensen" },
 };
 
 export default function CorbinJensenPage() {

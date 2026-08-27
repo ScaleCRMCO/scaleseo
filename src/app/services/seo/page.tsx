@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "SEO Services | Technical, On-Page & Local SEO | Scale SEO",
   description:
     "Technical, on-page, and local SEO built to improve real website performance — faster sites, better rankings, and more qualified organic traffic. Handled directly by one specialist, based in Calgary.",
+  alternates: { canonical: "/services/seo" },
 };
 
 const included = [

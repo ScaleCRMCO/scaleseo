@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "SEO & Web Development Services in Calgary | Scale SEO",
   description:
     "SEO, web development, and AI search optimization for established businesses, based in Calgary and working across Canada and internationally. Handled directly by one specialist.",
+  alternates: { canonical: "/services" },
 };
 
 const services = [
