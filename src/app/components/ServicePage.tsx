@@ -42,7 +42,7 @@ export type ServicePageProps = {
   sub: string;
   problemLabel?: string;
   problemHeadline: ReactNode;
-  problemBody: string;
+  problemBody: ReactNode;
   includedLabel?: string;
   included: IncludedItem[];
   proof?: ServicePageProof;
@@ -119,7 +119,7 @@ export default function ServicePage({
           <h2 className={`${styles.problemHeadline} reveal-up`}>
             {problemHeadline}
           </h2>
-          <p className={`${styles.problemBody} reveal-up`}>{problemBody}</p>
+          <div className={`${styles.problemBody} reveal-up`}>{problemBody}</div>
         </div>
       </section>
 

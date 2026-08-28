@@ -12,7 +12,7 @@ const included = [
   {
     num: "01",
     name: "Technical SEO Audit",
-    desc: "Site speed, crawlability, indexing, and schema markup — the foundation both search engines and AI crawlers rely on.",
+    desc: "Site speed, crawlability, indexing, and schema markup — the foundation both search engines and AI crawlers rely on. Full optimization capabilities across core corporate CMS platforms including Webflow, WordPress, and custom JavaScript architectures.",
   },
   {
     num: "02",
@@ -21,7 +21,7 @@ const included = [
   },
   {
     num: "03",
-    name: "Local SEO & Google Business Profile",
+    name: "Local SEO & Alberta Map Pack Optimization",
     desc: "Citations, reviews, and location pages built to win the map pack in every city you actually serve.",
   },
   {
@@ -32,7 +32,7 @@ const included = [
   {
     num: "05",
     name: "Site Architecture & Crawl Health",
-    desc: "Fixing broken structure, redirects, and duplicate content that silently caps how well the rest of the site can rank.",
+    desc: "Fixing broken structure, redirects, and duplicate content that silently caps how well the rest of the site can rank. Clean semantic structure ensures your site's codebase is fully optimized for Generative Engine Optimization (GEO), allowing LLM crawlers like ChatGPT, Perplexity, and Google Gemini to accurately scrape and cite your business.",
   },
   {
     num: "06",
@@ -59,17 +59,46 @@ export default function SeoServicePage() {
       eyebrow="Services / SEO"
       title={
         <>
-          SEO Built to Improve <Accent>Real Website Performance.</Accent>
+          Freelance SEO Specialist Calgary{" "}
+          <Accent>| Search Optimization for Professional Services</Accent>
         </>
       }
       sub="Technical fixes, on-page structure, and local search work that compounds — not a checklist of vanity tasks. Every audit, every fix, every piece of content handled directly by me."
+      checkpoints={[
+        "Independent specialist — no outsourcing",
+        "Work directly with me, not an account manager",
+        "Focused on Canadian professional service firms, including accounting practices, legal firms, and corporate advisors",
+        "No lock-in contracts",
+      ]}
       problemHeadline={
         <>
           Most SEO work never touches{" "}
           <Accent>what actually moves rankings.</Accent>
         </>
       }
-      problemBody="A lot of what gets sold as SEO is reporting and busywork — metrics you can screenshot but that don't move revenue. Real performance gains come from fixing what's actually broken: slow load times, thin content, missing structure, and a local presence that doesn't reflect how customers actually search. That's the work I focus on, for accounting firms and other professional service businesses across Canada."
+      problemBody={
+        <>
+          <p>
+            A lot of what gets sold as SEO is reporting and busywork —
+            metrics you can screenshot but that don&rsquo;t move revenue.
+            Real performance gains come from fixing what&rsquo;s actually
+            broken: slow load times, thin content, missing structure, and a
+            local presence that doesn&rsquo;t reflect how customers
+            actually search. That&rsquo;s the work I focus on, for
+            accounting firms and other professional service businesses
+            across Canada.
+          </p>
+          <p>
+            Based in Calgary, Alberta, I engineer high-performance search
+            strategies tailored specifically for the Canadian regulatory
+            and corporate landscape. Whether you&rsquo;re an accounting
+            practice competing for high-margin corporate clients downtown
+            or a multi-location professional service firm scaling
+            visibility across Western Canada, your strategy is built around
+            localized B2B intent.
+          </p>
+        </>
+      }
       included={included}
       proof={{
         metric: (

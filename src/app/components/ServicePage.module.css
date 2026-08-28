@@ -69,6 +69,14 @@
   color: var(--ink-dim);
 }
 
+.problemBody p {
+  margin-bottom: 20px;
+}
+
+.problemBody p:last-child {
+  margin-bottom: 0;
+}
+
 /* === WHAT'S INCLUDED === */
 .list {
   padding: 100px 40px 120px;
