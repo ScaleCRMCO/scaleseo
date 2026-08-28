@@ -8,7 +8,8 @@
 }
 
 .active {
-  animation: sweep 1.1s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+  /* Page transition sweep temporarily disabled — remove this line to re-enable. */
+  animation: none;
 }
 
 @keyframes sweep {

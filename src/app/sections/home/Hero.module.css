@@ -15,6 +15,8 @@
 
 /* === CURTAIN REVEAL === */
 .curtain {
+  /* Opening curtain animation temporarily disabled — remove this line to re-enable. */
+  display: none;
   position: absolute;
   inset: 0;
   background: var(--accent);
