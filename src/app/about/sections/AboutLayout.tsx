@@ -66,145 +66,90 @@ export default function AboutLayout() {
         {/* ============ RIGHT: SCROLLING CONTENT ============ */}
         <div className={styles.content}>
 
-          {/* ====== SECTION 01 — PURPOSE ====== */}
+          {/* ====== SECTION 01 — THE WELCOME ====== */}
           <article className={styles.block}>
-            <div className={`${styles.label} reveal-up`}>The Purpose · 01</div>
+            <div className={`${styles.label} reveal-up`}>Welcome · 01</div>
             <h2 className={`${styles.headline} reveal-up`}>
-              Built for precision, <em>not volume.</em>
+              A place of <em>intentional search strategy.</em>
             </h2>
             <div className={`${styles.body} reveal-up`}>
               <p>
-                Scale SEO was established with a singular, disciplined
-                purpose: to provide highly precise, technical search engine
-                optimization for corporate entities, accounting firms, and
-                professional service practices across Canada.
+                Scale SEO was born out of a clear realization: the
+                traditional digital marketing model is fundamentally broken
+                for high-value professional service practices. High-volume
+                agencies rely on layers of account managers, standardized
+                templates, and outsourced execution — methods that fail to
+                meet the rigorous compliance, accuracy, and depth required
+                by institutional firms.
               </p>
               <p>
-                It was never engineered to operate as a high-volume digital
-                agency. My focus has always been complex algorithmic
-                alignment, senior-level technical oversight, and
-                sustainable, long-term client visibility. The architecture
-                of Scale SEO follows a deliberate and disciplined
-                operational model, prioritising technical credibility,
-                transparency, and data accuracy over rapid scale.
+                In May 2025, I established Scale SEO to pioneer a direct,
+                non-agency alternative. Built on a model of absolute
+                transparency and elite technical alignment, I eliminate the
+                agency fluff to give firms direct, unfiltered access to
+                senior search expertise.
               </p>
             </div>
           </article>
 
-          {/* ====== SECTION 02 — PHASE ONE ====== */}
+          {/* ====== SECTION 02 — OUR EVOLUTION ====== */}
           <article className={styles.block}>
-            <div className={`${styles.label} reveal-up`}>Phase One · 02</div>
+            <div className={`${styles.label} reveal-up`}>Our Evolution · 02</div>
             <h2 className={`${styles.headline} reveal-up`}>
-              Architectural <em>Foundations.</em>
+              From cross-border roots{" "}
+              <em>to a Canadian practice.</em>
             </h2>
-            <div className={`${styles.body} reveal-up`}>
-              <p>
-                The initial phase focuses on absolute infrastructure
-                clarity. I define and diagnose exactly how your digital
-                asset communicates with search engines and Large Language
-                Models (LLMs). I run deep technical audits, resolving
-                legacy indexing errors, site latency issues, and hidden
-                crawl blockages while deploying robust schema markup. This
-                phase builds a highly credible, technically immaculate
-                foundation that satisfies strict search guidelines from
-                inception.
-              </p>
-            </div>
-          </article>
 
-          {/* ====== SECTION 03 — PHASE TWO ====== */}
-          <article className={styles.block}>
-            <div className={`${styles.label} reveal-up`}>Phase Two · 03</div>
-            <h2 className={`${styles.headline} reveal-up`}>
-              Intent Alignment{" "}
-              <em>&amp; Market Entry.</em>
-            </h2>
-            <div className={`${styles.body} reveal-up`}>
-              <p>
-                Rather than executing generic, volume-based keyword
-                campaigns, I target high-value corporate intent. This phase
-                involves a deep re-engineering of your on-page structure and
-                internal linking around the precise terms your
-                institutional buyers actually search. I prioritize the
-                production of high-quality technical insights and
-                structural compliance patterns, ensuring early visibility
-                traction is achieved through topical authority rather than
-                superficial marketing tactics.
-              </p>
-            </div>
-          </article>
-
-          {/* ====== SECTION 04 — PHASE THREE ====== */}
-          <article className={styles.block}>
-            <div className={`${styles.label} reveal-up`}>Phase Three · 04</div>
-            <h2 className={`${styles.headline} reveal-up`}>
-              Local Presence &{" "}
-              <em>Regional Consistency.</em>
-            </h2>
-            <div className={`${styles.body} reveal-up`}>
-              <p>
-                As organic authority stabilizes, the strategy expands to
-                secure multi-market local footprints. For firms operating
-                across multiple Canadian financial hubs — such as Calgary,
-                Toronto, and Vancouver — I develop distinct, authentic
-                regional landing pages and optimized Google Business
-                Profiles. This disciplined local scaling captures localized
-                map pack placement and ensures consistent search
-                performance across all target cities without diluting core
-                brand authority.
-              </p>
-            </div>
-          </article>
-
-          {/* ====== SECTION 05 — PHASE FOUR ====== */}
-          <article className={styles.block}>
-            <div className={`${styles.label} reveal-up`}>Phase Four · 05</div>
-            <h2 className={`${styles.headline} reveal-up`}>
-              Compounding Results{" "}
-              <em>&amp; Revenue Mapping.</em>
-            </h2>
-            <div className={`${styles.body} reveal-up`}>
-              <p>
-                With technical and local frameworks embedded, organic
-                traffic shifts from an unstable funnel into a predictable
-                pipeline. Superficial traffic screenshots are replaced with
-                plain-English, revenue-aligned diagnostic reports tracking
-                corporate acquisition data and incoming leads. Growth
-                becomes highly selective and compounding, permanently
-                breaking seasonal revenue dips and securing consistent
-                inbound client appointments.
-              </p>
-            </div>
-          </article>
-
-          {/* ====== SECTION 06 — THE RESULT ====== */}
-          <article className={styles.block}>
-            <div className={`${styles.label} reveal-up`}>The Result · 06</div>
-            <h2 className={`${styles.headline} reveal-up`}>
-              A resilient, <em>specialist search boutique.</em>
-            </h2>
-            <div className={`${styles.body} reveal-up`}>
-              <p>
-                Scale SEO functions as a resilient, specialist search
-                boutique built to deliver institutional authority for firms
-                handling high-value files. By removing account managers,
-                outsourced execution layers, and lock-in contracts, every
-                diagnostic audit and content pipeline is executed directly
-                by <Link href="/corbin-jensen" className={styles.inlineLink}>me, the lead specialist</Link>.
-              </p>
-              <p>
-                The outcome is a highly sustainable, transparent search
-                asset engineered to protect and grow your market position
-                multi-year.
-              </p>
+            <div className={`${styles.values} reveal-up`}>
+              <div className={styles.valueItem}>
+                <h3 className={styles.valueTitle}>Cross-Border Origins</h3>
+                <p className={styles.valueBody}>
+                  My foundation was laid in Australia, where I first
+                  deployed this specialized, direct-to-founder search
+                  framework for highly regulated corporate environments.
+                  Navigating competitive, multi-national markets proved
+                  that sustainable search visibility relies on deep
+                  technical equity and institutional trust rather than
+                  superficial marketing trends. This international exposure
+                  refined my methodology into a bulletproof, globally
+                  proven system.
+                </p>
+              </div>
+              <div className={styles.valueItem}>
+                <h3 className={styles.valueTitle}>Establishing the Canadian Practice</h3>
+                <p className={styles.valueBody}>
+                  Today, Scale SEO is permanently anchored in Canada,
+                  delivering premium, multi-channel search assets for
+                  accounting firms, CPA practices, and top-tier professional
+                  services nationwide. By focusing strictly on the Canadian
+                  landscape, I combine international algorithmic expertise
+                  with deep localized market intelligence.
+                </p>
+              </div>
+              <div className={styles.valueItem}>
+                <h3 className={styles.valueTitle}>The Elite Boutique Model</h3>
+                <p className={styles.valueBody}>
+                  I intentionally remain a lean, specialist search boutique.
+                  I don&rsquo;t measure success by the volume of accounts I
+                  sign, but by the compounding revenue and market share I
+                  secure for a select roster of clients. By maintaining a
+                  direct, freelancer-style agility backed by corporate-grade
+                  technical execution, your firm&rsquo;s digital enterprise
+                  is handled with absolute care, precision, and{" "}
+                  <Link href="/corbin-jensen" className={styles.inlineLink}>
+                    senior oversight
+                  </Link>
+                  .
+                </p>
+              </div>
             </div>
           </article>
         </div>
       </div>
 
-      {/* ====== SECTION 07 — NUMBERS (full bleed, breaks out) ====== */}
+      {/* ====== SECTION 03 — NUMBERS (full bleed, breaks out) ====== */}
       <div className={`${styles.numbersBleed} reveal-up`}>
-        <div className={styles.numbersLabel}>The Numbers · 07</div>
+        <div className={styles.numbersLabel}>The Numbers · 03</div>
         <div className={styles.numbersGrid}>
           <div className={styles.numItem}>
             <div className={styles.numValue}>$<span className={styles.numAccent}>250K+</span></div>
