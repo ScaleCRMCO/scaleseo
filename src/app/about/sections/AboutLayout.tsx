@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./AboutLayout.module.css";
 
 export default function AboutLayout() {
@@ -27,6 +28,9 @@ export default function AboutLayout() {
               <div className={styles.metaRole}>SEO Specialist · Freelance</div>
               <div className={styles.metaRoute}>Calgary, Canada · Worldwide</div>
               <div className={styles.metaCoords}>51.04°N / 114.07°W</div>
+              <Link href="/corbin-jensen" className={styles.metaBioLink}>
+                View full bio →
+              </Link>
             </div>
 
             {/* Currently widget */}
@@ -186,7 +190,7 @@ export default function AboutLayout() {
                 handling high-value files. By removing account managers,
                 outsourced execution layers, and lock-in contracts, every
                 diagnostic audit and content pipeline is executed directly
-                by me, the lead specialist.
+                by <Link href="/corbin-jensen" className={styles.inlineLink}>me, the lead specialist</Link>.
               </p>
               <p>
                 The outcome is a highly sustainable, transparent search

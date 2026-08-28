@@ -118,6 +118,21 @@
   opacity: 0.7;
 }
 
+.metaBioLink {
+  display: inline-block;
+  margin-top: 16px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.metaBioLink:hover {
+  text-decoration: underline;
+}
+
 /* Currently widget */
 .currently {
   padding-top: 28px;
@@ -269,6 +284,13 @@
   font-style: normal;
   font-weight: 600;
   color: var(--accent);
+}
+
+.inlineLink {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 /* Pull quote */
