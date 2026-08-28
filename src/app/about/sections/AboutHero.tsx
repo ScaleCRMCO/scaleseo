@@ -11,7 +11,7 @@ export default function AboutHero() {
 
       <div className={styles.content}>
         <div className={styles.top}>
-          <p className={styles.eyebrow}>About Corbin Jensen</p>
+          <p className={styles.eyebrow}>About</p>
 
           {/* Rotating badge — small brand signature, distinct from homepage hero */}
           <div className={styles.badge} aria-hidden="true">
@@ -34,19 +34,20 @@ export default function AboutHero() {
 
         <h1 className={styles.title}>
           <span className={styles.line}>
-            <span className={styles.lineInner}>I&rsquo;m Corbin —</span>
+            <span className={styles.lineInner}>About</span>
           </span>
           <span className={styles.line}>
             <span className={styles.lineInner}>
-              I run <span className={styles.italic}>Scale SEO.</span>
+              <span className={styles.italic}>Scale SEO.</span>
             </span>
           </span>
         </h1>
 
         <p className={styles.sub}>
-          An independent SEO specialist based in Calgary, working with a
-          small number of established businesses across Canada &mdash; and a
-          few internationally. No agency, no account managers. Just the work.
+          Scale SEO was established with a singular, disciplined purpose: to
+          provide highly precise, technical search engine optimization for
+          corporate entities, accounting firms, and professional service
+          practices across Canada.
         </p>
       </div>
 

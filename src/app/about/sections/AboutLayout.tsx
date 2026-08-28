@@ -62,70 +62,145 @@ export default function AboutLayout() {
         {/* ============ RIGHT: SCROLLING CONTENT ============ */}
         <div className={styles.content}>
 
-          {/* ====== SECTION 01 — STORY ====== */}
+          {/* ====== SECTION 01 — PURPOSE ====== */}
           <article className={styles.block}>
-            <div className={`${styles.label} reveal-up`}>The Story · 01</div>
+            <div className={`${styles.label} reveal-up`}>The Purpose · 01</div>
             <h2 className={`${styles.headline} reveal-up`}>
-              It took a lot of <em>wrong turns</em> to get here.
+              Built for precision, <em>not volume.</em>
             </h2>
             <div className={`${styles.body} reveal-up`}>
               <p>
-                I tried to be an entrepreneur for most of last year. The first version was helping local businesses with their Google reviews. Then I pivoted into web design. Then again into something else. Each road ended somewhere I didn&apos;t want to be.
+                Scale SEO was established with a singular, disciplined
+                purpose: to provide highly precise, technical search engine
+                optimization for corporate entities, accounting firms, and
+                professional service practices across Canada.
               </p>
               <p>
-                The breakthrough came when I stopped trying to sell what I thought people wanted and started solving what they actually needed: visibility. People searching for them, finding them, calling them. That&apos;s when SEO clicked.
+                It was never engineered to operate as a high-volume digital
+                agency. My focus has always been complex algorithmic
+                alignment, senior-level technical oversight, and
+                sustainable, long-term client visibility. The architecture
+                of Scale SEO follows a deliberate and disciplined
+                operational model, prioritising technical credibility,
+                transparency, and data accuracy over rapid scale.
               </p>
-              <p>
-                My first real client was a concrete contractor in Calgary, the one that changed everything. In sixty days the work generated over $250,000 in revenue.
-              </p>
-              <p>That&apos;s when I stopped pivoting.</p>
             </div>
           </article>
 
-          {/* ====== SECTION 02 — APPROACH (values list) ====== */}
+          {/* ====== SECTION 02 — PHASE ONE ====== */}
           <article className={styles.block}>
-            <div className={`${styles.label} reveal-up`}>The Approach · 02</div>
+            <div className={`${styles.label} reveal-up`}>Phase One · 02</div>
             <h2 className={`${styles.headline} reveal-up`}>
-              What I value while <em>I work.</em>
+              Architectural <em>Foundations.</em>
             </h2>
-            <p className={`${styles.blockSub} reveal-up`}>
-              The principles that shape every engagement, whether it&rsquo;s
-              month one or year three.
-            </p>
+            <div className={`${styles.body} reveal-up`}>
+              <p>
+                The initial phase focuses on absolute infrastructure
+                clarity. I define and diagnose exactly how your digital
+                asset communicates with search engines and Large Language
+                Models (LLMs). I run deep technical audits, resolving
+                legacy indexing errors, site latency issues, and hidden
+                crawl blockages while deploying robust schema markup. This
+                phase builds a highly credible, technically immaculate
+                foundation that satisfies strict search guidelines from
+                inception.
+              </p>
+            </div>
+          </article>
 
-            <div className={`${styles.values} reveal-up`}>
-              <div className={styles.valueItem}>
-                <h3 className={styles.valueTitle}>Directness</h3>
-                <p className={styles.valueBody}>
-                  You work with me, not a rotating team. Every email, every
-                  call, every audit — handled personally, not passed down to
-                  a junior or an offshore contractor.
-                </p>
-              </div>
-              <div className={styles.valueItem}>
-                <h3 className={styles.valueTitle}>Longevity</h3>
-                <p className={styles.valueBody}>
-                  No black-hat shortcuts. No PBNs, no link farms, no schemes
-                  that age into a penalty. Work I do today should still be
-                  working three years from now.
-                </p>
-              </div>
-              <div className={styles.valueItem}>
-                <h3 className={styles.valueTitle}>Real Results</h3>
-                <p className={styles.valueBody}>
-                  Rankings are a means, not the goal. If your position
-                  improved but your phone isn&rsquo;t ringing, the job isn&rsquo;t
-                  done — I report on leads and revenue, not vanity metrics.
-                </p>
-              </div>
+          {/* ====== SECTION 03 — PHASE TWO ====== */}
+          <article className={styles.block}>
+            <div className={`${styles.label} reveal-up`}>Phase Two · 03</div>
+            <h2 className={`${styles.headline} reveal-up`}>
+              Intent Alignment{" "}
+              <em>&amp; Market Entry.</em>
+            </h2>
+            <div className={`${styles.body} reveal-up`}>
+              <p>
+                Rather than executing generic, volume-based keyword
+                campaigns, I target high-value corporate intent. This phase
+                involves a deep re-engineering of your on-page structure and
+                internal linking around the precise terms your
+                institutional buyers actually search. I prioritize the
+                production of high-quality technical insights and
+                structural compliance patterns, ensuring early visibility
+                traction is achieved through topical authority rather than
+                superficial marketing tactics.
+              </p>
+            </div>
+          </article>
+
+          {/* ====== SECTION 04 — PHASE THREE ====== */}
+          <article className={styles.block}>
+            <div className={`${styles.label} reveal-up`}>Phase Three · 04</div>
+            <h2 className={`${styles.headline} reveal-up`}>
+              Local Presence &{" "}
+              <em>Regional Consistency.</em>
+            </h2>
+            <div className={`${styles.body} reveal-up`}>
+              <p>
+                As organic authority stabilizes, the strategy expands to
+                secure multi-market local footprints. For firms operating
+                across multiple Canadian financial hubs — such as Calgary,
+                Toronto, and Vancouver — I develop distinct, authentic
+                regional landing pages and optimized Google Business
+                Profiles. This disciplined local scaling captures localized
+                map pack placement and ensures consistent search
+                performance across all target cities without diluting core
+                brand authority.
+              </p>
+            </div>
+          </article>
+
+          {/* ====== SECTION 05 — PHASE FOUR ====== */}
+          <article className={styles.block}>
+            <div className={`${styles.label} reveal-up`}>Phase Four · 05</div>
+            <h2 className={`${styles.headline} reveal-up`}>
+              Compounding Results{" "}
+              <em>&amp; Revenue Mapping.</em>
+            </h2>
+            <div className={`${styles.body} reveal-up`}>
+              <p>
+                With technical and local frameworks embedded, organic
+                traffic shifts from an unstable funnel into a predictable
+                pipeline. Superficial traffic screenshots are replaced with
+                plain-English, revenue-aligned diagnostic reports tracking
+                corporate acquisition data and incoming leads. Growth
+                becomes highly selective and compounding, permanently
+                breaking seasonal revenue dips and securing consistent
+                inbound client appointments.
+              </p>
+            </div>
+          </article>
+
+          {/* ====== SECTION 06 — THE RESULT ====== */}
+          <article className={styles.block}>
+            <div className={`${styles.label} reveal-up`}>The Result · 06</div>
+            <h2 className={`${styles.headline} reveal-up`}>
+              A resilient, <em>specialist search boutique.</em>
+            </h2>
+            <div className={`${styles.body} reveal-up`}>
+              <p>
+                Scale SEO functions as a resilient, specialist search
+                boutique built to deliver institutional authority for firms
+                handling high-value files. By removing account managers,
+                outsourced execution layers, and lock-in contracts, every
+                diagnostic audit and content pipeline is executed directly
+                by me, the lead specialist.
+              </p>
+              <p>
+                The outcome is a highly sustainable, transparent search
+                asset engineered to protect and grow your market position
+                multi-year.
+              </p>
             </div>
           </article>
         </div>
       </div>
 
-      {/* ====== SECTION 03 — NUMBERS (full bleed, breaks out) ====== */}
+      {/* ====== SECTION 07 — NUMBERS (full bleed, breaks out) ====== */}
       <div className={`${styles.numbersBleed} reveal-up`}>
-        <div className={styles.numbersLabel}>The Numbers · 03</div>
+        <div className={styles.numbersLabel}>The Numbers · 07</div>
         <div className={styles.numbersGrid}>
           <div className={styles.numItem}>
             <div className={styles.numValue}>$<span className={styles.numAccent}>250K+</span></div>
@@ -146,45 +221,6 @@ export default function AboutLayout() {
         </div>
         <div className={styles.numbersCaption}>
           Numbers I&apos;m proud of. Numbers I plan to outgrow.
-        </div>
-      </div>
-
-      {/* Back into two-column for sections 5 & 6 */}
-      <div className={styles.container}>
-        <aside className={styles.sidebarSpacer} aria-hidden="true" />
-
-        <div className={styles.content}>
-
-          {/* ====== SECTION 04 — OFF THE CLOCK ====== */}
-          <article className={styles.block}>
-            <div className={`${styles.label} reveal-up`}>Off The Clock · 04</div>
-
-            <div className={`${styles.locations} reveal-up`}>
-              <span className={styles.locA}>Singapore</span>
-              <span className={styles.locB}>Tokyo</span>
-              <span className={styles.locC}>Brisbane</span>
-              <span className={styles.locD}>Kuala Lumpur</span>
-              <span className={styles.locE}>Calgary</span>
-              <span className={styles.locF}>Vancouver</span>
-            </div>
-
-            <h2 className={`${styles.headline} reveal-up`}>
-              Born in Canada. <em>Travelling Often.</em> Global Work.
-            </h2>
-
-            <div className={`${styles.body} reveal-up`}>
-              <p>
-                Born and raised in Calgary, Alberta. I developed Scale SEO to bring established companies high value clientele through organic SEO practice.
-              </p>
-              <p>
-                When I&apos;m not working, I&apos;m travelling. Singapore, Japan, and Malaysia have been favourites lately. The fully-remote nature of this business is the whole point.
-              </p>
-              <p>
-                That mobility is also why I&apos;m picky about clients. I work with people who understand that the <em>output</em> matters more than the <em>office hours.</em>
-              </p>
-            </div>
-          </article>
-
         </div>
       </div>
     </section>
