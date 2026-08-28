@@ -1,16 +1,18 @@
+/* === HERO === */
 .hero {
-  padding: 180px 40px 140px;
+  padding: 180px 40px 80px;
+  border-bottom: 1px solid var(--line);
 }
 
 .heroInner {
-  max-width: 1100px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: 300px 1fr;
-  gap: 64px;
+  grid-template-columns: 260px 1fr;
+  gap: 56px;
   align-items: start;
 }
 
@@ -28,50 +30,258 @@
   filter: grayscale(20%) contrast(1.05);
 }
 
-.eyebrow {
-  font-family: var(--mono);
-  font-size: 12px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 20px;
+.headContent {
+  padding-top: 8px;
 }
 
 .title {
   font-family: var(--display);
   font-weight: 500;
-  font-size: clamp(38px, 5vw, 64px);
+  font-size: clamp(36px, 4.6vw, 60px);
   letter-spacing: -0.03em;
   line-height: 1.05;
   color: var(--ink);
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .role {
   font-family: var(--mono);
   font-size: 13px;
-  letter-spacing: 0.06em;
-  color: var(--ink-dim);
-  margin-bottom: 36px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 32px;
 }
 
-.bio {
-  font-family: var(--sans);
-  font-size: 17px;
-  line-height: 1.7;
-  color: var(--ink-dim);
-  max-width: 640px;
-  margin-bottom: 20px;
+/* === CTA === */
+.ctaGroup {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 40px;
 }
 
-.links {
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 28px;
+  background: var(--accent);
+  color: var(--bg);
+  text-decoration: none;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid var(--accent);
+  transition: all 0.3s ease;
+}
+
+.cta:hover {
+  background: transparent;
+  color: var(--accent);
+}
+
+.arrow {
+  transition: transform 0.4s ease;
+}
+
+.cta:hover .arrow {
+  transform: translateX(4px);
+}
+
+.ctaSecondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 28px;
+  background: transparent;
+  color: var(--ink);
+  text-decoration: none;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid var(--line-strong);
+  transition: all 0.3s ease;
+}
+
+.ctaSecondary:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* === ON-PAGE NAV === */
+.onPageNav {
   display: flex;
   flex-wrap: wrap;
-  gap: 28px;
-  margin-top: 32px;
+  align-items: baseline;
+  gap: 12px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line-strong);
 }
 
-.link {
+.onPageLabel {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+}
+
+.onPageLinks {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+
+.onPageDivider {
+  color: var(--ink-dim);
+  opacity: 0.4;
+  margin: 0 10px;
+}
+
+.onPageLink {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.onPageLink:hover {
+  text-decoration: underline;
+}
+
+/* === CONTENT SECTIONS === */
+.section {
+  padding: 90px 40px;
+  border-bottom: 1px solid var(--line);
+}
+
+.sectionElevated {
+  background: var(--bg-elev);
+}
+
+.sectionInner {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.body {
+  font-family: var(--sans);
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--ink-dim);
+}
+
+.body p {
+  margin-bottom: 22px;
+}
+
+.body p:last-child {
+  margin-bottom: 0;
+}
+
+/* === HUMANITY (personal quote) === */
+.humanity {
+  padding: 90px 40px;
+  border-bottom: 1px solid var(--line);
+  background: var(--bg-dark);
+  color: var(--ink-on-dark);
+}
+
+.quote {
+  font-family: var(--display);
+  font-weight: 300;
+  font-size: clamp(19px, 2vw, 24px);
+  line-height: 1.6;
+  color: var(--ink-on-dark);
+}
+
+.quote p {
+  margin-bottom: 28px;
+  position: relative;
+  padding-left: 24px;
+  border-left: 2px solid var(--accent);
+}
+
+.quote p:last-child {
+  margin-bottom: 0;
+}
+
+/* === LATEST ARTICLES === */
+.articlesGrid {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1px;
+  background: var(--line-strong);
+  border: 1px solid var(--line-strong);
+  margin-bottom: 32px;
+}
+
+.articleCard {
+  background: var(--bg-elev);
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  min-height: 220px;
+  transition: background 0.3s ease;
+}
+
+.articleCard:hover {
+  background: var(--bg);
+}
+
+.articleCategory {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+
+.articleTitle {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: 19px;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  color: var(--ink);
+  margin-bottom: 12px;
+}
+
+.articleExcerpt {
+  font-family: var(--sans);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--ink-dim);
+  flex-grow: 1;
+}
+
+.articleLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 18px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.articleCard:hover .arrow {
+  transform: translateX(4px);
+}
+
+.viewAllLink {
   font-family: var(--mono);
   font-size: 12px;
   letter-spacing: 0.08em;
@@ -80,12 +290,52 @@
   text-decoration: none;
 }
 
-.link:hover {
+.viewAllLink:hover {
+  text-decoration: underline;
+}
+
+/* === FINAL CTA === */
+.finalCta {
+  padding: 100px 40px;
+  text-align: center;
+}
+
+.finalCtaHeadline {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: clamp(26px, 3.4vw, 40px);
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  max-width: 640px;
+  margin: 0 auto 40px;
+}
+
+.finalCta .ctaGroup {
+  justify-content: center;
+  margin-bottom: 28px;
+}
+
+.finalCtaSub {
+  font-family: var(--sans);
+  font-size: 14.5px;
+  color: var(--ink-dim);
+}
+
+.inlineLink {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.inlineLink:hover {
   text-decoration: underline;
 }
 
 @media (max-width: 800px) {
-  .hero { padding: 120px 24px 90px; }
-  .grid { grid-template-columns: 1fr; gap: 36px; }
-  .portrait { max-width: 260px; }
+  .hero { padding: 120px 24px 60px; }
+  .grid { grid-template-columns: 1fr; gap: 32px; }
+  .portrait { max-width: 220px; }
+  .section { padding: 60px 24px; }
+  .humanity { padding: 60px 24px; }
+  .finalCta { padding: 70px 24px; }
 }
