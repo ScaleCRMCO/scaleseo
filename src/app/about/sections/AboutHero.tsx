@@ -1,3 +1,4 @@
+import Breadcrumbs from "../../components/Breadcrumbs";
 import styles from "./AboutHero.module.css";
 
 export default function AboutHero() {
@@ -10,6 +11,7 @@ export default function AboutHero() {
       <div className={styles.orb} aria-hidden="true" />
 
       <div className={styles.content}>
+        <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "About" }]} />
         <div className={styles.top}>
           <p className={styles.eyebrow}>About</p>
 
