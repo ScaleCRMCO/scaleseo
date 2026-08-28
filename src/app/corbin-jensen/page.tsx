@@ -24,32 +24,62 @@ export default function CorbinJensenPage() {
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Person",
-    name: "Corbin Jensen",
-    jobTitle: "Founder & Lead Specialist",
-    url: "https://scaleseo.co/corbin-jensen",
-    image: "https://scaleseo.co/images/corbin-about.jpg",
-    worksFor: {
-      "@type": "Organization",
-      name: "Scale SEO",
-      url: "https://scaleseo.co",
-    },
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Calgary",
-      addressRegion: "Alberta",
-      addressCountry: "CA",
-    },
-    knowsAbout: [
-      "Technical SEO",
-      "Local SEO",
-      "Generative Engine Optimization",
-      "Google Ads",
-      "YMYL Search Compliance",
-    ],
-    sameAs: [
-      "https://www.linkedin.com/in/corbin-jensen-9a9b77127/",
-      "https://www.instagram.com/scaleseo.co/",
+    "@graph": [
+      {
+        "@type": "ProfilePage",
+        "@id": "https://scaleseo.co/corbin-jensen",
+        url: "https://scaleseo.co/corbin-jensen",
+        mainEntity: {
+          "@id": "https://scaleseo.co/corbin-jensen#person",
+        },
+      },
+      {
+        "@type": "Person",
+        "@id": "https://scaleseo.co/corbin-jensen#person",
+        name: "Corbin Jensen",
+        jobTitle: "Founder & Lead Specialist",
+        url: "https://scaleseo.co/corbin-jensen",
+        image: "https://scaleseo.co/images/corbin-about.jpg",
+        description:
+          "Independent organic search specialist specializing in high-performance technical search architecture, schema deployment, and intent-focused SEO for Canadian professional services and accounting firms.",
+        worksFor: {
+          "@type": "ProfessionalService",
+          name: "Scale SEO",
+          url: "https://scaleseo.co",
+        },
+        nationality: {
+          "@type": "Country",
+          name: "Canada",
+        },
+        homeLocation: {
+          "@type": "Place",
+          name: "Calgary, Alberta, Canada",
+        },
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Calgary",
+          addressRegion: "Alberta",
+          addressCountry: "CA",
+        },
+        knowsAbout: [
+          "Search Engine Optimization",
+          "Technical SEO",
+          "Local SEO",
+          "Schema Markup & Structured Data",
+          "Generative Engine Optimization (GEO)",
+          "B2B Organic Search Strategy",
+          "Accounting Firm Marketing",
+          "Crawl Budget Optimization",
+          "Google Ads",
+          "YMYL Search Compliance",
+        ],
+        sameAs: [
+          "https://www.linkedin.com/in/corbin-jensen-9a9b77127/",
+          "https://www.instagram.com/scaleseo.co/",
+          "https://clutch.co/profile/scale-seo",
+          "https://maps.app.goo.gl/FYWSaQ3p81VFnNcc7",
+        ],
+      },
     ],
   };
 
