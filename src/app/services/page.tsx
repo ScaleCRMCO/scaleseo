@@ -38,6 +38,12 @@ const services = [
   },
   {
     num: "05",
+    name: "Google Ads (PPC) Management",
+    desc: "Profitable Google Ads campaigns for accounting firms and professional service businesses — built and managed directly by me.",
+    href: "/services/google-ads",
+  },
+  {
+    num: "06",
     name: "Reporting & Strategy",
     desc: "Monthly calls and plain-English reporting on what moved, what's next, and what it means for leads and revenue.",
     href: null,
