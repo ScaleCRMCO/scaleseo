@@ -12,7 +12,7 @@ const defaultCheckpoints = [
 
 export type SellingHeroProps = {
   breadcrumbs: Crumb[];
-  eyebrow: string;
+  eyebrow?: string;
   title: ReactNode;
   sub: string;
   checkpoints?: string[];
@@ -34,7 +34,7 @@ export default function SellingHero({
       <div className={styles.content}>
         <div className={styles.left}>
           <Breadcrumbs items={breadcrumbs} />
-          <p className={styles.eyebrow}>{eyebrow}</p>
+          {eyebrow && <p className={styles.eyebrow}>{eyebrow}</p>}
           <h1 className={styles.title}>{title}</h1>
           <p className={styles.sub}>{sub}</p>
 

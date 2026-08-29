@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: "Google Ads Management Services in Calgary & Canada | Scale SEO",
   description:
     "Google Ads management for accounting firms and professional service businesses in Calgary and across Canada. Campaign setup, keyword research, ad copy, landing pages, and bid management — run directly by one specialist.",
-  alternates: { canonical: "/services/google-ads" },
+  alternates: { canonical: "/services/google-ads-management" },
 };
 
 const included = [
@@ -104,7 +104,7 @@ export default function GoogleAdsPage() {
     description:
       "Google Ads (PPC) management for accounting firms and professional service businesses in Calgary and across Canada.",
     serviceType: "Google Ads Management",
-    url: "https://scaleseo.co/services/google-ads",
+    url: "https://scaleseo.co/services/google-ads-management",
     provider: {
       "@type": "ProfessionalService",
       name: "Scale SEO",
@@ -148,7 +148,6 @@ export default function GoogleAdsPage() {
           { name: "Services", href: "/services" },
           { name: "Google Ads" },
         ]}
-        eyebrow="Services / Google Ads"
         title={
           <>
             Google Ads Management Services{" "}
@@ -157,9 +156,9 @@ export default function GoogleAdsPage() {
         }
         sub="Profitable PPC campaigns for accounting firms and professional service businesses — built, launched, and managed directly by me. Request a free PPC audit and I'll show you exactly where your ad spend is being wasted."
         checkpoints={[
-          "Independent specialist — no outsourcing",
-          "Work directly with me, not an account manager",
-          "Focused on Canadian professional service firms, including accounting practices, legal firms, and corporate advisors",
+          "Precision Targeting — your budget goes toward buyers actively searching, not broad, wasted traffic",
+          "Built to Convert — ads and landing pages engineered to turn clicks into booked calls",
+          "Clear, Live Reporting — plain-English performance data, not a dashboard full of noise",
           "No lock-in contracts",
         ]}
       />

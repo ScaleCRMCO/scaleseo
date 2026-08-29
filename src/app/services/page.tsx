@@ -40,7 +40,7 @@ const services = [
     num: "05",
     name: "Google Ads (PPC) Management",
     desc: "Profitable Google Ads campaigns for accounting firms and professional service businesses — built and managed directly by me.",
-    href: "/services/google-ads",
+    href: "/services/google-ads-management",
   },
   {
     num: "06",

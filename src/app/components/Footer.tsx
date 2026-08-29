@@ -31,7 +31,7 @@ export default function Footer() {
           <Link href="/services/seo" className={styles.colLink}>SEO</Link>
           <Link href="/services/geo" className={styles.colLink}>GEO (AI Search)</Link>
           <Link href="/services/web-development" className={styles.colLink}>Web Development</Link>
-          <Link href="/services/google-ads" className={styles.colLink}>Google Ads</Link>
+          <Link href="/services/google-ads-management" className={styles.colLink}>Google Ads</Link>
         </div>
 
         {/* Contact */}

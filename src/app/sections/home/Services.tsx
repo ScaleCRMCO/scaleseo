@@ -46,7 +46,7 @@ const services = [
   {
     num: "03",
     name: "Google Ads (PPC) Lead Generation Management",
-    href: "/services/google-ads",
+    href: "/services/google-ads-management",
     linkText: "Get a free PPC audit",
     offer: [
       "Google Ads management & strict PPC query mapping",
