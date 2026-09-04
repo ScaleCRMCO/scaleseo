@@ -1,11 +1,13 @@
 "use client";
 
 import { useState, FormEvent } from "react";
+import { useRouter } from "next/navigation";
 import styles from "./Contact.module.css";
 
 type Status = "idle" | "sending" | "success" | "error";
 
 export default function Contact() {
+  const router = useRouter();
   const [status, setStatus] = useState<Status>("idle");
   const [message, setMessage] = useState("");
 
@@ -28,6 +30,7 @@ export default function Contact() {
         setStatus("success");
         setMessage("Thanks — I'll reply within 24 hours.");
         form.reset();
+        router.push("/thank-you");
       } else {
         throw new Error("Request failed");
       }
