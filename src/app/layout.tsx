@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
@@ -115,6 +116,19 @@ export default function RootLayout({
         />
       </head>
       <body>
+        {/* Google tag (gtag.js) — Google Ads conversion tracking, loads on every page */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18236022589"
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads-gtag" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-18236022589');
+          `}
+        </Script>
         <PageTransition />
         <Nav />
         {children}
