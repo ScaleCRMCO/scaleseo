@@ -3,9 +3,34 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import styles from "./Nav.module.css";
+
+const serviceLinks = [
+  {
+    href: "/services/seo",
+    name: "SEO",
+    desc: "Technical, on-page & local SEO built to move rankings.",
+  },
+  {
+    href: "/services/google-ads-management",
+    name: "Google Ads",
+    desc: "Profitable PPC campaigns for professional service firms.",
+  },
+  {
+    href: "/services/web-development",
+    name: "Web Development",
+    desc: "Fast, conversion-focused sites built with SEO in from day one.",
+  },
+  {
+    href: "/services/geo",
+    name: "GEO (AI Search)",
+    desc: "Get cited by ChatGPT, Perplexity & Google AI Overviews.",
+  },
+];
+
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
   const pathname = usePathname();
   const isDarkPage = pathname?.startsWith("/about") || pathname?.startsWith("/brisbane");
   useEffect(() => {
@@ -39,7 +64,24 @@ export default function Nav() {
       {/* Desktop links */}
       <div className={styles.links}>
         <Link href="/#work"><span className={styles.num}>01</span> Work</Link>
-        <Link href="/services"><span className={styles.num}>02</span> Services</Link>
+        <div
+          className={styles.navItem}
+          onMouseEnter={() => setServicesOpen(true)}
+          onMouseLeave={() => setServicesOpen(false)}
+        >
+          <Link href="/services"><span className={styles.num}>02</span> Services</Link>
+          <div className={`${styles.servicesDropdown} ${servicesOpen ? styles.servicesDropdownOpen : ""}`}>
+            {serviceLinks.map((s) => (
+              <Link key={s.href} href={s.href} className={styles.dropdownItem} onClick={close}>
+                <span className={styles.dropdownItemName}>{s.name}</span>
+                <span className={styles.dropdownItemDesc}>{s.desc}</span>
+              </Link>
+            ))}
+            <Link href="/services" className={styles.dropdownFooter} onClick={close}>
+              View all services &rarr;
+            </Link>
+          </div>
+        </div>
         <Link href="/industries"><span className={styles.num}>03</span> Industries</Link>
         <Link href="/#process"><span className={styles.num}>04</span> Process</Link>
         <Link href="/about"><span className={styles.num}>05</span> About</Link>
