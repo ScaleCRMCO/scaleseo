@@ -115,6 +115,28 @@ section {
 }
 
 /* ==========================================================================
+   Utility: numbered section index label
+   Usage: <span className="index">( 01 )</span> or <span className="index index--glyph">✺</span>
+   ========================================================================== */
+
+.index {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--ink-dim);
+  display: inline-block;
+}
+
+.index--glyph {
+  font-size: 14px;
+  letter-spacing: 0;
+}
+
+.section-dark .index {
+  color: var(--ink-dim-on-dark);
+}
+
+/* ==========================================================================
    Animations
    ========================================================================== */
 
