@@ -1,0 +1,70 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, minmax(220px, auto));
+  grid-template-areas:
+    "seo   ads   ai"
+    "badge web   ai";
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line-strong);
+}
+
+.cell {
+  background: var(--bg-elev);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.seo   { grid-area: seo; }
+.ads   { grid-area: ads; }
+.badge { grid-area: badge; }
+.web   { grid-area: web; }
+.ai    { grid-area: ai; }
+
+.cellTitle {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 32px;
+  letter-spacing: -0.01em;
+}
+
+.badge {
+  background: #99ff00;
+  color: #0a0a0a;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.badgeValue {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 44px;
+  line-height: 1;
+}
+
+.badgeLabel {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 8px;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    grid-template-areas:
+      "seo"
+      "ads"
+      "badge"
+      "web"
+      "ai";
+  }
+  .cell {
+    padding: 32px 24px;
+  }
+}
