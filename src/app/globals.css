@@ -4,23 +4,27 @@
    ========================================================================== */
 
 :root {
-  /* Dark theme colors (default) — lighter charcoal, not pure black */
-  --bg: #1a1a1a;
-  --bg-elev: #232323;
-  --ink: #F5F3EF;
-  --ink-dim: #9A9691;
-  --ink-faint: #5C5854;
-  --accent: #fa4c15;
-  --line: rgba(245, 243, 239, 0.1);
-  --line-strong: rgba(245, 243, 239, 0.2);
-  /* Alternate section variants (used on inverted sections) */
-  --bg-dark: #1a1a1a;
-  --ink-on-dark: #F5F3EF;
-  --ink-dim-on-dark: #9A9691;
-  --line-on-dark: rgba(245, 243, 239, 0.1);
-  --line-strong-on-dark: rgba(245, 243, 239, 0.2);
+  /* Light editorial theme */
+  --bg: #FDFDFB;
+  --bg-elev: #F5F4F0;
+  --ink: #111827;
+  --ink-dim: #4B5563;
+  --ink-faint: #9CA3AF;
+  --accent: #D97706;
+  /* Text/icon color placed on top of a solid --accent fill (buttons, badges) —
+     kept dark-on-gold for contrast regardless of the main theme's text color */
+  --on-accent: #111827;
+  --line: rgba(17, 24, 39, 0.08);
+  --line-strong: rgba(17, 24, 39, 0.15);
+  /* Alternate section variants (used on inverted/always-dark sections, e.g.
+     the About page, mobile full-screen nav, stat bands) */
+  --bg-dark: #0F172A;
+  --ink-on-dark: #F5F4F0;
+  --ink-dim-on-dark: #9CA3AF;
+  --line-on-dark: rgba(245, 244, 240, 0.12);
+  --line-strong-on-dark: rgba(245, 244, 240, 0.22);
   /* Fonts */
-  --display: 'Space Grotesk', system-ui, sans-serif;
+  --display: 'Playfair Display', 'Merriweather', Georgia, serif;
   --sans: 'Inter', system-ui, sans-serif;
   --mono: 'JetBrains Mono', monospace;
 }
@@ -59,7 +63,7 @@ body::before {
 
 ::selection {
   background: var(--accent);
-  color: #F5F1EA;
+  color: var(--on-accent);
 }
 
 /* ==========================================================================
