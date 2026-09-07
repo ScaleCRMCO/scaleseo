@@ -1,49 +1,166 @@
 .case {
   position: relative;
-  border-bottom: 1px solid var(--line-on-dark);
+  margin-top: -48px;
+  border-radius: 48px 48px 0 0;
+  overflow: hidden;
+  background: #fcfbfa;
+  color: #0a0a0a;
+  padding: 140px 40px;
 }
 
 .inner {
   position: relative;
   z-index: 1;
-  padding: 40px 40px 100px;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .top {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 40px;
+  flex-direction: column;
+  gap: 16px;
   margin-bottom: 56px;
 }
 
+.eyebrow {
+  color: #6b6b6b;
+}
+
 .heading {
-  font-family: var(--display);
-  font-weight: 500;
+  font-family: var(--sans); /* Manrope */
+  font-weight: 800;
+  letter-spacing: -0.02em;
   font-size: clamp(36px, 4.5vw, 64px);
-  line-height: 1;
-  letter-spacing: -0.03em;
-  color: var(--ink-on-dark);
-  margin-top: 20px;
+  line-height: 1.05;
+  color: #0a0a0a;
 }
 
-.heading em {
-  font-style: normal;
-  font-weight: 600;
-  color: var(--accent);
+.cardLinkWrap {
+  display: block;
+  text-decoration: none;
+  color: inherit;
 }
 
-.proofLine {
+.card {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 3rem;
+  background: #f5f3ef;
+  border: 1px solid rgba(10, 10, 10, 0.08);
+  border-radius: 32px;
+  padding: 3rem;
+}
+
+/* Left column — premium browser frame mockup */
+.mockup {
+  border-radius: 16px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 40px 80px -32px rgba(10, 10, 10, 0.25);
+}
+
+.mockDots {
+  display: flex;
+  gap: 6px;
+  padding: 14px 16px 10px;
+  background: #ffffff;
+}
+
+.mockDot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+
+.mockDot:nth-child(1) { background: #ff5f57; }
+.mockDot:nth-child(2) { background: #febc2e; }
+.mockDot:nth-child(3) { background: #28c840; }
+
+.mockImageWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 11;
+}
+
+.mockImage {
+  object-fit: cover;
+  object-position: top;
+}
+
+/* Right column — case data */
+.data {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  justify-content: center;
+}
+
+.meta {
   font-family: var(--mono);
-  font-size: 12px;
-  letter-spacing: 0.12em;
+  font-size: 11px;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--ink-dim-on-dark);
-  white-space: nowrap;
-  padding-bottom: 6px;
+  color: #6b6b6b;
 }
 
-/* === WORK GRID === */
+.statement {
+  font-family: var(--sans);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  font-size: clamp(24px, 2.6vw, 34px);
+  line-height: 1.2;
+  color: #0a0a0a;
+}
+
+.metricCard {
+  display: inline-flex;
+  flex-direction: column;
+  align-self: flex-start;
+  background: #0a0a0a;
+  color: #fcfbfa;
+  border-radius: 20px;
+  padding: 20px 28px;
+}
+
+.metricValue {
+  font-family: var(--sans);
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 1;
+}
+
+.metricLabel {
+  font-size: 13px;
+  color: #b8b8b8;
+  margin-top: 6px;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  font-size: 15px;
+  color: #0a0a0a;
+}
+
+@media (max-width: 900px) {
+  .case {
+    padding: 90px 24px;
+  }
+  .card {
+    grid-template-columns: 1fr;
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+}
+
+/* ==========================================================================
+   Legacy grid/tile classes — still used by /results (see results/page.tsx),
+   which renders the full case study list independently of the homepage's
+   featured single-card layout above. Kept here rather than duplicated.
+   ========================================================================== */
+
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -168,29 +285,6 @@
   color: var(--accent);
 }
 
-.moreLink {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  margin-top: 48px;
-  font-family: var(--mono);
-  font-size: 12px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--accent);
-  text-decoration: none;
-}
-
-.moreArrow {
-  transition: transform 0.3s ease;
-}
-
-.moreLink:hover .moreArrow {
-  transform: translateX(4px);
-}
-
 @media (max-width: 900px) {
-  .inner { padding: 60px 24px 80px; }
-  .top { flex-direction: column; align-items: flex-start; gap: 16px; }
   .grid { grid-template-columns: 1fr; }
 }
