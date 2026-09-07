@@ -96,17 +96,16 @@ export default function Nav() {
         <span className={styles.wordmark}>
           Scale<span style={{ color: "var(--accent)" }}>SEO</span>
         </span>
-        <span className={styles.mark}>/ Corbin Jensen</span>
       </Link>
       {/* Desktop links */}
       <div className={styles.links}>
-        <Link href="/#work"><span className={styles.num}>01</span> Work</Link>
+        <Link href="/#work">Work</Link>
         <div
           className={styles.navItem}
           onMouseEnter={() => setServicesOpen(true)}
           onMouseLeave={() => setServicesOpen(false)}
         >
-          <Link href="/services"><span className={styles.num}>02</span> Services</Link>
+          <Link href="/services">Services</Link>
           <div className={`${styles.servicesDropdown} ${servicesOpen ? styles.servicesDropdownOpen : ""}`}>
             <Link href="/services" className={styles.dropdownFeatured} onClick={close}>
               <span className={styles.dropdownFeaturedIcon} aria-hidden="true">
@@ -132,9 +131,9 @@ export default function Nav() {
             </div>
           </div>
         </div>
-        <Link href="/industries"><span className={styles.num}>03</span> Industries</Link>
-        <Link href="/#process"><span className={styles.num}>04</span> Process</Link>
-        <Link href="/about"><span className={styles.num}>05</span> About</Link>
+        <Link href="/industries">Industries</Link>
+        <Link href="/#process">Process</Link>
+        <Link href="/about">About</Link>
       </div>
       <motion.a
         href="https://cal.com/corbinjensen-scaleseo/30min"
@@ -161,11 +160,11 @@ export default function Nav() {
       </button>
       {/* Full-screen mobile menu */}
       <div className={`${styles.mobileMenu} ${open ? styles.mobileMenuOpen : ""}`}>
-        <Link href="/#work" onClick={close}><span className={styles.num}>01</span> Work</Link>
-        <Link href="/services" onClick={close}><span className={styles.num}>02</span> Services</Link>
-        <Link href="/industries" onClick={close}><span className={styles.num}>03</span> Industries</Link>
-        <Link href="/#process" onClick={close}><span className={styles.num}>04</span> Process</Link>
-        <Link href="/about" onClick={close}><span className={styles.num}>05</span> About</Link>
+        <Link href="/#work" onClick={close}>Work</Link>
+        <Link href="/services" onClick={close}>Services</Link>
+        <Link href="/industries" onClick={close}>Industries</Link>
+        <Link href="/#process" onClick={close}>Process</Link>
+        <Link href="/about" onClick={close}>About</Link>
         <Link href="/contact" onClick={close}>Contact</Link>
       </div>
     </nav>
