@@ -1,4 +1,35 @@
+"use client";
+import { motion } from "motion/react";
 import styles from "./ServicesGrid.module.css";
+
+const spring = { type: "spring" as const, stiffness: 100, damping: 15 };
+
+function Pills({ items }: { items: string[] }) {
+  return (
+    <div className={styles.pillRow}>
+      {items.map((item) => (
+        <span key={item} className={styles.pill}>
+          {item}
+        </span>
+      ))}
+    </div>
+  );
+}
+
+function CardLink({ href, label }: { href: string; label: string }) {
+  return (
+    <motion.a href={href} className={styles.cardLink} initial="rest" whileHover="hover" animate="rest">
+      <span>{label}</span>
+      <motion.span
+        className={styles.cardLinkArrow}
+        variants={{ rest: { x: 0 }, hover: { x: 6 } }}
+        transition={spring}
+      >
+        →
+      </motion.span>
+    </motion.a>
+  );
+}
 
 export default function ServicesGrid() {
   return (
@@ -11,7 +42,14 @@ export default function ServicesGrid() {
           architecture engineered for #1 organic positions.
         </p>
 
+        <Pills items={["Technical SEO", "Local SEO", "Link Building"]} />
+
         <div className={styles.serpMock} aria-hidden="true">
+          <div className={styles.mockDots}>
+            <span className={styles.mockDot} />
+            <span className={styles.mockDot} />
+            <span className={styles.mockDot} />
+          </div>
           <div className={styles.serpBar}>
             <span className={styles.serpBarIcon}>🔍</span>
             <span className={styles.serpBarText}>
@@ -33,11 +71,21 @@ export default function ServicesGrid() {
             </span>
           </div>
         </div>
+
+        <CardLink href="/services/seo" label="SEO Calgary →" />
       </div>
 
       <div className={`${styles.cell} ${styles.ads}`}>
         <span className="index">02</span>
         <h3 className={styles.cellTitle}>Google Ads</h3>
+        <p className={styles.cellDesc}>
+          Profitable spend, measured weekly — built for lead quality, not
+          vanity clicks.
+        </p>
+
+        <Pills items={["Performance Max", "Remarketing", "Landing Pages"]} />
+
+        <CardLink href="/services/google-ads-management" label="Google Ads Management →" />
       </div>
 
       <div className={`${styles.cell} ${styles.badge}`}>
@@ -52,11 +100,13 @@ export default function ServicesGrid() {
           Premium, fast-loading headless builds engineered to convert.
         </p>
 
+        <Pills items={["Landing Pages", "Headless Builds", "CRO"]} />
+
         <div className={styles.browserMock} aria-hidden="true">
-          <div className={styles.browserBar}>
-            <span className={styles.browserDot} />
-            <span className={styles.browserDot} />
-            <span className={styles.browserDot} />
+          <div className={styles.mockDots}>
+            <span className={styles.mockDot} />
+            <span className={styles.mockDot} />
+            <span className={styles.mockDot} />
           </div>
           <div className={styles.browserScreen}>
             <div className={styles.browserNav} />
@@ -71,6 +121,8 @@ export default function ServicesGrid() {
             </div>
           </div>
         </div>
+
+        <CardLink href="/services/web-development" label="Web Design →" />
       </div>
 
       <div className={`${styles.cell} ${styles.ai}`}>
@@ -80,6 +132,8 @@ export default function ServicesGrid() {
           Custom AI agents for lead qualification, content ops, and
           always-on client reporting.
         </p>
+
+        <Pills items={["Lead Qualification", "Content Ops", "Reporting"]} />
 
         <div className={styles.chatMock} aria-hidden="true">
           <div className={styles.chatBubbleUser}>
@@ -92,6 +146,8 @@ export default function ServicesGrid() {
             rising intent with underserved organic coverage.
           </div>
         </div>
+
+        <CardLink href="/services/geo" label="AI Search / GEO →" />
       </div>
     </section>
   );
