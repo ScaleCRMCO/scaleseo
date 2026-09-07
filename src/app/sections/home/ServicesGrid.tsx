@@ -48,11 +48,50 @@ export default function ServicesGrid() {
       <div className={`${styles.cell} ${styles.web}`}>
         <span className="index">03</span>
         <h3 className={styles.cellTitle}>Web Design</h3>
+        <p className={styles.cellDesc}>
+          Premium, fast-loading headless builds engineered to convert.
+        </p>
+
+        <div className={styles.browserMock} aria-hidden="true">
+          <div className={styles.browserBar}>
+            <span className={styles.browserDot} />
+            <span className={styles.browserDot} />
+            <span className={styles.browserDot} />
+          </div>
+          <div className={styles.browserScreen}>
+            <div className={styles.browserNav} />
+            <div className={styles.browserHero}>
+              <div className={styles.browserHeroLine} />
+              <div className={styles.browserHeroLineShort} />
+            </div>
+            <div className={styles.browserGrid}>
+              <span className={styles.browserBlock} />
+              <span className={styles.browserBlock} />
+              <span className={styles.browserBlock} />
+            </div>
+          </div>
+        </div>
       </div>
 
       <div className={`${styles.cell} ${styles.ai}`}>
         <span className="index">04</span>
         <h3 className={styles.cellTitle}>AI / Agentic Marketing</h3>
+        <p className={styles.cellDesc}>
+          Custom AI agents for lead qualification, content ops, and
+          always-on client reporting.
+        </p>
+
+        <div className={styles.chatMock} aria-hidden="true">
+          <div className={styles.chatBubbleUser}>
+            Which pages should we prioritize for Q3 rankings?
+          </div>
+          <div className={styles.chatBubbleAi}>
+            <span className={styles.chatAiLabel}>Scale SEO Agent</span>
+            Based on current search volume and conversion data, prioritize
+            /accounting-firms and /google-ads-management — both show
+            rising intent with underserved organic coverage.
+          </div>
+        </div>
       </div>
     </section>
   );

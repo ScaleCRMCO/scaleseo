@@ -100,6 +100,123 @@
   line-height: 1.5;
 }
 
+/* Mock browser window — Web Design card */
+.browserMock {
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 12px 32px -16px rgba(10, 10, 10, 0.25);
+}
+
+.browserBar {
+  display: flex;
+  gap: 6px;
+  padding: 10px 12px;
+  background: #e8e6e1;
+}
+
+.browserDot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #d5d2cb;
+}
+
+.browserDot:nth-child(1) { background: #ff5f57; }
+.browserDot:nth-child(2) { background: #febc2e; }
+.browserDot:nth-child(3) { background: #28c840; }
+
+.browserScreen {
+  background: #ffffff;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.browserNav {
+  height: 10px;
+  width: 40%;
+  background: #ececec;
+  border-radius: 2px;
+}
+
+.browserHero {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.browserHeroLine {
+  height: 14px;
+  width: 80%;
+  background: #1a1a1a;
+  border-radius: 2px;
+}
+
+.browserHeroLineShort {
+  height: 14px;
+  width: 55%;
+  background: #1a1a1a;
+  border-radius: 2px;
+}
+
+.browserGrid {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.browserBlock {
+  flex: 1;
+  height: 36px;
+  background: #f1f0eb;
+  border: 1px solid #e2e0da;
+  border-radius: 3px;
+}
+
+/* Mock dark chat interface — AI / Agentic Marketing card */
+.chatMock {
+  background: #1a1a1a;
+  border-radius: 10px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-family: var(--sans);
+}
+
+.chatBubbleUser {
+  align-self: flex-end;
+  max-width: 85%;
+  background: #2e2e2e;
+  color: #f5f4f1;
+  font-size: 13px;
+  line-height: 1.5;
+  padding: 10px 14px;
+  border-radius: 12px 12px 2px 12px;
+}
+
+.chatBubbleAi {
+  max-width: 90%;
+  background: transparent;
+  color: #d4d4d4;
+  font-size: 13px;
+  line-height: 1.55;
+  padding: 2px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.chatAiLabel {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #99ff00;
+}
+
 .badge {
   background: #99ff00;
   color: #0a0a0a;

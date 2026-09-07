@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Hero from "./sections/home/Hero";
 import About from "./sections/home/About";
-import Services from "./sections/home/Services";
+import ServicesGrid from "./sections/home/ServicesGrid";
 import CaseStudy from "./sections/home/CaseStudy";
 import Marquee from "./sections/home/Marquee";
 import IndustriesTeaser from "./sections/home/IndustriesTeaser";
@@ -19,7 +19,7 @@ export default function Home() {
   return (
     <main>
       <Hero />
-      <Services />
+      <ServicesGrid />
       <CaseStudy />
       <Marquee />
       <About />
