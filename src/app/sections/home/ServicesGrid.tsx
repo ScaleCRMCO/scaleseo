@@ -33,10 +33,26 @@ function CardLink({ href, label }: { href: string; label: string }) {
 
 export default function ServicesGrid() {
   return (
-    <section className={styles.grid} id="services">
+    <section className={styles.section} id="services">
+      <div className={styles.intro}>
+        <h2 className={styles.introTitle}>
+          Four pillars,
+          <br />
+          one integrated team.
+        </h2>
+        <p className={styles.introBody}>
+          Scale SEO covers everything a growing professional services firm
+          needs from a single marketing partner — no outsourcing, no
+          hand-offs between specialists.
+        </p>
+      </div>
+
+      <div className={styles.grid}>
       <div className={`${styles.cell} ${styles.seo}`}>
-        <span className="index">01</span>
-        <h3 className={styles.cellTitle}>SEO</h3>
+        <div className={styles.cellHead}>
+          <h3 className={styles.cellTitle}>SEO</h3>
+          <span className={`index ${styles.cellIndex}`}>01</span>
+        </div>
         <p className={styles.cellDesc}>
           Technical audits, local search scaling, and intent-based keyword
           architecture engineered for #1 organic positions.
@@ -72,12 +88,14 @@ export default function ServicesGrid() {
           </div>
         </div>
 
-        <CardLink href="/services/seo" label="SEO Calgary →" />
+        <CardLink href="/services/seo" label="SEO Calgary" />
       </div>
 
       <div className={`${styles.cell} ${styles.ads}`}>
-        <span className="index">02</span>
-        <h3 className={styles.cellTitle}>Google Ads</h3>
+        <div className={styles.cellHead}>
+          <h3 className={styles.cellTitle}>Google Ads</h3>
+          <span className={`index ${styles.cellIndex}`}>02</span>
+        </div>
         <p className={styles.cellDesc}>
           Profitable spend, measured weekly — built for lead quality, not
           vanity clicks.
@@ -85,7 +103,39 @@ export default function ServicesGrid() {
 
         <Pills items={["Performance Max", "Remarketing", "Landing Pages"]} />
 
-        <CardLink href="/services/google-ads-management" label="Google Ads Management →" />
+        <CardLink href="/services/google-ads-management" label="Google Ads Management" />
+
+        <div className={styles.dashMock} aria-hidden="true">
+          <div className={styles.mockDots}>
+            <span className={styles.mockDot} />
+            <span className={styles.mockDot} />
+            <span className={styles.mockDot} />
+          </div>
+          <div className={styles.dashStats}>
+            <div className={styles.dashStat}>
+              <span className={styles.dashStatLabel}>Conversions</span>
+              <span className={styles.dashStatValue}>+64%</span>
+            </div>
+            <div className={styles.dashStat}>
+              <span className={styles.dashStatLabel}>Cost / Lead</span>
+              <span className={styles.dashStatValue}>-38%</span>
+            </div>
+          </div>
+          <svg
+            className={styles.dashChart}
+            viewBox="0 0 240 60"
+            fill="none"
+            preserveAspectRatio="none"
+          >
+            <polyline
+              points="0,50 30,45 60,48 90,32 120,36 150,20 180,24 210,10 240,14"
+              stroke="#9a9a9a"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </div>
       </div>
 
       <div className={`${styles.cell} ${styles.badge}`}>
@@ -94,8 +144,10 @@ export default function ServicesGrid() {
       </div>
 
       <div className={`${styles.cell} ${styles.web}`}>
-        <span className="index">03</span>
-        <h3 className={styles.cellTitle}>Web Design</h3>
+        <div className={styles.cellHead}>
+          <h3 className={styles.cellTitle}>Web Design</h3>
+          <span className={`index ${styles.cellIndex}`}>03</span>
+        </div>
         <p className={styles.cellDesc}>
           Premium, fast-loading headless builds engineered to convert.
         </p>
@@ -122,12 +174,14 @@ export default function ServicesGrid() {
           </div>
         </div>
 
-        <CardLink href="/services/web-development" label="Web Design →" />
+        <CardLink href="/services/web-development" label="Web Design" />
       </div>
 
       <div className={`${styles.cell} ${styles.ai}`}>
-        <span className="index">04</span>
-        <h3 className={styles.cellTitle}>AI / Agentic Marketing</h3>
+        <div className={styles.cellHead}>
+          <h3 className={styles.cellTitle}>AI / Agentic Marketing</h3>
+          <span className={`index ${styles.cellIndex}`}>04</span>
+        </div>
         <p className={styles.cellDesc}>
           Custom AI agents for lead qualification, content ops, and
           always-on client reporting.
@@ -147,7 +201,8 @@ export default function ServicesGrid() {
           </div>
         </div>
 
-        <CardLink href="/services/geo" label="AI Search / GEO →" />
+        <CardLink href="/services/geo" label="AI Search / GEO" />
+      </div>
       </div>
     </section>
   );

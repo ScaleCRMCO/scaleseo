@@ -1,3 +1,32 @@
+.section {
+  padding: 140px 40px;
+}
+
+.intro {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 60px;
+  max-width: 1400px;
+  margin: 0 auto 64px;
+}
+
+.introTitle {
+  font-family: 'Playfair Display', var(--display);
+  font-weight: 800;
+  font-size: clamp(36px, 4.2vw, 60px);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  max-width: 640px;
+}
+
+.introBody {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--ink-dim);
+  max-width: 340px;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -6,6 +35,8 @@
     "seo   ads   ai"
     "badge web   ai";
   gap: 24px;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .cell {
@@ -26,11 +57,23 @@
 .web   { grid-area: web; }
 .ai    { grid-area: ai; }
 
+.cellHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
 .cellTitle {
   font-family: var(--display);
   font-weight: 700;
   font-size: 32px;
   letter-spacing: -0.01em;
+}
+
+/* Faint background marker, not a competing label */
+.cellIndex {
+  opacity: 0.35;
 }
 
 .cellDesc {
@@ -215,6 +258,49 @@
   border-radius: 3px;
 }
 
+/* Mock ad-performance dashboard panel — Google Ads card */
+.dashMock {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 16px;
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: 0 24px 48px -24px rgba(10, 10, 10, 0.3);
+}
+
+.dashStats {
+  display: flex;
+  gap: 24px;
+}
+
+.dashStat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.dashStatLabel {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #9a9a9a;
+}
+
+.dashStatValue {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 20px;
+  color: #1a1a1a;
+}
+
+.dashChart {
+  width: 100%;
+  height: 48px;
+}
+
 /* Mock dark chat interface — AI / Agentic Marketing card */
 .chatMock {
   background: #1a1a1a;
@@ -283,6 +369,15 @@
 }
 
 @media (max-width: 900px) {
+  .section {
+    padding: 90px 24px;
+  }
+  .intro {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 40px;
+  }
   .grid {
     grid-template-columns: 1fr;
     grid-template-rows: none;
