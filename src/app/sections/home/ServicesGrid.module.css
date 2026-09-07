@@ -1,5 +1,11 @@
 .section {
+  position: relative;
   padding: 140px 40px;
+  margin-top: -48px;
+  border-radius: 48px 48px 0 0;
+  overflow: hidden;
+  background: #0a0a0a;
+  color: #fcfbfa;
 }
 
 .intro {
@@ -23,7 +29,7 @@
 .introBody {
   font-size: 16px;
   line-height: 1.6;
-  color: var(--ink-dim);
+  color: #b8b8b8;
   max-width: 340px;
 }
 
@@ -40,15 +46,17 @@
 }
 
 .cell {
-  background: #FBF9F5; /* ultra-subtle warm off-white tint, distinct from --bg-elev */
+  background: #181818;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 28px;
   padding: 3rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   gap: 20px;
-  box-shadow: 0 40px 80px -40px rgba(10, 10, 10, 0.16),
-              0 12px 24px -12px rgba(10, 10, 10, 0.08);
+  color: #fcfbfa;
+  box-shadow: 0 40px 80px -40px rgba(0, 0, 0, 0.6),
+              0 12px 24px -12px rgba(0, 0, 0, 0.4);
 }
 
 .seo   { grid-area: seo; }
@@ -85,13 +93,14 @@
 
 /* Faint background marker, not a competing label */
 .cellIndex {
+  color: #fcfbfa;
   opacity: 0.35;
 }
 
 .cellDesc {
   font-size: 14px;
   line-height: 1.5;
-  color: var(--ink-dim);
+  color: #b8b8b8;
 }
 
 /* Pill tags */
@@ -106,9 +115,9 @@
   font-size: 10px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--ink-dim);
-  background: rgba(10, 10, 10, 0.03);
-  border: 1px solid var(--line-strong);
+  color: #b8b8b8;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 999px;
   padding: 0.25rem 0.75rem;
 }
@@ -137,7 +146,7 @@
   gap: 6px;
   font-weight: 600;
   font-size: 14px;
-  color: var(--ink);
+  color: #fcfbfa;
   text-decoration: none;
   margin-top: 4px;
 }
