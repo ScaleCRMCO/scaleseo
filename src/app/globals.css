@@ -4,26 +4,31 @@
    ========================================================================== */
 
 :root {
-  /* Bright editorial theme — warm cream base + vibrant violet accent */
-  --bg: #FBF6E3;
-  --bg-elev: #F4EDD3;
-  --ink: #0E0B1A;
-  --ink-dim: #52505E;
-  --ink-faint: #9B98A3;
-  --accent: #5B2AF2;
+  /* Fluid modern theme — dark charcoal base + vibrant orange accent.
+     Dark is now the PRIMARY theme (not just the alt "-on-dark" variant);
+     --bg-elev/--bg-light are the lighter alternating sections. */
+  --bg: #121316;
+  --bg-elev: #1B1D22;
+  --bg-light: #F4F3EF;
+  --bg-light-elev: #E9E7E0;
+  --ink: #F5F4F1;
+  --ink-dim: #9A9CA5;
+  --ink-faint: #64666F;
+  --accent: #FF5A1F;
+  --accent-dim: #C74716;
   /* Text/icon color placed on top of a solid --accent fill (buttons, badges) */
-  --on-accent: #FFFFFF;
-  --line: rgba(14, 11, 26, 0.1);
-  --line-strong: rgba(14, 11, 26, 0.18);
-  /* Alternate section variants (used on inverted/always-dark sections, e.g.
-     the About page, mobile full-screen nav, stat bands) */
-  --bg-dark: #14102B;
-  --ink-on-dark: #FBF6E3;
-  --ink-dim-on-dark: #B3AFC2;
-  --line-on-dark: rgba(251, 246, 227, 0.12);
-  --line-strong-on-dark: rgba(251, 246, 227, 0.22);
+  --on-accent: #121316;
+  --line: rgba(245, 244, 241, 0.1);
+  --line-strong: rgba(245, 244, 241, 0.18);
+  /* Alternate section variants — now used for LIGHT sections that break up
+     the otherwise-dark site (was the reverse under the old cream theme) */
+  --bg-dark: #F4F3EF;
+  --ink-on-dark: #121316;
+  --ink-dim-on-dark: #55575F;
+  --line-on-dark: rgba(18, 19, 22, 0.1);
+  --line-strong-on-dark: rgba(18, 19, 22, 0.18);
   /* Fonts */
-  --display: 'Playfair Display', 'Merriweather', Georgia, serif;
+  --display: 'Space Grotesk', 'Inter', system-ui, sans-serif;
   --sans: 'Inter', system-ui, sans-serif;
   --mono: 'JetBrains Mono', monospace;
 }
@@ -158,17 +163,18 @@ section {
   transform: translateX(0);
 }
 /* ==========================================================================
-   Dark page theme — used by About page
+   About page — now just inherits the site's default dark theme
+   (kept as a no-op hook in case About needs its own treatment again)
    ========================================================================== */
 
 .about-page {
-  background: var(--bg-dark);
-  color: var(--ink-on-dark);
+  background: var(--bg);
+  color: var(--ink);
 }
 
 .about-page section {
-  background: var(--bg-dark);
-  color: var(--ink-on-dark);
+  background: var(--bg);
+  color: var(--ink);
 }
 
 @media (max-width: 900px) {
