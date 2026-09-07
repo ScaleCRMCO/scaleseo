@@ -57,10 +57,23 @@ export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+  // Invert the floating nav's colors while a dark section (e.g. #services)
+  // is behind it, so the pill stays legible over both light and dark ground.
+  useEffect(() => {
+    const target = document.getElementById("services");
+    if (!target) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setDarkMode(entry.isIntersecting),
+      { rootMargin: "-72px 0px -85% 0px" }
+    );
+    observer.observe(target);
+    return () => observer.disconnect();
   }, []);
   // Lock body scroll when the mobile menu is open
   useEffect(() => {
@@ -72,7 +85,7 @@ export default function Nav() {
     <nav
       className={`${styles.nav} ${scrolled ? styles.scrolled : ""} ${
         open ? styles.menuOpen : ""
-      }`}
+      } ${darkMode ? styles.darkMode : ""}`}
     >
       <Link href="/" className={styles.brand} onClick={close}>
         <img

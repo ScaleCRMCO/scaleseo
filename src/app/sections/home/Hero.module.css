@@ -1,7 +1,8 @@
 .hero {
   position: relative;
   min-height: 82vh;
-  padding: 128px 40px 64px;
+  padding: 128px 40px 96px;
+  padding-left: 6%;
   display: flex;
   align-items: center;
   background: var(--bg);
@@ -100,6 +101,7 @@
 @media (max-width: 900px) {
   .hero {
     padding: 120px 24px 60px;
+    padding-left: 24px;
   }
   .inner {
     max-width: 100%;

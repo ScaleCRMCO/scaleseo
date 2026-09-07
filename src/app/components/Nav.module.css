@@ -21,6 +21,34 @@
   padding: 10px 24px;
   background: rgba(252, 251, 250, 0.92);
 }
+
+/* Inverted appearance while a dark section (e.g. #services) sits behind
+   the floating pill, so it stays legible over both light and dark ground */
+.darkMode {
+  background: rgba(16, 16, 16, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-color: rgba(255, 255, 255, 0.14);
+}
+.darkMode.scrolled {
+  background: rgba(16, 16, 16, 0.85);
+}
+.darkMode .brand,
+.darkMode .links a,
+.darkMode .num,
+.darkMode .wordmark {
+  color: #fcfbfa;
+}
+.darkMode .mark {
+  color: #b8b8b8;
+}
+.darkMode .navCta {
+  background: #fcfbfa;
+  color: #0a0a0a;
+}
+.darkMode .burgerLine {
+  background: #fcfbfa;
+}
 .brandCrow {
   height: 30px;
   width: auto;
@@ -66,9 +94,10 @@
 .links {
   display: flex;
   gap: 32px;
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.12em;
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
 }
 .links a {
