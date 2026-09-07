@@ -1,7 +1,7 @@
 .hero {
   position: relative;
-  min-height: 100vh;
-  padding: 220px 40px 140px;
+  min-height: 82vh;
+  padding: 128px 40px 64px;
   display: flex;
   align-items: center;
   background: var(--bg);
@@ -9,31 +9,34 @@
   overflow: hidden;
 }
 
-/* Pure-CSS kinetic ambient background — no plugins, no 3D */
+/* Pure-CSS kinetic ambient background — no plugins, no 3D.
+   Stretched wide across the right side of the viewport so it fills the
+   dead space next to the headline rather than sitting centered/small. */
 .ambient {
   position: absolute;
-  inset: -20%;
+  inset: -30% -40% -30% 10%;
   z-index: 0;
   pointer-events: none;
-  filter: blur(140px);
-  opacity: 0.4;
+  filter: blur(160px);
+  opacity: 0.45;
+  border-radius: 50%;
   background:
-    radial-gradient(38% 32% at 22% 28%, rgba(153, 255, 0, 0.35), transparent 70%),
-    radial-gradient(34% 30% at 78% 66%, rgba(10, 10, 10, 0.18), transparent 70%),
-    radial-gradient(30% 26% at 60% 20%, rgba(153, 255, 0, 0.18), transparent 70%);
+    radial-gradient(45% 40% at 65% 35%, rgba(153, 255, 0, 0.4), transparent 70%),
+    radial-gradient(40% 36% at 85% 70%, rgba(10, 10, 10, 0.2), transparent 70%),
+    radial-gradient(36% 32% at 50% 15%, rgba(153, 255, 0, 0.2), transparent 70%);
   animation: ambientDrift 22s ease-in-out infinite alternate;
 }
 
 @keyframes ambientDrift {
   0%   { transform: translate(0, 0) scale(1); }
-  50%  { transform: translate(4%, -3%) scale(1.08); }
-  100% { transform: translate(-3%, 4%) scale(1); }
+  50%  { transform: translate(3%, -2%) scale(1.1); }
+  100% { transform: translate(-2%, 3%) scale(1); }
 }
 
 .inner {
   position: relative;
   z-index: 1;
-  max-width: 900px;
+  max-width: 80%;
 }
 
 .meta {
@@ -96,6 +99,9 @@
 
 @media (max-width: 900px) {
   .hero {
-    padding: 160px 24px 90px;
+    padding: 120px 24px 60px;
+  }
+  .inner {
+    max-width: 100%;
   }
 }

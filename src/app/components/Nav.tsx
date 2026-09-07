@@ -1,8 +1,10 @@
 "use client";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { motion } from "motion/react";
 import styles from "./Nav.module.css";
+
+const spring = { type: "spring" as const, stiffness: 300, damping: 20 };
 
 const serviceLinks = [
   {
@@ -55,8 +57,6 @@ export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
-  const pathname = usePathname();
-  const isDarkPage = pathname?.startsWith("/about") || pathname?.startsWith("/brisbane");
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
     window.addEventListener("scroll", onScroll);
@@ -71,8 +71,8 @@ export default function Nav() {
   return (
     <nav
       className={`${styles.nav} ${scrolled ? styles.scrolled : ""} ${
-        isDarkPage ? styles.onDark : ""
-      } ${open ? styles.menuOpen : ""}`}
+        open ? styles.menuOpen : ""
+      }`}
     >
       <Link href="/" className={styles.brand} onClick={close}>
         <img
@@ -123,16 +123,19 @@ export default function Nav() {
         <Link href="/#process"><span className={styles.num}>04</span> Process</Link>
         <Link href="/about"><span className={styles.num}>05</span> About</Link>
       </div>
-      <a
+      <motion.a
         href="https://cal.com/corbinjensen-scaleseo/30min"
         target="_blank"
         rel="noopener noreferrer"
         className={styles.navCta}
         onClick={close}
+        whileHover={{ scale: 1.06 }}
+        whileTap={{ scale: 0.96 }}
+        transition={spring}
       >
         <span>Book a call</span>
         <span className={styles.navCtaArrow}>&rarr;</span>
-      </a>
+      </motion.a>
       {/* Hamburger button (mobile only) */}
       <button
         className={styles.burger}
