@@ -6,6 +6,33 @@ export default function ServicesGrid() {
       <div className={`${styles.cell} ${styles.seo}`}>
         <span className="index">01</span>
         <h3 className={styles.cellTitle}>SEO</h3>
+        <p className={styles.cellDesc}>
+          Technical audits, local search scaling, and intent-based keyword
+          architecture engineered for #1 organic positions.
+        </p>
+
+        <div className={styles.serpMock} aria-hidden="true">
+          <div className={styles.serpBar}>
+            <span className={styles.serpBarIcon}>🔍</span>
+            <span className={styles.serpBarText}>
+              accounting firm calgary
+            </span>
+          </div>
+
+          <div className={styles.serpResult}>
+            <span className={styles.serpUrl}>
+              scaleseo.co <span className={styles.serpUrlPath}>› services › accounting-firms</span>
+            </span>
+            <span className={styles.serpTitle}>
+              Top Calgary Accounting Firms | Ranked #1 on Google
+            </span>
+            <span className={styles.serpSnippet}>
+              Trusted by growing accounting practices across Alberta —
+              technical SEO, local scaling, and conversion-focused pages
+              built for high-margin B2B search intent.
+            </span>
+          </div>
+        </div>
       </div>
 
       <div className={`${styles.cell} ${styles.ads}`}>
