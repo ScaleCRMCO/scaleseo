@@ -9,21 +9,45 @@ const serviceLinks = [
     href: "/services/seo",
     name: "SEO",
     desc: "Technical, on-page & local SEO built to move rankings.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
+        <circle cx="10.5" cy="10.5" r="6.5" />
+        <line x1="15.5" y1="15.5" x2="21" y2="21" strokeLinecap="round" />
+      </svg>
+    ),
   },
   {
     href: "/services/google-ads-management",
     name: "Google Ads",
     desc: "Profitable PPC campaigns for professional service firms.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
+        <path d="M3 17l6-11 6 11" strokeLinejoin="round" />
+        <path d="M15 17l4-7 3 7" strokeLinejoin="round" />
+      </svg>
+    ),
   },
   {
     href: "/services/web-development",
     name: "Web Development",
     desc: "Fast, conversion-focused sites built with SEO in from day one.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
+        <rect x="3" y="4.5" width="18" height="13" rx="1.5" />
+        <line x1="8" y1="21" x2="16" y2="21" strokeLinecap="round" />
+        <line x1="12" y1="17.5" x2="12" y2="21" />
+      </svg>
+    ),
   },
   {
     href: "/services/geo",
     name: "GEO (AI Search)",
     desc: "Get cited by ChatGPT, Perplexity & Google AI Overviews.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
+        <path d="M12 3l2.2 5.8L20 11l-5.8 2.2L12 19l-2.2-5.8L4 11l5.8-2.2L12 3z" strokeLinejoin="round" />
+      </svg>
+    ),
   },
 ];
 
@@ -71,15 +95,28 @@ export default function Nav() {
         >
           <Link href="/services"><span className={styles.num}>02</span> Services</Link>
           <div className={`${styles.servicesDropdown} ${servicesOpen ? styles.servicesDropdownOpen : ""}`}>
-            {serviceLinks.map((s) => (
-              <Link key={s.href} href={s.href} className={styles.dropdownItem} onClick={close}>
-                <span className={styles.dropdownItemName}>{s.name}</span>
-                <span className={styles.dropdownItemDesc}>{s.desc}</span>
-              </Link>
-            ))}
-            <Link href="/services" className={styles.dropdownFooter} onClick={close}>
-              View all services &rarr;
+            <Link href="/services" className={styles.dropdownFeatured} onClick={close}>
+              <span className={styles.dropdownFeaturedIcon} aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
+                  <circle cx="10.5" cy="10.5" r="6.5" />
+                  <line x1="15.5" y1="15.5" x2="21" y2="21" strokeLinecap="round" />
+                </svg>
+              </span>
+              <span className={styles.dropdownFeaturedName}>All Services</span>
+              <span className={styles.dropdownFeaturedDesc}>
+                One specialist, four disciplines. Explore everything on offer.
+              </span>
+              <span className={styles.dropdownFeaturedBtn}>All services &rarr;</span>
             </Link>
+            <div className={styles.dropdownGrid}>
+              {serviceLinks.map((s) => (
+                <Link key={s.href} href={s.href} className={styles.dropdownItem} onClick={close}>
+                  <span className={styles.dropdownItemIcon} aria-hidden="true">{s.icon}</span>
+                  <span className={styles.dropdownItemName}>{s.name}</span>
+                  <span className={styles.dropdownItemDesc}>{s.desc}</span>
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
         <Link href="/industries"><span className={styles.num}>03</span> Industries</Link>
