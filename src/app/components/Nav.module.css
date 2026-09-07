@@ -11,24 +11,25 @@
   justify-content: space-between;
   align-items: center;
   border-radius: 9999px;
-  border: 1px solid #0a0a0a;
-  background: rgba(252, 251, 250, 0.8);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  box-shadow: 0 8px 32px -12px rgba(10, 10, 10, 0.12);
   transition: all 0.4s ease;
 }
 .scrolled {
   padding: 10px 24px;
-  background: rgba(252, 251, 250, 0.92);
+  background: rgba(255, 255, 255, 0.55);
 }
 
 /* Inverted appearance while a dark section (e.g. #services) sits behind
    the floating pill, so it stays legible over both light and dark ground */
 .darkMode {
   background: rgba(16, 16, 16, 0.75);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-color: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-color: rgba(255, 255, 255, 0.15);
 }
 .darkMode.scrolled {
   background: rgba(16, 16, 16, 0.85);
@@ -45,6 +46,10 @@
 .darkMode .navCta {
   background: #fcfbfa;
   color: #0a0a0a;
+}
+.darkMode .navCta:hover {
+  background: var(--highlight);
+  color: var(--on-highlight);
 }
 .darkMode .burgerLine {
   background: #fcfbfa;
@@ -128,6 +133,11 @@
   font-size: 11px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  transition: background-color 0.3s cubic-bezier(0.25, 1, 0.5, 1), color 0.3s ease;
+}
+.navCta:hover {
+  background: var(--highlight);
+  color: var(--on-highlight);
 }
 .navCtaArrow {
   transition: transform 0.3s ease;
@@ -145,11 +155,11 @@
   left: 0;
   width: 0;
   height: 1px;
-  background: var(--accent);
+  background: var(--highlight);
   transition: width 0.3s ease;
 }
 .links a:hover {
-  color: var(--accent);
+  color: var(--highlight);
 }
 .links a:hover::after {
   width: 100%;

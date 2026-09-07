@@ -149,6 +149,11 @@
   color: #fcfbfa;
   text-decoration: none;
   margin-top: 4px;
+  transition: color 0.3s ease;
+}
+
+.cardLink:hover {
+  color: var(--highlight);
 }
 
 .cardLinkArrow {

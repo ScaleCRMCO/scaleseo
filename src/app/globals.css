@@ -15,6 +15,10 @@
   --accent-dim: #2E2E2E;
   /* Text/icon color placed on top of a solid --accent fill (buttons, badges) */
   --on-accent: #FCFBFA;
+  /* High-vibrancy lime-green highlight — the single shared hover color for
+     every primary/secondary button and interactive pill link site-wide */
+  --highlight: #99FF00;
+  --on-highlight: #0A0A0A;
   --line: rgba(10, 10, 10, 0.16);
   --line-strong: #0A0A0A;
   /* Alternate section variant — inverted block (ink bg, cream text) used to

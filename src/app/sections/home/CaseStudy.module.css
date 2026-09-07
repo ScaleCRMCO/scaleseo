@@ -142,6 +142,11 @@
   font-weight: 600;
   font-size: 15px;
   color: #0a0a0a;
+  transition: color 0.3s ease;
+}
+
+.cardLinkWrap:hover .cta {
+  color: #6b8f00; /* darkened highlight — stays legible on the light card */
 }
 
 @media (max-width: 900px) {
