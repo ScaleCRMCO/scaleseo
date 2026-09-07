@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { motion } from "motion/react";
 import styles from "./ServicesGrid.module.css";
 
@@ -50,12 +51,13 @@ export default function ServicesGrid() {
       <div className={styles.grid}>
       <div className={`${styles.cell} ${styles.seo}`}>
         <div className={styles.cellHead}>
-          <h3 className={styles.cellTitle}>SEO</h3>
+          <h3 className={styles.cellTitle}>SEO Services</h3>
           <span className={`index ${styles.cellIndex}`}>01</span>
         </div>
         <p className={styles.cellDesc}>
-          Technical audits, local search scaling, and intent-based keyword
-          architecture engineered for #1 organic positions.
+          Technical site audits, local search engine optimization scaling,
+          and high-intent keyword architecture engineered to secure #1
+          organic ranking positions for B2B brands.
         </p>
 
         <Pills items={["Technical SEO", "Local SEO", "Link Building"]} />
@@ -93,12 +95,13 @@ export default function ServicesGrid() {
 
       <div className={`${styles.cell} ${styles.ads}`}>
         <div className={styles.cellHead}>
-          <h3 className={styles.cellTitle}>Google Ads</h3>
+          <h3 className={styles.cellTitle}>Google Ads (PPC) Management</h3>
           <span className={`index ${styles.cellIndex}`}>02</span>
         </div>
         <p className={styles.cellDesc}>
-          Profitable spend, measured weekly — built for lead quality, not
-          vanity clicks.
+          Data-driven, profitable pay-per-click search campaigns built to
+          drive high-quality leads, optimize cost-per-acquisition, and
+          maximize conversion rates.
         </p>
 
         <Pills items={["Performance Max", "Remarketing", "Landing Pages"]} />
@@ -138,18 +141,23 @@ export default function ServicesGrid() {
         </div>
       </div>
 
-      <div className={`${styles.cell} ${styles.badge}`}>
-        <span className={styles.badgeValue}>200+</span>
-        <span className={styles.badgeLabel}>campaigns shipped</span>
-      </div>
+      <motion.div className={`${styles.cell} ${styles.badge}`} whileHover={{ scale: 1.02 }} transition={spring}>
+        <Link href="/services" className={styles.badgeLink}>
+          <span className={styles.badgeStar} aria-hidden="true">✺</span>
+          <span className={styles.badgeValue}>200+</span>
+          <span className={styles.badgeLabel}>campaigns shipped</span>
+        </Link>
+      </motion.div>
 
       <div className={`${styles.cell} ${styles.web}`}>
         <div className={styles.cellHead}>
-          <h3 className={styles.cellTitle}>Web Design</h3>
+          <h3 className={styles.cellTitle}>Web Design &amp; Development</h3>
           <span className={`index ${styles.cellIndex}`}>03</span>
         </div>
         <p className={styles.cellDesc}>
-          Premium, fast-loading headless builds engineered to convert.
+          Ultra-fast, fully responsive headless website builds engineered
+          natively with clean code architectures for lightning-fast speeds
+          and high SEO visibility.
         </p>
 
         <Pills items={["Landing Pages", "Headless Builds", "CRO"]} />
@@ -177,27 +185,30 @@ export default function ServicesGrid() {
         <CardLink href="/services/web-development" label="Web Design" />
       </div>
 
-      <div className={`${styles.cell} ${styles.ai}`}>
-        <div className={styles.cellHead}>
-          <h3 className={styles.cellTitle}>AI / Agentic Marketing</h3>
-          <span className={`index ${styles.cellIndex}`}>04</span>
-        </div>
-        <p className={styles.cellDesc}>
-          Custom AI agents for lead qualification, content ops, and
-          always-on client reporting.
-        </p>
-
-        <Pills items={["Lead Qualification", "Content Ops", "Reporting"]} />
-
-        <div className={styles.chatMock} aria-hidden="true">
-          <div className={styles.chatBubbleUser}>
-            Which pages should we prioritize for Q3 rankings?
+      <div className={`${styles.cell} ${styles.ai} ${styles.cellSpaced}`}>
+        <div className={styles.cellTop}>
+          <div className={styles.cellHead}>
+            <h3 className={styles.cellTitle}>AI Search Optimization (GEO)</h3>
+            <span className={`index ${styles.cellIndex}`}>04</span>
           </div>
-          <div className={styles.chatBubbleAi}>
-            <span className={styles.chatAiLabel}>Scale SEO Agent</span>
-            Based on current search volume and conversion data, prioritize
-            /accounting-firms and /google-ads-management — both show
-            rising intent with underserved organic coverage.
+          <p className={styles.cellDesc}>
+            Generative Engine Optimization tailored to secure citations
+            within conversational AI engines like ChatGPT, Perplexity, and
+            Google AI Overviews.
+          </p>
+
+          <Pills items={["Lead Qualification", "Content Ops", "Reporting"]} />
+
+          <div className={styles.chatMock} aria-hidden="true">
+            <div className={styles.chatBubbleUser}>
+              Which pages should we prioritize for Q3 rankings?
+            </div>
+            <div className={styles.chatBubbleAi}>
+              <span className={styles.chatAiLabel}>Scale SEO Agent</span>
+              Based on current search volume and conversion data, prioritize
+              /accounting-firms and /google-ads-management — both show
+              rising intent with underserved organic coverage.
+            </div>
           </div>
         </div>
 

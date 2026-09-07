@@ -12,7 +12,7 @@
 }
 
 .introTitle {
-  font-family: 'Playfair Display', var(--display);
+  font-family: var(--display);
   font-weight: 800;
   font-size: clamp(36px, 4.2vw, 60px);
   line-height: 1.08;
@@ -56,6 +56,18 @@
 .badge { grid-area: badge; }
 .web   { grid-area: web; }
 .ai    { grid-area: ai; }
+
+/* Anchors a card's CTA link to the bottom of the padding box, eliminating
+   dead space on taller cells (e.g. the AI card, which spans two rows) */
+.cellSpaced {
+  justify-content: space-between;
+}
+
+.cellTop {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 
 .cellHead {
   display: flex;
@@ -348,13 +360,39 @@
 .badge {
   background: #99ff00;
   color: #0a0a0a;
-  justify-content: center;
-  align-items: flex-start;
+  padding: 0;
+  overflow: hidden;
   box-shadow: 0 40px 80px -40px rgba(153, 255, 0, 0.5),
               0 12px 24px -12px rgba(10, 10, 10, 0.08);
 }
 
+.badgeLink {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 3rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Oversized, low-opacity star glyph floating behind the stat */
+.badgeStar {
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  font-size: 260px;
+  line-height: 1;
+  opacity: 0.12;
+  pointer-events: none;
+  user-select: none;
+}
+
 .badgeValue {
+  position: relative;
   font-family: var(--display);
   font-weight: 800;
   font-size: 44px;
@@ -362,6 +400,7 @@
 }
 
 .badgeLabel {
+  position: relative;
   font-size: 13px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
