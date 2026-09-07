@@ -4,25 +4,24 @@
    ========================================================================== */
 
 :root {
-  /* Light editorial theme */
-  --bg: #FDFDFB;
-  --bg-elev: #F5F4F0;
-  --ink: #111827;
-  --ink-dim: #4B5563;
-  --ink-faint: #9CA3AF;
-  --accent: #D97706;
-  /* Text/icon color placed on top of a solid --accent fill (buttons, badges) —
-     kept dark-on-gold for contrast regardless of the main theme's text color */
-  --on-accent: #111827;
-  --line: rgba(17, 24, 39, 0.08);
-  --line-strong: rgba(17, 24, 39, 0.15);
+  /* Bright editorial theme — warm cream base + vibrant violet accent */
+  --bg: #FBF6E3;
+  --bg-elev: #F4EDD3;
+  --ink: #0E0B1A;
+  --ink-dim: #52505E;
+  --ink-faint: #9B98A3;
+  --accent: #5B2AF2;
+  /* Text/icon color placed on top of a solid --accent fill (buttons, badges) */
+  --on-accent: #FFFFFF;
+  --line: rgba(14, 11, 26, 0.1);
+  --line-strong: rgba(14, 11, 26, 0.18);
   /* Alternate section variants (used on inverted/always-dark sections, e.g.
      the About page, mobile full-screen nav, stat bands) */
-  --bg-dark: #0F172A;
-  --ink-on-dark: #F5F4F0;
-  --ink-dim-on-dark: #9CA3AF;
-  --line-on-dark: rgba(245, 244, 240, 0.12);
-  --line-strong-on-dark: rgba(245, 244, 240, 0.22);
+  --bg-dark: #14102B;
+  --ink-on-dark: #FBF6E3;
+  --ink-dim-on-dark: #B3AFC2;
+  --line-on-dark: rgba(251, 246, 227, 0.12);
+  --line-strong-on-dark: rgba(251, 246, 227, 0.22);
   /* Fonts */
   --display: 'Playfair Display', 'Merriweather', Georgia, serif;
   --sans: 'Inter', system-ui, sans-serif;
