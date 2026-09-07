@@ -5,6 +5,12 @@ import styles from "./Hero.module.css";
 
 const spring = { type: "spring" as const, stiffness: 100, damping: 15 };
 
+const paths = [
+  { n: "01", label: "Audit", href: "/contact" },
+  { n: "02", label: "Scale", href: "/services/seo" },
+  { n: "03", label: "Dominate", href: "/services" },
+];
+
 export default function Hero() {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -28,6 +34,15 @@ export default function Hero() {
         >
           ( Calgary SEO &amp; Growth &middot; Canada &amp; Remote )
         </motion.p>
+
+        <motion.span
+          className={styles.star}
+          aria-hidden="true"
+          animate={{ rotate: 360 }}
+          transition={{ repeat: Infinity, ease: "linear", duration: 6 }}
+        >
+          ✺
+        </motion.span>
 
         <motion.h1
           className={styles.title}
@@ -59,27 +74,50 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ ...spring, delay: 0.55 }}
         >
-          <motion.a
-            href="/contact"
-            className={styles.cta}
-            whileHover={{ y: -3, scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            transition={spring}
-          >
-            <span>Request a Free Audit</span>
-            <span className={styles.arrow}>→</span>
-          </motion.a>
-          <motion.a
-            href="https://cal.com/corbinjensen-scaleseo/30min"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.ctaSecondary}
-            whileHover={{ y: -2 }}
-            transition={spring}
-          >
-            Book a Strategy Call
-          </motion.a>
+          {paths.map((p) => (
+            <motion.a
+              key={p.n}
+              href={p.href}
+              className={styles.pathOption}
+              initial="rest"
+              whileHover="hover"
+              animate="rest"
+            >
+              <span className={`index ${styles.pathNum}`}>{p.n}</span>
+              <motion.span
+                className={styles.pathLabel}
+                variants={{
+                  rest: { color: "var(--ink-dim)" },
+                  hover: { color: "var(--ink)" },
+                }}
+                transition={spring}
+              >
+                {p.label}
+              </motion.span>
+              <motion.span
+                className={styles.pathUnderline}
+                variants={{
+                  rest: { scaleX: 0 },
+                  hover: { scaleX: 1 },
+                }}
+                transition={spring}
+              />
+            </motion.a>
+          ))}
         </motion.div>
+
+        <motion.a
+          href="https://cal.com/corbinjensen-scaleseo/30min"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.ctaSecondary}
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ ...spring, delay: 0.7 }}
+          whileHover={{ y: -2 }}
+        >
+          Book a Strategy Call
+        </motion.a>
       </div>
     </header>
   );

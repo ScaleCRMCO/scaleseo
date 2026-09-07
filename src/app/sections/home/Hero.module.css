@@ -33,7 +33,14 @@
 }
 
 .eyebrow {
-  margin-bottom: 32px;
+  margin-bottom: 20px;
+}
+
+.star {
+  display: inline-block;
+  font-size: 28px;
+  color: var(--ink);
+  margin-bottom: 20px;
 }
 
 .title {
@@ -60,37 +67,53 @@
 
 .ctaGroup {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
-  gap: 24px;
-  flex-wrap: wrap;
+  gap: 0;
+  border-top: 1px solid var(--line-strong);
+  border-bottom: 1px solid var(--line-strong);
+  margin-bottom: 28px;
 }
 
-.cta {
-  display: inline-flex;
-  align-items: center;
+.pathOption {
+  position: relative;
+  display: flex;
+  align-items: baseline;
   gap: 10px;
-  background: var(--accent);
-  color: var(--on-accent);
-  font-weight: 600;
-  font-size: 15px;
-  padding: 18px 30px;
-  border: 1px solid var(--line-strong);
-  border-radius: 0;
+  padding: 22px 32px;
   text-decoration: none;
+  cursor: pointer;
 }
 
-.arrow {
-  display: inline-block;
+.pathOption + .pathOption {
+  border-left: 1px solid var(--line);
+}
+
+.pathNum {
+  font-size: 12px;
+}
+
+.pathLabel {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.pathUnderline {
+  position: absolute;
+  left: 32px;
+  right: 32px;
+  bottom: 10px;
+  height: 1px;
+  background: var(--ink);
+  transform-origin: left;
 }
 
 .ctaSecondary {
-  color: var(--ink);
+  color: var(--ink-dim);
   font-weight: 500;
   font-size: 15px;
   text-decoration: none;
-  border-bottom: 1px solid var(--line-strong);
-  padding-bottom: 3px;
   display: inline-block;
 }
 
@@ -101,5 +124,16 @@
   .followPath {
     width: 140vw;
     opacity: 0.35;
+  }
+  .ctaGroup {
+    flex-direction: column;
+    width: 100%;
+  }
+  .pathOption + .pathOption {
+    border-left: none;
+    border-top: 1px solid var(--line);
+  }
+  .pathOption {
+    justify-content: center;
   }
 }
