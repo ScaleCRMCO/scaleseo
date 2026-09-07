@@ -99,7 +99,7 @@ export default function Nav() {
       </Link>
       {/* Desktop links */}
       <div className={styles.links}>
-        <Link href="/#work">Work</Link>
+        <Link href="/results">Case Studies</Link>
         <div
           className={styles.navItem}
           onMouseEnter={() => setServicesOpen(true)}
@@ -160,7 +160,7 @@ export default function Nav() {
       </button>
       {/* Full-screen mobile menu */}
       <div className={`${styles.mobileMenu} ${open ? styles.mobileMenuOpen : ""}`}>
-        <Link href="/#work" onClick={close}>Work</Link>
+        <Link href="/results" onClick={close}>Case Studies</Link>
         <Link href="/services" onClick={close}>Services</Link>
         <Link href="/industries" onClick={close}>Industries</Link>
         <Link href="/#process" onClick={close}>Process</Link>

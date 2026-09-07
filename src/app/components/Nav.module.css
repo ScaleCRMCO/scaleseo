@@ -155,14 +155,22 @@
   left: 0;
   width: 0;
   height: 1px;
-  background: var(--highlight);
-  transition: width 0.3s ease;
+  background: #0a0a0a;
+  transition: width 0.3s ease, background-color 0.3s ease;
 }
 .links a:hover {
-  color: var(--highlight);
+  color: #0a0a0a;
 }
 .links a:hover::after {
   width: 100%;
+}
+/* On the dark/liquid-glass nav state, hover highlights in lime instead of
+   black — black-on-dark would be invisible, lime reads clearly there */
+.darkMode .links a::after {
+  background: var(--highlight);
+}
+.darkMode .links a:hover {
+  color: var(--highlight);
 }
 /* ============ DARK PAGE STYLES ============ */
 .onDark .brand {
@@ -308,7 +316,7 @@
   display: none;
 }
 .dropdownFeatured:hover {
-  border-color: var(--accent);
+  border-color: var(--highlight);
 }
 .dropdownFeaturedIcon {
   width: 34px;
@@ -316,7 +324,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--accent);
+  color: var(--highlight);
 }
 .dropdownFeaturedIcon svg {
   width: 22px;
@@ -328,14 +336,14 @@
   font-size: 16px;
   letter-spacing: -0.01em;
   text-transform: none;
-  color: var(--ink);
+  color: var(--ink-on-dark);
 }
 .dropdownFeaturedDesc {
   font-family: var(--sans);
   font-size: 12px;
   letter-spacing: normal;
   text-transform: none;
-  color: var(--ink-dim);
+  color: var(--ink-dim-on-dark);
   line-height: 1.5;
 }
 .dropdownFeaturedBtn {
@@ -345,7 +353,7 @@
   font-size: 10.5px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--highlight);
 }
 
 /* Service grid, right column */
@@ -384,7 +392,7 @@
   height: 20px;
 }
 .dropdownItem:hover .dropdownItemIcon {
-  color: var(--accent);
+  color: var(--highlight);
 }
 .dropdownItemName {
   font-family: var(--display);
@@ -396,7 +404,7 @@
   transition: color 0.2s ease;
 }
 .dropdownItem:hover .dropdownItemName {
-  color: var(--accent);
+  color: var(--highlight);
 }
 .dropdownItemDesc {
   font-family: var(--sans);
