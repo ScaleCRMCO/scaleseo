@@ -1,0 +1,76 @@
+.outcomes {
+  padding: 80px 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.outcomesGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  margin-top: 32px;
+}
+
+.outcomeCard {
+  background: var(--bg);
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.outcomeIcon {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+}
+
+.outcomeIcon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.outcomeName {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.outcomeDesc {
+  font-family: var(--sans);
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--ink-dim);
+}
+
+.processSection {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.faqSection {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background: var(--bg-elev);
+}
+
+@media (max-width: 900px) {
+  .outcomes { padding: 60px 24px 10px; }
+  .outcomesGrid { grid-template-columns: repeat(2, 1fr); }
+  .processSection,
+  .faqSection {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+}
+
+@media (max-width: 560px) {
+  .outcomesGrid { grid-template-columns: 1fr; }
+}
