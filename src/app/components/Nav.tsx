@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion } from "motion/react";
+import Logo from "./Logo";
 import styles from "./Nav.module.css";
 
 const spring = { type: "spring" as const, stiffness: 300, damping: 20 };
@@ -88,11 +89,7 @@ export default function Nav() {
       } ${darkMode ? styles.darkMode : ""}`}
     >
       <Link href="/" className={styles.brand} onClick={close}>
-        <img
-          src="/images/scaleseo-logo.png"
-          alt="Scale SEO"
-          className={styles.brandCrow}
-        />
+        <Logo className={styles.brandCrow} />
         <span className={styles.wordmark}>
           Scale<span style={{ color: "var(--accent)" }}>SEO</span>
         </span>

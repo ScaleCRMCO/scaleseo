@@ -1,99 +1,24 @@
-"use client";
-
-import { useEffect, useRef } from "react";
-import styles from "./Logo.module.css";
-
-type LogoProps = {
-  size?: number;
-  animate?: boolean;
-};
-
-export default function Logo({ size = 28, animate = true }: LogoProps) {
-  const ref = useRef<SVGSVGElement>(null);
-
-  useEffect(() => {
-    if (!animate) return;
-    const el = ref.current;
-    if (!el) return;
-
-    // Trigger spin-in on mount
-    el.classList.add(styles.spinIn);
-
-    // Re-trigger spin-in when scrolling back into view
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            el.classList.remove(styles.spinIn);
-            // Force reflow so animation can replay
-            void el.getBoundingClientRect();
-            el.classList.add(styles.spinIn);
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
-
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, [animate]);
-
+/**
+ * Scale SEO "X" mark, extracted from the Canva SVG export (the rest of that
+ * file was Canva canvas/mask noise — this single path is the actual logo).
+ * Renders with fill="currentColor" so it inherits the CSS `color` of
+ * whatever wraps it — used by Nav so the mark can flip between ink/cream
+ * the same way the nav links already do via the .darkMode class.
+ * For a fixed-color version (e.g. the footer), wrap it in an element with
+ * an explicit `color` set, or use /images/logo-mark.svg instead.
+ */
+export default function Logo({ className }: { className?: string }) {
   return (
     <svg
-      ref={ref}
-      width={size}
-      height={size}
-      viewBox="0 0 100 100"
+      viewBox="0 0 900 675"
+      className={className}
+      fill="currentColor"
       xmlns="http://www.w3.org/2000/svg"
-      className={styles.logo}
-      aria-label="Scale SEO"
+      aria-hidden="true"
     >
-      {/* Outer ring */}
-      <circle
-        cx="50"
-        cy="50"
-        r="44"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1"
-        opacity="0.25"
-      />
-      {/* Inner dashed ring */}
-      <circle
-        cx="50"
-        cy="50"
-        r="34"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="0.6"
-        opacity="0.3"
-        strokeDasharray="1,3"
-      />
-      {/* 4-point compass star — fills with accent */}
       <path
-        d="M 50,10 L 54,46 L 90,50 L 54,54 L 50,90 L 46,54 L 10,50 L 46,46 Z"
-        fill="var(--accent)"
-        stroke="var(--accent)"
-        strokeWidth="0.3"
-        strokeLinejoin="round"
-      />
-      {/* Diagonal cross points */}
-      <path
-        d="M 78,22 L 53,47 M 22,78 L 47,53 M 78,78 L 53,53 M 22,22 L 47,47"
-        stroke="currentColor"
-        strokeWidth="0.5"
-        opacity="0.35"
-      />
-      {/* Center dot */}
-      <circle cx="50" cy="50" r="1.8" fill="var(--bg)" />
-      {/* North tick */}
-      <line
-        x1="50"
-        y1="2"
-        x2="50"
-        y2="6"
-        stroke="currentColor"
-        strokeWidth="0.8"
+        d="M 449.996094 418.410156 C 280.851562 643.261719 143.730469 506.144531 368.585938 336.996094 C 143.730469 167.851562 280.851562 30.734375 449.996094 255.585938 C 619.140625 30.734375 756.261719 167.851562 531.410156 336.996094 C 756.261719 506.144531 619.140625 643.261719 449.996094 418.410156 Z M 449.996094 418.410156"
+        fillRule="nonzero"
       />
     </svg>
   );

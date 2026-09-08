@@ -55,11 +55,11 @@
   background: #fcfbfa;
 }
 .brandCrow {
-  height: 30px;
+  height: 26px;
   width: auto;
   display: block;
   flex-shrink: 0;
-  transition: transform 0.4s ease;
+  transition: transform 0.4s ease, color 0.3s ease;
 }
   .brand {
   font-family: var(--display);

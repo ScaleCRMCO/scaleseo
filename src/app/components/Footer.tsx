@@ -7,7 +7,7 @@ export default function Footer() {
         {/* Left: crow brand mark */}
         <div className={styles.brandCol}>
           <img
-            src="/images/scaleseo-logo.png"
+            src="/images/logo-mark.svg"
             alt="Scale SEO"
             className={styles.brandMark}
           />
