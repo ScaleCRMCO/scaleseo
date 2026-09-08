@@ -64,7 +64,7 @@ export default function BlogPostPage({
     "@type": "BlogPosting",
     headline: post.title,
     description: post.description,
-    image: "https://scaleseo.co/images/scaleseo-logo.png",
+    image: "https://scaleseo.co/images/logo-social.png",
     datePublished: post.date,
     dateModified: post.updated || post.date,
     author: {
@@ -78,7 +78,7 @@ export default function BlogPostPage({
       url: "https://scaleseo.co",
       logo: {
         "@type": "ImageObject",
-        url: "https://scaleseo.co/images/scaleseo-logo.png",
+        url: "https://scaleseo.co/images/logo-social.png",
       },
     },
     mainEntityOfPage: {

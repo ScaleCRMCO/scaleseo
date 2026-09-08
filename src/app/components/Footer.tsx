@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.grid}>
-        {/* Left: crow brand mark */}
+        {/* Left: brand mark */}
         <div className={styles.brandCol}>
           <img
             src="/images/logo-mark.svg"
