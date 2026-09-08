@@ -27,6 +27,10 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
+      // SVG first: modern browsers (Chrome/Firefox/Edge) prefer it and it
+      // renders our new X mark crisp at any tab size; PNG/ICO below remain
+      // as fallbacks for browsers that don't support SVG favicons.
+      { url: "/favicon.svg", type: "image/svg+xml" },
       { url: "/favicon.ico", sizes: "48x48" },
       { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
       { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
