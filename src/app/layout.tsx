@@ -129,6 +129,8 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        {/* Google Preferred Sources button library */}
+        <script async src="https://news.google.com/swg/js/v1/publisher.js"></script>
       </head>
       <body>
         {/* Google Tag Manager (noscript) */}

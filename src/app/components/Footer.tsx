@@ -73,6 +73,8 @@ export default function Footer() {
       <div className={styles.bottom}>
         <div className={styles.copy}>© 2026 Scale SEO · Corbin Jensen</div>
         <div className={styles.tagline}>SEO for Calgary · Serving Canada</div>
+        {/* Google "Add to Preferred Sources" button */}
+        <div google-add-preferred-source-btn="" data-theme="dark" className={styles.preferredSource} />
       </div>
     </footer>
   );

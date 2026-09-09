@@ -82,11 +82,12 @@
 
 /* === Bottom bar === */
 .bottom {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  padding-top: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   align-items: center;
+  gap: 20px 40px;
+  padding-top: 24px;
   font-family: var(--mono);
   font-size: 10px;
   letter-spacing: 0.15em;
@@ -94,7 +95,8 @@
   color: var(--ink-dim-on-dark);
 }
 .copy { text-align: left; }
-.tagline { text-align: right; }
+.tagline { text-align: right; margin-left: auto; }
+.preferredSource { flex-shrink: 0; }
 
 @media (max-width: 900px) {
   .footer { padding: 64px 24px 28px; }
