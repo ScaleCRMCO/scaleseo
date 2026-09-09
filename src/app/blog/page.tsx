@@ -15,10 +15,11 @@ export const metadata: Metadata = {
 export default function BlogPage() {
   return (
     <main>
-      <header className={styles.hero}>
+      <header className={styles.hero} data-nav-theme="dark">
         <div className={styles.heroContent}>
-          <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Blog" }]} />
-          <p className={styles.eyebrow}>Blog</p>
+          <div className={styles.crumbsOnDark}>
+            <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Blog" }]} />
+          </div>
           <h1 className={styles.title}>
             Notes on <span className={styles.accent}>search, strategy,</span> and revenue.
           </h1>
@@ -38,15 +39,21 @@ export default function BlogPage() {
               href={`/blog/${post.slug}`}
               className={`${styles.card} reveal-up`}
             >
-              <div className={styles.cardTop}>
-                <span className={styles.cardCategory}>{post.category}</span>
-                <span className={styles.cardMeta}>{post.readTime}</span>
+              <div className={styles.cardGraphic} aria-hidden="true">
+                <span className={styles.cardGraphicCategory}>{post.category}</span>
+                <span className={styles.cardGraphicMark}>✕</span>
               </div>
-              <h2 className={styles.cardTitle}>{post.title}</h2>
-              <p className={styles.cardExcerpt}>{post.excerpt}</p>
-              <span className={styles.cardLink}>
-                Read article <span className={styles.arrow}>→</span>
-              </span>
+              <div className={styles.cardBody}>
+                <div className={styles.cardTop}>
+                  <span className={styles.cardCategory}>{post.category}</span>
+                  <span className={styles.cardMeta}>{post.readTime}</span>
+                </div>
+                <h2 className={styles.cardTitle}>{post.title}</h2>
+                <p className={styles.cardExcerpt}>{post.excerpt}</p>
+                <span className={styles.cardLink}>
+                  Read article <span className={styles.arrow}>→</span>
+                </span>
+              </div>
             </Link>
           ))}
         </div>
