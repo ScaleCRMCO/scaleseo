@@ -1,4 +1,5 @@
 import Breadcrumbs from "../../components/Breadcrumbs";
+import Logo from "../../components/Logo";
 import styles from "./AboutHero.module.css";
 
 export default function AboutHero() {
@@ -26,11 +27,11 @@ export default function AboutHero() {
               </defs>
               <text className={styles.badgeRingText}>
                 <textPath href="#aboutHeroRingPath" startOffset="0%">
-                  SEO SPECIALIST · CALGARY · FREELANCE ·&nbsp;
+                  SCALE SEO · CALGARY · FOUNDED 2025 ·&nbsp;
                 </textPath>
               </text>
             </svg>
-            <span className={styles.badgeDot} />
+            <Logo className={styles.badgeLogo} />
           </div>
         </div>
 
@@ -51,11 +52,6 @@ export default function AboutHero() {
           corporate entities, accounting firms, and professional service
           practices across Canada.
         </p>
-      </div>
-
-      <div className={styles.scrollCue}>
-        <span className={styles.scrollLabel}>Scroll to read the story</span>
-        <span className={styles.scrollArrow}>↓</span>
       </div>
     </header>
   );
