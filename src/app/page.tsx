@@ -3,8 +3,6 @@ import Hero from "./sections/home/Hero";
 import About from "./sections/home/About";
 import ServicesGrid from "./sections/home/ServicesGrid";
 import CaseStudy from "./sections/home/CaseStudy";
-import Marquee from "./sections/home/Marquee";
-import IndustriesTeaser from "./sections/home/IndustriesTeaser";
 import Process from "./sections/home/Process";
 import BlogTeaser from "./sections/home/BlogTeaser";
 import FAQ from "./sections/home/FAQ";
@@ -21,9 +19,7 @@ export default function Home() {
       <Hero />
       <ServicesGrid />
       <CaseStudy />
-      <Marquee />
       <About />
-      <IndustriesTeaser />
       <Process />
       <FAQ />
       <BlogTeaser />

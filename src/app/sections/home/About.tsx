@@ -2,7 +2,7 @@ import Link from "next/link";
 import styles from "./About.module.css";
 export default function About() {
   return (
-    <section className={styles.section} id="about">
+    <section className={`${styles.section} section-dark`} id="about" data-nav-theme="dark">
       <div className={styles.grid}>
         <div className={`${styles.stamp} reveal-up`}>
           <div className={styles.circleOuter}>
