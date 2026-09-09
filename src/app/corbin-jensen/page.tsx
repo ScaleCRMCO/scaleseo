@@ -74,8 +74,7 @@ export default function CorbinJensenPage() {
           "YMYL Search Compliance",
         ],
         sameAs: [
-          "https://www.linkedin.com/in/corbin-jensen-9a9b77127/",
-          "https://www.instagram.com/scaleseo.co/",
+          "https://www.linkedin.com/in/corbin-jensen-seo/",
           "https://clutch.co/profile/scale-seo",
           "https://maps.app.goo.gl/FYWSaQ3p81VFnNcc7",
         ],
