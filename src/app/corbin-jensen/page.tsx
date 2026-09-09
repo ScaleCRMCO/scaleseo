@@ -190,7 +190,7 @@ export default function CorbinJensenPage() {
         </div>
       </section>
 
-      <section id="humanity" className={styles.humanity}>
+      <section id="humanity" className={styles.humanity} data-nav-theme="dark">
         <div className={styles.sectionInner}>
           <div className="section-label reveal-up">Humanity</div>
           <div className={`${styles.quote} reveal-up`}>

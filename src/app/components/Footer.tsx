@@ -2,7 +2,7 @@ import Link from "next/link";
 import styles from "./Footer.module.css";
 export default function Footer() {
   return (
-    <footer className={styles.footer}>
+    <footer className={styles.footer} data-nav-theme="dark">
       <div className={styles.grid}>
         {/* Left: brand mark */}
         <div className={styles.brandCol}>

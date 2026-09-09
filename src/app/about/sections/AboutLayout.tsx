@@ -148,7 +148,7 @@ export default function AboutLayout() {
       </div>
 
       {/* ====== SECTION 03 — NUMBERS (full bleed, breaks out) ====== */}
-      <div className={`${styles.numbersBleed} reveal-up`}>
+      <div className={`${styles.numbersBleed} reveal-up`} data-nav-theme="dark">
         <div className={styles.numbersLabel}>The Numbers · 03</div>
         <div className={styles.numbersGrid}>
           <div className={styles.numItem}>

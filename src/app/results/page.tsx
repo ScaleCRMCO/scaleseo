@@ -33,7 +33,7 @@ export default function ResultsPage() {
         </div>
       </header>
 
-      <section className={styles.list}>
+      <section className={styles.list} data-nav-theme="dark">
         <div className={caseStyles.grid}>
           {caseStudies.map((c, i) => (
             <a

@@ -34,7 +34,7 @@ function CardLink({ href, label }: { href: string; label: string }) {
 
 export default function ServicesGrid() {
   return (
-    <section className={styles.section} id="services">
+    <section className={styles.section} id="services" data-nav-theme="dark">
       <div className={styles.intro}>
         <h2 className={styles.introTitle}>
           Four pillars,

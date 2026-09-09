@@ -4,7 +4,7 @@ import styles from "./AboutHero.module.css";
 
 export default function AboutHero() {
   return (
-    <header className={styles.hero}>
+    <header className={styles.hero} data-nav-theme="dark">
       {/* Curtain reveal */}
       <div className={styles.curtain} aria-hidden="true" />
 

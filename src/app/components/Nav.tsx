@@ -64,16 +64,27 @@ export default function Nav() {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-  // Invert the floating nav's colors while a dark section (e.g. #services)
-  // is behind it, so the pill stays legible over both light and dark ground.
+  // Invert the floating nav's colors while ANY dark-themed section is
+  // behind it, so the pill stays legible over both light and dark ground.
+  // Every dark section on every page marks itself with
+  // data-nav-theme="dark" (see globals.css .nav-dark-section helper and
+  // each section's className) instead of this hard-coding a single
+  // homepage element id, so this works page-wide (About, homepage, etc.)
   useEffect(() => {
-    const target = document.getElementById("services");
-    if (!target) return;
+    const targets = document.querySelectorAll('[data-nav-theme="dark"]');
+    if (!targets.length) return;
+    const intersecting = new Set<Element>();
     const observer = new IntersectionObserver(
-      ([entry]) => setDarkMode(entry.isIntersecting),
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) intersecting.add(entry.target);
+          else intersecting.delete(entry.target);
+        }
+        setDarkMode(intersecting.size > 0);
+      },
       { rootMargin: "-72px 0px -85% 0px" }
     );
-    observer.observe(target);
+    targets.forEach((t) => observer.observe(t));
     return () => observer.disconnect();
   }, []);
   // Lock body scroll when the mobile menu is open
