@@ -8,7 +8,7 @@ import styles from "./page.module.css";
 export const metadata: Metadata = {
   title: "Corbin Jensen | Founder & Lead Specialist, Scale SEO",
   description:
-    "Corbin Jensen is an independent organic search specialist and founder of Scale SEO, based in Calgary, Alberta — engineering technical search architectures for accounting practices, legal firms, and corporate consultancies across Canada.",
+    "Corbin Jensen is an independent organic search specialist and founder of Scale SEO, based in Calgary, Alberta — engineering technical search architectures for accounting practices, B2B companies, and professional services across Canada.",
   alternates: { canonical: "/corbin-jensen" },
 };
 
@@ -75,8 +75,6 @@ export default function CorbinJensenPage() {
         ],
         sameAs: [
           "https://www.linkedin.com/in/corbin-jensen-seo/",
-          "https://clutch.co/profile/scale-seo",
-          "https://maps.app.goo.gl/FYWSaQ3p81VFnNcc7",
         ],
       },
     ],
