@@ -192,16 +192,14 @@ section {
   transform: translateX(0);
 }
 /* ==========================================================================
-   About page — now just inherits the site's default dark theme
-   (kept as a no-op hook in case About needs its own treatment again)
+   About page — sections manage their own alternating black/white
+   background individually now (see about/sections/*.module.css); this
+   used to force every <section> on the page to the light theme, which
+   broke the dark sections' own text tokens (invisible light-gray-on-light
+   text). Kept as a no-op hook.
    ========================================================================== */
 
 .about-page {
-  background: var(--bg);
-  color: var(--ink);
-}
-
-.about-page section {
   background: var(--bg);
   color: var(--ink);
 }

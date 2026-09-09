@@ -9,10 +9,9 @@
   flex-direction: column;
   justify-content: center;
   position: relative;
-  border-bottom: 1px solid var(--line);
   overflow: hidden;
-  background: var(--bg);
-  color: var(--ink);
+  background: var(--bg-dark);
+  color: var(--ink-on-dark);
 }
 
 /* Curtain */
@@ -21,7 +20,7 @@
   display: none;
   position: absolute;
   inset: 0;
-  background: var(--bg);
+  background: var(--bg-dark);
   z-index: 20;
   animation: curtainUp 1.1s cubic-bezier(0.76, 0, 0.24, 1) forwards;
   animation-delay: 0.3s;
@@ -40,7 +39,7 @@
   height: 55vw;
   max-width: 700px;
   max-height: 700px;
-  background: radial-gradient(circle at 40% 40%, var(--accent) 0%, transparent 70%);
+  background: radial-gradient(circle at 40% 40%, var(--highlight) 0%, transparent 70%);
   opacity: 0.16;
   filter: blur(60px);
   border-radius: 50%;
@@ -59,21 +58,20 @@
   max-width: 1200px;
 }
 
+/* Breadcrumbs is styled for the site's default light sections; redefine
+   the CSS custom properties it reads (--ink-dim, --accent) locally so its
+   text is legible on this section's dark background, without touching
+   the shared component used elsewhere on light pages. */
+.crumbsOnDark {
+  --ink-dim: var(--ink-dim-on-dark);
+  --accent: var(--highlight);
+}
+
 .top {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   margin-bottom: 48px;
-}
-
-.eyebrow {
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--ink-dim);
-  opacity: 0;
-  animation: fadeIn 0.8s ease 1.4s forwards;
 }
 
 /* === Rotating brand badge === */
@@ -96,7 +94,7 @@
   font-family: var(--mono);
   font-size: 11.5px;
   letter-spacing: 0.14em;
-  fill: var(--ink-dim);
+  fill: var(--ink-dim-on-dark);
   text-transform: uppercase;
 }
 .badgeDot {
@@ -105,7 +103,7 @@
   left: 50%;
   width: 8px;
   height: 8px;
-  background: var(--accent);
+  background: var(--highlight);
   border-radius: 50%;
   transform: translate(-50%, -50%);
   animation: pulse 2.4s ease-in-out infinite;
@@ -122,7 +120,7 @@
   line-height: 0.94;
   letter-spacing: -0.04em;
   margin-bottom: 44px;
-  color: var(--ink);
+  color: var(--ink-on-dark);
 }
 
 .line {
@@ -148,7 +146,7 @@
 
 .italic {
   font-weight: 600;
-  color: var(--accent);
+  color: var(--highlight);
 }
 
 .sub {
@@ -157,7 +155,7 @@
   font-size: clamp(17px, 1.4vw, 20px);
   line-height: 1.6;
   max-width: 620px;
-  color: var(--ink-dim);
+  color: var(--ink-dim-on-dark);
   opacity: 0;
   animation: fadeIn 1s ease 2.3s forwards;
 }
@@ -174,7 +172,7 @@
   font-size: 10px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--ink-dim);
+  color: var(--ink-dim-on-dark);
   opacity: 0;
   animation: fadeIn 0.8s ease 2.6s forwards;
 }

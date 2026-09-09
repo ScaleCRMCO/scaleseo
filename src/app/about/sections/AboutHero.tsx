@@ -11,10 +11,10 @@ export default function AboutHero() {
       <div className={styles.orb} aria-hidden="true" />
 
       <div className={styles.content}>
-        <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "About" }]} />
+        <div className={styles.crumbsOnDark}>
+          <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "About" }]} />
+        </div>
         <div className={styles.top}>
-          <p className={styles.eyebrow}>About</p>
-
           {/* Rotating badge — small brand signature, distinct from homepage hero */}
           <div className={styles.badge} aria-hidden="true">
             <svg className={styles.badgeRing} viewBox="0 0 160 160">
