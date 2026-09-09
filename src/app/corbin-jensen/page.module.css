@@ -1,7 +1,17 @@
 /* === HERO === */
 .hero {
   padding: 180px 40px 80px;
-  border-bottom: 1px solid var(--line);
+  background: var(--bg-dark);
+  color: var(--ink-on-dark);
+}
+
+/* Breadcrumbs is styled for the site's default light sections; redefine
+   the CSS custom properties it reads locally so it's legible (and lime)
+   on this section's dark background, without touching the shared
+   component used elsewhere on light pages. */
+.crumbsOnDark {
+  --ink-dim: var(--highlight);
+  --accent: var(--highlight);
 }
 
 .heroInner {
@@ -20,7 +30,7 @@
   width: 100%;
   aspect-ratio: 3 / 4;
   overflow: hidden;
-  border: 1px solid var(--line-strong);
+  border: 1px solid var(--line-strong-on-dark);
 }
 
 .portraitImg {
@@ -40,7 +50,7 @@
   font-size: clamp(36px, 4.6vw, 60px);
   letter-spacing: -0.03em;
   line-height: 1.05;
-  color: var(--ink);
+  color: var(--ink-on-dark);
   margin-bottom: 10px;
 }
 
@@ -49,8 +59,31 @@
   font-size: 13px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--highlight);
   margin-bottom: 32px;
+}
+
+/* LinkedIn icon link, in the hero next to the CTAs */
+.linkedin {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--highlight);
+  border-radius: 999px;
+  color: var(--highlight);
+  transition: background-color 0.3s cubic-bezier(0.25, 1, 0.5, 1), color 0.3s ease;
+}
+
+.linkedin:hover {
+  background: var(--highlight);
+  color: var(--on-highlight);
+}
+
+.linkedin svg {
+  width: 20px;
+  height: 20px;
 }
 
 /* === CTA === */
@@ -60,6 +93,26 @@
   flex-wrap: wrap;
   gap: 16px;
   margin-bottom: 40px;
+}
+
+/* .cta/.ctaSecondary are shared with the light finalCta section below, so
+   the hero (dark) instance gets a locally scoped token override instead
+   of changing the shared button colors globally. */
+.ctaGroupDark {
+  --accent: var(--ink-on-dark);
+  --on-accent: var(--bg-dark);
+  --ink: var(--ink-on-dark);
+  --line-strong: var(--line-strong-on-dark);
+}
+
+.ctaGroupDark .cta:hover {
+  color: var(--highlight);
+  border-color: var(--highlight);
+}
+
+.ctaGroupDark .ctaSecondary:hover {
+  color: var(--highlight);
+  border-color: var(--highlight);
 }
 
 .cta {
@@ -119,7 +172,7 @@
   align-items: baseline;
   gap: 12px;
   padding-top: 24px;
-  border-top: 1px solid var(--line-strong);
+  border-top: 1px solid var(--line-strong-on-dark);
 }
 
 .onPageLabel {
@@ -127,7 +180,7 @@
   font-size: 11px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--ink-dim);
+  color: var(--ink-dim-on-dark);
 }
 
 .onPageLinks {
@@ -137,7 +190,7 @@
 }
 
 .onPageDivider {
-  color: var(--ink-dim);
+  color: var(--ink-dim-on-dark);
   opacity: 0.4;
   margin: 0 10px;
 }
@@ -146,7 +199,7 @@
   font-family: var(--mono);
   font-size: 12px;
   letter-spacing: 0.06em;
-  color: var(--accent);
+  color: var(--highlight);
   text-decoration: none;
 }
 
@@ -154,14 +207,40 @@
   text-decoration: underline;
 }
 
-/* === CONTENT SECTIONS === */
+/* === CONTENT SECTIONS ===
+   Alternating black/white rounded bubble sections, matching the homepage
+   and About page: each section after the first overlaps the one above it
+   with a negative margin + rounded top corners. */
 .section {
+  position: relative;
   padding: 90px 40px;
-  border-bottom: 1px solid var(--line);
+  margin-top: -48px;
+  border-radius: 48px 48px 0 0;
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--ink);
 }
 
+/* Dark variant — reused for both 'expertise' and 'articles'. Locally
+   redefines the tokens every child in this subtree reads, so .body,
+   .articleTitle, .articleCategory etc. all flip to their -on-dark /
+   highlight equivalents automatically without per-element overrides. */
 .sectionElevated {
-  background: var(--bg-elev);
+  background: var(--bg-dark);
+  color: var(--ink-on-dark);
+  --ink: var(--ink-on-dark);
+  --ink-dim: var(--ink-dim-on-dark);
+  --line-strong: var(--line-strong-on-dark);
+  --accent: var(--highlight);
+}
+
+.sectionElevated .articleCard {
+  background: #181818;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sectionElevated .articleCard:hover {
+  background: #202020;
 }
 
 .sectionInner {
@@ -187,10 +266,13 @@
 
 /* === HUMANITY (personal quote) === */
 .humanity {
+  position: relative;
   padding: 90px 40px;
-  border-bottom: 1px solid var(--line);
-  background: var(--bg-dark);
-  color: var(--ink-on-dark);
+  margin-top: -48px;
+  border-radius: 48px 48px 0 0;
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--ink);
 }
 
 .quote {
@@ -198,14 +280,14 @@
   font-weight: 300;
   font-size: clamp(19px, 2vw, 24px);
   line-height: 1.6;
-  color: var(--ink-on-dark);
+  color: var(--ink);
 }
 
 .quote p {
   margin-bottom: 28px;
   position: relative;
   padding-left: 24px;
-  border-left: 2px solid var(--accent);
+  border-left: 2px solid var(--ink);
 }
 
 .quote p:last-child {
@@ -296,7 +378,13 @@
 
 /* === FINAL CTA === */
 .finalCta {
+  position: relative;
   padding: 100px 40px;
+  margin-top: -48px;
+  border-radius: 48px 48px 0 0;
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--ink);
   text-align: center;
 }
 

@@ -11,28 +11,28 @@ export default function AboutHero() {
       {/* Organic blurred accent shape — unique to this page */}
       <div className={styles.orb} aria-hidden="true" />
 
+      {/* Rotating badge — enlarged to fill the empty upper-right of the
+          hero, positioned independently of the text content column */}
+      <div className={styles.badge} aria-hidden="true">
+        <svg className={styles.badgeRing} viewBox="0 0 160 160">
+          <defs>
+            <path
+              id="aboutHeroRingPath"
+              d="M 80,80 m -64,0 a 64,64 0 1,1 128,0 a 64,64 0 1,1 -128,0"
+            />
+          </defs>
+          <text className={styles.badgeRingText}>
+            <textPath href="#aboutHeroRingPath" startOffset="0%">
+              SCALE SEO · CALGARY · FOUNDED 2025 ·&nbsp;
+            </textPath>
+          </text>
+        </svg>
+        <Logo className={styles.badgeLogo} />
+      </div>
+
       <div className={styles.content}>
         <div className={styles.crumbsOnDark}>
           <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "About" }]} />
-        </div>
-        <div className={styles.top}>
-          {/* Rotating badge — small brand signature, distinct from homepage hero */}
-          <div className={styles.badge} aria-hidden="true">
-            <svg className={styles.badgeRing} viewBox="0 0 160 160">
-              <defs>
-                <path
-                  id="aboutHeroRingPath"
-                  d="M 80,80 m -64,0 a 64,64 0 1,1 128,0 a 64,64 0 1,1 -128,0"
-                />
-              </defs>
-              <text className={styles.badgeRingText}>
-                <textPath href="#aboutHeroRingPath" startOffset="0%">
-                  SCALE SEO · CALGARY · FOUNDED 2025 ·&nbsp;
-                </textPath>
-              </text>
-            </svg>
-            <Logo className={styles.badgeLogo} />
-          </div>
         </div>
 
         <h1 className={styles.title}>

@@ -84,9 +84,11 @@ export default function CorbinJensenPage() {
 
   return (
     <main>
-      <header className={styles.hero}>
+      <header className={styles.hero} data-nav-theme="dark">
         <div className={styles.heroInner}>
-          <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Corbin Jensen" }]} />
+          <div className={styles.crumbsOnDark}>
+            <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Corbin Jensen" }]} />
+          </div>
 
           <div className={styles.grid}>
             <div className={styles.portrait}>
@@ -101,7 +103,7 @@ export default function CorbinJensenPage() {
               <h1 className={styles.title}>Corbin Jensen</h1>
               <p className={styles.role}>Founder &amp; Lead Specialist, Scale SEO</p>
 
-              <div className={styles.ctaGroup}>
+              <div className={`${styles.ctaGroup} ${styles.ctaGroupDark}`}>
                 <a
                   href="https://cal.com/corbinjensen-scaleseo/30min"
                   target="_blank"
@@ -114,6 +116,17 @@ export default function CorbinJensenPage() {
                 <Link href="/contact" className={styles.ctaSecondary}>
                   <span>Send a Message</span>
                 </Link>
+                <a
+                  href="https://www.linkedin.com/in/corbin-jensen-seo/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.linkedin}
+                  aria-label="Corbin Jensen on LinkedIn"
+                >
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.47v6.27zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z" />
+                  </svg>
+                </a>
               </div>
 
               <nav className={styles.onPageNav} aria-label="On this page">
@@ -158,7 +171,7 @@ export default function CorbinJensenPage() {
         </div>
       </section>
 
-      <section id="expertise" className={`${styles.section} ${styles.sectionElevated}`}>
+      <section id="expertise" className={`${styles.section} ${styles.sectionElevated}`} data-nav-theme="dark">
         <div className={styles.sectionInner}>
           <div className="section-label reveal-up">Expertise</div>
           <div className={`${styles.body} reveal-up`}>
@@ -190,7 +203,7 @@ export default function CorbinJensenPage() {
         </div>
       </section>
 
-      <section id="humanity" className={styles.humanity} data-nav-theme="dark">
+      <section id="humanity" className={styles.humanity}>
         <div className={styles.sectionInner}>
           <div className="section-label reveal-up">Humanity</div>
           <div className={`${styles.quote} reveal-up`}>
@@ -231,7 +244,7 @@ export default function CorbinJensenPage() {
       </section>
 
       {latestPosts.length > 0 && (
-        <section id="articles" className={`${styles.section} ${styles.sectionElevated}`}>
+        <section id="articles" className={`${styles.section} ${styles.sectionElevated}`} data-nav-theme="dark">
           <div className={styles.sectionInner}>
             <div className="section-label reveal-up">Latest Articles</div>
             <div className={`${styles.articlesGrid} reveal-up`}>
