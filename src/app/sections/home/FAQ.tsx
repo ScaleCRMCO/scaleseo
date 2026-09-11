@@ -43,21 +43,22 @@ export default function FAQ() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div className="section-label reveal-up">Frequently Asked Questions</div>
-      <h2 className={`${styles.heading} reveal-up`}>
-        Common questions about <em>working together.</em>
-      </h2>
+      <div className={styles.inner}>
+        <div className={`index ${styles.eyebrow}`}>
+          Frequently Asked Questions
+        </div>
+        <h2 className={`${styles.heading} reveal-up`}>
+          Asked constantly, <em>answered properly.</em>
+        </h2>
 
-      <div className={styles.list}>
-        {faqs.map((item) => (
-          <details key={item.q} className={`${styles.item} reveal-up`}>
-            <summary className={styles.question}>
-              <span>{item.q}</span>
-              <span className={styles.toggle} aria-hidden="true">+</span>
-            </summary>
-            <p className={styles.answer}>{item.a}</p>
-          </details>
-        ))}
+        <div className={styles.list}>
+          {faqs.map((item) => (
+            <div key={item.q} className={`${styles.item} reveal-up`}>
+              <div className={styles.question}>{item.q}</div>
+              <p className={styles.answer}>{item.a}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
