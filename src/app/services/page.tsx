@@ -53,9 +53,11 @@ const services = [
 export default function ServicesPage() {
   return (
     <main>
-      <header className={styles.hero}>
+      <header className={styles.hero} data-nav-theme="dark">
         <div className={styles.heroContent}>
-          <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Services" }]} />
+          <div className={styles.crumbsOnDark}>
+            <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Services" }]} />
+          </div>
           <p className={styles.eyebrow}>Services</p>
           <h1 className={styles.title}>
             SEO Services in <span className={styles.accent}>Calgary</span>,
@@ -72,45 +74,49 @@ export default function ServicesPage() {
       </header>
 
       <section className={styles.list}>
-        <div className="section-label reveal-up">What I Do</div>
-        <div className={styles.grid}>
-          {services.map((s) => {
-            const content = (
-              <>
-                <div className={styles.itemNum}>{s.num}</div>
-                <h2 className={styles.itemName}>{s.name}</h2>
-                <p className={styles.itemDesc}>{s.desc}</p>
-                {s.href && (
-                  <span className={styles.itemLink}>
-                    Learn more <span className={styles.itemArrow}>→</span>
-                  </span>
-                )}
-              </>
-            );
-            return s.href ? (
-              <Link
-                key={s.num}
-                href={s.href}
-                className={`${styles.item} ${styles.itemLinked} reveal-up`}
-              >
-                {content}
-              </Link>
-            ) : (
-              <div key={s.num} className={`${styles.item} reveal-up`}>
-                {content}
-              </div>
-            );
-          })}
+        <div className={styles.listInner}>
+          <div className="section-label reveal-up">What I Do</div>
+          <div className={styles.gridShell}>
+            <div className={styles.grid}>
+              {services.map((s) => {
+                const content = (
+                  <>
+                    <div className={styles.itemNum}>{s.num}</div>
+                    <h2 className={styles.itemName}>{s.name}</h2>
+                    <p className={styles.itemDesc}>{s.desc}</p>
+                    {s.href && (
+                      <span className={styles.itemLink}>
+                        Learn more <span className={styles.itemArrow}>→</span>
+                      </span>
+                    )}
+                  </>
+                );
+                return s.href ? (
+                  <Link
+                    key={s.num}
+                    href={s.href}
+                    className={`${styles.item} ${styles.itemLinked} reveal-up`}
+                  >
+                    {content}
+                  </Link>
+                ) : (
+                  <div key={s.num} className={`${styles.item} reveal-up`}>
+                    {content}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+          <p className={styles.industriesNote}>
+            Looking for something specific to your industry?{" "}
+            <a href="/industries" className={styles.industriesLink}>
+              See who I work with →
+            </a>
+          </p>
         </div>
-        <p className={styles.industriesNote}>
-          Looking for something specific to your industry?{" "}
-          <a href="/industries" className={styles.industriesLink}>
-            See who I work with →
-          </a>
-        </p>
       </section>
 
-      <section className={styles.cta}>
+      <section className={styles.cta} data-nav-theme="dark">
         <div className={styles.ctaEyebrow}>
           <span className={styles.dot} />
           Now booking · 1 spot Q3 2026
