@@ -140,8 +140,8 @@ export default function Nav() {
           </div>
         </div>
         <Link href="/industries">Industries</Link>
-        <Link href="/#process">Process</Link>
         <Link href="/about">About</Link>
+        <Link href="/contact">Contact</Link>
       </div>
       <motion.a
         href="https://cal.com/corbinjensen-scaleseo/30min"
@@ -171,7 +171,6 @@ export default function Nav() {
         <Link href="/results" onClick={close}>Case Studies</Link>
         <Link href="/services" onClick={close}>Services</Link>
         <Link href="/industries" onClick={close}>Industries</Link>
-        <Link href="/#process" onClick={close}>Process</Link>
         <Link href="/about" onClick={close}>About</Link>
         <Link href="/contact" onClick={close}>Contact</Link>
       </div>
