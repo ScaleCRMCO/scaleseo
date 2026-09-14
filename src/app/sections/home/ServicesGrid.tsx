@@ -24,8 +24,8 @@ const services = [
     href: "/services/seo",
     num: "01",
     title: "SEO",
-    subtitle: "Organic Search & Local Visibility",
-    desc: "Improving your organic search visibility in Google, Bing, and Apple Maps pack listings to ensure buyers find your website first.",
+    subtitle: "Google Organic Search Growth",
+    desc: "Improving your organic rankings and visibility on Google to ensure buyers find your website first.",
     cta: "Explore SEO",
   },
   {
