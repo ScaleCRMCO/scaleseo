@@ -2,8 +2,6 @@
   background: var(--bg-dark);
   color: var(--ink-on-dark);
   padding: 100px 40px 32px;
-  margin-top: -48px;
-  border-radius: 48px 48px 0 0;
   position: relative;
 }
 

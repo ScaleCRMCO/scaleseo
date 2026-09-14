@@ -38,8 +38,8 @@
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, minmax(240px, auto));
   grid-template-areas:
-    "seo   ads   ai"
-    "badge web   ai";
+    "badge seo ads"
+    "badge web ai";
   gap: 24px;
   max-width: 1400px;
   margin: 0 auto;
@@ -393,7 +393,7 @@
   color: inherit;
 }
 
-/* Oversized, low-opacity star glyph floating behind the stat */
+/* Oversized, low-opacity star glyph floating behind the copy */
 .badgeStar {
   position: absolute;
   top: -20%;
@@ -405,20 +405,51 @@
   user-select: none;
 }
 
-.badgeValue {
+.badgeEyebrow {
+  position: relative;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  opacity: 0.6;
+  margin-bottom: 18px;
+}
+
+.badgeHeading {
   position: relative;
   font-family: var(--display);
   font-weight: 800;
-  font-size: 44px;
-  line-height: 1;
+  font-size: 34px;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  margin-bottom: 16px;
 }
 
-.badgeLabel {
+.badgeDesc {
   position: relative;
-  font-size: 13px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-top: 8px;
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: rgba(10, 10, 10, 0.72);
+  max-width: 260px;
+  margin-bottom: 24px;
+}
+
+.badgeCta {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.badgeCtaArrow {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.badgeLink:hover .badgeCtaArrow {
+  transform: translateX(4px);
 }
 
 @media (max-width: 900px) {
@@ -435,9 +466,9 @@
     grid-template-columns: 1fr;
     grid-template-rows: none;
     grid-template-areas:
+      "badge"
       "seo"
       "ads"
-      "badge"
       "web"
       "ai";
   }
