@@ -36,10 +36,10 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, minmax(240px, auto));
+  grid-template-rows: auto minmax(160px, auto);
   grid-template-areas:
-    "badge seo ads"
-    "badge web ai";
+    "seo   ads   web"
+    "ai    badge badge";
   gap: 24px;
   max-width: 1400px;
   margin: 0 auto;
@@ -383,12 +383,11 @@
 .badgeLink {
   position: relative;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
+  align-items: center;
+  gap: 32px;
   width: 100%;
   height: 100%;
-  padding: 3rem;
+  padding: 2.5rem 3rem;
   text-decoration: none;
   color: inherit;
 }
@@ -396,42 +395,46 @@
 /* Oversized, low-opacity star glyph floating behind the copy */
 .badgeStar {
   position: absolute;
-  top: -20%;
-  right: -10%;
-  font-size: 260px;
+  top: 50%;
+  right: 4%;
+  transform: translateY(-50%);
+  font-size: 180px;
   line-height: 1;
   opacity: 0.12;
   pointer-events: none;
   user-select: none;
 }
 
-.badgeEyebrow {
+.badgeHead {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.badgeEyebrow {
   font-family: var(--mono);
   font-size: 11px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   opacity: 0.6;
-  margin-bottom: 18px;
 }
 
 .badgeHeading {
-  position: relative;
   font-family: var(--display);
   font-weight: 800;
-  font-size: 34px;
-  line-height: 1.08;
+  font-size: 26px;
+  line-height: 1.1;
   letter-spacing: -0.01em;
-  margin-bottom: 16px;
 }
 
 .badgeDesc {
   position: relative;
   font-size: 14.5px;
-  line-height: 1.55;
+  line-height: 1.5;
   color: rgba(10, 10, 10, 0.72);
-  max-width: 260px;
-  margin-bottom: 24px;
+  max-width: 340px;
 }
 
 .badgeCta {
@@ -441,6 +444,9 @@
   gap: 8px;
   font-weight: 700;
   font-size: 14px;
+  flex-shrink: 0;
+  margin-left: auto;
+  white-space: nowrap;
 }
 
 .badgeCtaArrow {
@@ -466,13 +472,22 @@
     grid-template-columns: 1fr;
     grid-template-rows: none;
     grid-template-areas:
-      "badge"
       "seo"
       "ads"
       "web"
-      "ai";
+      "ai"
+      "badge";
   }
   .cell {
     padding: 2rem 1.5rem;
+  }
+  .badgeLink {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 2rem 1.5rem;
+  }
+  .badgeCta {
+    margin-left: 0;
   }
 }

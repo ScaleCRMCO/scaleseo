@@ -49,26 +49,6 @@ export default function ServicesGrid() {
       </div>
 
       <div className={styles.grid}>
-      <motion.div className={`${styles.cell} ${styles.badge}`} whileHover={{ scale: 1.02 }} transition={spring}>
-        <Link href="/services" className={styles.badgeLink}>
-          <span className={styles.badgeStar} aria-hidden="true">✺</span>
-          <span className={styles.badgeEyebrow}>Explore</span>
-          <h3 className={styles.badgeHeading}>
-            Every service,
-            <br />
-            one hub.
-          </h3>
-          <p className={styles.badgeDesc}>
-            SEO, Google Ads, Web Development, and AI Search — see how they
-            fit together on the Services page.
-          </p>
-          <span className={styles.badgeCta}>
-            <span>View all services</span>
-            <span className={styles.badgeCtaArrow}>→</span>
-          </span>
-        </Link>
-      </motion.div>
-
       <div className={`${styles.cell} ${styles.seo} ${styles.cellSpaced}`}>
         <div className={styles.cellTop}>
           <div className={styles.cellHead}>
@@ -232,6 +212,24 @@ export default function ServicesGrid() {
 
         <CardLink href="/services/geo" label="AI Search / GEO" />
       </div>
+
+      <motion.div className={`${styles.cell} ${styles.badge}`} whileHover={{ scale: 1.01 }} transition={spring}>
+        <Link href="/services" className={styles.badgeLink}>
+          <span className={styles.badgeStar} aria-hidden="true">✺</span>
+          <span className={styles.badgeHead}>
+            <span className={styles.badgeEyebrow}>Explore</span>
+            <h3 className={styles.badgeHeading}>Every service, one hub.</h3>
+          </span>
+          <p className={styles.badgeDesc}>
+            SEO, Google Ads, Web Development, and AI Search — see how they
+            fit together on the Services page.
+          </p>
+          <span className={styles.badgeCta}>
+            <span>View all services</span>
+            <span className={styles.badgeCtaArrow}>→</span>
+          </span>
+        </Link>
+      </motion.div>
       </div>
     </section>
   );
