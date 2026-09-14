@@ -47,10 +47,11 @@
 .title {
   font-family: var(--sans); /* Manrope */
   font-weight: 800;
-  letter-spacing: -0.04em;
-  line-height: 1.03;
-  font-size: clamp(3rem, 7vw, 6.5rem);
+  letter-spacing: -0.03em;
+  line-height: 1.12;
+  font-size: clamp(2.1rem, 4.2vw, 3.75rem);
   margin-bottom: 36px;
+  max-width: 980px;
 }
 
 /* High-contrast inline block wrapping the key phrase */

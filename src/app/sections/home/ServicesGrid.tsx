@@ -23,10 +23,10 @@ const services = [
   {
     href: "/services/seo",
     num: "01",
-    title: "Local SEO",
-    subtitle: "Google Map Pack & Website Optimization",
-    desc: "Improving your local organic search visibility in Google, Bing, and Apple Maps pack listings to ensure local buyers find your website first.",
-    cta: "Explore Local SEO",
+    title: "SEO",
+    subtitle: "Organic Search & Local Visibility",
+    desc: "Improving your organic search visibility in Google, Bing, and Apple Maps pack listings to ensure buyers find your website first.",
+    cta: "Explore SEO",
   },
   {
     href: "/services/google-ads-management",
@@ -39,10 +39,10 @@ const services = [
   {
     href: "/services/web-development",
     num: "03",
-    title: "Technical SEO",
-    subtitle: "Site Architecture & Technical Audits",
-    desc: "Conducting weekly technical health crawls to identify and fix crawlability bugs, slow page speeds, and indexing errors that block your site's growth.",
-    cta: "Explore Technical SEO",
+    title: "Web Development",
+    subtitle: "Fast, Conversion-Ready Websites",
+    desc: "Building fast, fully responsive websites with clean code architecture, designed and structured for both high SEO visibility and conversions.",
+    cta: "Explore Web Development",
   },
   {
     href: "/services/geo",

@@ -25,10 +25,8 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ ...spring, delay: 0.25 }}
         >
-          Calgary SEO Expert –{" "}
-          <span className={styles.titleBlock}>
-            Technical SEO, Google Ads, and AI Search Services.
-          </span>
+          Calgary SEO Expert – Technical SEO, Google Ads, and{" "}
+          <span className={styles.titleBlock}>AI Search Services.</span>
         </motion.h1>
 
         <motion.p
