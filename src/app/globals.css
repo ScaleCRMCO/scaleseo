@@ -3,6 +3,18 @@
    Editing colors? Change the CSS variables in :root below.
    ========================================================================== */
 
+/* Archivo Black — the brand typeface, self-hosted. Used anywhere the Scale
+   SEO wordmark or other brand-level lockups appear (nav, footer, etc.) via
+   the --brand token below. Everything else stays on Manrope. */
+@font-face {
+  font-family: 'Archivo Black';
+  src: url('/fonts/ArchivoBlack-Regular.woff2') format('woff2'),
+       url('/fonts/ArchivoBlack-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   /* Luxury brutalist-minimalist theme — cream paper canvas, stark ink text,
      crisp pure-black hairline borders. No color accent: monochrome by design. */
@@ -32,6 +44,9 @@
   --display: 'Manrope', system-ui, sans-serif;
   --sans: 'Manrope', system-ui, sans-serif;
   --mono: 'JetBrains Mono', monospace;
+  /* Brand typeface — the Scale SEO wordmark and other brand-level lockups
+     (nav, footer). Not used for body copy or headings elsewhere. */
+  --brand: 'Archivo Black', var(--display), sans-serif;
 }
 
 * {

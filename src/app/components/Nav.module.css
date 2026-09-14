@@ -76,7 +76,7 @@
   transform: rotate(-4deg) scale(1.05);
 }
 .wordmark {
-  font-family: 'Horizon', var(--display), sans-serif;
+  font-family: var(--brand);
 }
 .wordmarkAccent {
   color: var(--accent);

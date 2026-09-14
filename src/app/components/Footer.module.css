@@ -57,11 +57,11 @@
 
 /* === Giant full-width wordmark === */
 .wordmarkLarge {
-  font-family: var(--display);
-  font-weight: 500;
+  font-family: var(--brand);
+  font-weight: 400;
   font-size: clamp(64px, 15vw, 220px);
   line-height: 0.82;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.02em;
   color: var(--ink-faint);
   white-space: nowrap;
   overflow: hidden;
@@ -74,7 +74,7 @@
 .wordmarkText { display: inline-block; }
 .wordmarkLarge em {
   font-style: normal;
-  font-weight: 600;
+  font-weight: 400;
   color: var(--ink-faint);
 }
 
