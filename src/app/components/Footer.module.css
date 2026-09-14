@@ -2,6 +2,8 @@
   background: var(--bg-dark);
   color: var(--ink-on-dark);
   padding: 100px 40px 32px;
+  margin-top: -48px;
+  border-radius: 48px 48px 0 0;
   position: relative;
 }
 
@@ -28,14 +30,13 @@
   gap: 14px;
 }
 .colLabel {
-  font-family: var(--mono);
+  font-family: var(--sans);
   font-size: 11px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--ink-dim-on-dark);
   padding-bottom: 16px;
   margin-bottom: 4px;
-  border-bottom: 1px solid var(--line-on-dark);
 }
 .colText {
   font-family: var(--display);
@@ -54,7 +55,7 @@
   width: fit-content;
   transition: color 0.3s ease;
 }
-.colLink:hover { color: var(--accent); }
+.colLink:hover { color: var(--highlight); }
 
 /* === Giant full-width wordmark === */
 .wordmarkLarge {
@@ -69,7 +70,6 @@
   text-align: center;
   margin: 0 -40px;
   padding: 40px 40px 16px;
-  border-top: 1px solid var(--line-on-dark);
   user-select: none;
   pointer-events: none;
 }
@@ -88,9 +88,9 @@
   align-items: center;
   gap: 20px 40px;
   padding-top: 24px;
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.15em;
+  font-family: var(--sans);
+  font-size: 12px;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--ink-dim-on-dark);
 }
