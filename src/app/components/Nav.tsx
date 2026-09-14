@@ -102,7 +102,7 @@ export default function Nav() {
       <Link href="/" className={styles.brand} onClick={close}>
         <Logo className={styles.brandCrow} />
         <span className={styles.wordmark}>
-          Scale<span style={{ color: "var(--accent)" }}>SEO</span>
+          Scale<span className={styles.wordmarkAccent}>SEO</span>
         </span>
       </Link>
       {/* Desktop links */}
