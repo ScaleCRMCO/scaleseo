@@ -23,34 +23,34 @@ const services = [
   {
     href: "/services/seo",
     num: "01",
-    title: "SEO",
-    subtitle: "Owned & Earned Growth",
-    desc: "Technical SEO, on-page fixes, and local scaling engineered to secure #1 organic ranking positions for B2B brands.",
-    cta: "Explore SEO",
+    title: "Local SEO",
+    subtitle: "Google Map Pack & Website Optimization",
+    desc: "Improving your local organic search visibility in Google, Bing, and Apple Maps pack listings to ensure local buyers find your website first.",
+    cta: "Explore Local SEO",
   },
   {
     href: "/services/google-ads-management",
     num: "02",
-    title: "Google Ads",
-    subtitle: "Answer Customer Wants & Needs",
-    desc: "Profitable, data-driven pay-per-click campaigns built to drive high-quality leads and lower cost-per-acquisition.",
+    title: "PPC Management",
+    subtitle: "Google Ads & Bing Ads Management",
+    desc: "Creating and managing paid search campaigns, optimizing ad copy, and building daily negative keyword lists to lower your cost-per-lead.",
     cta: "Explore Google Ads",
   },
   {
     href: "/services/web-development",
     num: "03",
-    title: "Web Design & Development",
-    subtitle: "Fast Sites That Convert",
-    desc: "Ultra-fast, fully responsive website builds with clean code, built for high SEO visibility from day one.",
-    cta: "Explore Web Design",
+    title: "Technical SEO",
+    subtitle: "Site Architecture & Technical Audits",
+    desc: "Conducting weekly technical health crawls to identify and fix crawlability bugs, slow page speeds, and indexing errors that block your site's growth.",
+    cta: "Explore Technical SEO",
   },
   {
     href: "/services/geo",
     num: "04",
-    title: "AI Search (GEO)",
-    subtitle: "Get Cited By AI Engines",
-    desc: "Generative Engine Optimization tailored to secure citations in ChatGPT, Perplexity, and Google AI Overviews.",
-    cta: "Explore AI Search",
+    title: "AI SEO Service",
+    subtitle: "ChatGPT & Perplexity Brand Tracking",
+    desc: "Structuring web content for machine-readability and tracking your active brand citations daily across ChatGPT, Copilot, and Google AI Overviews.",
+    cta: "Explore AI SEO",
   },
 ];
 
@@ -59,31 +59,23 @@ export default function ServicesGrid() {
     <section className={styles.section} id="services" data-nav-theme="dark">
       <div className={styles.intro}>
         <h2 className={styles.introTitle}>
-          Four pillars,
-          <br />
-          one integrated team.
+          Are you looking to rank better in Google and Bing for your target
+          keywords?
         </h2>
-        <p className={styles.introBody}>
-          Scale SEO covers everything a growing professional services firm
-          needs from a single marketing partner — no outsourcing, no
-          hand-offs between specialists.
-        </p>
       </div>
 
       <div className={styles.grid}>
         <motion.div className={styles.highlight} whileHover={{ scale: 1.01 }} transition={spring}>
           <Link href="/services" className={styles.highlightLink}>
             <span className={styles.highlightStar} aria-hidden="true">✺</span>
-            <span className={styles.highlightEyebrow}>Explore</span>
+            <span className={styles.highlightEyebrow}>Core Services</span>
             <h3 className={styles.highlightHeading}>
-              Every service,
-              <br />
-              one hub.
+              SEO, PPC, and AI Search Optimization.
             </h3>
             <p className={styles.highlightDesc}>
-              SEO, Google Ads, Web Development, and AI Search — one
-              specialist covering all four, end to end. See how they fit
-              together.
+              Every campaign is customized to your industry, focused
+              strictly on generating qualified business inquiries, and
+              tracked using daily keyword reports.
             </p>
             <span className={styles.highlightCta}>
               <span>View all services</span>

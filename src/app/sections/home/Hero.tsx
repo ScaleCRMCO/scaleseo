@@ -16,7 +16,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ ...spring, delay: 0.1 }}
         >
-          ( SCALE SEO · CALGARY SEO &amp; DIGITAL MARKETING COMPANY // )
+          [ SCALE SEO · CALGARY SEO, PPC, AND GENERATIVE ENGINE OPTIMIZATION ]
         </motion.p>
 
         <motion.h1
@@ -25,10 +25,10 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ ...spring, delay: 0.25 }}
         >
-          Finally, an SEO
-          <br />
-          specialist that{" "}
-          <span className={styles.titleBlock}>actually delivers.</span>
+          Calgary SEO Expert –{" "}
+          <span className={styles.titleBlock}>
+            Technical SEO, Google Ads, and AI Search Services.
+          </span>
         </motion.h1>
 
         <motion.p
@@ -37,9 +37,11 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ ...spring, delay: 0.4 }}
         >
-          I run technical SEO, local search, and Google Ads for accounting
-          firms and professional service brands across Canada — no
-          outsourcing, no account managers, just the work.
+          Scale SEO helps professional service businesses across Canada
+          secure more customers, leads, and sales through search
+          optimization and paid advertising. Run entirely by Corbin Jensen,
+          this practice provides direct, hands-on execution without
+          rotating account managers or outsourced white-labeling.
         </motion.p>
 
         <motion.div
