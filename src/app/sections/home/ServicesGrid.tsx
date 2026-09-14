@@ -5,32 +5,54 @@ import styles from "./ServicesGrid.module.css";
 
 const spring = { type: "spring" as const, stiffness: 100, damping: 15 };
 
-function Pills({ items }: { items: string[] }) {
+function ExploreButton({ href, label }: { href: string; label: string }) {
   return (
-    <div className={styles.pillRow}>
-      {items.map((item) => (
-        <span key={item} className={styles.pill}>
-          {item}
-        </span>
-      ))}
-    </div>
-  );
-}
-
-function CardLink({ href, label }: { href: string; label: string }) {
-  return (
-    <motion.a href={href} className={styles.cardLink} initial="rest" whileHover="hover" animate="rest">
-      <span>{label}</span>
-      <motion.span
-        className={styles.cardLinkArrow}
-        variants={{ rest: { x: 0 }, hover: { x: 6 } }}
-        transition={spring}
-      >
-        →
-      </motion.span>
+    <motion.a
+      href={href}
+      className={styles.exploreBtn}
+      whileHover={{ scale: 1.04 }}
+      whileTap={{ scale: 0.97 }}
+      transition={spring}
+    >
+      {label}
     </motion.a>
   );
 }
+
+const services = [
+  {
+    href: "/services/seo",
+    num: "01",
+    title: "SEO",
+    subtitle: "Owned & Earned Growth",
+    desc: "Technical SEO, on-page fixes, and local scaling engineered to secure #1 organic ranking positions for B2B brands.",
+    cta: "Explore SEO",
+  },
+  {
+    href: "/services/google-ads-management",
+    num: "02",
+    title: "Google Ads",
+    subtitle: "Answer Customer Wants & Needs",
+    desc: "Profitable, data-driven pay-per-click campaigns built to drive high-quality leads and lower cost-per-acquisition.",
+    cta: "Explore Google Ads",
+  },
+  {
+    href: "/services/web-development",
+    num: "03",
+    title: "Web Design & Development",
+    subtitle: "Fast Sites That Convert",
+    desc: "Ultra-fast, fully responsive website builds with clean code, built for high SEO visibility from day one.",
+    cta: "Explore Web Design",
+  },
+  {
+    href: "/services/geo",
+    num: "04",
+    title: "AI Search (GEO)",
+    subtitle: "Get Cited By AI Engines",
+    desc: "Generative Engine Optimization tailored to secure citations in ChatGPT, Perplexity, and Google AI Overviews.",
+    cta: "Explore AI Search",
+  },
+];
 
 export default function ServicesGrid() {
   return (
@@ -49,187 +71,40 @@ export default function ServicesGrid() {
       </div>
 
       <div className={styles.grid}>
-      <div className={`${styles.cell} ${styles.seo} ${styles.cellSpaced}`}>
-        <div className={styles.cellTop}>
-          <div className={styles.cellHead}>
-            <h3 className={styles.cellTitle}>SEO Services</h3>
-            <span className={`index ${styles.cellIndex}`}>01</span>
-          </div>
-          <p className={styles.cellDesc}>
-            Technical site audits, local search engine optimization scaling,
-            and high-intent keyword architecture engineered to secure #1
-            organic ranking positions for B2B brands.
-          </p>
+        <motion.div className={styles.highlight} whileHover={{ scale: 1.01 }} transition={spring}>
+          <Link href="/services" className={styles.highlightLink}>
+            <span className={styles.highlightStar} aria-hidden="true">✺</span>
+            <span className={styles.highlightEyebrow}>Explore</span>
+            <h3 className={styles.highlightHeading}>
+              Every service,
+              <br />
+              one hub.
+            </h3>
+            <p className={styles.highlightDesc}>
+              SEO, Google Ads, Web Development, and AI Search — one
+              specialist covering all four, end to end. See how they fit
+              together.
+            </p>
+            <span className={styles.highlightCta}>
+              <span>View all services</span>
+              <span className={styles.highlightCtaArrow}>→</span>
+            </span>
+          </Link>
+        </motion.div>
 
-          <Pills items={["Technical SEO", "Local SEO", "Link Building"]} />
-
-          <div className={styles.serpMock} aria-hidden="true">
-            <div className={styles.mockDots}>
-              <span className={styles.mockDot} />
-              <span className={styles.mockDot} />
-              <span className={styles.mockDot} />
-            </div>
-            <div className={styles.serpBar}>
-              <span className={styles.serpBarIcon}>🔍</span>
-              <span className={styles.serpBarText}>
-                accounting firm calgary
-              </span>
-            </div>
-
-            <div className={styles.serpResult}>
-              <span className={styles.serpUrl}>
-                scaleseo.co <span className={styles.serpUrlPath}>› services › accounting-firms</span>
-              </span>
-              <span className={styles.serpTitle}>
-                Top Calgary Accounting Firms | Ranked #1 on Google
-              </span>
-              <span className={styles.serpSnippet}>
-                Trusted by growing accounting practices across Alberta —
-                technical SEO, local scaling, and conversion-focused pages
-                built for high-margin B2B search intent.
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <CardLink href="/services/seo" label="SEO Calgary" />
-      </div>
-
-      <div className={`${styles.cell} ${styles.ads} ${styles.cellSpaced}`}>
-        <div className={styles.cellTop}>
-          <div className={styles.cellHead}>
-            <h3 className={styles.cellTitle}>Google Ads (PPC) Management</h3>
-            <span className={`index ${styles.cellIndex}`}>02</span>
-          </div>
-          <p className={styles.cellDesc}>
-            Data-driven, profitable pay-per-click search campaigns built to
-            drive high-quality leads, optimize cost-per-acquisition, and
-            maximize conversion rates.
-          </p>
-
-          <Pills items={["Performance Max", "Remarketing", "Landing Pages"]} />
-
-          <div className={styles.dashMock} aria-hidden="true">
-            <div className={styles.mockDots}>
-              <span className={styles.mockDot} />
-              <span className={styles.mockDot} />
-              <span className={styles.mockDot} />
-            </div>
-            <div className={styles.dashStats}>
-              <div className={styles.dashStat}>
-                <span className={styles.dashStatLabel}>Conversions</span>
-                <span className={styles.dashStatValue}>+64%</span>
+        <div className={styles.cardGrid}>
+          {services.map((s) => (
+            <div key={s.href} className={styles.card}>
+              <div className={styles.cardHead}>
+                <h3 className={styles.cardTitle}>{s.title}</h3>
+                <span className={`index ${styles.cardIndex}`}>{s.num}</span>
               </div>
-              <div className={styles.dashStat}>
-                <span className={styles.dashStatLabel}>Cost / Lead</span>
-                <span className={styles.dashStatValue}>-38%</span>
-              </div>
+              <div className={styles.cardSubtitle}>{s.subtitle}</div>
+              <p className={styles.cardDesc}>{s.desc}</p>
+              <ExploreButton href={s.href} label={s.cta} />
             </div>
-            <svg
-              className={styles.dashChart}
-              viewBox="0 0 240 60"
-              fill="none"
-              preserveAspectRatio="none"
-            >
-              <polyline
-                points="0,50 30,45 60,48 90,32 120,36 150,20 180,24 210,10 240,14"
-                stroke="#9a9a9a"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </div>
+          ))}
         </div>
-
-        <CardLink href="/services/google-ads-management" label="Google Ads Management" />
-      </div>
-
-      <div className={`${styles.cell} ${styles.web} ${styles.cellSpaced}`}>
-        <div className={styles.cellTop}>
-          <div className={styles.cellHead}>
-            <h3 className={styles.cellTitle}>Web Design &amp; Development</h3>
-            <span className={`index ${styles.cellIndex}`}>03</span>
-          </div>
-          <p className={styles.cellDesc}>
-            Ultra-fast, fully responsive headless website builds engineered
-            natively with clean code architectures for lightning-fast speeds
-            and high SEO visibility.
-          </p>
-
-          <Pills items={["Landing Pages", "Headless Builds", "CRO"]} />
-
-          <div className={styles.browserMock} aria-hidden="true">
-            <div className={styles.mockDots}>
-              <span className={styles.mockDot} />
-              <span className={styles.mockDot} />
-              <span className={styles.mockDot} />
-            </div>
-            <div className={styles.browserScreen}>
-              <div className={styles.browserNav} />
-              <div className={styles.browserHero}>
-                <div className={styles.browserHeroLine} />
-                <div className={styles.browserHeroLineShort} />
-              </div>
-              <div className={styles.browserGrid}>
-                <span className={styles.browserBlock} />
-                <span className={styles.browserBlock} />
-                <span className={styles.browserBlock} />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <CardLink href="/services/web-development" label="Web Design" />
-      </div>
-
-      <div className={`${styles.cell} ${styles.ai} ${styles.cellSpaced}`}>
-        <div className={styles.cellTop}>
-          <div className={styles.cellHead}>
-            <h3 className={styles.cellTitle}>AI Search Optimization (GEO)</h3>
-            <span className={`index ${styles.cellIndex}`}>04</span>
-          </div>
-          <p className={styles.cellDesc}>
-            Generative Engine Optimization tailored to secure citations
-            within conversational AI engines like ChatGPT, Perplexity, and
-            Google AI Overviews.
-          </p>
-
-          <Pills items={["Lead Qualification", "Content Ops", "Reporting"]} />
-
-          <div className={styles.chatMock} aria-hidden="true">
-            <div className={styles.chatBubbleUser}>
-              Which pages should we prioritize for Q3 rankings?
-            </div>
-            <div className={styles.chatBubbleAi}>
-              <span className={styles.chatAiLabel}>Scale SEO Agent</span>
-              Based on current search volume and conversion data, prioritize
-              /accounting-firms and /google-ads-management — both show
-              rising intent with underserved organic coverage.
-            </div>
-          </div>
-        </div>
-
-        <CardLink href="/services/geo" label="AI Search / GEO" />
-      </div>
-
-      <motion.div className={`${styles.cell} ${styles.badge}`} whileHover={{ scale: 1.01 }} transition={spring}>
-        <Link href="/services" className={styles.badgeLink}>
-          <span className={styles.badgeStar} aria-hidden="true">✺</span>
-          <span className={styles.badgeHead}>
-            <span className={styles.badgeEyebrow}>Explore</span>
-            <h3 className={styles.badgeHeading}>Every service, one hub.</h3>
-          </span>
-          <p className={styles.badgeDesc}>
-            SEO, Google Ads, Web Development, and AI Search — see how they
-            fit together on the Services page.
-          </p>
-          <span className={styles.badgeCta}>
-            <span>View all services</span>
-            <span className={styles.badgeCtaArrow}>→</span>
-          </span>
-        </Link>
-      </motion.div>
       </div>
     </section>
   );
