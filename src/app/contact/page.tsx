@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Contact from "../sections/home/Contact";
-import ContactInfo from "./ContactInfo";
+import ContactSplit from "./ContactSplit";
+import MapEmbed from "./MapEmbed";
 
 export const metadata: Metadata = {
   title: "Contact — Scale SEO | Corbin Jensen",
@@ -12,8 +12,8 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <main>
-      <Contact />
-      <ContactInfo />
+      <ContactSplit />
+      <MapEmbed />
     </main>
   );
 }
