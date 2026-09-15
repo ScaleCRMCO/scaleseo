@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Breadcrumbs from "../components/Breadcrumbs";
 import RevealOnScroll from "../components/RevealOnScroll";
+import Contact from "../sections/home/Contact";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
@@ -35,10 +36,11 @@ const industries = [
 export default function IndustriesPage() {
   return (
     <main>
-      <header className={styles.hero}>
+      <header className={styles.hero} data-nav-theme="dark">
         <div className={styles.heroContent}>
-          <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Industries" }]} />
-          <p className={styles.eyebrow}>Industries</p>
+          <div className={styles.crumbsOnDark}>
+            <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Industries" }]} />
+          </div>
           <h1 className={styles.title}>
             SEO for Financial &amp;{" "}
             <span className={styles.accent}>Professional Services.</span>
@@ -53,66 +55,47 @@ export default function IndustriesPage() {
       </header>
 
       <section className={styles.list}>
-        <div className="section-label reveal-up">Who I Work With</div>
-        <div className={styles.grid}>
-          {industries.map((ind) => {
-            const content = (
-              <>
-                <div className={styles.itemTop}>
-                  <h2 className={styles.itemName}>{ind.name}</h2>
-                  {!ind.href && (
-                    <span className={styles.itemStatus}>{ind.status}</span>
-                  )}
-                </div>
-                <p className={styles.itemDesc}>{ind.desc}</p>
-                {ind.href && (
-                  <span className={styles.itemLink}>
-                    Learn more <span className={styles.arrow}>→</span>
-                  </span>
-                )}
-              </>
-            );
-            return ind.href ? (
-              <Link
-                key={ind.name}
-                href={ind.href}
-                className={`${styles.item} ${styles.itemLinked} reveal-up`}
-              >
-                {content}
-              </Link>
-            ) : (
-              <div key={ind.name} className={`${styles.item} reveal-up`}>
-                {content}
-              </div>
-            );
-          })}
+        <div className={styles.listInner}>
+          <div className="section-label reveal-up">Who I Work With</div>
+          <div className={styles.gridShell}>
+            <div className={styles.grid}>
+              {industries.map((ind) => {
+                const content = (
+                  <>
+                    <div className={styles.itemTop}>
+                      <h2 className={styles.itemName}>{ind.name}</h2>
+                      {!ind.href && (
+                        <span className={styles.itemStatus}>{ind.status}</span>
+                      )}
+                    </div>
+                    <p className={styles.itemDesc}>{ind.desc}</p>
+                    {ind.href && (
+                      <span className={styles.itemLink}>
+                        Learn more <span className={styles.arrow}>→</span>
+                      </span>
+                    )}
+                  </>
+                );
+                return ind.href ? (
+                  <Link
+                    key={ind.name}
+                    href={ind.href}
+                    className={`${styles.item} ${styles.itemLinked} reveal-up`}
+                  >
+                    {content}
+                  </Link>
+                ) : (
+                  <div key={ind.name} className={`${styles.item} reveal-up`}>
+                    {content}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
         </div>
       </section>
 
-      <section className={styles.cta}>
-        <div className={styles.ctaEyebrow}>
-          <span className={styles.dot} />
-          Now booking · 1 spot Q3 2026
-        </div>
-        <h2 className={styles.ctaHeadline}>
-          Not seeing your industry? <span className={styles.accent}>Ask anyway.</span>
-        </h2>
-        <p className={styles.ctaSub}>
-          These are the industries I focus on, not the only ones I&rsquo;ll
-          consider. If the fit is right, let&rsquo;s talk.
-        </p>
-        <div className={styles.ctaGroup}>
-          <a
-            href="https://cal.com/corbinjensen-scaleseo/30min"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.ctaButton}
-          >
-            <span>Book a call</span>
-            <span className={styles.arrow}>→</span>
-          </a>
-        </div>
-      </section>
+      <Contact />
       <RevealOnScroll />
     </main>
   );
