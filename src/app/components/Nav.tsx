@@ -94,6 +94,7 @@ export default function Nav() {
   }, [open]);
   const close = () => setOpen(false);
   return (
+    <>
     <nav
       className={`${styles.nav} ${scrolled ? styles.scrolled : ""} ${
         open ? styles.menuOpen : ""
@@ -166,14 +167,33 @@ export default function Nav() {
         <span className={styles.burgerLine} />
         <span className={styles.burgerLine} />
       </button>
-      {/* Full-screen mobile menu */}
-      <div className={`${styles.mobileMenu} ${open ? styles.mobileMenuOpen : ""}`}>
-        <Link href="/results" onClick={close}>Case Studies</Link>
-        <Link href="/services" onClick={close}>Services</Link>
-        <Link href="/industries" onClick={close}>Industries</Link>
-        <Link href="/about" onClick={close}>About</Link>
-        <Link href="/contact" onClick={close}>Contact</Link>
-      </div>
     </nav>
+    {/* Full-screen mobile menu — rendered as a sibling of <nav>, not a
+        descendant of it: <nav> has backdrop-filter, which establishes a
+        containing block for position:fixed children, so a fixed overlay
+        nested inside it gets sized/clipped to the nav pill instead of the
+        viewport (the bug that made the menu unreadable/overlapping page
+        content on mobile). Kept in the same component/close() state. */}
+    <div className={`${styles.mobileMenu} ${open ? styles.mobileMenuOpen : ""}`}>
+      <Link href="/results" onClick={close}>Case Studies</Link>
+      <Link href="/services" onClick={close}>Services</Link>
+      <Link href="/industries" onClick={close}>Industries</Link>
+      <Link href="/about" onClick={close}>About</Link>
+      <Link href="/contact" onClick={close}>Contact</Link>
+      <motion.a
+        href="https://cal.com/corbinjensen-scaleseo/30min"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={styles.mobileMenuCta}
+        onClick={close}
+        whileHover={{ scale: 1.04 }}
+        whileTap={{ scale: 0.96 }}
+        transition={spring}
+      >
+        <span>Book a call</span>
+        <span>&rarr;</span>
+      </motion.a>
+    </div>
+    </>
   );
 }
