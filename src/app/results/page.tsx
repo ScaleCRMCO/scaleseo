@@ -3,7 +3,6 @@ import Image from "next/image";
 import Breadcrumbs from "../components/Breadcrumbs";
 import RevealOnScroll from "../components/RevealOnScroll";
 import { caseStudies } from "../data/caseStudies";
-import caseStyles from "../sections/home/CaseStudy.module.css";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
@@ -16,10 +15,11 @@ export const metadata: Metadata = {
 export default function ResultsPage() {
   return (
     <main>
-      <header className={styles.hero}>
+      <header className={styles.hero} data-nav-theme="dark">
         <div className={styles.heroContent}>
-          <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Results" }]} />
-          <p className={styles.eyebrow}>Results</p>
+          <div className={styles.crumbsOnDark}>
+            <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Results" }]} />
+          </div>
           <h1 className={styles.title}>
             Client <span className={styles.accent}>Results.</span>
           </h1>
@@ -33,42 +33,42 @@ export default function ResultsPage() {
         </div>
       </header>
 
-      <section className={styles.list} data-nav-theme="dark">
-        <div className={caseStyles.grid}>
+      <section className={styles.list}>
+        <div className={styles.grid}>
           {caseStudies.map((c, i) => (
             <a
               key={c.index}
               href={c.url}
               target="_blank"
               rel="nofollow noopener noreferrer"
-              className={`${caseStyles.tile} reveal-left`}
-              style={{ transitionDelay: `${i * 0.14}s` }}
+              className={`${styles.card} reveal-up`}
+              style={{ transitionDelay: `${i * 0.1}s` }}
             >
-              <div className={caseStyles.imageWrap}>
+              <div className={styles.imageWrap}>
                 <Image
                   src={c.image}
                   alt={`${c.client} website`}
                   fill
-                  className={caseStyles.image}
+                  className={styles.image}
                   priority={i === 0}
                   unoptimized
                 />
               </div>
-              <div className={caseStyles.tileFooter}>
-                <div>
-                  <h3 className={caseStyles.client}>{c.client}</h3>
-                  <p className={caseStyles.subhead}>{c.subhead}</p>
-                  <p className={caseStyles.location}>
-                    {c.location} &middot; {c.industry}
-                  </p>
+              <div className={styles.cardBody}>
+                <div className={styles.cardTop}>
+                  <h2 className={styles.client}>{c.client}</h2>
+                  <div className={styles.metric}>
+                    <div className={styles.metricValue}>{c.metric}</div>
+                    <div className={styles.metricLabel}>{c.metricLabel}</div>
+                  </div>
                 </div>
-                <div className={caseStyles.metric}>
-                  <div className={caseStyles.metricValue}>{c.metric}</div>
-                  <div className={caseStyles.metricLabel}>{c.metricLabel}</div>
-                </div>
+                <p className={styles.subhead}>{c.subhead}</p>
+                <p className={styles.location}>
+                  {c.location} &middot; {c.industry}
+                </p>
+                <p className={styles.description}>{c.description}</p>
+                <span className={styles.visit}>{c.urlLabel} →</span>
               </div>
-              <p className={caseStyles.description}>{c.description}</p>
-              <span className={caseStyles.visit}>{c.urlLabel} →</span>
             </a>
           ))}
         </div>

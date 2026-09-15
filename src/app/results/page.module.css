@@ -1,35 +1,32 @@
 /* === HERO === */
 .hero {
   padding: 180px 40px 100px;
-  border-bottom: 1px solid var(--line);
+  background: var(--bg-dark);
+  color: var(--ink-on-dark);
+}
+
+.crumbsOnDark {
+  --ink-dim: var(--ink-dim-on-dark);
+  --accent: var(--highlight);
 }
 
 .heroContent {
   max-width: 900px;
 }
 
-.eyebrow {
-  font-family: var(--mono);
-  font-size: 12px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 28px;
-}
-
 .title {
   font-family: var(--display);
-  font-weight: 500;
+  font-weight: 800;
   font-size: clamp(38px, 5.5vw, 76px);
   line-height: 1.05;
   letter-spacing: -0.03em;
-  color: var(--ink);
+  color: var(--ink-on-dark);
   margin-bottom: 32px;
 }
 
 .accent {
-  color: var(--accent);
-  font-weight: 600;
+  color: var(--highlight);
+  font-weight: 800;
 }
 
 .sub {
@@ -37,16 +34,151 @@
   font-weight: 400;
   font-size: clamp(16px, 1.3vw, 19px);
   line-height: 1.65;
-  color: var(--ink-dim);
+  color: var(--ink-dim-on-dark);
   max-width: 720px;
 }
 
 /* === LIST === */
 .list {
-  padding: 60px 40px 120px;
-  border-bottom: 1px solid var(--line);
-  background: var(--bg-dark);
-  color: var(--ink-on-dark);
+  position: relative;
+  padding: 100px 40px 140px;
+  margin-top: -48px;
+  border-radius: 48px 48px 0 0;
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.grid {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.card {
+  background: var(--bg-elev);
+  border-radius: 28px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 24px 48px -24px rgba(10, 10, 10, 0.16);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 32px 56px -20px rgba(10, 10, 10, 0.22);
+}
+
+.imageWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.image {
+  object-fit: cover;
+  object-position: top;
+  filter: grayscale(15%) brightness(0.96);
+  transition: filter 0.6s ease, transform 0.8s ease;
+}
+
+.card:hover .image {
+  filter: grayscale(0%) brightness(1);
+  transform: scale(1.03);
+}
+
+.cardBody {
+  padding: 28px 28px 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.cardTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.client {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(19px, 2vw, 23px);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.metric {
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.metricValue {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(18px, 2vw, 22px);
+  line-height: 1;
+  color: var(--accent);
+}
+
+.metricLabel {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-top: 6px;
+}
+
+.subhead {
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--accent);
+}
+
+.location {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-top: 8px;
+}
+
+.description {
+  font-family: var(--sans);
+  font-weight: 400;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--ink-dim);
+  margin-top: 16px;
+  flex-grow: 1;
+}
+
+.visit {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-top: 20px;
+  transition: color 0.3s ease;
+}
+
+.card:hover .visit {
+  color: var(--accent);
 }
 
 /* === CTA === */
@@ -77,7 +209,7 @@
 
 .ctaHeadline {
   font-family: var(--display);
-  font-weight: 500;
+  font-weight: 800;
   font-size: clamp(34px, 5vw, 64px);
   line-height: 1.05;
   letter-spacing: -0.03em;
@@ -153,8 +285,13 @@
   transform: translateX(4px);
 }
 
+@media (max-width: 1100px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+
 @media (max-width: 900px) {
   .hero { padding: 120px 24px 70px; }
-  .list { padding: 50px 24px 90px; }
+  .list { padding: 70px 24px 90px; }
+  .grid { grid-template-columns: 1fr; gap: 20px; }
   .cta { padding: 90px 24px; }
 }
