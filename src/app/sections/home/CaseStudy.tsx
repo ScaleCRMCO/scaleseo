@@ -13,7 +13,7 @@ export default function CaseStudy() {
     <section className={styles.case} id="work">
       <div className={styles.inner}>
         <div className={styles.top}>
-          <span className={`index ${styles.eyebrow}`}>( 01 // RECENT WORK )</span>
+          <span className={`index ${styles.eyebrow}`}>( 02 // RECENT WORK )</span>
           <h2 className={styles.heading}>Real clients. Real numbers.</h2>
         </div>
 
