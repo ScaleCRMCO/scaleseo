@@ -5,7 +5,7 @@
   overflow: hidden;
   background: #fcfbfa;
   color: #0a0a0a;
-  padding: 140px 40px;
+  padding: 96px 40px 140px;
 }
 
 .inner {
@@ -19,11 +19,7 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
-  margin-bottom: 56px;
-}
-
-.eyebrow {
-  color: #6b6b6b;
+  margin-bottom: 48px;
 }
 
 .heading {
@@ -151,7 +147,7 @@
 
 @media (max-width: 900px) {
   .case {
-    padding: 90px 24px;
+    padding: 64px 24px 90px;
   }
   .card {
     grid-template-columns: 1fr;

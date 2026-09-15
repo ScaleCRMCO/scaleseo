@@ -31,8 +31,6 @@ export default function Process() {
   return (
     <section className={styles.section} id="process">
       <div className={styles.inner}>
-        <div className="section-label reveal-up">How It Works</div>
-
         <h2 className={`${styles.heading} reveal-up`}>
           Four steps. <em>No surprises.</em>
         </h2>

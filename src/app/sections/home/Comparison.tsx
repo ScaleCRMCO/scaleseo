@@ -58,7 +58,6 @@ export default function Comparison() {
   return (
     <section className={styles.section} id="comparison">
       <div className={styles.inner}>
-        <div className={`index ${styles.eyebrow}`}>( 01 // WHY SCALE SEO )</div>
         <h2 className={styles.heading}>
           Scale SEO vs.
           <br />

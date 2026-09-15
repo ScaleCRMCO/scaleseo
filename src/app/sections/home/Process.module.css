@@ -3,7 +3,7 @@
   margin-top: -48px;
   border-radius: 48px 48px 0 0;
   overflow: hidden;
-  padding: 140px 40px;
+  padding: 96px 40px 140px;
   background: var(--bg);
   color: var(--ink);
 }
@@ -19,7 +19,7 @@
   font-size: clamp(36px, 5vw, 64px);
   line-height: 1;
   letter-spacing: -0.025em;
-  margin-bottom: 80px;
+  margin-bottom: 64px;
 }
 
 .heading em {
@@ -82,6 +82,6 @@
 }
 
 @media (max-width: 900px) {
-  .section { padding: 90px 24px; }
+  .section { padding: 64px 24px 90px; }
   .grid { grid-template-columns: 1fr; }
 }

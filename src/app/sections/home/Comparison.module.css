@@ -1,6 +1,6 @@
 .section {
   position: relative;
-  padding: 140px 40px;
+  padding: 96px 40px 140px;
   margin-top: -48px;
   border-radius: 48px 48px 0 0;
   overflow: hidden;
@@ -12,10 +12,6 @@
   max-width: 1200px;
   margin: 0 auto;
   text-align: center;
-}
-
-.eyebrow {
-  margin-bottom: 20px;
 }
 
 .heading {
@@ -166,7 +162,7 @@
 
 @media (max-width: 900px) {
   .section {
-    padding: 90px 20px;
+    padding: 64px 20px 90px;
   }
   .tableHead,
   .row {
