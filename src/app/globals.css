@@ -106,6 +106,14 @@ body::before {
   color: var(--on-accent);
 }
 
+/* On dark-themed sections the default selection colors (black bg / cream
+   text) are the same as the surrounding dark background and light text —
+   selecting text there looked like nothing was happening. Invert it. */
+.section-dark ::selection {
+  background: var(--highlight);
+  color: var(--on-highlight);
+}
+
 /* ==========================================================================
    Section frame
    ========================================================================== */
