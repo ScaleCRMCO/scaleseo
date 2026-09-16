@@ -5,15 +5,6 @@ export default function Footer() {
   return (
     <footer className={styles.footer} data-nav-theme="dark">
       <div className={styles.grid}>
-        {/* Left: brand mark */}
-        <div className={styles.brandCol}>
-          <img
-            src="/images/logo-mark.svg"
-            alt="Scale SEO"
-            className={styles.brandMark}
-          />
-        </div>
-
         {/* Quick Links */}
         <div className={styles.col}>
           <div className={styles.colLabel}>Quick Links</div>
