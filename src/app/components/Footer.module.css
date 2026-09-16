@@ -55,42 +55,64 @@
 }
 .colLink:hover { color: var(--highlight); }
 
-/* === Giant full-width wordmark === */
-.wordmarkLarge {
-  font-family: var(--brand);
-  font-weight: 400;
-  font-size: clamp(64px, 15vw, 220px);
-  line-height: 0.82;
-  letter-spacing: -0.02em;
-  color: var(--ink-faint);
-  white-space: nowrap;
+/* === Lime watermark bubble — logo + wordmark, filling most of the
+   footer's bottom, with the fine-print bar nested inside it === */
+.wordmarkBubble {
+  position: relative;
+  margin-top: 8px;
+  min-height: 320px;
+  padding: 48px 48px 28px;
+  border-radius: 40px;
+  background: var(--highlight);
+  color: var(--on-highlight);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   overflow: hidden;
-  text-align: center;
-  margin: 0 -40px;
-  padding: 40px 40px 16px;
-  user-select: none;
-  pointer-events: none;
-}
-.wordmarkText { display: inline-block; }
-.wordmarkLarge em {
-  font-style: normal;
-  font-weight: 400;
-  color: var(--ink-faint);
 }
 
-/* === Bottom bar === */
+.wordmarkMark {
+  display: flex;
+  align-items: center;
+  gap: clamp(12px, 2.5vw, 28px);
+  flex-grow: 1;
+  min-height: 0;
+}
+
+.wordmarkLogo {
+  height: clamp(56px, 13vw, 190px);
+  width: auto;
+  flex-shrink: 0;
+  color: var(--on-highlight);
+}
+
+.wordmarkBrand {
+  font-family: var(--brand);
+  font-weight: 400;
+  font-size: clamp(52px, 13vw, 190px);
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  color: var(--on-highlight);
+  white-space: nowrap;
+  user-select: none;
+}
+
+/* === Bottom bar — nested inside the lime bubble, so it needs its own
+   dark-on-lime contrast rather than the site's usual light-on-dark === */
 .bottom {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  gap: 20px 40px;
-  padding-top: 24px;
+  gap: 16px 32px;
+  margin-top: 32px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(10, 10, 10, 0.15);
   font-family: var(--sans);
   font-size: 12px;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  color: var(--ink-dim-on-dark);
+  color: rgba(10, 10, 10, 0.72);
 }
 .copy { text-align: left; }
 .tagline { text-align: right; margin-left: auto; }
@@ -104,11 +126,12 @@
     padding-bottom: 40px;
   }
   .brandCol { grid-column: 1 / -1; }
-  .wordmarkLarge {
-    margin: 0 -24px;
-    padding: 28px 24px 12px;
-    font-size: clamp(64px, 21vw, 150px);
+  .wordmarkBubble {
+    min-height: 220px;
+    padding: 32px 24px 24px;
+    border-radius: 28px;
   }
-  .bottom { grid-template-columns: 1fr; gap: 12px; }
-  .tagline { text-align: left; }
+  .wordmarkMark { gap: 14px; }
+  .bottom { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .tagline { text-align: left; margin-left: 0; }
 }

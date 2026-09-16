@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Logo from "./Logo";
 import styles from "./Footer.module.css";
 export default function Footer() {
   return (
@@ -62,19 +63,20 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Giant wordmark */}
-      <div className={styles.wordmarkLarge} aria-hidden="true">
-        <span className={styles.wordmarkText}>
-          Scale<em>SEO</em>
-        </span>
-      </div>
+      {/* Lime watermark bubble — logo + wordmark, with the bottom bar
+          nested inside so it reads clearly against the lime fill */}
+      <div className={styles.wordmarkBubble}>
+        <div className={styles.wordmarkMark} aria-hidden="true">
+          <Logo className={styles.wordmarkLogo} />
+          <span className={styles.wordmarkBrand}>ScaleSEO</span>
+        </div>
 
-      {/* Bottom bar */}
-      <div className={styles.bottom}>
-        <div className={styles.copy}>© 2026 Scale SEO · Corbin Jensen</div>
-        <div className={styles.tagline}>SEO for Calgary · Serving Canada</div>
-        {/* Google "Add to Preferred Sources" button */}
-        <div google-add-preferred-source-btn="" data-theme="dark" className={styles.preferredSource} />
+        <div className={styles.bottom}>
+          <div className={styles.copy}>© 2026 Scale SEO · Corbin Jensen</div>
+          <div className={styles.tagline}>SEO for Calgary · Serving Canada</div>
+          {/* Google "Add to Preferred Sources" button */}
+          <div google-add-preferred-source-btn="" data-theme="dark" className={styles.preferredSource} />
+        </div>
       </div>
     </footer>
   );
