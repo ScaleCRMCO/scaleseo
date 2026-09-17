@@ -221,6 +221,10 @@ a.methodValue:hover {
   background: var(--bg-dark);
   color: var(--ink-on-dark);
   padding: 64px 56px;
+  /* Only this column is dark, not the whole section, so it needs its own
+     selection-color override (see [data-nav-theme="dark"] in globals.css). */
+  --selection-bg: var(--highlight);
+  --selection-color: var(--on-highlight);
 }
 
 .eyebrowDark {

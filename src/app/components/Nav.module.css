@@ -238,6 +238,8 @@
   position: fixed;
   inset: 0;
   background: var(--bg-dark);
+  --selection-bg: var(--highlight);
+  --selection-color: var(--on-highlight);
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -61,6 +61,22 @@
   /* Brand typeface — the Scale SEO wordmark and other brand-level lockups
      (nav, footer). Not used for body copy or headings elsewhere. */
   --brand: 'Archivo Black', var(--display), sans-serif;
+  /* Text-selection colors, inherited so any dark-background container can
+     invert them locally (see [data-nav-theme="dark"] below) instead of
+     every dark section needing its own ::selection rule. */
+  --selection-bg: var(--accent);
+  --selection-color: var(--on-accent);
+}
+
+/* Any section marked as dark-themed (same attribute the nav reads to
+   invert itself) gets inverted selection colors too — without this,
+   selecting text on a dark section painted ink-black background under
+   cream text, i.e. the same colors already there, so selecting looked
+   like nothing was happening. Covers every current and future dark
+   section in one place instead of a per-page fix. */
+[data-nav-theme="dark"] {
+  --selection-bg: var(--highlight);
+  --selection-color: var(--on-highlight);
 }
 
 * {
@@ -102,16 +118,8 @@ body::before {
 }
 
 ::selection {
-  background: var(--accent);
-  color: var(--on-accent);
-}
-
-/* On dark-themed sections the default selection colors (black bg / cream
-   text) are the same as the surrounding dark background and light text —
-   selecting text there looked like nothing was happening. Invert it. */
-.section-dark ::selection {
-  background: var(--highlight);
-  color: var(--on-highlight);
+  background: var(--selection-bg);
+  color: var(--selection-color);
 }
 
 /* ==========================================================================
