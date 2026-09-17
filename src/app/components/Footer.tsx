@@ -49,8 +49,6 @@ export default function Footer() {
           <a href="https://www.instagram.com/scaleseo.co/" target="_blank" rel="noopener noreferrer" className={styles.colLink}>Instagram</a>
           <a href="https://maps.app.goo.gl/FYWSaQ3p81VFnNcc7" target="_blank" rel="noopener noreferrer" className={styles.colLink}>Google Business</a>
           <a href="https://clutch.co/profile/scale-seo" target="_blank" rel="noopener noreferrer" className={styles.colLink}>Clutch</a>
-          <a href="mailto:team@scaleseo.co" className={styles.colLink}>Email</a>
-          <Link href="/llm-info" className={styles.colLink}>LLM Info</Link>
         </div>
       </div>
 
@@ -64,7 +62,10 @@ export default function Footer() {
 
         <div className={styles.bottom}>
           <div className={styles.copy}>© 2026 Scale SEO · Corbin Jensen</div>
-          <div className={styles.tagline}>SEO for Calgary · Serving Canada</div>
+          <div className={styles.taglineGroup}>
+            <Link href="/llm-info" className={styles.llmLink}>LLM Info</Link>
+            <span className={styles.tagline}>SEO for Calgary · Serving Canada</span>
+          </div>
           {/* Google "Add to Preferred Sources" button */}
           <div google-add-preferred-source-btn="" data-theme="dark" className={styles.preferredSource} />
         </div>

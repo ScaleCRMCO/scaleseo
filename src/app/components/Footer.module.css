@@ -38,7 +38,7 @@
 }
 .colLink {
   font-family: var(--display);
-  font-weight: 400;
+  font-weight: 600;
   font-size: 18px;
   line-height: 1.4;
   color: var(--ink-on-dark);
@@ -107,8 +107,21 @@
   text-transform: uppercase;
   color: rgba(10, 10, 10, 0.72);
 }
-.copy { text-align: left; }
-.tagline { text-align: right; margin-left: auto; }
+.copy { text-align: left; font-weight: 600; }
+.taglineGroup {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-left: auto;
+}
+.llmLink {
+  color: rgba(10, 10, 10, 0.72);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+.llmLink:hover { color: var(--on-highlight); }
+.tagline { text-align: right; font-weight: 600; }
 .preferredSource { flex-shrink: 0; }
 
 @media (max-width: 900px) {
