@@ -47,15 +47,16 @@
   max-width: 700px;
 }
 
-/* === SERVICE LIST === */
+/* === SERVICE LIST — same dark card-grid system as the homepage
+   Services section (ServicesGrid.tsx/.module.css) === */
 .list {
   position: relative;
   padding: 100px 40px 120px;
   margin-top: -48px;
   border-radius: 48px 48px 0 0;
   overflow: hidden;
-  background: var(--bg);
-  color: var(--ink);
+  background: var(--bg-dark);
+  color: var(--ink-on-dark);
 }
 
 .listInner {
@@ -63,298 +64,111 @@
   margin: 0 auto;
 }
 
-/* Master light-grey shell that contains the whole card grid, giving the
-   'white card inside a light-grey container box' depth from the
-   Rise reference. */
-.gridShell {
-  margin-top: 44px;
-  padding: 3rem;
-  background: #F4F3EF;
-  border-radius: 32px;
+.intro {
+  max-width: 780px;
+  margin-bottom: 48px;
+}
+
+.introTitle {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(30px, 3.6vw, 46px);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--ink-on-dark);
+  margin-bottom: 16px;
+}
+
+.introSub {
+  color: var(--ink-dim-on-dark);
+  font-weight: 500;
+}
+
+.introBody {
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--ink-dim-on-dark);
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
-}
-
-.item {
-  background: #ffffff;
-  border-radius: 20px;
-  padding: 44px 36px;
-  display: flex;
-  flex-direction: column;
-  min-height: 260px;
-  text-decoration: none;
-  color: inherit;
-  box-shadow: 0 24px 48px -28px rgba(10, 10, 10, 0.12);
-}
-
-.itemLinked {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-}
-
-.itemLinked:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 32px 56px -24px rgba(10, 10, 10, 0.18);
-}
-
-.itemLink {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 24px;
-  font-family: var(--mono);
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--ink);
-}
-
-.itemArrow {
-  transition: transform 0.3s ease;
-}
-
-.itemLinked:hover .itemArrow {
-  transform: translateX(4px);
-}
-
-.itemNum {
-  font-family: var(--mono);
-  font-size: 13px;
-  letter-spacing: 0.1em;
-  color: var(--ink-faint);
-  margin-bottom: 28px;
-}
-
-.itemName {
-  font-family: var(--display);
-  font-weight: 600;
-  font-size: clamp(21px, 2vw, 25px);
-  letter-spacing: -0.01em;
-  color: var(--ink);
-  margin-bottom: 16px;
-}
-
-.itemDesc {
-  font-family: var(--sans);
-  font-weight: 400;
-  font-size: 15.5px;
-  line-height: 1.6;
-  color: var(--ink-dim);
-  flex-grow: 1;
-}
-
-/* Anchors a card's link to the bottom of the card, for taller cards
-   (04/05) that have a mockup pushing content height up */
-.itemSpaced {
-  justify-content: space-between;
-}
-
-.itemTop {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-/* Lime highlight card — matches the homepage grid's '200+ campaigns' cell */
-.itemHighlight {
-  background: var(--highlight);
-  color: #0a0a0a;
-  justify-content: center;
-}
-
-.itemHighlight .itemNum {
-  color: rgba(10, 10, 10, 0.5);
-}
-
-.itemHighlight .itemName,
-.itemHighlight .itemDesc {
-  color: #0a0a0a;
-}
-
-/* Shared window-control dots used across all mockups */
-.mockDots {
-  display: flex;
-  gap: 6px;
-  padding: 0 0 10px;
-}
-
-.mockDot {
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-}
-
-.mockDot:nth-child(1) { background: #ff5f57; }
-.mockDot:nth-child(2) { background: #febc2e; }
-.mockDot:nth-child(3) { background: #28c840; }
-
-/* Stylized Google SERP mockup — pure HTML/CSS, no image (SEO card) */
-.serpMock {
-  background: #ffffff;
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  padding: 16px;
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.serpBar {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background: #f1f3f4;
-  border-radius: 999px;
-  padding: 8px 14px;
-}
-
-.serpBarIcon {
-  font-size: 12px;
-  opacity: 0.6;
-}
-
-.serpBarText {
-  font-family: var(--sans);
-  font-size: 13px;
-  color: #3c4043;
-}
-
-.serpResult {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-}
-
-.serpUrl {
-  font-family: var(--sans);
-  font-size: 13px;
-  color: #202124;
-}
-
-.serpUrlPath {
-  color: #4d5156;
-}
-
-.serpTitle {
-  font-family: var(--sans);
-  font-size: 16px;
-  color: #1a0dab;
-  line-height: 1.3;
-}
-
-.serpSnippet {
-  font-family: var(--sans);
-  font-size: 13px;
-  color: #4d5156;
-  line-height: 1.5;
-}
-
-/* Mock ad-performance dashboard panel (Google Ads card) */
-.dashMock {
-  background: #ffffff;
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  padding: 16px;
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.dashStats {
-  display: flex;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 24px;
 }
 
-.dashStat {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.dashStatLabel {
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: #9a9a9a;
-}
-
-.dashStatValue {
-  font-family: var(--display);
-  font-weight: 700;
-  font-size: 20px;
-  color: #1a1a1a;
-}
-
-.dashChart {
-  width: 100%;
-  height: 48px;
-}
-
-/* Mock dark chat interface (AI Search Optimization card) */
-.chatMock {
-  background: #1a1a1a;
-  border-radius: 16px;
-  padding: 18px;
-  margin-top: 20px;
+.card {
+  background: #181818;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 28px;
+  padding: 2.5rem;
   display: flex;
   flex-direction: column;
   gap: 12px;
-  font-family: var(--sans);
+  color: #fcfbfa;
+  box-shadow: 0 40px 80px -40px rgba(0, 0, 0, 0.6),
+              0 12px 24px -12px rgba(0, 0, 0, 0.4);
 }
 
-.chatBubbleUser {
-  align-self: flex-end;
-  max-width: 85%;
-  background: #2e2e2e;
-  color: #f5f4f1;
-  font-size: 13px;
-  line-height: 1.5;
-  padding: 10px 14px;
-  border-radius: 12px 12px 2px 12px;
-}
-
-.chatBubbleAi {
-  max-width: 90%;
-  color: #d4d4d4;
-  font-size: 13px;
-  line-height: 1.55;
-  padding: 2px 0;
+.cardHead {
   display: flex;
-  flex-direction: column;
-  gap: 4px;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
 }
 
-.chatAiLabel {
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #99ff00;
+.cardTitle {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: -0.01em;
+}
+
+.cardIndex {
+  color: #fcfbfa;
+  opacity: 0.35;
+}
+
+.cardDesc {
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: #b8b8b8;
+  flex-grow: 1;
+}
+
+/* Rounded pill CTA button, matching the homepage cards */
+.exploreBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  padding: 12px 22px;
+  margin-top: 8px;
+  background: var(--highlight);
+  color: var(--on-highlight);
+  border-radius: 999px;
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 13.5px;
+  text-decoration: none;
+  text-align: center;
 }
 
 .industriesNote {
   margin-top: 40px;
   font-family: var(--sans);
   font-size: 15px;
-  color: var(--ink-dim);
+  color: var(--ink-dim-on-dark);
 }
 
 .industriesLink {
-  color: var(--ink);
+  color: var(--ink-on-dark);
   text-decoration: none;
   font-weight: 600;
 }
 
 .industriesLink:hover {
-  text-decoration: underline;
+  color: var(--highlight);
 }
 
 /* === CTA === */
@@ -487,8 +301,7 @@
 @media (max-width: 900px) {
   .hero { padding: 120px 24px 70px; }
   .list { padding: 70px 24px 90px; }
-  .gridShell { padding: 1.5rem; border-radius: 24px; }
   .grid { grid-template-columns: 1fr; gap: 1.25rem; }
-  .item { padding: 32px 28px; min-height: auto; }
+  .card { padding: 2rem 1.5rem; }
   .cta { padding: 90px 24px; }
 }
