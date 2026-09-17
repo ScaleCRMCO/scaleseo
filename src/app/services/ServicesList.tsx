@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { motion } from "motion/react";
 import styles from "./page.module.css";
 
@@ -23,52 +24,70 @@ const services = [
     href: "/services/seo",
     num: "01",
     title: "SEO",
-    desc: "Technical, on-page, and local search strategies focused on rankings and revenue.",
-    cta: "Explore SEO Services",
-  },
-  {
-    href: "/services/web-development",
-    num: "02",
-    title: "Web Development & Design",
-    desc: "Fast, clean, SEO-first websites optimized for Core Web Vitals and conversions.",
-    cta: "Explore Web Development & Design",
-  },
-  {
-    href: "/services/geo",
-    num: "03",
-    title: "AI Search Optimization (GEO)",
-    desc: "Machine-readable structuring to ensure visibility on ChatGPT, Perplexity, and AI Overviews.",
-    cta: "Explore AI SEO Services",
+    subtitle: "Technical Audits & On-Page Fixes",
+    desc: "Full-site crawls, schema markup, and internal linking built to resolve indexing issues and strengthen topical authority.",
+    cta: "Explore SEO",
   },
   {
     href: "/services/google-ads-management",
-    num: "04",
+    num: "02",
     title: "Google Ads (PPC) Management",
-    desc: "Profitable ad campaigns with waste elimination and high-converting landing pages.",
-    cta: "Explore Google Ads Management",
+    subtitle: "Waste Elimination & Landing Pages",
+    desc: "Search and Performance Max campaigns audited weekly, with negative-keyword pruning and dedicated pages built to convert clicks.",
+    cta: "Explore Google Ads",
   },
   {
-    href: "/contact",
-    num: "05",
-    title: "Reporting & Strategy",
-    desc: "Plain-English, 1-on-1 monthly reviews linked directly to pipeline revenue with a capped client roster.",
-    cta: "Explore Strategy & Reporting",
+    href: "/services/web-development",
+    num: "03",
+    title: "Web Development & Design",
+    subtitle: "Core Web Vitals & Clean Code",
+    desc: "Lightweight builds engineered for sub-second load times and mobile-first UX, on a codebase that won't fight your SEO later.",
+    cta: "Explore Web Development",
+  },
+  {
+    href: "/services/geo",
+    num: "04",
+    title: "AI Search Optimization (GEO)",
+    subtitle: "Machine-Readable Content Structuring",
+    desc: "Formatting, schema, and entity clarity that make your site easy for ChatGPT, Perplexity, and AI Overviews to cite accurately.",
+    cta: "Explore AI Search",
   },
 ];
 
 export default function ServicesList() {
   return (
     <div className={styles.grid}>
-      {services.map((s) => (
-        <div key={s.href} className={`${styles.card} reveal-up`}>
-          <div className={styles.cardHead}>
-            <h3 className={styles.cardTitle}>{s.title}</h3>
-            <span className={`index ${styles.cardIndex}`}>{s.num}</span>
+      <motion.div className={styles.highlight} whileHover={{ scale: 1.01 }} transition={spring}>
+        <Link href="/results" className={styles.highlightLink}>
+          <span className={styles.highlightStar} aria-hidden="true">✺</span>
+          <span className={styles.highlightEyebrow}>The Matrix</span>
+          <h3 className={styles.highlightHeading}>
+            Every discipline, one execution model.
+          </h3>
+          <p className={styles.highlightDesc}>
+            Four services, one specialist — no scope creep, no hand-offs
+            between teams, no outsourced pieces bolted on.
+          </p>
+          <span className={styles.highlightCta}>
+            <span>See the results</span>
+            <span className={styles.highlightCtaArrow}>→</span>
+          </span>
+        </Link>
+      </motion.div>
+
+      <div className={styles.cardGrid}>
+        {services.map((s) => (
+          <div key={s.href} className={`${styles.card} reveal-up`}>
+            <div className={styles.cardHead}>
+              <h3 className={styles.cardTitle}>{s.title}</h3>
+              <span className={`index ${styles.cardIndex}`}>{s.num}</span>
+            </div>
+            <div className={styles.cardSubtitle}>{s.subtitle}</div>
+            <p className={styles.cardDesc}>{s.desc}</p>
+            <ExploreButton href={s.href} label={s.cta} />
           </div>
-          <p className={styles.cardDesc}>{s.desc}</p>
-          <ExploreButton href={s.href} label={s.cta} />
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 }

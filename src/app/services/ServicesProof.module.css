@@ -1,0 +1,120 @@
+.section {
+  position: relative;
+  padding: 100px 40px 120px;
+  margin-top: -48px;
+  border-radius: 48px 48px 0 0;
+  overflow: hidden;
+  background: var(--bg-dark);
+  color: var(--ink-on-dark);
+}
+
+.inner {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.heading {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(30px, 4vw, 48px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--ink-on-dark);
+  margin-bottom: 48px;
+  max-width: 620px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 44px;
+}
+
+.card {
+  background: #181818;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.tag {
+  align-self: flex-start;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--highlight);
+  border: 1px solid rgba(153, 255, 0, 0.35);
+  border-radius: 999px;
+  padding: 4px 12px;
+  margin-bottom: 20px;
+}
+
+.metric {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(28px, 3vw, 38px);
+  line-height: 1;
+  color: var(--ink-on-dark);
+}
+
+.metricLabel {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-dim-on-dark);
+  margin-top: 8px;
+  margin-bottom: 20px;
+}
+
+.desc {
+  font-size: 14px;
+  line-height: 1.55;
+  color: #b8b8b8;
+  flex-grow: 1;
+}
+
+.client {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--ink-on-dark);
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-on-dark);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.link:hover {
+  color: var(--highlight);
+}
+
+.arrow {
+  transition: transform 0.3s ease;
+}
+
+.link:hover .arrow {
+  transform: translateX(4px);
+}
+
+@media (max-width: 900px) {
+  .section { padding: 70px 20px 90px; }
+  .grid { grid-template-columns: 1fr; gap: 1.25rem; }
+  .card { padding: 1.75rem; }
+}

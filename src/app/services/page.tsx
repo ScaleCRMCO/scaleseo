@@ -2,7 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Breadcrumbs from "../components/Breadcrumbs";
 import RevealOnScroll from "../components/RevealOnScroll";
+import Process from "../sections/home/Process";
 import ServicesList from "./ServicesList";
+import ServicesComparison from "./ServicesComparison";
+import ServicesProof from "./ServicesProof";
+import ServicesFaq from "./ServicesFaq";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
@@ -26,13 +30,6 @@ export default function ServicesPage() {
             Built for Growth Everywhere.
           </h1>
           <p className={styles.sub}>
-            I&rsquo;m based in Calgary, Alberta, and it&rsquo;s where my work
-            is most concentrated — but the businesses I work with aren&rsquo;t
-            limited to one city. Every service below is built the same way,
-            whether the client is down the street or across the country: one
-            specialist, doing the work directly.
-          </p>
-          <p className={styles.sub}>
             When you partner with Scale SEO, you bypass the typical agency
             layer of junior account managers and outsourced white-labeling.
             You get direct, 1-on-1 strategy and technical execution designed
@@ -43,7 +40,7 @@ export default function ServicesPage() {
         </div>
       </header>
 
-      <section className={styles.list} data-nav-theme="dark">
+      <section className={styles.list}>
         <div className={styles.listInner}>
           <div className={styles.intro}>
             <h2 className={styles.introTitle}>
@@ -67,6 +64,11 @@ export default function ServicesPage() {
           </p>
         </div>
       </section>
+
+      <ServicesComparison />
+      <Process />
+      <ServicesProof />
+      <ServicesFaq />
 
       <section className={styles.cta} data-nav-theme="dark">
         <div className={styles.ctaEyebrow}>
