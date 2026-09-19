@@ -7,9 +7,10 @@ type Body = {
   name?: string;
   email?: string;
   business?: string;
-  industry?: string;
+  need?: string;
   website?: string;
   message?: string;
+  timing?: string;
 };
 
 function escapeHtml(s: string): string {
@@ -24,9 +25,9 @@ function escapeHtml(s: string): string {
 export async function POST(req: Request) {
   try {
     const body = (await req.json()) as Body;
-    const { name, email, business, industry, website, message } = body;
+    const { name, email, business, need, website, message, timing } = body;
 
-    if (!name || !email || !business || !industry || !message) {
+    if (!name || !email || !business || !message) {
       return NextResponse.json(
         { error: "Missing required fields" },
         { status: 400 }
@@ -49,11 +50,15 @@ export async function POST(req: Request) {
           <tr><td style="padding:8px 0; color:#666; width:140px;">Name</td><td>${escapeHtml(name)}</td></tr>
           <tr><td style="padding:8px 0; color:#666;">Email</td><td><a href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a></td></tr>
           <tr><td style="padding:8px 0; color:#666;">Business</td><td>${escapeHtml(business)}</td></tr>
-          <tr><td style="padding:8px 0; color:#666;">Industry</td><td>${escapeHtml(industry)}</td></tr>
+          <tr><td style="padding:8px 0; color:#666;">What they need</td><td>${need ? escapeHtml(need) : "—"}</td></tr>
           <tr><td style="padding:8px 0; color:#666;">Website</td><td>${website ? `<a href="${escapeHtml(website)}">${escapeHtml(website)}</a>` : "—"}</td></tr>
         </table>
-        <h3 style="margin: 24px 0 8px;">Message</h3>
+        <h3 style="margin: 24px 0 8px;">Biggest challenge</h3>
         <div style="white-space: pre-wrap; background: #f6f6f6; padding: 16px; border-radius: 6px;">${escapeHtml(message)}</div>
+        ${timing ? `
+        <h3 style="margin: 24px 0 8px;">Why now</h3>
+        <div style="white-space: pre-wrap; background: #f6f6f6; padding: 16px; border-radius: 6px;">${escapeHtml(timing)}</div>
+        ` : ""}
       </div>
     `;
 

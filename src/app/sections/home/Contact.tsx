@@ -193,7 +193,16 @@ export default function Contact() {
                 id="message"
                 name="message"
                 required
-                placeholder="Where are you stuck, where do you want to be in 12 months, anything else I should know..."
+                placeholder="What is the biggest challenge you're trying to solve right now?"
+              />
+            </div>
+
+            <div className={styles.group}>
+              <label htmlFor="timing">Timing</label>
+              <textarea
+                id="timing"
+                name="timing"
+                placeholder="Why is now the right time to address this?"
               />
             </div>
 
