@@ -86,6 +86,17 @@ export default function Hero() {
             alt="Google Search Console performance data showing clicks and impressions growth"
             className={styles.visualImg}
           />
+          <motion.div
+            className={styles.visualBadge}
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ ...spring, delay: 0.85 }}
+          >
+            <span className={styles.visualBadgeValue}>+125%</span>
+            <span className={styles.visualBadgeLabel}>
+              Search impressions for an accounting firm
+            </span>
+          </motion.div>
         </div>
         <span className={styles.visualCaption}>
           Real Google Search Console Data

@@ -85,6 +85,47 @@
   text-align: center;
 }
 
+/* Small proof-metric bubble pinned to the image's top-right corner —
+   counter-rotated against the parent's -3deg tilt so it sits upright. */
+.visualBadge {
+  position: absolute;
+  top: -6%;
+  right: -8%;
+  transform: rotate(3deg);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: #181818;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 14px 18px;
+  max-width: 190px;
+  box-shadow: 0 24px 48px -20px rgba(10, 10, 10, 0.5);
+}
+
+.visualBadgeValue {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 26px;
+  line-height: 1;
+  color: var(--highlight);
+}
+
+.visualBadgeLabel {
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 1.35;
+  color: #d8d8d8;
+}
+
+@media (max-width: 1200px) {
+  .visualBadge { max-width: 160px; padding: 12px 14px; }
+  .visualBadgeValue { font-size: 22px; }
+  .visualBadgeLabel { font-size: 10px; }
+}
+
 @media (max-width: 1200px) {
   .visual { width: 420px; }
 }
