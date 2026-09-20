@@ -221,7 +221,7 @@ export default function SeoServicePage() {
         <div className={styles.visual}>
           <div className={styles.visualFrame}>
             <img
-              src="/images/google-search-console-empire-accountants-data-case-study.webp"
+              src="/images/google-search-console-empire-accountants-data-case-study.png"
               alt="Google Search Console performance data showing clicks and impressions growth for Empire Accountants"
               className={styles.visualImg}
             />
