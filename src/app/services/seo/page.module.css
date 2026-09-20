@@ -20,11 +20,13 @@
   padding-bottom: 72px;
 }
 
-/* === Right-side proof visual: tilted Search Console screenshot === */
+/* === Right-side proof visual: floating Search Console screenshot,
+   transparent PNG — no card/frame, just a drop shadow so it reads as
+   floating rather than sitting in a boxed container === */
 .visual {
   position: relative;
   flex-shrink: 0;
-  width: 400px;
+  width: 480px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -36,27 +38,13 @@
 .visualFrame {
   position: relative;
   width: 100%;
-  border-radius: 20px;
-  overflow: hidden;
-  background: var(--bg);
-  border: 1px solid var(--line-on-dark);
-  box-shadow: 0 40px 80px -32px rgba(0, 0, 0, 0.6);
-}
-
-.visualFrame::before {
-  content: '';
-  position: absolute;
-  inset: -14px;
-  z-index: -1;
-  border: 2px dashed var(--highlight);
-  border-radius: 28px;
-  opacity: 0.8;
 }
 
 .visualImg {
   display: block;
   width: 100%;
   height: auto;
+  filter: drop-shadow(0 40px 60px rgba(0, 0, 0, 0.5));
 }
 
 .visualCaption {
@@ -69,7 +57,7 @@
 }
 
 @media (max-width: 1200px) {
-  .visual { width: 320px; }
+  .visual { width: 380px; }
 }
 
 @media (max-width: 1024px) {
