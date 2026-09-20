@@ -45,7 +45,7 @@ export default function Footer() {
         <div className={styles.col}>
           <div className={styles.colLabel}>Connect</div>
           <Link href="/corbin-jensen" className={styles.colLink}>Corbin Jensen</Link>
-          <a href="https://www.linkedin.com/in/corbin-jensen-9a9b77127/" target="_blank" rel="noopener noreferrer" className={styles.colLink}>LinkedIn</a>
+          <a href="https://www.linkedin.com/company/scale-seo/" target="_blank" rel="noopener noreferrer" className={styles.colLink}>LinkedIn</a>
           <a href="https://www.instagram.com/scaleseo.co/" target="_blank" rel="noopener noreferrer" className={styles.colLink}>Instagram</a>
           <a href="https://maps.app.goo.gl/FYWSaQ3p81VFnNcc7" target="_blank" rel="noopener noreferrer" className={styles.colLink}>Google Business</a>
           <a href="https://clutch.co/profile/scale-seo" target="_blank" rel="noopener noreferrer" className={styles.colLink}>Clutch</a>
