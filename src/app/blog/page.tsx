@@ -25,8 +25,7 @@ export default function BlogPage() {
           </h1>
           <p className={styles.sub}>
             What&rsquo;s actually working right now for accounting firms and
-            professional service businesses — not general SEO theory,
-            written by the specialist doing the work.
+            professional service businesses.
           </p>
         </div>
       </header>
