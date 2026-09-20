@@ -26,16 +26,15 @@ export default function ServicesPage() {
             <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Services" }]} />
           </div>
           <h1 className={styles.title}>
-            SEO Services in <span className={styles.accent}>Calgary</span>,
-            Built for Growth Everywhere.
+            Calgary SEO &amp; <span className={styles.accent}>Digital Growth</span> Services
           </h1>
           <p className={styles.sub}>
-            When you partner with Scale SEO, you bypass the typical agency
-            layer of junior account managers and outsourced white-labeling.
-            You get direct, 1-on-1 strategy and technical execution designed
-            to scale high-intent organic traffic, protect your digital brand
-            reputation, and drive predictable revenue growth for professional
-            service firms.
+            We help professional service firms get found by the right
+            clients online. Scale SEO provides direct, senior-level strategy
+            to grow your website&rsquo;s visibility, protect your
+            reputation, and bring in a steady stream of qualified business
+            leads. Explore our core services below to see how we help your
+            business grow.
           </p>
         </div>
       </header>
