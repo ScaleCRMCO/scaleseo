@@ -1,12 +1,13 @@
 /* === HERO — same simple black layout as the /services page === */
 .hero {
-  padding: 180px 40px 100px;
+  padding: 180px 40px 0;
   background: var(--bg-dark);
   color: var(--ink-on-dark);
 }
 
 .heroContent {
   max-width: 1000px;
+  padding-bottom: 72px;
 }
 
 .crumbsOnDark {
@@ -31,9 +32,217 @@
   line-height: 1.65;
   color: var(--ink-dim-on-dark);
   max-width: 700px;
+  margin-bottom: 40px;
 }
 
-/* === WHAT'S INCLUDED — dark, first section after the hero === */
+.heroCtaGroup {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.heroCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px 36px;
+  background: var(--ink-on-dark);
+  color: var(--bg-dark);
+  text-decoration: none;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border: 1px solid var(--ink-on-dark);
+  border-radius: 999px;
+  transition: background-color 0.3s cubic-bezier(0.25, 1, 0.5, 1), color 0.3s ease, border-color 0.3s ease;
+}
+
+.heroCta:hover {
+  background: var(--highlight);
+  color: var(--on-highlight);
+  border-color: var(--highlight);
+}
+
+.heroCtaSecondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 36px;
+  background: transparent;
+  color: var(--ink-on-dark);
+  text-decoration: none;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border: 1px solid var(--line-strong-on-dark);
+  border-radius: 999px;
+  transition: all 0.3s ease;
+}
+
+.heroCtaSecondary:hover {
+  border-color: var(--highlight);
+  color: var(--highlight);
+}
+
+/* === TRUST BAR — thin strip flush against the bottom of the hero, no
+   card or rounded-corner treatment === */
+.trustBar {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 26px 0;
+  border-top: 1px solid var(--line-on-dark);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px 48px;
+}
+
+.trustItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--ink-dim-on-dark);
+}
+
+.trustIcon {
+  color: var(--highlight);
+  font-size: 15px;
+  flex-shrink: 0;
+}
+
+/* === COMPARISON MATRIX — light, flush (no rounded corners) directly
+   under the hero/trust bar === */
+.matrix {
+  padding: 90px 40px 100px;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.matrixInner {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.matrixHeading {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(30px, 3.8vw, 48px);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 16px;
+}
+
+.matrixHeadingBreak {
+  color: var(--ink-faint);
+}
+
+.matrixSub {
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--ink-dim);
+  max-width: 640px;
+  margin-bottom: 44px;
+}
+
+.tableWrap {
+  text-align: left;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  box-shadow: 0 40px 80px -48px rgba(10, 10, 10, 0.16);
+}
+
+.tableHead {
+  display: grid;
+  grid-template-columns: 0.9fr repeat(3, 1fr);
+  background: var(--ink);
+  color: var(--bg);
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.tableHead span {
+  padding: 18px 20px;
+}
+
+.tableBody {
+  background: var(--bg);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 0.9fr repeat(3, 1fr);
+  border-bottom: 1px solid var(--line);
+}
+
+.row:last-child {
+  border-bottom: none;
+}
+
+.row:nth-child(even) {
+  background: var(--bg-elev);
+}
+
+.row > span {
+  padding: 18px 20px;
+  font-family: var(--sans);
+  font-size: 13.5px;
+  line-height: 1.5;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.capability {
+  font-weight: 700;
+  color: var(--ink);
+  align-items: center !important;
+}
+
+.us {
+  color: var(--ink);
+}
+
+.them {
+  color: var(--ink-faint);
+}
+
+.checkIcon,
+.xIcon {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  font-size: 9px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+}
+
+.checkIcon {
+  background: var(--highlight);
+  color: var(--on-highlight);
+}
+
+.xIcon {
+  background: var(--line);
+  color: var(--ink-faint);
+}
+
+/* === WHAT'S INCLUDED — dark === */
 .included {
   position: relative;
   padding: 100px 40px 120px;
@@ -485,7 +694,11 @@
 }
 
 @media (max-width: 900px) {
-  .hero { padding: 120px 24px 70px; }
+  .hero { padding: 120px 24px 0; }
+  .heroCtaGroup { flex-direction: column; align-items: stretch; }
+  .heroCta, .heroCtaSecondary { justify-content: center; }
+  .trustBar { flex-direction: column; align-items: flex-start; gap: 14px; padding: 22px 0; }
+  .matrix { padding: 60px 24px 70px; }
   .included { padding: 70px 24px 90px; }
   .process { padding: 70px 24px 90px; }
   .proof { padding: 70px 24px; }
@@ -495,4 +708,9 @@
   .item { padding: 32px 28px; min-height: auto; }
   .processGrid { grid-template-columns: 1fr; }
   .proofCard { grid-template-columns: 1fr; padding: 32px 28px; gap: 24px; }
+  .tableHead,
+  .row { grid-template-columns: 1fr; }
+  .tableHead span:not(:first-child) { border-top: 1px solid rgba(252, 251, 250, 0.15); }
+  .row > span:not(:first-child) { border-top: 1px solid var(--line); }
+  .capability { color: var(--ink-faint); font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; font-family: var(--mono); font-weight: 500; }
 }

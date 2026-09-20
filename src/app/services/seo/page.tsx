@@ -11,6 +11,44 @@ export const metadata: Metadata = {
   alternates: { canonical: "/services/seo" },
 };
 
+const matrix: {
+  capability: string;
+  us: string;
+  agency: string;
+  freelancer: string;
+}[] = [
+  {
+    capability: "Direct Accountability",
+    us: "1-on-1 access to Corbin Jensen.",
+    agency: "Junior account managers with zero technical execution experience.",
+    freelancer: "Fragmented communication and unstable project availability.",
+  },
+  {
+    capability: "Deployment Speed",
+    us: "Rapid execution workflows powered by a local Claude Code development stack.",
+    agency: "Slow, multi-layered internal approval cycles and corporate red tape.",
+    freelancer: "Highly variable timelines based on limited technical capacity.",
+  },
+  {
+    capability: "Strategy & Content",
+    us: "Custom semantic topic clusters built for high-value B2B conversion.",
+    agency: "Recycled keyword checklists and generic template frameworks.",
+    freelancer: "Heavy reliance on low-tier outsourced copywriters or generic AI spam.",
+  },
+  {
+    capability: "Code Engineering",
+    us: "Clean, machine-readable schema markup optimized for Google & LLMs.",
+    agency: "Heavy, slow-loading page-builder sites that burn through crawl budgets.",
+    freelancer: "Basic platform setups that fail core technical indexation audits.",
+  },
+  {
+    capability: "Regional Context",
+    us: "In-depth knowledge of Calgary and Western Canadian B2B landscapes.",
+    agency: "Out-of-province generalists lacking local market familiarity.",
+    freelancer: "Muted regional understanding with a broad, un-targeted focus.",
+  },
+];
+
 const included = [
   {
     num: "01",
@@ -152,20 +190,95 @@ export default function SeoServicePage() {
             />
           </div>
           <h1 className={styles.title}>
-            Freelance SEO Specialist Calgary{" "}
-            <span className={styles.accent}>
-              | Search Optimization for Professional Services
-            </span>
+            Calgary SEO Specialist for{" "}
+            <span className={styles.accent}>B2B &amp; Professional Services</span>
           </h1>
           <p className={styles.sub}>
-            Technical fixes, on-page structure, and local search work that
-            compounds — not a checklist of vanity tasks. Every audit, every
-            fix, every piece of content handled directly by me.
+            We engineer high-intent search optimization that turns local
+            organic visibility into premium corporate inquiries, signed
+            contracts, and qualified pipeline revenue. No vanity metrics. No
+            checklist fluff. Just founder-led search engineering built to
+            dominate Calgary and Canadian markets.
           </p>
+          <div className={styles.heroCtaGroup}>
+            <a
+              href="https://cal.com/corbinjensen-scaleseo/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.heroCta}
+            >
+              <span>Book a Calgary Strategy Call</span>
+              <span className={styles.arrow}>→</span>
+            </a>
+            <a href="#comparison" className={styles.heroCtaSecondary}>
+              <span>Explore Our Alberta Case Studies</span>
+              <span>↓</span>
+            </a>
+          </div>
+        </div>
+
+        {/* === TRUST BAR — thin strip attached to the bottom of the hero,
+            no card/rounded treatment === */}
+        <div className={styles.trustBar}>
+          <span className={styles.trustItem}>
+            <span className={styles.trustIcon} aria-hidden="true">★</span>
+            5.0 Client Rating | Founder-Led in Calgary, AB
+          </span>
+          <span className={styles.trustItem}>
+            <span className={styles.trustIcon} aria-hidden="true">✺</span>
+            Advanced SEO Content Built for Google AI Overviews &amp; ChatGPT
+          </span>
+          <span className={styles.trustItem}>
+            <span className={styles.trustIcon} aria-hidden="true">✓</span>
+            Flexible Month-to-Month Retainers | No Long-Term Lock-in Contracts
+          </span>
         </div>
       </header>
 
-      {/* === WHAT'S INCLUDED (dark, first section after the hero) === */}
+      {/* === COMPARISON MATRIX (light, rounded) === */}
+      <section className={styles.matrix} id="comparison">
+        <div className={styles.matrixInner}>
+          <h2 className={`${styles.matrixHeading} reveal-up`}>
+            Scale SEO vs. Generalist Agencies{" "}
+            <span className={styles.matrixHeadingBreak}>vs. Outsourced Freelancers</span>
+          </h2>
+          <p className={styles.matrixSub}>
+            Choosing a search partner in Alberta dictates how fast your
+            platform scales. Here is how Scale SEO eliminates the
+            administrative friction of traditional agency models.
+          </p>
+
+          <div className={styles.tableWrap}>
+            <div className={styles.tableHead}>
+              <span>Capability</span>
+              <span>Scale SEO (Calgary Founder)</span>
+              <span>Traditional Agencies</span>
+              <span>Standard Freelancers</span>
+            </div>
+            <div className={styles.tableBody}>
+              {matrix.map((row) => (
+                <div key={row.capability} className={styles.row}>
+                  <span className={styles.capability}>{row.capability}</span>
+                  <span className={styles.us}>
+                    <span className={styles.checkIcon} aria-hidden="true">✓</span>
+                    {row.us}
+                  </span>
+                  <span className={styles.them}>
+                    <span className={styles.xIcon} aria-hidden="true">✕</span>
+                    {row.agency}
+                  </span>
+                  <span className={styles.them}>
+                    <span className={styles.xIcon} aria-hidden="true">✕</span>
+                    {row.freelancer}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* === WHAT'S INCLUDED (dark) === */}
       <section className={`${styles.included} section-dark`} data-nav-theme="dark">
         <div className={styles.includedInner}>
           <div className="section-label reveal-up">What&rsquo;s Included</div>
