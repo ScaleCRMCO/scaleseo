@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import SellingHero from "../../components/SellingHero";
+import Breadcrumbs from "../../components/Breadcrumbs";
 import RevealOnScroll from "../../components/RevealOnScroll";
 import styles from "./page.module.css";
 
@@ -10,49 +10,6 @@ export const metadata: Metadata = {
     "Technical, on-page, and local SEO built to improve real website performance — faster sites, better rankings, and more qualified organic traffic. Handled directly by one specialist, based in Calgary.",
   alternates: { canonical: "/services/seo" },
 };
-
-const outcomes = [
-  {
-    name: "Rank Higher",
-    desc: "Show up where your buyers are already searching, not buried on page two.",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
-        <path d="M4 19V11M12 19V5M20 19v-7" strokeLinecap="round" />
-      </svg>
-    ),
-  },
-  {
-    name: "More Qualified Leads",
-    desc: "Traffic built around real buyer intent, not vanity keywords that never convert.",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
-        <circle cx="12" cy="8" r="3.5" />
-        <path d="M5 20c0-3.9 3.1-6.5 7-6.5s7 2.6 7 6.5" strokeLinecap="round" />
-      </svg>
-    ),
-  },
-  {
-    name: "A Faster Site",
-    desc: "Technical fixes that speed up load times — good for rankings and for visitors.",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
-        <path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z" strokeLinejoin="round" />
-      </svg>
-    ),
-  },
-  {
-    name: "Plain-English Reporting",
-    desc: "Monthly updates on what moved and what it means for leads, not a screenshot dump.",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
-        <rect x="4" y="3.5" width="16" height="17" rx="1.5" />
-        <line x1="8" y1="8.5" x2="16" y2="8.5" strokeLinecap="round" />
-        <line x1="8" y1="12.5" x2="16" y2="12.5" strokeLinecap="round" />
-        <line x1="8" y1="16.5" x2="13" y2="16.5" strokeLinecap="round" />
-      </svg>
-    ),
-  },
-];
 
 const included = [
   {
@@ -183,83 +140,33 @@ export default function SeoServicePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
-      <SellingHero
-        dark
-        breadcrumbs={[
-          { name: "Home", href: "/" },
-          { name: "Services", href: "/services" },
-          { name: "SEO" },
-        ]}
-        eyebrow="Services / SEO"
-        title={
-          <>
+      <header className={styles.hero} data-nav-theme="dark">
+        <div className={styles.heroContent}>
+          <div className={styles.crumbsOnDark}>
+            <Breadcrumbs
+              items={[
+                { name: "Home", href: "/" },
+                { name: "Services", href: "/services" },
+                { name: "SEO" },
+              ]}
+            />
+          </div>
+          <h1 className={styles.title}>
             Freelance SEO Specialist Calgary{" "}
             <span className={styles.accent}>
               | Search Optimization for Professional Services
             </span>
-          </>
-        }
-        sub="Technical fixes, on-page structure, and local search work that compounds — not a checklist of vanity tasks. Every audit, every fix, every piece of content handled directly by me."
-        checkpoints={[
-          "Independent specialist — no outsourcing",
-          "Work directly with me, not an account manager",
-          "Focused on Canadian professional service firms, including accounting practices, legal firms, and corporate advisors",
-          "No lock-in contracts",
-        ]}
-      />
-
-      {/* === AT A GLANCE: what you actually get (light) === */}
-      <section className={styles.outcomes}>
-        <div className={styles.outcomesInner}>
-          <div className="section-label reveal-up">What You Get</div>
-          <div className={styles.outcomesGrid}>
-            {outcomes.map((o) => (
-              <div key={o.name} className={`${styles.outcomeCard} reveal-up`}>
-                <span className={styles.outcomeIcon} aria-hidden="true">
-                  {o.icon}
-                </span>
-                <h3 className={styles.outcomeName}>{o.name}</h3>
-                <p className={styles.outcomeDesc}>{o.desc}</p>
-              </div>
-            ))}
-          </div>
+          </h1>
+          <p className={styles.sub}>
+            Technical fixes, on-page structure, and local search work that
+            compounds — not a checklist of vanity tasks. Every audit, every
+            fix, every piece of content handled directly by me.
+          </p>
         </div>
-      </section>
+      </header>
 
-      {/* === THE PROBLEM (dark) === */}
-      <section className={styles.problem} data-nav-theme="dark">
-        <div className={styles.problemInner}>
-          <div className="section-label reveal-up">The Problem</div>
-          <h2 className={`${styles.problemHeadline} reveal-up`}>
-            Most SEO work never touches{" "}
-            <span className={styles.accent}>what actually moves rankings.</span>
-          </h2>
-          <div className={`${styles.problemBody} reveal-up`}>
-            <p>
-              A lot of what gets sold as SEO is reporting and busywork —
-              metrics you can screenshot but that don&rsquo;t move revenue.
-              Real performance gains come from fixing what&rsquo;s actually
-              broken: slow load times, thin content, missing structure, and a
-              local presence that doesn&rsquo;t reflect how customers
-              actually search. That&rsquo;s the work I focus on, for
-              accounting firms and other professional service businesses
-              across Canada.
-            </p>
-            <p>
-              Based in Calgary, Alberta, I engineer high-performance search
-              strategies tailored specifically for the Canadian regulatory
-              and corporate landscape. Whether you&rsquo;re an accounting
-              practice competing for high-margin corporate clients downtown
-              or a multi-location professional service firm scaling
-              visibility across Western Canada, your strategy is built around
-              localized B2B intent.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* === WHAT'S INCLUDED (light) === */}
-      <section className={styles.included}>
+      {/* === WHAT'S INCLUDED (dark, first section after the hero) === */}
+      <section className={`${styles.included} section-dark`} data-nav-theme="dark">
         <div className={styles.includedInner}>
           <div className="section-label reveal-up">What&rsquo;s Included</div>
           <div className={styles.grid}>

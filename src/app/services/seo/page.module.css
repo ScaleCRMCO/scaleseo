@@ -1,116 +1,47 @@
-/* === OUTCOMES ("What You Get") — light, first rounded bubble after the
-   dark hero === */
-.outcomes {
-  position: relative;
-  padding: 100px 40px 90px;
-  margin-top: -48px;
-  border-radius: 48px 48px 0 0;
-  overflow: hidden;
-  background: var(--bg);
-  color: var(--ink);
-}
-
-.outcomesInner {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.outcomesGrid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  margin-top: 32px;
-}
-
-.outcomeCard {
-  background: var(--bg-elev);
-  border-radius: 20px;
-  padding: 32px 28px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.outcomeIcon {
-  width: 34px;
-  height: 34px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--accent);
-}
-
-.outcomeIcon svg {
-  width: 26px;
-  height: 26px;
-}
-
-.outcomeName {
-  font-family: var(--display);
-  font-weight: 700;
-  font-size: 16px;
-  letter-spacing: -0.01em;
-  color: var(--ink);
-}
-
-.outcomeDesc {
-  font-family: var(--sans);
-  font-size: 13.5px;
-  line-height: 1.55;
-  color: var(--ink-dim);
-}
-
-/* === PROBLEM — dark === */
-.problem {
-  position: relative;
-  padding: 100px 40px;
-  margin-top: -48px;
-  border-radius: 48px 48px 0 0;
-  overflow: hidden;
+/* === HERO — same simple black layout as the /services page === */
+.hero {
+  padding: 180px 40px 100px;
   background: var(--bg-dark);
   color: var(--ink-on-dark);
 }
 
-.problemInner {
-  max-width: 800px;
-  margin: 0 auto;
+.heroContent {
+  max-width: 1000px;
 }
 
-.problemHeadline {
+.crumbsOnDark {
+  --ink-dim: var(--ink-dim-on-dark);
+  --accent: var(--highlight);
+}
+
+.title {
   font-family: var(--display);
   font-weight: 800;
-  font-size: clamp(28px, 3.6vw, 46px);
-  line-height: 1.15;
-  letter-spacing: -0.02em;
+  font-size: clamp(38px, 5.5vw, 76px);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
   color: var(--ink-on-dark);
-  margin: 28px 0;
+  margin-bottom: 32px;
 }
 
-.problemBody {
+.sub {
   font-family: var(--sans);
   font-weight: 400;
-  font-size: 17px;
-  line-height: 1.7;
+  font-size: clamp(16px, 1.3vw, 19px);
+  line-height: 1.65;
   color: var(--ink-dim-on-dark);
+  max-width: 700px;
 }
 
-.problemBody p {
-  margin-bottom: 20px;
-}
-
-.problemBody p:last-child {
-  margin-bottom: 0;
-}
-
-/* === WHAT'S INCLUDED — light === */
+/* === WHAT'S INCLUDED — dark, first section after the hero === */
 .included {
   position: relative;
   padding: 100px 40px 120px;
   margin-top: -48px;
   border-radius: 48px 48px 0 0;
   overflow: hidden;
-  background: var(--bg);
-  color: var(--ink);
+  background: var(--bg-dark);
+  color: var(--ink-on-dark);
 }
 
 .includedInner {
@@ -126,7 +57,8 @@
 }
 
 .item {
-  background: var(--bg-elev);
+  background: #181818;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 20px;
   padding: 40px 32px;
   display: flex;
@@ -138,7 +70,7 @@
   font-family: var(--mono);
   font-size: 13px;
   letter-spacing: 0.1em;
-  color: var(--ink-faint);
+  color: var(--highlight);
   margin-bottom: 24px;
 }
 
@@ -147,7 +79,7 @@
   font-weight: 700;
   font-size: clamp(20px, 1.8vw, 23px);
   letter-spacing: -0.01em;
-  color: var(--ink);
+  color: var(--ink-on-dark);
   margin-bottom: 14px;
 }
 
@@ -156,7 +88,7 @@
   font-weight: 400;
   font-size: 15px;
   line-height: 1.6;
-  color: var(--ink-dim);
+  color: var(--ink-dim-on-dark);
 }
 
 /* === PROCESS — dark === */
@@ -548,14 +480,12 @@
 }
 
 @media (max-width: 1100px) {
-  .outcomesGrid { grid-template-columns: repeat(2, 1fr); }
   .grid { grid-template-columns: repeat(2, 1fr); }
   .processGrid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 900px) {
-  .outcomes { padding: 70px 24px 60px; }
-  .problem { padding: 70px 24px; }
+  .hero { padding: 120px 24px 70px; }
   .included { padding: 70px 24px 90px; }
   .process { padding: 70px 24px 90px; }
   .proof { padding: 70px 24px; }
@@ -565,8 +495,4 @@
   .item { padding: 32px 28px; min-height: auto; }
   .processGrid { grid-template-columns: 1fr; }
   .proofCard { grid-template-columns: 1fr; padding: 32px 28px; gap: 24px; }
-}
-
-@media (max-width: 560px) {
-  .outcomesGrid { grid-template-columns: 1fr; }
 }
