@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { motion } from "motion/react";
 import Logo from "./Logo";
@@ -59,6 +59,23 @@ export default function Nav() {
   const [open, setOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
+  const servicesCloseTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  // Small delay before closing the Services dropdown — without it, moving
+  // the mouse diagonally from the trigger toward the menu (rather than
+  // straight down) could momentarily leave the hoverable area and close
+  // the menu before the pointer ever reached a child link.
+  const openServices = () => {
+    if (servicesCloseTimer.current) clearTimeout(servicesCloseTimer.current);
+    setServicesOpen(true);
+  };
+  const closeServicesDelayed = () => {
+    servicesCloseTimer.current = setTimeout(() => setServicesOpen(false), 200);
+  };
+  useEffect(() => {
+    return () => {
+      if (servicesCloseTimer.current) clearTimeout(servicesCloseTimer.current);
+    };
+  }, []);
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
     window.addEventListener("scroll", onScroll);
@@ -111,32 +128,34 @@ export default function Nav() {
         <Link href="/results">Case Studies</Link>
         <div
           className={styles.navItem}
-          onMouseEnter={() => setServicesOpen(true)}
-          onMouseLeave={() => setServicesOpen(false)}
+          onMouseEnter={openServices}
+          onMouseLeave={closeServicesDelayed}
         >
           <Link href="/services">Services</Link>
           <div className={`${styles.servicesDropdown} ${servicesOpen ? styles.servicesDropdownOpen : ""}`}>
-            <Link href="/services" className={styles.dropdownFeatured} onClick={close}>
-              <span className={styles.dropdownFeaturedIcon} aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
-                  <circle cx="10.5" cy="10.5" r="6.5" />
-                  <line x1="15.5" y1="15.5" x2="21" y2="21" strokeLinecap="round" />
-                </svg>
-              </span>
-              <span className={styles.dropdownFeaturedName}>All Services</span>
-              <span className={styles.dropdownFeaturedDesc}>
-                One specialist, four disciplines. Explore everything on offer.
-              </span>
-              <span className={styles.dropdownFeaturedBtn}>All services &rarr;</span>
-            </Link>
-            <div className={styles.dropdownGrid}>
-              {serviceLinks.map((s) => (
-                <Link key={s.href} href={s.href} className={styles.dropdownItem} onClick={close}>
-                  <span className={styles.dropdownItemIcon} aria-hidden="true">{s.icon}</span>
-                  <span className={styles.dropdownItemName}>{s.name}</span>
-                  <span className={styles.dropdownItemDesc}>{s.desc}</span>
-                </Link>
-              ))}
+            <div className={styles.servicesDropdownInner}>
+              <Link href="/services" className={styles.dropdownFeatured} onClick={close}>
+                <span className={styles.dropdownFeaturedIcon} aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
+                    <circle cx="10.5" cy="10.5" r="6.5" />
+                    <line x1="15.5" y1="15.5" x2="21" y2="21" strokeLinecap="round" />
+                  </svg>
+                </span>
+                <span className={styles.dropdownFeaturedName}>All Services</span>
+                <span className={styles.dropdownFeaturedDesc}>
+                  One specialist, four disciplines. Explore everything on offer.
+                </span>
+                <span className={styles.dropdownFeaturedBtn}>All services &rarr;</span>
+              </Link>
+              <div className={styles.dropdownGrid}>
+                {serviceLinks.map((s) => (
+                  <Link key={s.href} href={s.href} className={styles.dropdownItem} onClick={close}>
+                    <span className={styles.dropdownItemIcon} aria-hidden="true">{s.icon}</span>
+                    <span className={styles.dropdownItemName}>{s.name}</span>
+                    <span className={styles.dropdownItemDesc}>{s.desc}</span>
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
         </div>
