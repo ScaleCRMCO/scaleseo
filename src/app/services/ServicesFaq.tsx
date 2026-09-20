@@ -2,24 +2,24 @@ import styles from "./ServicesFaq.module.css";
 
 const faqs = [
   {
-    q: "How much does SEO cost in Calgary?",
-    a: "Work is scoped to your business as a monthly retainer, not a fixed package — pricing depends on your current site, competition, and goals. Every engagement starts with a free audit so the number you're quoted reflects real scope, not a generic tier.",
+    q: "How are SEO services priced?",
+    a: "Our engagements are bespoke and structured as monthly retainers rather than fixed, off-the-shelf packages. Pricing is determined individually based on your website's current authority, competitive landscape, and commercial objectives. Every partnership begins with a complimentary audit to ensure your quote reflects accurate project scope and clear deliverables.",
   },
   {
-    q: "How long until I see results from SEO?",
-    a: "SEO compounds rather than spikes. Most clients see meaningful ranking movement in 3–6 months, with the largest gains building from there. You'll get a realistic timeline specific to your site during the initial audit.",
+    q: "What is the typical timeline for seeing measurable results?",
+    a: "SEO is a compounding investment rather than an immediate spike. While initial organic movements and technical corrections are often visible within 3 to 6 months, the most significant revenue-driving gains develop over a sustained period. We establish a realistic, data-backed timeline specific to your domain during our initial evaluation.",
   },
   {
-    q: "Do you require long-term contracts?",
-    a: "No. Work is month-to-month with no lock-in contracts. If the work isn't earning its keep, you're free to walk — that's by design, not a loophole.",
+    q: "Do you require long-term contractual commitments?",
+    a: "No. To maintain complete accountability, all services are provided on a flexible, month-to-month basis with no long-term contract lock-ins. We believe our strategic value should justify the partnership each month. You retain full ownership of your platforms, assets, and data at all times.",
   },
   {
-    q: "Can you manage Google Ads and SEO together?",
-    a: "Yes — that's the point of a single specialist. Paid and organic data inform each other: ad copy that converts becomes on-page copy, and keywords that drive paid leads get prioritized organically.",
+    q: "Can Google Ads and organic SEO be managed collectively?",
+    a: "Yes. Managing paid search and organic SEO under a unified strategy ensures both channels inform and strengthen each other. High-converting copy from your Google Ads campaigns directly influences our on-page SEO optimization, while high-intent keyword data from organic search allows us to eliminate waste and refine target parameters within your paid campaigns.",
   },
   {
-    q: "What is AI Search Optimization (GEO) and do I need it?",
-    a: "GEO structures your content so tools like ChatGPT, Perplexity, and Google AI Overviews can read, understand, and cite it accurately. If your buyers research with AI assistants — and most now do — it's worth having alongside traditional SEO, not instead of it.",
+    q: "What is Generative Engine Optimization (GEO), and is it necessary for my firm?",
+    a: "Generative Engine Optimization (GEO) involves structuring your digital content so that modern AI platforms—such as ChatGPT, Perplexity, and Google AI Overviews—can accurately read, synthesize, and cite your firm as an authority. For professional service firms whose clients utilize AI assistants for vendor research, GEO serves as an essential complement to traditional search engine optimization.",
   },
 ];
 
@@ -46,7 +46,7 @@ export default function ServicesFaq() {
       <div className={styles.inner}>
         <div className={`index ${styles.eyebrow}`}>Common Questions</div>
         <h2 className={`${styles.heading} reveal-up`}>
-          Answered before you <em>ask.</em>
+          Frequently Asked Questions
         </h2>
 
         <div className={styles.list}>
