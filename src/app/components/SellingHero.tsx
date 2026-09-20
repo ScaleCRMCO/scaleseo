@@ -16,6 +16,10 @@ export type SellingHeroProps = {
   title: ReactNode;
   sub: string;
   checkpoints?: string[];
+  /** Renders the hero on a black background instead of the default light
+   * theme. Opt-in per page so existing consumers (geo, web-development,
+   * google-ads-management, accounting-firms) keep their current look. */
+  dark?: boolean;
 };
 
 // Personal, portrait-led hero used on pages built to sell — services and
@@ -28,12 +32,18 @@ export default function SellingHero({
   title,
   sub,
   checkpoints = defaultCheckpoints,
+  dark = false,
 }: SellingHeroProps) {
   return (
-    <header className={styles.hero}>
+    <header
+      className={`${styles.hero} ${dark ? styles.dark : ""}`}
+      data-nav-theme={dark ? "dark" : undefined}
+    >
       <div className={styles.content}>
         <div className={styles.left}>
-          <Breadcrumbs items={breadcrumbs} />
+          <div className={dark ? styles.crumbsOnDark : undefined}>
+            <Breadcrumbs items={breadcrumbs} />
+          </div>
           {eyebrow && <p className={styles.eyebrow}>{eyebrow}</p>}
           <h1 className={styles.title}>{title}</h1>
           <p className={styles.sub}>{sub}</p>

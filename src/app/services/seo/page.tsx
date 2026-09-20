@@ -2,9 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import SellingHero from "../../components/SellingHero";
 import RevealOnScroll from "../../components/RevealOnScroll";
-import servicePageStyles from "../../components/ServicePage.module.css";
-import processStyles from "../../sections/home/Process.module.css";
-import faqStyles from "../../sections/home/FAQ.module.css";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
@@ -187,6 +184,7 @@ export default function SeoServicePage() {
       />
 
       <SellingHero
+        dark
         breadcrumbs={[
           { name: "Home", href: "/" },
           { name: "Services", href: "/services" },
@@ -196,7 +194,7 @@ export default function SeoServicePage() {
         title={
           <>
             Freelance SEO Specialist Calgary{" "}
-            <span className={servicePageStyles.accent}>
+            <span className={styles.accent}>
               | Search Optimization for Professional Services
             </span>
           </>
@@ -210,31 +208,33 @@ export default function SeoServicePage() {
         ]}
       />
 
-      {/* === AT A GLANCE: what you actually get === */}
+      {/* === AT A GLANCE: what you actually get (light) === */}
       <section className={styles.outcomes}>
-        <div className="section-label reveal-up">What You Get</div>
-        <div className={styles.outcomesGrid}>
-          {outcomes.map((o) => (
-            <div key={o.name} className={`${styles.outcomeCard} reveal-up`}>
-              <span className={styles.outcomeIcon} aria-hidden="true">
-                {o.icon}
-              </span>
-              <h3 className={styles.outcomeName}>{o.name}</h3>
-              <p className={styles.outcomeDesc}>{o.desc}</p>
-            </div>
-          ))}
+        <div className={styles.outcomesInner}>
+          <div className="section-label reveal-up">What You Get</div>
+          <div className={styles.outcomesGrid}>
+            {outcomes.map((o) => (
+              <div key={o.name} className={`${styles.outcomeCard} reveal-up`}>
+                <span className={styles.outcomeIcon} aria-hidden="true">
+                  {o.icon}
+                </span>
+                <h3 className={styles.outcomeName}>{o.name}</h3>
+                <p className={styles.outcomeDesc}>{o.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* === THE PROBLEM === */}
-      <section className={servicePageStyles.problem}>
-        <div className={servicePageStyles.problemInner}>
+      {/* === THE PROBLEM (dark) === */}
+      <section className={styles.problem} data-nav-theme="dark">
+        <div className={styles.problemInner}>
           <div className="section-label reveal-up">The Problem</div>
-          <h2 className={`${servicePageStyles.problemHeadline} reveal-up`}>
+          <h2 className={`${styles.problemHeadline} reveal-up`}>
             Most SEO work never touches{" "}
-            <span className={servicePageStyles.accent}>what actually moves rankings.</span>
+            <span className={styles.accent}>what actually moves rankings.</span>
           </h2>
-          <div className={`${servicePageStyles.problemBody} reveal-up`}>
+          <div className={`${styles.problemBody} reveal-up`}>
             <p>
               A lot of what gets sold as SEO is reporting and busywork —
               metrics you can screenshot but that don&rsquo;t move revenue.
@@ -258,54 +258,58 @@ export default function SeoServicePage() {
         </div>
       </section>
 
-      {/* === WHAT'S INCLUDED === */}
-      <section className={servicePageStyles.list}>
-        <div className="section-label reveal-up">What&rsquo;s Included</div>
-        <div className={servicePageStyles.grid}>
-          {included.map((item) => (
-            <div key={item.num} className={`${servicePageStyles.item} reveal-up`}>
-              <div className={servicePageStyles.itemNum}>{item.num}</div>
-              <h3 className={servicePageStyles.itemName}>{item.name}</h3>
-              <p className={servicePageStyles.itemDesc}>{item.desc}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* === PROCESS TIMELINE === */}
-      <section className={`${processStyles.section} ${styles.processSection}`}>
-        <div className="section-label reveal-up">How It Works</div>
-        <h2 className={`${processStyles.heading} reveal-up`}>
-          Audit. Strategy. <em>Execute. Report.</em>
-        </h2>
-        <div className={`${processStyles.grid} reveal-up`}>
-          {process.map((step) => (
-            <div key={step.num} className={processStyles.step}>
-              <div>
-                <div className={processStyles.num}>{step.num}</div>
-                <h3 className={processStyles.name}>{step.name}</h3>
-                <p className={processStyles.body}>{step.body}</p>
+      {/* === WHAT'S INCLUDED (light) === */}
+      <section className={styles.included}>
+        <div className={styles.includedInner}>
+          <div className="section-label reveal-up">What&rsquo;s Included</div>
+          <div className={styles.grid}>
+            {included.map((item) => (
+              <div key={item.num} className={`${styles.item} reveal-up`}>
+                <div className={styles.itemNum}>{item.num}</div>
+                <h3 className={styles.itemName}>{item.name}</h3>
+                <p className={styles.itemDesc}>{item.desc}</p>
               </div>
-              <div className={processStyles.time}>{step.time}</div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* === PROOF === */}
-      <section className={servicePageStyles.proof}>
-        <div className={servicePageStyles.proofInner}>
+      {/* === PROCESS TIMELINE (dark) === */}
+      <section className={styles.process} data-nav-theme="dark">
+        <div className={styles.processInner}>
+          <div className="section-label reveal-up">How It Works</div>
+          <h2 className={`${styles.processHeading} reveal-up`}>
+            Audit. Strategy. <em>Execute. Report.</em>
+          </h2>
+          <div className={`${styles.processGrid} reveal-up`}>
+            {process.map((step) => (
+              <div key={step.num} className={styles.processStep}>
+                <div>
+                  <div className={styles.processNum}>{step.num}</div>
+                  <h3 className={styles.processName}>{step.name}</h3>
+                  <p className={styles.processBody}>{step.body}</p>
+                </div>
+                <div className={styles.processTime}>{step.time}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* === PROOF (light) === */}
+      <section className={styles.proof}>
+        <div className={styles.proofInner}>
           <div className="section-label reveal-up">Proof</div>
-          <div className={`${servicePageStyles.proofCard} reveal-up`}>
-            <div className={servicePageStyles.proofMetric}>
-              <span className={servicePageStyles.proofAccent}>
-                30 → <span className={servicePageStyles.proofBadge}>Top 10</span>
+          <div className={`${styles.proofCard} reveal-up`}>
+            <div className={styles.proofMetric}>
+              <span className={styles.proofAccent}>
+                30 → <span className={styles.proofBadge}>Top 10</span>
               </span>
-              <span className={servicePageStyles.proofMetricLabel}>
+              <span className={styles.proofMetricLabel}>
                 Search ranking, target keywords, 6 months
               </span>
             </div>
-            <p className={servicePageStyles.proofBody}>
+            <p className={styles.proofBody}>
               Six months of technical fixes, on-page structure, and content
               built around the terms their clients actually search moved an
               accounting &amp; advisory firm from position 30 into the top 10
@@ -314,62 +318,64 @@ export default function SeoServicePage() {
               weekly.
             </p>
           </div>
-          <p className={servicePageStyles.proofNote}>
+          <p className={styles.proofNote}>
             Read the full breakdown:{" "}
-            <Link href="/industries/accounting-firms" className={servicePageStyles.proofLink}>
+            <Link href="/industries/accounting-firms" className={styles.proofLink}>
               See how this works for accounting firms →
             </Link>
           </p>
         </div>
       </section>
 
-      {/* === FAQ === */}
-      <section className={`${faqStyles.section} ${styles.faqSection}`}>
-        <div className="section-label reveal-up">FAQ</div>
-        <h2 className={`${faqStyles.heading} reveal-up`}>
-          Common questions about <em>SEO.</em>
-        </h2>
-        <div className={faqStyles.list}>
-          {faqs.map((item) => (
-            <details key={item.q} className={`${faqStyles.item} reveal-up`}>
-              <summary className={faqStyles.question}>
-                <span>{item.q}</span>
-                <span className={faqStyles.toggle} aria-hidden="true">+</span>
-              </summary>
-              <p className={faqStyles.answer}>{item.a}</p>
-            </details>
-          ))}
+      {/* === FAQ (dark) === */}
+      <section className={styles.faq} data-nav-theme="dark">
+        <div className={styles.faqInner}>
+          <div className="section-label reveal-up">FAQ</div>
+          <h2 className={`${styles.faqHeading} reveal-up`}>
+            Common questions about <em>SEO.</em>
+          </h2>
+          <div className={styles.faqList}>
+            {faqs.map((item) => (
+              <details key={item.q} className={`${styles.faqItem} reveal-up`}>
+                <summary className={styles.faqQuestion}>
+                  <span>{item.q}</span>
+                  <span className={styles.faqToggle} aria-hidden="true">+</span>
+                </summary>
+                <p className={styles.faqAnswer}>{item.a}</p>
+              </details>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* === BOTTOM CTA === */}
-      <section className={servicePageStyles.cta}>
-        <div className={servicePageStyles.ctaEyebrow}>
-          <span className={servicePageStyles.dot} />
+      {/* === BOTTOM CTA (light) === */}
+      <section className={styles.cta}>
+        <div className={styles.ctaEyebrow}>
+          <span className={styles.dot} />
           Now booking · 1 spot Q3 2026
         </div>
-        <h2 className={servicePageStyles.ctaHeadline}>
+        <h2 className={styles.ctaHeadline}>
           Ready to fix what&rsquo;s actually holding your site back?
         </h2>
-        <p className={servicePageStyles.ctaSub}>
+        <p className={styles.ctaSub}>
           Tell me about your business and what you&rsquo;re trying to grow —
           I&rsquo;ll tell you honestly whether I&rsquo;m the right fit.
         </p>
-        <div className={servicePageStyles.ctaGroup}>
+        <div className={styles.ctaGroup}>
           <a
             href="https://cal.com/corbinjensen-scaleseo/30min"
             target="_blank"
             rel="noopener noreferrer"
-            className={servicePageStyles.ctaButton}
+            className={styles.ctaButton}
           >
             <span>Book a call</span>
-            <span className={servicePageStyles.arrow}>→</span>
+            <span className={styles.arrow}>→</span>
           </a>
-          <Link href="/contact" className={servicePageStyles.ctaButtonSecondary}>
+          <Link href="/contact" className={styles.ctaButtonSecondary}>
             <span>Send a Message</span>
           </Link>
         </div>
-        <p className={servicePageStyles.relatedNote}>
+        <p className={styles.relatedNote}>
           Also want your business showing up in AI answers?{" "}
           <a href="/services/geo">See how GEO works →</a>
         </p>

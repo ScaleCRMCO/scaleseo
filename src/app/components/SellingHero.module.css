@@ -3,6 +3,48 @@
   border-bottom: 1px solid var(--line);
 }
 
+/* Opt-in dark variant (see the `dark` prop) — black background, cream
+   text, lime accents, matching the site's dark hero sections elsewhere. */
+.dark {
+  border-bottom: none;
+  background: var(--bg-dark);
+}
+
+.crumbsOnDark {
+  --ink-dim: var(--ink-dim-on-dark);
+  --accent: var(--highlight);
+}
+
+.dark .eyebrow { color: var(--highlight); }
+.dark .title { color: var(--ink-on-dark); }
+.dark .sub { color: var(--ink-dim-on-dark); }
+.dark .availability { color: var(--ink-dim-on-dark); }
+
+.dark .cta {
+  background: var(--ink-on-dark);
+  color: var(--bg-dark);
+  border-color: var(--ink-on-dark);
+}
+.dark .cta:hover {
+  background: var(--highlight);
+  color: var(--on-highlight);
+  border-color: var(--highlight);
+}
+
+.dark .ctaSecondary {
+  color: var(--ink-on-dark);
+  border-color: var(--line-strong-on-dark);
+}
+.dark .ctaSecondary:hover {
+  border-color: var(--highlight);
+  color: var(--highlight);
+}
+
+.dark .portraitFrame { border-color: var(--line-on-dark); }
+.dark .checklist { border-color: var(--line-on-dark); }
+.dark .checkItem { color: var(--ink-dim-on-dark); }
+.dark .checkMark { color: var(--highlight); }
+
 .content {
   max-width: 1440px;
   margin: 0 auto;
