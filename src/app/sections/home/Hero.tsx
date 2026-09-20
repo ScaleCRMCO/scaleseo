@@ -88,7 +88,7 @@ export default function Hero() {
           />
         </div>
         <span className={styles.visualCaption}>
-          Real Search Console data — Empire Accountants
+          Real Google Search Console Data
         </span>
       </motion.div>
       </div>

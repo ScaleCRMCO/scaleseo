@@ -221,13 +221,13 @@ export default function SeoServicePage() {
         <div className={styles.visual}>
           <div className={styles.visualFrame}>
             <img
-              src="/images/google-search-console-empire-accountants-data-case-study.png"
-              alt="Google Search Console performance data showing clicks and impressions growth for Empire Accountants"
+              src="/images/gsc-performance-mockup-3d.webp"
+              alt="Google Search Console performance data showing clicks and impressions growth"
               className={styles.visualImg}
             />
           </div>
           <span className={styles.visualCaption}>
-            Real Search Console data — Empire Accountants
+            Real Google Search Console Data
           </span>
         </div>
         </div>
