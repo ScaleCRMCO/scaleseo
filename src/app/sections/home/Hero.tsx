@@ -9,6 +9,7 @@ export default function Hero() {
     <header className={styles.hero}>
       <div className={styles.ambient} aria-hidden="true" />
 
+      <div className={styles.grid}>
       <div className={styles.inner}>
         <motion.p
           className={`index ${styles.meta}`}
@@ -71,6 +72,25 @@ export default function Hero() {
             Send an Email →
           </motion.a>
         </motion.div>
+      </div>
+
+      <motion.div
+        className={styles.visual}
+        initial={{ opacity: 0, x: 30, rotate: 0 }}
+        animate={{ opacity: 1, x: 0, rotate: -3 }}
+        transition={{ ...spring, delay: 0.5 }}
+      >
+        <div className={styles.visualFrame}>
+          <img
+            src="/images/google-search-console-empire-accountants-data-case-study.webp"
+            alt="Google Search Console performance data showing clicks and impressions growth for Empire Accountants"
+            className={styles.visualImg}
+          />
+        </div>
+        <span className={styles.visualCaption}>
+          Real Search Console data — Empire Accountants
+        </span>
+      </motion.div>
       </div>
     </header>
   );
