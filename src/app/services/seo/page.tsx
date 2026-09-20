@@ -179,6 +179,7 @@ export default function SeoServicePage() {
       />
 
       <header className={styles.hero} data-nav-theme="dark">
+        <div className={styles.heroTop}>
         <div className={styles.heroContent}>
           <div className={styles.crumbsOnDark}>
             <Breadcrumbs
@@ -215,6 +216,20 @@ export default function SeoServicePage() {
               <span>↓</span>
             </a>
           </div>
+        </div>
+
+        <div className={styles.visual}>
+          <div className={styles.visualFrame}>
+            <img
+              src="/images/google-search-console-empire-accountants-data-case-study.png"
+              alt="Google Search Console performance data showing clicks and impressions growth for Empire Accountants"
+              className={styles.visualImg}
+            />
+          </div>
+          <span className={styles.visualCaption}>
+            Real Search Console data — Empire Accountants
+          </span>
+        </div>
         </div>
 
         {/* === TRUST BAR — thin strip attached to the bottom of the hero,
