@@ -56,9 +56,9 @@ export default function ServicesPage() {
           <ServicesList />
 
           <p className={styles.industriesNote}>
-            Looking for something specific to your industry?{" "}
+            Tailored to your specific sector.{" "}
             <a href="/industries" className={styles.industriesLink}>
-              See who I work with →
+              Discover the industries we partner with →
             </a>
           </p>
         </div>
