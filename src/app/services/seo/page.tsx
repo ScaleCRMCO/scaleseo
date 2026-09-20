@@ -225,6 +225,12 @@ export default function SeoServicePage() {
               alt="Google Search Console performance data showing clicks and impressions growth"
               className={styles.visualImg}
             />
+            <div className={styles.visualBadge}>
+              <span className={styles.visualBadgeValue}>+125%</span>
+              <span className={styles.visualBadgeLabel}>
+                Search impressions for an accounting firm
+              </span>
+            </div>
           </div>
           <span className={styles.visualCaption}>
             Real Google Search Console Data
