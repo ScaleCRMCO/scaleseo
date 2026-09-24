@@ -65,7 +65,19 @@ const services = [
 export default function ServicesList() {
   return (
     <div className={styles.grid}>
-      <motion.div className={styles.highlight} whileHover={{ scale: 1.01 }} transition={spring}>
+      {services.map((s) => (
+        <div key={s.href} className={`${styles.card} reveal-up`}>
+          <div className={styles.cardHead}>
+            <h3 className={styles.cardTitle}>{s.title}</h3>
+            <span className={`index ${styles.cardIndex}`}>{s.num}</span>
+          </div>
+          <div className={styles.cardSubtitle}>{s.subtitle}</div>
+          <p className={styles.cardDesc}>{s.desc}</p>
+          <ExploreButton href={s.href} label={s.cta} />
+        </div>
+      ))}
+
+      <motion.div className={`${styles.highlight} reveal-up`} whileHover={{ scale: 1.01 }} transition={spring}>
         <Link href="/results" className={styles.highlightLink}>
           <span className={styles.highlightStar} aria-hidden="true">✺</span>
           <span className={styles.highlightEyebrow}>The Matrix</span>
@@ -82,20 +94,6 @@ export default function ServicesList() {
           </span>
         </Link>
       </motion.div>
-
-      <div className={styles.cardGrid}>
-        {services.map((s) => (
-          <div key={s.href} className={`${styles.card} reveal-up`}>
-            <div className={styles.cardHead}>
-              <h3 className={styles.cardTitle}>{s.title}</h3>
-              <span className={`index ${styles.cardIndex}`}>{s.num}</span>
-            </div>
-            <div className={styles.cardSubtitle}>{s.subtitle}</div>
-            <p className={styles.cardDesc}>{s.desc}</p>
-            <ExploreButton href={s.href} label={s.cta} />
-          </div>
-        ))}
-      </div>
     </div>
   );
 }
