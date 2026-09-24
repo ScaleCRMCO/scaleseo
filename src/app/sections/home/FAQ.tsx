@@ -7,7 +7,7 @@ const faqs = [
   },
   {
     q: "How do you charge for your services?",
-    a: "Work is structured as a monthly retainer, scoped to your business rather than a generic tier. Every engagement starts with a free audit and a conversation, so what you're quoted reflects real scope — and there are no lock-in contracts.",
+    a: "Work is structured as a monthly retainer, scoped to your business rather than a generic tier. A base-level audit is included free for clients who move forward with a monthly SEO retainer. Standalone or one-off audits are quoted separately based on your site's size and needs — there are no lock-in contracts either way.",
   },
   {
     q: "What kind of businesses do you work with?",

@@ -6,7 +6,7 @@ const services = [
     num: "01",
     name: "Organic & Technical SEO Services",
     href: "/services/seo",
-    linkText: "Explore my Technical SEO Audit services",
+    linkText: "Explore my Technical SEO services",
     offer: [
       "Technical SEO audits",
       "Intent-based keyword architecture for B2B & financial firms",
@@ -47,7 +47,7 @@ const services = [
     num: "03",
     name: "Google Ads (PPC) Lead Generation Management",
     href: "/services/google-ads-management",
-    linkText: "Get a free PPC audit",
+    linkText: "Get a Google Ads audit",
     offer: [
       "Google Ads management & strict PPC query mapping",
       "Custom landing pages",

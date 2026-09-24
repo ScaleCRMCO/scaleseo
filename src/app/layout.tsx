@@ -8,7 +8,7 @@ import PageTransition from "./components/PageTransition";
 export const metadata: Metadata = {
   title: "Calgary SEO Specialist | Professional Services | Scale SEO",
   description:
-    "Bespoke SEO architecture & Google Ads management for accounting firms, legal practices, and professional services in Calgary & across Canada. Request a free audit.",
+    "Bespoke SEO architecture & Google Ads management for accounting firms, legal practices, and professional services in Calgary & across Canada. Book a strategy call to get started.",
   metadataBase: new URL("https://scaleseo.co"),
   openGraph: {
     title: "Scale SEO — Corbin Jensen",
