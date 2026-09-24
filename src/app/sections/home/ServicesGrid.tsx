@@ -52,6 +52,14 @@ const services = [
     desc: "Structuring web content for machine-readability and tracking your active brand citations daily across ChatGPT, Copilot, and Google AI Overviews.",
     cta: "Explore AI SEO",
   },
+  {
+    href: "/services/seo-audits",
+    num: "05",
+    title: "SEO Audits",
+    subtitle: "Find Out What's Holding You Back",
+    desc: "A standalone technical and on-page SEO audit with practical, prioritised recommendations — no ongoing monthly commitment required.",
+    cta: "Explore SEO Audits",
+  },
 ];
 
 export default function ServicesGrid() {
@@ -65,6 +73,18 @@ export default function ServicesGrid() {
       </div>
 
       <div className={styles.grid}>
+        {services.map((s) => (
+          <div key={s.href} className={styles.card}>
+            <div className={styles.cardHead}>
+              <h3 className={styles.cardTitle}>{s.title}</h3>
+              <span className={`index ${styles.cardIndex}`}>{s.num}</span>
+            </div>
+            <div className={styles.cardSubtitle}>{s.subtitle}</div>
+            <p className={styles.cardDesc}>{s.desc}</p>
+            <ExploreButton href={s.href} label={s.cta} />
+          </div>
+        ))}
+
         <motion.div className={styles.highlight} whileHover={{ scale: 1.01 }} transition={spring}>
           <Link href="/services" className={styles.highlightLink}>
             <span className={styles.highlightStar} aria-hidden="true">✺</span>
@@ -83,20 +103,6 @@ export default function ServicesGrid() {
             </span>
           </Link>
         </motion.div>
-
-        <div className={styles.cardGrid}>
-          {services.map((s) => (
-            <div key={s.href} className={styles.card}>
-              <div className={styles.cardHead}>
-                <h3 className={styles.cardTitle}>{s.title}</h3>
-                <span className={`index ${styles.cardIndex}`}>{s.num}</span>
-              </div>
-              <div className={styles.cardSubtitle}>{s.subtitle}</div>
-              <p className={styles.cardDesc}>{s.desc}</p>
-              <ExploreButton href={s.href} label={s.cta} />
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );
