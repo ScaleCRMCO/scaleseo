@@ -3,143 +3,96 @@ import styles from "./Services.module.css";
 
 const services = [
   {
-    num: "01",
-    name: "Organic & Technical SEO Services",
     href: "/services/seo",
-    linkText: "Explore my Technical SEO services",
-    offer: [
-      "Technical SEO audits",
-      "Intent-based keyword architecture for B2B & financial firms",
-      "Local search map scaling",
-    ],
-    outcomes: [
-      "Increased high-intent organic traffic",
-      "Top positions across high-margin target terms",
-    ],
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <circle cx="10.5" cy="10.5" r="6.5" />
-        <path d="M20 20l-5.5-5.5" strokeLinecap="round" />
-      </svg>
-    ),
+    num: "01",
+    title: "Search Engine Optimization (SEO)",
+    subtitle: "Get found by your ideal clients on Google.",
+    desc: "We fix technical site issues, optimize your core pages, and build your online authority so your firm ranks at the top when local clients are actively searching for your services.",
+    cta: "Explore SEO Services",
   },
   {
-    num: "02",
-    name: "Conversion-Optimized Web Development & Design",
-    href: "/services/web-development",
-    linkText: "See how I build conversion-focused websites",
-    offer: [
-      "Conversion-optimized web design for corporate practices",
-      "Clean speed budgets",
-      "Integrated schema markup",
-    ],
-    outcomes: [
-      "Faster loading speeds",
-      "Higher visitor-to-lead conversion rates",
-    ],
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M8 8l-4 4 4 4M16 8l4 4-4 4M13.5 6l-3 12" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
-  },
-  {
-    num: "03",
-    name: "Google Ads (PPC) Lead Generation Management",
     href: "/services/google-ads-management",
-    linkText: "Get a Google Ads audit",
-    offer: [
-      "Google Ads management & strict PPC query mapping",
-      "Custom landing pages",
-      "Automated lead quality tracking",
-    ],
-    outcomes: [
-      "Immediate inbound leads",
-      "Reduced ad spend waste",
-      "Lower cost-per-acquisition",
-    ],
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <circle cx="12" cy="12" r="9" />
-        <circle cx="12" cy="12" r="4.5" />
-        <circle cx="12" cy="12" r="1" fill="currentColor" />
-      </svg>
-    ),
+    num: "02",
+    title: "Google Ads (PPC) Management",
+    subtitle: "Generate immediate, high-quality business leads.",
+    desc: "We build and manage targeted ad campaigns designed to put your firm in front of ready-to-hire clients, continuously optimizing your ad spend to maximize your return on investment.",
+    cta: "Explore Google Ads",
+  },
+  {
+    href: "/services/web-development",
+    num: "03",
+    title: "Web Development & Design",
+    subtitle: "Turn casual website visitors into paying clients.",
+    desc: "We build lightning-fast, mobile-friendly websites that look highly professional, load instantly, and are engineered from day one to turn traffic into concrete business inquiries.",
+    cta: "Explore Web Design",
+  },
+  {
+    href: "/services/geo",
+    num: "04",
+    title: "AI Search Optimization (GEO)",
+    subtitle: "Secure your presence in AI-driven search results.",
+    desc: "We format and structure your website's data so modern AI assistants like ChatGPT, Perplexity, and Google AI Overviews can easily find, understand, and recommend your firm to users.",
+    cta: "Explore AI Search Services",
+  },
+  {
+    href: "/services/seo-audits",
+    num: "05",
+    title: "SEO Audits",
+    subtitle: "Find out what's holding your website back.",
+    desc: "A standalone technical and on-page SEO audit with practical, prioritised recommendations — no ongoing monthly commitment required.",
+    cta: "Explore SEO Audits",
   },
 ];
 
 export default function Services() {
   return (
     <section className={`${styles.services} section-dark`} id="services">
-      <div className={styles.split}>
-        <div className={styles.left}>
-          <div className="section-label">What I Do</div>
-          <h2 className={styles.heading}>Core Services</h2>
-          <p className={styles.body}>
-             SEO solutions to drive measurable growth across paid and organic channels.
+      <div className={styles.inner}>
+        <div className={styles.intro}>
+          <div className="section-label reveal-up">What I Do</div>
+          <h2 className={`${styles.heading} reveal-up`}>Core Services</h2>
+          <p className={`${styles.body} reveal-up`}>
+            SEO solutions to drive measurable growth across paid and organic channels.
           </p>
-          <a href="#contact" className={styles.cta}>
-            <span>Start a conversation</span>
-            <span>→</span>
-          </a>
-          <Link href="/services" className={styles.servicesLink}>
-            Explore all SEO, web development &amp; Google Ads services →
-          </Link>
         </div>
 
-        <div className={styles.right}>
-          {services.map((s) => {
-            const content = (
-              <>
-                <div className={styles.itemTop}>
-                  <div className={styles.itemTopLeft}>
-                    <span className={styles.itemIcon}>{s.icon}</span>
-                    <span className={styles.itemNum}>{s.num}</span>
-                  </div>
-                </div>
-                <h3 className={styles.itemName}>{s.name}</h3>
-
-                <div className={styles.matrix}>
-                  <div className={styles.matrixCol}>
-                    <div className={styles.matrixLabel}>What I Offer</div>
-                    <ul className={styles.matrixList}>
-                      {s.offer.map((line) => (
-                        <li key={line}>{line}</li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div className={styles.matrixCol}>
-                    <div className={styles.matrixLabel}>Expected Outcomes</div>
-                    <ul className={styles.matrixList}>
-                      {s.outcomes.map((line) => (
-                        <li key={line}>{line}</li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-
-                {s.href && (
-                  <span className={styles.itemLink}>
-                    {s.linkText} <span className={styles.itemArrow}>→</span>
-                  </span>
-                )}
-              </>
-            );
-            return s.href ? (
-              <Link
-                key={s.num}
-                href={s.href}
-                className={`${styles.item} ${styles.itemLinked} reveal-up`}
-              >
-                {content}
-              </Link>
-            ) : (
-              <div key={s.num} className={`${styles.item} reveal-up`}>
-                {content}
+        <div className={styles.grid}>
+          {services.map((s) => (
+            <div key={s.href} className={`${styles.card} reveal-up`}>
+              <div className={styles.cardHead}>
+                <h3 className={styles.cardTitle}>{s.title}</h3>
+                <span className={`index ${styles.cardIndex}`}>{s.num}</span>
               </div>
-            );
-          })}
+              <div className={styles.cardSubtitle}>{s.subtitle}</div>
+              <p className={styles.cardDesc}>{s.desc}</p>
+              <Link href={s.href} className={styles.exploreBtn}>
+                {s.cta}
+              </Link>
+            </div>
+          ))}
+
+          <div className={`${styles.highlight} reveal-up`}>
+            <Link href="/results" className={styles.highlightLink}>
+              <span className={styles.highlightStar} aria-hidden="true">✺</span>
+              <span className={styles.highlightEyebrow}>The Matrix</span>
+              <h3 className={styles.highlightHeading}>
+                Every discipline, one execution model.
+              </h3>
+              <p className={styles.highlightDesc}>
+                Five services, one specialist — no scope creep, no
+                hand-offs between teams, no outsourced pieces bolted on.
+              </p>
+              <span className={styles.highlightCta}>
+                <span>See the results</span>
+                <span className={styles.highlightCtaArrow}>→</span>
+              </span>
+            </Link>
+          </div>
         </div>
+
+        <Link href="/services" className={styles.servicesLink}>
+          Explore all SEO, web development &amp; Google Ads services →
+        </Link>
       </div>
     </section>
   );
