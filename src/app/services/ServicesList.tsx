@@ -52,6 +52,14 @@ const services = [
     desc: "We format and structure your website's data so modern AI assistants like ChatGPT, Perplexity, and Google AI Overviews can easily find, understand, and recommend your firm to users.",
     cta: "Explore AI Search Services",
   },
+  {
+    href: "/services/seo-audits",
+    num: "05",
+    title: "SEO Audits",
+    subtitle: "Find out what's holding your website back.",
+    desc: "A standalone technical and on-page SEO audit with practical, prioritised recommendations — no ongoing monthly commitment required.",
+    cta: "Explore SEO Audits",
+  },
 ];
 
 export default function ServicesList() {
