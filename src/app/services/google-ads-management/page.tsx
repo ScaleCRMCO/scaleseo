@@ -154,7 +154,7 @@ export default function GoogleAdsPage() {
             <span className={servicePageStyles.accent}>in Calgary &amp; Canada.</span>
           </>
         }
-        sub="Profitable PPC campaigns for accounting firms and professional service businesses — built, launched, and managed directly by me. Request a free PPC audit and I'll show you exactly where your ad spend is being wasted."
+        sub="Profitable PPC campaigns for accounting firms and professional service businesses — built, launched, and managed directly by me. Request a PPC audit and I'll show you exactly where your ad spend is being wasted."
         checkpoints={[
           "Precision Targeting — your budget goes toward buyers actively searching, not broad, wasted traffic",
           "Built to Convert — ads and landing pages engineered to turn clicks into booked calls",
@@ -253,7 +253,7 @@ export default function GoogleAdsPage() {
           Now booking · 1 spot Q3 2026
         </div>
         <h2 className={servicePageStyles.ctaHeadline}>
-          Ready for a free PPC audit?
+          Ready for a PPC audit?
         </h2>
         <p className={servicePageStyles.ctaSub}>
           Tell me about your business and current ad spend — I&rsquo;ll

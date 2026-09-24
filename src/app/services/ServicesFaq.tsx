@@ -3,7 +3,7 @@ import styles from "./ServicesFaq.module.css";
 const faqs = [
   {
     q: "How are SEO services priced?",
-    a: "Our engagements are bespoke and structured as monthly retainers rather than fixed, off-the-shelf packages. Pricing is determined individually based on your website's current authority, competitive landscape, and commercial objectives. Every partnership begins with a complimentary audit to ensure your quote reflects accurate project scope and clear deliverables.",
+    a: "Our engagements are bespoke and structured as monthly retainers rather than fixed, off-the-shelf packages. Pricing is determined individually based on your website's current authority, competitive landscape, and commercial objectives. Clients who move forward with a monthly SEO retainer receive a base-level audit at no cost; standalone or one-off audits are quoted separately based on scope.",
   },
   {
     q: "What is the typical timeline for seeing measurable results?",
