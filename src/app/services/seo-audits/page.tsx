@@ -160,7 +160,7 @@ export default function SeoAuditsPage() {
                 why it matters and what I recommend addressing first.
               </p>
               <div className={styles.tierFooter}>
-                <span className={styles.tierPrice}>Starting from $___ CAD</span>
+                <span className={styles.tierPrice}>$700 + GST</span>
                 <a
                   href="https://cal.com/corbinjensen-scaleseo/30min"
                   target="_blank"
@@ -200,7 +200,7 @@ export default function SeoAuditsPage() {
                 overall organic search performance.
               </p>
               <div className={styles.tierFooter}>
-                <span className={styles.tierPrice}>Starting from $___ CAD</span>
+                <span className={styles.tierPrice}>$1,500 + GST</span>
                 <a
                   href="https://cal.com/corbinjensen-scaleseo/30min"
                   target="_blank"
