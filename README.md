@@ -1,47 +1,54 @@
 # Scale SEO
 
-The personal site of Corbin Jensen — specialist SEO freelancer for trade contractors and accounting firms.
+The site for Scale SEO — Corbin Jensen's independent SEO, Google Ads, and AI-search (GEO) practice in Calgary, serving Canadian professional service businesses (accounting firms, legal practices, advisors).
 
 Live at: [scaleseo.co](https://scaleseo.co)
 
 ## Stack
 
 - **Framework:** Next.js 14 (App Router) + TypeScript
-- **Styling:** plain CSS with CSS variables (no Tailwind, no CSS-in-JS)
-- **Hosting:** Vercel
+- **Styling:** CSS Modules + CSS variables in `src/app/globals.css` (no Tailwind, no CSS-in-JS)
+- **Animation:** `motion` (Framer Motion) for hero/nav/grid animations
+- **Hosting:** Vercel — auto-deploys on every push to `main`
 - **Email:** Resend (contact form)
+- **Tracking:** Google Tag Manager + Google Ads conversion tag (in `layout.tsx`)
 - **DNS:** Cloudflare
 
 ## Where to edit things
 
-**Homepage sections** (the most common edits):
-- `src/app/sections/home/Hero.tsx`
-- `src/app/sections/home/Marquee.tsx`
-- `src/app/sections/home/CaseStudy.tsx`
-- `src/app/sections/home/Services.tsx`
-- `src/app/sections/home/ForWhom.tsx`
-- `src/app/sections/home/Process.tsx`
-- `src/app/sections/home/About.tsx`
-- `src/app/sections/home/Contact.tsx`
+**Homepage** — `src/app/page.tsx` sets the section order. Sections live in `src/app/sections/home/`:
+- `Hero.tsx` — H1, intro, floating Search Console image
+- `ServicesGrid.tsx` — 3×3 service card grid
+- `Comparison.tsx` — Scale SEO vs. generalist agencies table
+- `About.tsx`
+- `CaseStudy.tsx`
+- `Process.tsx`
+- `FAQ.tsx`
+- `BlogTeaser.tsx`
+- `Contact.tsx`
 
 **Site-wide bits:**
-- Nav: `src/app/components/Nav.tsx`
+- Nav + Services dropdown: `src/app/components/Nav.tsx`
 - Footer: `src/app/components/Footer.tsx`
-- Global styles, colors, fonts: `src/app/globals.css`
-- Page metadata (SEO title/description, social previews): `src/app/layout.tsx`
+- Colors, fonts, shared utility classes: `src/app/globals.css`
+- Default SEO title/description, social previews, LocalBusiness schema, GTM/Ads tags: `src/app/layout.tsx`
+- Sitemap (manual list — add new pages here): `src/app/sitemap.ts`
 
-**Adding new pages:** create a folder under `src/app/` named after the URL — e.g. `src/app/about/page.tsx` becomes `/about`. Pull sections from `src/app/sections/<page-name>/`.
+**Content data:**
+- Case studies: `src/app/data/caseStudies.ts`
+- Blog posts: `src/app/blog/posts.ts`
+
+**Adding a new page:** create a folder under `src/app/` named after the URL — e.g. `src/app/services/seo/page.tsx` becomes `/services/seo`. Service pages can use the shared template in `src/app/components/ServicePage.tsx`. Then add the URL to `sitemap.ts` (and to the Nav/Footer if it should be linked there).
 
 ## Local dev (optional)
 
-You don't need this to use the site — Vercel rebuilds automatically on every GitHub commit. But if you want to preview changes on your machine first:
+You don't need this to use the site — Vercel rebuilds automatically on every push to `main`. To preview locally:
 
 ```bash
 npm install
-npm run dev
+npm run dev     # http://localhost:3000
+npm run build   # run before pushing — catches type/build errors
 ```
-
-Visit `http://localhost:3000`.
 
 ## Environment variables
 
@@ -51,4 +58,6 @@ Resend needs an API key. In Vercel → Project → Settings → Environment Vari
 - `CONTACT_TO_EMAIL` — where form submissions go (e.g. `corbin@scaleseo.co`)
 - `CONTACT_FROM_EMAIL` — sending address on your verified Resend domain (e.g. `hello@send.scaleseo.co`)
 
-For local dev, copy `.env.local.example` to `.env.local` and fill it in.
+For local dev, create a `.env.local` file in the project root with the same three variables.
+
+See `status.md` for the full site map, design system, and project history.
