@@ -6,9 +6,9 @@ import ServicesFaq from "./ServicesFaq";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: "SEO & Web Development Services in Calgary | Scale SEO",
+  title: "SEO & Digital Marketing Services Calgary | Scale SEO",
   description:
-    "SEO, web development, and AI search optimization for established businesses, based in Calgary and working across Canada and internationally. Handled directly by one specialist.",
+    "Explore SEO, SEO audits, web development, Google Ads and AI search services from Scale SEO in Calgary. Direct, month-to-month support with no long-term contracts.",
   alternates: { canonical: "/services" },
 };
 
