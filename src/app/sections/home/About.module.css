@@ -149,6 +149,19 @@
   color: var(--highlight);
 }
 
+/* Supporting paragraphs under the two lead lines — smaller so the longer
+   copy stays readable at the section's large display size. */
+.body {
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--ink-dim-on-dark);
+}
+
+.body p {
+  margin-bottom: 18px;
+}
+
 .sig {
   margin-top: 40px;
   font-family: var(--display);

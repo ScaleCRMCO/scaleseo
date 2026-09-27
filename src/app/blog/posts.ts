@@ -26,7 +26,7 @@ export const posts: Post[] = [
     readTime: "7 min read",
     category: "Accounting Firms",
     excerpt:
-      "Most SEO advice is written for volume-based businesses chasing rapid clicks. A Canadian accounting firm's search strategy has to be built differently.",
+      "Most SEO advice is written for volume-based businesses chasing rapid clicks. An accounting firm's search strategy requires a different approach to service pages, local visibility, expertise, and commercial search intent.",
     body: [
       {
         type: "p",

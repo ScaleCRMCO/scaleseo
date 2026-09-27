@@ -1,0 +1,156 @@
+/* "What Goes Into a Scale SEO Campaign?" — dark rounded section using the
+   same card language as the homepage ServicesGrid. */
+.section {
+  position: relative;
+  padding: 140px 40px;
+  margin-top: -48px;
+  border-radius: 48px 48px 0 0;
+  overflow: hidden;
+  background: var(--bg-dark);
+  color: var(--ink-on-dark);
+}
+
+.intro {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 60px;
+  max-width: 1400px;
+  margin: 0 auto 64px;
+}
+
+.introTitle {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(32px, 3.8vw, 52px);
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  max-width: 760px;
+}
+
+.introBody {
+  max-width: 540px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--ink-dim-on-dark);
+}
+
+/* 3 cards across the top row, 2 wider cards on the second row, so the
+   grid never leaves an empty slot. */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.card {
+  grid-column: span 2;
+  background: #181818;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 28px;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  color: var(--ink-on-dark);
+  box-shadow: 0 40px 80px -40px rgba(0, 0, 0, 0.6),
+              0 12px 24px -12px rgba(0, 0, 0, 0.4);
+}
+
+.card:nth-child(n + 4) {
+  grid-column: span 3;
+}
+
+.cardHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+
+.cardTitle {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: -0.01em;
+}
+
+.cardIndex {
+  color: var(--ink-on-dark);
+  opacity: 0.35;
+}
+
+.cardDesc {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--ink-dim-on-dark);
+}
+
+.ctaRow {
+  max-width: 1400px;
+  margin: 48px auto 0;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 26px;
+  background: var(--highlight);
+  color: var(--on-highlight);
+  border-radius: 999px;
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.ctaArrow {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.cta:hover .ctaArrow {
+  transform: translateX(4px);
+}
+
+@media (max-width: 1100px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .card,
+  .card:nth-child(n + 4) {
+    grid-column: span 1;
+  }
+  .card:last-child {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 900px) {
+  .section {
+    padding: 90px 24px;
+  }
+  .intro {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .card:last-child {
+    grid-column: span 1;
+  }
+  .card {
+    padding: 2rem 1.5rem;
+  }
+}

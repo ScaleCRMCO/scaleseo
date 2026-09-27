@@ -3,54 +3,34 @@ import styles from "./Comparison.module.css";
 
 const rows: { capability: string; us: string; them: string }[] = [
   {
-    capability: "Client roster",
-    us: "B2B & professional services only",
-    them: "Mixed, unrelated verticals",
-  },
-  {
-    capability: "Full-funnel strategy",
-    us: "SEO, paid, web, and AI search aligned",
-    them: "Channel-specific silos",
-  },
-  {
-    capability: "Growth focus",
-    us: "Built around qualified, signed clients",
-    them: "Often optimized for vanity metrics",
-  },
-  {
     capability: "Who does the work",
-    us: "Every campaign run personally by the founder",
-    them: "Generic frameworks, junior-run accounts",
+    us: "Your SEO campaign is managed directly by the founder.",
+    them: "Work may move between salespeople, account managers, junior staff, and contractors.",
+  },
+  {
+    capability: "SEO strategy",
+    us: "Technical SEO, content, local search, and website improvements work together.",
+    them: "SEO tasks may be divided between separate departments.",
+  },
+  {
+    capability: "Client roster",
+    us: "Small roster focused primarily on professional service and B2B businesses.",
+    them: "Larger rosters spread across unrelated industries.",
+  },
+  {
+    capability: "Contracts",
+    us: "Month-to-month campaigns with no long-term lock-in.",
+    them: "Long-term contracts are common.",
   },
   {
     capability: "Website ownership",
-    us: "Full ownership, regardless of platform",
-    them: "Platform lock-in risk",
+    us: "You retain ownership of your website and assets.",
+    them: "Proprietary platforms can sometimes create unnecessary dependency.",
   },
   {
-    capability: "Paid media optimization",
-    us: "Outcome-based feedback loops",
-    them: "Surface-level cost-per-lead reporting",
-  },
-  {
-    capability: "SEO + AI visibility",
-    us: "Included in every engagement",
-    them: "Often SEO-only, or missing AI entirely",
-  },
-  {
-    capability: "Conversion-focused websites",
-    us: "UX built to drive real inquiries",
-    them: "Design-first, conversion second",
-  },
-  {
-    capability: "Transparent reporting",
-    us: "Traffic, leads, and revenue insights",
-    them: "Often vanity metrics",
-  },
-  {
-    capability: "Who you work with",
-    us: "1-on-1 with the founder · 100% Canadian",
-    them: "Rotating account teams",
+    capability: "Reporting",
+    us: "Rankings, organic traffic, enquiries, and business outcomes.",
+    them: "Reporting can focus heavily on activity and surface-level metrics.",
   },
 ];
 
@@ -59,11 +39,25 @@ export default function Comparison() {
     <section className={styles.section} id="comparison">
       <div className={styles.inner}>
         <h2 className={styles.heading}>
-          Scale SEO vs.
+          A Different Approach{" "}
           <br />
-          <em>Generalist Agencies.</em>
+          <em>to SEO Campaigns</em>
         </h2>
-        <p className={styles.sub}>What&rsquo;s the real difference?</p>
+        <div className={styles.sub}>
+          <p>
+            Scale SEO is an independent SEO practice, not a large generalist
+            marketing agency.
+          </p>
+          <p>
+            I keep my client roster intentionally small and personally handle
+            the strategy and implementation behind every campaign. That means
+            the person reviewing your rankings is also the person making
+            changes to your website, researching opportunities, improving
+            content, and deciding what happens next.
+          </p>
+        </div>
+
+        <h3 className={styles.tableTitle}>Scale SEO vs. Generalist Agencies</h3>
 
         <div className={styles.tableWrap}>
           <div className={styles.tableHead}>
@@ -89,7 +83,7 @@ export default function Comparison() {
         </div>
 
         <Link href="/results" className={styles.cta}>
-          <span>See more results</span>
+          <span>See Client Results</span>
           <span className={styles.ctaArrow}>→</span>
         </Link>
       </div>

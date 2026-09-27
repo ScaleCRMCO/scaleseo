@@ -19,6 +19,15 @@
   font-size: clamp(36px, 5vw, 64px);
   line-height: 1;
   letter-spacing: -0.025em;
+  margin-bottom: 24px;
+}
+
+.intro {
+  max-width: 680px;
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--ink-dim);
   margin-bottom: 64px;
 }
 

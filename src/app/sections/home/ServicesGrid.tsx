@@ -23,42 +23,42 @@ const services = [
   {
     href: "/services/seo",
     num: "01",
-    title: "SEO",
-    subtitle: "Google Organic Search Growth",
-    desc: "Improving your organic rankings and visibility on Google to ensure buyers find your website first.",
-    cta: "Explore SEO",
+    title: "SEO Services",
+    subtitle: "Ongoing Organic Search Growth",
+    desc: "Monthly SEO campaigns combining technical SEO, keyword research, on-page optimization, content, local SEO, internal linking, and website improvements to increase your visibility across Google.",
+    cta: "Explore SEO Services",
   },
   {
-    href: "/services/google-ads-management",
+    href: "/services/seo-audits",
     num: "02",
-    title: "PPC Management",
-    subtitle: "Google Ads & Bing Ads Management",
-    desc: "Creating and managing paid search campaigns, optimizing ad copy, and building daily negative keyword lists to lower your cost-per-lead.",
-    cta: "Explore Google Ads",
+    title: "SEO Audits",
+    subtitle: "Find Out What\u2019s Holding Your Website Back",
+    desc: "Standalone technical and on-page SEO audits that identify indexing issues, content gaps, site architecture problems, ranking opportunities, and practical next steps.",
+    cta: "Explore SEO Audits",
   },
   {
     href: "/services/web-development",
     num: "03",
     title: "Web Development",
-    subtitle: "Fast, Conversion-Ready Websites",
-    desc: "Building fast, fully responsive websites with clean code architecture, designed and structured for both high SEO visibility and conversions.",
+    subtitle: "Websites Built With Search in Mind",
+    desc: "Fast, responsive websites built around clean site architecture, organic search visibility, user experience, and conversions\u2014not just appearance.",
     cta: "Explore Web Development",
   },
   {
     href: "/services/geo",
     num: "04",
-    title: "AI SEO Service",
-    subtitle: "ChatGPT & Perplexity Brand Tracking",
-    desc: "Structuring web content for machine-readability and tracking your active brand citations daily across ChatGPT, Copilot, and Google AI Overviews.",
-    cta: "Explore AI SEO",
+    title: "AI Search Optimization",
+    subtitle: "Improve Visibility Across AI Search",
+    desc: "Improve how your business and content are understood by AI-powered search experiences, while tracking brand visibility across platforms such as ChatGPT, Perplexity, and Google AI experiences.",
+    cta: "Explore AI Search",
   },
   {
-    href: "/services/seo-audits",
+    href: "/services/google-ads-management",
     num: "05",
-    title: "SEO Audits",
-    subtitle: "Find Out What's Holding You Back",
-    desc: "A standalone technical and on-page SEO audit with practical, prioritised recommendations — no ongoing monthly commitment required.",
-    cta: "Explore SEO Audits",
+    title: "Google Ads Management",
+    subtitle: "Paid Search for High-Intent Leads",
+    desc: "Google Ads campaigns built around high-intent searches, practical conversion tracking, negative keyword management, and continuous optimization.",
+    cta: "Explore Google Ads",
   },
 ];
 
@@ -66,10 +66,20 @@ export default function ServicesGrid() {
   return (
     <section className={styles.section} id="services" data-nav-theme="dark">
       <div className={styles.intro}>
-        <h2 className={styles.introTitle}>
-          Are you looking to rank better in Google and Bing for your target
-          keywords?
-        </h2>
+        <h2 className={styles.introTitle}>SEO &amp; Digital Growth Services</h2>
+        <div className={styles.introBody}>
+          <p>
+            SEO is the core of what I do at Scale SEO. I build and manage
+            ongoing search campaigns designed around your website, market,
+            competitors, and business goals rather than forcing every client
+            into the same package.
+          </p>
+          <p>
+            From technical improvements and content to website development and
+            paid search, the focus stays on generating meaningful search
+            visibility and qualified enquiries.
+          </p>
+        </div>
       </div>
 
       <div className={styles.grid}>

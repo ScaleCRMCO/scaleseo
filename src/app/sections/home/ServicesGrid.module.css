@@ -26,6 +26,17 @@
   max-width: 820px;
 }
 
+.introBody {
+  max-width: 540px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--ink-dim-on-dark);
+}
+
 /* === 3x3 grid: 5 service cards + lime highlight tile last === */
 .grid {
   display: grid;

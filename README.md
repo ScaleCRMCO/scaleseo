@@ -22,6 +22,8 @@ Live at: [scaleseo.co](https://scaleseo.co)
 - `Comparison.tsx` — Scale SEO vs. generalist agencies table
 - `About.tsx`
 - `CaseStudy.tsx`
+- `CampaignAreas.tsx` — "What Goes Into a Scale SEO Campaign?" cards
+- `IndustriesTeaser.tsx` — professional service & B2B industries cards
 - `Process.tsx`
 - `FAQ.tsx`
 - `BlogTeaser.tsx`

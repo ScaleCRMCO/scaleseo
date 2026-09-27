@@ -13,11 +13,15 @@ export default function BlogTeaser() {
           <div>
             <div className="section-label reveal-up">Recent Articles</div>
             <h2 className={`${styles.heading} reveal-up`}>
-              Insights on SEO, growth, and search strategy.
+              SEO Insights &amp; Resources
             </h2>
+            <p className={`${styles.sub} reveal-up`}>
+              Practical guides covering SEO, organic search, websites, and the
+              strategies businesses can use to improve their visibility online.
+            </p>
           </div>
           <Link href="/blog" className={`${styles.viewAll} reveal-up`}>
-            Read more SEO &amp; Google Ads insights →
+            View All SEO Resources →
           </Link>
         </div>
 
@@ -40,7 +44,7 @@ export default function BlogTeaser() {
                 <h3 className={styles.title}>{post.title}</h3>
                 <p className={styles.excerpt}>{post.excerpt}</p>
                 <span className={styles.link}>
-                  Read article <span className={styles.arrow}>→</span>
+                  Read Article <span className={styles.arrow}>→</span>
                 </span>
               </div>
             </Link>

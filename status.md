@@ -24,7 +24,9 @@ throughout — copy is written in first person ("I"), not agency "we" voice.
 
 ### Pages
 - `/` — homepage, in this order: Hero → ServicesGrid (3×3 cards) → Comparison
-  (Scale SEO vs. generalist agencies) → About → CaseStudy → Process → FAQ →
+  (Scale SEO vs. generalist agencies) → About → CaseStudy → CampaignAreas
+  ("What Goes Into a Scale SEO Campaign?") → IndustriesTeaser ("SEO for
+  Professional Service & B2B Businesses") → Process → FAQ (FAQPage schema) →
   BlogTeaser → Contact
 - `/services` — hub page: black hero, 3×3 service grid (lime highlight card
   last), comparison, process, proof, FAQ (`ServicesList`, `ServicesComparison`,
@@ -73,7 +75,7 @@ throughout — copy is written in first person ("I"), not agency "we" voice.
   (→ `/contact`)
 
 ### Unused files
-`src/app/sections/home/Services.tsx`, `Marquee.tsx`, and `IndustriesTeaser.tsx`
+`src/app/sections/home/Services.tsx` and `Marquee.tsx`
 (+ their `.module.css`) are no longer imported anywhere — superseded by
 `ServicesGrid` / removed from the homepage. Safe to delete or reuse.
 
@@ -132,6 +134,8 @@ table).
    vulnerabilities in the dependency tree (Next 14.2.5 is pinned); not yet
    triaged.
 4. **Cleanup** — delete the unused homepage sections listed above.
+5. **Homepage case study 02** — add the strongest accounting-firm SEO result as
+   a second homepage case study once the data is cleared for publishing.
 
 ## Known Constraints / Gotchas for Future Sessions
 

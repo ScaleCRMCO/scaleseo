@@ -61,12 +61,23 @@ export default function Contact() {
             Now booking · 1 spot Q3 2026
           </div>
           <h2 className={styles.headline}>
-            Let&rsquo;s see if we&rsquo;re <em>a fit.</em>
+            Ready to Improve Your <em>Organic Search Visibility?</em>
           </h2>
           <p className={styles.lede}>
-            The fastest way to get a straight answer is a 30-minute call. If
-            you&rsquo;d rather put it in writing first, the form on the right
-            goes straight to me.
+            If you&rsquo;re investing in growth but aren&rsquo;t getting enough
+            qualified traffic from Google, I&rsquo;ll help you identify
+            what&rsquo;s holding your website back and where the strongest
+            opportunities exist.
+          </p>
+          <p className={styles.lede}>
+            Start with a conversation about your website, current search
+            visibility, competitors, and growth goals. If we&rsquo;re a good
+            fit, I&rsquo;ll outline what an ongoing SEO campaign should focus
+            on and why.
+          </p>
+          <p className={styles.promise}>
+            Month-to-month SEO. No long-term contracts. Work managed directly by
+            me.
           </p>
 
           <a
@@ -84,7 +95,7 @@ export default function Contact() {
               </svg>
             </span>
             <span className={styles.bookText}>
-              <span className={styles.bookLabel}>Book a call</span>
+              <span className={styles.bookLabel}>Book a Strategy Call</span>
               <span className={styles.bookSub}>30 minutes · pick a time that works</span>
             </span>
             <span className={styles.bookArrow} aria-hidden="true">→</span>
@@ -99,7 +110,7 @@ export default function Contact() {
                 </svg>
               </span>
               <span className={styles.methodBody}>
-                <span className={styles.methodLabel}>Email</span>
+                <span className={styles.methodLabel}>Send an Email</span>
                 <a href="mailto:team@scaleseo.co" className={styles.methodValue}>
                   team@scaleseo.co
                 </a>

@@ -13,7 +13,22 @@ export default function CaseStudy() {
     <section className={styles.case} id="work">
       <div className={styles.inner}>
         <div className={styles.top}>
-          <h2 className={styles.heading}>Real clients. Real numbers.</h2>
+          <h2 className={styles.heading}>
+            SEO Results From Real Client Campaigns
+          </h2>
+          <div className={styles.intro}>
+            <p>
+              Search rankings are useful, but they only matter when increased
+              visibility contributes to real business growth.
+            </p>
+            <p>
+              Scale SEO campaigns are built around improving the search
+              visibility that matters to each client, whether that means
+              ranking important service pages, expanding organic traffic,
+              generating qualified enquiries, or supporting broader revenue
+              growth.
+            </p>
+          </div>
         </div>
 
         <Link href="/results" className={styles.cardLinkWrap}>
@@ -45,17 +60,23 @@ export default function CaseStudy() {
               </span>
 
               <h3 className={styles.statement}>
-                Six months to 26% revenue growth for a premium construction
-                brand.
+                Six Months to 26% Revenue Growth for a Calgary Construction
+                Company
               </h3>
+
+              <p className={styles.summary}>
+                A new search-focused website and ongoing SEO campaign helped
+                Kinsmen Consulting strengthen its organic presence while
+                supporting measurable business growth.
+              </p>
 
               <div className={styles.metricCard}>
                 <span className={styles.metricValue}>26%</span>
-                <span className={styles.metricLabel}>Revenue growth</span>
+                <span className={styles.metricLabel}>Revenue Growth</span>
               </div>
 
               <span className={styles.cta}>
-                Read the full case study <span>→</span>
+                Read the Full Case Study <span>→</span>
               </span>
             </div>
           </motion.article>
