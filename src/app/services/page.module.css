@@ -16,17 +16,85 @@
   --accent: var(--highlight);
 }
 
-.heroContent {
-  max-width: 1000px;
+.heroTop {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
 }
 
-.eyebrow {
+.heroContent {
+  max-width: 720px;
+}
+
+/* === Right-side proof visual — floating Search Console screenshot, same
+   treatment as the homepage and /services/seo heroes === */
+.visual {
+  position: relative;
+  flex-shrink: 0;
+  width: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  transform: rotate(-3deg);
+}
+
+.visualFrame {
+  position: relative;
+  width: 100%;
+}
+
+.visualImg {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 40px 60px rgba(0, 0, 0, 0.5));
+}
+
+.visualCaption {
   font-family: var(--mono);
-  font-size: 12px;
-  letter-spacing: 0.18em;
+  font-size: 11px;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
+  color: var(--ink-dim-on-dark);
+  text-align: center;
+}
+
+/* Proof-metric bubble, counter-rotated so it sits upright */
+.visualBadge {
+  position: absolute;
+  top: -6%;
+  right: -8%;
+  transform: rotate(3deg);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: #181818;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 14px 18px;
+  max-width: 190px;
+  box-shadow: 0 24px 48px -20px rgba(0, 0, 0, 0.7);
+}
+
+.visualBadgeValue {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 26px;
+  line-height: 1;
   color: var(--highlight);
-  margin-bottom: 28px;
+}
+
+.visualBadgeLabel {
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 1.35;
+  color: #d8d8d8;
 }
 
 .title {
@@ -553,6 +621,17 @@ a:hover > .arrow {
 }
 
 /* === Responsive ======================================================== */
+@media (max-width: 1200px) {
+  .visual { width: 380px; }
+  .visualBadge { max-width: 160px; padding: 12px 14px; }
+  .visualBadgeValue { font-size: 22px; }
+  .visualBadgeLabel { font-size: 10px; }
+}
+
+@media (max-width: 1024px) {
+  .visual { display: none; }
+}
+
 @media (max-width: 1100px) {
   .serviceCard {
     grid-template-columns: 1fr;

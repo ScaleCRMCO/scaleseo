@@ -288,12 +288,10 @@ export default function ServicesPage() {
     <main>
       {/* === HERO — dark === */}
       <header className={styles.hero} data-nav-theme="dark">
+        <div className={styles.heroTop}>
         <div className={styles.heroContent}>
           <div className={styles.crumbsOnDark}>
             <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Services" }]} />
-          </div>
-          <div className={styles.eyebrow}>
-            Scale SEO · Services · Calgary, Canada
           </div>
           <h1 className={styles.title}>
             SEO &amp; Digital Marketing Services{" "}
@@ -311,11 +309,6 @@ export default function ServicesPage() {
               or outsourced campaign teams&mdash;just a search strategy built
               around your website, market, competition, and business goals.
             </p>
-            <p>
-              SEO is the core of what I do, with supporting services available
-              when your website, paid search, or AI visibility needs to work
-              alongside organic growth.
-            </p>
           </div>
           <div className={styles.buttonGroup}>
             <Link href="/services/seo" className={styles.buttonPrimaryDark}>
@@ -332,6 +325,27 @@ export default function ServicesPage() {
               <span className={styles.arrow}>→</span>
             </a>
           </div>
+        </div>
+
+        {/* Same floating Search Console proof image as the homepage hero */}
+        <div className={styles.visual}>
+          <div className={styles.visualFrame}>
+            <img
+              src="/images/gsc-performance-mockup-3d.webp"
+              alt="Google Search Console performance data showing clicks and impressions growth"
+              className={styles.visualImg}
+            />
+            <div className={styles.visualBadge}>
+              <span className={styles.visualBadgeValue}>+125%</span>
+              <span className={styles.visualBadgeLabel}>
+                Search impressions for an accounting firm
+              </span>
+            </div>
+          </div>
+          <span className={styles.visualCaption}>
+            Real Google Search Console Data
+          </span>
+        </div>
         </div>
       </header>
 
