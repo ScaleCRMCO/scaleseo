@@ -281,17 +281,106 @@ const principles = [
   },
 ];
 
+/* === Schema — /services only. Links to the global #website and
+   #organization nodes in layout.tsx; includes this page's BreadcrumbList
+   (so <Breadcrumbs> is rendered with schema={false}). === */
+const servicesJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://scaleseo.co/services#webpage",
+      url: "https://scaleseo.co/services",
+      name: "SEO & Digital Marketing Services in Calgary | Scale SEO",
+      description:
+        "Explore SEO, SEO audits, web development, Google Ads management, and AI search optimization services from Scale SEO in Calgary. Services are managed directly for professional service and B2B businesses.",
+      isPartOf: { "@id": "https://scaleseo.co/#website" },
+      about: { "@id": "https://scaleseo.co/#organization" },
+      publisher: { "@id": "https://scaleseo.co/#organization" },
+      mainEntity: { "@id": "https://scaleseo.co/services#services" },
+      breadcrumb: { "@id": "https://scaleseo.co/services#breadcrumb" },
+      inLanguage: "en-CA",
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://scaleseo.co/services#services",
+      name: "Scale SEO Services",
+      description: "SEO and digital marketing services offered by Scale SEO.",
+      numberOfItems: 5,
+      itemListOrder: "https://schema.org/ItemListOrderAscending",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Search Engine Optimization (SEO)",
+          url: "https://scaleseo.co/services/seo",
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "SEO Audits",
+          url: "https://scaleseo.co/services/seo-audits",
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "Web Development",
+          url: "https://scaleseo.co/services/web-development",
+        },
+        {
+          "@type": "ListItem",
+          position: 4,
+          name: "Google Ads Management",
+          url: "https://scaleseo.co/services/google-ads-management",
+        },
+        {
+          "@type": "ListItem",
+          position: 5,
+          name: "AI Search Optimization",
+          url: "https://scaleseo.co/services/geo",
+        },
+      ],
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://scaleseo.co/services#breadcrumb",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: "https://scaleseo.co/",
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Services",
+          item: "https://scaleseo.co/services",
+        },
+      ],
+    },
+  ],
+};
+
 /* === Page =============================================================== */
 
 export default function ServicesPage() {
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesJsonLd) }}
+      />
+
       {/* === HERO — dark === */}
       <header className={styles.hero} data-nav-theme="dark">
         <div className={styles.heroTop}>
         <div className={styles.heroContent}>
           <div className={styles.crumbsOnDark}>
-            <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Services" }]} />
+            <Breadcrumbs
+              items={[{ name: "Home", href: "/" }, { name: "Services" }]}
+              schema={false}
+            />
           </div>
           <h1 className={styles.title}>
             SEO &amp; Digital Marketing Services{" "}

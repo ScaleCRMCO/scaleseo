@@ -6,7 +6,15 @@ export type Crumb = {
   href?: string; // omit on the current/last page
 };
 
-export default function Breadcrumbs({ items }: { items: Crumb[] }) {
+// Pass schema={false} on pages whose own JSON-LD graph already includes
+// the BreadcrumbList, so it isn't output twice.
+export default function Breadcrumbs({
+  items,
+  schema = true,
+}: {
+  items: Crumb[];
+  schema?: boolean;
+}) {
   const base = "https://scaleseo.co";
 
   const jsonLd = {
@@ -22,10 +30,12 @@ export default function Breadcrumbs({ items }: { items: Crumb[] }) {
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      {schema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      )}
       <nav aria-label="Breadcrumb" className={styles.crumbs}>
         <ol className={styles.list}>
           {items.map((item, i) => {
