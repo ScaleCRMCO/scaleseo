@@ -1,12 +1,17 @@
+import type { ReactNode } from "react";
 import Link from "next/link";
 import styles from "./ServicesFaq.module.css";
 
 // Each answer is a list of paragraphs; the FAQPage schema joins them.
-const faqs: {
+export type FaqItem = {
   q: string;
   a: string[];
   link?: { href: string; label: string };
-}[] = [
+};
+
+// Default questions for the /services hub. Other service pages pass their
+// own `items` and `title`.
+const servicesFaqs: FaqItem[] = [
   {
     q: "Which service should I start with?",
     a: [
@@ -56,7 +61,20 @@ const faqs: {
   },
 ];
 
-export default function ServicesFaq() {
+export default function ServicesFaq({
+  items = servicesFaqs,
+  eyebrow = "Common Questions",
+  title = (
+    <>
+      Frequently Asked Questions About <em>Scale SEO Services</em>
+    </>
+  ),
+}: {
+  items?: FaqItem[];
+  eyebrow?: string;
+  title?: ReactNode;
+}) {
+  const faqs = items;
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -77,11 +95,8 @@ export default function ServicesFaq() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <div className={styles.inner}>
-        <div className={`index ${styles.eyebrow}`}>Common Questions</div>
-        <h2 className={`${styles.heading} reveal-up`}>
-          Frequently Asked Questions About{" "}
-          <em>Scale SEO Services</em>
-        </h2>
+        <div className={`index ${styles.eyebrow}`}>{eyebrow}</div>
+        <h2 className={`${styles.heading} reveal-up`}>{title}</h2>
 
         <div className={styles.list}>
           {faqs.map((item) => (

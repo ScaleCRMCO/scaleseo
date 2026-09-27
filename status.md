@@ -33,8 +33,13 @@ throughout — copy is written in first person ("I"), not agency "we" voice.
   "SEO Is at the Core" → "How These Services Work Together" (4 combos) →
   "Who Scale SEO Works With" → results (3 proof cards) → "What Working With
   Scale SEO Looks Like" (5 principles) → FAQ (FAQPage schema) → CTA
-- `/services/seo` — black hero with floating GSC image, trust bar, 4-way
-  comparison matrix, alternating rounded sections
+- `/services/seo` — main commercial SEO page. Original dark hero + trust bar,
+  then (reusing the /services section styles via `../page.module.css`):
+  "More Than Rankings" (flow diagram) → What's Included (9 service-area cards
+  with checklists) → How I Decide Each Month → Local/National/B2B →
+  featured accounting-firm result (GSC screenshot) → First 90 Days → Good
+  Fit / Not a Fit → Pricing → FAQ (shared `ServicesFaq` with its own items)
+  → CTA
 - `/services/geo` — GEO / AI-search optimization
 - `/services/web-development`
 - `/services/google-ads-management`

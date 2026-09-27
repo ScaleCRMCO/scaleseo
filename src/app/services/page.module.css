@@ -193,6 +193,7 @@
 /* Black pill for light sections, lime on hover */
 .pillDark {
   display: inline-flex;
+  align-self: flex-start;
   align-items: center;
   gap: 10px;
   padding: 16px 30px;
