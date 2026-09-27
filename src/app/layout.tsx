@@ -42,57 +42,61 @@ export const metadata: Metadata = {
   },
 };
 
+// Global site-wide schema, rendered on every page. Organization, founder
+// (Person) and WebSite are linked by @id so page-level schema can reference
+// them (e.g. { "@id": "https://scaleseo.co/#organization" }).
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": ["ProfessionalService", "LocalBusiness"],
-  name: "Scale SEO",
-  description:
-    "Independent SEO specialist helping established Canadian businesses — accounting firms and other premium service industries — turn organic search into revenue. One specialist, working directly with each client.",
-  url: "https://scaleseo.co",
-  email: "team@scaleseo.co",
-  telephone: "+14038751110",
-  priceRange: "$$$",
-  founder: {
-    "@type": "Person",
-    name: "Corbin Jensen",
-    jobTitle: "SEO Specialist",
-    url: "https://scaleseo.co/about",
-  },
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Calgary",
-    addressRegion: "Alberta",
-    addressCountry: "CA",
-  },
-  areaServed: [
-    { "@type": "City", name: "Calgary" },
-    { "@type": "State", name: "Alberta" },
-    { "@type": "Country", name: "Canada" },
-  ],
-  knowsAbout: [
-    "Search Engine Optimization",
-    "Local SEO",
-    "Technical SEO",
-    "AI Search Optimization",
-    "Web Development",
-    "Web Design",
-  ],
-  openingHoursSpecification: {
-    "@type": "OpeningHoursSpecification",
-    dayOfWeek: [
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-    ],
-    opens: "09:00",
-    closes: "17:00",
-  },
-  sameAs: [
-    "https://www.linkedin.com/in/corbin-jensen-9a9b77127/",
-    "https://www.instagram.com/scaleseo.co/",
-    "https://maps.app.goo.gl/FYWSaQ3p81VFnNcc7",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://scaleseo.co/#organization",
+      name: "Scale SEO",
+      url: "https://scaleseo.co/",
+      logo: {
+        "@type": "ImageObject",
+        "@id": "https://scaleseo.co/#logo",
+        url: "https://scaleseo.co/images/logo-mark.svg",
+      },
+      description:
+        "Scale SEO is an independent SEO practice based in Calgary, Alberta, providing SEO, web development, Google Ads management, SEO audits, and AI search optimization for professional service and B2B businesses.",
+      foundingDate: "2025",
+      founder: {
+        "@id": "https://scaleseo.co/#corbin-jensen",
+      },
+      areaServed: [
+        { "@type": "City", name: "Calgary" },
+        { "@type": "AdministrativeArea", name: "Alberta" },
+        { "@type": "Country", name: "Canada" },
+      ],
+      sameAs: [
+        "https://www.linkedin.com/company/scale-seo/",
+        "https://www.instagram.com/scaleseo.co/",
+        "https://maps.app.goo.gl/DbV1TQJZQWrpiNf38",
+        "https://clutch.co/profile/scale-seo",
+      ],
+    },
+    {
+      "@type": "Person",
+      "@id": "https://scaleseo.co/#corbin-jensen",
+      name: "Corbin Jensen",
+      url: "https://scaleseo.co/corbin-jensen",
+      jobTitle: "SEO Specialist",
+      worksFor: {
+        "@id": "https://scaleseo.co/#organization",
+      },
+      sameAs: ["https://www.linkedin.com/in/corbin-jensen-seo/"],
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://scaleseo.co/#website",
+      url: "https://scaleseo.co/",
+      name: "Scale SEO",
+      publisher: {
+        "@id": "https://scaleseo.co/#organization",
+      },
+      inLanguage: "en-CA",
+    },
   ],
 };
 
