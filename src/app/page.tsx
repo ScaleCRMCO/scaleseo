@@ -16,9 +16,35 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
 };
 
+// Homepage-only schema — links to the global #website and #organization
+// nodes defined in layout.tsx.
+const webPageJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://scaleseo.co/#webpage",
+  url: "https://scaleseo.co/",
+  name: "Calgary SEO Services for Growing Businesses | Scale SEO",
+  description:
+    "Scale SEO provides Calgary SEO services for professional service and B2B businesses. Founder-led SEO campaigns combine technical SEO, content, local SEO and website improvements to grow organic visibility and qualified traffic.",
+  isPartOf: {
+    "@id": "https://scaleseo.co/#website",
+  },
+  about: {
+    "@id": "https://scaleseo.co/#organization",
+  },
+  publisher: {
+    "@id": "https://scaleseo.co/#organization",
+  },
+  inLanguage: "en-CA",
+};
+
 export default function Home() {
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }}
+      />
       <Hero />
       <ServicesGrid />
       <Comparison />
