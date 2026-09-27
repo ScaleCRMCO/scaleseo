@@ -28,9 +28,11 @@ throughout — copy is written in first person ("I"), not agency "we" voice.
   ("What Goes Into a Scale SEO Campaign?") → IndustriesTeaser ("SEO for
   Professional Service & B2B Businesses") → Process → FAQ (FAQPage schema) →
   BlogTeaser → Contact
-- `/services` — hub page: black hero, 3×3 service grid (lime highlight card
-  last), comparison, process, proof, FAQ (`ServicesList`, `ServicesComparison`,
-  `ServicesProof`, `ServicesFaq`)
+- `/services` — hub page (all in `services/page.tsx` + `ServicesFaq.tsx`):
+  dark hero → 5 detailed service cards (copy + "can include" checklist) →
+  "SEO Is at the Core" → "How These Services Work Together" (4 combos) →
+  "Who Scale SEO Works With" → results (3 proof cards) → "What Working With
+  Scale SEO Looks Like" (5 principles) → FAQ (FAQPage schema) → CTA
 - `/services/seo` — black hero with floating GSC image, trust bar, 4-way
   comparison matrix, alternating rounded sections
 - `/services/geo` — GEO / AI-search optimization

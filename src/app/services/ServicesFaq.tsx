@@ -1,25 +1,58 @@
+import Link from "next/link";
 import styles from "./ServicesFaq.module.css";
 
-const faqs = [
+// Each answer is a list of paragraphs; the FAQPage schema joins them.
+const faqs: {
+  q: string;
+  a: string[];
+  link?: { href: string; label: string };
+}[] = [
+  {
+    q: "Which service should I start with?",
+    a: [
+      "If your primary goal is generating more long-term traffic and enquiries from Google, ongoing SEO is usually the most appropriate starting point.",
+      "A standalone SEO audit may make more sense if you already have a marketing or development team and primarily need an independent assessment and strategy.",
+      "If the website itself is limiting performance, web development can be completed independently or as part of a wider SEO engagement.",
+    ],
+  },
   {
     q: "How are SEO services priced?",
-    a: "Our engagements are bespoke and structured as monthly retainers rather than fixed, off-the-shelf packages. Pricing is determined individually based on your website's current authority, competitive landscape, and commercial objectives. Clients who move forward with a monthly SEO retainer receive a base-level audit at no cost; standalone or one-off audits are quoted separately based on scope.",
+    a: [
+      "Ongoing SEO campaigns are structured as monthly retainers based on the website, competition, objectives, and amount of work required.",
+      "I don’t use generic SEO packages because two businesses targeting different markets rarely require exactly the same work.",
+      "Standalone SEO audits and web development projects are scoped separately.",
+    ],
   },
   {
-    q: "What is the typical timeline for seeing measurable results?",
-    a: "SEO is a compounding investment rather than an immediate spike. While initial organic movements and technical corrections are often visible within 3 to 6 months, the most significant revenue-driving gains develop over a sustained period. We establish a realistic, data-backed timeline specific to your domain during our initial evaluation.",
+    q: "Do you require long-term contracts?",
+    a: [
+      "No.",
+      "Ongoing Scale SEO engagements are month-to-month. Your website, accounts, content, data, and other digital assets remain yours.",
+    ],
   },
   {
-    q: "Do you require long-term contractual commitments?",
-    a: "No. To maintain complete accountability, all services are provided on a flexible, month-to-month basis with no long-term contract lock-ins. We believe our strategic value should justify the partnership each month. You retain full ownership of your platforms, assets, and data at all times.",
+    q: "Can you manage my website as part of SEO?",
+    a: [
+      "Yes.",
+      "Website changes are often necessary for SEO, which is one reason I work directly with websites rather than limiting campaigns to recommendations and reports.",
+      "Depending on your website and platform, I can implement technical fixes, improve service pages, restructure content, add internal links, create new pages, and make other changes required by the strategy.",
+    ],
   },
   {
-    q: "Can Google Ads and organic SEO be managed collectively?",
-    a: "Yes. Managing paid search and organic SEO under a unified strategy ensures both channels inform and strengthen each other. High-converting copy from your Google Ads campaigns directly influences our on-page SEO optimization, while high-intent keyword data from organic search allows us to eliminate waste and refine target parameters within your paid campaigns.",
+    q: "Can I purchase an SEO audit without monthly SEO?",
+    a: [
+      "Yes.",
+      "Standalone SEO audits are available for businesses that want an independent assessment and prioritized recommendations without committing to ongoing SEO.",
+    ],
+    link: { href: "/services/seo-audits", label: "Learn More About SEO Audits" },
   },
   {
-    q: "What is Generative Engine Optimization (GEO), and is it necessary for my firm?",
-    a: "Generative Engine Optimization (GEO) involves structuring your digital content so that modern AI platforms—such as ChatGPT, Perplexity, and Google AI Overviews—can accurately read, synthesize, and cite your firm as an authority. For professional service firms whose clients utilize AI assistants for vendor research, GEO serves as an essential complement to traditional search engine optimization.",
+    q: "Do you only work with businesses in Calgary?",
+    a: [
+      "No.",
+      "Scale SEO is based in Calgary, Alberta, but SEO, web development, paid search, and AI search work can be managed remotely for businesses throughout Canada and internationally.",
+      "Calgary is my home market, while the strategy itself is built around the locations and customers your business needs to reach.",
+    ],
   },
 ];
 
@@ -32,13 +65,13 @@ export default function ServicesFaq() {
       name: item.q,
       acceptedAnswer: {
         "@type": "Answer",
-        text: item.a,
+        text: item.a.join(" "),
       },
     })),
   };
 
   return (
-    <section className={styles.section}>
+    <section className={styles.section} id="faq">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -46,14 +79,24 @@ export default function ServicesFaq() {
       <div className={styles.inner}>
         <div className={`index ${styles.eyebrow}`}>Common Questions</div>
         <h2 className={`${styles.heading} reveal-up`}>
-          Frequently Asked Questions
+          Frequently Asked Questions About{" "}
+          <em>Scale SEO Services</em>
         </h2>
 
         <div className={styles.list}>
           {faqs.map((item) => (
             <div key={item.q} className={`${styles.item} reveal-up`}>
-              <div className={styles.question}>{item.q}</div>
-              <p className={styles.answer}>{item.a}</p>
+              <h3 className={styles.question}>{item.q}</h3>
+              <div className={styles.answer}>
+                {item.a.map((para) => (
+                  <p key={para}>{para}</p>
+                ))}
+                {item.link && (
+                  <Link href={item.link.href} className={styles.answerLink}>
+                    {item.link.label} <span aria-hidden="true">→</span>
+                  </Link>
+                )}
+              </div>
             </div>
           ))}
         </div>

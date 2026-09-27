@@ -30,7 +30,7 @@
 .heading em {
   font-style: normal;
   font-weight: 800;
-  color: var(--accent);
+  color: var(--ink-faint);
 }
 
 .list {
@@ -60,6 +60,21 @@
   font-weight: 400;
   font-size: 15.5px;
   line-height: 1.65;
+  color: var(--ink-dim);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.answerLink {
+  align-self: flex-start;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.answerLink:hover {
   color: var(--ink-dim);
 }
 
