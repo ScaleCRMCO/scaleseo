@@ -8,9 +8,9 @@ import hub from "../page.module.css";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: "SEO Services | Technical, On-Page & Local SEO | Scale SEO",
+  title: "Search Engine Optimization Services Calgary | Scale SEO",
   description:
-    "Technical, on-page, and local SEO built to improve real website performance — faster sites, better rankings, and more qualified organic traffic. Handled directly by one specialist, based in Calgary.",
+    "Ongoing SEO services for professional service and B2B businesses. Technical SEO, content, on-page and local SEO managed directly from Calgary.",
   alternates: { canonical: "/services/seo" },
 };
 
