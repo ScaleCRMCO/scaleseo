@@ -475,49 +475,62 @@ export default function SeoAuditsPage() {
             />
           </div>
           <h1 className={styles.title}>
-            SEO Audit Services <span className={styles.accent}>in Calgary</span>
+            SEO Audit Services in{" "}
+            <span className={styles.titleBlock}>Calgary</span>
           </h1>
-          <p className={styles.heroLead}>
-            Find out what&rsquo;s limiting your organic search performance and
-            what you should fix first.
-          </p>
-          <div className={styles.sub}>
-            <p>
-              Scale SEO provides standalone SEO audits for businesses that want
-              a detailed assessment of their website without committing to
-              ongoing monthly SEO.
-            </p>
-            <p>
-              I review the technical foundation, content, on-page SEO, website
-              structure, rankings, and search performance to identify problems,
-              missed opportunities, and the changes most likely to make a
-              difference.
-            </p>
-            <p>
-              You&rsquo;ll receive clear findings and prioritized
-              recommendations that you can implement internally, give to your
-              developer or marketing team, or work with me to address.
-            </p>
+
+          <div className={styles.heroBottom}>
+            <div className={styles.heroMain}>
+              <p className={styles.heroLead}>
+                Find out what&rsquo;s limiting your organic search performance
+                and what you should fix first.
+              </p>
+              <div className={styles.sub}>
+                <p>
+                  Scale SEO provides standalone SEO audits for businesses that
+                  want a detailed assessment of their website without
+                  committing to ongoing monthly SEO.
+                </p>
+                <p>
+                  I review the technical foundation, content, on-page SEO,
+                  website structure, rankings, and search performance to
+                  identify problems, missed opportunities, and the changes most
+                  likely to make a difference.
+                </p>
+                <p>
+                  You&rsquo;ll receive clear findings and prioritized
+                  recommendations that you can implement internally, give to
+                  your developer or marketing team, or work with me to address.
+                </p>
+              </div>
+              <div className={styles.heroCtaGroup}>
+                <a
+                  href={BOOKING_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.heroCta}
+                >
+                  <span>Book an SEO Audit</span>
+                  <span className={styles.arrow}>→</span>
+                </a>
+                <a href="#tiers" className={styles.heroCtaSecondary}>
+                  <span>Compare Audit Options</span>
+                  <span>↓</span>
+                </a>
+              </div>
+            </div>
+
+            <ul className={styles.heroChecks}>
+              {["Standalone Service", "Clear Recommendations", "No Monthly SEO Commitment Required"].map(
+                (item) => (
+                  <li key={item}>
+                    <span className={styles.heroCheck} aria-hidden="true">✓</span>
+                    {item}
+                  </li>
+                )
+              )}
+            </ul>
           </div>
-          <div className={styles.heroCtaGroup}>
-            <a
-              href={BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.heroCta}
-            >
-              <span>Book an SEO Audit</span>
-              <span className={styles.arrow}>→</span>
-            </a>
-            <a href="#tiers" className={styles.heroCtaSecondary}>
-              <span>Compare Audit Options</span>
-              <span>↓</span>
-            </a>
-          </div>
-          <p className={styles.heroTrust}>
-            Standalone Service · Clear Recommendations · No Monthly SEO
-            Commitment Required
-          </p>
         </div>
       </header>
 
