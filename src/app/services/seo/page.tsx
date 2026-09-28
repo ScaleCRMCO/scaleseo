@@ -385,38 +385,165 @@ const faqs: FaqItem[] = [
   },
 ];
 
+/* === Schema — WebPage + Service + BreadcrumbList graph, linked to the
+   global #website and #organization nodes in layout.tsx. Includes this
+   page's BreadcrumbList, so <Breadcrumbs> is rendered with schema={false}.
+   The FAQPage schema comes from <ServicesFaq>. === */
+const seoJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://scaleseo.co/services/seo#webpage",
+      "url": "https://scaleseo.co/services/seo",
+      "name": "Search Engine Optimization Services | Scale SEO",
+      "description": "Ongoing search engine optimization services for professional service and B2B businesses. Scale SEO combines technical SEO, on-page optimization, content, local SEO and website improvements to grow qualified organic traffic.",
+      "isPartOf": {
+        "@id": "https://scaleseo.co/#website"
+      },
+      "about": {
+        "@id": "https://scaleseo.co/services/seo#service"
+      },
+      "mainEntity": {
+        "@id": "https://scaleseo.co/services/seo#service"
+      },
+      "breadcrumb": {
+        "@id": "https://scaleseo.co/services/seo#breadcrumb"
+      },
+      "publisher": {
+        "@id": "https://scaleseo.co/#organization"
+      },
+      "inLanguage": "en-CA"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://scaleseo.co/services/seo#service",
+      "name": "Search Engine Optimization Services",
+      "alternateName": "SEO Services",
+      "serviceType": "Search Engine Optimization",
+      "url": "https://scaleseo.co/services/seo",
+      "description": "Ongoing SEO services combining SEO strategy, keyword research, technical SEO, on-page optimization, content strategy, local SEO, internal linking, website improvements and performance reporting.",
+      "provider": {
+        "@id": "https://scaleseo.co/#organization"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Calgary"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Alberta"
+        },
+        {
+          "@type": "Country",
+          "name": "Canada"
+        }
+      ],
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "Professional service and B2B businesses"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "SEO Campaign Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "SEO Strategy and Keyword Research"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Technical SEO"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "On-Page SEO"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "SEO Content Strategy"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Local SEO"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Internal Linking and Site Architecture"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Website and Conversion Improvements"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "SEO Tracking and Reporting"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://scaleseo.co/services/seo#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://scaleseo.co/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://scaleseo.co/services"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "SEO Services",
+          "item": "https://scaleseo.co/services/seo"
+        }
+      ]
+    }
+  ]
+};
+
 /* === Page =============================================================== */
 
 export default function SeoServicePage() {
-  const serviceJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    name: "SEO Services",
-    description:
-      "Technical, on-page, and local SEO built to improve real website performance — faster sites, better rankings, and more qualified organic traffic.",
-    serviceType: "Search Engine Optimization",
-    url: "https://scaleseo.co/services/seo",
-    provider: {
-      "@type": "ProfessionalService",
-      name: "Scale SEO",
-      url: "https://scaleseo.co",
-      founder: {
-        "@type": "Person",
-        name: "Corbin Jensen",
-        url: "https://scaleseo.co/corbin-jensen",
-      },
-    },
-    areaServed: [
-      { "@type": "City", name: "Calgary" },
-      { "@type": "Country", name: "Canada" },
-    ],
-  };
+
 
   return (
     <main>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(seoJsonLd) }}
       />
 
       <header className={styles.hero} data-nav-theme="dark">
@@ -429,6 +556,7 @@ export default function SeoServicePage() {
                 { name: "Services", href: "/services" },
                 { name: "SEO" },
               ]}
+              schema={false}
             />
           </div>
           <h1 className={styles.title}>
