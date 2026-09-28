@@ -43,7 +43,6 @@ export default function About() {
             businesses improve their organic search visibility in Canada and
             beyond.
           </p>
-          <p>I&rsquo;m Corbin Jensen, and I personally manage every campaign.</p>
           <div className={styles.body}>
             <p>
               That includes keyword research, technical SEO, content strategy,
