@@ -15,7 +15,7 @@
 }
 
 .heroContent {
-  max-width: 640px;
+  max-width: 720px;
   flex-shrink: 0;
   padding-bottom: 72px;
 }
@@ -111,7 +111,7 @@
 .title {
   font-family: var(--display);
   font-weight: 800;
-  font-size: clamp(38px, 5.5vw, 76px);
+  font-size: clamp(36px, 4.4vw, 62px);
   line-height: 1.05;
   letter-spacing: -0.03em;
   color: var(--ink-on-dark);
@@ -126,6 +126,9 @@
   color: var(--ink-dim-on-dark);
   max-width: 700px;
   margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .heroCtaGroup {

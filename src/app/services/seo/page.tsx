@@ -560,16 +560,22 @@ export default function SeoServicePage() {
             />
           </div>
           <h1 className={styles.title}>
-            Calgary SEO Specialist for{" "}
-            <span className={styles.accent}>B2B &amp; Professional Services</span>
+            Search Engine Optimization Services{" "}
+            <span className={styles.accent}>Built for Long-Term Growth</span>
           </h1>
-          <p className={styles.sub}>
-            We engineer high-intent search optimization that turns local
-            organic visibility into premium corporate inquiries, signed
-            contracts, and qualified pipeline revenue. No vanity metrics. No
-            checklist fluff. Just founder-led search engineering built to
-            dominate Calgary and Canadian markets.
-          </p>
+          <div className={styles.sub}>
+            <p>
+              Scale SEO provides ongoing search engine optimization for
+              professional service and B2B businesses that want to generate
+              more qualified traffic, enquiries, and customers through Google.
+            </p>
+            <p>
+              Based in Calgary and working with businesses across Canada, I
+              personally manage every SEO campaign&mdash;from technical
+              improvements and keyword research to content, local SEO, internal
+              linking, and website optimization.
+            </p>
+          </div>
           <div className={styles.heroCtaGroup}>
             <a
               href="https://cal.com/corbinjensen-scaleseo/30min"
