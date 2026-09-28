@@ -428,11 +428,94 @@ const faqs: FaqItem[] = [
 
 const pad = (i: number) => String(i + 1).padStart(2, "0");
 
+/* === Schema — WebPage + Service + BreadcrumbList graph, linked to the
+   global #website and #organization nodes in layout.tsx. Includes this
+   page's BreadcrumbList, so <Breadcrumbs> is rendered with schema={false}.
+   The FAQPage schema comes from <ServicesFaq>. === */
+const accountingJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://scaleseo.co/industries/accounting-firms#webpage",
+      "url": "https://scaleseo.co/industries/accounting-firms",
+      "name": "SEO for Accounting Firms & CPA Practices in Canada | Scale SEO",
+      "description": "SEO services for accounting firms and CPA practices across Canada. Build visibility for corporate tax, bookkeeping, advisory and other priority accounting services.",
+      "isPartOf": {
+        "@id": "https://scaleseo.co/#website"
+      },
+      "about": {
+        "@id": "https://scaleseo.co/industries/accounting-firms#service"
+      },
+      "publisher": {
+        "@id": "https://scaleseo.co/#organization"
+      },
+      "breadcrumb": {
+        "@id": "https://scaleseo.co/industries/accounting-firms#breadcrumb"
+      },
+      "inLanguage": "en-CA"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://scaleseo.co/industries/accounting-firms#service",
+      "name": "SEO for Accounting Firms",
+      "alternateName": [
+        "Accounting Firm SEO",
+        "SEO for Accountants",
+        "CPA Firm SEO"
+      ],
+      "serviceType": "Search Engine Optimization for Accounting Firms",
+      "url": "https://scaleseo.co/industries/accounting-firms",
+      "description": "SEO services for accounting firms and CPA practices across Canada, including technical SEO, service page optimization, local SEO, content strategy, internal linking and website improvements.",
+      "provider": {
+        "@id": "https://scaleseo.co/#organization"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Canada"
+      },
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "Accounting firms, CPA firms, bookkeeping firms and tax advisory practices in Canada"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://scaleseo.co/industries/accounting-firms#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://scaleseo.co/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Industries",
+          "item": "https://scaleseo.co/industries"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Accounting Firms",
+          "item": "https://scaleseo.co/industries/accounting-firms"
+        }
+      ]
+    }
+  ]
+};
+
 /* === Page =============================================================== */
 
 export default function AccountingFirmsPage() {
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(accountingJsonLd) }}
+      />
+
       {/* === HERO — dark, full-width left-aligned === */}
       <header className={ind.hero} data-nav-theme="dark">
         <div className={ind.heroContent}>
@@ -443,6 +526,7 @@ export default function AccountingFirmsPage() {
                 { name: "Industries", href: "/industries" },
                 { name: "Accounting Firms" },
               ]}
+              schema={false}
             />
           </div>
           <h1 className={ind.title}>
