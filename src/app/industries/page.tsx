@@ -96,16 +96,105 @@ const differences = [
 
 const pad = (i: number) => String(i + 1).padStart(2, "0");
 
+/* === Schema — CollectionPage + ItemList of industries + BreadcrumbList,
+   linked to the global #website and #organization nodes in layout.tsx.
+   Includes this page's BreadcrumbList, so <Breadcrumbs> is rendered with
+   schema={false}. === */
+const industriesJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://scaleseo.co/industries#webpage",
+      "url": "https://scaleseo.co/industries",
+      "name": "SEO for Professional Services & B2B Businesses | Scale SEO",
+      "description": "SEO for professional service and B2B businesses, including accounting firms, consultants, financial and advisory businesses. Strategies built around qualified search visibility and long-term organic growth.",
+      "isPartOf": {
+        "@id": "https://scaleseo.co/#website"
+      },
+      "about": {
+        "@id": "https://scaleseo.co/#organization"
+      },
+      "publisher": {
+        "@id": "https://scaleseo.co/#organization"
+      },
+      "mainEntity": {
+        "@id": "https://scaleseo.co/industries#industries"
+      },
+      "breadcrumb": {
+        "@id": "https://scaleseo.co/industries#breadcrumb"
+      },
+      "inLanguage": "en-CA"
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://scaleseo.co/industries#industries",
+      "name": "Industries Scale SEO Works With",
+      "description": "Professional service and B2B industries served by Scale SEO.",
+      "numberOfItems": 4,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accounting Firms",
+          "url": "https://scaleseo.co/industries/accounting-firms"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Consulting Firms"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Financial & Advisory Services"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Other Professional & B2B Services"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://scaleseo.co/industries#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://scaleseo.co/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Industries",
+          "item": "https://scaleseo.co/industries"
+        }
+      ]
+    }
+  ]
+};
+
 /* === Page =============================================================== */
 
 export default function IndustriesPage() {
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(industriesJsonLd) }}
+      />
+
       {/* === HERO — dark, full-width left-aligned (matches /services/seo-audits) === */}
       <header className={styles.hero} data-nav-theme="dark">
         <div className={styles.heroContent}>
           <div className={styles.crumbsOnDark}>
-            <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Industries" }]} />
+            <Breadcrumbs
+              items={[{ name: "Home", href: "/" }, { name: "Industries" }]}
+              schema={false}
+            />
           </div>
           <h1 className={styles.title}>
             SEO for Professional Services &amp;{" "}
