@@ -20,6 +20,18 @@ const serviceLinks = [
     ),
   },
   {
+    href: "/services/seo-audits",
+    name: "SEO Audits",
+    desc: "Standalone technical & on-page audits with a prioritised roadmap.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
+        <rect x="5" y="4" width="14" height="17" rx="2" />
+        <path d="M9 4.5V3.5h6v1" strokeLinejoin="round" />
+        <path d="M8.5 12.5l2.2 2.2 4.8-4.8" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+  },
+  {
     href: "/services/google-ads-management",
     name: "Google Ads",
     desc: "Profitable PPC campaigns for professional service firms.",
@@ -143,7 +155,7 @@ export default function Nav() {
                 </span>
                 <span className={styles.dropdownFeaturedName}>All Services</span>
                 <span className={styles.dropdownFeaturedDesc}>
-                  One specialist, four disciplines. Explore everything on offer.
+                  One specialist, five services. Explore everything on offer.
                 </span>
                 <span className={styles.dropdownFeaturedBtn}>All services &rarr;</span>
               </Link>

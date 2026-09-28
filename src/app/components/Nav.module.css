@@ -427,6 +427,11 @@
 .dropdownItem::after {
   display: none;
 }
+/* Odd item count (5 services): last item spans both columns so the grid
+   never ends on an empty cell. */
+.dropdownItem:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
 .dropdownItemIcon {
   width: 24px;
   height: 24px;
