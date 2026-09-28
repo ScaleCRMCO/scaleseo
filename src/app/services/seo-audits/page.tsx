@@ -8,9 +8,9 @@ import hub from "../page.module.css";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: "SEO Audits | Standalone Website & Technical SEO Audits | Scale SEO",
+  title: "SEO Audit Services Calgary | Scale SEO",
   description:
-    "Standalone SEO audits for businesses that want a clear, documented assessment of their website without committing to ongoing monthly SEO. Handled directly by one specialist, based in Calgary.",
+    "Standalone SEO audits for Calgary businesses. Identify technical, on-page and search performance issues with clear findings and prioritized recommendations.",
   alternates: { canonical: "/services/seo-audits" },
 };
 
