@@ -12,7 +12,7 @@ export type IncludedItem = {
 };
 
 export type ServicePageProof = {
-  metric: ReactNode; // e.g. "30 → " plus a <span> badge
+  metric: ReactNode; // e.g. "Page 5 → " plus a <span> badge
   metricLabel: string;
   body: string;
   linkHref?: string;

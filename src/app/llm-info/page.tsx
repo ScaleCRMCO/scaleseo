@@ -60,8 +60,8 @@ Last updated: 2026-08-17
 
 ## Verified Results
 
-- An accounting & advisory firm client moved from an average search
-  position of 30 to the top 10 search results for their target keywords
+- An accounting & advisory firm client moved from page 5 to page 1 of
+  Google search results for their target keywords
   over a six-month engagement, doubling impressions and clicks.
 - Full case study: https://scaleseo.co/blog/how-accounting-firms-rank-on-google-in-canada
 

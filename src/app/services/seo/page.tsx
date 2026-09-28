@@ -851,7 +851,7 @@ export default function SeoServicePage() {
               <p>SEO should eventually show up in real search data.</p>
               <p>
                 One of the professional service firms I work with came to Scale
-                SEO with important commercial keywords sitting around page three
+                SEO with important commercial keywords sitting around page five
                 of Google.
               </p>
               <p>
@@ -865,11 +865,11 @@ export default function SeoServicePage() {
           <article className={`${styles.proofFeature} reveal-up`}>
             <div className={styles.proofMain}>
               <h3 className={styles.proofTitle}>
-                Accounting Firm SEO: Position 30 → Top 10
+                Accounting Firm SEO: Page 5 → Page 1
               </h3>
               <div className={styles.metricRow}>
                 <div className={styles.metricBox}>
-                  <span className={styles.metricValue}>30 → Top 10</span>
+                  <span className={styles.metricValue}>Page 5 → Page 1</span>
                   <span className={styles.metricLabel}>
                     Target commercial keyword rankings
                   </span>

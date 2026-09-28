@@ -114,7 +114,7 @@ export const posts: Post[] = [
       {
         type: "ul",
         items: [
-          "**Search Position Acceleration:** Advanced from position 30 into the top 10 search results for core target keywords within 6 months.",
+          "**Search Position Acceleration:** Advanced from page 5 to page 1 of Google for core target keywords within 6 months.",
           "**Visibility Expansion:** Doubled qualified organic impressions and click-through rates.",
           "**Pipeline Predictability:** Scaled inbound inquiries to secure new corporate accounts weekly, permanently mitigating seasonal revenue dips.",
         ],

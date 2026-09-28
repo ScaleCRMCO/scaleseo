@@ -156,7 +156,7 @@ export default function AboutLayout() {
             <div className={styles.numLabel}>Revenue for one client in 60 days</div>
           </div>
           <div className={styles.numItem}>
-            <div className={`${styles.numValue} ${styles.numValueSmall}`}>30 → <span className={styles.numAccent}>Top 10</span></div>
+            <div className={`${styles.numValue} ${styles.numValueSmall}`}>Page 5 → <span className={styles.numAccent}>Page 1</span></div>
             <div className={styles.numLabel}>Search ranking for target keywords, one client in 6 months</div>
           </div>
           <div className={styles.numItem}>

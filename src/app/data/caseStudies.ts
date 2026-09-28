@@ -52,8 +52,8 @@ export const caseStudies: CaseStudy[] = [
     country: "Australia",
     industry: "Accounting & Advisory",
     description:
-      "Technical fixes, on-page structure, and content built around the terms their clients search moved them from position 30 into the top 10 search results for their target keywords, doubling impressions and clicks. Now booking new clients weekly.",
-    metric: "30 → Top 10",
+      "Technical fixes, on-page structure, and content built around the terms their clients search moved them from page 5 to page 1 of Google for their target keywords, doubling impressions and clicks. Now booking new clients weekly.",
+    metric: "Page 5 → Page 1",
     metricLabel: "Search ranking, target keywords",
     image: "/images/empireaccountants-hero-image.png",
     url: "https://www.empireaccountants.com.au/",

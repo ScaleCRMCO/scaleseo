@@ -493,7 +493,7 @@ export default function AccountingFirmsPage() {
 
             <div className={styles.heroStats}>
               <div className={styles.heroStat}>
-                <span className={styles.heroStatValue}>30 → Top 10</span>
+                <span className={styles.heroStatValue}>Page 5 → Page 1</span>
                 <span className={styles.heroStatLabel}>
                   Target keyword rankings for an accounting &amp; advisory firm
                 </span>
@@ -765,7 +765,7 @@ export default function AccountingFirmsPage() {
               </p>
               <p>
                 One campaign began with important commercial searches sitting
-                around page three of Google.
+                around page five of Google.
               </p>
               <p>
                 Over six months, I worked on the firm&rsquo;s technical
@@ -779,11 +779,11 @@ export default function AccountingFirmsPage() {
           <article className={`${styles.proofFeature} reveal-up`}>
             <div className={styles.proofMain}>
               <h3 className={styles.proofTitle}>
-                Position 30 → Top 10 for Target Keywords
+                Page 5 → Page 1 for Target Keywords
               </h3>
               <div className={styles.metricRow}>
                 <div className={styles.metricBox}>
-                  <span className={styles.metricValue}>30 → Top 10</span>
+                  <span className={styles.metricValue}>Page 5 → Page 1</span>
                   <span className={styles.metricLabel}>Target keyword rankings</span>
                 </div>
                 <div className={styles.metricBox}>

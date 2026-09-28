@@ -232,9 +232,9 @@ const industries: {
 const proofs = [
   {
     title: "Empire Accountants — Organic SEO",
-    metric: "30 → Top 10",
+    metric: "Page 5 → Page 1",
     label: "Target keyword search rankings",
-    desc: "Technical improvements, stronger service-page architecture, on-page optimization, and ongoing SEO helped a Brisbane accounting firm move important commercial searches from page three into first-page positions.",
+    desc: "Technical improvements, stronger service-page architecture, on-page optimization, and ongoing SEO helped a Brisbane accounting firm move important commercial searches from page five into first-page positions.",
     link: { href: "/results", label: "View SEO Results" },
   },
   {
