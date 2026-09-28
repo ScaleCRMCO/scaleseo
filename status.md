@@ -35,7 +35,7 @@ throughout — copy is written in first person ("I"), not agency "we" voice.
   Scale SEO Looks Like" (5 principles) → FAQ (FAQPage schema) → CTA
 - `/services/seo` — main commercial SEO page. Original dark hero + trust bar,
   then (reusing the /services section styles via `../page.module.css`):
-  "More Than Rankings" (flow diagram) → What's Included (9 service-area cards
+  "More Than Rankings" (flow diagram) → What's Included (8 service-area cards
   with checklists) → How I Decide Each Month → Local/National/B2B →
   featured accounting-firm result (GSC screenshot) → First 90 Days → Good
   Fit / Not a Fit → Pricing → FAQ (shared `ServicesFaq` with its own items)

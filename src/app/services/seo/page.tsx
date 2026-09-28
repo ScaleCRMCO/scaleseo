@@ -172,29 +172,6 @@ const areas: {
     ],
   },
   {
-    title: "Authority & Link Building",
-    body: [
-      "Strong websites need signals beyond their own pages.",
-      "Depending on the campaign, I look for legitimate opportunities to strengthen the authority and prominence of your business online.",
-    ],
-    listLabel: "This can include:",
-    list: [
-      "Relevant business citations",
-      "Industry directories",
-      "Existing unlinked brand mentions",
-      "Digital PR opportunities",
-      "Partnerships and associations",
-      "Supplier or professional relationships",
-      "Competitor backlink analysis",
-      "Relevant editorial links",
-      "Local business mentions",
-    ],
-    note: [
-      "The objective is quality and relevance rather than hitting an arbitrary monthly backlink quota.",
-      "I don’t use bulk link packages or automated link networks simply to increase a third-party authority score.",
-    ],
-  },
-  {
     title: "Website & Conversion Improvements",
     body: [
       "Getting somebody to your website is only half the job.",
