@@ -7,9 +7,9 @@ import hub from "../services/page.module.css";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: "SEO for Financial Services Businesses in Canada | Scale SEO",
+  title: "SEO for Professional Services & B2B | Scale SEO",
   description:
-    "SEO built for accounting firms, financial advisors, and other high-margin professional service businesses across Canada — not tied to one city, run by one specialist.",
+    "SEO for professional service and B2B businesses, including accounting firms, consultants and advisory businesses. Build qualified organic visibility with Scale SEO.",
   alternates: { canonical: "/industries" },
 };
 
