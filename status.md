@@ -52,7 +52,12 @@ throughout — copy is written in first person ("I"), not agency "we" voice.
   list) → Expertise-Led Businesses → 4 industry cards (Accounting featured,
   links to /industries/accounting-firms) → Why SEO Works Differently → One
   Strategy Adapted to Your Market → light "Don't See Your Industry?" CTA
-- `/industries/accounting-firms` — only industry page built so far
+- `/industries/accounting-firms` — rebuilt on the new design: full-width hero
+  (lime title block + 30→Top 10 / +125% stat cards) → clients you want →
+  how accounting clients search → what accounting SEO includes (6 cards) →
+  website structure diagram → single/multi-location → featured result →
+  firm types → content clusters → why Scale SEO → one firm per market →
+  FAQ (9, shared `ServicesFaq`) → CTA
 - `/results` — all client case studies (data in `src/app/data/caseStudies.ts`:
   Kinsmen Consulting, MSV Plumbing Services, Empire Accountants)
 - `/blog` + `/blog/[slug]` — posts in `src/app/blog/posts.ts` (one post live)
