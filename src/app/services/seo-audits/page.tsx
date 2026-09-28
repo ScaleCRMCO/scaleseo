@@ -328,38 +328,137 @@ const faqs: FaqItem[] = [
 
 const pad = (i: number) => String(i + 1).padStart(2, "0");
 
+/* === Schema — WebPage + Service (with both audit offers) + BreadcrumbList
+   graph, linked to the global #website and #organization nodes in
+   layout.tsx. Includes this page's BreadcrumbList, so <Breadcrumbs> is
+   rendered with schema={false}. The FAQPage schema comes from <ServicesFaq>. === */
+const auditsJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://scaleseo.co/services/seo-audits#webpage",
+      "url": "https://scaleseo.co/services/seo-audits",
+      "name": "SEO Audit Services Calgary | Scale SEO",
+      "description": "Standalone SEO audits for Calgary businesses. Identify technical, on-page and search performance issues with clear findings and prioritized recommendations.",
+      "isPartOf": {
+        "@id": "https://scaleseo.co/#website"
+      },
+      "about": {
+        "@id": "https://scaleseo.co/services/seo-audits#service"
+      },
+      "mainEntity": {
+        "@id": "https://scaleseo.co/services/seo-audits#service"
+      },
+      "breadcrumb": {
+        "@id": "https://scaleseo.co/services/seo-audits#breadcrumb"
+      },
+      "publisher": {
+        "@id": "https://scaleseo.co/#organization"
+      },
+      "inLanguage": "en-CA"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://scaleseo.co/services/seo-audits#service",
+      "name": "SEO Audit Services",
+      "alternateName": [
+        "SEO Audits",
+        "Website SEO Audit",
+        "Technical SEO Audit"
+      ],
+      "serviceType": "SEO Audit",
+      "url": "https://scaleseo.co/services/seo-audits",
+      "description": "Standalone SEO audit services that assess technical SEO, crawlability, indexing, on-page optimization, content, internal linking, website architecture and organic search performance, with prioritized recommendations for improvement.",
+      "provider": {
+        "@id": "https://scaleseo.co/#organization"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Calgary"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Alberta"
+        },
+        {
+          "@type": "Country",
+          "name": "Canada"
+        }
+      ],
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "Businesses seeking an independent SEO assessment and prioritized implementation roadmap"
+      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "@id": "https://scaleseo.co/services/seo-audits#standard-audit-offer",
+          "name": "SEO Audit",
+          "description": "Standalone SEO audit covering technical website health, crawlability, indexing, on-page SEO, internal linking, website performance, basic keyword visibility and prioritized recommendations.",
+          "url": "https://scaleseo.co/services/seo-audits",
+          "price": "700.00",
+          "priceCurrency": "CAD",
+          "availability": "https://schema.org/InStock",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "SEO Audit"
+          }
+        },
+        {
+          "@type": "Offer",
+          "@id": "https://scaleseo.co/services/seo-audits#advanced-audit-offer",
+          "name": "Advanced SEO Audit",
+          "description": "Advanced SEO audit including technical and on-page analysis plus detailed keyword research, competitor analysis, content gaps, website architecture, internal linking, local SEO where relevant, and a prioritized implementation roadmap.",
+          "url": "https://scaleseo.co/services/seo-audits",
+          "price": "1500.00",
+          "priceCurrency": "CAD",
+          "availability": "https://schema.org/InStock",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Advanced SEO Audit"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://scaleseo.co/services/seo-audits#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://scaleseo.co/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://scaleseo.co/services"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "SEO Audits",
+          "item": "https://scaleseo.co/services/seo-audits"
+        }
+      ]
+    }
+  ]
+};
+
 /* === Page =============================================================== */
 
 export default function SeoAuditsPage() {
-  const serviceJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    name: "SEO Audits",
-    description:
-      "Standalone SEO audits covering technical health, on-page optimisation, and overall search performance — for businesses that want a clear assessment without committing to ongoing monthly SEO.",
-    serviceType: "SEO Audit",
-    url: "https://scaleseo.co/services/seo-audits",
-    provider: {
-      "@type": "ProfessionalService",
-      name: "Scale SEO",
-      url: "https://scaleseo.co",
-      founder: {
-        "@type": "Person",
-        name: "Corbin Jensen",
-        url: "https://scaleseo.co/corbin-jensen",
-      },
-    },
-    areaServed: [
-      { "@type": "City", name: "Calgary" },
-      { "@type": "Country", name: "Canada" },
-    ],
-  };
+
 
   return (
     <main>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(auditsJsonLd) }}
       />
 
       {/* === HERO — dark === */}
@@ -372,6 +471,7 @@ export default function SeoAuditsPage() {
                 { name: "Services", href: "/services" },
                 { name: "SEO Audits" },
               ]}
+              schema={false}
             />
           </div>
           <h1 className={styles.title}>
