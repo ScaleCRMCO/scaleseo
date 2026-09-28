@@ -56,11 +56,6 @@ export default function About() {
               can work directly on fixing it rather than simply adding it to a
               report.
             </p>
-            <p>
-              The goal is straightforward: build sustainable search visibility
-              that brings the right people to your website and creates more
-              opportunities for your business.
-            </p>
           </div>
           <div className={styles.sig}>— Corbin</div>
           <Link href="/about" className={styles.cta}>
