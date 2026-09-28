@@ -48,7 +48,10 @@ throughout — copy is written in first person ("I"), not agency "we" voice.
   cards (kept design) → What an Audit Covers (8 cards) → When to Get an
   Audit → The Deliverable → Audit vs Ongoing SEO → Standalone vs Free
   Assessment → Process (5 steps) → FAQ (shared `ServicesFaq`) → CTA
-- `/industries` — hub page (black hero, rounded cards, shared contact CTA)
+- `/industries` — hub page: full-width hero (lime title block + industry jump
+  list) → Expertise-Led Businesses → 4 industry cards (Accounting featured,
+  links to /industries/accounting-firms) → Why SEO Works Differently → One
+  Strategy Adapted to Your Market → light "Don't See Your Industry?" CTA
 - `/industries/accounting-firms` — only industry page built so far
 - `/results` — all client case studies (data in `src/app/data/caseStudies.ts`:
   Kinsmen Consulting, MSV Plumbing Services, Empire Accountants)

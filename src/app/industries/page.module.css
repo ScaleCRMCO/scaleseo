@@ -1,8 +1,18 @@
-/* === HERO === */
+/* ==========================================================================
+   /industries hub. Hero mirrors the /services/seo-audits hero (full-width,
+   left-aligned, lime title block); sections below use the shared /services
+   hub system (../services/page.module.css, imported as `hub`).
+   ========================================================================== */
+
 .hero {
-  padding: 180px 40px 100px;
+  padding: 170px 40px 120px;
   background: var(--bg-dark);
   color: var(--ink-on-dark);
+}
+
+.heroContent {
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .crumbsOnDark {
@@ -10,23 +20,15 @@
   --accent: var(--highlight);
 }
 
-.heroContent {
-  max-width: 1000px;
-}
-
 .title {
   font-family: var(--display);
   font-weight: 800;
-  font-size: clamp(38px, 5.5vw, 76px);
-  line-height: 1.05;
-  letter-spacing: -0.03em;
+  font-size: clamp(44px, 7vw, 104px);
+  line-height: 1.02;
+  letter-spacing: -0.035em;
   color: var(--ink-on-dark);
-  margin-bottom: 32px;
-}
-
-.accent {
-  color: var(--highlight);
-  font-weight: 800;
+  margin: 8px 0 44px;
+  max-width: 1200px;
 }
 
 .sub {
@@ -35,127 +37,270 @@
   font-size: clamp(16px, 1.3vw, 19px);
   line-height: 1.65;
   color: var(--ink-dim-on-dark);
-  max-width: 700px;
-}
-
-/* === INDUSTRY LIST === */
-.list {
-  position: relative;
-  padding: 100px 40px 120px;
-  margin-top: -48px;
-  border-radius: 48px 48px 0 0;
-  overflow: hidden;
-  background: var(--bg);
-  color: var(--ink);
-}
-
-.listInner {
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-/* Light-grey shell containing the rounded card grid, matching the
-   /services page's 'white card inside a grey container' pattern. */
-.gridShell {
-  margin-top: 44px;
-  padding: 3rem;
-  background: #F4F3EF;
-  border-radius: 32px;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-}
-
-.item {
-  background: #ffffff;
-  border-radius: 20px;
-  padding: 44px 36px;
+  max-width: 680px;
+  margin-bottom: 40px;
   display: flex;
   flex-direction: column;
-  min-height: 260px;
-  text-decoration: none;
-  color: inherit;
-  box-shadow: 0 24px 48px -28px rgba(10, 10, 10, 0.12);
+  gap: 16px;
 }
 
-.itemLinked {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-}
-
-.itemLinked:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 32px 56px -24px rgba(10, 10, 10, 0.18);
-}
-
-.itemTop {
+.heroCtaGroup {
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 14px;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
-.itemStatus {
-  flex-shrink: 0;
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--ink-dim);
-  border: 1px solid var(--line);
-  padding: 4px 10px;
-  border-radius: 100px;
-}
-
-.itemName {
-  font-family: var(--display);
-  font-weight: 700;
-  font-size: clamp(21px, 2vw, 25px);
-  letter-spacing: -0.01em;
-  color: var(--ink);
-}
-
-.itemDesc {
-  font-family: var(--sans);
-  font-weight: 400;
-  font-size: 15.5px;
-  line-height: 1.6;
-  color: var(--ink-dim);
-  flex-grow: 1;
-}
-
-.itemLink {
+.heroCta {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  margin-top: 24px;
+  gap: 14px;
+  padding: 20px 36px;
+  background: var(--ink-on-dark);
+  color: var(--bg-dark);
+  text-decoration: none;
   font-family: var(--mono);
   font-size: 12px;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
+  border: 1px solid var(--ink-on-dark);
+  border-radius: 999px;
+  transition: background-color 0.3s cubic-bezier(0.25, 1, 0.5, 1), color 0.3s ease, border-color 0.3s ease;
+}
+
+.heroCta:hover {
+  background: var(--highlight);
+  color: var(--on-highlight);
+  border-color: var(--highlight);
+}
+
+.heroCtaSecondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 36px;
+  background: transparent;
+  color: var(--ink-on-dark);
+  text-decoration: none;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border: 1px solid var(--line-strong-on-dark);
+  border-radius: 999px;
+  transition: all 0.3s ease;
+}
+
+.heroCtaSecondary:hover {
+  border-color: var(--highlight);
+  color: var(--highlight);
+}
+
+.heroBottom {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 60px;
+}
+
+.heroMain {
+  max-width: 720px;
+}
+
+.labelOnDark {
+  color: var(--ink-dim-on-dark);
+  margin-bottom: 24px;
+}
+
+.labelOnDark::before {
+  background: var(--ink-dim-on-dark);
+}
+
+.leadInk {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(21px, 2vw, 26px);
+  line-height: 1.35;
   color: var(--ink);
 }
 
 .arrow {
+  display: inline-block;
   transition: transform 0.3s ease;
 }
 
-.itemLinked:hover .arrow {
+a:hover > .arrow {
   transform: translateX(4px);
 }
 
+/* Hero right side: jump list to the industry cards */
+.heroIndex {
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.heroIndexItem {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 4px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--ink-on-dark);
+  text-decoration: none;
+  transition: color 0.2s ease, padding-left 0.2s ease;
+}
+
+.heroIndexItem:hover {
+  color: var(--highlight);
+  padding-left: 10px;
+}
+
+.heroIndexNum {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--ink-dim-on-dark);
+}
+
+/* Industry cards — 2x2, accounting featured */
+.industryGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.industryGrid > article {
+  scroll-margin-top: 110px;
+}
+
+.featuredCard {
+  border-color: var(--highlight) !important;
+}
+
+.cardMeta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.focusBadge {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--on-highlight);
+  background: var(--highlight);
+  border-radius: 999px;
+  padding: 4px 12px;
+}
+
+.industryTitle {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(24px, 2.4vw, 30px);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.strongInk {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+/* Closing CTA — light, centred */
+.ctaLight {
+  text-align: center;
+}
+
+.ctaInner {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.ctaHeadline {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(34px, 5vw, 64px);
+  line-height: 1.22;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  margin-bottom: 28px;
+}
+
+.ctaBody {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--ink-dim);
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.ctaGroup {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 44px;
+}
+
+.ctaPrimary,
+.ctaSecondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 34px;
+  border-radius: 999px;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.ctaPrimary {
+  background: var(--accent);
+  color: var(--on-accent);
+  border: 1px solid var(--accent);
+}
+
+.ctaPrimary:hover {
+  background: var(--highlight);
+  color: var(--on-highlight);
+  border-color: var(--highlight);
+}
+
+.ctaSecondary {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--line-strong);
+}
+
+.ctaSecondary:hover {
+  background: var(--highlight);
+  color: var(--on-highlight);
+  border-color: var(--highlight);
+}
+
 @media (max-width: 1100px) {
-  .grid { grid-template-columns: repeat(2, 1fr); }
+  .heroBottom { grid-template-columns: 1fr; gap: 40px; }
+  .heroIndex { min-width: 0; }
+  .industryGrid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 900px) {
-  .hero { padding: 120px 24px 70px; }
-  .list { padding: 70px 24px 90px; }
-  .gridShell { padding: 1.5rem; border-radius: 24px; }
-  .grid { grid-template-columns: 1fr; gap: 1.25rem; }
-  .item { padding: 32px 28px; min-height: auto; }
+  .hero { padding: 120px 24px 100px; }
+  .heroCtaGroup { flex-direction: column; align-items: stretch; }
+  .heroCta, .heroCtaSecondary { justify-content: center; }
+  .ctaGroup { flex-direction: column; align-items: stretch; }
+  .ctaPrimary, .ctaSecondary { justify-content: center; }
 }
