@@ -43,8 +43,11 @@ throughout — copy is written in first person ("I"), not agency "we" voice.
 - `/services/geo` — GEO / AI-search optimization
 - `/services/web-development`
 - `/services/google-ads-management`
-- `/services/seo-audits` — pricing tiers; free audits are exclusive to monthly
-  SEO retainer clients
+- `/services/seo-audits` — standalone audit page ($700 / $1,500 + GST). Dark
+  hero → "What's Holding Your Website Back" (3 questions) → two-tier audit
+  cards (kept design) → What an Audit Covers (8 cards) → When to Get an
+  Audit → The Deliverable → Audit vs Ongoing SEO → Standalone vs Free
+  Assessment → Process (5 steps) → FAQ (shared `ServicesFaq`) → CTA
 - `/industries` — hub page (black hero, rounded cards, shared contact CTA)
 - `/industries/accounting-firms` — only industry page built so far
 - `/results` — all client case studies (data in `src/app/data/caseStudies.ts`:
