@@ -59,8 +59,8 @@ export default function GeoServicePage() {
       eyebrow="Services / GEO"
       title={
         <>
-          Get Your Business Cited by AI{" "}
-          <Accent>— Not Just Ranked.</Accent>
+          Get Your Business Cited by AI —{" "}
+          <span className="title-block">Not Just Ranked.</span>
         </>
       }
       sub="Google AI Overviews, ChatGPT, Perplexity, and Copilot are answering your buyers' questions before they ever see a search results page. GEO — Generative Engine Optimization — is how you make sure your business is the answer."

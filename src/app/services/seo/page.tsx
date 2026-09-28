@@ -561,7 +561,7 @@ export default function SeoServicePage() {
           </div>
           <h1 className={styles.title}>
             Search Engine Optimization Services{" "}
-            <span className={styles.accent}>Built for Long-Term Growth</span>
+            <span className="title-block">Calgary</span>
           </h1>
           <div className={styles.sub}>
             <p>

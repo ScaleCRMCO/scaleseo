@@ -476,7 +476,7 @@ export default function SeoAuditsPage() {
           </div>
           <h1 className={styles.title}>
             SEO Audit Services in{" "}
-            <span className={styles.titleBlock}>Calgary</span>
+            <span className="title-block">Calgary</span>
           </h1>
 
           <div className={styles.heroBottom}>

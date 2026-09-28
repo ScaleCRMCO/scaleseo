@@ -150,8 +150,8 @@ export default function GoogleAdsPage() {
         ]}
         title={
           <>
-            Google Ads Management Services{" "}
-            <span className={servicePageStyles.accent}>in Calgary &amp; Canada.</span>
+            Google Ads Management Services in{" "}
+            <span className="title-block">Calgary &amp; Canada.</span>
           </>
         }
         sub="Profitable PPC campaigns for accounting firms and professional service businesses — built, launched, and managed directly by me. Request a PPC audit and I'll show you exactly where your ad spend is being wasted."

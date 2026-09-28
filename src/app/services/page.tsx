@@ -383,8 +383,8 @@ export default function ServicesPage() {
             />
           </div>
           <h1 className={styles.title}>
-            SEO &amp; Digital Marketing Services{" "}
-            <span className={styles.accent}>in Calgary</span>
+            SEO &amp; Digital Marketing Services in{" "}
+            <span className="title-block">Calgary</span>
           </h1>
           <div className={styles.sub}>
             <p>

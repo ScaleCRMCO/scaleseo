@@ -252,3 +252,22 @@ section {
 @media (max-width: 900px) {
   section { padding: 80px 24px; }
 }
+
+/* Highlight block for the closing word/phrase of service-page H1s — lime
+   box with dark text. Inline + box-decoration-break so longer phrases wrap
+   onto multiple lines cleanly, each line getting its own rounded block. */
+.title-block {
+  background: var(--highlight);
+  color: var(--on-highlight);
+  padding: 0 0.16em 0.04em;
+  border-radius: 0.14em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+/* The block's background is taller than a tight display line-height, so
+   headings that contain one get a little more line spacing — otherwise the
+   block covers the descenders of the line above, and wrapped blocks overlap. */
+h1:has(.title-block) {
+  line-height: 1.22 !important;
+}

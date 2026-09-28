@@ -60,7 +60,7 @@ export default function WebDevelopmentPage() {
       title={
         <>
           Websites Built to{" "}
-          <Accent>Rank, Load Fast, and Convert.</Accent>
+          <span className="title-block">Rank, Load Fast, and Convert.</span>
         </>
       }
       sub="A website that looks good but loads slow or can't be crawled properly is working against your SEO, not for it. I build and design sites the same way I optimize them — with performance and search visibility built in from the start."
