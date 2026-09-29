@@ -318,9 +318,6 @@ export default function IndustriesPage() {
               >
                 <div className={styles.cardMeta}>
                   <span className="index">{pad(i)}</span>
-                  {ind.featured && (
-                    <span className={styles.focusBadge}>Primary focus</span>
-                  )}
                 </div>
                 <h3 className={styles.industryTitle}>{ind.title}</h3>
                 <div className={hub.cardBody}>
