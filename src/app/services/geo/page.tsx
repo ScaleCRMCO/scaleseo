@@ -10,9 +10,9 @@ import ind from "../../industries/page.module.css";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: "GEO Services | Get Cited by AI Search & ChatGPT | Scale SEO",
+  title: "AI Search Optimization & GEO Services | Scale SEO",
   description:
-    "Generative Engine Optimization (GEO) built to get your business cited by Google AI Overviews, ChatGPT, Perplexity, and Copilot — not just ranked on a results page. Based in Calgary, working across Canada.",
+    "AI search optimization and GEO services for professional service and B2B businesses. Improve visibility across Google AI Overviews, ChatGPT and AI-powered search.",
   alternates: { canonical: "/services/geo" },
 };
 
