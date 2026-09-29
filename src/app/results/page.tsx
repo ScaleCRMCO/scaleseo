@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import Link from "next/link";
 import Breadcrumbs from "../components/Breadcrumbs";
 import RevealOnScroll from "../components/RevealOnScroll";
-import { caseStudies } from "../data/caseStudies";
+
+// Hero from the industries hub, sections from the shared /services hub
+// system; styles below are only the pieces specific to this page.
+import hub from "../services/page.module.css";
+import ind from "../industries/page.module.css";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
@@ -12,95 +16,276 @@ export const metadata: Metadata = {
   alternates: { canonical: "/results" },
 };
 
+const BOOKING_URL = "https://cal.com/corbinjensen-scaleseo/30min";
+
+type Metric = { value: string; label: string };
+
+type Study = {
+  id: string;
+  eyebrow: string;
+  client: string;
+  meta: string;
+  metrics: Metric[];
+  title: string;
+  body: string[];
+  // Individual case study pages are coming; until one exists the
+  // "Read the … Case Study" button renders as a disabled "coming soon" pill.
+  caseStudyHref?: string;
+  image: string;
+  url: string;
+  featured?: boolean;
+};
+
+const studies: Study[] = [
+  {
+    id: "empire-accountants",
+    eyebrow: "Featured Case Study",
+    client: "Empire Accountants",
+    meta: "Accounting & Advisory · Brisbane, Australia",
+    metrics: [
+      { value: "Page 5 → Page 1", label: "Target keyword rankings" },
+      { value: "+100%+", label: "Organic search visibility" },
+    ],
+    title: "SEO Strategy for an Accounting & Advisory Firm",
+    body: [
+      "Empire Accountants needed stronger organic visibility for the accounting and advisory services they wanted to grow.",
+      "Ongoing SEO has included technical improvements, service-page optimization, content strategy, internal linking, structured data, and local search improvements.",
+      "The result has been significant growth in organic visibility, with priority searches moving from deeper search results onto page one of Google.",
+    ],
+    image: "/images/empireaccountants-hero-image.png",
+    url: "https://www.empireaccountants.com.au/",
+    featured: true,
+  },
+  {
+    id: "kinsmen-consulting",
+    eyebrow: "Calgary · B2B",
+    client: "Kinsmen Consulting Ltd.",
+    meta: "Concrete & Construction · Calgary, Alberta",
+    metrics: [{ value: "+26%", label: "Revenue growth" }],
+    title: "SEO & Website Strategy for a Calgary Concrete Contractor",
+    body: [
+      "Scale SEO worked with Kinsmen Consulting to strengthen its website and search presence across residential and commercial concrete services in Calgary.",
+      "The project combined website development, local SEO, service-page optimization, and search strategy around commercially important projects.",
+    ],
+    image: "/images/kinsmen-hero.jpg",
+    url: "https://www.kinsmenconsulting.ca",
+  },
+  {
+    id: "msv-plumbing",
+    eyebrow: "Local SEO",
+    client: "MSV Plumbing Services",
+    meta: "Plumbing Services · Brisbane, Australia",
+    metrics: [{ value: "0 → Weekly", label: "Consistent customer bookings" }],
+    title: "Building Organic Visibility for a New Plumbing Business",
+    body: [
+      "MSV Plumbing Services started with a new business, a new website, and no established organic search presence.",
+      "Scale SEO combined website development with local SEO, service-page optimization, Google Business Profile improvements, and ongoing search strategy to build visibility across Brisbane.",
+      "The business now receives consistent customer enquiries and bookings through its online presence.",
+    ],
+    image: "/images/msv-screenshot.png",
+    url: "https://msvplumbingservices.com.au/",
+  },
+];
+
+/* === Page =============================================================== */
+
 export default function ResultsPage() {
   return (
     <main>
-      <header className={styles.hero} data-nav-theme="dark">
-        <div className={styles.heroContent}>
-          <div className={styles.crumbsOnDark}>
+      {/* === HERO — dark, full-width left-aligned === */}
+      <header className={ind.hero} data-nav-theme="dark">
+        <div className={ind.heroContent}>
+          <div className={ind.crumbsOnDark}>
             <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Results" }]} />
           </div>
-          <h1 className={styles.title}>
-            Client <span className={styles.accent}>Results.</span>
+          <h1 className={ind.title}>
+            SEO Results &amp; <span className="title-block">Case Studies</span>
           </h1>
-          <p className={styles.sub}>
-            I started as an independent SEO specialist working with trades
-            and service businesses in Australia — today I focus exclusively
-            on accounting and professional service firms across Canada and
-            the US. Every case study below is real work, with real clients,
-            linked to the live sites.
-          </p>
+
+          <div className={ind.heroBottom}>
+            <div className={ind.heroMain}>
+              <p className={styles.tagline}>
+                Real SEO work. Real businesses. Measurable results.
+              </p>
+              <div className={ind.sub}>
+                <p>
+                  Explore selected Scale SEO projects across accounting, B2B,
+                  construction, and local service businesses in Canada and
+                  Australia.
+                </p>
+                <p>
+                  Each case study breaks down the starting point, the work
+                  completed, and the results that followed.
+                </p>
+              </div>
+              <div className={ind.heroCtaGroup}>
+                <a href="#case-studies" className={ind.heroCta}>
+                  <span>Explore Case Studies</span>
+                  <span className={ind.arrow}>↓</span>
+                </a>
+              </div>
+            </div>
+
+            <nav className={ind.heroIndex} aria-label="Case studies">
+              {studies.map((s) => (
+                <a key={s.id} href={`#${s.id}`} className={styles.heroIndexItem}>
+                  <span className={styles.heroIndexClient}>{s.client}</span>
+                  <span className={styles.heroIndexMetric}>{s.metrics[0].value}</span>
+                </a>
+              ))}
+            </nav>
+          </div>
         </div>
       </header>
 
-      <section className={styles.list}>
-        <div className={styles.grid}>
-          {caseStudies.map((c, i) => (
-            <a
-              key={c.index}
-              href={c.url}
-              target="_blank"
-              rel="nofollow noopener noreferrer"
-              className={`${styles.card} reveal-up`}
-              style={{ transitionDelay: `${i * 0.1}s` }}
+      {/* === CASE STUDIES — light, one large card each === */}
+      <section className={`${hub.section} ${hub.light}`} id="case-studies">
+        <div className={`${hub.inner} ${styles.studies}`}>
+          {studies.map((s, i) => (
+            <article
+              key={s.id}
+              id={s.id}
+              className={`${styles.study} ${s.featured ? styles.featured : ""} ${
+                i % 2 === 1 ? styles.flip : ""
+              } reveal-up`}
             >
-              <div className={styles.imageWrap}>
-                <Image
-                  src={c.image}
-                  alt={`${c.client} website`}
-                  fill
-                  className={styles.image}
-                  priority={i === 0}
-                  unoptimized
+              <div className={styles.visual}>
+                <img
+                  src={s.image}
+                  alt={`${s.client} website`}
+                  className={styles.visualImg}
+                  loading={i === 0 ? "eager" : "lazy"}
                 />
               </div>
-              <div className={styles.cardBody}>
-                <div className={styles.cardTop}>
-                  <h2 className={styles.client}>{c.client}</h2>
-                  <div className={styles.metric}>
-                    <div className={styles.metricValue}>{c.metric}</div>
-                    <div className={styles.metricLabel}>{c.metricLabel}</div>
-                  </div>
+
+              <div className={styles.content}>
+                <div className={styles.eyebrow}>{s.eyebrow}</div>
+                <h2 className={styles.client}>{s.client}</h2>
+                <p className={styles.meta}>{s.meta}</p>
+
+                <div className={styles.metrics}>
+                  {s.metrics.map((m) => (
+                    <div key={m.label} className={styles.metric}>
+                      <span className={styles.metricValue}>{m.value}</span>
+                      <span className={styles.metricLabel}>{m.label}</span>
+                    </div>
+                  ))}
                 </div>
-                <p className={styles.subhead}>{c.subhead}</p>
-                <p className={styles.location}>
-                  {c.location} &middot; {c.industry}
-                </p>
-                <p className={styles.description}>{c.description}</p>
-                <span className={styles.visit}>{c.urlLabel} →</span>
+
+                <h3 className={styles.studyTitle}>{s.title}</h3>
+                <div className={styles.body}>
+                  {s.body.map((p) => (
+                    <p key={p}>{p}</p>
+                  ))}
+                </div>
+
+                <div className={styles.actions}>
+                  {s.caseStudyHref ? (
+                    <Link href={s.caseStudyHref} className={styles.readBtn}>
+                      <span>Read the {s.client.replace(/ Ltd\.$/, "")} Case Study</span>
+                      <span className={hub.arrow}>→</span>
+                    </Link>
+                  ) : (
+                    <span className={`${styles.readBtn} ${styles.readBtnSoon}`} aria-disabled="true">
+                      <span>Read the {s.client.replace(/ Ltd\.$/, "")} Case Study</span>
+                      <span className={styles.soon}>Coming soon</span>
+                    </span>
+                  )}
+                  <a
+                    href={s.url}
+                    target="_blank"
+                    rel="nofollow noopener noreferrer"
+                    className={styles.visitLink}
+                  >
+                    Visit Client Website <span className={ind.arrow}>→</span>
+                  </a>
+                </div>
               </div>
-            </a>
+            </article>
           ))}
         </div>
       </section>
 
-      <section className={styles.cta}>
-        <div className={styles.ctaEyebrow}>
-          <span className={styles.dot} />
-          Now booking · 1 spot Q3 2026
-        </div>
-        <h2 className={styles.ctaHeadline}>
-          Want results like these for your firm?
-        </h2>
-        <p className={styles.ctaSub}>
-          Tell me about your business and where you&rsquo;re trying to grow
-          — I&rsquo;ll tell you honestly whether I&rsquo;m the right fit.
-        </p>
-        <div className={styles.ctaGroup}>
-          <a
-            href="https://cal.com/corbinjensen-scaleseo/30min"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.ctaButton}
-          >
-            <span>Book a call</span>
-            <span className={styles.arrow}>→</span>
-          </a>
-          <a href="/contact" className={styles.ctaButtonSecondary}>
-            <span>Send a Message</span>
-          </a>
+      {/* === THE WORK BEHIND THE NUMBERS — dark === */}
+      <section className={`${hub.section} ${hub.dark}`} data-nav-theme="dark">
+        <div className={`${hub.inner} ${hub.split}`}>
+          <div className={hub.splitAside}>
+            <div>
+              <div className={`section-label reveal-up ${ind.labelOnDark} ${styles.label}`}>
+                The Work Behind the Numbers
+              </div>
+              <h2 className={`${hub.h2} reveal-up`}>
+                Results Built Through <em>Hands-On SEO</em>
+              </h2>
+            </div>
+          </div>
+          <div className={`${hub.splitBody} reveal-up`}>
+            <p className={hub.lead}>There isn&rsquo;t one tactic behind these results.</p>
+            <p>
+              Each campaign is built around the needs of the business and can
+              involve technical SEO, service-page improvements, content
+              strategy, local SEO, internal linking, structured data, website
+              development, and ongoing analysis.
+            </p>
+            <p>
+              The common approach is simple:{" "}
+              <strong className={styles.strongOnDark}>
+                identify the search opportunities that matter to the business,
+                improve the website around them, implement the work, and
+                measure what changes.
+              </strong>
+            </p>
+            <p>
+              All Scale SEO campaigns are managed directly by{" "}
+              <strong className={styles.strongOnDark}>Corbin Jensen</strong>,
+              founder and SEO specialist at Scale SEO.
+            </p>
+            <Link href="/corbin-jensen" className={hub.pillLime}>
+              <span>Meet Corbin Jensen</span>
+              <span className={hub.arrow}>→</span>
+            </Link>
+          </div>
         </div>
       </section>
+
+      {/* === WORK WITH SCALE SEO — light CTA (follows the dark section) === */}
+      <section className={`${hub.cta} ${styles.ctaLight}`}>
+        <div className={`section-label ${styles.labelCenter}`}>Work With Scale SEO</div>
+        <h2 className={hub.ctaHeadline}>
+          Build Your Own <span className="title-block">Search Growth Story</span>
+        </h2>
+        <div className={hub.ctaSub}>
+          <p>
+            If your business has strong services but isn&rsquo;t getting the
+            search visibility it should, I can help identify where the
+            opportunities are and what needs to change.
+          </p>
+          <p>
+            Scale SEO works primarily with professional service and B2B
+            businesses through ongoing SEO campaigns and standalone SEO audits.
+          </p>
+        </div>
+        <div className={`${hub.buttonGroupCenter} ${styles.ctaButtons}`}>
+          <Link href="/services/seo" className={styles.ctaSecondary}>
+            <span>Explore SEO Services</span>
+            <span className={hub.arrow}>→</span>
+          </Link>
+          <a
+            href={BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.ctaPrimary}
+          >
+            <span>Book a Strategy Call</span>
+            <span className={hub.arrow}>→</span>
+          </a>
+          <Link href="/contact" className={styles.ctaSecondary}>
+            <span>Send a Message</span>
+            <span className={hub.arrow}>→</span>
+          </Link>
+        </div>
+      </section>
+
       <RevealOnScroll />
     </main>
   );

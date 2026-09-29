@@ -63,8 +63,13 @@ throughout — copy is written in first person ("I"), not agency "we" voice.
   website structure diagram → single/multi-location → featured result →
   firm types → content clusters → why Scale SEO → one firm per market →
   FAQ (9, shared `ServicesFaq`) → CTA
-- `/results` — all client case studies (data in `src/app/data/caseStudies.ts`:
-  Kinsmen Consulting, MSV Plumbing Services, Empire Accountants)
+- `/results` — case study hub rebuilt on the new design (content lives in
+  `results/page.tsx`; `data/caseStudies.ts` still feeds the homepage
+  CaseStudy section): hero (lime title block + client/metric jump list) →
+  one large card per case study (Empire Accountants featured, then Kinsmen
+  Consulting, MSV Plumbing) → Results Built Through Hands-On SEO → light
+  CTA. Each card has a `caseStudyHref` slot; until an individual case study
+  page exists its "Read the … Case Study" button shows as "Coming soon".
 - `/blog` + `/blog/[slug]` — posts in `src/app/blog/posts.ts` (one post live)
 - `/corbin-jensen` — bio/author page rebuilt on the new design (reuses `hub`,
   `ind` + `about` styles): hero (bio + portrait) → SEO Experience →
