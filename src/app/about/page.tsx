@@ -252,12 +252,6 @@ export default function AboutPage() {
                   development, Google Ads management, and AI search optimization
                   for businesses across Canada and internationally.
                 </p>
-                <p>
-                  The business is intentionally kept small. Clients work
-                  directly with the person researching, planning, and
-                  implementing their SEO rather than having their account passed
-                  between salespeople, account managers, and junior specialists.
-                </p>
               </div>
               <div className={ind.heroCtaGroup}>
                 <Link href="/services/seo" className={ind.heroCta}>
