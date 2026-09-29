@@ -116,11 +116,97 @@ const drivers = [
   "And ongoing optimization allowed the strategy to change as new opportunities emerged.",
 ];
 
+const caseStudyJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://scaleseo.co/results/kinsmen-consulting#webpage",
+      url: "https://scaleseo.co/results/kinsmen-consulting",
+      name: "Kinsmen Consulting SEO Case Study | Scale SEO",
+      description: "See how SEO and website development helped Kinsmen Consulting generate more than $400,000 in revenue from new concrete projects over six months.",
+      isPartOf: {
+        "@id": "https://scaleseo.co/#website"
+      },
+      publisher: {
+        "@id": "https://scaleseo.co/#organization"
+      },
+      mainEntity: {
+        "@id": "https://scaleseo.co/results/kinsmen-consulting#case-study"
+      },
+      breadcrumb: {
+        "@id": "https://scaleseo.co/results/kinsmen-consulting#breadcrumb"
+      },
+      inLanguage: "en-CA"
+    },
+    {
+      "@type": "Article",
+      "@id": "https://scaleseo.co/results/kinsmen-consulting#case-study",
+      url: "https://scaleseo.co/results/kinsmen-consulting",
+      headline: "Kinsmen Consulting SEO Case Study",
+      description: "How SEO and website development helped a Calgary concrete contractor generate more than $400,000 in revenue from new projects over a six-month period.",
+      mainEntityOfPage: {
+        "@id": "https://scaleseo.co/results/kinsmen-consulting#webpage"
+      },
+      author: {
+        "@id": "https://scaleseo.co/#corbin-jensen"
+      },
+      publisher: {
+        "@id": "https://scaleseo.co/#organization"
+      },
+      about: {
+        "@type": "Organization",
+        name: "Kinsmen Consulting Ltd.",
+        url: "https://www.kinsmenconsulting.ca/"
+      },
+      articleSection: "SEO Case Studies",
+      keywords: [
+        "SEO case study",
+        "Calgary SEO case study",
+        "construction SEO",
+        "contractor SEO",
+        "local SEO",
+        "SEO website development"
+      ],
+      inLanguage: "en-CA"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://scaleseo.co/results/kinsmen-consulting#breadcrumb",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: "https://scaleseo.co/"
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Results",
+          item: "https://scaleseo.co/results"
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "Kinsmen Consulting",
+          item: "https://scaleseo.co/results/kinsmen-consulting"
+        }
+      ]
+    }
+  ]
+};
+
 /* === Page =============================================================== */
 
 export default function KinsmenConsultingCaseStudy() {
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(caseStudyJsonLd) }}
+      />
+
       {/* === HERO — dark, copy left, site screenshot right, stats below === */}
       <header className={ind.hero} data-nav-theme="dark">
         <div className={ind.heroContent}>
@@ -131,6 +217,7 @@ export default function KinsmenConsultingCaseStudy() {
                 { name: "Results", href: "/results" },
                 { name: "Kinsmen Consulting" },
               ]}
+              schema={false}
             />
           </div>
 
