@@ -71,7 +71,7 @@ const studies: Study[] = [
     url: "https://www.kinsmenconsulting.ca",
   },
   {
-    id: "msv-plumbing",
+    id: "msv-plumbing-services",
     eyebrow: "Local SEO",
     client: "MSV Plumbing Services",
     meta: "Plumbing Services · Brisbane, Australia",
@@ -87,16 +87,95 @@ const studies: Study[] = [
   },
 ];
 
+const resultsJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://scaleseo.co/results#webpage",
+      url: "https://scaleseo.co/results",
+      name: "SEO Results & Case Studies | Scale SEO",
+      description: "Explore real SEO results and case studies from Scale SEO across accounting, B2B, construction and local service businesses.",
+      isPartOf: {
+        "@id": "https://scaleseo.co/#website"
+      },
+      publisher: {
+        "@id": "https://scaleseo.co/#organization"
+      },
+      mainEntity: {
+        "@id": "https://scaleseo.co/results#case-studies"
+      },
+      breadcrumb: {
+        "@id": "https://scaleseo.co/results#breadcrumb"
+      },
+      inLanguage: "en-CA"
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://scaleseo.co/results#case-studies",
+      name: "Scale SEO Case Studies",
+      numberOfItems: 3,
+      itemListOrder: "https://schema.org/ItemListOrderAscending",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Empire Accountants SEO Case Study",
+          url: "https://scaleseo.co/results/empire-accountants"
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Kinsmen Consulting SEO Case Study",
+          url: "https://scaleseo.co/results/kinsmen-consulting"
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "MSV Plumbing Services SEO Case Study",
+          url: "https://scaleseo.co/results/msv-plumbing-services"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://scaleseo.co/results#breadcrumb",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: "https://scaleseo.co/"
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Results",
+          item: "https://scaleseo.co/results"
+        }
+      ]
+    }
+  ]
+};
+
 /* === Page =============================================================== */
 
 export default function ResultsPage() {
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(resultsJsonLd) }}
+      />
+
       {/* === HERO — dark, full-width left-aligned === */}
       <header className={ind.hero} data-nav-theme="dark">
         <div className={ind.heroContent}>
           <div className={ind.crumbsOnDark}>
-            <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Results" }]} />
+            <Breadcrumbs
+              items={[{ name: "Home", href: "/" }, { name: "Results" }]}
+              schema={false}
+            />
           </div>
           <h1 className={ind.title}>
             SEO Results &amp; <span className="title-block">Case Studies</span>
