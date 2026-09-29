@@ -66,7 +66,7 @@ throughout — copy is written in first person ("I"), not agency "we" voice.
   Areas of Expertise (7 rows) → Industry Experience (2 cards) → Selected
   Results → How Corbin Works → My Approach (centred manifesto) → Tools &
   Platforms (chips) → Articles → Professional Information (fact sheet) →
-  CTA. Schema still the older ProfilePage + Person (`#person`) graph.
+  CTA. Schema: ProfilePage + Person (`#corbin-jensen`) + BreadcrumbList.
 - `/about` — rebuilt on the new design (`about/page.tsx` + `page.module.css`,
   reusing `hub` + `ind`): full-width hero (lime title block + fact list) →
   The Business (sticky heading, 2025 mark) → What Scale SEO Does (5

@@ -139,6 +139,86 @@ const details: { label: string; value: React.ReactNode }[] = [
   },
 ];
 
+const profileJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfilePage",
+      "@id": "https://scaleseo.co/corbin-jensen#profilepage",
+      url: "https://scaleseo.co/corbin-jensen",
+      name: "Corbin Jensen | Founder & SEO Specialist at Scale SEO",
+      description: "Corbin Jensen is the founder and SEO specialist behind Scale SEO, working with professional service and B2B businesses across technical SEO, content strategy, local SEO and website optimization.",
+      isPartOf: {
+        "@id": "https://scaleseo.co/#website"
+      },
+      mainEntity: {
+        "@id": "https://scaleseo.co/#corbin-jensen"
+      },
+      breadcrumb: {
+        "@id": "https://scaleseo.co/corbin-jensen#breadcrumb"
+      },
+      inLanguage: "en-CA"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://scaleseo.co/#corbin-jensen",
+      name: "Corbin Jensen",
+      jobTitle: "Founder & SEO Specialist",
+      url: "https://scaleseo.co/corbin-jensen",
+      image: "https://scaleseo.co/images/corbin-about.jpg",
+      description: "Corbin Jensen is an SEO specialist and the founder of Scale SEO, based in Calgary, Alberta. He works with professional service and B2B businesses across technical SEO, on-page SEO, content strategy, local SEO, website architecture and structured data.",
+      worksFor: {
+        "@id": "https://scaleseo.co/#organization"
+      },
+      homeLocation: {
+        "@type": "Place",
+        name: "Calgary, Alberta, Canada"
+      },
+      knowsAbout: [
+        "Search Engine Optimization",
+        "Technical SEO",
+        "On-Page SEO",
+        "Local SEO",
+        "SEO Content Strategy",
+        "Website Architecture",
+        "Internal Linking",
+        "Structured Data",
+        "SEO Audits",
+        "B2B SEO",
+        "Professional Services SEO",
+        "Accounting Firm SEO"
+      ],
+      sameAs: [
+        LINKEDIN_URL
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://scaleseo.co/corbin-jensen#breadcrumb",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: "https://scaleseo.co/"
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "About",
+          item: "https://scaleseo.co/about"
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "Corbin Jensen",
+          item: "https://scaleseo.co/corbin-jensen"
+        }
+      ]
+    }
+  ]
+};
+
 /* === Page =============================================================== */
 
 export default function CorbinJensenPage() {
@@ -146,67 +226,11 @@ export default function CorbinJensenPage() {
     (p) => p.slug === "how-accounting-firms-rank-on-google-in-canada"
   );
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "ProfilePage",
-        "@id": "https://scaleseo.co/corbin-jensen",
-        url: "https://scaleseo.co/corbin-jensen",
-        mainEntity: {
-          "@id": "https://scaleseo.co/corbin-jensen#person",
-        },
-      },
-      {
-        "@type": "Person",
-        "@id": "https://scaleseo.co/corbin-jensen#person",
-        name: "Corbin Jensen",
-        jobTitle: "Founder & Lead Specialist",
-        url: "https://scaleseo.co/corbin-jensen",
-        image: "https://scaleseo.co/images/corbin-about.jpg",
-        description:
-          "Independent organic search specialist specializing in high-performance technical search architecture, schema deployment, and intent-focused SEO for Canadian professional services and accounting firms.",
-        worksFor: {
-          "@type": "ProfessionalService",
-          name: "Scale SEO",
-          url: "https://scaleseo.co",
-        },
-        nationality: {
-          "@type": "Country",
-          name: "Canada",
-        },
-        homeLocation: {
-          "@type": "Place",
-          name: "Calgary, Alberta, Canada",
-        },
-        address: {
-          "@type": "PostalAddress",
-          addressLocality: "Calgary",
-          addressRegion: "Alberta",
-          addressCountry: "CA",
-        },
-        knowsAbout: [
-          "Search Engine Optimization",
-          "Technical SEO",
-          "Local SEO",
-          "Schema Markup & Structured Data",
-          "Generative Engine Optimization (GEO)",
-          "B2B Organic Search Strategy",
-          "Accounting Firm Marketing",
-          "Crawl Budget Optimization",
-          "Google Ads",
-          "YMYL Search Compliance",
-        ],
-        sameAs: [LINKEDIN_URL],
-      },
-    ],
-  };
-
   return (
     <main>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(profileJsonLd) }}
       />
 
       {/* === HERO — dark, bio left + portrait right === */}
@@ -220,6 +244,7 @@ export default function CorbinJensenPage() {
                   { name: "About", href: "/about" },
                   { name: "Corbin Jensen" },
                 ]}
+                schema={false}
               />
             </div>
             <h1 className={`${ind.title} ${styles.title}`}>
