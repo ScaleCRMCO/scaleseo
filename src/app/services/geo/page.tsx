@@ -20,20 +20,127 @@ const BOOKING_URL = "https://cal.com/corbinjensen-scaleseo/30min";
 
 const pad = (i: number) => String(i + 1).padStart(2, "0");
 
-// Kept from the previous template until a new page schema is supplied.
-const serviceJsonLd = {
+const geoJsonLd = {
   "@context": "https://schema.org",
-  "@type": "Service",
-  name: "AI Search Optimization & Generative Engine Optimization",
-  description:
-    "AI search optimization (GEO) helps make your website easier for search engines and AI platforms to find, understand, and reference when answering relevant questions.",
-  serviceType: "Generative Engine Optimization",
-  url: "https://scaleseo.co/services/geo",
-  provider: { "@id": "https://scaleseo.co/#organization" },
-  areaServed: [
-    { "@type": "City", name: "Calgary" },
-    { "@type": "Country", name: "Canada" },
-  ],
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://scaleseo.co/services/geo#webpage",
+      url: "https://scaleseo.co/services/geo",
+      name: "AI Search Optimization & Generative Engine Optimization | Scale SEO",
+      description: "AI search optimization and GEO services for professional service and B2B businesses. Improve how your website is understood across Google, ChatGPT and AI-powered search.",
+      isPartOf: {
+        "@id": "https://scaleseo.co/#website"
+      },
+      about: {
+        "@id": "https://scaleseo.co/services/geo#service"
+      },
+      publisher: {
+        "@id": "https://scaleseo.co/#organization"
+      },
+      breadcrumb: {
+        "@id": "https://scaleseo.co/services/geo#breadcrumb"
+      },
+      inLanguage: "en-CA"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://scaleseo.co/services/geo#service",
+      name: "AI Search Optimization & Generative Engine Optimization",
+      alternateName: [
+        "Generative Engine Optimization",
+        "GEO",
+        "AI Search Optimization",
+        "AI SEO"
+      ],
+      serviceType: "AI Search Optimization and Generative Engine Optimization",
+      url: "https://scaleseo.co/services/geo",
+      description: "AI search optimization and Generative Engine Optimization services focused on technical accessibility, entity clarity, structured data, content quality and visibility across traditional and AI-powered search.",
+      provider: {
+        "@id": "https://scaleseo.co/#organization"
+      },
+      areaServed: {
+        "@type": "Country",
+        name: "Canada"
+      },
+      audience: {
+        "@type": "BusinessAudience",
+        audienceType: "Professional service and B2B businesses"
+      },
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "AI Search Optimization Services",
+        itemListElement: [
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "AI Crawlability and Technical SEO"
+            }
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Entity and Business Optimization"
+            }
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Structured Data Optimization"
+            }
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "AI Search Content Optimization"
+            }
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Expertise and Trust Signal Optimization"
+            }
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "AI Search Visibility Monitoring"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://scaleseo.co/services/geo#breadcrumb",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: "https://scaleseo.co/"
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Services",
+          item: "https://scaleseo.co/services"
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "AI Search Optimization",
+          item: "https://scaleseo.co/services/geo"
+        }
+      ]
+    }
+  ]
 };
 
 /* === Content ============================================================ */
@@ -254,7 +361,7 @@ export default function GeoServicePage() {
     <main>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(geoJsonLd) }}
       />
 
       {/* === HERO — dark, full-width left-aligned === */}
@@ -267,6 +374,7 @@ export default function GeoServicePage() {
                 { name: "Services", href: "/services" },
                 { name: "AI Search Optimization" },
               ]}
+              schema={false}
             />
           </div>
           <h1 className={ind.title}>
