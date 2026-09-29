@@ -40,7 +40,12 @@ throughout — copy is written in first person ("I"), not agency "we" voice.
   featured accounting-firm result (GSC screenshot) → First 90 Days → Good
   Fit / Not a Fit → Pricing → FAQ (shared `ServicesFaq` with its own items)
   → CTA
-- `/services/geo` — GEO / AI-search optimization
+- `/services/geo` — AI Search Optimization / GEO, rebuilt on the new design
+  (own page, no longer the ServicePage template): hero (lime title block +
+  platform jump list) → Search Is Changing → What Is GEO → GEO Doesn't
+  Replace SEO (flow) → What's Included (6 service cards) → AI Platforms →
+  Professional Services → Accounting Firms → Measurement → Can You
+  Guarantee Citations → Without the Hype → light Get Started CTA
 - `/services/web-development`
 - `/services/google-ads-management`
 - `/services/seo-audits` — standalone audit page ($700 / $1,500 + GST). Dark
