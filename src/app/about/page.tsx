@@ -175,16 +175,62 @@ const glance: { label: string; value: React.ReactNode }[] = [
   },
 ];
 
+const aboutJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "AboutPage",
+      "@id": "https://scaleseo.co/about#webpage",
+      url: "https://scaleseo.co/about",
+      name: "About Scale SEO",
+      description:
+        "Learn about Scale SEO, an independent SEO practice based in Calgary, Alberta, helping professional service and B2B businesses improve their organic search visibility across Canada and internationally.",
+      isPartOf: { "@id": "https://scaleseo.co/#website" },
+      about: { "@id": "https://scaleseo.co/#organization" },
+      mainEntity: { "@id": "https://scaleseo.co/#organization" },
+      publisher: { "@id": "https://scaleseo.co/#organization" },
+      breadcrumb: { "@id": "https://scaleseo.co/about#breadcrumb" },
+      inLanguage: "en-CA",
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://scaleseo.co/about#breadcrumb",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: "https://scaleseo.co/",
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "About",
+          item: "https://scaleseo.co/about",
+        },
+      ],
+    },
+  ],
+};
+
 /* === Page =============================================================== */
 
 export default function AboutPage() {
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutJsonLd) }}
+      />
+
       {/* === HERO — dark, full-width left-aligned === */}
       <header className={ind.hero} data-nav-theme="dark">
         <div className={ind.heroContent}>
           <div className={ind.crumbsOnDark}>
-            <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "About" }]} />
+            <Breadcrumbs
+              items={[{ name: "Home", href: "/" }, { name: "About" }]}
+              schema={false}
+            />
           </div>
           <h1 className={ind.title}>
             About <span className="title-block">Scale SEO</span>
