@@ -1,429 +1,256 @@
-/* === HERO === */
-.hero {
-  padding: 180px 40px 80px;
-  background: var(--bg-dark);
-  color: var(--ink-on-dark);
-}
+/* ==========================================================================
+   /corbin-jensen. Hero base from ../industries/page.module.css (`ind`),
+   sections from the shared /services hub system (`hub`) and the About
+   page (`about`). Below are only the pieces specific to this page.
+   ========================================================================== */
 
-/* Breadcrumbs is styled for the site's default light sections; redefine
-   the CSS custom properties it reads locally so it's legible (and lime)
-   on this section's dark background, without touching the shared
-   component used elsewhere on light pages. */
-.crumbsOnDark {
-  --ink-dim: var(--highlight);
-  --accent: var(--highlight);
-}
-
-.heroInner {
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.grid {
+/* === Hero: bio left, portrait right === */
+.heroGrid {
   display: grid;
-  grid-template-columns: 260px 1fr;
-  gap: 56px;
-  align-items: start;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+  gap: 80px;
+  align-items: end;
 }
 
-.portrait {
-  width: 100%;
-  aspect-ratio: 3 / 4;
-  overflow: hidden;
-  border: 1px solid var(--line-strong-on-dark);
-}
-
-.portraitImg {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: grayscale(20%) contrast(1.05);
-}
-
-.headContent {
-  padding-top: 8px;
+.heroMain {
+  min-width: 0;
 }
 
 .title {
-  font-family: var(--display);
-  font-weight: 500;
-  font-size: clamp(36px, 4.6vw, 60px);
-  letter-spacing: -0.03em;
-  line-height: 1.05;
-  color: var(--ink-on-dark);
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .role {
   font-family: var(--mono);
+  font-weight: 500;
   font-size: 13px;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--highlight);
-  margin-bottom: 32px;
+  margin-bottom: 36px;
 }
 
-/* LinkedIn icon link, in the hero next to the CTAs */
-.linkedin {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 48px;
-  height: 48px;
-  border: 1px solid var(--highlight);
+.heroMeta {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-dim-on-dark);
+  padding-top: 22px;
+  margin: -8px 0 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  max-width: 680px;
+}
+
+.heroPortrait {
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  background: #181818;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 40px 80px -40px rgba(0, 0, 0, 0.7);
+}
+
+.heroPortraitImg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.heroPortraitCaption {
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 18px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 13px 20px;
   border-radius: 999px;
-  color: var(--highlight);
-  transition: background-color 0.3s cubic-bezier(0.25, 1, 0.5, 1), color 0.3s ease;
-}
-
-.linkedin:hover {
-  background: var(--highlight);
-  color: var(--on-highlight);
-}
-
-.linkedin svg {
-  width: 20px;
-  height: 20px;
-}
-
-/* === CTA === */
-.ctaGroup {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 16px;
-  margin-bottom: 40px;
-}
-
-/* .cta/.ctaSecondary are shared with the light finalCta section below, so
-   the hero (dark) instance gets a locally scoped token override instead
-   of changing the shared button colors globally. */
-.ctaGroupDark {
-  --accent: var(--ink-on-dark);
-  --on-accent: var(--bg-dark);
-  --ink: var(--ink-on-dark);
-  --line-strong: var(--line-strong-on-dark);
-}
-
-.ctaGroupDark .cta:hover {
-  color: var(--highlight);
-  border-color: var(--highlight);
-}
-
-.ctaGroupDark .ctaSecondary:hover {
-  color: var(--highlight);
-  border-color: var(--highlight);
-}
-
-.cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  padding: 16px 28px;
-  background: var(--accent);
-  color: var(--on-accent);
-  text-decoration: none;
-  font-family: var(--mono);
-  font-size: 12px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  border: 1px solid var(--accent);
-  transition: all 0.3s ease;
-}
-
-.cta:hover {
-  background: transparent;
-  color: var(--accent);
-}
-
-.arrow {
-  transition: transform 0.4s ease;
-}
-
-.cta:hover .arrow {
-  transform: translateX(4px);
-}
-
-.ctaSecondary {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  padding: 16px 28px;
-  background: transparent;
-  color: var(--ink);
-  text-decoration: none;
-  font-family: var(--mono);
-  font-size: 12px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  border: 1px solid var(--line-strong);
-  transition: all 0.3s ease;
-}
-
-.ctaSecondary:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-}
-
-/* === ON-PAGE NAV === */
-.onPageNav {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 12px;
-  padding-top: 24px;
-  border-top: 1px solid var(--line-strong-on-dark);
-}
-
-.onPageLabel {
+  background: rgba(10, 10, 10, 0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: var(--ink-on-dark);
   font-family: var(--mono);
   font-size: 11px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+}
+
+/* === Industries: two cards, accounting slightly wider === */
+.industryGrid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 24px;
+  align-items: stretch;
+}
+
+/* === Selected work === */
+.workGrid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 24px;
+  align-items: stretch;
+}
+
+.workCard {
+  padding: 3rem;
+  gap: 20px;
+}
+
+.workTitle {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(24px, 2.4vw, 32px);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+/* === Approach manifesto: centred, large type === */
+.manifesto {
+  max-width: 880px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.manifestoH2 {
+  margin: 0 auto 56px;
+}
+
+.manifestoBody {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  font-family: var(--sans);
+  font-size: 18px;
+  line-height: 1.75;
   color: var(--ink-dim-on-dark);
 }
 
-.onPageLinks {
+.manifestoLead {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(22px, 2.2vw, 30px);
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: var(--ink-on-dark);
+}
+
+.manifestoClose {
+  margin-top: 8px;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(26px, 3vw, 40px);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--ink-on-dark);
+}
+
+.manifestoClose strong {
+  color: var(--highlight);
+  font-weight: 800;
+}
+
+/* === Tools: platform chips === */
+.chips {
+  list-style: none;
   display: flex;
   flex-wrap: wrap;
-  align-items: baseline;
+  gap: 8px;
+  margin: 4px 0 6px;
 }
 
-.onPageDivider {
-  color: var(--ink-dim-on-dark);
-  opacity: 0.4;
-  margin: 0 10px;
-}
-
-.onPageLink {
-  font-family: var(--mono);
-  font-size: 12px;
-  letter-spacing: 0.06em;
-  color: var(--highlight);
-  text-decoration: none;
-}
-
-.onPageLink:hover {
-  text-decoration: underline;
-}
-
-/* === CONTENT SECTIONS ===
-   Alternating black/white rounded bubble sections, matching the homepage
-   and About page: each section after the first overlaps the one above it
-   with a negative margin + rounded top corners. */
-.section {
-  position: relative;
-  padding: 90px 40px;
-  margin-top: -48px;
-  border-radius: 48px 48px 0 0;
-  overflow: hidden;
-  background: var(--bg);
-  color: var(--ink);
-}
-
-/* Dark variant — reused for both 'expertise' and 'articles'. Locally
-   redefines the tokens every child in this subtree reads, so .body,
-   .articleTitle, .articleCategory etc. all flip to their -on-dark /
-   highlight equivalents automatically without per-element overrides. */
-.sectionElevated {
-  background: var(--bg-dark);
-  color: var(--ink-on-dark);
-  --ink: var(--ink-on-dark);
-  --ink-dim: var(--ink-dim-on-dark);
-  --line-strong: var(--line-strong-on-dark);
-  --accent: var(--highlight);
-}
-
-.sectionElevated .articleCard {
-  background: #181818;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.sectionElevated .articleCard:hover {
-  background: #202020;
-}
-
-.sectionInner {
-  max-width: 760px;
-  margin: 0 auto;
-}
-
-.body {
+.chips li {
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--on-accent);
   font-family: var(--sans);
-  font-weight: 400;
-  font-size: 17px;
-  line-height: 1.75;
-  color: var(--ink-dim);
+  font-weight: 600;
+  font-size: 13.5px;
 }
 
-.body p {
-  margin-bottom: 22px;
-}
-
-.body p:last-child {
-  margin-bottom: 0;
-}
-
-/* === HUMANITY (personal quote) === */
-.humanity {
-  position: relative;
-  padding: 90px 40px;
-  margin-top: -48px;
-  border-radius: 48px 48px 0 0;
-  overflow: hidden;
-  background: var(--bg);
-  color: var(--ink);
-}
-
-.quote {
-  font-family: var(--display);
-  font-weight: 300;
-  font-size: clamp(19px, 2vw, 24px);
-  line-height: 1.6;
-  color: var(--ink);
-}
-
-.quote p {
-  margin-bottom: 28px;
-  position: relative;
-  padding-left: 24px;
-  border-left: 2px solid var(--ink);
-}
-
-.quote p:last-child {
-  margin-bottom: 0;
-}
-
-/* === LATEST ARTICLES === */
-.articlesGrid {
-  margin-top: 40px;
+/* === Articles === */
+.articleGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1px;
-  background: var(--line-strong);
-  border: 1px solid var(--line-strong);
-  margin-bottom: 32px;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 24px;
+  align-items: stretch;
 }
 
 .articleCard {
-  background: var(--bg-elev);
-  padding: 32px 28px;
-  display: flex;
-  flex-direction: column;
-  text-decoration: none;
-  color: inherit;
-  min-height: 220px;
-  transition: background 0.3s ease;
+  padding: 3rem;
+  gap: 18px;
 }
 
-.articleCard:hover {
-  background: var(--bg);
-}
-
-.articleCategory {
+.articleTag {
+  align-self: flex-start;
+  padding: 5px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(153, 255, 0, 0.4);
   font-family: var(--mono);
   font-size: 11px;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 16px;
+  color: var(--highlight);
 }
 
 .articleTitle {
   font-family: var(--display);
-  font-weight: 500;
-  font-size: 19px;
-  letter-spacing: -0.01em;
-  line-height: 1.25;
-  color: var(--ink);
-  margin-bottom: 12px;
+  font-weight: 800;
+  font-size: clamp(26px, 2.8vw, 38px);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
 }
 
-.articleExcerpt {
+.futureCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 3rem;
+  border-radius: 28px;
+  border: 1px dashed rgba(255, 255, 255, 0.2);
+}
+
+.futureText {
   font-family: var(--sans);
-  font-size: 14px;
-  line-height: 1.6;
-  color: var(--ink-dim);
-  flex-grow: 1;
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--ink-dim-on-dark);
 }
 
-.articleLink {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  margin-top: 18px;
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--accent);
-}
-
-.articleCard:hover .arrow {
-  transform: translateX(4px);
-}
-
-.viewAllLink {
+/* === CTA === */
+.ctaPromise {
+  margin: 32px auto 0;
   font-family: var(--mono);
   font-size: 12px;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--accent);
-  text-decoration: none;
+  color: var(--highlight);
 }
 
-.viewAllLink:hover {
-  text-decoration: underline;
+.ctaButtons {
+  margin-top: 40px;
 }
 
-/* === FINAL CTA === */
-.finalCta {
-  position: relative;
-  padding: 100px 40px;
-  margin-top: -48px;
-  border-radius: 48px 48px 0 0;
-  overflow: hidden;
-  background: var(--bg);
-  color: var(--ink);
-  text-align: center;
+/* === Responsive ========================================================= */
+@media (max-width: 1100px) {
+  .heroGrid { gap: 48px; }
+  .workGrid,
+  .articleGrid { grid-template-columns: 1fr; }
 }
 
-.finalCtaHeadline {
-  font-family: var(--display);
-  font-weight: 500;
-  font-size: clamp(26px, 3.4vw, 40px);
-  letter-spacing: -0.02em;
-  color: var(--ink);
-  max-width: 640px;
-  margin: 0 auto 40px;
-}
-
-.finalCta .ctaGroup {
-  justify-content: center;
-  margin-bottom: 28px;
-}
-
-.finalCtaSub {
-  font-family: var(--sans);
-  font-size: 14.5px;
-  color: var(--ink-dim);
-}
-
-.inlineLink {
-  color: var(--accent);
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.inlineLink:hover {
-  text-decoration: underline;
-}
-
-@media (max-width: 800px) {
-  .hero { padding: 120px 24px 60px; }
-  .grid { grid-template-columns: 1fr; gap: 32px; }
-  .portrait { max-width: 220px; }
-  .section { padding: 60px 24px; }
-  .humanity { padding: 60px 24px; }
-  .finalCta { padding: 70px 24px; }
+@media (max-width: 900px) {
+  .heroGrid { grid-template-columns: 1fr; }
+  .heroPortrait { max-width: 420px; }
+  .industryGrid { grid-template-columns: 1fr; }
+  .workCard,
+  .articleCard,
+  .futureCard { padding: 2rem 1.5rem; }
+  .manifestoBody { font-size: 16.5px; }
 }

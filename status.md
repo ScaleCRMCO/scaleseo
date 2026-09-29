@@ -61,7 +61,12 @@ throughout — copy is written in first person ("I"), not agency "we" voice.
 - `/results` — all client case studies (data in `src/app/data/caseStudies.ts`:
   Kinsmen Consulting, MSV Plumbing Services, Empire Accountants)
 - `/blog` + `/blog/[slug]` — posts in `src/app/blog/posts.ts` (one post live)
-- `/corbin-jensen` — full bio/author page (ProfilePage + Person schema)
+- `/corbin-jensen` — bio/author page rebuilt on the new design (reuses `hub`,
+  `ind` + `about` styles): hero (bio + portrait) → SEO Experience →
+  Areas of Expertise (7 rows) → Industry Experience (2 cards) → Selected
+  Results → How Corbin Works → My Approach (centred manifesto) → Tools &
+  Platforms (chips) → Articles → Professional Information (fact sheet) →
+  CTA. Schema still the older ProfilePage + Person (`#person`) graph.
 - `/about` — rebuilt on the new design (`about/page.tsx` + `page.module.css`,
   reusing `hub` + `ind`): full-width hero (lime title block + fact list) →
   The Business (sticky heading, 2025 mark) → What Scale SEO Does (5
