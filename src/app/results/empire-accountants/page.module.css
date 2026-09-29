@@ -1,0 +1,443 @@
+/* ==========================================================================
+   /results/empire-accountants. Hero base from ../../industries (`ind`),
+   sections from the shared /services hub system (`hub`) and the About page
+   (`about`). Below are only the pieces specific to this case study.
+   ========================================================================== */
+
+.labelCenter {
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.h2OnDark {
+  color: var(--ink-on-dark);
+  margin-bottom: 8px;
+}
+
+/* === Hero =============================================================== */
+.heroGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 64px;
+  align-items: center;
+}
+
+.heroMain {
+  min-width: 0;
+}
+
+.heroMain h1 {
+  margin-bottom: 28px;
+}
+
+.heroLead {
+  font-family: var(--sans);
+  font-size: clamp(17px, 1.4vw, 20px);
+  line-height: 1.6;
+  color: var(--ink-dim-on-dark);
+  max-width: 600px;
+  margin-bottom: 20px;
+}
+
+.heroMeta {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--highlight);
+  margin-bottom: 32px;
+}
+
+/* Browser-framed website screenshot */
+.browser {
+  border-radius: 20px;
+  overflow: hidden;
+  background: #181818;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 60px 100px -40px rgba(0, 0, 0, 0.8),
+              0 0 0 1px rgba(153, 255, 0, 0.08);
+  transform: perspective(1600px) rotateY(-6deg) rotateX(2deg);
+  transform-origin: left center;
+}
+
+.browserBar {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 12px 16px;
+  background: #222;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.browserBar span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.browserBar em {
+  margin-left: 12px;
+  padding: 4px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  font-family: var(--mono);
+  font-style: normal;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--ink-dim-on-dark);
+}
+
+.browserImg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Headline stats */
+.statRow {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  gap: 16px;
+  margin-top: 72px;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 26px 28px;
+  border-radius: 22px;
+  background: #181818;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.statLead {
+  background: var(--highlight);
+  border-color: var(--highlight);
+}
+
+.statValue {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(30px, 3.2vw, 46px);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--highlight);
+  white-space: nowrap;
+}
+
+.statLead .statValue {
+  color: var(--on-highlight);
+}
+
+.statLabel {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-dim-on-dark);
+}
+
+.statLead .statLabel {
+  color: var(--on-highlight);
+}
+
+/* === Challenge: numbered panel ========================================== */
+.panel {
+  background: #181818;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 28px;
+  padding: 2.5rem;
+  box-shadow: 0 40px 80px -40px rgba(0, 0, 0, 0.6);
+}
+
+.panelList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.panelList li {
+  display: flex;
+  align-items: baseline;
+  gap: 18px;
+  padding: 16px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.35;
+  color: var(--ink-on-dark);
+}
+
+.panelNum {
+  font-family: var(--mono);
+  font-weight: 400;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--highlight);
+}
+
+.objective {
+  margin-top: 56px;
+  padding: 26px 30px;
+  border-radius: 22px;
+  background: var(--highlight);
+  color: var(--on-highlight);
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(19px, 1.9vw, 24px);
+  line-height: 1.35;
+}
+
+/* === The work: content journey ========================================== */
+.journey {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.journeyList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.journeyList li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 22px 26px;
+  border-radius: 20px;
+  background: #181818;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--ink-on-dark);
+}
+
+/* Connector arrow between steps */
+.journeyList li:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+.journeyList li:not(:last-child)::after {
+  content: "↓";
+  position: absolute;
+  left: 50%;
+  bottom: -27px;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--highlight);
+  color: var(--on-highlight);
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.journeyEnd {
+  background: var(--highlight) !important;
+  border-color: var(--highlight) !important;
+  color: var(--on-highlight) !important;
+}
+
+.journeyNum {
+  font-family: var(--mono);
+  font-weight: 400;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--highlight);
+}
+
+.journeyEnd .journeyNum {
+  color: var(--on-highlight);
+}
+
+.journeyNote {
+  margin-top: 20px;
+  font-family: var(--sans);
+  font-size: 15.5px;
+  line-height: 1.65;
+  color: #b8b8b8;
+}
+
+/* === Results ============================================================ */
+.resultGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.resultCard {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 2.5rem;
+  border-radius: 28px;
+  background: var(--bg-elev);
+  box-shadow: 0 40px 80px -40px rgba(10, 10, 10, 0.16),
+              0 12px 24px -12px rgba(10, 10, 10, 0.08);
+}
+
+.resultLead {
+  background: var(--bg-dark);
+  color: var(--ink-on-dark);
+}
+
+.resultValue {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(34px, 3.4vw, 50px);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.resultLead .resultValue {
+  color: var(--highlight);
+}
+
+.resultLabel {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+.resultLead .resultLabel {
+  color: var(--ink-dim-on-dark);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.resultBody {
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--ink-dim);
+}
+
+.resultLead .resultBody {
+  color: #b8b8b8;
+}
+
+.figure {
+  margin-top: 56px;
+}
+
+.figureFrame {
+  border-radius: 24px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid var(--line);
+  box-shadow: 0 40px 80px -40px rgba(10, 10, 10, 0.2);
+}
+
+.figureImg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.caption {
+  margin-top: 16px;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+}
+
+/* === Why it worked ====================================================== */
+.whyIntro {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--ink-dim-on-dark);
+}
+
+.whyIntroStrong {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(20px, 1.9vw, 24px);
+  line-height: 1.35;
+  color: var(--ink-on-dark);
+}
+
+.drivers {
+  display: flex;
+  flex-direction: column;
+}
+
+.driver {
+  display: flex;
+  align-items: baseline;
+  gap: 22px;
+  padding: 24px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.driver p {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(18px, 1.6vw, 21px);
+  line-height: 1.4;
+  color: var(--ink-on-dark);
+}
+
+.driverNum {
+  flex-shrink: 0;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--highlight);
+}
+
+.driversClose {
+  padding: 24px 28px;
+  border-radius: 20px;
+  background: var(--highlight);
+  color: var(--on-highlight);
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(20px, 2vw, 26px);
+}
+
+/* === Specialist ========================================================= */
+.portraitSmall {
+  max-width: 460px;
+}
+
+/* === CTA ================================================================ */
+.ctaButtons {
+  margin-top: 40px;
+}
+
+/* === Responsive ========================================================= */
+@media (max-width: 1100px) {
+  .heroGrid { grid-template-columns: 1fr; gap: 48px; }
+  .browser { transform: none; max-width: 720px; }
+  .resultGrid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 900px) {
+  .statRow { grid-template-columns: 1fr; margin-top: 48px; }
+  .panel { padding: 2rem 1.5rem; }
+  .journeyList li { font-size: 18px; padding: 18px 20px; }
+  .resultCard { padding: 2rem 1.5rem; }
+  .figure { margin-top: 40px; }
+}

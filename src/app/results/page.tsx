@@ -52,6 +52,7 @@ const studies: Study[] = [
       "Ongoing SEO has included technical improvements, service-page optimization, content strategy, internal linking, structured data, and local search improvements.",
       "The result has been significant growth in organic visibility, with priority searches moving from deeper search results onto page one of Google.",
     ],
+    caseStudyHref: "/results/empire-accountants",
     image: "/images/empireaccountants-hero-image.png",
     url: "https://www.empireaccountants.com.au/",
     featured: true,

@@ -70,6 +70,12 @@ throughout — copy is written in first person ("I"), not agency "we" voice.
   Consulting, MSV Plumbing) → Results Built Through Hands-On SEO → light
   CTA. Each card has a `caseStudyHref` slot; until an individual case study
   page exists its "Read the … Case Study" button shows as "Coming soon".
+- `/results/empire-accountants` — first individual case study (own
+  `page.tsx` + `page.module.css`, reusing `hub`/`ind`/`about`): hero with
+  browser-framed site screenshot + 3 stat cards → client → challenge →
+  strategy (5 rows) → the work (content journey) → results (3 cards + GSC
+  screenshot) → why it worked → ongoing → accounting SEO → specialist → CTA.
+  In the sitemap; the hub card's button links here.
 - `/blog` + `/blog/[slug]` — posts in `src/app/blog/posts.ts` (one post live)
 - `/corbin-jensen` — bio/author page rebuilt on the new design (reuses `hub`,
   `ind` + `about` styles): hero (bio + portrait) → SEO Experience →
