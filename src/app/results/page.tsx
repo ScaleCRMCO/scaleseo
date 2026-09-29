@@ -68,6 +68,7 @@ const studies: Study[] = [
       "Scale SEO worked with Kinsmen Consulting to strengthen its website and search presence across residential and commercial concrete services in Calgary.",
       "The project combined website development, local SEO, service-page optimization, and search strategy around commercially important projects.",
     ],
+    caseStudyHref: "/results/kinsmen-consulting",
     image: "/images/kinsmen-hero.jpg",
     url: "https://www.kinsmenconsulting.ca",
   },

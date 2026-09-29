@@ -75,7 +75,13 @@ throughout — copy is written in first person ("I"), not agency "we" voice.
   browser-framed site screenshot + 3 stat cards → client → challenge →
   strategy (5 rows) → the work (content journey) → results (3 cards + GSC
   screenshot) → why it worked → ongoing → accounting SEO → specialist → CTA.
-  In the sitemap; the hub card's button links here.
+  In the sitemap; the hub card's button links here. Styles shared with the
+  other case studies in `results/caseStudy.module.css`.
+- `/results/kinsmen-consulting` — second case study, same template: hero
+  (site screenshot + $400K+ / 6 Months / Residential + Commercial) → client
+  → challenge (two goals) → strategy (5 rows, service chips) → approach
+  (search-to-revenue journey) → results → why it worked → ongoing →
+  specialist (dark) → light CTA. In the sitemap; hub card links here.
 - `/blog` + `/blog/[slug]` — posts in `src/app/blog/posts.ts` (one post live)
 - `/corbin-jensen` — bio/author page rebuilt on the new design (reuses `hub`,
   `ind` + `about` styles): hero (bio + portrait) → SEO Experience →

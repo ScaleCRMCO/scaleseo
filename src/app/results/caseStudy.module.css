@@ -1,7 +1,7 @@
 /* ==========================================================================
-   /results/empire-accountants. Hero base from ../../industries (`ind`),
-   sections from the shared /services hub system (`hub`) and the About page
-   (`about`). Below are only the pieces specific to this case study.
+   Shared styles for the /results/* case study pages. Hero base from
+   ../industries (`ind`), sections from the shared /services hub system
+   (`hub`) and the About page (`about`).
    ========================================================================== */
 
 .labelCenter {
@@ -427,6 +427,152 @@
   margin-top: 40px;
 }
 
+.resultLabelBare {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+/* Long stat values (e.g. "Residential + Commercial") may wrap */
+.statValueWrap {
+  white-space: normal;
+}
+
+/* === Chips (service lists inside strategy rows) ========================= */
+.chips {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 4px 0;
+}
+
+.chips li {
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--on-accent);
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 13.5px;
+}
+
+/* === Two-goal panel (challenge) ========================================= */
+.goals {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.goal {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 26px 28px;
+  border-radius: 22px;
+  background: #181818;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.goal p {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(19px, 1.7vw, 22px);
+  line-height: 1.35;
+  color: var(--ink-on-dark);
+}
+
+.goalLead {
+  background: var(--highlight);
+  border-color: var(--highlight);
+}
+
+.goalLead p,
+.goalLead .panelNum {
+  color: var(--on-highlight);
+}
+
+.goalJoin {
+  align-self: center;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-dim-on-dark);
+}
+
+.resultsNote {
+  margin-top: 40px;
+  max-width: 820px;
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--ink-dim);
+}
+
+/* === Specialist on a dark section ======================================= */
+.proseDark {
+  color: var(--ink-dim-on-dark) !important;
+}
+
+.strongOnDark {
+  color: var(--ink-on-dark);
+  font-weight: 700;
+}
+
+/* === Light CTA (when the section before it is dark) ===================== */
+.ctaLight {
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.ctaLight h2 {
+  color: var(--ink);
+  line-height: 1.22;
+}
+
+.ctaLight > div:not(.ctaButtons) {
+  color: var(--ink-dim);
+}
+
+.ctaLabelInk {
+  color: var(--ink-dim);
+}
+
+.ctaPrimary,
+.ctaSecondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 34px;
+  text-decoration: none;
+  font-family: var(--mono);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.ctaPrimary {
+  background: var(--ink);
+  color: var(--bg);
+  border: 1px solid var(--ink);
+}
+
+.ctaSecondary {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--line-strong);
+}
+
+.ctaPrimary:hover,
+.ctaSecondary:hover {
+  background: var(--highlight);
+  color: var(--on-highlight);
+  border-color: var(--highlight);
+}
+
 /* === Responsive ========================================================= */
 @media (max-width: 1100px) {
   .heroGrid { grid-template-columns: 1fr; gap: 48px; }
@@ -440,4 +586,7 @@
   .journeyList li { font-size: 18px; padding: 18px 20px; }
   .resultCard { padding: 2rem 1.5rem; }
   .figure { margin-top: 40px; }
+  .goal { padding: 20px 22px; }
+  .ctaPrimary,
+  .ctaSecondary { padding: 16px 26px; }
 }

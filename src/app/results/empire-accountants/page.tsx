@@ -9,7 +9,7 @@ import RevealOnScroll from "../../components/RevealOnScroll";
 import hub from "../../services/page.module.css";
 import ind from "../../industries/page.module.css";
 import about from "../../about/page.module.css";
-import styles from "./page.module.css";
+import styles from "../caseStudy.module.css";
 
 export const metadata: Metadata = {
   title: "Empire Accountants SEO Case Study | Scale SEO",
