@@ -117,11 +117,96 @@ const drivers = [
   "And clearer business, author, and structured data signals helped better represent the firm and its expertise online.",
 ];
 
+const caseStudyJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://scaleseo.co/results/empire-accountants#webpage",
+      url: "https://scaleseo.co/results/empire-accountants",
+      name: "Empire Accountants SEO Case Study | Scale SEO",
+      description: "See how ongoing SEO helped Empire Accountants improve organic search visibility, move priority keywords onto page one and generate more enquiries.",
+      isPartOf: {
+        "@id": "https://scaleseo.co/#website"
+      },
+      publisher: {
+        "@id": "https://scaleseo.co/#organization"
+      },
+      mainEntity: {
+        "@id": "https://scaleseo.co/results/empire-accountants#case-study"
+      },
+      breadcrumb: {
+        "@id": "https://scaleseo.co/results/empire-accountants#breadcrumb"
+      },
+      inLanguage: "en-CA"
+    },
+    {
+      "@type": "Article",
+      "@id": "https://scaleseo.co/results/empire-accountants#case-study",
+      url: "https://scaleseo.co/results/empire-accountants",
+      headline: "Empire Accountants SEO Case Study",
+      description: "How ongoing SEO helped a Brisbane accounting firm improve search visibility, move priority keywords onto page one and generate more organic enquiries.",
+      mainEntityOfPage: {
+        "@id": "https://scaleseo.co/results/empire-accountants#webpage"
+      },
+      author: {
+        "@id": "https://scaleseo.co/#corbin-jensen"
+      },
+      publisher: {
+        "@id": "https://scaleseo.co/#organization"
+      },
+      about: {
+        "@type": "Organization",
+        name: "Empire Accountants",
+        url: CLIENT_URL
+      },
+      articleSection: "SEO Case Studies",
+      keywords: [
+        "SEO case study",
+        "accounting firm SEO",
+        "SEO for accountants",
+        "accounting SEO",
+        "professional services SEO"
+      ],
+      inLanguage: "en-CA"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://scaleseo.co/results/empire-accountants#breadcrumb",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: "https://scaleseo.co/"
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Results",
+          item: "https://scaleseo.co/results"
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "Empire Accountants",
+          item: "https://scaleseo.co/results/empire-accountants"
+        }
+      ]
+    }
+  ]
+};
+
 /* === Page =============================================================== */
 
 export default function EmpireAccountantsCaseStudy() {
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(caseStudyJsonLd) }}
+      />
+
       {/* === HERO — dark, copy + stats left, site screenshot right === */}
       <header className={ind.hero} data-nav-theme="dark">
         <div className={ind.heroContent}>
@@ -132,6 +217,7 @@ export default function EmpireAccountantsCaseStudy() {
                 { name: "Results", href: "/results" },
                 { name: "Empire Accountants" },
               ]}
+              schema={false}
             />
           </div>
 
