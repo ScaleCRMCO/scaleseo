@@ -53,7 +53,7 @@ throughout — copy is written in first person ("I"), not agency "we" voice.
   links to /industries/accounting-firms) → Why SEO Works Differently → One
   Strategy Adapted to Your Market → light "Don't See Your Industry?" CTA
 - `/industries/accounting-firms` — rebuilt on the new design: full-width hero
-  (lime title block + 30→Top 10 / +125% stat cards) → clients you want →
+  (lime title block + Page 5→Page 1 / +125% stat cards) → clients you want →
   how accounting clients search → what accounting SEO includes (6 cards) →
   website structure diagram → single/multi-location → featured result →
   firm types → content clusters → why Scale SEO → one firm per market →
@@ -62,7 +62,13 @@ throughout — copy is written in first person ("I"), not agency "we" voice.
   Kinsmen Consulting, MSV Plumbing Services, Empire Accountants)
 - `/blog` + `/blog/[slug]` — posts in `src/app/blog/posts.ts` (one post live)
 - `/corbin-jensen` — full bio/author page (ProfilePage + Person schema)
-- `/about` — agency story page
+- `/about` — rebuilt on the new design (`about/page.tsx` + `page.module.css`,
+  reusing `hub` + `ind`): full-width hero (lime title block + fact list) →
+  The Business (sticky heading, 2025 mark) → What Scale SEO Does (5
+  editorial rows) → Who I Work With (2 audience cards) → Approach (5-step
+  alternating timeline) → Meet Corbin Jensen (portrait + bio) → Experience
+  (result card) → Why Kept Small (5 rows) → Location → At a Glance (fact
+  sheet) → CTA
 - `/contact` — two-column split layout form (Resend email delivery)
 - `/thank-you` — post-submission confirmation (noindexed), used for Google Ads
   conversion tracking
