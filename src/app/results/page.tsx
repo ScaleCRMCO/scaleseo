@@ -34,6 +34,7 @@ type Study = {
   image: string;
   url: string;
   featured?: boolean;
+  tint: "blue" | "orange";
 };
 
 const studies: Study[] = [
@@ -56,6 +57,7 @@ const studies: Study[] = [
     image: "/images/empireaccountants-hero-image.png",
     url: "https://www.empireaccountants.com.au/",
     featured: true,
+    tint: "blue",
   },
   {
     id: "kinsmen-consulting",
@@ -71,6 +73,7 @@ const studies: Study[] = [
     caseStudyHref: "/results/kinsmen-consulting",
     image: "/images/kinsmen-hero.jpg",
     url: "https://www.kinsmenconsulting.ca",
+    tint: "orange",
   },
   {
     id: "msv-plumbing-services",
@@ -86,6 +89,7 @@ const studies: Study[] = [
     ],
     image: "/images/msv-screenshot.png",
     url: "https://msvplumbingservices.com.au/",
+    tint: "blue",
   },
 ];
 
@@ -226,7 +230,7 @@ export default function ResultsPage() {
             <article
               key={s.id}
               id={s.id}
-              className={`${styles.study} ${s.featured ? styles.featured : ""} ${
+              className={`${styles.study} ${s.tint === "orange" ? styles.tintOrange : styles.tintBlue} ${s.featured ? styles.featured : ""} ${
                 i % 2 === 1 ? styles.flip : ""
               } reveal-up`}
             >
