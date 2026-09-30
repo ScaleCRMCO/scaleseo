@@ -86,8 +86,7 @@ throughout — copy is written in first person ("I"), not agency "we" voice.
   Images: homepage screenshot (hero + hub card), GSC graph (results) and the
   bookkeeping service page (after the strategy rows). The query/ranking
   visual is still a dashed "Image coming soon" placeholder.
-  `CLIENT_URL` is null until the client's URL is confirmed (the "Visit"
-  button stays hidden until then). Hub card added (neutral tint, second
+  Client site: https://www.jensencpa.ca/. Hub card added (neutral tint, second
   position, image placeholder). In the sitemap.
 - `/blog` + `/blog/[slug]` — posts in `src/app/blog/posts.ts` (one post live)
 - `/corbin-jensen` — bio/author page rebuilt on the new design (reuses `hub`,

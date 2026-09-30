@@ -77,6 +77,7 @@ const studies: Study[] = [
     ],
     caseStudyHref: "/results/jensen-cpa",
     image: "/images/jensen-cpa-homepage.webp",
+    url: "https://www.jensencpa.ca/",
     tint: "neutral",
   },
   {

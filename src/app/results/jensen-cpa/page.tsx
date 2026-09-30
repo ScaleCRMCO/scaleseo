@@ -19,9 +19,7 @@ export const metadata: Metadata = {
 };
 
 const BOOKING_URL = "https://cal.com/corbinjensen-scaleseo/30min";
-// Set once the client's live URL is confirmed — the "Visit Jensen CPA"
-// button only renders when this is filled in.
-const CLIENT_URL: string | null = null;
+const CLIENT_URL = "https://www.jensencpa.ca/";
 
 const pad = (i: number) => String(i + 1).padStart(2, "0");
 
@@ -191,11 +189,97 @@ const drivers = [
 
 const formula = ["Services", "Expertise", "People", "Content", "Location", "Search Intent"];
 
+const caseStudyJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://scaleseo.co/results/jensen-cpa#webpage",
+      url: "https://scaleseo.co/results/jensen-cpa",
+      name: "Jensen CPA SEO Case Study | Scale SEO",
+      description: "See how website redevelopment, SEO, content strategy and Google Ads helped Jensen CPA significantly increase organic search visibility in Calgary.",
+      isPartOf: {
+        "@id": "https://scaleseo.co/#website"
+      },
+      publisher: {
+        "@id": "https://scaleseo.co/#organization"
+      },
+      mainEntity: {
+        "@id": "https://scaleseo.co/results/jensen-cpa#case-study"
+      },
+      breadcrumb: {
+        "@id": "https://scaleseo.co/results/jensen-cpa#breadcrumb"
+      },
+      inLanguage: "en-CA"
+    },
+    {
+      "@type": "Article",
+      "@id": "https://scaleseo.co/results/jensen-cpa#case-study",
+      url: "https://scaleseo.co/results/jensen-cpa",
+      headline: "Jensen CPA SEO Case Study",
+      description: "How website redevelopment, ongoing SEO, accounting content strategy and Google Ads helped a Calgary CPA firm increase average daily Google Search impressions by 227% during the initial campaign.",
+      mainEntityOfPage: {
+        "@id": "https://scaleseo.co/results/jensen-cpa#webpage"
+      },
+      author: {
+        "@id": "https://scaleseo.co/#corbin-jensen"
+      },
+      publisher: {
+        "@id": "https://scaleseo.co/#organization"
+      },
+      about: {
+        "@type": "Organization",
+        name: "Jensen CPA",
+        url: CLIENT_URL
+      },
+      articleSection: "SEO Case Studies",
+      keywords: [
+        "accounting firm SEO",
+        "CPA SEO",
+        "SEO for accountants",
+        "Calgary accounting SEO",
+        "professional services SEO",
+        "SEO case study"
+      ],
+      inLanguage: "en-CA"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://scaleseo.co/results/jensen-cpa#breadcrumb",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: "https://scaleseo.co/"
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Results",
+          item: "https://scaleseo.co/results"
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "Jensen CPA",
+          item: "https://scaleseo.co/results/jensen-cpa"
+        }
+      ]
+    }
+  ]
+};
+
 /* === Page =============================================================== */
 
 export default function JensenCpaCaseStudy() {
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(caseStudyJsonLd) }}
+      />
+
       {/* === HERO — dark, copy left, site placeholder right, stats below === */}
       <header className={ind.hero} data-nav-theme="dark">
         <div className={ind.heroContent}>
@@ -206,6 +290,7 @@ export default function JensenCpaCaseStudy() {
                 { name: "Results", href: "/results" },
                 { name: "Jensen CPA" },
               ]}
+              schema={false}
             />
           </div>
 
@@ -221,17 +306,15 @@ export default function JensenCpaCaseStudy() {
                 Ads.
               </p>
               <p className={styles.heroMeta}>Accounting &amp; Tax · Calgary, Alberta</p>
-              {CLIENT_URL && (
-                <a
-                  href={CLIENT_URL}
-                  target="_blank"
-                  rel="nofollow noopener noreferrer"
-                  className={ind.heroCta}
-                >
-                  <span>Visit Jensen CPA</span>
-                  <span className={ind.arrow}>→</span>
-                </a>
-              )}
+              <a
+                href={CLIENT_URL}
+                target="_blank"
+                rel="nofollow noopener noreferrer"
+                className={ind.heroCta}
+              >
+                <span>Visit Jensen CPA</span>
+                <span className={ind.arrow}>→</span>
+              </a>
             </div>
 
             <div className={styles.browser}>
@@ -239,7 +322,7 @@ export default function JensenCpaCaseStudy() {
                 <span />
                 <span />
                 <span />
-                <em>Jensen CPA</em>
+                <em>jensencpa.ca</em>
               </div>
               <img
                 src="/images/jensen-cpa-homepage.webp"
