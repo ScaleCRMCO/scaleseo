@@ -22,7 +22,7 @@ type Card = {
   metricLabel: string;
   title: string;
   image: string;
-  theme: "baby" | "navy" | "orange" | "blue";
+  theme: "blue" | "purple" | "yellow" | "pink";
 };
 
 const cards: Card[] = [
@@ -34,7 +34,7 @@ const cards: Card[] = [
     metricLabel: "Average daily search impressions",
     title: "Building a stronger digital presence for a Calgary CPA firm",
     image: "/images/jensen-cpa-homepage.webp",
-    theme: "baby",
+    theme: "blue",
   },
   {
     href: "/results/empire-accountants",
@@ -44,7 +44,7 @@ const cards: Card[] = [
     metricLabel: "Target keyword rankings",
     title: "Moving priority accounting searches onto page one of Google",
     image: "/images/empireaccountants-hero-image.png",
-    theme: "navy",
+    theme: "purple",
   },
   {
     href: "/results/kinsmen-consulting",
@@ -54,7 +54,7 @@ const cards: Card[] = [
     metricLabel: "Revenue from generated projects",
     title: "SEO and website development tied to real project revenue",
     image: "/images/kinsmen-hero.jpg",
-    theme: "orange",
+    theme: "yellow",
   },
   {
     // No dedicated page yet — links to its card on the results hub.
@@ -65,15 +65,15 @@ const cards: Card[] = [
     metricLabel: "Consistent customer bookings",
     title: "Building organic visibility for a brand-new plumbing business",
     image: "/images/msv-screenshot.png",
-    theme: "blue",
+    theme: "pink",
   },
 ];
 
 const themeClass: Record<Card["theme"], string> = {
-  baby: styles.themeBaby,
-  navy: styles.themeNavy,
-  orange: styles.themeOrange,
   blue: styles.themeBlue,
+  purple: styles.themePurple,
+  yellow: styles.themeYellow,
+  pink: styles.themePink,
 };
 
 function CaseCard({ card }: { card: Card }) {

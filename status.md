@@ -30,6 +30,10 @@ throughout — copy is written in first person ("I"), not agency "we" voice.
   right. Uses `overflow: clip` (not hidden) so sticky works. Falls back to a
   static grid under prefers-reduced-motion. MSV links to its /results card
   until it has its own page.
+- Homepage colour: CaseStudy cards use the secondary highlight colours
+  (Jensen blue, Empire purple, Kinsmen yellow, MSV pink); the Contact
+  section is a solid lime CTA block (dot grid top-right) with the dark form
+  card on the right.
 - `/` — homepage, in this order: Hero → ServicesGrid (3×3 cards) → Comparison
   (Scale SEO vs. generalist agencies) → About → CaseStudy → CampaignAreas
   ("What Goes Into a Scale SEO Campaign?") → IndustriesTeaser ("SEO for

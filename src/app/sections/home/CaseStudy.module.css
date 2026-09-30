@@ -223,41 +223,42 @@
   transform: translateX(4px);
 }
 
-/* === Brand gradients ==================================================== */
-.themeBaby {
-  --card-bg: linear-gradient(180deg, #4d8fc4 0%, #2d6a9f 55%, #1d4f7a 100%);
-  --card-fade: #4d8fc4;
-  --card-ink: #ffffff;
-  --card-arrow: #1d4f7a;
-  --card-chip: rgba(255, 255, 255, 0.18);
-  --card-line: rgba(255, 255, 255, 0.25);
-}
-
-.themeNavy {
-  --card-bg: linear-gradient(180deg, #16386b 0%, #0d2448 55%, #06142b 100%);
-  --card-fade: #16386b;
-  --card-ink: #ffffff;
-  --card-arrow: #06142b;
-  --card-chip: rgba(255, 255, 255, 0.14);
-  --card-line: rgba(255, 255, 255, 0.2);
-}
-
-.themeOrange {
-  --card-bg: linear-gradient(180deg, #ffc79a 0%, #ffab6b 55%, #f58a45 100%);
-  --card-fade: #ffc79a;
-  --card-ink: #1f1208;
-  --card-arrow: #ffc79a;
-  --card-chip: rgba(31, 18, 8, 0.1);
-  --card-line: rgba(31, 18, 8, 0.2);
-}
-
+/* === Secondary highlight colours (see --pop-* in globals.css) =========
+   Each card: a vivid base with a slightly deeper tone toward the bottom. */
 .themeBlue {
-  --card-bg: linear-gradient(180deg, #3b7de0 0%, #2862c2 55%, #1a4a9a 100%);
-  --card-fade: #3b7de0;
+  --card-bg: linear-gradient(180deg, #2a9cff 0%, var(--pop-blue) 55%, #0070d4 100%);
+  --card-fade: #2a9cff;
+  --card-ink: var(--ink);
+  --card-arrow: var(--pop-blue);
+  --card-chip: rgba(255, 255, 255, 0.3);
+  --card-line: rgba(10, 10, 10, 0.18);
+}
+
+.themePurple {
+  --card-bg: linear-gradient(180deg, #8a2bff 0%, var(--pop-purple) 55%, #5a00c8 100%);
+  --card-fade: #8a2bff;
   --card-ink: #ffffff;
-  --card-arrow: #1a4a9a;
-  --card-chip: rgba(255, 255, 255, 0.18);
+  --card-arrow: var(--pop-purple);
+  --card-chip: rgba(255, 255, 255, 0.16);
   --card-line: rgba(255, 255, 255, 0.25);
+}
+
+.themeYellow {
+  --card-bg: linear-gradient(180deg, #fff64a 0%, var(--pop-yellow) 55%, #e8dc00 100%);
+  --card-fade: #fff64a;
+  --card-ink: var(--ink);
+  --card-arrow: var(--pop-yellow);
+  --card-chip: rgba(10, 10, 10, 0.08);
+  --card-line: rgba(10, 10, 10, 0.16);
+}
+
+.themePink {
+  --card-bg: linear-gradient(180deg, #ff2a9e 0%, var(--pop-pink) 55%, #d40073 100%);
+  --card-fade: #ff2a9e;
+  --card-ink: var(--ink);
+  --card-arrow: var(--pop-pink);
+  --card-chip: rgba(255, 255, 255, 0.28);
+  --card-line: rgba(10, 10, 10, 0.18);
 }
 
 /* === Reduced motion fallback ============================================ */
