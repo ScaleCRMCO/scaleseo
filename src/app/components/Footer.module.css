@@ -1,142 +1,225 @@
+/* ==========================================================================
+   Footer — black canvas with a lime glow rising from the bottom-right,
+   big two-line wordmark top-left, link groups + X mark, fine-print bar.
+   ========================================================================== */
+
 .footer {
+  position: relative;
+  overflow: hidden;
+  margin-top: -48px;
+  border-radius: 48px 48px 0 0;
   background: var(--bg-dark);
   color: var(--ink-on-dark);
-  padding: 100px 40px 32px;
-  position: relative;
+  isolation: isolate;
 }
 
-/* === Aligned column grid, centered now that the logo column is gone === */
+/* Layered radial glows: soft haze across the lower half, strongest lime
+   in the bottom-right corner */
+.glow {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background:
+    radial-gradient(90% 75% at 100% 100%, rgba(153, 255, 0, 0.95) 0%, rgba(153, 255, 0, 0.55) 28%, rgba(153, 255, 0, 0.12) 55%, transparent 72%),
+    radial-gradient(70% 55% at 60% 115%, rgba(153, 255, 0, 0.28) 0%, transparent 70%),
+    radial-gradient(60% 50% at 0% 110%, rgba(153, 255, 0, 0.1) 0%, transparent 70%);
+}
+
+/* Fine film grain over the gradient */
+.grain {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.22;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 140px 40px 36px;
+}
+
+/* === Wordmark =========================================================== */
+.wordmark {
+  display: inline-flex;
+  flex-direction: column;
+  font-family: var(--brand);
+  font-weight: 400;
+  font-size: clamp(64px, 9vw, 150px);
+  line-height: 0.88;
+  letter-spacing: -0.03em;
+  color: var(--ink-on-dark);
+  text-decoration: none;
+  user-select: none;
+}
+
+.wordmarkAccent {
+  color: var(--highlight);
+}
+
+/* === Links + mark ======================================================= */
+.middle {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 64px;
+  margin-top: 88px;
+}
+
 .grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 40px;
-  max-width: 1200px;
-  margin: 0 auto;
-  align-items: start;
-  padding-bottom: 64px;
+  grid-template-columns: repeat(5, minmax(0, auto));
+  justify-content: start;
+  gap: 32px 56px;
 }
+
 .col {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 12px;
 }
+
 .colLabel {
-  font-family: var(--sans);
+  font-family: var(--mono);
   font-size: 11px;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--ink-dim-on-dark);
-  padding-bottom: 16px;
-  margin-bottom: 4px;
+  margin-bottom: 10px;
 }
-.colText {
-  font-family: var(--display);
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 1.4;
-  color: var(--ink-on-dark);
-}
+
+.colText,
 .colLink {
   font-family: var(--display);
-  font-weight: 600;
-  font-size: 18px;
+  font-size: 17px;
   line-height: 1.4;
   color: var(--ink-on-dark);
+}
+
+.colText {
+  font-weight: 400;
+}
+
+.colLink {
+  font-weight: 600;
   text-decoration: none;
   width: fit-content;
   transition: color 0.3s ease;
 }
-.colLink:hover { color: var(--highlight); }
 
-/* === Lime watermark bubble — logo + wordmark, filling most of the
-   footer's bottom, with the fine-print bar nested inside it === */
-.wordmarkBubble {
-  position: relative;
-  margin-top: 8px;
-  min-height: 320px;
-  padding: 48px 48px 28px;
-  border-radius: 40px;
-  background: var(--highlight);
-  color: var(--on-highlight);
+.colLink:hover {
+  color: var(--highlight);
+}
+
+.markWrap {
   display: flex;
-  flex-direction: column;
   justify-content: flex-end;
-  overflow: hidden;
 }
 
-.wordmarkMark {
-  display: flex;
-  align-items: center;
-  gap: clamp(12px, 2.5vw, 28px);
-  flex-grow: 1;
-  min-height: 0;
-}
-
-.wordmarkLogo {
-  height: clamp(56px, 13vw, 190px);
-  width: auto;
-  flex-shrink: 0;
+.mark {
+  width: clamp(240px, 28vw, 420px);
+  margin: -60px -40px -40px 0;
+  height: auto;
   color: var(--on-highlight);
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.25));
 }
 
-.wordmarkBrand {
-  font-family: var(--brand);
-  font-weight: 400;
-  font-size: clamp(52px, 13vw, 190px);
-  line-height: 0.9;
-  letter-spacing: -0.02em;
-  color: var(--on-highlight);
-  white-space: nowrap;
-  user-select: none;
-}
-
-/* === Bottom bar — nested inside the lime bubble, so it needs its own
-   dark-on-lime contrast rather than the site's usual light-on-dark === */
+/* === Bottom bar ========================================================= */
 .bottom {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   align-items: center;
   gap: 16px 32px;
-  margin-top: 32px;
-  padding-top: 20px;
-  border-top: 1px solid rgba(10, 10, 10, 0.15);
+  margin-top: 96px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
   font-family: var(--sans);
   font-size: 12px;
-  letter-spacing: 0.03em;
+  font-weight: 600;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: rgba(10, 10, 10, 0.72);
 }
-.copy { text-align: left; font-weight: 600; }
+
+.copy {
+  color: var(--ink-on-dark);
+}
+
+/* Right-hand items sit on the brightest part of the lime glow */
 .taglineGroup {
   display: flex;
   align-items: center;
   gap: 16px;
   margin-left: auto;
+  color: var(--on-highlight);
 }
+
 .llmLink {
-  color: rgba(10, 10, 10, 0.72);
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s ease;
+  color: var(--on-highlight);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity 0.3s ease;
 }
-.llmLink:hover { color: var(--on-highlight); }
-.tagline { text-align: right; font-weight: 600; }
-.preferredSource { flex-shrink: 0; }
+
+.llmLink:hover {
+  opacity: 0.7;
+}
+
+.preferredSource {
+  flex-shrink: 0;
+}
+
+/* === Responsive ========================================================= */
+@media (max-width: 1100px) {
+  .middle {
+    grid-template-columns: 1fr;
+    gap: 56px;
+  }
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .markWrap {
+    justify-content: flex-end;
+  }
+}
 
 @media (max-width: 900px) {
-  .footer { padding: 64px 24px 28px; }
+  .footer {
+    border-radius: 32px 32px 0 0;
+  }
+  .inner {
+    padding: 96px 24px 28px;
+  }
+  .middle {
+    margin-top: 56px;
+  }
   .grid {
     grid-template-columns: 1fr 1fr;
     gap: 36px 24px;
-    padding-bottom: 40px;
   }
-  .wordmarkBubble {
-    min-height: 220px;
-    padding: 32px 24px 24px;
-    border-radius: 28px;
+  .glow {
+    background:
+      radial-gradient(120% 45% at 100% 100%, rgba(153, 255, 0, 0.95) 0%, rgba(153, 255, 0, 0.5) 30%, rgba(153, 255, 0, 0.1) 60%, transparent 75%),
+      radial-gradient(90% 35% at 30% 110%, rgba(153, 255, 0, 0.22) 0%, transparent 70%);
   }
-  .wordmarkMark { gap: 14px; }
-  .bottom { flex-direction: column; align-items: flex-start; gap: 12px; }
-  .tagline { text-align: left; margin-left: 0; }
+  .mark {
+    width: 200px;
+    margin: -40px -30px -30px 0;
+  }
+  .bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: 56px;
+  }
+  .taglineGroup {
+    margin-left: 0;
+    flex-wrap: wrap;
+    color: var(--ink-on-dark);
+  }
+  .llmLink {
+    color: var(--ink-on-dark);
+  }
 }

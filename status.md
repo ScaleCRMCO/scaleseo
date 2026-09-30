@@ -114,9 +114,12 @@ throughout — copy is written in first person ("I"), not agency "we" voice.
   Ads, Web Development, GEO + featured "All Services" tile) · Industries ·
   About · Contact · "Book a call" button. Inverts itself over any section
   marked `data-nav-theme="dark"`.
-- **Footer:** link groups (site pages, all six services incl. SEO Audits,
-  contact, social/profiles incl. Clutch + Google Business), giant lime
-  rounded wordmark bubble with the X logo, LLM Info in the bottom bar.
+- **Footer:** black with a lime radial glow + grain rising from the
+  bottom-right (rounded top, overlaps the section above). Big two-line
+  "Scale / SEO" wordmark top-left, five link groups (site pages, all six
+  services incl. SEO Audits, contact, service area, social/profiles) with the
+  X mark on the right, then the bottom bar (© line, LLM Info + tagline,
+  Google Preferred Sources button).
 
 ### Shared components (`src/app/components/`)
 - `Nav.tsx`, `Footer.tsx`, `Logo.tsx`
