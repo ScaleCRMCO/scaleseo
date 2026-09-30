@@ -362,6 +362,17 @@ const servicesJsonLd = {
   ],
 };
 
+// Secondary pastel palette — see --pastel-* tokens in globals.css.
+// The core SEO card stays black + lime; the rest take a meaning-based tint.
+const serviceTint: Record<string, string> = {
+  "seo-audits": styles.tintSky,
+  "web-development": styles.tintBlush,
+  "google-ads": styles.tintPeach,
+  "ai-search": styles.tintLilac,
+};
+const comboTints = [styles.tintBlush, styles.tintPeach, styles.tintLilac, styles.tintSky];
+const proofTints = [styles.tintSky, styles.tintPeach, styles.tintSky];
+
 /* === Page =============================================================== */
 
 export default function ServicesPage() {
@@ -466,7 +477,9 @@ export default function ServicesPage() {
               <article
                 key={s.id}
                 id={s.id}
-                className={`${styles.serviceCard} reveal-up`}
+                className={`${styles.serviceCard} ${
+                  serviceTint[s.id] ? `${styles.pastel} ${serviceTint[s.id]}` : ""
+                } reveal-up`}
               >
                 <div className={styles.serviceMain}>
                   <div className={styles.serviceMeta}>
@@ -571,8 +584,11 @@ export default function ServicesPage() {
           </div>
 
           <div className={styles.comboGrid}>
-            {combos.map((c) => (
-              <div key={c.title} className={`${styles.lightCard} reveal-up`}>
+            {combos.map((c, i) => (
+              <div
+                key={c.title}
+                className={`${styles.lightCard} ${styles.pastel} ${comboTints[i % comboTints.length]} reveal-up`}
+              >
                 <h3 className={styles.cardTitle}>{c.title}</h3>
                 <div className={styles.cardBody}>
                   {c.body.map((para) => (
@@ -657,8 +673,11 @@ export default function ServicesPage() {
           </div>
 
           <div className={styles.threeGrid}>
-            {proofs.map((p) => (
-              <div key={p.title} className={`${styles.darkCard} reveal-up`}>
+            {proofs.map((p, i) => (
+              <div
+                key={p.title}
+                className={`${styles.darkCard} ${styles.pastel} ${proofTints[i % proofTints.length]} reveal-up`}
+              >
                 <h3 className={styles.proofTitle}>{p.title}</h3>
                 <div className={styles.metric}>{p.metric}</div>
                 <div className={styles.metricLabel}>{p.label}</div>

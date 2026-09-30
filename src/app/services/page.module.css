@@ -622,6 +622,85 @@ a:hover > .arrow {
   margin: 0 auto;
 }
 
+/* === Pastel cards (secondary palette, light sections only) ===========
+   Add one tint class plus .pastel to a serviceCard / darkCard / lightCard. */
+.tintSky   { --tint: var(--pastel-sky);   --tint-deep: var(--deep-sky); }
+.tintLilac { --tint: var(--pastel-lilac); --tint-deep: var(--deep-lilac); }
+.tintBlush { --tint: var(--pastel-blush); --tint-deep: var(--deep-blush); }
+.tintPeach { --tint: var(--pastel-peach); --tint-deep: var(--deep-peach); }
+
+.pastel {
+  background: var(--tint) !important;
+  border-color: transparent !important;
+  color: var(--ink) !important;
+  --text-dim: var(--ink-dim);
+  box-shadow: 0 40px 80px -40px rgba(10, 10, 10, 0.14),
+              0 12px 24px -12px rgba(10, 10, 10, 0.06) !important;
+}
+
+.pastel :global(.index),
+.pastel .serviceMeta :global(.index) {
+  color: var(--ink);
+  opacity: 0.45;
+}
+
+/* small deep-tone dot next to the index */
+.pastel :global(.index)::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 10px;
+  border-radius: 50%;
+  background: var(--tint-deep);
+  vertical-align: 1px;
+}
+
+.pastel .serviceTagline {
+  color: var(--ink);
+}
+
+.pastel .serviceBody,
+.pastel .proofDesc {
+  color: var(--ink-dim);
+}
+
+.pastel .servicePanel {
+  background: rgba(255, 255, 255, 0.6);
+  border-color: rgba(10, 10, 10, 0.06);
+}
+
+.pastel .panelLabel,
+.pastel .metricLabel {
+  color: var(--ink-dim);
+}
+
+.pastel .checkList li {
+  color: var(--ink);
+}
+
+.pastel .check {
+  background: var(--ink);
+  color: var(--highlight);
+}
+
+.pastel .proofTitle {
+  color: var(--ink);
+  border-bottom-color: rgba(10, 10, 10, 0.12);
+}
+
+.pastel .metric {
+  color: var(--ink);
+}
+
+.pastel .textLink {
+  color: var(--ink);
+}
+
+.pastel .textLink:hover {
+  color: var(--tint-deep);
+}
+
 /* === Responsive ======================================================== */
 @media (max-width: 1200px) {
   .visual { width: 380px; }

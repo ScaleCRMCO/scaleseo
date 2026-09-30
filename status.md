@@ -166,6 +166,14 @@ green as the one accent (hover states, highlight cards, footer wordmark).
 --ink-on-dark / --ink-dim-on-dark / --line-on-dark / --line-strong-on-dark
 ```
 
+**Secondary pastel palette (trial on /services):** `--pastel-sky #D8ECFF`,
+`--pastel-lilac #E6DEFF`, `--pastel-blush #FFE1EC`, `--pastel-peach #FFE4CF`
+(+ `--deep-*` variants for tiny details). Card/panel backgrounds on LIGHT
+sections only, text always ink, lime stays dominant. Meaning: sky =
+technical/audits, lilac = AI/GEO, peach = local/B2B, blush = content/web.
+Applied via `.pastel` + `.tintSky/Lilac/Blush/Peach` in
+`services/page.module.css`.
+
 **Typography:**
 - `--display` / `--sans`: **Manrope** (self-hosted variable font, 200–800) —
   all headings and body copy
