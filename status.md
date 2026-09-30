@@ -23,6 +23,13 @@ throughout — copy is written in first person ("I"), not agency "we" voice.
 ## Site Structure
 
 ### Pages
+- Homepage CaseStudy section (`sections/home/CaseStudy.tsx`) is a pinned
+  scroll scene: a ~420vh-tall section whose sticky stage holds the heading
+  centred while 4 brand-gradient cards (Jensen CPA, Empire, Kinsmen, MSV)
+  rise past it via `motion` `useScroll`/`useTransform`, alternating left and
+  right. Uses `overflow: clip` (not hidden) so sticky works. Falls back to a
+  static grid under prefers-reduced-motion. MSV links to its /results card
+  until it has its own page.
 - `/` — homepage, in this order: Hero → ServicesGrid (3×3 cards) → Comparison
   (Scale SEO vs. generalist agencies) → About → CaseStudy → CampaignAreas
   ("What Goes Into a Scale SEO Campaign?") → IndustriesTeaser ("SEO for
@@ -64,8 +71,7 @@ throughout — copy is written in first person ("I"), not agency "we" voice.
   firm types → content clusters → why Scale SEO → one firm per market →
   FAQ (9, shared `ServicesFaq`) → CTA
 - `/results` — case study hub rebuilt on the new design (content lives in
-  `results/page.tsx`; `data/caseStudies.ts` still feeds the homepage
-  CaseStudy section): hero (lime title block + client/metric jump list) →
+  `results/page.tsx`): hero (lime title block + client/metric jump list) →
   one large card per case study (Empire Accountants featured, then Kinsmen
   Consulting, MSV Plumbing) → Results Built Through Hands-On SEO → light
   CTA. Each card has a `caseStudyHref` slot; until an individual case study
