@@ -152,10 +152,6 @@
   text-transform: uppercase;
 }
 
-.featured .eyebrow {
-  background: var(--highlight);
-  color: var(--on-highlight);
-}
 
 .client {
   font-family: var(--display);
@@ -261,10 +257,6 @@ a.readBtn:hover {
   color: var(--on-highlight);
 }
 
-.featured .readBtn {
-  background: var(--highlight);
-  color: var(--on-highlight);
-}
 
 .readBtnSoon {
   cursor: default;
