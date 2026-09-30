@@ -46,18 +46,12 @@
   --highlight: #99FF00;
   --on-highlight: #0A0A0A;
   /* Secondary highlight colours — vivid companions to the lime, used as
-     card/panel backgrounds on LIGHT sections only. Text on them is always
-     --ink. Deep variants are for tiny details (dots, icons).
-     Meaning: sky = technical/audits, lilac = AI/GEO, peach = local/B2B,
-     blush = content/web. */
-  --pop-sky: #33D6FF;
-  --pop-lilac: #B18CFF;
-  --pop-blush: #FF6FD8;
-  --pop-peach: #FF9A3C;
-  --deep-sky: #0077B6;
-  --deep-lilac: #5B2BE0;
-  --deep-blush: #C2008F;
-  --deep-peach: #C75A00;
+     card/panel backgrounds on LIGHT sections only. Ink text on blue, pink
+     and yellow; cream text on purple. Lime stays the dominant colour. */
+  --pop-blue: #0089FC;
+  --pop-pink: #FC0089;
+  --pop-purple: #7300FC;
+  --pop-yellow: #FCF100;
   --line: rgba(10, 10, 10, 0.16);
   --line-strong: #0A0A0A;
   /* Alternate section variant — inverted block (ink bg, cream text) used to

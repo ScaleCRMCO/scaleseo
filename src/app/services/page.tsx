@@ -365,13 +365,13 @@ const servicesJsonLd = {
 // Secondary highlight palette — see --pop-* tokens in globals.css.
 // The core SEO card stays black + lime; the rest take a meaning-based tint.
 const serviceTint: Record<string, string> = {
-  "seo-audits": styles.tintSky,
-  "web-development": styles.tintBlush,
-  "google-ads": styles.tintPeach,
-  "ai-search": styles.tintLilac,
+  "seo-audits": styles.tintBlue,
+  "web-development": styles.tintPink,
+  "google-ads": styles.tintYellow,
+  "ai-search": styles.tintPurple,
 };
-const comboTints = [styles.tintBlush, styles.tintPeach, styles.tintLilac, styles.tintSky];
-const proofTints = [styles.tintSky, styles.tintPeach, styles.tintSky];
+const comboTints = [styles.tintPink, styles.tintYellow, styles.tintPurple, styles.tintBlue];
+const proofTints = [styles.tintBlue, styles.tintYellow, styles.tintBlue];
 
 /* === Page =============================================================== */
 

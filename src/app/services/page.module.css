@@ -623,46 +623,62 @@ a:hover > .arrow {
 }
 
 /* === Highlight-colour cards (secondary palette, light sections only) ===
-   Add one tint class plus .pastel to a serviceCard / darkCard / lightCard. */
-.tintSky   { --tint: var(--pop-sky);   --tint-deep: var(--deep-sky); }
-.tintLilac { --tint: var(--pop-lilac); --tint-deep: var(--deep-lilac); }
-.tintBlush { --tint: var(--pop-blush); --tint-deep: var(--deep-blush); }
-.tintPeach { --tint: var(--pop-peach); --tint-deep: var(--deep-peach); }
+   Add one tint class plus .pastel to a serviceCard / darkCard / lightCard.
+   Each tint sets its own text colour: ink on blue/pink/yellow, cream on
+   purple (too dark for black text). */
+.tintBlue {
+  --tint: var(--pop-blue);
+  --tint-ink: var(--ink);
+  --tint-dim: rgba(10, 10, 10, 0.78);
+  --tint-panel: rgba(255, 255, 255, 0.28);
+  --tint-line: rgba(10, 10, 10, 0.14);
+}
+.tintPink {
+  --tint: var(--pop-pink);
+  --tint-ink: var(--ink);
+  --tint-dim: rgba(10, 10, 10, 0.8);
+  --tint-panel: rgba(255, 255, 255, 0.28);
+  --tint-line: rgba(10, 10, 10, 0.14);
+}
+.tintPurple {
+  --tint: var(--pop-purple);
+  --tint-ink: var(--ink-on-dark);
+  --tint-dim: rgba(252, 251, 250, 0.85);
+  --tint-panel: rgba(255, 255, 255, 0.12);
+  --tint-line: rgba(252, 251, 250, 0.22);
+}
+.tintYellow {
+  --tint: var(--pop-yellow);
+  --tint-ink: var(--ink);
+  --tint-dim: rgba(10, 10, 10, 0.78);
+  --tint-panel: rgba(255, 255, 255, 0.4);
+  --tint-line: rgba(10, 10, 10, 0.12);
+}
 
 .pastel {
   background: var(--tint) !important;
   border-color: transparent !important;
-  color: var(--ink) !important;
-  --text-dim: rgba(10, 10, 10, 0.78);
-  box-shadow: 0 40px 80px -40px rgba(10, 10, 10, 0.14),
-              0 12px 24px -12px rgba(10, 10, 10, 0.06) !important;
+  color: var(--tint-ink) !important;
+  --text-dim: var(--tint-dim);
+  box-shadow: 0 40px 80px -40px rgba(10, 10, 10, 0.2),
+              0 12px 24px -12px rgba(10, 10, 10, 0.08) !important;
 }
 
 .pastel :global(.index),
 .pastel .serviceMeta :global(.index) {
-  color: var(--ink);
-  opacity: 0.45;
-}
-
-/* small deep-tone dot next to the index */
-.pastel :global(.index)::before {
-  content: "";
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  margin-right: 10px;
-  border-radius: 50%;
-  background: var(--tint-deep);
-  vertical-align: 1px;
+  color: var(--tint-ink);
+  opacity: 0.6;
 }
 
 .pastel .serviceTagline {
-  color: var(--ink);
+  color: var(--tint-ink);
 }
 
 .pastel .serviceBody,
-.pastel .proofDesc {
-  color: rgba(10, 10, 10, 0.78);
+.pastel .proofDesc,
+.pastel .panelLabel,
+.pastel .metricLabel {
+  color: var(--tint-dim);
 }
 
 /* Lime pills would clash on vivid cards — black pill, lime on hover */
@@ -678,17 +694,15 @@ a:hover > .arrow {
 }
 
 .pastel .servicePanel {
-  background: rgba(255, 255, 255, 0.35);
-  border-color: rgba(10, 10, 10, 0.06);
+  background: var(--tint-panel);
+  border-color: var(--tint-line);
 }
 
-.pastel .panelLabel,
-.pastel .metricLabel {
-  color: rgba(10, 10, 10, 0.7);
-}
-
-.pastel .checkList li {
-  color: var(--ink);
+.pastel .checkList li,
+.pastel .proofTitle,
+.pastel .metric,
+.pastel .textLink {
+  color: var(--tint-ink);
 }
 
 .pastel .check {
@@ -697,20 +711,11 @@ a:hover > .arrow {
 }
 
 .pastel .proofTitle {
-  color: var(--ink);
-  border-bottom-color: rgba(10, 10, 10, 0.12);
-}
-
-.pastel .metric {
-  color: var(--ink);
-}
-
-.pastel .textLink {
-  color: var(--ink);
+  border-bottom-color: var(--tint-line);
 }
 
 .pastel .textLink:hover {
-  color: var(--tint-deep);
+  opacity: 0.7;
 }
 
 /* === Responsive ======================================================== */
