@@ -83,8 +83,9 @@ throughout — copy is written in first person ("I"), not agency "we" voice.
   (search-to-revenue journey) → results → why it worked → ongoing →
   specialist (dark) → light CTA. In the sitemap; hub card links here.
 - `/results/jensen-cpa` — third case study (newest client), same template.
-  Uses dashed "Image coming soon" placeholders for the site screenshot, the
-  GSC graph and the query/ranking visual until images are supplied.
+  Images: homepage screenshot (hero + hub card), GSC graph (results) and the
+  bookkeeping service page (after the strategy rows). The query/ranking
+  visual is still a dashed "Image coming soon" placeholder.
   `CLIENT_URL` is null until the client's URL is confirmed (the "Visit"
   button stays hidden until then). Hub card added (neutral tint, second
   position, image placeholder). In the sitemap.

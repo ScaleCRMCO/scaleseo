@@ -76,6 +76,7 @@ const studies: Study[] = [
       "Within the first four months, organic search visibility increased substantially, with first-page visibility for commercially relevant Calgary accounting searches.",
     ],
     caseStudyHref: "/results/jensen-cpa",
+    image: "/images/jensen-cpa-homepage.webp",
     tint: "neutral",
   },
   {

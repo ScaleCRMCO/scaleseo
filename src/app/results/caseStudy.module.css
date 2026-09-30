@@ -332,6 +332,10 @@
   color: #b8b8b8;
 }
 
+.captionOnDark {
+  color: var(--ink-dim-on-dark);
+}
+
 .figure {
   margin-top: 56px;
 }

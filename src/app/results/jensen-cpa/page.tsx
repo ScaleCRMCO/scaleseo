@@ -241,10 +241,11 @@ export default function JensenCpaCaseStudy() {
                 <span />
                 <em>Jensen CPA</em>
               </div>
-              <div className={`${styles.placeholder} ${styles.placeholderDark} ${styles.browserPlaceholder}`}>
-                <span className={styles.placeholderTag}>Image coming soon</span>
-                <span className={styles.placeholderLabel}>Jensen CPA website screenshot</span>
-              </div>
+              <img
+                src="/images/jensen-cpa-homepage.webp"
+                alt="Jensen CPA website homepage"
+                className={styles.browserImg}
+              />
             </div>
           </div>
 
@@ -305,7 +306,14 @@ export default function JensenCpaCaseStudy() {
           </p>
 
           <figure className={`${styles.figure} reveal-up`}>
-            <Placeholder label="Google Search Console performance graph" />
+            <div className={styles.figureFrame}>
+              <img
+                src="/images/jensen-cpa-google-search-console.webp"
+                alt="Google Search Console performance report for Jensen CPA"
+                className={styles.figureImg}
+                loading="lazy"
+              />
+            </div>
             <figcaption className={styles.caption}>
               Google Search Console performance showing the growth in organic
               search visibility during the initial SEO campaign.
@@ -433,6 +441,21 @@ export default function JensenCpaCaseStudy() {
               </article>
             ))}
           </div>
+
+          <figure className={`${styles.figure} reveal-up`}>
+            <div className={styles.figureFrame}>
+              <img
+                src="/images/jensen-cpa-bookkeeping-service-page.webp"
+                alt="Jensen CPA monthly bookkeeping services page"
+                className={styles.figureImg}
+                loading="lazy"
+              />
+            </div>
+            <figcaption className={`${styles.caption} ${styles.captionOnDark}`}>
+              Example of a dedicated service page: Monthly Bookkeeping Services
+              in Calgary.
+            </figcaption>
+          </figure>
         </div>
       </section>
 
