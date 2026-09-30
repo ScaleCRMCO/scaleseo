@@ -82,6 +82,12 @@ throughout — copy is written in first person ("I"), not agency "we" voice.
   → challenge (two goals) → strategy (5 rows, service chips) → approach
   (search-to-revenue journey) → results → why it worked → ongoing →
   specialist (dark) → light CTA. In the sitemap; hub card links here.
+- `/results/jensen-cpa` — third case study (newest client), same template.
+  Uses dashed "Image coming soon" placeholders for the site screenshot, the
+  GSC graph and the query/ranking visual until images are supplied.
+  `CLIENT_URL` is null until the client's URL is confirmed (the "Visit"
+  button stays hidden until then). Hub card added (neutral tint, second
+  position, image placeholder). In the sitemap.
 - `/blog` + `/blog/[slug]` — posts in `src/app/blog/posts.ts` (one post live)
 - `/corbin-jensen` — bio/author page rebuilt on the new design (reuses `hub`,
   `ind` + `about` styles): hero (bio + portrait) → SEO Experience →

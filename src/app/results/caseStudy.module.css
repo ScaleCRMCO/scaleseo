@@ -427,6 +427,15 @@
   margin-top: 40px;
 }
 
+.resultsIntro {
+  margin-bottom: 18px;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+}
+
 .resultLabelBare {
   border-bottom: none;
   padding-bottom: 0;
@@ -573,8 +582,254 @@
   border-color: var(--highlight);
 }
 
+/* === Hero eyebrow ======================================================= */
+.heroEyebrow {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-dim-on-dark);
+  margin: 8px 0 14px;
+}
+
+/* === Image placeholder (until real screenshots are supplied) ============ */
+.placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 340px;
+  padding: 2rem;
+  border-radius: 24px;
+  border: 2px dashed var(--line-strong);
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent 0 14px,
+    rgba(10, 10, 10, 0.025) 14px 28px
+  );
+  text-align: center;
+  color: var(--ink-dim);
+}
+
+.placeholderDark {
+  border-color: rgba(255, 255, 255, 0.2);
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent 0 14px,
+    rgba(255, 255, 255, 0.03) 14px 28px
+  );
+  color: var(--ink-dim-on-dark);
+}
+
+.placeholderTag {
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: var(--highlight);
+  color: var(--on-highlight);
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.placeholderLabel {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.browserPlaceholder {
+  min-height: 0;
+  aspect-ratio: 16 / 10;
+  border-radius: 0;
+  border: none;
+}
+
+/* === Chips on dark sections ============================================= */
+.chipsOnDark li {
+  background: transparent;
+  border: 1px solid rgba(153, 255, 0, 0.45);
+  color: var(--ink-on-dark);
+}
+
+/* === Query + article stat cards ========================================= */
+.queryGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.queryCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 28px;
+  padding: 1.75rem;
+  border-radius: 24px;
+  background: var(--bg-elev);
+  box-shadow: 0 40px 80px -40px rgba(10, 10, 10, 0.16);
+}
+
+.queryText {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.3;
+  color: var(--ink);
+}
+
+.queryPos {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+.queryPosValue {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 38px;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+}
+
+.queryPosLabel,
+.articleMeta {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+}
+
+.articleCard {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 1.75rem;
+  border-radius: 24px;
+  background: #181818;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.articleCard:first-child {
+  border-color: var(--highlight);
+}
+
+.articleValue {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(30px, 2.8vw, 40px);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--highlight);
+}
+
+.articleValue small {
+  display: block;
+  margin-top: 8px;
+  font-family: var(--mono);
+  font-weight: 400;
+  font-size: 10.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-dim-on-dark);
+}
+
+.articleTitle {
+  flex-grow: 1;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.3;
+  color: var(--ink-on-dark);
+}
+
+.articleCard .articleMeta {
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--ink-dim-on-dark);
+}
+
+/* === Horizontal chain (content journey, SEO formula) ==================== */
+.chain {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.chain li {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 17px;
+  color: var(--ink-on-dark);
+}
+
+.chain li span {
+  padding: 12px 20px;
+  border-radius: 999px;
+  background: #181818;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.chain li:last-child span {
+  background: var(--highlight);
+  border-color: var(--highlight);
+  color: var(--on-highlight);
+}
+
+.chain li:not(:last-child)::after {
+  content: attr(data-sep);
+  color: var(--highlight);
+  font-weight: 800;
+}
+
+.chainBlock {
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* === Light numbered list (website strategy) ============================= */
+.lightList {
+  display: flex;
+  flex-direction: column;
+}
+
+.lightList .driver {
+  border-top-color: var(--line);
+}
+
+.lightList .driver p {
+  color: var(--ink);
+}
+
+.lightList .driverNum {
+  color: var(--ink-faint);
+}
+
+.proseList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--ink-dim);
+}
+
 /* === Responsive ========================================================= */
 @media (max-width: 1100px) {
+  .queryGrid { grid-template-columns: 1fr 1fr; }
   .heroGrid { grid-template-columns: 1fr; gap: 48px; }
   .browser { transform: none; max-width: 720px; }
   .resultGrid { grid-template-columns: 1fr; }
@@ -587,6 +842,9 @@
   .resultCard { padding: 2rem 1.5rem; }
   .figure { margin-top: 40px; }
   .goal { padding: 20px 22px; }
+  .queryGrid { grid-template-columns: 1fr 1fr; }
+  .placeholder { min-height: 220px; }
+  .chain li { font-size: 15px; }
   .ctaPrimary,
   .ctaSecondary { padding: 16px 26px; }
 }

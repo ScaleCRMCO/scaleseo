@@ -103,6 +103,39 @@
   border-color: rgba(10, 10, 10, 0.06);
 }
 
+.visualPlaceholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 2px dashed var(--line-strong);
+  border-radius: 22px;
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent 0 14px,
+    rgba(10, 10, 10, 0.03) 14px 28px
+  );
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--ink-dim);
+}
+
+.visualPlaceholder span {
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: var(--highlight);
+  color: var(--on-highlight);
+  font-family: var(--mono);
+  font-weight: 400;
+  font-size: 10.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
 .flip .visual {
   order: 2;
 }

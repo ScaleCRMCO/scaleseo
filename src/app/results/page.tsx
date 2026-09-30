@@ -31,10 +31,12 @@ type Study = {
   // Individual case study pages are coming; until one exists the
   // "Read the … Case Study" button renders as a disabled "coming soon" pill.
   caseStudyHref?: string;
-  image: string;
-  url: string;
+  // Optional until supplied: no image shows a placeholder, no url hides
+  // the "Visit Client Website" link.
+  image?: string;
+  url?: string;
   featured?: boolean;
-  tint: "blue" | "orange";
+  tint: "blue" | "orange" | "neutral";
 };
 
 const studies: Study[] = [
@@ -58,6 +60,23 @@ const studies: Study[] = [
     url: "https://www.empireaccountants.com.au/",
     featured: true,
     tint: "blue",
+  },
+  {
+    id: "jensen-cpa",
+    eyebrow: "Accounting Firms",
+    client: "Jensen CPA",
+    meta: "Accounting & Tax · Calgary, Alberta",
+    metrics: [
+      { value: "+227%", label: "Average daily search impressions" },
+      { value: "+92%", label: "Average daily organic clicks" },
+    ],
+    title: "Building a Stronger Digital Presence for a Calgary CPA Firm",
+    body: [
+      "Website redevelopment, SEO, content strategy, and Google Ads combined to build a stronger digital presence for an established Calgary CPA firm.",
+      "Within the first four months, organic search visibility increased substantially, with first-page visibility for commercially relevant Calgary accounting searches.",
+    ],
+    caseStudyHref: "/results/jensen-cpa",
+    tint: "neutral",
   },
   {
     id: "kinsmen-consulting",
@@ -230,17 +249,24 @@ export default function ResultsPage() {
             <article
               key={s.id}
               id={s.id}
-              className={`${styles.study} ${s.tint === "orange" ? styles.tintOrange : styles.tintBlue} ${s.featured ? styles.featured : ""} ${
+              className={`${styles.study} ${s.tint === "orange" ? styles.tintOrange : s.tint === "blue" ? styles.tintBlue : ""} ${s.featured ? styles.featured : ""} ${
                 i % 2 === 1 ? styles.flip : ""
               } reveal-up`}
             >
               <div className={styles.visual}>
-                <img
-                  src={s.image}
-                  alt={`${s.client} website`}
-                  className={styles.visualImg}
-                  loading={i === 0 ? "eager" : "lazy"}
-                />
+                {s.image ? (
+                  <img
+                    src={s.image}
+                    alt={`${s.client} website`}
+                    className={styles.visualImg}
+                    loading={i === 0 ? "eager" : "lazy"}
+                  />
+                ) : (
+                  <div className={styles.visualPlaceholder}>
+                    <span>Image coming soon</span>
+                    {s.client} website screenshot
+                  </div>
+                )}
               </div>
 
               <div className={styles.content}>
@@ -276,14 +302,16 @@ export default function ResultsPage() {
                       <span className={styles.soon}>Coming soon</span>
                     </span>
                   )}
-                  <a
-                    href={s.url}
-                    target="_blank"
-                    rel="nofollow noopener noreferrer"
-                    className={styles.visitLink}
-                  >
-                    Visit Client Website <span className={ind.arrow}>→</span>
-                  </a>
+                  {s.url && (
+                    <a
+                      href={s.url}
+                      target="_blank"
+                      rel="nofollow noopener noreferrer"
+                      className={styles.visitLink}
+                    >
+                      Visit Client Website <span className={ind.arrow}>→</span>
+                    </a>
+                  )}
                 </div>
               </div>
             </article>
