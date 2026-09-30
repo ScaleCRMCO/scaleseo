@@ -166,13 +166,14 @@ green as the one accent (hover states, highlight cards, footer wordmark).
 --ink-on-dark / --ink-dim-on-dark / --line-on-dark / --line-strong-on-dark
 ```
 
-**Secondary pastel palette (trial on /services):** `--pastel-sky #D8ECFF`,
-`--pastel-lilac #E6DEFF`, `--pastel-blush #FFE1EC`, `--pastel-peach #FFE4CF`
-(+ `--deep-*` variants for tiny details). Card/panel backgrounds on LIGHT
-sections only, text always ink, lime stays dominant. Meaning: sky =
-technical/audits, lilac = AI/GEO, peach = local/B2B, blush = content/web.
-Applied via `.pastel` + `.tintSky/Lilac/Blush/Peach` in
-`services/page.module.css`.
+**Secondary highlight palette (trial on /services):** vivid companions to
+the lime — `--pop-sky #33D6FF`, `--pop-lilac #B18CFF`, `--pop-blush #FF6FD8`,
+`--pop-peach #FF9A3C` (+ `--deep-*` variants for tiny details). Card/panel
+backgrounds on LIGHT sections only, text always ink; lime pills turn black
+on these cards. Meaning: sky = technical/audits, lilac = AI/GEO, peach =
+local/B2B, blush = content/web. Applied via `.pastel` +
+`.tintSky/Lilac/Blush/Peach` in `services/page.module.css`. (Softer pastels
+were tried first and rejected.)
 
 **Typography:**
 - `--display` / `--sans`: **Manrope** (self-hosted variable font, 200–800) —

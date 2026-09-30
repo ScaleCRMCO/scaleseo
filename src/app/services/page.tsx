@@ -362,7 +362,7 @@ const servicesJsonLd = {
   ],
 };
 
-// Secondary pastel palette — see --pastel-* tokens in globals.css.
+// Secondary highlight palette — see --pop-* tokens in globals.css.
 // The core SEO card stays black + lime; the rest take a meaning-based tint.
 const serviceTint: Record<string, string> = {
   "seo-audits": styles.tintSky,

@@ -45,19 +45,19 @@
      every primary/secondary button and interactive pill link site-wide */
   --highlight: #99FF00;
   --on-highlight: #0A0A0A;
-  /* Secondary pastels — card/panel backgrounds on LIGHT sections only.
-     Text on them is always --ink; lime stays the loudest colour. Deep
-     variants are for tiny details (dots, icons), never large areas.
+  /* Secondary highlight colours — vivid companions to the lime, used as
+     card/panel backgrounds on LIGHT sections only. Text on them is always
+     --ink. Deep variants are for tiny details (dots, icons).
      Meaning: sky = technical/audits, lilac = AI/GEO, peach = local/B2B,
      blush = content/web. */
-  --pastel-sky: #D8ECFF;
-  --pastel-lilac: #E6DEFF;
-  --pastel-blush: #FFE1EC;
-  --pastel-peach: #FFE4CF;
-  --deep-sky: #3B7DE0;
-  --deep-lilac: #7B5CFF;
-  --deep-blush: #FF5C9D;
-  --deep-peach: #F58A45;
+  --pop-sky: #33D6FF;
+  --pop-lilac: #B18CFF;
+  --pop-blush: #FF6FD8;
+  --pop-peach: #FF9A3C;
+  --deep-sky: #0077B6;
+  --deep-lilac: #5B2BE0;
+  --deep-blush: #C2008F;
+  --deep-peach: #C75A00;
   --line: rgba(10, 10, 10, 0.16);
   --line-strong: #0A0A0A;
   /* Alternate section variant — inverted block (ink bg, cream text) used to

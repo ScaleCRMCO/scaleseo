@@ -622,18 +622,18 @@ a:hover > .arrow {
   margin: 0 auto;
 }
 
-/* === Pastel cards (secondary palette, light sections only) ===========
+/* === Highlight-colour cards (secondary palette, light sections only) ===
    Add one tint class plus .pastel to a serviceCard / darkCard / lightCard. */
-.tintSky   { --tint: var(--pastel-sky);   --tint-deep: var(--deep-sky); }
-.tintLilac { --tint: var(--pastel-lilac); --tint-deep: var(--deep-lilac); }
-.tintBlush { --tint: var(--pastel-blush); --tint-deep: var(--deep-blush); }
-.tintPeach { --tint: var(--pastel-peach); --tint-deep: var(--deep-peach); }
+.tintSky   { --tint: var(--pop-sky);   --tint-deep: var(--deep-sky); }
+.tintLilac { --tint: var(--pop-lilac); --tint-deep: var(--deep-lilac); }
+.tintBlush { --tint: var(--pop-blush); --tint-deep: var(--deep-blush); }
+.tintPeach { --tint: var(--pop-peach); --tint-deep: var(--deep-peach); }
 
 .pastel {
   background: var(--tint) !important;
   border-color: transparent !important;
   color: var(--ink) !important;
-  --text-dim: var(--ink-dim);
+  --text-dim: rgba(10, 10, 10, 0.78);
   box-shadow: 0 40px 80px -40px rgba(10, 10, 10, 0.14),
               0 12px 24px -12px rgba(10, 10, 10, 0.06) !important;
 }
@@ -662,17 +662,29 @@ a:hover > .arrow {
 
 .pastel .serviceBody,
 .pastel .proofDesc {
-  color: var(--ink-dim);
+  color: rgba(10, 10, 10, 0.78);
+}
+
+/* Lime pills would clash on vivid cards — black pill, lime on hover */
+.pastel .pillLime {
+  background: var(--ink);
+  color: var(--bg);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.pastel .pillLime:hover {
+  background: var(--highlight);
+  color: var(--on-highlight);
 }
 
 .pastel .servicePanel {
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.35);
   border-color: rgba(10, 10, 10, 0.06);
 }
 
 .pastel .panelLabel,
 .pastel .metricLabel {
-  color: var(--ink-dim);
+  color: rgba(10, 10, 10, 0.7);
 }
 
 .pastel .checkList li {
