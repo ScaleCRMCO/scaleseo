@@ -272,8 +272,8 @@ const faqs: FaqItem[] = [
     q: "How much does an SEO audit cost?",
     a: [
       "Scale SEO offers two standalone audit options.",
-      "The standard SEO Audit is $700 + GST and focuses on the core technical and on-page factors affecting organic search performance.",
-      "The Advanced SEO Audit is $1,500 + GST and adds deeper keyword, competitor, content, architecture, local SEO, and opportunity analysis.",
+      "The standard SEO Audit starts from $500 + GST and focuses on the core technical and on-page factors affecting organic search performance.",
+      "The Advanced SEO Audit starts from $1,500 + GST and adds deeper keyword, competitor, content, architecture, local SEO, and opportunity analysis.",
       "There is no requirement to purchase ongoing SEO afterward.",
     ],
   },
@@ -398,8 +398,13 @@ const auditsJsonLd = {
           "name": "SEO Audit",
           "description": "Standalone SEO audit covering technical website health, crawlability, indexing, on-page SEO, internal linking, website performance, basic keyword visibility and prioritized recommendations.",
           "url": "https://scaleseo.co/services/seo-audits",
-          "price": "700.00",
+          "price": "500.00",
           "priceCurrency": "CAD",
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "minPrice": "500.00",
+            "priceCurrency": "CAD"
+          },
           "availability": "https://schema.org/InStock",
           "itemOffered": {
             "@type": "Service",
@@ -414,6 +419,11 @@ const auditsJsonLd = {
           "url": "https://scaleseo.co/services/seo-audits",
           "price": "1500.00",
           "priceCurrency": "CAD",
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "minPrice": "1500.00",
+            "priceCurrency": "CAD"
+          },
           "availability": "https://schema.org/InStock",
           "itemOffered": {
             "@type": "Service",
@@ -612,7 +622,7 @@ export default function SeoAuditsPage() {
 
           <div className={styles.tierGrid}>
             <div className={`${styles.tierCard} reveal-up`}>
-              <h3 className={styles.tierName}>SEO Audit &mdash; $700 + GST</h3>
+              <h3 className={styles.tierName}>SEO Audit &mdash; Starting From $500&nbsp;+&nbsp;GST</h3>
               <p className={styles.tierBestFor}>
                 Best for businesses that want to identify technical and on-page
                 SEO problems and receive a prioritized list of fixes.
@@ -642,7 +652,10 @@ export default function SeoAuditsPage() {
                 why it matters, and what I recommend addressing first.
               </p>
               <div className={styles.tierFooter}>
-                <span className={styles.tierPrice}>$700 + GST</span>
+                <span className={styles.tierPrice}>
+                  <span className={styles.tierPriceFrom}>Starting from</span>
+                  $500 + GST
+                </span>
                 <a
                   href={BOOKING_URL}
                   target="_blank"
@@ -658,7 +671,7 @@ export default function SeoAuditsPage() {
             <div className={`${styles.tierCard} ${styles.tierCardFeatured} reveal-up`}>
               <div className={styles.tierBadge}>Advanced</div>
               <h3 className={styles.tierName}>
-                Advanced SEO Audit &mdash; $1,500 + GST
+                Advanced SEO Audit &mdash; Starting From $1,500&nbsp;+&nbsp;GST
               </h3>
               <p className={styles.tierBestFor}>
                 Best for businesses that want to understand not only
@@ -692,7 +705,10 @@ export default function SeoAuditsPage() {
                 Where should your business focus its SEO resources next?
               </p>
               <div className={styles.tierFooter}>
-                <span className={styles.tierPrice}>$1,500 + GST</span>
+                <span className={styles.tierPrice}>
+                  <span className={styles.tierPriceFrom}>Starting from</span>
+                  $1,500 + GST
+                </span>
                 <a
                   href={BOOKING_URL}
                   target="_blank"
@@ -1018,9 +1034,9 @@ export default function SeoAuditsPage() {
           </p>
         </div>
         <div className={styles.ctaPrices}>
-          <span className={styles.ctaPrice}>SEO Audit &mdash; $700 + GST</span>
+          <span className={styles.ctaPrice}>SEO Audit &mdash; Starting from $500&nbsp;+&nbsp;GST</span>
           <span className={styles.ctaPrice}>
-            Advanced SEO Audit &mdash; $1,500 + GST
+            Advanced SEO Audit &mdash; Starting from $1,500&nbsp;+&nbsp;GST
           </span>
         </div>
         <div className={hub.buttonGroupCenter}>

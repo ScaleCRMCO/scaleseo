@@ -48,7 +48,7 @@ throughout — copy is written in first person ("I"), not agency "we" voice.
   Guarantee Citations → Without the Hype → light Get Started CTA
 - `/services/web-development`
 - `/services/google-ads-management`
-- `/services/seo-audits` — standalone audit page ($700 / $1,500 + GST). Dark
+- `/services/seo-audits` — standalone audit page (starting from $500 / $1,500 + GST). Dark
   hero → "What's Holding Your Website Back" (3 questions) → two-tier audit
   cards (kept design) → What an Audit Covers (8 cards) → When to Get an
   Audit → The Deliverable → Audit vs Ongoing SEO → Standalone vs Free
