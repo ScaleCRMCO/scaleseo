@@ -2,7 +2,6 @@
 
 import { useState, FormEvent } from "react";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
 import styles from "./Contact.module.css";
 
 type Status = "idle" | "sending" | "success" | "error";
@@ -56,29 +55,9 @@ export default function Contact() {
       <div className={styles.grid}>
         {/* LEFT — booking link + contact methods */}
         <div className={styles.left}>
-          <div className={styles.eyebrow}>
-            <span className={styles.dot} />
-            Now booking new clients
-          </div>
           <h2 className={styles.headline}>
             Ready to Improve Your <em>Organic Search Visibility?</em>
           </h2>
-          <p className={styles.lede}>
-            If you&rsquo;re investing in growth but aren&rsquo;t getting enough
-            qualified traffic from Google, I&rsquo;ll help you identify
-            what&rsquo;s holding your website back and where the strongest
-            opportunities exist.
-          </p>
-          <p className={styles.lede}>
-            Start with a conversation about your website, current search
-            visibility, competitors, and growth goals. If we&rsquo;re a good
-            fit, I&rsquo;ll outline what an ongoing SEO campaign should focus
-            on and why.
-          </p>
-          <p className={styles.promise}>
-            Month-to-month SEO. No long-term contracts. Work managed directly by
-            me.
-          </p>
 
           <a
             href="https://cal.com/corbinjensen-scaleseo/30min"
@@ -145,13 +124,6 @@ export default function Contact() {
             </li>
           </ul>
 
-          <p className={styles.footNote}>
-            Working with established businesses across Canada — not limited to
-            Calgary.{" "}
-            <Link href="/about" className={styles.footLink}>
-              More about Scale SEO →
-            </Link>
-          </p>
         </div>
 
         {/* RIGHT — dark form card */}
