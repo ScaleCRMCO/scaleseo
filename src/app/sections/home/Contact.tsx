@@ -58,7 +58,7 @@ export default function Contact() {
         <div className={styles.left}>
           <div className={styles.eyebrow}>
             <span className={styles.dot} />
-            Now booking · 1 spot Q3 2026
+            Now booking new clients
           </div>
           <h2 className={styles.headline}>
             Ready to Improve Your <em>Organic Search Visibility?</em>

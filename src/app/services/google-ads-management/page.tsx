@@ -250,7 +250,7 @@ export default function GoogleAdsPage() {
       <section className={servicePageStyles.cta}>
         <div className={servicePageStyles.ctaEyebrow}>
           <span className={servicePageStyles.dot} />
-          Now booking · 1 spot Q3 2026
+          Now booking new clients
         </div>
         <h2 className={servicePageStyles.ctaHeadline}>
           Ready for a PPC audit?

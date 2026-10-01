@@ -58,7 +58,7 @@ export default function ContactSplit() {
         <div className={styles.left}>
           <div className={styles.eyebrow}>
             <span className={styles.dot} />
-            Now booking · 1 spot Q3 2026
+            Now booking new clients
           </div>
           <h1 className={styles.headline}>
             Let&rsquo;s see if we&rsquo;re <em>a fit.</em>

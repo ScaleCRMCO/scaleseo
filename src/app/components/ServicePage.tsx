@@ -164,7 +164,7 @@ export default function ServicePage({
       <section className={styles.cta}>
         <div className={styles.ctaEyebrow}>
           <span className={styles.dot} />
-          Now booking · 1 spot Q3 2026
+          Now booking new clients
         </div>
         <h2 className={styles.ctaHeadline}>{ctaHeadline}</h2>
         <p className={styles.ctaSub}>{ctaSub}</p>
