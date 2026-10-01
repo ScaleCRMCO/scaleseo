@@ -110,18 +110,6 @@ export default function Contact() {
               </span>
               <span className={styles.methodArrow} aria-hidden="true">↗</span>
             </li>
-            <li className={styles.method}>
-              <span className={styles.methodIcon} aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
-                  <path d="M12 21s-7-6.1-7-11.5A7 7 0 0112 2.5a7 7 0 017 7C19 14.9 12 21 12 21z" />
-                  <circle cx="12" cy="9.5" r="2.5" />
-                </svg>
-              </span>
-              <span className={styles.methodBody}>
-                <span className={styles.methodLabel}>Based in</span>
-                <span className={styles.methodValue}>Calgary, Alberta</span>
-              </span>
-            </li>
           </ul>
 
         </div>
@@ -176,15 +164,6 @@ export default function Contact() {
                 name="message"
                 required
                 placeholder="What is the biggest challenge you're trying to solve right now?"
-              />
-            </div>
-
-            <div className={styles.group}>
-              <label htmlFor="timing">Timing</label>
-              <textarea
-                id="timing"
-                name="timing"
-                placeholder="Why is now the right time to address this?"
               />
             </div>
 
