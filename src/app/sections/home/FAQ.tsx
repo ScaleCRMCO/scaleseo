@@ -78,23 +78,50 @@ export default function FAQ() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <div className={styles.inner}>
-        <div className={`index ${styles.eyebrow}`}>
-          Frequently Asked Questions
+        {/* LEFT — pinned heading + help card */}
+        <div className={styles.aside}>
+          <div className={`section-label reveal-up ${styles.label}`}>FAQ</div>
+          <h2 className={`${styles.heading} reveal-up`}>
+            Common Questions About <em>Working With Scale SEO</em>
+          </h2>
+          <div className={`${styles.helpCard} reveal-up`}>
+            <span className={styles.helpTitle}>Still have a question?</span>
+            <p>
+              Book a free 30-minute call and ask me directly. No pitch deck, no
+              pressure.
+            </p>
+            <a
+              href="https://cal.com/corbinjensen-scaleseo/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.helpBtn}
+            >
+              <span>Book a Strategy Call</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
         </div>
-        <h2 className={`${styles.heading} reveal-up`}>
-          Common Questions About <em>Working With Scale SEO</em>
-        </h2>
 
+        {/* RIGHT — accordion; answers stay in the HTML for search engines */}
         <div className={styles.list}>
-          {faqs.map((item) => (
-            <div key={item.q} className={`${styles.item} reveal-up`}>
-              <h3 className={styles.question}>{item.q}</h3>
+          {faqs.map((item, i) => (
+            <details
+              key={item.q}
+              className={`${styles.item} reveal-up`}
+              name="home-faq"
+              open={i === 0}
+            >
+              <summary className={styles.summary}>
+                <span className={styles.num}>{String(i + 1).padStart(2, "0")}</span>
+                <h3 className={styles.question}>{item.q}</h3>
+                <span className={styles.icon} aria-hidden="true" />
+              </summary>
               <div className={styles.answer}>
                 {item.a.map((para) => (
                   <p key={para}>{para}</p>
                 ))}
               </div>
-            </div>
+            </details>
           ))}
         </div>
       </div>
