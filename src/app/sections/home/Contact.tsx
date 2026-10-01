@@ -128,8 +128,7 @@ export default function Contact() {
 
         {/* RIGHT — dark form card */}
         <div className={styles.right}>
-          <div className={styles.eyebrowDark}>Get in touch</div>
-          <h3 className={styles.formHeadline}>Or put it in writing.</h3>
+          <h3 className={styles.formHeadline}>Your Details</h3>
 
           <form className={styles.form} onSubmit={handleSubmit}>
             <div className={styles.row}>
