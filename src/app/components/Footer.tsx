@@ -1,6 +1,40 @@
 import Link from "next/link";
-import Logo from "./Logo";
 import styles from "./Footer.module.css";
+
+const X_PATH =
+  "M 449.996094 418.410156 C 280.851562 643.261719 143.730469 506.144531 368.585938 336.996094 C 143.730469 167.851562 280.851562 30.734375 449.996094 255.585938 C 619.140625 30.734375 756.261719 167.851562 531.410156 336.996094 C 756.261719 506.144531 619.140625 643.261719 449.996094 418.410156 Z";
+
+// Brand X filled with diagonal bands: lime takes the dominant centre band,
+// the four secondary colours smaller shares (stops are % along the diagonal).
+const bands: [string, number][] = [
+  ["var(--pop-blue)", 16],
+  ["var(--highlight)", 46],
+  ["var(--pop-purple)", 14],
+  ["var(--pop-pink)", 12],
+  ["var(--pop-yellow)", 12],
+];
+
+function ColorMark({ className }: { className?: string }) {
+  let acc = 0;
+  const stops = bands.flatMap(([color, pct]) => {
+    const from = acc;
+    acc += pct;
+    return [
+      <stop key={`${color}a`} offset={`${from}%`} style={{ stopColor: color }} />,
+      <stop key={`${color}b`} offset={`${acc}%`} style={{ stopColor: color }} />,
+    ];
+  });
+  return (
+    <svg viewBox="140 120 620 440" className={className} xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs>
+        <linearGradient id="footerMarkBands" x1="0" y1="0" x2="1" y2="1">
+          {stops}
+        </linearGradient>
+      </defs>
+      <path d={X_PATH} fill="url(#footerMarkBands)" stroke="#0a0a0a" strokeWidth="10" strokeLinejoin="round" />
+    </svg>
+  );
+}
 
 export default function Footer() {
   return (
@@ -68,7 +102,7 @@ export default function Footer() {
           </div>
 
           <div className={styles.markWrap} aria-hidden="true">
-            <Logo className={styles.mark} />
+            <ColorMark className={styles.mark} />
           </div>
         </div>
 
