@@ -99,6 +99,10 @@ throughout — copy is written in first person ("I"), not agency "we" voice.
   Client site: https://www.jensencpa.ca/. Hub card added (neutral tint, second
   position, image placeholder). In the sitemap.
 - `/blog` + `/blog/[slug]` — posts in `src/app/blog/posts.ts` (one post live)
+  Post cards use the shared template `blog/PostCard.tsx` (soft lime panel:
+  category, title, description, then a barred footer with date · read time
+  and "Read article"). Used on /blog and the homepage BlogTeaser — new posts
+  in posts.ts get it automatically.
 - `/corbin-jensen` — bio/author page rebuilt on the new design (reuses `hub`,
   `ind` + `about` styles): hero (bio + portrait) → SEO Experience →
   Areas of Expertise (7 rows) → Industry Experience (2 cards) → Selected

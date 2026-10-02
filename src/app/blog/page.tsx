@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import Breadcrumbs from "../components/Breadcrumbs";
 import RevealOnScroll from "../components/RevealOnScroll";
 import { posts } from "./posts";
+import PostCard from "./PostCard";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
@@ -33,27 +33,7 @@ export default function BlogPage() {
       <section className={styles.list}>
         <div className={styles.grid}>
           {posts.map((post) => (
-            <Link
-              key={post.slug}
-              href={`/blog/${post.slug}`}
-              className={`${styles.card} reveal-up`}
-            >
-              <div className={styles.cardGraphic} aria-hidden="true">
-                <span className={styles.cardGraphicCategory}>{post.category}</span>
-                <span className={styles.cardGraphicMark}>✕</span>
-              </div>
-              <div className={styles.cardBody}>
-                <div className={styles.cardTop}>
-                  <span className={styles.cardCategory}>{post.category}</span>
-                  <span className={styles.cardMeta}>{post.readTime}</span>
-                </div>
-                <h2 className={styles.cardTitle}>{post.title}</h2>
-                <p className={styles.cardExcerpt}>{post.excerpt}</p>
-                <span className={styles.cardLink}>
-                  Read article <span className={styles.arrow}>→</span>
-                </span>
-              </div>
-            </Link>
+            <PostCard key={post.slug} post={post} className="reveal-up" />
           ))}
         </div>
       </section>

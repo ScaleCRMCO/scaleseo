@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { posts } from "../../blog/posts";
+import PostCard from "../../blog/PostCard";
 import styles from "./BlogTeaser.module.css";
 
 export default function BlogTeaser() {
@@ -27,27 +28,7 @@ export default function BlogTeaser() {
 
         <div className={styles.grid}>
           {latest.map((post) => (
-            <Link
-              key={post.slug}
-              href={`/blog/${post.slug}`}
-              className={`${styles.card} reveal-up`}
-            >
-              <div className={styles.cardGraphic} aria-hidden="true">
-                <span className={styles.cardGraphicCategory}>{post.category}</span>
-                <span className={styles.cardGraphicMark}>✕</span>
-              </div>
-              <div className={styles.cardBody}>
-                <div className={styles.cardTop}>
-                  <span className={styles.cardCategory}>{post.category}</span>
-                  <span className={styles.cardMeta}>{post.readTime}</span>
-                </div>
-                <h3 className={styles.title}>{post.title}</h3>
-                <p className={styles.excerpt}>{post.excerpt}</p>
-                <span className={styles.link}>
-                  Read Article <span className={styles.arrow}>→</span>
-                </span>
-              </div>
-            </Link>
+            <PostCard key={post.slug} post={post} headingLevel="h3" className="reveal-up" />
           ))}
         </div>
       </div>
