@@ -40,12 +40,6 @@ export default function IndustriesTeaser() {
             I work primarily with businesses where a single qualified search
             enquiry can turn into a valuable, long-term client relationship.
           </p>
-          <p className={styles.introBody}>
-            Rather than taking on hundreds of businesses across unrelated
-            industries, I keep the roster small and focus on companies where
-            organic search can become a meaningful customer acquisition
-            channel.
-          </p>
         </div>
 
         {/* One row per industry: name left, description + link right */}

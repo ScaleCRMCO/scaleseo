@@ -81,8 +81,7 @@ body:has(main.palette-test) footer {
   border-radius: 0 !important;
 }
 
-/* Industries heading in a deep brand green (bright lime is invisible on
-   the pale pink) */
+/* Industries heading in highlight green */
 .palette-test #industries {
-  --industries-heading: #2F8A00;
+  --industries-heading: var(--highlight);
 }
