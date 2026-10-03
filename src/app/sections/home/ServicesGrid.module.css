@@ -118,43 +118,25 @@
   color: var(--on-highlight);
 }
 
-/* === Card colours — alternate like the case-study cards ============== */
-.toneCyan,
-.tonePink,
-.toneWhite,
-.toneLime {
+/* === White cards with navy text; each button hovers to its own colour == */
+.cardLight {
+  --svc-bg: #FDFFEE;
   --svc-ink: #0B132B;
   --svc-dim: rgba(11, 19, 43, 0.78);
   --svc-sub: #0B132B;
   --svc-border: transparent;
   --svc-btn-bg: #0B132B;
-  --svc-btn-ink: #FAFAFA;
+  --svc-btn-ink: #FDFFEE;
 }
 
-.toneCyan { --svc-bg: #B6FFFF; }
-.tonePink { --svc-bg: #FF86EB; }
-.toneWhite { --svc-bg: #FAFAFA; }
-.toneLime { --svc-bg: var(--highlight); }
+.hoverCyan { --svc-hover-bg: #B6FFFF; --svc-hover-ink: #0B132B; }
+.hoverLime { --svc-hover-bg: var(--highlight); --svc-hover-ink: #0B132B; }
+.hoverPink { --svc-hover-bg: #FF86EB; --svc-hover-ink: #0B132B; }
+.hoverTan  { --svc-hover-bg: #866A53; --svc-hover-ink: #FDFFEE; }
 
-/* Dark blue card with lime text, like the Empire case-study card */
-.toneNavy {
-  --svc-bg: #16204A;
-  --svc-ink: var(--highlight);
-  --svc-sub: var(--highlight);
-  --svc-dim: rgba(250, 250, 250, 0.78);
-  --svc-btn-bg: var(--highlight);
-  --svc-btn-ink: #0B132B;
-}
-
-/* Lime hover would vanish on the lime card — use white there */
-.toneLime .exploreBtn:hover {
-  background: #FAFAFA;
-  color: #0B132B;
-}
-
-.toneNavy .exploreBtn:hover {
-  background: #FAFAFA;
-  color: #0B132B;
+.cardLight .exploreBtn:hover {
+  background: var(--svc-hover-bg);
+  color: var(--svc-hover-ink);
 }
 
 /* === Highlight card === */

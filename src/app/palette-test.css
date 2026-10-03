@@ -76,7 +76,23 @@ body:has(main.palette-test) {
   --line: rgba(250, 250, 250, 0.28);
   --dots-color: var(--highlight);
   --dots-size: 2.2px;
-  --dots-solid: 30%;
+  /* Solid (unfaded) block of dots filling the empty top-right area */
+  --dots-mask: none;
+  --dots-ratio: auto;
+  --dots-w: min(20vw, 300px);
+  --dots-h: 470px;
+  --dots-w-sm: 34vw;
+  --dots-h-sm: 72px;
+  --dots-opacity-sm: 1;
+}
+
+/* Below desktop the heading spans the full width, so the solid block
+   shrinks to a strip in the top padding */
+@media (max-width: 1279px) {
+  .palette-test #industries {
+    --dots-w: 34vw;
+    --dots-h: 100px;
+  }
 }
 
 .palette-test #process {

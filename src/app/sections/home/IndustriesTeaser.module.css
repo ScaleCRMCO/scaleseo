@@ -20,13 +20,14 @@
   right: 0;
   z-index: -1;
   /* Square patch of dots in the corner, fading out before the text */
-  width: min(28vw, 400px);
-  aspect-ratio: 1;
+  width: var(--dots-w, min(28vw, 400px));
+  height: var(--dots-h, auto);
+  aspect-ratio: var(--dots-ratio, 1);
   background-image: radial-gradient(circle, var(--dots-color, rgba(11, 19, 43, 0.55)) var(--dots-size, 1.6px), transparent calc(var(--dots-size, 1.6px) + 0.4px));
   background-size: 30px 30px;
   background-position: top right;
-  -webkit-mask-image: radial-gradient(circle at top right, #000 0%, #000 var(--dots-solid, 18%), transparent 68%);
-  mask-image: radial-gradient(circle at top right, #000 0%, #000 var(--dots-solid, 18%), transparent 68%);
+  -webkit-mask-image: var(--dots-mask, radial-gradient(circle at top right, #000 0%, #000 18%, transparent 68%));
+  mask-image: var(--dots-mask, radial-gradient(circle at top right, #000 0%, #000 18%, transparent 68%));
   pointer-events: none;
 }
 
@@ -151,8 +152,9 @@
     padding: 90px 24px 110px;
   }
   .section::before {
-    width: 26vw;
-    opacity: 0.55;
+    width: var(--dots-w-sm, 26vw);
+    height: var(--dots-h-sm, auto);
+    opacity: var(--dots-opacity-sm, 0.55);
   }
   .intro {
     margin-bottom: 48px;
