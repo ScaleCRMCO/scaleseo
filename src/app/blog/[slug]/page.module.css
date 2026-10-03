@@ -204,7 +204,8 @@
 
 .reference {
   padding: 22px 24px;
-  border-radius: 18px;
+  /* square left corners so the lime bar runs dead straight */
+  border-radius: 0 18px 18px 0;
   background: var(--bg-elev);
   border-left: 4px solid var(--highlight);
 }
