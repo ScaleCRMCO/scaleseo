@@ -16,29 +16,32 @@ body:has(main.palette-test) {
 
   --bg: var(--soft-white);
   --bg-elev: #F1F1F1;
-  --ink: var(--carbon);
-  --accent: var(--carbon);
+  /* No black backgrounds: ink, buttons and dark sections are all Midnight */
+  --ink: var(--midnight);
+  --accent: var(--midnight);
   --on-accent: var(--soft-white);
-  --line: rgba(18, 18, 18, 0.14);
-  --line-strong: var(--carbon);
+  --line: rgba(11, 19, 43, 0.14);
+  --line-strong: var(--midnight);
 
-  --bg-dark: var(--carbon);
+  --bg-dark: var(--midnight);
   --ink-on-dark: var(--soft-white);
   --line-on-dark: var(--soft-white);
   --line-strong-on-dark: var(--soft-white);
 
-  /* Midnight for coloured dark cards inside Carbon sections */
-  --surface-dark: var(--midnight);
-  --surface-dark-hover: #16204a;
+  /* Lifted navy for cards inside Midnight sections */
+  --surface-dark: #16204A;
+  --surface-dark-hover: #1E2A5C;
   --surface-light: #FFFFFF;
   --surface-open: #FFFFFF;
   --postcard-bg: var(--soft-white);
 
-  --nav-ink: var(--carbon);
+  --nav-ink: var(--midnight);
+  --nav-dark-bg: rgba(11, 19, 43, 0.8);
+  --nav-dark-bg-scrolled: rgba(11, 19, 43, 0.9);
 
   /* Service card buttons: white pill, lime only on hover */
   --explore-bg: var(--soft-white);
-  --explore-ink: var(--carbon);
+  --explore-ink: var(--midnight);
 
   /* Hero glow: faint pink + cyan haze with a lime spark */
   --hero-ambient:
@@ -50,15 +53,11 @@ body:has(main.palette-test) {
 }
 
 /* === Section rhythm =====================================================
-   Hero White → Services Carbon (Midnight cards) → Comparison White →
-   About Midnight (lime accent) → Case studies White (coloured cards) →
-   Campaign Carbon (Midnight cards) → Industries Blush → Process Cyan →
-   FAQ White → Blog Carbon → Contact Lime → Footer Carbon */
+   Hero White → Services Midnight → Comparison White → About Midnight →
+   Case studies White (coloured cards) → Campaign Midnight →
+   Industries Blush → Process Cyan → FAQ White → Blog Midnight →
+   Contact Lime → Footer Midnight. No black backgrounds. */
 
-/* Founder story on Midnight, like the reference's "Our Story" panel */
-.palette-test #about {
-  --bg-dark: var(--midnight);
-}
 
 .palette-test #industries {
   --bg-elev: var(--blush);
@@ -67,10 +66,10 @@ body:has(main.palette-test) {
 
 .palette-test #process {
   --bg: var(--cyan);
-  --ink-dim: rgba(18, 18, 18, 0.74);
-  --ink-faint: rgba(18, 18, 18, 0.55);
+  --ink-dim: rgba(11, 19, 43, 0.74);
+  --ink-faint: rgba(11, 19, 43, 0.55);
 }
 
 .palette-test #contact {
-  --ink: var(--carbon);
+  --ink: var(--midnight);
 }
