@@ -59,14 +59,14 @@ body:has(main.palette-test) {
    Contact Lime → Footer Midnight. No black backgrounds. */
 
 
-/* Industries on warm brown — light text, lime heading, bold navy dots */
+/* Industries on warm brown — light text, lime heading, bold lime dots */
 .palette-test #industries {
-  --bg-elev: #765B45;
+  --bg-elev: #866A53;
   --bg: #FFFFFF;
   --ink: var(--soft-white);
   --ink-dim: rgba(250, 250, 250, 0.8);
   --line: rgba(250, 250, 250, 0.28);
-  --dots-color: var(--midnight);
+  --dots-color: var(--highlight);
   --dots-size: 2.2px;
   --dots-solid: 30%;
 }
