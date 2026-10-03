@@ -18,6 +18,9 @@ export type Post = {
   readTime: string;
   category: string;
   excerpt: string;
+  // Optional hand-written JSON-LD; replaces the generated BlogPosting and
+  // breadcrumb schema for this post when present.
+  schema?: Record<string, unknown>;
   body: BodyBlock[];
 };
 
@@ -27,10 +30,91 @@ export const posts: Post[] = [
     title: "How Much Does SEO Cost in Canada? 2026 Pricing Guide",
     metaTitle: "How Much Does SEO Cost in Canada? 2026 Pricing Guide",
     description: "How much does SEO cost in Canada? Compare monthly SEO pricing, audits, freelancers and agencies, and learn what your business should expect to pay in 2026.",
-    date: "2026-10-03T09:00:00-06:00",
+    date: "2026-10-02T21:52:00-06:00",
     readTime: "15 min read",
     category: "SEO Pricing",
     excerpt: "Canadian businesses can find SEO services ranging from a few hundred dollars per month to several thousand. This guide breaks down what to realistically expect to pay in 2026, what should be included at each level, and what to check before hiring an SEO provider.",
+    schema: {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BlogPosting",
+          "@id": "https://scaleseo.co/blog/seo-cost-canada#article",
+          url: "https://scaleseo.co/blog/seo-cost-canada",
+          mainEntityOfPage: {
+            "@type": "WebPage",
+            "@id": "https://scaleseo.co/blog/seo-cost-canada"
+          },
+          headline: "How Much Does SEO Cost in Canada? 2026 Pricing Guide",
+          description: "How much does SEO cost in Canada? Compare monthly SEO pricing, audits, freelancers and agencies, and learn what your business should expect to pay in 2026.",
+          author: {
+            "@type": "Person",
+            "@id": "https://scaleseo.co/corbin-jensen#person",
+            name: "Corbin Jensen",
+            url: "https://scaleseo.co/corbin-jensen"
+          },
+          publisher: {
+            "@type": "Organization",
+            "@id": "https://scaleseo.co/#organization",
+            name: "Scale SEO",
+            url: "https://scaleseo.co/"
+          },
+          datePublished: "2026-10-02T21:52:00-06:00",
+          dateModified: "2026-10-02T21:52:00-06:00",
+          inLanguage: "en-CA",
+          articleSection: "SEO",
+          keywords: [
+            "SEO cost Canada",
+            "SEO pricing Canada",
+            "how much does SEO cost in Canada",
+            "SEO services Canada",
+            "SEO audit cost Canada",
+            "SEO agency pricing Canada"
+          ],
+          citation: [
+            {
+              "@type": "CreativeWork",
+              name: "Google Search Central — SEO Starter Guide",
+              url: "https://developers.google.com/search/docs/fundamentals/seo-starter-guide"
+            },
+            {
+              "@type": "CreativeWork",
+              name: "Google Search Central — Do You Need an SEO?",
+              url: "https://developers.google.com/search/docs/fundamentals/do-i-need-seo"
+            },
+            {
+              "@type": "CreativeWork",
+              name: "Google Search Central — SEO Guide for Web Developers",
+              url: "https://developers.google.com/search/docs/fundamentals/get-started-developers"
+            }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://scaleseo.co/blog/seo-cost-canada#breadcrumb",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Home",
+              item: "https://scaleseo.co/"
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "Blog",
+              item: "https://scaleseo.co/blog"
+            },
+            {
+              "@type": "ListItem",
+              position: 3,
+              name: "How Much Does SEO Cost in Canada? 2026 Pricing Guide",
+              item: "https://scaleseo.co/blog/seo-cost-canada"
+            }
+          ]
+        }
+      ]
+    },
     body: [
       {
         type: "p",

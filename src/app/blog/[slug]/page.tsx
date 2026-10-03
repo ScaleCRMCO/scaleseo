@@ -111,6 +111,7 @@ export default function BlogPostPage({
               { name: "Blog", href: "/blog" },
               { name: post.title },
             ]}
+            schema={!post.schema}
           />
           </div>
           <h1 className={styles.title}>{post.title}</h1>
@@ -128,6 +129,7 @@ export default function BlogPostPage({
                 year: "numeric",
                 month: "long",
                 day: "numeric",
+                timeZone: "America/Edmonton",
               })}
             </span>
             <span className={styles.dot}>&middot;</span>
@@ -228,7 +230,7 @@ export default function BlogPostPage({
 
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(post.schema ?? jsonLd) }}
       />
       <RevealOnScroll />
     </main>
