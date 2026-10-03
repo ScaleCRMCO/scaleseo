@@ -4,8 +4,8 @@ export type BodyBlock =
   | { type: "h3"; text: string }
   | { type: "ul"; items: string[] }
   | { type: "table"; head: string[]; rows: string[][] }
-  // Inline citation under a paragraph, e.g. "Source: Google Search Central …"
-  | { type: "source"; text: string; href: string };
+  // "Sources & Further Reading" list: linked title + short description
+  | { type: "references"; items: { title: string; href: string; desc: string }[] };
 
 export type Post = {
   slug: string;
@@ -126,11 +126,6 @@ export const posts: Post[] = [
         text: "Google describes SEO as helping search engines understand your content while helping users find your website and decide whether they should visit it. Google's own documentation covers areas ranging from content and site structure to crawling, indexing, technical implementation and user experience."
       },
       {
-        type: "source",
-        text: "Google Search Central – SEO Starter Guide",
-        href: "https://developers.google.com/search/docs/fundamentals/seo-starter-guide"
-      },
-      {
         type: "p",
         text: "Because every website starts from a different position, the amount of work required can vary considerably."
       },
@@ -200,11 +195,6 @@ export const posts: Post[] = [
       {
         type: "p",
         text: "Google's developer documentation specifically highlights technical considerations such as crawlable links, sitemaps, JavaScript rendering, descriptive titles, mobile usability and making content accessible to Google. These are examples of why technical SEO can become a significant part of a campaign for some websites."
-      },
-      {
-        type: "source",
-        text: "Google Search Central – SEO Guide for Web Developers",
-        href: "https://developers.google.com/search/docs/fundamentals/get-started-developers"
       },
       {
         type: "h3",
@@ -297,11 +287,6 @@ export const posts: Post[] = [
       {
         type: "p",
         text: "Google explicitly warns businesses that **no SEO provider can guarantee a #1 Google ranking** and recommends being cautious of providers that make those promises."
-      },
-      {
-        type: "source",
-        text: "Google Search Central – Do You Need an SEO?",
-        href: "https://developers.google.com/search/docs/fundamentals/do-i-need-seo"
       },
       {
         type: "h2",
@@ -451,11 +436,6 @@ export const posts: Post[] = [
         text: "Google recommends that an SEO audit provide realistic estimates of potential improvements and the work required. Google also specifically advises businesses to be wary of audits that guarantee first-place rankings."
       },
       {
-        type: "source",
-        text: "Google Search Central – Do You Need an SEO?",
-        href: "https://developers.google.com/search/docs/fundamentals/do-i-need-seo"
-      },
-      {
         type: "p",
         text: "At Scale SEO, I offer standalone [SEO audits](/services/seo-audits) for businesses that want an independent assessment before committing to ongoing SEO."
       },
@@ -536,11 +516,6 @@ export const posts: Post[] = [
         text: "With paid search, you pay to advertise. Google states that advertising with Google doesn't improve your position in its organic search results."
       },
       {
-        type: "source",
-        text: "Google Search Central – Do You Need an SEO?",
-        href: "https://developers.google.com/search/docs/fundamentals/do-i-need-seo"
-      },
-      {
         type: "p",
         text: "Organic SEO is instead focused on improving the website's ability to earn visibility in unpaid search results."
       },
@@ -588,11 +563,6 @@ export const posts: Post[] = [
         text: "Google notes that some website changes can appear in Search relatively quickly while others may take several months, and it recommends allowing time to assess whether changes have produced a beneficial effect."
       },
       {
-        type: "source",
-        text: "Google Search Central – SEO Starter Guide",
-        href: "https://developers.google.com/search/docs/fundamentals/seo-starter-guide"
-      },
-      {
         type: "p",
         text: "That is also why I would be cautious of anyone promising a specific ranking within 30 days."
       },
@@ -635,11 +605,6 @@ export const posts: Post[] = [
         text: "These questions closely align with Google's own recommendations for evaluating an SEO provider. Google suggests asking about previous work, expected results and timeframes, measurement, industry experience, geographic experience and communication."
       },
       {
-        type: "source",
-        text: "Google Search Central – Do You Need an SEO?",
-        href: "https://developers.google.com/search/docs/fundamentals/do-i-need-seo"
-      },
-      {
         type: "p",
         text: "A good provider should also be willing to explain what they're doing."
       },
@@ -666,11 +631,6 @@ export const posts: Post[] = [
       {
         type: "p",
         text: "Google explicitly states that nobody can guarantee a #1 ranking and warns businesses about providers claiming special relationships with Google or guaranteed placement."
-      },
-      {
-        type: "source",
-        text: "Google Search Central – Do You Need an SEO?",
-        href: "https://developers.google.com/search/docs/fundamentals/do-i-need-seo"
       },
       {
         type: "p",
@@ -847,12 +807,24 @@ export const posts: Post[] = [
         text: "Sources & Further Reading"
       },
       {
-        type: "ul",
+        type: "references",
         items: [
-          "[Google Search Central — SEO Starter Guide](https://developers.google.com/search/docs/fundamentals/seo-starter-guide)",
-          "[Google Search Central — Do You Need an SEO?](https://developers.google.com/search/docs/fundamentals/do-i-need-seo)",
-          "[Google Search Central — SEO Guide for Web Developers](https://developers.google.com/search/docs/fundamentals/get-started-developers)"
-        ]
+          {
+            title: "Google Search Central — SEO Starter Guide",
+            href: "https://developers.google.com/search/docs/fundamentals/seo-starter-guide",
+            desc: "Google's introductory guide to search engine optimization, including how Google discovers and understands content, website organization, search appearance, and what website owners can realistically expect from SEO changes.",
+          },
+          {
+            title: "Google Search Central — Do You Need an SEO?",
+            href: "https://developers.google.com/search/docs/fundamentals/do-i-need-seo",
+            desc: "Google's guidance for businesses considering hiring an SEO provider, including what an SEO can help with, questions to ask before hiring, realistic timelines, SEO audits, and warnings about guaranteed rankings.",
+          },
+          {
+            title: "Google Search Central — SEO Guide for Web Developers",
+            href: "https://developers.google.com/search/docs/fundamentals/get-started-developers",
+            desc: "Google's technical guidance for building search-friendly websites, covering crawlable links, JavaScript, sitemaps, page titles, mobile compatibility, structured data, and other technical SEO considerations.",
+          },
+        ],
       }
     ]
   },

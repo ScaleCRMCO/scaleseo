@@ -170,14 +170,18 @@ export default function BlogPostPage({
                 </div>
               );
             }
-            if (block.type === "source") {
+            if (block.type === "references") {
               return (
-                <p key={i} className={styles.source}>
-                  Source:{" "}
-                  <a href={block.href} target="_blank" rel="noopener noreferrer">
-                    {block.text}
-                  </a>
-                </p>
+                <ul key={i} className={styles.references}>
+                  {block.items.map((ref) => (
+                    <li key={ref.href} className={styles.reference}>
+                      <a href={ref.href} target="_blank" rel="noopener noreferrer">
+                        {ref.title} <span aria-hidden="true">↗</span>
+                      </a>
+                      <p>{ref.desc}</p>
+                    </li>
+                  ))}
+                </ul>
               );
             }
             if (block.type === "h3") {
