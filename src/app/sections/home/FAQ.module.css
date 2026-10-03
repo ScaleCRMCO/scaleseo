@@ -41,7 +41,7 @@
 
 .heading em {
   font-style: normal;
-  color: var(--ink-faint);
+  color: var(--heading-accent, var(--ink-faint));
 }
 
 .helpCard {

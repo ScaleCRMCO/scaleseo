@@ -244,3 +244,4 @@ table).
 - Section rhythm: Hero White → Services Midnight (alternating cyan/pink/white/lime/navy cards) → Comparison White → About Midnight → Case studies White → Campaign Midnight → Industries Tan #866A53 (lime heading, lime corner dots, editorial rows) → Process Cyan → FAQ White → Blog Midnight → Contact Lime → Footer Midnight. Square section edges; no black backgrounds.
 - Case-study cards (solid, no gradients/fades): Jensen CPA cyan + midnight text, Empire midnight + lime text, Kinsmen lime + midnight text, MSV pink + midnight text with lime chip/arrow (lime text on pink was unreadable).
 - Revert: remove the import + class in page.tsx; restore old CaseStudy card themes from git.
+- Homepage colour rules (palette test): off-white #FDFFEE sections → navy text + headings; navy sections → white text + headings; tan sections → white text + highlight-green headings; light-blue (cyan) sections → navy text + headings. Grey heading accents removed (now navy).

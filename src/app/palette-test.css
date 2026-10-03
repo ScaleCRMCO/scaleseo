@@ -5,26 +5,34 @@
    To revert: remove the class from page.tsx and the import of this file.
    ========================================================================== */
 
+/* Colour rules:
+   off-white bg → navy text + headings
+   navy bg      → white text + headings
+   tan bg       → white text + highlight-green headings
+   light blue   → navy text + headings */
 body:has(main.palette-test) {
   --carbon: #121212;
   --soft-white: #FAFAFA;
+  --off-white: #FDFFEE;
   --midnight: #0B132B;
   --cyan: #B6FFFF;
   --pink: #FF86EB;
-  /* Pale tint of the pink for full light sections */
   --blush: #FFE3FA;
 
-  --bg: var(--soft-white);
-  --bg-elev: #F1F1F1;
-  /* No black backgrounds: ink, buttons and dark sections are all Midnight */
+  --bg: var(--off-white);
+  --bg-elev: #F3F6DF;
   --ink: var(--midnight);
+  --ink-dim: rgba(11, 19, 43, 0.76);
+  --ink-faint: rgba(11, 19, 43, 0.5);
+  --heading-accent: var(--midnight);
   --accent: var(--midnight);
-  --on-accent: var(--soft-white);
+  --on-accent: var(--off-white);
   --line: rgba(11, 19, 43, 0.14);
   --line-strong: var(--midnight);
 
   --bg-dark: var(--midnight);
   --ink-on-dark: var(--soft-white);
+  --ink-dim-on-dark: rgba(250, 250, 250, 0.76);
   --line-on-dark: var(--soft-white);
   --line-strong-on-dark: var(--soft-white);
 
@@ -33,7 +41,7 @@ body:has(main.palette-test) {
   --surface-dark-hover: #1E2A5C;
   --surface-light: #FFFFFF;
   --surface-open: #FFFFFF;
-  --postcard-bg: var(--soft-white);
+  --postcard-bg: var(--off-white);
 
   --nav-ink: var(--midnight);
   --nav-dark-bg: rgba(11, 19, 43, 0.8);
@@ -49,7 +57,7 @@ body:has(main.palette-test) {
     radial-gradient(40% 36% at 85% 70%, rgba(182, 255, 255, 0.9), transparent 70%),
     radial-gradient(36% 32% at 50% 15%, rgba(153, 255, 0, 0.22), transparent 70%);
 
-  background: var(--soft-white);
+  background: var(--off-white);
 }
 
 /* === Section rhythm =====================================================
@@ -86,6 +94,11 @@ body:has(main.palette-test) {
 .palette-test > header,
 body:has(main.palette-test) footer {
   border-radius: 0 !important;
+}
+
+/* Navy section → white heading (About) */
+.palette-test #about {
+  --about-heading: var(--soft-white);
 }
 
 /* Industries heading in highlight green */

@@ -127,7 +127,7 @@
   font-size: clamp(40px, 4.8vw, 72px);
   line-height: 1.02;
   letter-spacing: -0.035em;
-  color: var(--highlight);
+  color: var(--about-heading, var(--highlight));
   margin-bottom: 36px;
 }
 
