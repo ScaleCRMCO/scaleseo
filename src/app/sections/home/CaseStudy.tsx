@@ -22,7 +22,7 @@ type Card = {
   metricLabel: string;
   title: string;
   image: string;
-  theme: "midnight" | "powder" | "slate" | "mist";
+  theme: "carbon" | "warm" | "charcoal" | "pink";
 };
 
 const cards: Card[] = [
@@ -34,7 +34,7 @@ const cards: Card[] = [
     metricLabel: "Average daily search impressions",
     title: "Building a stronger digital presence for a Calgary CPA firm",
     image: "/images/jensen-cpa-homepage.webp",
-    theme: "midnight",
+    theme: "carbon",
   },
   {
     href: "/results/empire-accountants",
@@ -44,7 +44,7 @@ const cards: Card[] = [
     metricLabel: "Target keyword rankings",
     title: "Moving priority accounting searches onto page one of Google",
     image: "/images/empireaccountants-hero-image.png",
-    theme: "powder",
+    theme: "warm",
   },
   {
     href: "/results/kinsmen-consulting",
@@ -54,7 +54,7 @@ const cards: Card[] = [
     metricLabel: "Revenue from generated projects",
     title: "SEO and website development tied to real project revenue",
     image: "/images/kinsmen-hero.jpg",
-    theme: "slate",
+    theme: "charcoal",
   },
   {
     // No dedicated page yet — links to its card on the results hub.
@@ -65,15 +65,15 @@ const cards: Card[] = [
     metricLabel: "Consistent customer bookings",
     title: "Building organic visibility for a brand-new plumbing business",
     image: "/images/msv-screenshot.png",
-    theme: "mist",
+    theme: "pink",
   },
 ];
 
 const themeClass: Record<Card["theme"], string> = {
-  midnight: styles.themeMidnight,
-  powder: styles.themePowder,
-  slate: styles.themeSlate,
-  mist: styles.themeMist,
+  carbon: styles.themeCarbon,
+  warm: styles.themeWarm,
+  charcoal: styles.themeCharcoal,
+  pink: styles.themePink,
 };
 
 function CaseCard({ card }: { card: Card }) {

@@ -114,8 +114,8 @@
   text-decoration: none;
   color: var(--card-ink);
   background: var(--card-bg);
-  box-shadow: 0 50px 100px -40px rgba(11, 19, 43, 0.4),
-              0 16px 32px -16px rgba(11, 19, 43, 0.2);
+  box-shadow: 0 50px 100px -40px rgba(18, 18, 18, 0.4),
+              0 16px 32px -16px rgba(18, 18, 18, 0.2);
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -224,44 +224,44 @@
   transform: translateX(4px);
 }
 
-/* === Card themes — Midnight / Powder / Slate / Mist palette ===========
+/* === Card themes — Carbon / Warm White / Charcoal / Soft Pink =========
    Dark cards carry a lime metric; light cards stay ink-on-light. */
-.themeMidnight {
-  --card-bg: linear-gradient(180deg, #16204a 0%, #0B132B 60%, #070d1f 100%);
-  --card-fade: #16204a;
-  --card-ink: #F0F5F3;
+.themeCarbon {
+  --card-bg: linear-gradient(180deg, #1e1e1e 0%, #121212 60%, #0b0b0b 100%);
+  --card-fade: #1e1e1e;
+  --card-ink: #F7F5EF;
   --card-metric: #A3FF12;
-  --card-arrow: #0B132B;
-  --card-chip: rgba(240, 245, 243, 0.12);
-  --card-line: rgba(240, 245, 243, 0.2);
+  --card-arrow: #121212;
+  --card-chip: rgba(247, 245, 239, 0.12);
+  --card-line: rgba(247, 245, 239, 0.2);
 }
 
-.themePowder {
-  --card-bg: linear-gradient(180deg, #e8f0f7 0%, #DDE8F2 55%, #cddcea 100%);
-  --card-fade: #e8f0f7;
-  --card-ink: #0B132B;
-  --card-arrow: #DDE8F2;
-  --card-chip: rgba(11, 19, 43, 0.08);
-  --card-line: rgba(11, 19, 43, 0.14);
+.themeWarm {
+  --card-bg: linear-gradient(180deg, #fbfaf6 0%, #F7F5EF 55%, #ece9e0 100%);
+  --card-fade: #fbfaf6;
+  --card-ink: #121212;
+  --card-arrow: #F7F5EF;
+  --card-chip: rgba(18, 18, 18, 0.07);
+  --card-line: rgba(18, 18, 18, 0.14);
 }
 
-.themeSlate {
-  --card-bg: linear-gradient(180deg, #2a3560 0%, #1C2541 60%, #141b33 100%);
-  --card-fade: #2a3560;
-  --card-ink: #F0F5F3;
+.themeCharcoal {
+  --card-bg: linear-gradient(180deg, #353535 0%, #292929 60%, #1f1f1f 100%);
+  --card-fade: #353535;
+  --card-ink: #F7F5EF;
   --card-metric: #A3FF12;
-  --card-arrow: #1C2541;
-  --card-chip: rgba(240, 245, 243, 0.12);
-  --card-line: rgba(240, 245, 243, 0.2);
+  --card-arrow: #292929;
+  --card-chip: rgba(247, 245, 239, 0.12);
+  --card-line: rgba(247, 245, 239, 0.2);
 }
 
-.themeMist {
-  --card-bg: linear-gradient(180deg, #f6f9f8 0%, #F0F5F3 55%, #e2e9e6 100%);
-  --card-fade: #f6f9f8;
-  --card-ink: #0B132B;
-  --card-arrow: #F0F5F3;
-  --card-chip: rgba(11, 19, 43, 0.07);
-  --card-line: rgba(11, 19, 43, 0.14);
+.themePink {
+  --card-bg: linear-gradient(180deg, #f0bac4 0%, #E9A6B2 55%, #dc93a0 100%);
+  --card-fade: #f0bac4;
+  --card-ink: #121212;
+  --card-arrow: #E9A6B2;
+  --card-chip: rgba(18, 18, 18, 0.08);
+  --card-line: rgba(18, 18, 18, 0.16);
 }
 
 /* === Reduced motion fallback ============================================ */

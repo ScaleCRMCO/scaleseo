@@ -6,96 +6,104 @@
    ========================================================================== */
 
 body:has(main.palette-test) {
-  --midnight: #0B132B;
-  --slate: #1C2541;
-  --mist: #F0F5F3;
-  --powder: #DDE8F2;
-  --stone: #E9E5DF;
+  --carbon: #121212;
+  --charcoal: #292929;
+  --warm-white: #F7F5EF;
   --lime: #A3FF12;
+  --pink: #E9A6B2;
+  --sky: #8ED8F8;
 
-  --bg: var(--mist);
-  --bg-elev: #E3EBE8;
-  --ink: var(--slate);
-  --ink-dim: #4A5571;
-  --ink-faint: #7C8599;
-  --accent: var(--midnight);
-  --accent-dim: var(--slate);
-  --on-accent: var(--mist);
+  --bg: var(--warm-white);
+  --bg-elev: #EFECE4;
+  --ink: var(--carbon);
+  --ink-dim: #4A4845;
+  --ink-faint: #7A7772;
+  --accent: var(--carbon);
+  --accent-dim: var(--charcoal);
+  --on-accent: var(--warm-white);
   --highlight: var(--lime);
-  --on-highlight: var(--midnight);
-  --line: rgba(11, 19, 43, 0.14);
-  --line-strong: var(--midnight);
+  --on-highlight: var(--carbon);
+  --line: rgba(18, 18, 18, 0.14);
+  --line-strong: var(--carbon);
 
-  --bg-dark: var(--midnight);
-  --ink-on-dark: var(--mist);
-  --ink-dim-on-dark: #A9B4C9;
-  --line-on-dark: var(--mist);
-  --line-strong-on-dark: var(--mist);
+  --bg-dark: var(--carbon);
+  --ink-on-dark: var(--warm-white);
+  --ink-dim-on-dark: #B5B2AB;
+  --line-on-dark: var(--warm-white);
+  --line-strong-on-dark: var(--warm-white);
 
   /* Component surfaces (fallbacks live in each module) */
-  --surface-dark: var(--slate);
-  --surface-dark-hover: #263055;
+  --surface-dark: var(--charcoal);
+  --surface-dark-hover: #333333;
   --surface-light: #FFFFFF;
   --surface-open: #FFFFFF;
-  --postcard-bg: var(--mist);
+  --postcard-bg: var(--warm-white);
 
-  /* Nav: midnight instead of black */
-  --nav-ink: var(--midnight);
-  --nav-dark-bg: rgba(11, 19, 43, 0.78);
-  --nav-dark-bg-scrolled: rgba(11, 19, 43, 0.88);
+  --nav-ink: var(--carbon);
+  --nav-dark-bg: rgba(18, 18, 18, 0.78);
+  --nav-dark-bg-scrolled: rgba(18, 18, 18, 0.88);
 
-  /* Service card buttons: Mist pill, lime only on hover */
-  --explore-bg: var(--mist);
-  --explore-ink: var(--midnight);
+  /* Service card buttons: Warm White pill, lime only on hover */
+  --explore-bg: var(--warm-white);
+  --explore-ink: var(--carbon);
 
-  /* Softer hero glow: powder haze with a small lime spark */
+  /* Hero glow: sky + pink haze with a small lime spark */
   --hero-ambient:
-    radial-gradient(45% 40% at 65% 35%, rgba(163, 255, 18, 0.22), transparent 70%),
-    radial-gradient(40% 36% at 85% 70%, rgba(28, 37, 65, 0.22), transparent 70%),
-    radial-gradient(50% 45% at 45% 20%, rgba(150, 185, 220, 0.55), transparent 70%);
+    radial-gradient(45% 40% at 65% 35%, rgba(142, 216, 248, 0.55), transparent 70%),
+    radial-gradient(40% 36% at 85% 70%, rgba(233, 166, 178, 0.5), transparent 70%),
+    radial-gradient(36% 32% at 50% 15%, rgba(163, 255, 18, 0.25), transparent 70%);
 
-  /* Footer: midnight with a quieter lime glow */
   --footer-glow:
-    radial-gradient(80% 65% at 100% 100%, rgba(163, 255, 18, 0.95) 0%, rgba(163, 255, 18, 0.55) 28%, rgba(163, 255, 18, 0.12) 55%, transparent 72%),
-    radial-gradient(70% 55% at 40% 115%, rgba(221, 232, 242, 0.12) 0%, transparent 70%);
+    radial-gradient(90% 75% at 100% 100%, rgba(163, 255, 18, 0.95) 0%, rgba(163, 255, 18, 0.55) 28%, rgba(163, 255, 18, 0.12) 55%, transparent 72%),
+    radial-gradient(70% 55% at 60% 115%, rgba(163, 255, 18, 0.28) 0%, transparent 70%);
 
-  background: var(--mist);
+  background: var(--warm-white);
 }
 
 /* === Section rhythm =====================================================
-   Hero Mist → Services Midnight → Comparison Powder → About Midnight →
-   Case studies Stone → Campaign Midnight → Industries Mist →
-   Process Powder → FAQ Stone → Blog Midnight → Contact Lime → Footer Midnight */
+   Hero Warm White → Services Carbon → Comparison Warm White →
+   About Soft Pink → Case studies Sky Blue → Campaign Carbon →
+   Industries Warm White → Process Carbon → FAQ Warm White →
+   Blog Carbon → Contact Lime → Footer Carbon */
 
-.palette-test #comparison {
-  --bg: var(--powder);
-  --bg-elev: var(--mist);
+/* Founder / human section on Soft Pink — dark ink, lime X on a carbon disc */
+.palette-test #about {
+  --bg-dark: var(--pink);
+  --ink-on-dark: var(--carbon);
+  --ink-dim-on-dark: rgba(18, 18, 18, 0.74);
+  --line-on-dark: rgba(18, 18, 18, 0.45);
+  --about-disc: var(--carbon);
+  --about-accent: var(--carbon);
+  --selection-bg: var(--carbon);
+  --selection-color: var(--pink);
 }
 
+/* Case studies (results) on Sky Blue */
 .palette-test #work {
-  --bg: var(--stone);
+  --bg: var(--sky);
+  --ink-dim: rgba(18, 18, 18, 0.74);
 }
 
 .palette-test #industries {
-  --bg-elev: var(--mist);
+  --bg-elev: var(--warm-white);
   --bg: #FFFFFF;
 }
 
+/* Process on Carbon with Charcoal step cards */
 .palette-test #process {
-  --bg: var(--powder);
+  --bg: var(--carbon);
+  --ink: var(--warm-white);
+  --accent: var(--warm-white);
+  --ink-dim: #B5B2AB;
+  --ink-faint: #8C8983;
+  --surface-light: var(--charcoal);
 }
 
 .palette-test #faq {
-  --bg: var(--stone);
-  --bg-elev: #F4F1EC;
+  --bg-elev: #EFECE4;
 }
 
-/* Blog cards on Midnight: Mist cards, lime only on hover */
-.palette-test #blog {
-  --postcard-bg: var(--powder);
-}
-
-/* Contact keeps the one big lime moment; ink text in Midnight */
+/* Contact keeps the one big lime moment */
 .palette-test #contact {
-  --ink: var(--midnight);
+  --ink: var(--carbon);
 }
