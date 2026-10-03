@@ -55,13 +55,14 @@ body:has(main.palette-test) {
 /* === Section rhythm =====================================================
    Hero White → Services Midnight → Comparison White → About Midnight →
    Case studies White (coloured cards) → Campaign Midnight →
-   Industries Blush → Process Cyan → FAQ White → Blog Midnight →
+   Industries Pink → Process Cyan → FAQ White → Blog Midnight →
    Contact Lime → Footer Midnight. No black backgrounds. */
 
 
 .palette-test #industries {
-  --bg-elev: var(--blush);
+  --bg-elev: var(--pink);
   --bg: #FFFFFF;
+  --line: rgba(11, 19, 43, 0.22);
 }
 
 .palette-test #process {
