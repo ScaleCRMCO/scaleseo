@@ -36,7 +36,7 @@ const rows: { capability: string; us: string; them: string }[] = [
 
 export default function Comparison() {
   return (
-    <section className={styles.section} id="comparison">
+    <section className={styles.section} id="comparison" data-nav-theme="dark">
       <div className={styles.inner}>
         <h2 className={styles.heading}>
           A Different Approach{" "}

@@ -62,8 +62,8 @@
 .tableHead {
   display: grid;
   grid-template-columns: 1.1fr 1.3fr 1.3fr;
-  background: var(--ink);
-  color: var(--bg);
+  background: var(--table-head-bg, var(--ink));
+  color: var(--table-head-ink, var(--bg));
   font-family: var(--mono);
   font-size: 11px;
   letter-spacing: 0.12em;

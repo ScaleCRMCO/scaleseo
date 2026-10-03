@@ -50,7 +50,8 @@
   gap: 12px;
   padding: 2rem;
   border-radius: 24px;
-  background: var(--bg-dark);
+  background: var(--help-card-bg, var(--bg-dark));
+  border: 1px solid var(--help-card-border, transparent);
   color: var(--ink-on-dark);
   max-width: 420px;
 }

@@ -118,21 +118,21 @@
   color: var(--on-highlight);
 }
 
-/* === White cards with navy text; each button hovers to its own colour == */
+/* === Dark cards; each button hovers to its own accent colour ========== */
 .cardLight {
-  --svc-bg: #FDFFEE;
-  --svc-ink: #0B132B;
-  --svc-dim: rgba(11, 19, 43, 0.78);
-  --svc-sub: #0B132B;
-  --svc-border: transparent;
-  --svc-btn-bg: #0B132B;
-  --svc-btn-ink: #FDFFEE;
+  --svc-bg: #202020;
+  --svc-ink: #F7F7F5;
+  --svc-dim: #B8B8B8;
+  --svc-sub: var(--highlight);
+  --svc-border: #333333;
+  --svc-btn-bg: #F7F7F5;
+  --svc-btn-ink: #151515;
 }
 
-.hoverCyan { --svc-hover-bg: #B6FFFF; --svc-hover-ink: #0B132B; }
-.hoverLime { --svc-hover-bg: var(--highlight); --svc-hover-ink: #0B132B; }
-.hoverPink { --svc-hover-bg: #FF86EB; --svc-hover-ink: #0B132B; }
-.hoverTan  { --svc-hover-bg: #866A53; --svc-hover-ink: #FDFFEE; }
+.hoverCyan { --svc-hover-bg: #36DDE8; --svc-hover-ink: #151515; }
+.hoverLime { --svc-hover-bg: var(--highlight); --svc-hover-ink: #151515; }
+.hoverPink { --svc-hover-bg: #FF3BA7; --svc-hover-ink: #151515; }
+.hoverTan  { --svc-hover-bg: #866A53; --svc-hover-ink: #F7F7F5; }
 
 .cardLight .exploreBtn:hover {
   background: var(--svc-hover-bg);

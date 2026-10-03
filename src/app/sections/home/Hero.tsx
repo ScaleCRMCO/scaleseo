@@ -6,7 +6,7 @@ const spring = { type: "spring" as const, stiffness: 100, damping: 15 };
 
 export default function Hero() {
   return (
-    <header className={styles.hero}>
+    <header className={styles.hero} data-nav-theme="dark">
       <div className={styles.ambient} aria-hidden="true" />
 
       <div className={styles.grid}>

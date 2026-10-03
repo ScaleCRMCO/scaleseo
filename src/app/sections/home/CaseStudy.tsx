@@ -161,7 +161,7 @@ export default function CaseStudy() {
   // Reduced motion: no pinning, just the heading and a simple card grid.
   if (reduce) {
     return (
-      <section className={`${styles.case} ${styles.static}`} id="work">
+      <section className={`${styles.case} ${styles.static}`} id="work" data-nav-theme="dark">
         <Heading />
         <div className={styles.staticGrid}>
           {cards.map((c) => (
@@ -173,7 +173,7 @@ export default function CaseStudy() {
   }
 
   return (
-    <section ref={ref} className={styles.case} id="work">
+    <section ref={ref} className={styles.case} id="work" data-nav-theme="dark">
       <div className={styles.stage}>
         <Heading />
         {cards.map((c, i) => (

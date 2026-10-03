@@ -224,14 +224,16 @@
   transform: translateX(4px);
 }
 
-/* === Card themes — clean solid colours, no gradients ==================
-   Jensen CPA light blue / Empire midnight / Kinsmen lime / MSV pink. */
+/* === Card themes — dark cards, one subtle accent each ================ */
 .themeSky,
 .themeMidnight,
 .themeLime,
 .themePink {
-  --card-bg: var(--card-solid);
-  --card-arrow: var(--card-solid);
+  --card-bg: #202020;
+  --card-ink: #F7F7F5;
+  --card-chip: rgba(255, 255, 255, 0.06);
+  --card-line: #333333;
+  border: 1px solid #333333;
 }
 
 /* Screenshot sits cleanly on the card — no fade into the colour */
@@ -242,47 +244,33 @@
   display: none;
 }
 
-.themeSky {
-  --card-solid: #B6FFFF;
-  --card-ink: #0B132B;
-  --card-chip: rgba(11, 19, 43, 0.08);
-  --card-line: rgba(11, 19, 43, 0.16);
-}
-
-.themeMidnight {
-  --card-solid: #0B132B;
-  --card-ink: var(--highlight);
-  --card-chip: rgba(153, 255, 0, 0.12);
-  --card-line: rgba(153, 255, 0, 0.3);
-}
-
-.themeLime {
-  --card-solid: var(--highlight);
-  --card-ink: #0B132B;
-  --card-chip: rgba(11, 19, 43, 0.08);
-  --card-line: rgba(11, 19, 43, 0.18);
-}
-
-.themePink {
-  --card-solid: #FF86EB;
-  --card-ink: #0B132B;
-  --card-chip: var(--highlight);
-  --card-line: rgba(11, 19, 43, 0.18);
-}
-
-/* Lime on pink is too low-contrast for text, so lime goes on the
-   tag chip and arrow instead */
-.themePink .cardArrow {
-  background: var(--highlight);
-  color: #0B132B;
-}
-
-/* A little more room under the screenshot now there's no fade */
 .themeSky .cardBody,
 .themeMidnight .cardBody,
 .themeLime .cardBody,
 .themePink .cardBody {
   padding-top: 22px;
+}
+
+/* Accent: metric + arrow in blue / green / pink */
+.themeSky { --card-metric: #36DDE8; --card-accent: #36DDE8; }
+.themeMidnight { --card-metric: #A9FA00; --card-accent: #A9FA00; }
+.themeLime { --card-metric: #FF3BA7; --card-accent: #FF3BA7; }
+.themePink { --card-metric: #36DDE8; --card-accent: #36DDE8; }
+
+.themeSky .cardArrow,
+.themeMidnight .cardArrow,
+.themeLime .cardArrow,
+.themePink .cardArrow {
+  background: var(--card-accent);
+  color: #151515;
+}
+
+.themeSky .cardMetricLabel,
+.themeMidnight .cardMetricLabel,
+.themeLime .cardMetricLabel,
+.themePink .cardMetricLabel {
+  color: #B8B8B8;
+  opacity: 1;
 }
 
 /* === Reduced motion fallback ============================================ */

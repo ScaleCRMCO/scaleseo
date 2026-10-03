@@ -51,7 +51,7 @@ export default function Contact() {
   }
 
   return (
-    <section className={styles.contact} id="contact">
+    <section className={styles.contact} id="contact" data-nav-theme="dark">
       <div className={styles.grid}>
         {/* LEFT — booking link + contact methods */}
         <div className={styles.left}>

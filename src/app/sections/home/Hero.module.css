@@ -151,8 +151,8 @@
 /* High-contrast inline block wrapping the key phrase */
 .titleBlock {
   display: inline-block;
-  background: var(--ink);
-  color: var(--bg);
+  background: var(--title-block-bg, var(--ink));
+  color: var(--title-block-ink, var(--bg));
   padding: 0 0.2em;
   border-radius: 0.12em;
 }

@@ -5,73 +5,93 @@
    To revert: remove the class from page.tsx and the import of this file.
    ========================================================================== */
 
-/* Colour rules:
-   off-white bg → navy text + headings
-   navy bg      → white text + headings
-   tan bg       → white text + highlight-green headings
-   light blue   → navy text + headings */
+/* Dark homepage (MPM-style): one #151515 canvas, #202020 cards with #333
+   borders, near-white headings, grey body text, and subtle lime / pink /
+   blue accents. Light-blue (Process), tan (Industries) and lime (Contact)
+   sections keep their own colours. */
 body:has(main.palette-test) {
-  --carbon: #121212;
-  --soft-white: #FAFAFA;
-  --off-white: #FDFFEE;
-  --midnight: #0B132B;
+  --page: #151515;
+  --card: #202020;
+  --card-border: #333333;
+  --heading: #F7F7F5;
+  --body: #B8B8B8;
+  --accent-pink: #FF3BA7;
+  --accent-blue: #36DDE8;
+  --soft-white: #F7F7F5;
   --cyan: #B6FFFF;
-  --pink: #FF86EB;
-  --blush: #FFE3FA;
 
-  --bg: var(--off-white);
-  --bg-elev: #F3F6DF;
-  --ink: var(--midnight);
-  --ink-dim: rgba(11, 19, 43, 0.76);
-  --ink-faint: rgba(11, 19, 43, 0.5);
-  --heading-accent: var(--midnight);
-  --accent: var(--midnight);
-  --on-accent: var(--off-white);
-  --line: rgba(11, 19, 43, 0.14);
-  --line-strong: var(--midnight);
+  --highlight: #A9FA00;
+  --on-highlight: #151515;
 
-  --bg-dark: var(--midnight);
-  --ink-on-dark: var(--soft-white);
-  --ink-dim-on-dark: rgba(250, 250, 250, 0.76);
-  --line-on-dark: var(--soft-white);
-  --line-strong-on-dark: var(--soft-white);
+  --bg: var(--page);
+  --bg-elev: var(--card);
+  --ink: var(--heading);
+  --ink-dim: var(--body);
+  --ink-faint: #8A8A8A;
+  --heading-accent: var(--heading);
+  --accent: var(--heading);
+  --on-accent: var(--page);
+  --line: rgba(255, 255, 255, 0.1);
+  --line-strong: var(--card-border);
 
-  /* Lifted navy for cards inside Midnight sections */
-  --surface-dark: #16204A;
-  --surface-dark-hover: #1E2A5C;
-  --surface-light: #FFFFFF;
-  --surface-open: #FFFFFF;
-  --postcard-bg: var(--off-white);
+  --bg-dark: var(--page);
+  --ink-on-dark: var(--heading);
+  --ink-dim-on-dark: var(--body);
+  --line-on-dark: rgba(247, 247, 245, 0.4);
+  --line-strong-on-dark: var(--heading);
 
-  --nav-ink: var(--midnight);
-  --nav-dark-bg: rgba(11, 19, 43, 0.8);
-  --nav-dark-bg-scrolled: rgba(11, 19, 43, 0.9);
+  --surface-dark: var(--card);
+  --surface-dark-hover: #2A2A2A;
+  --surface-light: var(--card);
+  --surface-open: #1C1C1C;
 
-  /* Service card buttons: white pill, lime only on hover */
-  --explore-bg: var(--soft-white);
-  --explore-ink: var(--midnight);
+  /* Blog cards */
+  --postcard-bg: var(--card);
+  --postcard-border: var(--card-border);
+  --postcard-dim: var(--body);
+  --postcard-hover-bg: #262626;
 
-  /* Hero glow: faint pink + cyan haze with a lime spark */
+  /* Comparison table header + FAQ help card on card grey */
+  --table-head-bg: var(--card);
+  --table-head-ink: var(--body);
+  --help-card-bg: var(--card);
+  --help-card-border: var(--card-border);
+
+  /* Hero "AI Search Services." block → lime */
+  --title-block-bg: var(--highlight);
+  --title-block-ink: var(--page);
+
+  --nav-ink: var(--page);
+  --nav-dark-bg: rgba(21, 21, 21, 0.8);
+  --nav-dark-bg-scrolled: rgba(21, 21, 21, 0.9);
+
+  --explore-bg: var(--heading);
+  --explore-ink: var(--page);
+
+  /* Hero glow: faint lime / pink / blue haze */
   --hero-ambient:
-    radial-gradient(45% 40% at 65% 35%, rgba(255, 134, 235, 0.35), transparent 70%),
-    radial-gradient(40% 36% at 85% 70%, rgba(182, 255, 255, 0.9), transparent 70%),
-    radial-gradient(36% 32% at 50% 15%, rgba(153, 255, 0, 0.22), transparent 70%);
+    radial-gradient(45% 40% at 65% 35%, rgba(169, 250, 0, 0.18), transparent 70%),
+    radial-gradient(40% 36% at 85% 70%, rgba(255, 59, 167, 0.18), transparent 70%),
+    radial-gradient(36% 32% at 50% 15%, rgba(54, 221, 232, 0.16), transparent 70%);
 
-  background: var(--off-white);
+  --footer-glow:
+    radial-gradient(90% 75% at 100% 100%, rgba(169, 250, 0, 0.9) 0%, rgba(169, 250, 0, 0.5) 28%, rgba(169, 250, 0, 0.1) 55%, transparent 72%),
+    radial-gradient(70% 55% at 60% 115%, rgba(169, 250, 0, 0.25) 0%, transparent 70%);
+
+  background: var(--page);
 }
 
 /* === Section rhythm =====================================================
-   Hero White → Services Midnight → Comparison White → About Midnight →
-   Case studies White (coloured cards) → Campaign Midnight →
-   Industries Brown → Process Cyan → FAQ White → Blog Midnight →
-   Contact Lime → Footer Midnight. No black backgrounds. */
-
+   Hero / Services / Comparison / About / Case studies / Campaign: #151515
+   → Industries Tan → Process Light blue → FAQ / Blog #151515 →
+   Contact Lime → Footer #151515 */
 
 /* Industries on warm brown — light text, lime heading, bold lime dots */
 .palette-test #industries {
   --bg-elev: #866A53;
   --bg: #FFFFFF;
   --ink: var(--soft-white);
+  --ink-dim: rgba(247, 247, 245, 0.8);
   --ink-dim: rgba(250, 250, 250, 0.8);
   --line: rgba(250, 250, 250, 0.28);
   --dots-color: var(--highlight);
@@ -97,12 +117,18 @@ body:has(main.palette-test) {
 
 .palette-test #process {
   --bg: var(--cyan);
-  --ink-dim: rgba(11, 19, 43, 0.74);
-  --ink-faint: rgba(11, 19, 43, 0.55);
+  --ink: var(--page);
+  --accent: var(--page);
+  --surface-light: #FFFFFF;
+  --ink-dim: rgba(21, 21, 21, 0.74);
+  --ink-faint: rgba(21, 21, 21, 0.55);
 }
 
 .palette-test #contact {
-  --ink: var(--midnight);
+  --bg: var(--heading);
+  --ink: var(--page);
+  --accent: var(--page);
+  --on-accent: var(--heading);
 }
 
 /* Square section edges — rounded corners stay on cards/buttons only */
@@ -112,9 +138,14 @@ body:has(main.palette-test) footer {
   border-radius: 0 !important;
 }
 
-/* Navy section → white heading (About) */
+/* About heading stays near-white */
 .palette-test #about {
-  --about-heading: var(--soft-white);
+  --about-heading: var(--heading);
+}
+
+/* Hairline between stacked #151515 sections so they still read apart */
+.palette-test > section + section {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 /* Industries heading in highlight green */
