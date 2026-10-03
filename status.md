@@ -98,7 +98,7 @@ throughout — copy is written in first person ("I"), not agency "we" voice.
   visual is still a dashed "Image coming soon" placeholder.
   Client site: https://www.jensencpa.ca/. Hub card added (neutral tint, second
   position, image placeholder). In the sitemap.
-- `/blog` + `/blog/[slug]` — posts in `src/app/blog/posts.ts` (one post live)
+- `/blog` + `/blog/[slug]` — posts in `src/app/blog/posts.ts` (two posts live: seo-cost-canada, accounting firms)
   Post cards use the shared template `blog/PostCard.tsx` (soft lime panel:
   category, title, description, then a barred footer with date · read time
   and "Read article"). Used on /blog and the homepage BlogTeaser — new posts

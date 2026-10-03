@@ -18,7 +18,7 @@ export function generateMetadata({
   const post = getPost(params.slug);
   if (!post) return {};
   return {
-    title: `${post.title} | Scale SEO Blog`,
+    title: post.metaTitle ?? `${post.title} | Scale SEO Blog`,
     description: post.description,
     alternates: { canonical: `/blog/${post.slug}` },
   };
@@ -39,10 +39,23 @@ function renderInline(text: string) {
     if (match[1]) {
       parts.push(<strong key={key++}>{match[1]}</strong>);
     } else if (match[2] && match[3]) {
+      const href = match[3];
       parts.push(
-        <Link key={key++} href={match[3]} className={styles.inlineLink}>
-          {match[2]}
-        </Link>
+        /^https?:\/\//.test(href) ? (
+          <a
+            key={key++}
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.inlineLink}
+          >
+            {match[2]}
+          </a>
+        ) : (
+          <Link key={key++} href={href} className={styles.inlineLink}>
+            {match[2]}
+          </Link>
+        )
       );
     }
     lastIndex = regex.lastIndex;
@@ -122,6 +135,47 @@ export default function BlogPostPage({
       <article className={styles.body}>
         <div className={styles.bodyInner}>
           {post.body.map((block, i) => {
+            if (block.type === "h2") {
+              return (
+                <h2 key={i} className={styles.sectionHeading}>
+                  {renderInline(block.text)}
+                </h2>
+              );
+            }
+            if (block.type === "table") {
+              return (
+                <div key={i} className={styles.tableWrap}>
+                  <table className={styles.table}>
+                    <thead>
+                      <tr>
+                        {block.head.map((h) => (
+                          <th key={h}>{h}</th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {block.rows.map((row, r) => (
+                        <tr key={r}>
+                          {row.map((cell, c) => (
+                            <td key={c}>{renderInline(cell)}</td>
+                          ))}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              );
+            }
+            if (block.type === "source") {
+              return (
+                <p key={i} className={styles.source}>
+                  Source:{" "}
+                  <a href={block.href} target="_blank" rel="noopener noreferrer">
+                    {block.text}
+                  </a>
+                </p>
+              );
+            }
             if (block.type === "h3") {
               return (
                 <h3 key={i} className={styles.subheading}>

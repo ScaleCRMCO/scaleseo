@@ -129,6 +129,77 @@
   text-underline-offset: 2px;
 }
 
+.sectionHeading {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(26px, 3vw, 36px);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: var(--ink);
+  margin: 64px 0 22px;
+  scroll-margin-top: 110px;
+}
+
+.tableWrap {
+  margin: 8px 0 32px;
+  overflow-x: auto;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--sans);
+  font-size: 15.5px;
+  line-height: 1.5;
+}
+
+.table th {
+  padding: 14px 18px;
+  background: var(--bg-dark);
+  color: var(--ink-on-dark);
+  font-family: var(--mono);
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.table td {
+  padding: 14px 18px;
+  border-top: 1px solid var(--line);
+  color: var(--ink-dim);
+  vertical-align: top;
+}
+
+.table td:first-child {
+  font-weight: 700;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.table tbody tr:nth-child(odd) td {
+  background: var(--bg-elev);
+}
+
+.source {
+  margin: -14px 0 28px;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  color: var(--ink-faint);
+}
+
+.source a {
+  color: var(--ink-dim);
+  text-decoration: underline;
+  text-decoration-color: var(--highlight);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
 /* === CTA === */
 .cta {
   padding: 100px 40px;
