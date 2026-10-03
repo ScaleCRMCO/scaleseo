@@ -7,30 +7,19 @@ const spring = { type: "spring" as const, stiffness: 100, damping: 15 };
 export default function Hero() {
   return (
     <header className={styles.hero} data-nav-theme="dark">
-      <div className={styles.ambient} aria-hidden="true" />
-
-      <div className={styles.grid}>
+            <div className={styles.grid}>
       <div className={styles.inner}>
-        <motion.p
-          className={`index ${styles.meta}`}
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ ...spring, delay: 0.1 }}
-        >
-          [ SCALE SEO · CALGARY SEO, PPC, AND GENERATIVE ENGINE OPTIMIZATION ]
-        </motion.p>
-
         <motion.h1
           className={styles.title}
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ ...spring, delay: 0.25 }}
         >
-          Calgary SEO Expert –
+          Calgary SEO Expert&nbsp;–
           <br />
           SEO, Google Ads,
           <br />
-          and <span className={styles.titleBlock}>AI Search Services.</span>
+          and AI Search Services.
         </motion.h1>
 
         <motion.p
@@ -74,34 +63,27 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      <motion.div
-        className={styles.visual}
-        initial={{ opacity: 0, x: 30, rotate: 0 }}
-        animate={{ opacity: 1, x: 0, rotate: -3 }}
+      <motion.figure
+        className={styles.proof}
+        initial={{ opacity: 0, y: 24 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ ...spring, delay: 0.5 }}
       >
-        <div className={styles.visualFrame}>
-          <img
-            src="/images/gsc-performance-mockup-3d.webp"
-            alt="Google Search Console performance data showing clicks and impressions growth"
-            className={styles.visualImg}
-          />
-          <motion.div
-            className={styles.visualBadge}
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ ...spring, delay: 0.85 }}
-          >
-            <span className={styles.visualBadgeValue}>+125%</span>
-            <span className={styles.visualBadgeLabel}>
-              Search impressions for an accounting firm
-            </span>
-          </motion.div>
+        <div className={styles.proofStat}>
+          <span className={styles.proofValue}>+125%</span>
+          <span className={styles.proofLabel}>
+            Search impressions for an accounting firm
+          </span>
         </div>
-        <span className={styles.visualCaption}>
+        <img
+          src="/images/gsc-performance-mockup-3d.webp"
+          alt="Google Search Console performance data showing clicks and impressions growth"
+          className={styles.proofImg}
+        />
+        <figcaption className={styles.proofCaption}>
           Real Google Search Console Data
-        </span>
-      </motion.div>
+        </figcaption>
+      </motion.figure>
       </div>
     </header>
   );
