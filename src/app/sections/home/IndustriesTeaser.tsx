@@ -30,7 +30,7 @@ const industries: {
 
 export default function IndustriesTeaser() {
   return (
-    <section className={styles.section} id="industries">
+    <section className={styles.section} id="industries" data-nav-theme="dark">
       <div className={styles.inner}>
         <h2 className={`${styles.heading} reveal-up`}>
           SEO for Professional Service &amp; B2B Businesses

@@ -22,11 +22,11 @@
   /* Square patch of dots in the corner, fading out before the text */
   width: min(28vw, 400px);
   aspect-ratio: 1;
-  background-image: radial-gradient(circle, rgba(11, 19, 43, 0.55) 1.6px, transparent 2px);
+  background-image: radial-gradient(circle, var(--dots-color, rgba(11, 19, 43, 0.55)) var(--dots-size, 1.6px), transparent calc(var(--dots-size, 1.6px) + 0.4px));
   background-size: 30px 30px;
   background-position: top right;
-  -webkit-mask-image: radial-gradient(circle at top right, #000 0%, #000 18%, transparent 68%);
-  mask-image: radial-gradient(circle at top right, #000 0%, #000 18%, transparent 68%);
+  -webkit-mask-image: radial-gradient(circle at top right, #000 0%, #000 var(--dots-solid, 18%), transparent 68%);
+  mask-image: radial-gradient(circle at top right, #000 0%, #000 var(--dots-solid, 18%), transparent 68%);
   pointer-events: none;
 }
 
@@ -114,7 +114,7 @@
   gap: 10px;
   padding: 16px 26px;
   background: #FFFFFF;
-  color: var(--ink);
+  color: #0B132B;
   border-radius: 10px;
   font-family: var(--sans);
   font-weight: 600;
