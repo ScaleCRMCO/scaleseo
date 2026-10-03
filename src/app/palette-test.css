@@ -7,103 +7,70 @@
 
 body:has(main.palette-test) {
   --carbon: #121212;
-  --charcoal: #292929;
-  --warm-white: #F7F5EF;
-  --lime: #A3FF12;
-  --pink: #E9A6B2;
-  --sky: #8ED8F8;
+  --soft-white: #FAFAFA;
+  --midnight: #0B132B;
+  --cyan: #B6FFFF;
+  --pink: #FF86EB;
+  /* Pale tint of the pink for full light sections */
+  --blush: #FFE3FA;
 
-  --bg: var(--warm-white);
-  --bg-elev: #EFECE4;
+  --bg: var(--soft-white);
+  --bg-elev: #F1F1F1;
   --ink: var(--carbon);
-  --ink-dim: #4A4845;
-  --ink-faint: #7A7772;
   --accent: var(--carbon);
-  --accent-dim: var(--charcoal);
-  --on-accent: var(--warm-white);
-  --highlight: var(--lime);
-  --on-highlight: var(--carbon);
+  --on-accent: var(--soft-white);
   --line: rgba(18, 18, 18, 0.14);
   --line-strong: var(--carbon);
 
   --bg-dark: var(--carbon);
-  --ink-on-dark: var(--warm-white);
-  --ink-dim-on-dark: #B5B2AB;
-  --line-on-dark: var(--warm-white);
-  --line-strong-on-dark: var(--warm-white);
+  --ink-on-dark: var(--soft-white);
+  --line-on-dark: var(--soft-white);
+  --line-strong-on-dark: var(--soft-white);
 
-  /* Component surfaces (fallbacks live in each module) */
-  --surface-dark: var(--charcoal);
-  --surface-dark-hover: #333333;
+  /* Midnight for coloured dark cards inside Carbon sections */
+  --surface-dark: var(--midnight);
+  --surface-dark-hover: #16204a;
   --surface-light: #FFFFFF;
   --surface-open: #FFFFFF;
-  --postcard-bg: var(--warm-white);
+  --postcard-bg: var(--soft-white);
 
   --nav-ink: var(--carbon);
-  --nav-dark-bg: rgba(18, 18, 18, 0.78);
-  --nav-dark-bg-scrolled: rgba(18, 18, 18, 0.88);
 
-  /* Service card buttons: Warm White pill, lime only on hover */
-  --explore-bg: var(--warm-white);
+  /* Service card buttons: white pill, lime only on hover */
+  --explore-bg: var(--soft-white);
   --explore-ink: var(--carbon);
 
-  /* Hero glow: sky + pink haze with a small lime spark */
+  /* Hero glow: faint pink + cyan haze with a lime spark */
   --hero-ambient:
-    radial-gradient(45% 40% at 65% 35%, rgba(142, 216, 248, 0.55), transparent 70%),
-    radial-gradient(40% 36% at 85% 70%, rgba(233, 166, 178, 0.5), transparent 70%),
-    radial-gradient(36% 32% at 50% 15%, rgba(163, 255, 18, 0.25), transparent 70%);
+    radial-gradient(45% 40% at 65% 35%, rgba(255, 134, 235, 0.35), transparent 70%),
+    radial-gradient(40% 36% at 85% 70%, rgba(182, 255, 255, 0.9), transparent 70%),
+    radial-gradient(36% 32% at 50% 15%, rgba(153, 255, 0, 0.22), transparent 70%);
 
-  --footer-glow:
-    radial-gradient(90% 75% at 100% 100%, rgba(163, 255, 18, 0.95) 0%, rgba(163, 255, 18, 0.55) 28%, rgba(163, 255, 18, 0.12) 55%, transparent 72%),
-    radial-gradient(70% 55% at 60% 115%, rgba(163, 255, 18, 0.28) 0%, transparent 70%);
-
-  background: var(--warm-white);
+  background: var(--soft-white);
 }
 
 /* === Section rhythm =====================================================
-   Hero Warm White → Services Carbon → Comparison Warm White →
-   About Soft Pink → Case studies Sky Blue → Campaign Carbon →
-   Industries Warm White → Process Carbon → FAQ Warm White →
-   Blog Carbon → Contact Lime → Footer Carbon */
+   Hero White → Services Carbon (Midnight cards) → Comparison White →
+   About Midnight (lime accent) → Case studies White (coloured cards) →
+   Campaign Carbon (Midnight cards) → Industries Blush → Process Cyan →
+   FAQ White → Blog Carbon → Contact Lime → Footer Carbon */
 
-/* Founder / human section on Soft Pink — dark ink, lime X on a carbon disc */
+/* Founder story on Midnight, like the reference's "Our Story" panel */
 .palette-test #about {
-  --bg-dark: var(--pink);
-  --ink-on-dark: var(--carbon);
-  --ink-dim-on-dark: rgba(18, 18, 18, 0.74);
-  --line-on-dark: rgba(18, 18, 18, 0.45);
-  --about-disc: var(--carbon);
-  --about-accent: var(--carbon);
-  --selection-bg: var(--carbon);
-  --selection-color: var(--pink);
-}
-
-/* Case studies (results) on Sky Blue */
-.palette-test #work {
-  --bg: var(--sky);
-  --ink-dim: rgba(18, 18, 18, 0.74);
+  --bg-dark: var(--midnight);
 }
 
 .palette-test #industries {
-  --bg-elev: var(--warm-white);
+  --bg-elev: var(--blush);
   --bg: #FFFFFF;
 }
 
-/* Process on Carbon with Charcoal step cards */
 .palette-test #process {
-  --bg: var(--carbon);
-  --ink: var(--warm-white);
-  --accent: var(--warm-white);
-  --ink-dim: #B5B2AB;
-  --ink-faint: #8C8983;
-  --surface-light: var(--charcoal);
+  --bg: var(--cyan);
+  --ink-dim: rgba(18, 18, 18, 0.74);
+  --ink-faint: rgba(18, 18, 18, 0.55);
 }
 
-.palette-test #faq {
-  --bg-elev: #EFECE4;
-}
-
-/* Contact keeps the one big lime moment */
 .palette-test #contact {
   --ink: var(--carbon);
 }

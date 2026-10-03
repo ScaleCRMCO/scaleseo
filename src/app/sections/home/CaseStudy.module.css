@@ -224,44 +224,47 @@
   transform: translateX(4px);
 }
 
-/* === Card themes — Carbon / Warm White / Charcoal / Soft Pink =========
-   Dark cards carry a lime metric; light cards stay ink-on-light. */
-.themeCarbon {
-  --card-bg: linear-gradient(180deg, #1e1e1e 0%, #121212 60%, #0b0b0b 100%);
-  --card-fade: #1e1e1e;
-  --card-ink: #F7F5EF;
-  --card-metric: #A3FF12;
-  --card-arrow: #121212;
-  --card-chip: rgba(247, 245, 239, 0.12);
-  --card-line: rgba(247, 245, 239, 0.2);
-}
-
-.themeWarm {
-  --card-bg: linear-gradient(180deg, #fbfaf6 0%, #F7F5EF 55%, #ece9e0 100%);
-  --card-fade: #fbfaf6;
+/* === Card themes — soft pink / lime / midnight-to-pink / cyan ========
+   Screenshot fades into the card colour; ink text on every card. */
+.themeBlush {
+  --card-bg: #FFE3FA;
+  --card-fade: #FFE3FA;
   --card-ink: #121212;
-  --card-arrow: #F7F5EF;
+  --card-arrow: #FFE3FA;
   --card-chip: rgba(18, 18, 18, 0.07);
   --card-line: rgba(18, 18, 18, 0.14);
 }
 
-.themeCharcoal {
-  --card-bg: linear-gradient(180deg, #353535 0%, #292929 60%, #1f1f1f 100%);
-  --card-fade: #353535;
-  --card-ink: #F7F5EF;
-  --card-metric: #A3FF12;
-  --card-arrow: #292929;
-  --card-chip: rgba(247, 245, 239, 0.12);
-  --card-line: rgba(247, 245, 239, 0.2);
-}
-
-.themePink {
-  --card-bg: linear-gradient(180deg, #f0bac4 0%, #E9A6B2 55%, #dc93a0 100%);
-  --card-fade: #f0bac4;
+.themeLime {
+  --card-bg: var(--highlight);
+  --card-fade: var(--highlight);
   --card-ink: #121212;
-  --card-arrow: #E9A6B2;
+  --card-arrow: var(--highlight);
   --card-chip: rgba(18, 18, 18, 0.08);
   --card-line: rgba(18, 18, 18, 0.16);
+}
+
+/* Midnight wash over the screenshot, melting into pink behind the text */
+.themeDusk {
+  --card-bg: #FF86EB;
+  --card-fade: #FF86EB;
+  --card-ink: #121212;
+  --card-arrow: #FF86EB;
+  --card-chip: #FAFAFA;
+  --card-line: rgba(18, 18, 18, 0.18);
+}
+
+.themeDusk .cardImage::after {
+  background: linear-gradient(to bottom, rgba(11, 19, 43, 0.35) 0%, rgba(11, 19, 43, 0.7) 45%, #FF86EB 100%);
+}
+
+.themeCyan {
+  --card-bg: #B6FFFF;
+  --card-fade: #B6FFFF;
+  --card-ink: #121212;
+  --card-arrow: #B6FFFF;
+  --card-chip: rgba(18, 18, 18, 0.07);
+  --card-line: rgba(18, 18, 18, 0.14);
 }
 
 /* === Reduced motion fallback ============================================ */

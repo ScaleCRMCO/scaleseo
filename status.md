@@ -239,8 +239,8 @@ table).
   installed from an unverified npm package — usable for design reference data.
 
 ## Homepage palette test (Oct 2026)
-- Test #2 (current): Carbon #121212, Charcoal #292929, Warm White #F7F5EF, Scale Lime #A3FF12, Soft Pink #E9A6B2, Sky Blue #8ED8F8. (Test #1 Midnight/Mist/Powder/Stone was rejected.)
+- Test #3 (current, Think Company-inspired): Carbon #121212, Soft White #FAFAFA, Midnight #0B132B, lime (existing --highlight), Cyan #B6FFFF, Pink #FF86EB (+ pale blush #FFE3FA for full sections). Tests #1 (Midnight/Mist/Powder/Stone) and #2 (Carbon/Warm White/Pink/Sky) were rejected.
 - All overrides live in `src/app/palette-test.css`, applied by `className="palette-test"` on `<main>` in `src/app/page.tsx` (nav/footer via `body:has(main.palette-test)`). Components keep their old colours as CSS-variable fallbacks, so other pages are unchanged.
-- Section rhythm: Hero Warm White → Services Carbon → Comparison Warm White → About Soft Pink → Case studies Sky Blue → Campaign Carbon → Industries Warm White → Process Carbon → FAQ Warm White → Blog Carbon → Contact Lime → Footer Carbon.
-- Case-study cards: Carbon / Warm White / Charcoal / Soft Pink (lime metrics on the dark cards).
-- Revert: remove the import + class in page.tsx; also restore old CaseStudy card themes and drop data-nav-theme on Process (from git).
+- Section rhythm: Hero White → Services Carbon (Midnight cards) → Comparison White → About Midnight → Case studies White → Campaign Carbon (Midnight cards) → Industries Blush → Process Cyan → FAQ White → Blog Carbon → Contact Lime → Footer Carbon.
+- Case-study cards: Jensen CPA blush, Empire lime, Kinsmen midnight-wash into pink, MSV cyan (screenshots fade into each colour).
+- Revert: remove the import + class in page.tsx; restore old CaseStudy card themes from git.
