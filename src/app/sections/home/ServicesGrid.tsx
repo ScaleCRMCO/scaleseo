@@ -19,11 +19,21 @@ function ExploreButton({ href, label }: { href: string; label: string }) {
   );
 }
 
-const services = [
+// Card colours alternate through the palette (see .tone* in the CSS)
+const services: {
+  href: string;
+  num: string;
+  title: string;
+  tone: "cyan" | "pink" | "white" | "lime" | "navy";
+  subtitle: string;
+  desc: string;
+  cta: string;
+}[] = [
   {
     href: "/services/seo",
     num: "01",
     title: "SEO Services",
+    tone: "cyan",
     subtitle: "Ongoing Organic Search Growth",
     desc: "Monthly SEO campaigns combining technical SEO, keyword research, on-page optimization, content, local SEO, internal linking, and website improvements to increase your visibility across Google.",
     cta: "Explore SEO Services",
@@ -32,6 +42,7 @@ const services = [
     href: "/services/seo-audits",
     num: "02",
     title: "SEO Audits",
+    tone: "pink",
     subtitle: "Find Out What\u2019s Holding Your Website Back",
     desc: "Standalone technical and on-page SEO audits that identify indexing issues, content gaps, site architecture problems, ranking opportunities, and practical next steps.",
     cta: "Explore SEO Audits",
@@ -40,6 +51,7 @@ const services = [
     href: "/services/web-development",
     num: "03",
     title: "Web Development",
+    tone: "white",
     subtitle: "Websites Built With Search in Mind",
     desc: "Fast, responsive websites built around clean site architecture, organic search visibility, user experience, and conversions\u2014not just appearance.",
     cta: "Explore Web Development",
@@ -48,6 +60,7 @@ const services = [
     href: "/services/geo",
     num: "04",
     title: "AI Search Optimization",
+    tone: "lime",
     subtitle: "Improve Visibility Across AI Search",
     desc: "Improve how your business and content are understood by AI-powered search experiences, while tracking brand visibility across platforms such as ChatGPT, Perplexity, and Google AI experiences.",
     cta: "Explore AI Search",
@@ -56,11 +69,20 @@ const services = [
     href: "/services/google-ads-management",
     num: "05",
     title: "Google Ads Management",
+    tone: "navy",
     subtitle: "Paid Search for High-Intent Leads",
     desc: "Google Ads campaigns built around high-intent searches, practical conversion tracking, negative keyword management, and continuous optimization.",
     cta: "Explore Google Ads",
   },
 ];
+
+const toneClass = {
+  cyan: styles.toneCyan,
+  pink: styles.tonePink,
+  white: styles.toneWhite,
+  lime: styles.toneLime,
+  navy: styles.toneNavy,
+};
 
 export default function ServicesGrid() {
   return (
@@ -84,7 +106,7 @@ export default function ServicesGrid() {
 
       <div className={styles.grid}>
         {services.map((s) => (
-          <div key={s.href} className={styles.card}>
+          <div key={s.href} className={`${styles.card} ${toneClass[s.tone]}`}>
             <div className={styles.cardHead}>
               <h3 className={styles.cardTitle}>{s.title}</h3>
               <span className={`index ${styles.cardIndex}`}>{s.num}</span>
