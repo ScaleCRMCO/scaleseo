@@ -224,47 +224,65 @@
   transform: translateX(4px);
 }
 
-/* === Card themes — soft pink / lime / midnight-to-pink / cyan ========
-   Screenshot fades into the card colour; ink text on every card. */
-.themeBlush {
-  --card-bg: #FFE3FA;
-  --card-fade: #FFE3FA;
-  --card-ink: #121212;
-  --card-arrow: #FFE3FA;
-  --card-chip: rgba(18, 18, 18, 0.07);
-  --card-line: rgba(18, 18, 18, 0.14);
+/* === Card themes — clean solid colours, no gradients ==================
+   Jensen CPA light blue / Empire midnight / Kinsmen lime / MSV pink. */
+.themeSky,
+.themeMidnight,
+.themeLime,
+.themePink {
+  --card-bg: var(--card-solid);
+  --card-arrow: var(--card-solid);
+}
+
+/* Screenshot sits cleanly on the card — no fade into the colour */
+.themeSky .cardImage::after,
+.themeMidnight .cardImage::after,
+.themeLime .cardImage::after,
+.themePink .cardImage::after {
+  display: none;
+}
+
+.themeSky {
+  --card-solid: #B6FFFF;
+  --card-ink: #0B132B;
+  --card-chip: rgba(11, 19, 43, 0.08);
+  --card-line: rgba(11, 19, 43, 0.16);
+}
+
+.themeMidnight {
+  --card-solid: #0B132B;
+  --card-ink: var(--highlight);
+  --card-chip: rgba(153, 255, 0, 0.12);
+  --card-line: rgba(153, 255, 0, 0.3);
 }
 
 .themeLime {
-  --card-bg: var(--highlight);
-  --card-fade: var(--highlight);
-  --card-ink: #121212;
-  --card-arrow: var(--highlight);
-  --card-chip: rgba(18, 18, 18, 0.08);
-  --card-line: rgba(18, 18, 18, 0.16);
+  --card-solid: var(--highlight);
+  --card-ink: #0B132B;
+  --card-chip: rgba(11, 19, 43, 0.08);
+  --card-line: rgba(11, 19, 43, 0.18);
 }
 
-/* Midnight wash over the screenshot, melting into pink behind the text */
-.themeDusk {
-  --card-bg: #FF86EB;
-  --card-fade: #FF86EB;
-  --card-ink: #121212;
-  --card-arrow: #FF86EB;
-  --card-chip: #FAFAFA;
-  --card-line: rgba(18, 18, 18, 0.18);
+.themePink {
+  --card-solid: #FF86EB;
+  --card-ink: #0B132B;
+  --card-chip: var(--highlight);
+  --card-line: rgba(11, 19, 43, 0.18);
 }
 
-.themeDusk .cardImage::after {
-  background: linear-gradient(to bottom, rgba(11, 19, 43, 0.35) 0%, rgba(11, 19, 43, 0.7) 45%, #FF86EB 100%);
+/* Lime on pink is too low-contrast for text, so lime goes on the
+   tag chip and arrow instead */
+.themePink .cardArrow {
+  background: var(--highlight);
+  color: #0B132B;
 }
 
-.themeCyan {
-  --card-bg: #B6FFFF;
-  --card-fade: #B6FFFF;
-  --card-ink: #121212;
-  --card-arrow: #B6FFFF;
-  --card-chip: rgba(18, 18, 18, 0.07);
-  --card-line: rgba(18, 18, 18, 0.14);
+/* A little more room under the screenshot now there's no fade */
+.themeSky .cardBody,
+.themeMidnight .cardBody,
+.themeLime .cardBody,
+.themePink .cardBody {
+  padding-top: 22px;
 }
 
 /* === Reduced motion fallback ============================================ */
