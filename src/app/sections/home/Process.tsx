@@ -31,10 +31,10 @@ export default function Process() {
   return (
     <section className={styles.section} id="process">
       <div className={styles.inner}>
-        <h2 className={`${styles.heading} reveal-up`}>
-          Four Steps. <em>No Surprises.</em>
+        <h2 className={`${styles.headingBig} reveal-up`}>
+          4 easy steps to get started.
         </h2>
-        <p className={`${styles.intro} reveal-up`}>
+        <p className={`${styles.intro} ${styles.introStrong} reveal-up`}>
           Every engagement starts by understanding where your website stands
           today and whether SEO represents a realistic growth opportunity for
           your business.

@@ -31,6 +31,23 @@
   margin-bottom: 64px;
 }
 
+/* Homepage: large bold heading + heavier intro */
+.headingBig {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(44px, 6.4vw, 96px);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  margin-bottom: 28px;
+}
+
+.introStrong {
+  max-width: 760px;
+  font-weight: 600;
+  font-size: 19px;
+  color: var(--ink);
+}
+
 .heading em {
   font-style: normal;
   font-weight: 600;

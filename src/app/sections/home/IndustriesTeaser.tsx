@@ -32,36 +32,36 @@ export default function IndustriesTeaser() {
   return (
     <section className={styles.section} id="industries">
       <div className={styles.inner}>
-        <div className={styles.intro}>
-          <h2 className={`${styles.heading} reveal-up`}>
-            SEO for Professional Service <em>&amp; B2B Businesses</em>
-          </h2>
-          <div className={`${styles.introBody} reveal-up`}>
-            <p>
-              I work primarily with businesses where a single qualified search
-              enquiry can turn into a valuable, long-term client relationship.
-            </p>
-            <p>
-              Rather than taking on hundreds of businesses across unrelated
-              industries, I keep the roster small and focus on companies where
-              organic search can become a meaningful customer acquisition
-              channel.
-            </p>
-          </div>
+        <h2 className={`${styles.heading} reveal-up`}>
+          SEO for Professional Service &amp; B2B Businesses
+        </h2>
+        <div className={`${styles.intro} reveal-up`}>
+          <p className={styles.introLead}>
+            I work primarily with businesses where a single qualified search
+            enquiry can turn into a valuable, long-term client relationship.
+          </p>
+          <p className={styles.introBody}>
+            Rather than taking on hundreds of businesses across unrelated
+            industries, I keep the roster small and focus on companies where
+            organic search can become a meaningful customer acquisition
+            channel.
+          </p>
         </div>
 
-        <div className={styles.grid}>
+        {/* One row per industry: name left, description + link right */}
+        <div className={styles.rows}>
           {industries.map((item) => (
-            <div key={item.num} className={`${styles.card} reveal-up`}>
-              <span className={`index ${styles.cardIndex}`}>{item.num}</span>
-              <h3 className={styles.cardTitle}>{item.title}</h3>
-              <p className={styles.cardBody}>{item.body}</p>
-              {item.link && (
-                <Link href={item.link.href} className={styles.cardLink}>
-                  <span>{item.link.label}</span>
-                  <span className={styles.arrow}>→</span>
-                </Link>
-              )}
+            <div key={item.num} className={`${styles.row} reveal-up`}>
+              <h3 className={styles.rowTitle}>{item.title}</h3>
+              <div className={styles.rowBody}>
+                <p>{item.body}</p>
+                {item.link && (
+                  <Link href={item.link.href} className={styles.rowLink}>
+                    <span>{item.link.label}</span>
+                    <span className={styles.arrow}>→</span>
+                  </Link>
+                )}
+              </div>
             </div>
           ))}
         </div>

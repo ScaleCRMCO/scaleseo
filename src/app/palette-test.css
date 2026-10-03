@@ -73,3 +73,16 @@ body:has(main.palette-test) {
 .palette-test #contact {
   --ink: var(--midnight);
 }
+
+/* Square section edges — rounded corners stay on cards/buttons only */
+.palette-test > section,
+.palette-test > header,
+body:has(main.palette-test) footer {
+  border-radius: 0 !important;
+}
+
+/* Industries heading in a deep brand green (bright lime is invisible on
+   the pale pink) */
+.palette-test #industries {
+  --industries-heading: #2F8A00;
+}
