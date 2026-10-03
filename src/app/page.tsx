@@ -11,6 +11,9 @@ import BlogTeaser from "./sections/home/BlogTeaser";
 import FAQ from "./sections/home/FAQ";
 import Contact from "./sections/home/Contact";
 import RevealOnScroll from "./components/RevealOnScroll";
+// Homepage-only colour palette test — remove this import and the class on
+// <main> below to revert.
+import "./palette-test.css";
 
 export const metadata: Metadata = {
   title: "Calgary SEO Services | Scale SEO",
@@ -43,7 +46,7 @@ const webPageJsonLd = {
 
 export default function Home() {
   return (
-    <main>
+    <main className="palette-test">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }}

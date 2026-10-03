@@ -114,8 +114,8 @@
   text-decoration: none;
   color: var(--card-ink);
   background: var(--card-bg);
-  box-shadow: 0 50px 100px -40px rgba(10, 10, 10, 0.45),
-              0 16px 32px -16px rgba(10, 10, 10, 0.25);
+  box-shadow: 0 50px 100px -40px rgba(11, 19, 43, 0.4),
+              0 16px 32px -16px rgba(11, 19, 43, 0.2);
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -172,6 +172,7 @@
   font-size: clamp(34px, 3.4vw, 50px);
   line-height: 1;
   letter-spacing: -0.03em;
+  color: var(--card-metric, inherit);
 }
 
 .cardMetricLabel {
@@ -223,42 +224,44 @@
   transform: translateX(4px);
 }
 
-/* === Secondary highlight colours (see --pop-* in globals.css) =========
-   Each card: a vivid base with a slightly deeper tone toward the bottom. */
-.themeBlue {
-  --card-bg: linear-gradient(180deg, #2a9cff 0%, var(--pop-blue) 55%, #0070d4 100%);
-  --card-fade: #2a9cff;
-  --card-ink: var(--ink);
-  --card-arrow: var(--pop-blue);
-  --card-chip: rgba(255, 255, 255, 0.3);
-  --card-line: rgba(10, 10, 10, 0.18);
+/* === Card themes — Midnight / Powder / Slate / Mist palette ===========
+   Dark cards carry a lime metric; light cards stay ink-on-light. */
+.themeMidnight {
+  --card-bg: linear-gradient(180deg, #16204a 0%, #0B132B 60%, #070d1f 100%);
+  --card-fade: #16204a;
+  --card-ink: #F0F5F3;
+  --card-metric: #A3FF12;
+  --card-arrow: #0B132B;
+  --card-chip: rgba(240, 245, 243, 0.12);
+  --card-line: rgba(240, 245, 243, 0.2);
 }
 
-.themePurple {
-  --card-bg: linear-gradient(180deg, #8a2bff 0%, var(--pop-purple) 55%, #5a00c8 100%);
-  --card-fade: #8a2bff;
-  --card-ink: #ffffff;
-  --card-arrow: var(--pop-purple);
-  --card-chip: rgba(255, 255, 255, 0.16);
-  --card-line: rgba(255, 255, 255, 0.25);
+.themePowder {
+  --card-bg: linear-gradient(180deg, #e8f0f7 0%, #DDE8F2 55%, #cddcea 100%);
+  --card-fade: #e8f0f7;
+  --card-ink: #0B132B;
+  --card-arrow: #DDE8F2;
+  --card-chip: rgba(11, 19, 43, 0.08);
+  --card-line: rgba(11, 19, 43, 0.14);
 }
 
-.themeYellow {
-  --card-bg: linear-gradient(180deg, #fff64a 0%, var(--pop-yellow) 55%, #e8dc00 100%);
-  --card-fade: #fff64a;
-  --card-ink: var(--ink);
-  --card-arrow: var(--pop-yellow);
-  --card-chip: rgba(10, 10, 10, 0.08);
-  --card-line: rgba(10, 10, 10, 0.16);
+.themeSlate {
+  --card-bg: linear-gradient(180deg, #2a3560 0%, #1C2541 60%, #141b33 100%);
+  --card-fade: #2a3560;
+  --card-ink: #F0F5F3;
+  --card-metric: #A3FF12;
+  --card-arrow: #1C2541;
+  --card-chip: rgba(240, 245, 243, 0.12);
+  --card-line: rgba(240, 245, 243, 0.2);
 }
 
-.themePink {
-  --card-bg: linear-gradient(180deg, #ff2a9e 0%, var(--pop-pink) 55%, #d40073 100%);
-  --card-fade: #ff2a9e;
-  --card-ink: var(--ink);
-  --card-arrow: var(--pop-pink);
-  --card-chip: rgba(255, 255, 255, 0.28);
-  --card-line: rgba(10, 10, 10, 0.18);
+.themeMist {
+  --card-bg: linear-gradient(180deg, #f6f9f8 0%, #F0F5F3 55%, #e2e9e6 100%);
+  --card-fade: #f6f9f8;
+  --card-ink: #0B132B;
+  --card-arrow: #F0F5F3;
+  --card-chip: rgba(11, 19, 43, 0.07);
+  --card-line: rgba(11, 19, 43, 0.14);
 }
 
 /* === Reduced motion fallback ============================================ */

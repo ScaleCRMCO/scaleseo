@@ -4,8 +4,8 @@
   margin-top: -48px;
   border-radius: 48px 48px 0 0;
   overflow: hidden;
-  background: #0a0a0a;
-  color: #fcfbfa;
+  background: var(--bg-dark);
+  color: var(--ink-on-dark);
 }
 
 .intro {
@@ -49,14 +49,14 @@
 
 /* === Service cards === */
 .card {
-  background: #181818;
+  background: var(--surface-dark, #181818);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 28px;
   padding: 2.5rem;
   display: flex;
   flex-direction: column;
   gap: 12px;
-  color: #fcfbfa;
+  color: var(--ink-on-dark);
   box-shadow: 0 40px 80px -40px rgba(0, 0, 0, 0.6),
               0 12px 24px -12px rgba(0, 0, 0, 0.4);
 }
@@ -76,7 +76,7 @@
 }
 
 .cardIndex {
-  color: #fcfbfa;
+  color: var(--ink-on-dark);
   opacity: 0.35;
 }
 
@@ -91,7 +91,7 @@
 .cardDesc {
   font-size: 14px;
   line-height: 1.5;
-  color: #b8b8b8;
+  color: var(--ink-dim-on-dark);
   flex-grow: 1;
 }
 
@@ -103,19 +103,25 @@
   align-self: flex-start;
   padding: 12px 22px;
   margin-top: 8px;
-  background: var(--highlight);
-  color: var(--on-highlight);
+  background: var(--explore-bg, var(--highlight));
+  color: var(--explore-ink, var(--on-highlight));
   border-radius: 999px;
   font-family: var(--sans);
   font-weight: 600;
   font-size: 13.5px;
   text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.exploreBtn:hover {
+  background: var(--highlight);
+  color: var(--on-highlight);
 }
 
 /* === Highlight card === */
 .highlight {
   background: var(--highlight);
-  color: #0a0a0a;
+  color: var(--on-highlight);
   border-radius: 28px;
   overflow: hidden;
   box-shadow: 0 40px 80px -40px rgba(153, 255, 0, 0.5),

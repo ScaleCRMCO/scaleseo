@@ -26,13 +26,13 @@
 /* Inverted appearance while a dark section (e.g. #services) sits behind
    the floating pill, so it stays legible over both light and dark ground */
 .darkMode {
-  background: rgba(16, 16, 16, 0.75);
+  background: var(--nav-dark-bg, rgba(16, 16, 16, 0.75));
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   border-color: rgba(255, 255, 255, 0.15);
 }
 .darkMode.scrolled {
-  background: rgba(16, 16, 16, 0.85);
+  background: var(--nav-dark-bg-scrolled, rgba(16, 16, 16, 0.85));
 }
 .darkMode .brand,
 .darkMode .links a,
@@ -45,7 +45,7 @@
 }
 .darkMode .navCta {
   background: #fcfbfa;
-  color: #0a0a0a;
+  color: var(--nav-ink, #0a0a0a);
 }
 .darkMode .navCta:hover {
   background: var(--highlight);
@@ -133,7 +133,7 @@
   gap: 8px;
   padding: 10px 20px;
   border-radius: 9999px;
-  background: #0a0a0a;
+  background: var(--nav-ink, #0a0a0a);
   color: #fcfbfa;
   text-decoration: none;
   font-family: var(--mono);
@@ -162,11 +162,11 @@
   left: 0;
   width: 0;
   height: 1px;
-  background: #0a0a0a;
+  background: var(--nav-ink, #0a0a0a);
   transition: width 0.3s ease, background-color 0.3s ease;
 }
 .links a:hover {
-  color: #0a0a0a;
+  color: var(--nav-ink, #0a0a0a);
 }
 .links a:hover::after {
   width: 100%;

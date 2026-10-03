@@ -19,10 +19,10 @@
   position: absolute;
   inset: 0;
   z-index: -2;
-  background:
+  background: var(--footer-glow,
     radial-gradient(90% 75% at 100% 100%, rgba(153, 255, 0, 0.95) 0%, rgba(153, 255, 0, 0.55) 28%, rgba(153, 255, 0, 0.12) 55%, transparent 72%),
     radial-gradient(70% 55% at 60% 115%, rgba(153, 255, 0, 0.28) 0%, transparent 70%),
-    radial-gradient(60% 50% at 0% 110%, rgba(153, 255, 0, 0.1) 0%, transparent 70%);
+    radial-gradient(60% 50% at 0% 110%, rgba(153, 255, 0, 0.1) 0%, transparent 70%));
 }
 
 /* Fine film grain over the gradient */

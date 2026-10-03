@@ -8,7 +8,7 @@
   min-height: 320px;
   padding: 2.25rem 2.25rem 2rem;
   border-radius: 20px;
-  background: #e4ffc2;
+  background: var(--postcard-bg, #e4ffc2);
   color: var(--ink);
   text-decoration: none;
   transition: background-color 0.3s ease, transform 0.3s ease;

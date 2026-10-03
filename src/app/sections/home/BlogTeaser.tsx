@@ -8,7 +8,7 @@ export default function BlogTeaser() {
   if (latest.length === 0) return null;
 
   return (
-    <section className={`${styles.section} section-dark`} data-nav-theme="dark">
+    <section className={`${styles.section} section-dark`} id="blog" data-nav-theme="dark">
       <div className={styles.inner}>
         <div className={styles.top}>
           <div>

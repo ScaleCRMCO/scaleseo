@@ -237,3 +237,10 @@ table).
 - `.claude/skills/` contains third-party design skill bundles (`ui-ux-pro-max`,
   `design-system`, `brand`, `ui-styling`, `banner-design`, `design`, `slides`)
   installed from an unverified npm package — usable for design reference data.
+
+## Homepage palette test (Oct 2026)
+- New palette trialled on the homepage only: Midnight #0B132B, Slate #1C2541, Mist #F0F5F3, Powder #DDE8F2, Stone #E9E5DF, Scale Lime #A3FF12.
+- All overrides live in `src/app/palette-test.css`, applied by `className="palette-test"` on `<main>` in `src/app/page.tsx` (nav/footer via `body:has(main.palette-test)`). Components keep their old colours as CSS-variable fallbacks, so other pages are unchanged.
+- Section rhythm: Hero Mist → Services Midnight → Comparison Powder → About Midnight → Case studies Stone → Campaign Midnight → Industries Mist → Process Powder → FAQ Stone → Blog Midnight → Contact Lime → Footer Midnight.
+- Case-study cards now Midnight / Powder / Slate / Mist (pink/blue/purple/yellow removed).
+- Revert: remove the import + class in page.tsx (and optionally restore the old CaseStudy card themes from git).
