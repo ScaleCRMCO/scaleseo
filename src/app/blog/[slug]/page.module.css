@@ -1,52 +1,54 @@
-/* === HERO === */
+/* === HERO — black, bold display type === */
 .hero {
-  padding: 180px 40px 70px;
-  border-bottom: 1px solid var(--line);
+  padding: 190px 40px 120px;
+  background: var(--bg-dark);
+  color: var(--ink-on-dark);
 }
 
 .heroContent {
-  max-width: 760px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
-.eyebrow {
-  font-family: var(--mono);
-  font-size: 12px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 24px;
+/* Breadcrumbs read --ink-dim / --accent; remap them for the dark hero */
+.crumbsOnDark {
+  --ink-dim: var(--ink-dim-on-dark);
+  --accent: var(--highlight);
+  margin-bottom: 28px;
 }
 
 .title {
   font-family: var(--display);
-  font-weight: 500;
-  font-size: clamp(32px, 4.5vw, 54px);
-  line-height: 1.12;
-  letter-spacing: -0.02em;
-  color: var(--ink);
-  margin-bottom: 28px;
+  font-weight: 800;
+  font-size: clamp(36px, 5.2vw, 72px);
+  line-height: 1.04;
+  letter-spacing: -0.035em;
+  color: var(--ink-on-dark);
+  margin-bottom: 36px;
 }
 
 .byline {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 10px;
-  font-family: var(--mono);
-  font-size: 12px;
-  letter-spacing: 0.04em;
-  color: var(--ink-dim);
+  gap: 12px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 15px;
+  color: var(--ink-dim-on-dark);
 }
 
 .author {
-  color: var(--ink);
+  color: var(--highlight);
+  font-weight: 700;
   text-decoration: none;
-  font-weight: 500;
 }
 
 .author:hover {
-  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .dot {
@@ -55,8 +57,11 @@
 
 /* === BODY === */
 .body {
-  padding: 80px 40px;
-  background: var(--bg-elev);
+  position: relative;
+  margin-top: -48px;
+  border-radius: 48px 48px 0 0;
+  padding: 100px 40px 80px;
+  background: var(--bg);
 }
 
 .bodyInner {
@@ -66,21 +71,21 @@
 
 .paragraph {
   font-family: var(--sans);
-  font-weight: 400;
+  font-weight: 500;
   font-size: 18px;
   line-height: 1.75;
-  color: var(--ink-dim);
+  color: #2b2b2b;
   margin-bottom: 28px;
 }
 
 .paragraph strong {
   color: var(--ink);
-  font-weight: 600;
+  font-weight: 800;
 }
 
 .subheading {
   font-family: var(--display);
-  font-weight: 600;
+  font-weight: 800;
   font-size: clamp(21px, 2.4vw, 27px);
   letter-spacing: -0.01em;
   line-height: 1.25;
@@ -101,10 +106,10 @@
   position: relative;
   padding-left: 24px;
   font-family: var(--sans);
-  font-weight: 400;
+  font-weight: 500;
   font-size: 17px;
   line-height: 1.65;
-  color: var(--ink-dim);
+  color: #2b2b2b;
 }
 
 .listItem::before {
@@ -120,13 +125,16 @@
 
 .listItem strong {
   color: var(--ink);
-  font-weight: 600;
+  font-weight: 800;
 }
 
 .inlineLink {
-  color: var(--accent);
+  color: var(--ink);
+  font-weight: 700;
   text-decoration: underline;
-  text-underline-offset: 2px;
+  text-decoration-color: var(--highlight);
+  text-decoration-thickness: 3px;
+  text-underline-offset: 3px;
 }
 
 .sectionHeading {
@@ -170,7 +178,8 @@
 .table td {
   padding: 14px 18px;
   border-top: 1px solid var(--line);
-  color: var(--ink-dim);
+  color: #2b2b2b;
+  font-weight: 500;
   vertical-align: top;
 }
 
@@ -208,7 +217,7 @@
 
 .ctaHeadline {
   font-family: var(--display);
-  font-weight: 500;
+  font-weight: 800;
   font-size: clamp(26px, 3.4vw, 40px);
   letter-spacing: -0.02em;
   color: var(--ink);
@@ -225,16 +234,19 @@
   color: var(--on-accent);
   text-decoration: none;
   font-family: var(--mono);
+  font-weight: 600;
   font-size: 12px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   border: 1px solid var(--accent);
+  border-radius: 999px;
   transition: all 0.3s ease;
 }
 
 .ctaButton:hover {
-  background: transparent;
-  color: var(--accent);
+  background: var(--highlight);
+  border-color: var(--highlight);
+  color: var(--on-highlight);
 }
 
 .arrow {
@@ -246,7 +258,8 @@
 }
 
 @media (max-width: 800px) {
-  .hero { padding: 120px 24px 50px; }
+  .hero { padding: 130px 24px 90px; }
+  .body { border-radius: 32px 32px 0 0; }
   .body { padding: 50px 24px; }
   .cta { padding: 70px 24px; }
 }

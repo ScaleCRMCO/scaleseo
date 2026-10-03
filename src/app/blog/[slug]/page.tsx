@@ -102,8 +102,9 @@ export default function BlogPostPage({
 
   return (
     <main>
-      <header className={styles.hero}>
+      <header className={styles.hero} data-nav-theme="dark">
         <div className={styles.heroContent}>
+          <div className={styles.crumbsOnDark}>
           <Breadcrumbs
             items={[
               { name: "Home", href: "/" },
@@ -111,13 +112,16 @@ export default function BlogPostPage({
               { name: post.title },
             ]}
           />
-          <p className={styles.eyebrow}>{post.category}</p>
+          </div>
           <h1 className={styles.title}>{post.title}</h1>
 
           <div className={styles.byline}>
-            <Link href="/corbin-jensen" className={styles.author}>
-              Corbin Jensen
-            </Link>
+            <span>
+              Written by{" "}
+              <Link href="/corbin-jensen" className={styles.author}>
+                Corbin Jensen
+              </Link>
+            </span>
             <span className={styles.dot}>&middot;</span>
             <span>
               {new Date(post.date).toLocaleDateString("en-CA", {
