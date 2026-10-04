@@ -89,7 +89,6 @@ body:has(main.palette-test) {
 /* Midnight sections: flip the core tokens */
 .palette-test #about,
 .palette-test #industries,
-.palette-test #contact,
 body:has(main.palette-test) footer {
   --bg: var(--midnight);
   --bg-elev: var(--midnight-2);
@@ -171,4 +170,35 @@ body:has(main.palette-test) footer {
 .palette-test #faq [class*="helpCard"] {
   --ink-on-dark: var(--ivory);
   --ink-dim-on-dark: rgba(245, 241, 232, 0.72);
+}
+
+/* Contact CTA on the brand orange. Accents inside flip to Midnight so the
+   button and selected chips don't disappear into the background. */
+.palette-test #contact {
+  --bg: var(--orange);
+  --bg-elev: #E82410;
+  --ink: var(--ivory);
+  --ink-dim: var(--ivory);
+  --ink-faint: rgba(245, 241, 232, 0.85);
+  --accent: var(--ivory);
+  --on-accent: var(--orange);
+  --line: rgba(245, 241, 232, 0.35);
+  --line-strong: var(--ivory);
+  --bg-dark: var(--orange);
+  --ink-on-dark: var(--ivory);
+  --ink-dim-on-dark: var(--ivory);
+  --line-on-dark: rgba(245, 241, 232, 0.5);
+  --surface-dark: #E82410;
+  --surface-light: #E82410;
+  --highlight: var(--midnight);
+  --on-highlight: var(--ivory);
+  --dots-color: var(--ivory);
+  --selection-bg: var(--midnight);
+  background: var(--orange);
+  color: var(--ivory);
+}
+
+/* Footer wordmark fully in the brand orange */
+body:has(main.palette-test) footer [class*="wordmark"] {
+  color: var(--orange);
 }
