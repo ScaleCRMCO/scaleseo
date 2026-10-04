@@ -112,11 +112,11 @@
   text-decoration: none;
   border-bottom: 1px solid var(--rule-strong);
   padding-bottom: 4px;
-  transition: border-color 0.25s ease;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .cellLink:hover {
-  border-color: #FF2C16;
+  transform: translateX(6px);
 }
 
 @media (max-width: 1024px) {

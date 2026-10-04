@@ -241,3 +241,9 @@ body:has(main.palette-test) footer [class*="wordmark"] {
   background: var(--powder);
   color: var(--midnight);
 }
+
+/* No orange in light blue sections: accents there are Midnight */
+.palette-test #campaign {
+  --highlight: var(--midnight);
+  --on-highlight: var(--ivory);
+}
