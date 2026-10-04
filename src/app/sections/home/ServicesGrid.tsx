@@ -85,12 +85,12 @@ export default function ServicesGrid() {
           </article>
         ))}
 
-        <article className={styles.feature}>
-          <span className={styles.featureEyebrow}>Core Services</span>
-          <h3 className={styles.featureHeading}>
+        <article className={styles.cell}>
+          <span className={styles.cellIndex}>Core Services</span>
+          <h3 className={styles.cellTitle}>
             SEO, PPC, and AI Search Optimization.
           </h3>
-          <p className={styles.featureDesc}>
+          <p className={styles.cellDesc}>
             Every campaign is customized to your industry, focused
             strictly on generating qualified business inquiries, and
             tracked using daily keyword reports.
