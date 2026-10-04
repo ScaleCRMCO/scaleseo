@@ -1,7 +1,7 @@
 /* Homepage Services — editorial spread on an Editorial Blue canvas.
    One continuous surface split by a single Ink rule rather than cards. No lime, glows or shadows. */
 .section {
-  --canvas: #A8D5DC;
+  --canvas: #B6FFFF;
   --ink-ed: #031B36;
   --rule: rgba(3, 27, 54, 0.22);
   --rule-strong: rgba(3, 27, 54, 0.5);

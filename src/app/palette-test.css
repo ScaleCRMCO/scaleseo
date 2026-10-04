@@ -6,7 +6,7 @@
      Midnight Ink   #031B36  primary dark: dark sections, headings, borders
      Warm Ivory     #F5F1E8  primary light: canvas, light text on Midnight
      Electric Orange #FF2C16 brand accent: metrics, links, hovers, labels
-     Powder Blue    #A8D5DC  secondary canvas (Services)
+     Powder Blue    #B6FFFF  secondary canvas (Services)
      Warm Stone     #D8D2C7  secondary neutral canvas
      Graphite       #3E474D  body / supporting text on light grounds
    No pure black/white, no neon, gradients or glows.
@@ -16,7 +16,7 @@ body:has(main.palette-test) {
   --midnight: #031B36;
   --ivory: #F5F1E8;
   --orange: #FF2C16;
-  --powder: #A8D5DC;
+  --powder: #B6FFFF;
   --stone: #D8D2C7;
   --graphite: #3E474D;
   --midnight-2: #0B2846;   /* card surface on Midnight */
@@ -82,7 +82,7 @@ body:has(main.palette-test) {
 
 /* === Section rhythm =====================================================
    Hero Ivory → Services Powder Blue → Comparison Ivory → About Midnight →
-   Case study Ivory → Campaign areas Stone → Industries Midnight →
+   Case study Ivory → Campaign areas Light Blue → Industries Midnight →
    Process Ivory → FAQ Stone → Blog Ivory → Contact Midnight → Footer
    Midnight */
 
@@ -126,7 +126,6 @@ body:has(main.palette-test) footer {
   color: var(--midnight);
 }
 
-.palette-test #campaign,
 .palette-test #faq {
   --bg: var(--stone);
   --bg-elev: var(--ivory);
@@ -217,4 +216,21 @@ body:has(main.palette-test) footer [class*="wordmark"] {
   --line-strong: rgba(245, 241, 232, 0.5);
   --selection-bg: var(--orange);
   background: var(--midnight);
+}
+
+/* "What goes into a campaign" on the light blue canvas with Midnight text */
+.palette-test #campaign {
+  --bg: var(--powder);
+  --bg-elev: var(--ivory);
+  --bg-dark: var(--powder);
+  --ink: var(--midnight);
+  --ink-dim: var(--midnight);
+  --ink-on-dark: var(--midnight);
+  --ink-dim-on-dark: var(--midnight);
+  --surface-dark: var(--ivory);
+  --surface-dark-hover: var(--ivory-2);
+  --surface-light: var(--ivory);
+  --line: rgba(3, 27, 54, 0.18);
+  background: var(--powder);
+  color: var(--midnight);
 }
