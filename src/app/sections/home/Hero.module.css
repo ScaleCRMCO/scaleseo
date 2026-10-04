@@ -2,7 +2,7 @@
    Paper canvas, Ink headings/UI, Graphite body copy. Typography, grid and
    scale carry the design: no glows, highlights or floating UI. */
 .hero {
-  --paper: #F5F1E8;
+  --paper: #FDFFEE;
   --ink-ed: #031B36;
   --graphite: #3E474D;
   --rule: rgba(3, 27, 54, 0.16);

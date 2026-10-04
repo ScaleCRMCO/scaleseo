@@ -15,6 +15,7 @@
 body:has(main.palette-test) {
   --midnight: #031B36;
   --ivory: #F5F1E8;
+  --canvas: #FDFFEE;      /* light section backgrounds */
   --orange: #FF2C16;
   --powder: #B6FFFF;
   --stone: #D8D2C7;
@@ -23,7 +24,7 @@ body:has(main.palette-test) {
   --ivory-2: #EDE7DA;      /* card surface on Ivory */
 
   /* Light defaults */
-  --bg: var(--ivory);
+  --bg: var(--canvas);
   --bg-elev: var(--ivory-2);
   --ink: var(--midnight);
   --ink-dim: var(--graphite);
@@ -77,7 +78,7 @@ body:has(main.palette-test) {
   --selection-bg: var(--orange);
   --selection-color: var(--ivory);
 
-  background: var(--ivory);
+  background: var(--canvas);
 }
 
 /* === Section rhythm =====================================================
@@ -115,14 +116,15 @@ body:has(main.palette-test) footer {
 .palette-test #work,
 .palette-test #process,
 .palette-test #blog {
-  --bg-dark: var(--ivory);
+  --bg: var(--canvas);
+  --bg-dark: var(--canvas);
   --ink-on-dark: var(--midnight);
   --ink-dim-on-dark: var(--graphite);
   --line-on-dark: var(--line-strong);
   --line-strong-on-dark: var(--midnight);
   --surface-dark: var(--ivory-2);
   --surface-dark-hover: var(--stone);
-  background: var(--ivory);
+  background: var(--canvas);
   color: var(--midnight);
 }
 
