@@ -102,7 +102,7 @@ body:has(main.palette-test) footer {
   --line-strong: rgba(245, 241, 232, 0.4);
   --surface-light: var(--midnight-2);
   --surface-open: var(--midnight-2);
-  --about-heading: var(--ivory);
+  --about-heading: var(--orange);
   --industries-heading: var(--ivory);
   --dots-color: var(--orange);
   --about-mark: var(--orange);

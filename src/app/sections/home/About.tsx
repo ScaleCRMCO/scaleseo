@@ -9,12 +9,6 @@ export default function About() {
           <h2 className={styles.headline}>
             SEO Managed Directly by a Calgary SEO Specialist
           </h2>
-          <p className={styles.lead}>
-            Scale SEO is an independent SEO practice based in{" "}
-            <em>Calgary, Alberta</em>, helping professional service and B2B
-            businesses improve their organic search visibility in Canada and
-            beyond.
-          </p>
           <div className={styles.body}>
             <p>
               That includes keyword research, technical SEO, content strategy,
@@ -29,7 +23,6 @@ export default function About() {
               report.
             </p>
           </div>
-          <div className={styles.sig}>— Corbin</div>
           <Link href="/about" className={styles.cta}>
             <span>More About Scale SEO</span>
             <span className={styles.arrow}>→</span>
