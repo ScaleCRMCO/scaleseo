@@ -3,9 +3,9 @@
    app/page.tsx (and, via :has(), to the body/footer while it's showing).
 
    Roles
-     Midnight Ink   #102A43  primary dark: dark sections, headings, borders
+     Midnight Ink   #031B36  primary dark: dark sections, headings, borders
      Warm Ivory     #F5F1E8  primary light: canvas, light text on Midnight
-     Electric Orange #FF5A24 brand accent: metrics, links, hovers, labels
+     Electric Orange #FF2C16 brand accent: metrics, links, hovers, labels
      Powder Blue    #A8D5DC  secondary canvas (Services)
      Warm Stone     #D8D2C7  secondary neutral canvas
      Graphite       #3E474D  body / supporting text on light grounds
@@ -13,13 +13,13 @@
    ========================================================================== */
 
 body:has(main.palette-test) {
-  --midnight: #102A43;
+  --midnight: #031B36;
   --ivory: #F5F1E8;
-  --orange: #FF5A24;
+  --orange: #FF2C16;
   --powder: #A8D5DC;
   --stone: #D8D2C7;
   --graphite: #3E474D;
-  --midnight-2: #18344F;   /* card surface on Midnight */
+  --midnight-2: #0B2846;   /* card surface on Midnight */
   --ivory-2: #EDE7DA;      /* card surface on Ivory */
 
   /* Light defaults */
@@ -32,8 +32,8 @@ body:has(main.palette-test) {
   --accent-dim: var(--graphite);
   --on-accent: var(--ivory);
   --heading-accent: var(--midnight);
-  --line: rgba(16, 42, 67, 0.14);
-  --line-strong: rgba(16, 42, 67, 0.4);
+  --line: rgba(3, 27, 54, 0.14);
+  --line-strong: rgba(3, 27, 54, 0.4);
 
   --highlight: var(--orange);
   --on-highlight: var(--ivory);
@@ -50,7 +50,7 @@ body:has(main.palette-test) {
   --line-strong-on-dark: var(--ivory);
 
   --surface-dark: var(--midnight-2);
-  --surface-dark-hover: #1F3D5A;
+  --surface-dark-hover: #133356;
   --surface-light: var(--ivory-2);
   --surface-open: var(--ivory-2);
 
@@ -138,7 +138,7 @@ body:has(main.palette-test) footer {
   --surface-dark-hover: var(--ivory-2);
   --surface-light: var(--ivory);
   --surface-open: var(--ivory);
-  --line: rgba(16, 42, 67, 0.18);
+  --line: rgba(3, 27, 54, 0.18);
   background: var(--stone);
   color: var(--midnight);
 }

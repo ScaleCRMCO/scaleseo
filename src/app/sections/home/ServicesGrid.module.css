@@ -2,9 +2,9 @@
    One continuous surface split by a single Ink rule rather than cards. No lime, glows or shadows. */
 .section {
   --canvas: #A8D5DC;
-  --ink-ed: #102A43;
-  --rule: rgba(16, 42, 67, 0.22);
-  --rule-strong: rgba(16, 42, 67, 0.5);
+  --ink-ed: #031B36;
+  --rule: rgba(3, 27, 54, 0.22);
+  --rule-strong: rgba(3, 27, 54, 0.5);
 
   background: var(--canvas);
   color: var(--ink-ed);
@@ -133,7 +133,7 @@
 }
 
 .cellLink:hover {
-  border-color: #FF5A24;
+  border-color: #FF2C16;
 }
 
 @media (max-width: 1024px) {

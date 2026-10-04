@@ -3,8 +3,8 @@
    legible over any section colour. Colours are set here explicitly rather
    than via page tokens so the bar reads the same on every page. */
 .nav {
-  --nav-fg: #102A43;
-  --nav-rule: rgba(16, 42, 67, 0.18);
+  --nav-fg: #031B36;
+  --nav-rule: rgba(3, 27, 54, 0.18);
   position: fixed;
   top: 0;
   left: 0;
@@ -46,7 +46,7 @@
   --nav-rule: rgba(245, 241, 232, 0.22);
 }
 .darkMode.scrolled {
-  background: rgba(16, 42, 67, 0.72);
+  background: rgba(3, 27, 54, 0.72);
 }
 .darkMode .brand,
 .darkMode .links a,
@@ -153,7 +153,7 @@
   color: #F5F1E8;
 }
 .darkMode .navCta:hover {
-  color: #102A43;
+  color: #031B36;
 }
 .navCtaArrow {
   transition: transform 0.3s ease;
@@ -171,7 +171,7 @@
   left: 0;
   width: 0;
   height: 1px;
-  background: #FF5A24;
+  background: #FF2C16;
   transition: width 0.3s ease;
 }
 .links a:hover::after {

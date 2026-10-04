@@ -3,9 +3,9 @@
    scale carry the design: no glows, highlights or floating UI. */
 .hero {
   --paper: #F5F1E8;
-  --ink-ed: #102A43;
+  --ink-ed: #031B36;
   --graphite: #3E474D;
-  --rule: rgba(16, 42, 67, 0.16);
+  --rule: rgba(3, 27, 54, 0.16);
 
   position: relative;
   min-height: 92vh;
@@ -71,7 +71,7 @@
 }
 
 .ctaPrimary:hover {
-  background: #1A3A58;
+  background: #0B2846;
 }
 
 .ctaSecondary {
@@ -85,8 +85,8 @@
 }
 
 .ctaSecondary:hover {
-  color: #FF5A24;
-  border-color: #FF5A24;
+  color: #FF2C16;
+  border-color: #FF2C16;
 }
 
 /* === Right column: editorial proof — large stat, screenshot, caption === */
@@ -111,7 +111,7 @@
   font-size: clamp(4rem, 7.5vw, 7rem);
   line-height: 0.85;
   letter-spacing: -0.045em;
-  color: #FF5A24;
+  color: #FF2C16;
 }
 
 .proofLabel {

@@ -229,11 +229,11 @@
 .themeMidnight,
 .themeLime,
 .themePink {
-  --card-bg: #102A43;
+  --card-bg: #031B36;
   --card-ink: #F5F1E8;
   --card-chip: rgba(245, 241, 232, 0.08);
   --card-line: rgba(245, 241, 232, 0.16);
-  border: 1px solid #102A43;
+  border: 1px solid #031B36;
 }
 
 /* Screenshot sits cleanly on the card — no fade into the colour */
@@ -252,10 +252,10 @@
 }
 
 /* Accent: metric + arrow in Electric Orange */
-.themeSky { --card-metric: #FF5A24; --card-accent: #FF5A24; }
-.themeMidnight { --card-metric: #FF5A24; --card-accent: #FF5A24; }
-.themeLime { --card-metric: #FF5A24; --card-accent: #FF5A24; }
-.themePink { --card-metric: #FF5A24; --card-accent: #FF5A24; }
+.themeSky { --card-metric: #FF2C16; --card-accent: #FF2C16; }
+.themeMidnight { --card-metric: #FF2C16; --card-accent: #FF2C16; }
+.themeLime { --card-metric: #FF2C16; --card-accent: #FF2C16; }
+.themePink { --card-metric: #FF2C16; --card-accent: #FF2C16; }
 
 .themeSky .cardArrow,
 .themeMidnight .cardArrow,
