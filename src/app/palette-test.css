@@ -247,3 +247,11 @@ body:has(main.palette-test) footer [class*="wordmark"] {
   --highlight: var(--midnight);
   --on-highlight: var(--ivory);
 }
+
+/* Industries corner dots: larger patch that fades out more gradually */
+.palette-test #industries {
+  --dots-w: min(58vw, 860px);
+  --dots-mask: radial-gradient(circle at top right, #000 0%, #000 38%, transparent 92%);
+  --dots-w-sm: 60vw;
+  --dots-opacity-sm: 0.8;
+}

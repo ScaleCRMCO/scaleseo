@@ -24,9 +24,9 @@
 .introTitle {
   font-family: var(--sans);
   font-weight: 800;
-  font-size: clamp(2.4rem, 4.6vw, 4.25rem);
-  line-height: 1.04;
-  letter-spacing: -0.035em;
+  font-size: clamp(44px, 6.4vw, 96px);
+  line-height: 1;
+  letter-spacing: -0.04em;
   color: var(--ink-ed);
   margin: 0;
 }
