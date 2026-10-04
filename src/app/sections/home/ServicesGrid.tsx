@@ -54,7 +54,7 @@ const services: {
 
 export default function ServicesGrid() {
   return (
-    <section className={styles.section} id="services" data-nav-theme="dark">
+    <section className={styles.section} id="services">
       <div className={styles.intro}>
         <h2 className={styles.introTitle}>SEO &amp; Digital Growth Services</h2>
         <div className={styles.introBody}>

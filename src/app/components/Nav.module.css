@@ -1,59 +1,64 @@
+/* Full-width editorial bar: transparent with a hairline rule at the top
+   of the page, then a blurred Paper backdrop once scrolled so links stay
+   legible over any section colour. Colours are set here explicitly rather
+   than via page tokens so the bar reads the same on every page. */
 .nav {
+  --nav-fg: #14202B;
+  --nav-rule: rgba(20, 32, 43, 0.18);
   position: fixed;
-  top: 18px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: calc(100% - 48px);
-  max-width: 1180px;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 50;
-  padding: 12px 28px;
+  padding: 0 6%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-radius: 9999px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  background: rgba(255, 255, 255, 0.4);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  box-shadow: 0 8px 32px -12px rgba(10, 10, 10, 0.12);
-  transition: all 0.4s ease;
+  height: 84px;
+  background: transparent;
+  transition: background-color 0.35s ease, height 0.35s ease;
+}
+.nav::after {
+  content: "";
+  position: absolute;
+  left: 6%;
+  right: 6%;
+  bottom: 0;
+  height: 1px;
+  background: var(--nav-rule);
+  transition: left 0.35s ease, right 0.35s ease;
 }
 .scrolled {
-  padding: 10px 24px;
-  background: rgba(255, 255, 255, 0.55);
+  height: 68px;
+  background: rgba(244, 241, 232, 0.78);
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+}
+.scrolled::after {
+  left: 0;
+  right: 0;
 }
 
-/* Inverted appearance while a dark section (e.g. #services) sits behind
-   the floating pill, so it stays legible over both light and dark ground */
+/* Inverted appearance while a dark section (data-nav-theme="dark") sits
+   behind the bar */
 .darkMode {
-  background: var(--nav-dark-bg, rgba(16, 16, 16, 0.75));
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border-color: rgba(255, 255, 255, 0.15);
+  --nav-fg: #F4F1E8;
+  --nav-rule: rgba(244, 241, 232, 0.22);
 }
 .darkMode.scrolled {
-  background: var(--nav-dark-bg-scrolled, rgba(16, 16, 16, 0.85));
+  background: rgba(20, 32, 43, 0.72);
 }
 .darkMode .brand,
 .darkMode .links a,
 .darkMode .num,
 .darkMode .wordmark {
-  color: #fcfbfa;
+  color: var(--nav-fg);
 }
 .darkMode .mark {
   color: #b8b8b8;
 }
-.darkMode .navCta {
-  background: #fcfbfa;
-  color: var(--nav-ink, #0a0a0a);
-}
-.darkMode .navCta:hover {
-  background: var(--highlight);
-  color: var(--on-highlight);
-}
-.darkMode .burgerLine {
-  background: #fcfbfa;
-}
+
+
 .brandCrow {
   height: 26px;
   width: auto;
@@ -66,7 +71,7 @@
   font-weight: 800;
   font-size: 20px;
   letter-spacing: -0.02em;
-  color: var(--ink);
+  color: var(--nav-fg);
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -79,12 +84,10 @@
   font-family: var(--brand);
 }
 .wordmarkAccent {
-  color: var(--accent);
+  color: inherit;
   transition: color 0.3s ease;
 }
-.darkMode .wordmarkAccent {
-  color: var(--highlight);
-}
+
 .mark {
   font-family: var(--mono);
   font-weight: 400;
@@ -105,15 +108,17 @@
 }
 .links {
   display: flex;
-  gap: 32px;
-  font-family: var(--sans);
-  font-weight: 700;
-  font-size: 12px;
-  letter-spacing: 0.02em;
+  gap: 40px;
+  margin-left: auto;
+  margin-right: 40px;
+  font-family: var(--mono);
+  font-weight: 400;
+  font-size: 13px;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 .links a {
-  color: var(--ink);
+  color: var(--nav-fg);
   text-decoration: none;
   position: relative;
   transition: color 0.2s;
@@ -131,20 +136,24 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 10px 20px;
-  border-radius: 9999px;
-  background: var(--nav-ink, #0a0a0a);
-  color: #fcfbfa;
+  padding: 11px 18px;
+  border-radius: 4px;
+  border: 1px solid var(--nav-fg);
+  background: transparent;
+  color: var(--nav-fg);
   text-decoration: none;
   font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.1em;
+  font-size: 12px;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  transition: background-color 0.3s cubic-bezier(0.25, 1, 0.5, 1), color 0.3s ease;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 .navCta:hover {
-  background: var(--highlight);
-  color: var(--on-highlight);
+  background: var(--nav-fg);
+  color: #F4F1E8;
+}
+.darkMode .navCta:hover {
+  color: #14202B;
 }
 .navCtaArrow {
   transition: transform 0.3s ease;
@@ -162,22 +171,11 @@
   left: 0;
   width: 0;
   height: 1px;
-  background: var(--nav-ink, #0a0a0a);
-  transition: width 0.3s ease, background-color 0.3s ease;
-}
-.links a:hover {
-  color: var(--nav-ink, #0a0a0a);
+  background: var(--nav-fg);
+  transition: width 0.3s ease;
 }
 .links a:hover::after {
   width: 100%;
-}
-/* On the dark/liquid-glass nav state, hover highlights in lime instead of
-   black — black-on-dark would be invisible, lime reads clearly there */
-.darkMode .links a::after {
-  background: var(--highlight);
-}
-.darkMode .links a:hover {
-  color: var(--highlight);
 }
 /* ============ DARK PAGE STYLES ============ */
 .onDark .brand {
@@ -197,6 +195,7 @@
 }
 /* When the mobile menu is open, drop the pill chrome so the full-screen
    overlay isn't trapped inside the nav's containing block */
+.menuOpen::after { display: none; }
 .menuOpen {
   background: transparent;
   border-color: transparent;
@@ -221,7 +220,7 @@
   display: block;
   width: 26px;
   height: 1.5px;
-  background: var(--ink);
+  background: var(--nav-fg);
   transition: transform 0.35s ease, opacity 0.3s ease;
 }
 .onDark .burgerLine { background: var(--ink-on-dark); }
@@ -301,7 +300,8 @@
   color: var(--on-highlight);
 }
 @media (max-width: 900px) {
-  .nav { padding: 16px 24px; }
+  .nav { padding: 0 24px; height: 72px; }
+  .nav::after { left: 24px; right: 24px; }
   .links { display: none; }
   .burger { display: flex; }
   /* keep brand above the open menu overlay */
