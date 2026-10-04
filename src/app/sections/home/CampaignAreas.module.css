@@ -2,7 +2,7 @@
    same card language as the homepage ServicesGrid. */
 .section {
   position: relative;
-  padding: 140px 40px;
+  padding: 140px 3%;
   margin-top: -48px;
   border-radius: 48px 48px 0 0;
   overflow: hidden;
@@ -15,8 +15,7 @@
   align-items: flex-end;
   justify-content: space-between;
   gap: 60px;
-  max-width: 1400px;
-  margin: 0 auto 64px;
+  margin: 0 0 80px;
 }
 
 .introTitle {
@@ -34,103 +33,114 @@
   flex-direction: column;
   gap: 16px;
   font-family: var(--sans);
-  font-size: 16px;
+  font-size: 17px;
+  font-weight: 500;
   line-height: 1.65;
   color: var(--ink-dim-on-dark);
 }
 
-/* 3 cards across the top row, 2 wider cards on the second row, so the
-   grid never leaves an empty slot. */
+/* 3 x 2 grid of Midnight squares — five campaign areas plus a closing
+   "Explore SEO Services" cell. Centred editorial layout with a small
+   tick, label, title, sketch icon and copy. */
 .grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
-  max-width: 1400px;
-  margin: 0 auto;
 }
 
 .card {
-  grid-column: span 2;
-  background: var(--surface-dark, #181818);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 28px;
-  padding: 2.5rem;
+  position: relative;
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  color: var(--ink-on-dark);
-  box-shadow: 0 40px 80px -40px rgba(0, 0, 0, 0.6),
-              0 12px 24px -12px rgba(0, 0, 0, 0.4);
+  align-items: center;
+  text-align: center;
+  background: #031B36;
+  color: #F5F1E8;
+  padding: 0 clamp(28px, 3vw, 56px) 56px;
+  text-decoration: none;
 }
 
-.card:nth-child(n + 4) {
-  grid-column: span 3;
+.tick {
+  width: 1px;
+  height: 48px;
+  background: rgba(182, 255, 255, 0.5);
+  margin-bottom: 28px;
 }
 
-.cardHead {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 4px;
+.cardIndex {
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #B6FFFF;
+  margin-bottom: 14px;
 }
 
 .cardTitle {
   font-family: var(--display);
-  font-weight: 700;
-  font-size: 24px;
-  letter-spacing: -0.01em;
+  font-weight: 800;
+  font-size: clamp(26px, 2.4vw, 38px);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  color: #F5F1E8;
+  margin-bottom: 28px;
 }
 
-.cardIndex {
-  color: var(--ink-on-dark);
-  opacity: 0.35;
+.icon {
+  width: clamp(120px, 11vw, 170px);
+  height: auto;
+  margin-bottom: 32px;
+  fill: none;
+  stroke: #B6FFFF;
+  stroke-opacity: 0.8;
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .cardDesc {
-  font-size: 14.5px;
-  line-height: 1.6;
-  color: var(--ink-dim-on-dark);
+  max-width: 440px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.65;
+  color: rgba(245, 241, 232, 0.85);
+  margin-bottom: 14px;
 }
 
-.ctaRow {
-  max-width: 1400px;
-  margin: 48px auto 0;
+.ctaCard {
+  justify-content: flex-start;
+  cursor: pointer;
 }
 
-.cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 14px 26px;
-  background: var(--highlight);
-  color: var(--on-highlight);
-  border-radius: 999px;
+.ctaLink {
+  margin-top: auto;
   font-family: var(--sans);
-  font-weight: 600;
-  font-size: 14px;
-  text-decoration: none;
+  font-weight: 700;
+  font-size: 16px;
+  color: #F5F1E8;
+  border-bottom: 1px solid rgba(245, 241, 232, 0.4);
+  padding-bottom: 4px;
 }
 
 .ctaArrow {
   display: inline-block;
-  transition: transform 0.3s ease;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.cta:hover .ctaArrow {
-  transform: translateX(4px);
+.ctaCard:hover .ctaArrow {
+  transform: translateX(6px);
 }
 
 @media (max-width: 1100px) {
   .grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  .card,
-  .card:nth-child(n + 4) {
-    grid-column: span 1;
-  }
-  .card:last-child {
-    grid-column: span 2;
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -151,6 +161,6 @@
     grid-column: span 1;
   }
   .card {
-    padding: 2rem 1.5rem;
+    padding: 0 1.5rem 2.5rem;
   }
 }
