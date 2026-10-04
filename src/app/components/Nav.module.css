@@ -30,7 +30,8 @@
 }
 .scrolled {
   height: 68px;
-  background: rgba(253, 255, 238, 0.8);
+  /* --nav-bg is set from Nav.tsx to the colour of the section behind */
+  background: color-mix(in srgb, var(--nav-bg, #FDFFEE) 90%, transparent);
   backdrop-filter: blur(18px) saturate(160%);
   -webkit-backdrop-filter: blur(18px) saturate(160%);
 }
@@ -44,9 +45,6 @@
 .darkMode {
   --nav-fg: #F5F1E8;
   --nav-rule: rgba(245, 241, 232, 0.22);
-}
-.darkMode.scrolled {
-  background: rgba(3, 27, 54, 0.72);
 }
 .darkMode .brand,
 .darkMode .links a,
@@ -112,7 +110,7 @@
   margin-left: auto;
   margin-right: 40px;
   font-family: var(--mono);
-  font-weight: 400;
+  font-weight: 700;
   font-size: 13px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -143,6 +141,7 @@
   color: var(--nav-fg);
   text-decoration: none;
   font-family: var(--mono);
+  font-weight: 700;
   font-size: 12px;
   letter-spacing: 0.08em;
   text-transform: uppercase;

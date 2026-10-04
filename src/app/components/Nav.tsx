@@ -71,6 +71,7 @@ export default function Nav() {
   const [open, setOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
+  const navRef = useRef<HTMLElement | null>(null);
   const servicesCloseTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   // Small delay before closing the Services dropdown — without it, moving
   // the mouse diagonally from the trigger toward the menu (rather than
@@ -93,28 +94,47 @@ export default function Nav() {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-  // Invert the floating nav's colors while ANY dark-themed section is
-  // behind it, so the pill stays legible over both light and dark ground.
-  // Every dark section on every page marks itself with
-  // data-nav-theme="dark" (see globals.css .nav-dark-section helper and
-  // each section's className) instead of this hard-coding a single
-  // homepage element id, so this works page-wide (About, homepage, etc.)
+  // Match the bar to whatever section is behind it: sample the element
+  // under the nav's bottom edge, walk up to the first ancestor with a
+  // solid background, and copy that colour onto the nav. Light vs dark
+  // text follows from the colour's luminance, so every section on every
+  // page is handled without per-section flags.
   useEffect(() => {
-    const targets = document.querySelectorAll('[data-nav-theme="dark"]');
-    if (!targets.length) return;
-    const intersecting = new Set<Element>();
-    const observer = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) intersecting.add(entry.target);
-          else intersecting.delete(entry.target);
+    let frame = 0;
+    const sample = () => {
+      frame = 0;
+      const nav = navRef.current;
+      if (!nav) return;
+      const y = nav.getBoundingClientRect().bottom + 1;
+      // Sample near the left edge so inner cards (e.g. the contact form)
+      // don't override the section colour
+      const x = 4;
+      let el = document
+        .elementsFromPoint(x, y)
+        .find((e) => !nav.contains(e)) as HTMLElement | undefined;
+      while (el && el !== document.documentElement) {
+        const bg = getComputedStyle(el).backgroundColor;
+        const m = bg.match(/[\d.]+/g);
+        if (m && (m.length < 4 || parseFloat(m[3]) > 0.5)) {
+          const [r, g, b] = m.map(Number);
+          nav.style.setProperty("--nav-bg", `rgb(${r}, ${g}, ${b})`);
+          setDarkMode(0.2126 * r + 0.7152 * g + 0.0722 * b < 140);
+          return;
         }
-        setDarkMode(intersecting.size > 0);
-      },
-      { rootMargin: "-72px 0px -85% 0px" }
-    );
-    targets.forEach((t) => observer.observe(t));
-    return () => observer.disconnect();
+        el = el.parentElement ?? undefined;
+      }
+    };
+    const onChange = () => {
+      if (!frame) frame = requestAnimationFrame(sample);
+    };
+    sample();
+    window.addEventListener("scroll", onChange, { passive: true });
+    window.addEventListener("resize", onChange);
+    return () => {
+      window.removeEventListener("scroll", onChange);
+      window.removeEventListener("resize", onChange);
+      if (frame) cancelAnimationFrame(frame);
+    };
   }, []);
   // Lock body scroll when the mobile menu is open
   useEffect(() => {
@@ -125,6 +145,7 @@ export default function Nav() {
   return (
     <>
     <nav
+      ref={navRef}
       className={`${styles.nav} ${scrolled ? styles.scrolled : ""} ${
         open ? styles.menuOpen : ""
       } ${darkMode ? styles.darkMode : ""}`}
