@@ -73,7 +73,12 @@ body:has(main.palette-test) {
   --explore-ink: var(--ivory);
 
   --hero-ambient: none;
-  --footer-glow: none;
+  /* Footer: brand-orange glow rising from the bottom-right (logo) corner */
+  --footer-glow:
+    radial-gradient(110% 100% at 100% 100%, rgba(255, 44, 22, 0.95) 0%, rgba(255, 44, 22, 0.6) 28%, rgba(255, 44, 22, 0.2) 55%, transparent 78%),
+    radial-gradient(60% 50% at 70% 115%, rgba(255, 44, 22, 0.25) 0%, transparent 70%);
+  --footer-glow-sm:
+    radial-gradient(120% 45% at 100% 100%, rgba(255, 44, 22, 0.85) 0%, rgba(255, 44, 22, 0.4) 32%, rgba(255, 44, 22, 0.1) 60%, transparent 75%);
 
   --selection-bg: var(--orange);
   --selection-color: var(--ivory);
@@ -103,7 +108,7 @@ body:has(main.palette-test) footer {
   --surface-light: var(--midnight-2);
   --surface-open: var(--midnight-2);
   --about-heading: var(--orange);
-  --industries-heading: var(--ivory);
+  --industries-heading: var(--orange);
   --dots-color: var(--orange);
   --about-mark: var(--orange);
   --about-accent: var(--orange);

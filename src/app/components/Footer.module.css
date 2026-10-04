@@ -198,9 +198,9 @@
     gap: 36px 24px;
   }
   .glow {
-    background:
+    background: var(--footer-glow-sm,
       radial-gradient(120% 45% at 100% 100%, rgba(153, 255, 0, 0.95) 0%, rgba(153, 255, 0, 0.5) 30%, rgba(153, 255, 0, 0.1) 60%, transparent 75%),
-      radial-gradient(90% 35% at 30% 110%, rgba(153, 255, 0, 0.22) 0%, transparent 70%);
+      radial-gradient(90% 35% at 30% 110%, rgba(153, 255, 0, 0.22) 0%, transparent 70%));
   }
   .mark {
     width: 150px;
