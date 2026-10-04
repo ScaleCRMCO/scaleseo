@@ -115,7 +115,7 @@ export default function Contact() {
         </div>
 
         {/* RIGHT — dark form card */}
-        <div className={styles.right}>
+        <div className={styles.right} data-contact-form>
           <h3 className={styles.formHeadline}>Your Details</h3>
 
           <form className={styles.form} onSubmit={handleSubmit}>
