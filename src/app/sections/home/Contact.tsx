@@ -51,13 +51,44 @@ export default function Contact() {
   }
 
   return (
-    <section className={styles.contact} id="contact" data-nav-theme="dark">
+    <section className={styles.contact} id="contact">
       <div className={styles.grid}>
         {/* LEFT — booking link + contact methods */}
         <div className={styles.left}>
           <h2 className={styles.headline}>
             Ready to Improve Your <em>Organic Search Visibility?</em>
           </h2>
+
+          {/* Hand-drawn mailbox sketch filling the open left column. Plain
+              strokes roughened by the turbulence filter defined inline. */}
+          <div className={styles.sketchWrap} aria-hidden="true">
+            <svg className={styles.sketch} viewBox="0 0 260 205" overflow="visible">
+              <filter id="contact-sketch">
+                <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" seed="7" />
+                <feDisplacementMap in="SourceGraphic" scale="5" />
+              </filter>
+              <g filter="url(#contact-sketch)">
+                {/* mailbox body */}
+                <path d="M40 150V92c0-24 18-40 42-40h70" />
+                <path d="M40 150h112" />
+                {/* door, swung open */}
+                <path d="M152 150V86c0-20 12-34 28-34s28 14 28 34v64z" />
+                <path d="M152 150l30 30h50l-24-30" />
+                {/* flag */}
+                <path d="M96 52V10h26v16H96" />
+                {/* post */}
+                <path d="M84 150v42h22v-42" />
+                {/* letter peeking out */}
+                <path d="M176 112l30-26" />
+                <path d="M174 86v18" />
+                {/* flower */}
+                <path d="M214 46c-8-6-4-18 6-16 0-10 14-10 14 0 10-2 14 10 6 16 6 8-4 16-12 10-8 6-18-2-14-10z" />
+                <path d="M222 56l-10 26" />
+                {/* motion marks */}
+                <path d="M222 102h12M220 118l12 6" />
+              </g>
+            </svg>
+          </div>
 
           <a
             href="https://cal.com/corbinjensen-scaleseo/30min"

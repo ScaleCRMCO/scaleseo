@@ -178,51 +178,22 @@ body:has(main.palette-test) footer {
   --ink-dim-on-dark: rgba(245, 241, 232, 0.72);
 }
 
-/* Contact CTA on the brand orange. Accents inside flip to Midnight so the
-   button and selected chips don't disappear into the background. */
-.palette-test #contact {
-  --bg: var(--orange);
-  --bg-elev: #E82410;
-  --ink: var(--ivory);
-  --ink-dim: var(--ivory);
-  --ink-faint: rgba(245, 241, 232, 0.85);
-  --accent: var(--ivory);
-  --on-accent: var(--orange);
-  --line: rgba(245, 241, 232, 0.35);
-  --line-strong: var(--ivory);
-  --bg-dark: var(--orange);
-  --ink-on-dark: var(--ivory);
-  --ink-dim-on-dark: var(--ivory);
-  --line-on-dark: rgba(245, 241, 232, 0.5);
-  --surface-dark: #E82410;
-  --surface-light: #E82410;
-  --highlight: var(--midnight);
-  --on-highlight: var(--ivory);
-  --dots-color: var(--ivory);
-  --selection-bg: var(--midnight);
-  background: var(--orange);
-  color: var(--ivory);
-}
-
 /* Footer wordmark fully in the brand orange */
 body:has(main.palette-test) footer [class*="wordmark"] {
   color: var(--orange);
 }
 
-/* Contact form card stays Midnight on the orange section, with the
-   orange accent restored for its button and selected chips */
-.palette-test #contact [data-contact-form] {
-  --bg-dark: var(--midnight);
-  --surface-dark: var(--midnight-2);
-  --surface-dark-hover: #133356;
-  --highlight: var(--orange);
+/* Contact CTA on the light blue canvas, Midnight text, no orange */
+.palette-test #contact {
+  --bg: var(--powder);
+  --ink: var(--midnight);
+  --ink-dim: var(--midnight);
+  --highlight: var(--midnight);
   --on-highlight: var(--ivory);
-  --ink-dim-on-dark: rgba(245, 241, 232, 0.72);
-  --line-on-dark: rgba(245, 241, 232, 0.3);
-  --line: rgba(245, 241, 232, 0.2);
-  --line-strong: rgba(245, 241, 232, 0.5);
-  --selection-bg: var(--orange);
-  background: var(--midnight);
+  --selection-bg: var(--midnight);
+  --selection-color: var(--ivory);
+  background: var(--powder);
+  color: var(--midnight);
 }
 
 /* "What goes into a campaign" on the light blue canvas with Midnight text */

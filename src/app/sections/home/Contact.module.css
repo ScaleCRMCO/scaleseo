@@ -1,310 +1,176 @@
+/* Homepage contact CTA — light blue canvas, Midnight text. Heading,
+   sketch and contact methods on the left; an open (un-carded) form on the
+   right, separated by a single vertical rule. */
 .contact {
-  position: relative;
-  padding: 120px 40px 160px;
-  margin-top: -48px;
-  border-radius: 48px 48px 0 0;
-  overflow: hidden;
-  isolation: isolate;
-  /* Solid lime CTA block — the brand colour at full strength */
-  background: var(--highlight);
-  color: var(--on-highlight);
-  --ink-dim: rgba(10, 10, 10, 0.72);
-  --line: rgba(10, 10, 10, 0.2);
-}
+  --navy: #031B36;
+  --rule: rgba(3, 27, 54, 0.35);
+  --rule-soft: rgba(3, 27, 54, 0.22);
 
-/* Dot grid fading in from the top-right corner */
-.contact::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: -1;
-  /* Square patch of dots in the corner, fading out before the text */
-  width: min(28vw, 400px);
-  aspect-ratio: 1;
-  background-image: radial-gradient(circle, rgba(11, 19, 43, 0.55) 1.6px, transparent 2px);
-  background-size: 30px 30px;
-  background-position: top right;
-  -webkit-mask-image: radial-gradient(circle at top right, #000 0%, #000 18%, transparent 68%);
-  mask-image: radial-gradient(circle at top right, #000 0%, #000 18%, transparent 68%);
-  pointer-events: none;
+  position: relative;
+  padding: 120px 3% 140px;
+  background: var(--bg, #B6FFFF);
+  color: var(--navy);
 }
 
 .grid {
-  max-width: 1320px;
-  margin: 0 auto;
   display: grid;
-  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
-  gap: 64px;
-  align-items: center;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: stretch;
 }
 
-/* === LEFT COLUMN — sits straight on the lime === */
+/* === LEFT === */
 .left {
-  background: transparent;
-  padding: 24px 0 0;
   display: flex;
   flex-direction: column;
-}
-
-.eyebrow {
-  display: inline-flex;
-  align-items: center;
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--ink-dim);
-  margin-bottom: 28px;
-}
-
-.dot {
-  display: inline-block;
-  width: 6px;
-  height: 6px;
-  background: var(--accent);
-  border-radius: 50%;
-  margin-right: 10px;
+  padding-right: clamp(32px, 5vw, 96px);
 }
 
 .headline {
   font-family: var(--display);
   font-weight: 800;
-  font-size: clamp(40px, 5vw, 72px);
-  line-height: 1.02;
-  letter-spacing: -0.035em;
-  color: var(--ink);
-  margin-bottom: 48px;
+  font-size: clamp(44px, 6.4vw, 96px);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--navy);
+  max-width: 11ch;
 }
 
 .headline em {
   font-style: normal;
-  font-weight: 800;
-  color: var(--ink);
 }
 
-.lede {
-  font-family: var(--sans);
-  font-size: 15.5px;
-  line-height: 1.65;
-  color: var(--ink-dim);
-  max-width: 440px;
-  margin-bottom: 16px;
-}
-
-.promise {
-  font-family: var(--sans);
-  font-weight: 700;
-  font-size: 15.5px;
-  line-height: 1.5;
-  color: var(--ink);
-  max-width: 440px;
-  margin: 8px 0 40px;
-}
-
-.bookCard {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  background: var(--ink);
-  color: var(--on-accent);
-  padding: 22px 26px;
-  border-radius: 18px;
-  text-decoration: none;
-  margin-bottom: 36px;
-  transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.bookCard:hover {
-  transform: translateY(-2px);
-  background: var(--surface-dark-hover, #1f1f1f);
-  color: var(--highlight);
-}
-
-.bookIcon {
-  width: 42px;
-  height: 42px;
-  flex-shrink: 0;
-  border-radius: 50%;
-  background: rgba(252, 251, 250, 0.12);
+.sketchWrap {
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 56px 0;
 }
 
-.bookIcon svg {
-  width: 20px;
-  height: 20px;
+.sketch {
+  width: clamp(220px, 26vw, 400px);
+  height: auto;
+  fill: none;
+  stroke: var(--navy);
+  stroke-width: 7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
-.bookCard:hover .bookIcon {
-  background: rgba(153, 255, 0, 0.14);
-}
-
-.bookText {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-  flex-grow: 1;
-}
-
-.bookLabel {
-  font-family: var(--display);
-  font-weight: 600;
-  font-size: 17px;
-}
-
-.bookSub {
-  font-family: var(--sans);
-  font-size: 13px;
-  opacity: 0.75;
-}
-
-.bookArrow {
-  font-size: 20px;
-  transition: transform 0.3s ease;
-}
-
-.bookCard:hover .bookArrow {
-  transform: translateX(4px);
-}
-
-.methods {
-  list-style: none;
-  margin: 0 0 36px;
-  padding: 0;
-  border-top: 1px solid var(--line);
-}
-
+/* Book link + email + phone as simple ruled rows */
+.bookCard,
 .method {
   display: flex;
   align-items: center;
   gap: 18px;
-  padding: 20px 4px;
-  border-bottom: 1px solid var(--line);
+  padding: 20px 0;
+  border-top: 1px solid var(--rule);
+  color: var(--navy);
+  text-decoration: none;
 }
 
+.bookIcon,
 .methodIcon {
   width: 40px;
   height: 40px;
   flex-shrink: 0;
-  border-radius: 50%;
-  background: var(--bg);
-  border: 1px solid var(--line);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--ink);
+  border: 1px solid var(--rule);
+  border-radius: 50%;
 }
 
+.bookIcon svg,
 .methodIcon svg {
   width: 18px;
   height: 18px;
 }
 
+.bookText,
 .methodBody {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 2px;
-  flex-grow: 1;
+  gap: 4px;
 }
 
+.bookLabel {
+  font-weight: 800;
+  font-size: 20px;
+  letter-spacing: -0.01em;
+}
+
+.bookSub,
 .methodLabel {
   font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.14em;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--ink-faint);
 }
 
 .methodValue {
-  font-family: var(--display);
-  font-weight: 500;
-  font-size: 17px;
-  color: var(--ink);
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--navy);
   text-decoration: none;
 }
 
-a.methodValue:hover {
-  color: var(--accent);
-}
-
+.bookArrow,
 .methodArrow {
-  color: var(--ink-faint);
-  font-size: 16px;
+  font-size: 20px;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.footNote {
-  margin-top: auto;
-  font-family: var(--sans);
-  font-size: 13.5px;
-  line-height: 1.6;
-  color: var(--ink-faint);
+.bookCard:hover .bookArrow,
+.method:hover .methodArrow {
+  transform: translateX(6px);
 }
 
-.footLink {
-  color: var(--ink);
-  font-weight: 600;
-  text-decoration: none;
+.methods {
+  list-style: none;
+  border-bottom: 1px solid var(--rule);
 }
 
-.footLink:hover {
-  text-decoration: underline;
-}
-
-/* === RIGHT COLUMN (dark form card) === */
+/* === RIGHT — open form === */
 .right {
-  background: var(--bg-dark);
-  color: var(--ink-on-dark);
-  padding: 64px 56px;
-  border-radius: 32px;
-  box-shadow: 0 50px 100px -40px rgba(10, 10, 10, 0.45);
-  /* Only this column is dark, not the whole section, so it needs its own
-     selection-color override (see [data-nav-theme="dark"] in globals.css). */
-  --selection-bg: var(--highlight);
-  --selection-color: var(--on-highlight);
-}
-
-.eyebrowDark {
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--highlight);
-  margin-bottom: 16px;
+  border-left: 1px solid var(--rule);
+  padding-left: clamp(32px, 5vw, 96px);
 }
 
 .formHeadline {
-  font-family: var(--display);
-  font-weight: 500;
-  font-size: clamp(26px, 2.6vw, 34px);
-  letter-spacing: -0.02em;
-  color: var(--ink-on-dark);
-  margin-bottom: 40px;
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 32px;
 }
 
 .form {
-  max-width: 560px;
+  max-width: 760px;
 }
 
+/* One field per line, like an editorial form */
 .row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  display: contents;
 }
 
 .group {
-  margin-bottom: 24px;
+  margin-bottom: 36px;
 }
 
 .group label {
   display: block;
   font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.15em;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--ink-dim-on-dark);
-  margin-bottom: 10px;
+  color: var(--navy);
+  margin-bottom: 8px;
 }
 
 .group input,
@@ -312,82 +178,85 @@ a.methodValue:hover {
   width: 100%;
   background: transparent;
   border: none;
-  border-bottom: 1px solid var(--line-on-dark);
-  color: var(--ink-on-dark);
+  border-bottom: 1px solid var(--navy);
+  color: var(--navy);
   font-family: var(--sans);
-  font-size: 16px;
-  padding: 10px 0;
+  font-weight: 500;
+  font-size: 19px;
+  padding: 8px 0 14px;
   transition: border-color 0.3s;
 }
 
 .group input:focus,
 .group textarea:focus {
   outline: none;
-  border-bottom-color: var(--highlight);
+  border-bottom-width: 2px;
 }
 
 .group input::placeholder,
 .group textarea::placeholder {
-  color: var(--ink-dim-on-dark);
-  opacity: 0.6;
+  color: var(--navy);
+  opacity: 0.55;
 }
 
 .group textarea {
-  min-height: 96px;
+  min-height: 72px;
   resize: vertical;
-  font-family: var(--sans);
 }
 
 .tagRow {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-start;
   gap: 10px;
+  margin-top: 6px;
 }
 
 .tag {
   font-family: var(--mono);
-  font-size: 12px;
-  letter-spacing: 0.04em;
-  color: var(--ink-dim-on-dark);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--navy);
   background: transparent;
-  border: 1px solid var(--line-on-dark);
-  border-radius: 999px;
-  padding: 10px 18px;
+  border: 1px solid var(--navy);
+  border-radius: 4px;
+  padding: 10px 14px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 .tag:hover {
-  border-color: var(--highlight);
-  color: var(--ink-on-dark);
+  background: rgba(3, 27, 54, 0.06);
 }
 
-.tagActive {
-  background: var(--highlight);
-  color: var(--on-highlight);
-  border-color: var(--highlight);
+.tagActive,
+.tagActive:hover {
+  background: var(--navy);
+  color: #F5F1E8;
 }
 
 .submit {
   display: inline-flex;
   align-items: center;
   gap: 14px;
-  padding: 20px 40px;
-  background: var(--highlight);
-  color: var(--on-highlight);
-  border: 1px solid var(--highlight);
+  padding: 20px 36px;
+  background: var(--navy);
+  color: #F5F1E8;
+  border: none;
   font-family: var(--mono);
-  font-size: 12px;
-  letter-spacing: 0.15em;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   border-radius: 999px;
   cursor: pointer;
-  margin-top: 8px;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease;
 }
 
 .submit:hover {
-  transform: translateY(-2px);
+  transform: translateX(4px);
 }
 
 .submit:disabled {
@@ -399,32 +268,25 @@ a.methodValue:hover {
 .status {
   margin-top: 20px;
   font-family: var(--mono);
-  font-size: 11px;
+  font-weight: 700;
+  font-size: 12px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   min-height: 16px;
-  color: var(--ink-dim-on-dark);
+  color: var(--navy);
 }
 
-.success { color: var(--highlight); }
-.error { color: #ff8a65; }
+.success { color: var(--navy); }
+.error { color: #B3261E; }
 
 @media (max-width: 1000px) {
-  .grid {
-    grid-template-columns: 1fr;
-    border-radius: 24px;
+  .contact { padding: 96px 24px 110px; }
+  .grid { grid-template-columns: 1fr; }
+  .left { padding-right: 0; }
+  .sketchWrap { padding: 40px 0; }
+  .methods { margin-bottom: 56px; }
+  .right {
+    border-left: none;
+    padding-left: 0;
   }
-  .left { padding: 0; }
-  .right { padding: 48px 32px; }
-  .footNote { margin-top: 32px; }
-}
-
-@media (max-width: 900px) {
-  .contact { padding: 70px 24px 90px; }
-  .contact::before { width: 26vw; opacity: 0.55; }
-}
-
-@media (max-width: 640px) {
-  .right { padding: 40px 24px; border-radius: 24px; }
-  .row { grid-template-columns: 1fr; }
 }
