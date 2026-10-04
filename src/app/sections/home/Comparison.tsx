@@ -38,26 +38,7 @@ export default function Comparison() {
   return (
     <section className={styles.section} id="comparison">
       <div className={styles.inner}>
-        <h2 className={styles.heading}>
-          A Different Approach{" "}
-          <br />
-          <em>to SEO Campaigns</em>
-        </h2>
-        <div className={styles.sub}>
-          <p>
-            Scale SEO is an independent SEO practice, not a large generalist
-            marketing agency.
-          </p>
-          <p>
-            I keep my client roster intentionally small and personally handle
-            the strategy and implementation behind every campaign. That means
-            the person reviewing your rankings is also the person making
-            changes to your website, researching opportunities, improving
-            content, and deciding what happens next.
-          </p>
-        </div>
-
-        <h3 className={styles.tableTitle}>Scale SEO vs. Generalist Agencies</h3>
+        <h2 className={styles.heading}>Scale SEO vs. Generalist Agencies</h2>
 
         <div className={styles.tableWrap}>
           <div className={styles.tableHead}>
