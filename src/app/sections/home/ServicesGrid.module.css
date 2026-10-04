@@ -8,13 +8,13 @@
 
   background: var(--canvas);
   color: var(--ink-ed);
-  padding: 144px 6% 160px;
+  padding: 144px 3% 160px;
 }
 
 /* === Intro: heading left, copy right === */
 .intro {
-  max-width: 1440px;
-  margin: 0 auto 96px;
+  max-width: none;
+  margin: 0 0 96px;
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
   gap: clamp(48px, 7vw, 120px);
@@ -45,46 +45,28 @@
   margin: 0;
 }
 
-/* === Two-column spread ===
-   Six entries (five services + Core Services) flow down the left column
-   then the right, three per side, split by a single vertical Ink rule. */
+/* === 3 x 2 grid ===
+   Three services per row, rows and columns split by thin Ink rules
+   (drawn by the 1px gap over the rule-coloured grid background). */
 .grid {
-  position: relative;
-  max-width: 1440px;
-  margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  grid-template-rows: repeat(3, auto);
-  grid-auto-flow: column;
-  row-gap: 96px;
-  padding: 24px 0;
-}
-
-.grid::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  width: 1px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
   background: var(--rule-strong);
 }
 
 .cell {
   display: flex;
   flex-direction: column;
-  max-width: 560px;
+  background: var(--canvas);
+  padding: 56px clamp(32px, 3.5vw, 64px) 64px;
 }
 
-.cell:nth-child(-n + 3) {
-  padding-right: clamp(40px, 6vw, 112px);
-  justify-self: end;
-  width: 100%;
-}
-
-.cell:nth-child(n + 4) {
-  padding-left: clamp(40px, 6vw, 112px);
-}
+/* Outer edges align with the intro text */
+.cell:nth-child(3n + 1) { padding-left: 0; }
+.cell:nth-child(3n) { padding-right: 0; }
+.cell:nth-child(-n + 3) { padding-top: 8px; }
+.cell:nth-child(n + 4) { padding-bottom: 8px; }
 
 .cellIndex {
   font-family: var(--mono);
@@ -98,7 +80,7 @@
 .cellTitle {
   font-family: var(--sans);
   font-weight: 800;
-  font-size: clamp(2rem, 3.4vw, 3.25rem);
+  font-size: clamp(1.9rem, 2.6vw, 2.75rem);
   line-height: 1.05;
   letter-spacing: -0.035em;
   color: var(--ink-ed);
@@ -118,10 +100,11 @@
   font-size: 17px;
   line-height: 1.7;
   color: var(--ink-ed);
-  margin: 0 0 28px;
+  margin: 0 0 32px;
 }
 
 .cellLink {
+  margin-top: auto;
   align-self: flex-start;
   font-weight: 700;
   font-size: 15px;
@@ -145,20 +128,16 @@
   }
 }
 
-@media (max-width: 760px) {
-  .grid {
-    grid-template-columns: 1fr;
-    grid-template-rows: none;
-    grid-auto-flow: row;
-    row-gap: 0;
-    padding: 0;
-  }
-  .grid::before { display: none; }
+@media (max-width: 1024px) {
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .cell,
-  .cell:nth-child(-n + 3),
-  .cell:nth-child(n + 4) {
-    padding: 48px 0;
-    max-width: none;
-    border-top: 1px solid var(--rule);
-  }
+  .cell:nth-child(n) { padding: 48px 32px; }
+  .cell:nth-child(odd) { padding-left: 0; }
+  .cell:nth-child(even) { padding-right: 0; }
+}
+
+@media (max-width: 640px) {
+  .grid { grid-template-columns: 1fr; }
+  .cell,
+  .cell:nth-child(n) { padding: 48px 0; }
 }
