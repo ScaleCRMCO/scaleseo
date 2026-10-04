@@ -79,7 +79,7 @@
   font-weight: 600;
   font-size: 64px;
   line-height: 1;
-  color: var(--accent);
+  color: var(--process-num, var(--accent));
   margin-bottom: 24px;
 }
 

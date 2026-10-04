@@ -1,134 +1,146 @@
 /* ==========================================================================
-   Palette test — HOMEPAGE ONLY.
-   Applied by the `palette-test` class on <main> in app/page.tsx (and, via
-   :has(), to the nav/footer/body while the homepage is showing).
-   To revert: remove the class from page.tsx and the import of this file.
+   Homepage palette — applied by the `palette-test` class on <main> in
+   app/page.tsx (and, via :has(), to the body/footer while it's showing).
+
+   Roles
+     Midnight Ink   #102A43  primary dark: dark sections, headings, borders
+     Warm Ivory     #F5F1E8  primary light: canvas, light text on Midnight
+     Electric Orange #FF5A24 brand accent: metrics, links, hovers, labels
+     Powder Blue    #A8D5DC  secondary canvas (Services)
+     Warm Stone     #D8D2C7  secondary neutral canvas
+     Graphite       #3E474D  body / supporting text on light grounds
+   No pure black/white, no neon, gradients or glows.
    ========================================================================== */
 
-/* Dark homepage (MPM-style): one #151515 canvas, #202020 cards with #333
-   borders, near-white headings, grey body text, and subtle lime / pink /
-   blue accents. Light-blue (Process), tan (Industries) and lime (Contact)
-   sections keep their own colours. */
 body:has(main.palette-test) {
-  --page: #151515;
-  --card: #202020;
-  --card-border: #333333;
-  --heading: #F7F7F5;
-  --body: #B8B8B8;
-  --accent-pink: #FF3BA7;
-  --accent-blue: #36DDE8;
-  --soft-white: #F7F7F5;
-  --cyan: #B6FFFF;
+  --midnight: #102A43;
+  --ivory: #F5F1E8;
+  --orange: #FF5A24;
+  --powder: #A8D5DC;
+  --stone: #D8D2C7;
+  --graphite: #3E474D;
+  --midnight-2: #18344F;   /* card surface on Midnight */
+  --ivory-2: #EDE7DA;      /* card surface on Ivory */
 
-  --highlight: #A9FA00;
-  --on-highlight: #151515;
+  /* Light defaults */
+  --bg: var(--ivory);
+  --bg-elev: var(--ivory-2);
+  --ink: var(--midnight);
+  --ink-dim: var(--graphite);
+  --ink-faint: rgba(62, 71, 77, 0.75);
+  --accent: var(--midnight);
+  --accent-dim: var(--graphite);
+  --on-accent: var(--ivory);
+  --heading-accent: var(--midnight);
+  --line: rgba(16, 42, 67, 0.14);
+  --line-strong: rgba(16, 42, 67, 0.4);
 
-  --bg: var(--page);
-  --bg-elev: var(--card);
-  --ink: var(--heading);
-  --ink-dim: var(--body);
-  --ink-faint: #8A8A8A;
-  --heading-accent: var(--heading);
-  --accent: var(--heading);
-  --on-accent: var(--page);
-  --line: rgba(255, 255, 255, 0.1);
-  --line-strong: var(--card-border);
+  --highlight: var(--orange);
+  --on-highlight: var(--ivory);
+  --pop-blue: var(--powder);
+  --pop-pink: var(--orange);
+  --pop-purple: var(--midnight);
+  --pop-yellow: var(--stone);
 
-  --bg-dark: var(--page);
-  --ink-on-dark: var(--heading);
-  --ink-dim-on-dark: var(--body);
-  --line-on-dark: rgba(247, 247, 245, 0.4);
-  --line-strong-on-dark: var(--heading);
+  /* Dark tokens (used by .section-dark and dark-aware components) */
+  --bg-dark: var(--midnight);
+  --ink-on-dark: var(--ivory);
+  --ink-dim-on-dark: rgba(245, 241, 232, 0.72);
+  --line-on-dark: rgba(245, 241, 232, 0.3);
+  --line-strong-on-dark: var(--ivory);
 
-  --surface-dark: var(--card);
-  --surface-dark-hover: #2A2A2A;
-  --surface-light: var(--card);
-  --surface-open: #1C1C1C;
+  --surface-dark: var(--midnight-2);
+  --surface-dark-hover: #1F3D5A;
+  --surface-light: var(--ivory-2);
+  --surface-open: var(--ivory-2);
 
-  /* Blog cards */
-  --postcard-bg: var(--card);
-  --postcard-border: var(--card-border);
-  --postcard-dim: var(--body);
-  --postcard-hover-bg: #262626;
+  --postcard-bg: var(--ivory-2);
+  --postcard-border: var(--line);
+  --postcard-dim: var(--graphite);
+  --postcard-hover-bg: var(--stone);
 
-  /* Comparison table header + FAQ help card on card grey */
-  --table-head-bg: var(--card);
-  --table-head-ink: var(--body);
-  --help-card-bg: var(--card);
-  --help-card-border: var(--card-border);
+  --table-head-bg: var(--midnight);
+  --table-head-ink: var(--ivory);
+  --help-card-bg: var(--midnight);
+  --help-card-border: var(--midnight);
 
-  /* Hero "AI Search Services." block → lime */
-  --title-block-bg: var(--highlight);
-  --title-block-ink: var(--page);
+  --title-block-bg: transparent;
+  --title-block-ink: var(--orange);
 
-  --nav-ink: var(--page);
-  --nav-dark-bg: rgba(21, 21, 21, 0.8);
-  --nav-dark-bg-scrolled: rgba(21, 21, 21, 0.9);
+  --nav-ink: var(--midnight);
+  --explore-bg: var(--midnight);
+  --explore-ink: var(--ivory);
 
-  --explore-bg: var(--heading);
-  --explore-ink: var(--page);
+  --hero-ambient: none;
+  --footer-glow: none;
 
-  /* Hero glow: faint lime / pink / blue haze */
-  --hero-ambient:
-    radial-gradient(45% 40% at 65% 35%, rgba(169, 250, 0, 0.18), transparent 70%),
-    radial-gradient(40% 36% at 85% 70%, rgba(255, 59, 167, 0.18), transparent 70%),
-    radial-gradient(36% 32% at 50% 15%, rgba(54, 221, 232, 0.16), transparent 70%);
+  --selection-bg: var(--orange);
+  --selection-color: var(--ivory);
 
-  --footer-glow:
-    radial-gradient(90% 75% at 100% 100%, rgba(169, 250, 0, 0.9) 0%, rgba(169, 250, 0, 0.5) 28%, rgba(169, 250, 0, 0.1) 55%, transparent 72%),
-    radial-gradient(70% 55% at 60% 115%, rgba(169, 250, 0, 0.25) 0%, transparent 70%);
-
-  background: var(--page);
+  background: var(--ivory);
 }
 
 /* === Section rhythm =====================================================
-   Hero / Services / Comparison / About / Case studies / Campaign: #151515
-   → Industries Tan → Process Light blue → FAQ / Blog #151515 →
-   Contact Lime → Footer #151515 */
+   Hero Ivory → Services Powder Blue → Comparison Ivory → About Midnight →
+   Case study Ivory → Campaign areas Stone → Industries Midnight →
+   Process Ivory → FAQ Stone → Blog Ivory → Contact Midnight → Footer
+   Midnight */
 
-/* Industries on warm brown — light text, lime heading, bold lime dots */
-.palette-test #industries {
-  --bg-elev: #866A53;
-  --bg: #FFFFFF;
-  --ink: var(--soft-white);
-  --ink-dim: rgba(247, 247, 245, 0.8);
-  --ink-dim: rgba(250, 250, 250, 0.8);
-  --line: rgba(250, 250, 250, 0.28);
-  --dots-color: var(--highlight);
-  --dots-size: 2.2px;
-  /* Solid (unfaded) block of dots filling the empty top-right area */
-  --dots-mask: none;
-  --dots-ratio: auto;
-  --dots-w: min(20vw, 300px);
-  --dots-h: 470px;
-  --dots-w-sm: 34vw;
-  --dots-h-sm: 72px;
-  --dots-opacity-sm: 1;
+/* Midnight sections: flip the core tokens */
+.palette-test #about,
+.palette-test #industries,
+.palette-test #contact,
+body:has(main.palette-test) footer {
+  --bg: var(--midnight);
+  --bg-elev: var(--midnight-2);
+  --ink: var(--ivory);
+  --ink-dim: rgba(245, 241, 232, 0.72);
+  --ink-faint: rgba(245, 241, 232, 0.55);
+  --accent: var(--ivory);
+  --on-accent: var(--midnight);
+  --line: rgba(245, 241, 232, 0.16);
+  --line-strong: rgba(245, 241, 232, 0.4);
+  --surface-light: var(--midnight-2);
+  --surface-open: var(--midnight-2);
+  --about-heading: var(--ivory);
+  --industries-heading: var(--ivory);
+  --dots-color: var(--orange);
+  --about-mark: var(--orange);
+  --about-accent: var(--orange);
+  background: var(--midnight);
+  color: var(--ivory);
 }
 
-/* Below desktop the heading spans the full width, so the solid block
-   shrinks to a strip in the top padding */
-@media (max-width: 1279px) {
-  .palette-test #industries {
-    --dots-w: 34vw;
-    --dots-h: 100px;
-  }
+/* Light canvases */
+.palette-test #comparison,
+.palette-test #work,
+.palette-test #process,
+.palette-test #blog {
+  --bg-dark: var(--ivory);
+  --ink-on-dark: var(--midnight);
+  --ink-dim-on-dark: var(--graphite);
+  --line-on-dark: var(--line-strong);
+  --line-strong-on-dark: var(--midnight);
+  --surface-dark: var(--ivory-2);
+  --surface-dark-hover: var(--stone);
+  background: var(--ivory);
+  color: var(--midnight);
 }
 
-.palette-test #process {
-  --bg: var(--cyan);
-  --ink: var(--page);
-  --accent: var(--page);
-  --surface-light: #FFFFFF;
-  --ink-dim: rgba(21, 21, 21, 0.74);
-  --ink-faint: rgba(21, 21, 21, 0.55);
-}
-
-.palette-test #contact {
-  --bg: var(--heading);
-  --ink: var(--page);
-  --accent: var(--page);
-  --on-accent: var(--heading);
+.palette-test #campaign,
+.palette-test #faq {
+  --bg: var(--stone);
+  --bg-elev: var(--ivory);
+  --bg-dark: var(--stone);
+  --ink-on-dark: var(--midnight);
+  --ink-dim-on-dark: var(--graphite);
+  --surface-dark: var(--ivory);
+  --surface-dark-hover: var(--ivory-2);
+  --surface-light: var(--ivory);
+  --surface-open: var(--ivory);
+  --line: rgba(16, 42, 67, 0.18);
+  background: var(--stone);
+  color: var(--midnight);
 }
 
 /* Square section edges — rounded corners stay on cards/buttons only */
@@ -138,17 +150,25 @@ body:has(main.palette-test) footer {
   border-radius: 0 !important;
 }
 
-/* About heading stays near-white */
-.palette-test #about {
-  --about-heading: var(--heading);
+/* Hairline between stacked sections of the same colour */
+.palette-test #process + #faq,
+body:has(main.palette-test) footer {
+  border-top: 1px solid rgba(245, 241, 232, 0.12);
 }
 
-/* Hairline between stacked #151515 sections so they still read apart */
-.palette-test > section + section {
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+/* Process step numbers in the brand accent */
+.palette-test #process {
+  --process-num: var(--orange);
 }
 
-/* Industries heading in highlight green */
+/* Industries row buttons: Ivory on Midnight (no pure white) */
 .palette-test #industries {
-  --industries-heading: var(--highlight);
+  --row-link-bg: var(--ivory);
+  --row-link-ink: var(--midnight);
+}
+
+/* FAQ help card is Midnight on the Stone canvas — restore light text */
+.palette-test #faq [class*="helpCard"] {
+  --ink-on-dark: var(--ivory);
+  --ink-dim-on-dark: rgba(245, 241, 232, 0.72);
 }

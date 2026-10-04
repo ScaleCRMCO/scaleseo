@@ -72,7 +72,7 @@ export default function FAQ() {
   };
 
   return (
-    <section className={styles.section} id="faq" data-nav-theme="dark">
+    <section className={styles.section} id="faq">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

@@ -46,7 +46,7 @@ const areas = [
 
 export default function CampaignAreas() {
   return (
-    <section className={styles.section} id="campaign" data-nav-theme="dark">
+    <section className={styles.section} id="campaign">
       <div className={styles.intro}>
         <h2 className={`${styles.introTitle} reveal-up`}>
           What Goes Into a Scale SEO Campaign?

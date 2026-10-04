@@ -70,7 +70,7 @@
   align-items: center;
   justify-content: center;
   background: var(--about-disc, rgba(255,255,255,0.04));
-  color: var(--ink-on-dark);
+  color: var(--about-mark, var(--ink-on-dark));
   padding: 20px;
   transition: transform 0.5s ease;
 }

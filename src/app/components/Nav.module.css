@@ -3,8 +3,8 @@
    legible over any section colour. Colours are set here explicitly rather
    than via page tokens so the bar reads the same on every page. */
 .nav {
-  --nav-fg: #14202B;
-  --nav-rule: rgba(20, 32, 43, 0.18);
+  --nav-fg: #102A43;
+  --nav-rule: rgba(16, 42, 67, 0.18);
   position: fixed;
   top: 0;
   left: 0;
@@ -30,7 +30,7 @@
 }
 .scrolled {
   height: 68px;
-  background: rgba(244, 241, 232, 0.78);
+  background: rgba(245, 241, 232, 0.78);
   backdrop-filter: blur(18px) saturate(160%);
   -webkit-backdrop-filter: blur(18px) saturate(160%);
 }
@@ -42,11 +42,11 @@
 /* Inverted appearance while a dark section (data-nav-theme="dark") sits
    behind the bar */
 .darkMode {
-  --nav-fg: #F4F1E8;
-  --nav-rule: rgba(244, 241, 232, 0.22);
+  --nav-fg: #F5F1E8;
+  --nav-rule: rgba(245, 241, 232, 0.22);
 }
 .darkMode.scrolled {
-  background: rgba(20, 32, 43, 0.72);
+  background: rgba(16, 42, 67, 0.72);
 }
 .darkMode .brand,
 .darkMode .links a,
@@ -150,10 +150,10 @@
 }
 .navCta:hover {
   background: var(--nav-fg);
-  color: #F4F1E8;
+  color: #F5F1E8;
 }
 .darkMode .navCta:hover {
-  color: #14202B;
+  color: #102A43;
 }
 .navCtaArrow {
   transition: transform 0.3s ease;
@@ -171,7 +171,7 @@
   left: 0;
   width: 0;
   height: 1px;
-  background: var(--nav-fg);
+  background: #FF5A24;
   transition: width 0.3s ease;
 }
 .links a:hover::after {

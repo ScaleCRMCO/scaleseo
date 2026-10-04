@@ -229,11 +229,11 @@
 .themeMidnight,
 .themeLime,
 .themePink {
-  --card-bg: #202020;
-  --card-ink: #F7F7F5;
-  --card-chip: rgba(255, 255, 255, 0.06);
-  --card-line: #333333;
-  border: 1px solid #333333;
+  --card-bg: #102A43;
+  --card-ink: #F5F1E8;
+  --card-chip: rgba(245, 241, 232, 0.08);
+  --card-line: rgba(245, 241, 232, 0.16);
+  border: 1px solid #102A43;
 }
 
 /* Screenshot sits cleanly on the card — no fade into the colour */
@@ -251,25 +251,25 @@
   padding-top: 22px;
 }
 
-/* Accent: metric + arrow in blue / green / pink */
-.themeSky { --card-metric: #36DDE8; --card-accent: #36DDE8; }
-.themeMidnight { --card-metric: #A9FA00; --card-accent: #A9FA00; }
-.themeLime { --card-metric: #FF3BA7; --card-accent: #FF3BA7; }
-.themePink { --card-metric: #36DDE8; --card-accent: #36DDE8; }
+/* Accent: metric + arrow in Electric Orange */
+.themeSky { --card-metric: #FF5A24; --card-accent: #FF5A24; }
+.themeMidnight { --card-metric: #FF5A24; --card-accent: #FF5A24; }
+.themeLime { --card-metric: #FF5A24; --card-accent: #FF5A24; }
+.themePink { --card-metric: #FF5A24; --card-accent: #FF5A24; }
 
 .themeSky .cardArrow,
 .themeMidnight .cardArrow,
 .themeLime .cardArrow,
 .themePink .cardArrow {
   background: var(--card-accent);
-  color: #151515;
+  color: #F5F1E8;
 }
 
 .themeSky .cardMetricLabel,
 .themeMidnight .cardMetricLabel,
 .themeLime .cardMetricLabel,
 .themePink .cardMetricLabel {
-  color: #B8B8B8;
+  color: rgba(245, 241, 232, 0.72);
   opacity: 1;
 }
 

@@ -114,8 +114,8 @@
   align-items: center;
   gap: 10px;
   padding: 16px 26px;
-  background: #FFFFFF;
-  color: #151515;
+  background: var(--row-link-bg, #FFFFFF);
+  color: var(--row-link-ink, #151515);
   border-radius: 10px;
   font-family: var(--sans);
   font-weight: 600;

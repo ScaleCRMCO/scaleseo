@@ -2,10 +2,10 @@
    Paper canvas, Ink headings/UI, Graphite body copy. Typography, grid and
    scale carry the design: no glows, highlights or floating UI. */
 .hero {
-  --paper: #F4F1E8;
-  --ink-ed: #14202B;
-  --graphite: #4D5355;
-  --rule: rgba(20, 32, 43, 0.16);
+  --paper: #F5F1E8;
+  --ink-ed: #102A43;
+  --graphite: #3E474D;
+  --rule: rgba(16, 42, 67, 0.16);
 
   position: relative;
   min-height: 92vh;
@@ -71,7 +71,7 @@
 }
 
 .ctaPrimary:hover {
-  background: #22323F;
+  background: #1A3A58;
 }
 
 .ctaSecondary {
@@ -85,7 +85,8 @@
 }
 
 .ctaSecondary:hover {
-  border-color: var(--ink-ed);
+  color: #FF5A24;
+  border-color: #FF5A24;
 }
 
 /* === Right column: editorial proof — large stat, screenshot, caption === */
@@ -110,7 +111,7 @@
   font-size: clamp(4rem, 7.5vw, 7rem);
   line-height: 0.85;
   letter-spacing: -0.045em;
-  color: var(--ink-ed);
+  color: #FF5A24;
 }
 
 .proofLabel {

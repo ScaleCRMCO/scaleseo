@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Logo from "../../components/Logo";
 import styles from "./About.module.css";
 export default function About() {
   return (
@@ -51,11 +52,7 @@ export default function About() {
             </svg>
            <div className={styles.photo}>
               <div className={styles.photoLogo}>
-                <img
-                  src="/images/logo-mark.svg"
-                  alt=""
-                  className={styles.photoLogoImg}
-                />
+                <Logo className={styles.photoLogoImg} />
               </div>
             </div>
           </div>

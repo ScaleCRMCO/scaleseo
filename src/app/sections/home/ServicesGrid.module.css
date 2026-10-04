@@ -1,10 +1,10 @@
 /* Homepage Services — editorial spread on an Editorial Blue canvas.
    One continuous surface split by a single Ink rule rather than cards. No lime, glows or shadows. */
 .section {
-  --canvas: #9EC4CE;
-  --ink-ed: #14202B;
-  --rule: rgba(20, 32, 43, 0.22);
-  --rule-strong: rgba(20, 32, 43, 0.5);
+  --canvas: #A8D5DC;
+  --ink-ed: #102A43;
+  --rule: rgba(16, 42, 67, 0.22);
+  --rule-strong: rgba(16, 42, 67, 0.5);
 
   background: var(--canvas);
   color: var(--ink-ed);
@@ -133,7 +133,7 @@
 }
 
 .cellLink:hover {
-  border-color: var(--ink-ed);
+  border-color: #FF5A24;
 }
 
 @media (max-width: 1024px) {
