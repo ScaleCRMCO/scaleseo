@@ -1,13 +1,26 @@
 /* ==========================================================================
-   Footer — black canvas with a lime glow rising from the bottom-right,
+   Footer — Midnight canvas with a brand-orange glow rising from the
+   bottom-right,
    big two-line wordmark top-left, link groups + X mark, fine-print bar.
    ========================================================================== */
 
 .footer {
+  /* Brand palette set here so the footer is identical on every page */
+  --bg-dark: #031B36;
+  --ink-on-dark: #F5F1E8;
+  --ink-dim-on-dark: rgba(245, 241, 232, 0.72);
+  --highlight: #FF2C16;
+  --on-highlight: #F5F1E8;
+  --footer-glow:
+    radial-gradient(110% 100% at 100% 100%, rgba(255, 44, 22, 0.95) 0%, rgba(255, 44, 22, 0.6) 28%, rgba(255, 44, 22, 0.2) 55%, transparent 78%),
+    radial-gradient(60% 50% at 70% 115%, rgba(255, 44, 22, 0.25) 0%, transparent 70%);
+  --footer-glow-sm:
+    radial-gradient(120% 45% at 100% 100%, rgba(255, 44, 22, 0.85) 0%, rgba(255, 44, 22, 0.4) 32%, rgba(255, 44, 22, 0.1) 60%, transparent 75%);
+
   position: relative;
   overflow: hidden;
   margin-top: -48px;
-  border-radius: 48px 48px 0 0;
+  border-radius: 0;
   background: var(--bg-dark);
   color: var(--ink-on-dark);
   isolation: isolate;
@@ -51,7 +64,7 @@
   font-size: clamp(64px, 9vw, 150px);
   line-height: 0.88;
   letter-spacing: -0.03em;
-  color: var(--ink-on-dark);
+  color: var(--highlight);
   text-decoration: none;
   user-select: none;
 }
@@ -84,7 +97,8 @@
 
 .colLabel {
   font-family: var(--mono);
-  font-size: 11px;
+  font-weight: 700;
+  font-size: 12px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--ink-dim-on-dark);

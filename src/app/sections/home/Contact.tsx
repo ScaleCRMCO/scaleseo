@@ -14,7 +14,9 @@ const needTags = [
   "Not sure yet",
 ];
 
-export default function Contact() {
+export default function Contact({ asPageHeading = false }: { asPageHeading?: boolean } = {}) {
+  // On /contact this section is the page's main content, so its heading is the H1
+  const Heading = asPageHeading ? "h1" : "h2";
   const router = useRouter();
   const [status, setStatus] = useState<Status>("idle");
   const [message, setMessage] = useState("");
@@ -55,9 +57,9 @@ export default function Contact() {
       <div className={styles.grid}>
         {/* LEFT — booking link + contact methods */}
         <div className={styles.left}>
-          <h2 className={styles.headline}>
+          <Heading className={styles.headline}>
             Ready to Improve Your <em>Organic Search Visibility?</em>
-          </h2>
+          </Heading>
 
           {/* Hand-drawn mailbox sketch filling the open left column. Plain
               strokes roughened by the turbulence filter defined inline. */}

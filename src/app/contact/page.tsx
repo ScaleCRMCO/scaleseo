@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import ContactSplit from "./ContactSplit";
+import Contact from "../sections/home/Contact";
 import MapEmbed from "./MapEmbed";
 
 export const metadata: Metadata = {
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <main>
-      <ContactSplit />
+      <Contact asPageHeading />
       <MapEmbed />
     </main>
   );

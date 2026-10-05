@@ -8,7 +8,7 @@
 
   position: relative;
   padding: 120px 3% 140px;
-  background: var(--bg, #B6FFFF);
+  background: #B6FFFF;
   color: var(--navy);
 }
 
