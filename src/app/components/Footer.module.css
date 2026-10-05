@@ -136,7 +136,7 @@
 .mark {
   width: clamp(180px, 20vw, 300px);
   height: auto;
-  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(0 12px 24px rgba(3, 27, 54, 0.55));
 }
 
 /* === Bottom bar ========================================================= */

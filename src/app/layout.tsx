@@ -57,7 +57,7 @@ const jsonLd = {
       logo: {
         "@type": "ImageObject",
         "@id": "https://scaleseo.co/#logo",
-        url: "https://scaleseo.co/images/logo-mark.svg",
+        url: "https://scaleseo.co/brand/scaleseo-logo-navy.png",
       },
       description:
         "Scale SEO is an independent SEO practice based in Calgary, Alberta, providing SEO, web development, Google Ads management, SEO audits, and AI search optimization for professional service and B2B businesses.",

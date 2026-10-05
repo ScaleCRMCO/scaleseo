@@ -2,7 +2,6 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { motion } from "motion/react";
-import Logo from "./Logo";
 import styles from "./Nav.module.css";
 
 const spring = { type: "spring" as const, stiffness: 300, damping: 20 };
@@ -151,7 +150,8 @@ export default function Nav() {
       } ${darkMode ? styles.darkMode : ""}`}
     >
       <Link href="/" className={styles.brand} onClick={close}>
-        <Logo className={styles.brandCrow} />
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/favicon.svg" alt="" className={styles.brandCrow} />
         <span className={styles.wordmark}>
           Scale<span className={styles.wordmarkAccent}>SEO</span>
         </span>
