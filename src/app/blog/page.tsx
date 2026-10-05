@@ -40,7 +40,10 @@ export default function BlogPage() {
           </div>
           <h1 className={styles.title}>Blog</h1>
           <p className={styles.sub}>
-            SEO insights and practical strategies for Canadian businesses.
+            Explore practical SEO insights, strategies, and research from
+            Scale SEO. Each article is written to help Canadian businesses
+            better understand search, improve their organic visibility, and
+            make smarter decisions about SEO.
           </p>
         </div>
         <SketchIcon name="newspaper" className={styles.heroSketch} />
