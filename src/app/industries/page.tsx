@@ -33,9 +33,7 @@ const industries: {
     title: "Accounting Firms",
     featured: true,
     body: [
-      "Accounting is currently the strongest industry focus at Scale SEO.",
-      "I work with accounting and advisory firms to improve visibility for the services that drive long-term client relationships—from corporate tax and bookkeeping to business advisory and other high-value accounting services.",
-      "The strategy can combine technical SEO, service-page optimization, local search, content, internal linking, and industry-specific search research to build visibility around the work your firm actually wants more of.",
+      "Accounting is a core industry focus at Scale SEO. I work with accounting and advisory firms to improve organic visibility for services such as corporate tax, bookkeeping, business advisory, and other high-value accounting services through technical SEO, content, local search, and service-page optimization.",
     ],
     link: {
       href: "/industries/accounting-firms",
@@ -47,30 +45,27 @@ const industries: {
     icon: "consulting",
     title: "Consulting Firms",
     body: [
-      "Consulting businesses often sell complex services where credibility and expertise matter as much as visibility.",
-      "SEO can help consulting firms build stronger service pages, demonstrate subject-matter expertise, and appear when businesses are actively researching the problems and services your consultants specialize in.",
-      "For firms serving clients beyond a single city, the strategy can also extend beyond local SEO into broader regional or national organic search opportunities.",
+      "I help consulting firms strengthen service pages, demonstrate subject-matter expertise, and build organic visibility around the problems and specialized services potential clients are actively researching.",
     ],
+    link: { href: "/contact", label: "Get in Touch" },
   },
   {
     id: "financial-advisory",
     icon: "financial",
     title: "Financial & Advisory Services",
     body: [
-      "Financial and advisory businesses operate in markets where trust plays an important role in how potential clients evaluate providers.",
-      "SEO strategies need to balance search visibility with accurate service content, clear expertise, strong website structure, and a professional online presence.",
-      "Rather than chasing broad financial traffic, the focus should be on relevant searches connected to the services and clients the business actually wants to attract.",
+      "SEO for financial and advisory firms requires accurate service content, clear expertise, and a strong website structure. I focus on relevant searches connected to the services and clients the business wants to attract rather than broad financial traffic.",
     ],
+    link: { href: "/contact", label: "Get in Touch" },
   },
   {
     id: "professional-b2b",
     icon: "b2b",
     title: "Other Professional & B2B Services",
     body: [
-      "Scale SEO also works with other expertise-led professional and B2B businesses where organic search can become a meaningful source of qualified opportunities.",
-      "That can include specialized service providers, corporate services, B2B companies, and other businesses selling expertise rather than high-volume consumer products.",
-      "I don’t build generic industry campaigns from a template. The search strategy is based on your specific services, customers, competitors, geography, and growth objectives.",
+      "I also work with specialized professional service and B2B businesses selling expertise rather than high-volume consumer products. SEO strategies are built around each business’s services, customers, competitors, target markets, and organic search opportunities.",
     ],
+    link: { href: "/contact", label: "Get in Touch" },
   },
 ];
 
@@ -265,21 +260,16 @@ export default function IndustriesPage() {
 
       {/* === INDUSTRIES — dark === */}
       <section className={`${hub.section} ${styles.industriesBlue}`} id="industries">
-        <div className={hub.inner}>
-          <div className={hub.head}>
-            <div>
-              <div className="section-label reveal-up">Industries I Work With</div>
-              <h2 className={`${hub.h2} ${styles.bigH2} reveal-up`}>
-                SEO for Professional Service Industries
-              </h2>
-            </div>
-            <div className={`${hub.headBody} reveal-up`}>
-              <p>
-                I keep my client roster relatively small and focus on businesses
-                where I can understand the services, customers, and commercial
-                value behind the searches we&rsquo;re targeting.
-              </p>
-            </div>
+        <div className={styles.industriesSplit}>
+          <div className={styles.industriesAside}>
+            <div className="section-label reveal-up">Industries I Work With</div>
+            <h2 className={`${hub.h2} ${styles.bigH2} reveal-up`}>
+              SEO for Professional Service Industries
+            </h2>
+            <p className={`${styles.industriesIntro} reveal-up`}>
+              I focus on professional service and B2B businesses where organic
+              search can support valuable, long-term client relationships.
+            </p>
           </div>
 
           <div className={styles.industryTiles}>
