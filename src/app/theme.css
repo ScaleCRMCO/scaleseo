@@ -154,6 +154,7 @@ footer {
 main > section,
 main > header,
 main > div > section,
+main > article,
 footer {
   border-radius: 0 !important;
 }

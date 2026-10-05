@@ -143,6 +143,14 @@ const viewBoxes: Record<string, string> = {
   industries: "0 0 180 180",
 };
 
+// Pick a sketch that matches a blog article's category
+export function iconForCategory(category: string) {
+  const c = category.toLowerCase();
+  if (c.includes("pric") || c.includes("cost")) return "pricing";
+  if (c.includes("account")) return "accounting";
+  return "article";
+}
+
 export default function SketchIcon({
   name,
   className,

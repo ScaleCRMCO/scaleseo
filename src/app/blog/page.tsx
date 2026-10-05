@@ -3,7 +3,7 @@ import PageHero from "../components/PageHero";
 import RevealOnScroll from "../components/RevealOnScroll";
 import { posts } from "./posts";
 import Link from "next/link";
-import SketchIcon from "../components/SketchIcon";
+import SketchIcon, { iconForCategory as iconFor } from "../components/SketchIcon";
 import styles from "./page.module.css";
 import Contact from "../components/ContactCta";
 
@@ -13,14 +13,6 @@ export const metadata: Metadata = {
     "Notes on what actually moves search rankings and revenue for accounting firms and professional service businesses in Canada — written by Corbin Jensen.",
   alternates: { canonical: "/blog" },
 };
-
-// Pick a sketch icon that matches the article's topic
-function iconFor(category: string) {
-  const c = category.toLowerCase();
-  if (c.includes("pric") || c.includes("cost")) return "pricing";
-  if (c.includes("account")) return "accounting";
-  return "article";
-}
 
 const formatDate = (iso: string) =>
   new Date(iso).toLocaleDateString("en-CA", {

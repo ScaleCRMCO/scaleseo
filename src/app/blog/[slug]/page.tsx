@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Breadcrumbs from "../../components/Breadcrumbs";
+import SketchIcon, { iconForCategory } from "../../components/SketchIcon";
 import RevealOnScroll from "../../components/RevealOnScroll";
 import { posts, getPost } from "../posts";
 import styles from "./page.module.css";
@@ -137,6 +138,7 @@ export default function BlogPostPage({
             <span>{post.readTime}</span>
           </div>
         </div>
+        <SketchIcon name={iconForCategory(post.category)} className={styles.heroSketch} />
       </header>
 
       <article className={styles.body}>
