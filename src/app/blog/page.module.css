@@ -62,10 +62,10 @@
   stroke-linejoin: round;
 }
 
-/* === LIST — editorial tiles: Ivory squares on a Stone canvas === */
+/* === LIST — editorial tiles: white squares on the light canvas === */
 .list {
   padding: 120px 3% 140px;
-  background: #D8D2C7;
+  background: #FDFFEE;
   color: #031B36;
 }
 
@@ -80,7 +80,7 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  background: #FDFFEE;
+  background: #FFFFFF;
   color: #031B36;
   padding: 0 clamp(28px, 3vw, 56px) 56px;
   text-decoration: none;
