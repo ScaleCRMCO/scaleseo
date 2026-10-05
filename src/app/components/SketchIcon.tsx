@@ -44,6 +44,19 @@ const icons: Record<string, ReactNode> = {
       <path d="M12 160h160" />
     </g>
   ),
+  // Briefcase in front of an office building — professional services / B2B
+  industries: (
+    <g>
+      <path d="M96 150V24h58v126" />
+      <path d="M108 40h10M132 40h10M108 60h10M132 60h10M108 80h10M132 80h10M108 100h10M132 100h10" />
+      <path d="M118 150v-22h14v22" />
+      <rect x="18" y="86" width="96" height="66" rx="6" />
+      <path d="M50 86V72h32v14" />
+      <path d="M18 112h96" />
+      <path d="M60 106h12v12H60z" />
+      <path d="M8 156h164" />
+    </g>
+  ),
   // Stacked coins with a price tag — pricing articles
   pricing: (
     <g>
@@ -83,6 +96,7 @@ const viewBoxes: Record<string, string> = {
   newspaper: "0 0 180 180",
   caseStudy: "0 0 180 180",
   about: "0 0 180 180",
+  industries: "0 0 180 180",
 };
 
 export default function SketchIcon({

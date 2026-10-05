@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Breadcrumbs from "../components/Breadcrumbs";
+import PageHero from "../components/PageHero";
 import RevealOnScroll from "../components/RevealOnScroll";
 // Section/card system shared with the /services pages so the site matches.
 import hub from "../services/page.module.css";
@@ -189,63 +189,35 @@ export default function IndustriesPage() {
       />
 
       {/* === HERO — dark, full-width left-aligned (matches /services/seo-audits) === */}
-      <header className={styles.hero} data-nav-theme="dark">
-        <div className={styles.heroContent}>
-          <div className={styles.crumbsOnDark}>
-            <Breadcrumbs
-              items={[{ name: "Home", href: "/" }, { name: "Industries" }]}
-              schema={false}
-            />
-          </div>
-          <h1 className={styles.title}>
+      <PageHero
+        breadcrumbs={[{ name: "Home", href: "/" }, { name: "Industries" }]}
+        breadcrumbSchema={false}
+        title={
+          <>
             SEO for Professional Services &amp;{" "}
             <span className="title-block">B2B Businesses</span>
-          </h1>
-
-          <div className={styles.heroBottom}>
-            <div className={styles.heroMain}>
-              <div className={styles.sub}>
-                <p>
-                  Scale SEO works with professional service and B2B businesses
-                  where search visibility can translate into valuable client
-                  relationships&mdash;not just more website traffic.
-                </p>
-                <p>
-                  From accounting firms and consultants to other expertise-led
-                  businesses, I build SEO strategies around the services your
-                  potential clients are actually searching for, the questions
-                  they research before making contact, and the markets you want
-                  to grow in.
-                </p>
-                <p>
-                  Based in Calgary, I work with businesses across Canada and
-                  internationally.
-                </p>
-              </div>
-              <div className={styles.heroCtaGroup}>
-                <a href="#industries" className={styles.heroCta}>
-                  <span>Explore Industries</span>
-                  <span className={styles.arrow}>↓</span>
-                </a>
-                <Link href="/services" className={styles.heroCtaSecondary}>
-                  <span>View SEO Services</span>
-                  <span className={styles.arrow}>→</span>
-                </Link>
-              </div>
-            </div>
-
-            {/* Quick jump list to the industry cards below */}
-            <nav className={styles.heroIndex} aria-label="Industries">
-              {industries.map((ind, i) => (
-                <a key={ind.id} href={`#${ind.id}`} className={styles.heroIndexItem}>
-                  <span className={styles.heroIndexNum}>{pad(i)}</span>
-                  <span>{ind.title}</span>
-                </a>
-              ))}
-            </nav>
-          </div>
-        </div>
-      </header>
+          </>
+        }
+        icon="industries"
+        actions={
+          <>
+            <a href="#industries">
+              <span>Explore Industries</span>
+              <span>↓</span>
+            </a>
+            <Link href="/services">
+              <span>View SEO Services</span>
+              <span>→</span>
+            </Link>
+          </>
+        }
+      >
+        <p>
+          Scale SEO provides specialized SEO services for accounting firms,
+          consultants, financial advisors, and other professional service
+          businesses across Canada and internationally.
+        </p>
+      </PageHero>
 
       {/* === SEO BUILT FOR EXPERTISE-LED BUSINESSES — light === */}
       <section className={`${hub.section} ${hub.light}`}>
