@@ -7,14 +7,16 @@ const path = require("path");
 const pub = path.join(__dirname, "..", "public");
 const jobs = [
   ["brand/scaleseo-logo-navy.svg", "brand/scaleseo-logo-navy.png", 1024, false],
+  ["brand/scaleseo-logo-navy-light-blue.svg", "brand/scaleseo-logo-navy-light-blue.png", 1024, false],
   ["brand/scaleseo-logo-light-blue.svg", "brand/scaleseo-logo-light-blue.png", 1024, false],
   ["brand/scaleseo-mark-orange.svg", "brand/scaleseo-mark-orange.png", 1024, true],
   ["brand/scaleseo-mark-navy.svg", "brand/scaleseo-mark-navy.png", 1024, true],
+  ["brand/scaleseo-mark-light-blue.svg", "brand/scaleseo-mark-light-blue.png", 1024, true],
   ["favicon.svg", "favicon-16x16.png", 16, true],
   ["favicon.svg", "favicon-32x32.png", 32, true],
   ["favicon.svg", "favicon-48x48.png", 48, true],
   ["favicon.svg", "favicon-96x96.png", 96, true],
-  ["brand/scaleseo-logo-navy.svg", "apple-icon.png", 180, false],
+  ["favicon.svg", "apple-icon.png", 180, false],
   ["brand/scaleseo-logo-navy.svg", "images/logo-social.png", 512, false],
 ];
 

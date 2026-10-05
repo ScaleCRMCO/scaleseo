@@ -5,7 +5,7 @@ import styles from "./Footer.module.css";
 // scripts/make-logo.py)
 function BrandMark({ className }: { className?: string }) {
   // eslint-disable-next-line @next/next/no-img-element
-  return <img src="/brand/scaleseo-mark-orange-bold.svg" alt="" className={className} />;
+  return <img src="/brand/scaleseo-mark-orange.svg" alt="" className={className} />;
 }
 
 export default function Footer() {
