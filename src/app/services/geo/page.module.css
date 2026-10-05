@@ -40,7 +40,7 @@
 
 /* === Numbered list panel (GEO explained, professional services) ======== */
 .understand {
-  background: #181818;
+  background: #0B2846;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 28px;
   padding: 2.5rem;
@@ -93,7 +93,7 @@
 .caveat {
   padding: 22px 26px;
   border-left: 3px solid var(--highlight);
-  background: rgba(153, 255, 0, 0.06);
+  background: rgba(255, 44, 22, 0.06);
   border-radius: 0 16px 16px 0;
   color: var(--ink-on-dark);
 }

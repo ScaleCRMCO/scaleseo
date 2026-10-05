@@ -252,8 +252,8 @@ section {
    box with dark text. Inline + box-decoration-break so longer phrases wrap
    onto multiple lines cleanly, each line getting its own rounded block. */
 .title-block {
-  background: var(--highlight);
-  color: var(--on-highlight);
+  background: var(--title-block-bg, var(--highlight));
+  color: var(--title-block-ink, var(--on-highlight));
   padding: 0 0.16em 0.04em;
   border-radius: 0.14em;
   -webkit-box-decoration-break: clone;

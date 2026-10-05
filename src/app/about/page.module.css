@@ -235,10 +235,10 @@
   width: 1px;
   background: linear-gradient(
     to bottom,
-    rgba(153, 255, 0, 0),
+    rgba(255, 44, 22, 0),
     var(--highlight) 8%,
     var(--highlight) 92%,
-    rgba(153, 255, 0, 0)
+    rgba(255, 44, 22, 0)
   );
   opacity: 0.6;
 }
@@ -265,7 +265,7 @@
   margin-left: calc(var(--dot) / -2);
   border-radius: 50%;
   background: var(--highlight);
-  box-shadow: 0 0 0 6px rgba(153, 255, 0, 0.14);
+  box-shadow: 0 0 0 6px rgba(255, 44, 22, 0.14);
 }
 
 .stepCard {
@@ -274,7 +274,7 @@
   flex-direction: column;
   gap: 14px;
   padding: 2.25rem 2.5rem;
-  background: #181818;
+  background: #0B2846;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 24px;
 }
@@ -322,8 +322,8 @@
   overflow: hidden;
   aspect-ratio: 4 / 5;
   background: var(--bg-elev);
-  box-shadow: 0 40px 80px -40px rgba(10, 10, 10, 0.3),
-              0 12px 24px -12px rgba(10, 10, 10, 0.12);
+  box-shadow: 0 40px 80px -40px rgba(3, 27, 54, 0.3),
+              0 12px 24px -12px rgba(3, 27, 54, 0.12);
 }
 
 .portraitImg {
@@ -343,7 +343,7 @@
   gap: 12px;
   padding: 14px 20px;
   border-radius: 999px;
-  background: rgba(10, 10, 10, 0.72);
+  background: rgba(3, 27, 54, 0.72);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   color: var(--ink-on-dark);
@@ -387,7 +387,7 @@
   flex-direction: column;
   gap: 24px;
   padding: 3rem;
-  background: #181818;
+  background: #0B2846;
   border: 1px solid var(--highlight);
   border-radius: 28px;
   box-shadow: 0 40px 80px -40px rgba(0, 0, 0, 0.6),

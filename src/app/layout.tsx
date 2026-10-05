@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import "./globals.css";
+import "./theme.css";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import PageTransition from "./components/PageTransition";

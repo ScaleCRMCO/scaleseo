@@ -1,18 +1,20 @@
 /* ==========================================================================
-   Homepage palette — applied by the `palette-test` class on <main> in
-   app/page.tsx (and, via :has(), to the body/footer while it's showing).
+   Scale SEO brand theme — site-wide colour roles, loaded from layout.tsx
+   after globals.css so these tokens override the old defaults.
 
    Roles
-     Midnight Ink   #031B36  primary dark: dark sections, headings, borders
-     Warm Ivory     #F5F1E8  primary light: canvas, light text on Midnight
-     Electric Orange #FF2C16 brand accent: metrics, links, hovers, labels
-     Powder Blue    #B6FFFF  secondary canvas (Services)
-     Warm Stone     #D8D2C7  secondary neutral canvas
-     Graphite       #3E474D  body / supporting text on light grounds
-   No pure black/white, no neon, gradients or glows.
+     Midnight Ink    #031B36  primary dark: dark sections, headings, borders
+     Warm Ivory      #F5F1E8  light text on Midnight, light cards
+     Canvas          #FDFFEE  light section backgrounds
+     Electric Orange #FF2C16  brand accent: metrics, highlights, hovers
+     Light Blue      #B6FFFF  secondary canvas (navy text only, no orange)
+     Warm Stone      #D8D2C7  secondary neutral canvas
+     Graphite        #3E474D  body / supporting text on light grounds
+
+   Rules scoped to `.home #section-id` set the homepage's section rhythm.
    ========================================================================== */
 
-body:has(main.palette-test) {
+body {
   --midnight: #031B36;
   --ivory: #F5F1E8;
   --canvas: #FDFFEE;      /* light section backgrounds */
@@ -93,9 +95,9 @@ body:has(main.palette-test) {
    Midnight */
 
 /* Midnight sections: flip the core tokens */
-.palette-test #about,
-.palette-test #industries,
-body:has(main.palette-test) footer {
+.home #about,
+.home #industries,
+footer {
   --bg: var(--midnight);
   --bg-elev: var(--midnight-2);
   --ink: var(--ivory);
@@ -117,10 +119,10 @@ body:has(main.palette-test) footer {
 }
 
 /* Light canvases */
-.palette-test #comparison,
-.palette-test #work,
-.palette-test #process,
-.palette-test #blog {
+.home #comparison,
+.home #work,
+.home #process,
+.home #blog {
   --bg: var(--canvas);
   --bg-dark: var(--canvas);
   --ink-on-dark: var(--midnight);
@@ -133,7 +135,7 @@ body:has(main.palette-test) footer {
   color: var(--midnight);
 }
 
-.palette-test #faq {
+.home #faq {
   --bg: var(--stone);
   --bg-elev: var(--ivory);
   --bg-dark: var(--stone);
@@ -149,42 +151,42 @@ body:has(main.palette-test) footer {
 }
 
 /* Square section edges — rounded corners stay on cards/buttons only */
-.palette-test > section,
-.palette-test > header,
-body:has(main.palette-test) footer {
+.home > section,
+.home > header,
+footer {
   border-radius: 0 !important;
 }
 
 /* Hairline between stacked sections of the same colour */
-.palette-test #process + #faq,
-body:has(main.palette-test) footer {
+.home #process + #faq,
+footer {
   border-top: 1px solid rgba(245, 241, 232, 0.12);
 }
 
 /* Process step numbers in the brand accent */
-.palette-test #process {
+.home #process {
   --process-num: var(--orange);
 }
 
 /* Industries row buttons: Ivory on Midnight (no pure white) */
-.palette-test #industries {
+.home #industries {
   --row-link-bg: var(--ivory);
   --row-link-ink: var(--midnight);
 }
 
 /* FAQ help card is Midnight on the Stone canvas — restore light text */
-.palette-test #faq [class*="helpCard"] {
+.home #faq [class*="helpCard"] {
   --ink-on-dark: var(--ivory);
   --ink-dim-on-dark: rgba(245, 241, 232, 0.72);
 }
 
 /* Footer wordmark fully in the brand orange */
-body:has(main.palette-test) footer [class*="wordmark"] {
+footer [class*="wordmark"] {
   color: var(--orange);
 }
 
 /* Contact CTA on the light blue canvas, Midnight text, no orange */
-.palette-test #contact {
+.home #contact {
   --bg: var(--powder);
   --ink: var(--midnight);
   --ink-dim: var(--midnight);
@@ -197,7 +199,7 @@ body:has(main.palette-test) footer [class*="wordmark"] {
 }
 
 /* "What goes into a campaign" on the light blue canvas with Midnight text */
-.palette-test #campaign {
+.home #campaign {
   --bg: var(--powder);
   --bg-elev: var(--ivory);
   --bg-dark: var(--powder);
@@ -214,13 +216,13 @@ body:has(main.palette-test) footer [class*="wordmark"] {
 }
 
 /* No orange in light blue sections: accents there are Midnight */
-.palette-test #campaign {
+.home #campaign {
   --highlight: var(--midnight);
   --on-highlight: var(--ivory);
 }
 
 /* Industries corner dots: larger patch that fades out more gradually */
-.palette-test #industries {
+.home #industries {
   --dots-w: min(58vw, 860px);
   --dots-mask: radial-gradient(circle at top right, #000 0%, #000 38%, transparent 92%);
   --dots-w-sm: 60vw;

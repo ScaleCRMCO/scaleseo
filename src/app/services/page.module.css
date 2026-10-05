@@ -1,6 +1,6 @@
 /* ==========================================================================
    /services hub — alternating dark/light rounded sections, same card
-   language as the homepage (dark #181818 cards, lime pills, soft-shadow
+   language as the homepage (dark #0B2846 cards, lime pills, soft-shadow
    light cards).
    ========================================================================== */
 
@@ -73,7 +73,7 @@
   display: flex;
   flex-direction: column;
   gap: 4px;
-  background: #181818;
+  background: #0B2846;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 16px;
   padding: 14px 18px;
@@ -321,7 +321,7 @@ a:hover > .arrow {
 
 /* === Cards ============================================================= */
 .darkCard {
-  background: #181818;
+  background: #0B2846;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 28px;
   padding: 2.5rem;
@@ -346,8 +346,8 @@ a:hover > .arrow {
   display: flex;
   flex-direction: column;
   gap: 14px;
-  box-shadow: 0 40px 80px -40px rgba(10, 10, 10, 0.16),
-              0 12px 24px -12px rgba(10, 10, 10, 0.08);
+  box-shadow: 0 40px 80px -40px rgba(3, 27, 54, 0.16),
+              0 12px 24px -12px rgba(3, 27, 54, 0.08);
 }
 
 .threeGrid {
@@ -388,7 +388,7 @@ a:hover > .arrow {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
   gap: 56px;
-  background: #181818;
+  background: #0B2846;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 28px;
   padding: 3.25rem;
@@ -629,16 +629,16 @@ a:hover > .arrow {
 .tintBlue {
   --tint: var(--pop-blue);
   --tint-ink: var(--ink);
-  --tint-dim: rgba(10, 10, 10, 0.78);
+  --tint-dim: rgba(3, 27, 54, 0.78);
   --tint-panel: rgba(255, 255, 255, 0.28);
-  --tint-line: rgba(10, 10, 10, 0.14);
+  --tint-line: rgba(3, 27, 54, 0.14);
 }
 .tintPink {
   --tint: var(--pop-pink);
   --tint-ink: var(--ink);
-  --tint-dim: rgba(10, 10, 10, 0.8);
+  --tint-dim: rgba(3, 27, 54, 0.8);
   --tint-panel: rgba(255, 255, 255, 0.28);
-  --tint-line: rgba(10, 10, 10, 0.14);
+  --tint-line: rgba(3, 27, 54, 0.14);
 }
 .tintPurple {
   --tint: var(--pop-purple);
@@ -650,9 +650,9 @@ a:hover > .arrow {
 .tintYellow {
   --tint: var(--pop-yellow);
   --tint-ink: var(--ink);
-  --tint-dim: rgba(10, 10, 10, 0.78);
+  --tint-dim: rgba(3, 27, 54, 0.78);
   --tint-panel: rgba(255, 255, 255, 0.4);
-  --tint-line: rgba(10, 10, 10, 0.12);
+  --tint-line: rgba(3, 27, 54, 0.12);
 }
 
 .pastel {
@@ -660,8 +660,8 @@ a:hover > .arrow {
   border-color: transparent !important;
   color: var(--tint-ink) !important;
   --text-dim: var(--tint-dim);
-  box-shadow: 0 40px 80px -40px rgba(10, 10, 10, 0.2),
-              0 12px 24px -12px rgba(10, 10, 10, 0.08) !important;
+  box-shadow: 0 40px 80px -40px rgba(3, 27, 54, 0.2),
+              0 12px 24px -12px rgba(3, 27, 54, 0.08) !important;
 }
 
 .pastel :global(.index),

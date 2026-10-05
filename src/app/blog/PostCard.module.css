@@ -25,7 +25,7 @@
   font-size: 11px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--postcard-dim, rgba(10, 10, 10, 0.65));
+  color: var(--postcard-dim, rgba(3, 27, 54, 0.65));
 }
 
 .title {
@@ -42,7 +42,7 @@
   font-family: var(--sans);
   font-size: 15px;
   line-height: 1.6;
-  color: var(--postcard-dim, rgba(10, 10, 10, 0.72));
+  color: var(--postcard-dim, rgba(3, 27, 54, 0.72));
 }
 
 /* Footer with a vertical accent bar, like the reference's green rule */
@@ -62,7 +62,7 @@
   font-family: var(--mono);
   font-size: 11.5px;
   letter-spacing: 0.06em;
-  color: var(--postcard-dim, rgba(10, 10, 10, 0.65));
+  color: var(--postcard-dim, rgba(3, 27, 54, 0.65));
 }
 
 .read {

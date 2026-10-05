@@ -70,13 +70,13 @@
   flex-direction: column;
   text-decoration: none;
   color: inherit;
-  box-shadow: 0 24px 48px -24px rgba(10, 10, 10, 0.16);
+  box-shadow: 0 24px 48px -24px rgba(3, 27, 54, 0.16);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 32px 56px -20px rgba(10, 10, 10, 0.22);
+  box-shadow: 0 32px 56px -20px rgba(3, 27, 54, 0.22);
 }
 
 /* Colored graphic block standing in for a post image */
@@ -96,7 +96,7 @@
   font-size: 11px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #0a0a0a;
+  color: #031B36;
 }
 
 .cardGraphicMark {
@@ -105,7 +105,7 @@
   font-weight: 800;
   font-size: clamp(70px, 9vw, 140px);
   line-height: 1;
-  color: rgba(10, 10, 10, 0.14);
+  color: rgba(3, 27, 54, 0.14);
 }
 
 .cardBody {

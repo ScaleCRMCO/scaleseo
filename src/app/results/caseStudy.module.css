@@ -52,10 +52,10 @@
 .browser {
   border-radius: 20px;
   overflow: hidden;
-  background: #181818;
+  background: #0B2846;
   border: 1px solid rgba(255, 255, 255, 0.12);
   box-shadow: 0 60px 100px -40px rgba(0, 0, 0, 0.8),
-              0 0 0 1px rgba(153, 255, 0, 0.08);
+              0 0 0 1px rgba(255, 44, 22, 0.08);
   transform: perspective(1600px) rotateY(-6deg) rotateX(2deg);
   transform-origin: left center;
 }
@@ -108,7 +108,7 @@
   gap: 10px;
   padding: 26px 28px;
   border-radius: 22px;
-  background: #181818;
+  background: #0B2846;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -145,7 +145,7 @@
 
 /* === Challenge: numbered panel ========================================== */
 .panel {
-  background: #181818;
+  background: #0B2846;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 28px;
   padding: 2.5rem;
@@ -212,7 +212,7 @@
   gap: 18px;
   padding: 22px 26px;
   border-radius: 20px;
-  background: #181818;
+  background: #0B2846;
   border: 1px solid rgba(255, 255, 255, 0.1);
   font-family: var(--display);
   font-weight: 700;
@@ -283,8 +283,8 @@
   padding: 2.5rem;
   border-radius: 28px;
   background: var(--bg-elev);
-  box-shadow: 0 40px 80px -40px rgba(10, 10, 10, 0.16),
-              0 12px 24px -12px rgba(10, 10, 10, 0.08);
+  box-shadow: 0 40px 80px -40px rgba(3, 27, 54, 0.16),
+              0 12px 24px -12px rgba(3, 27, 54, 0.08);
 }
 
 .resultLead {
@@ -345,7 +345,7 @@
   overflow: hidden;
   background: #fff;
   border: 1px solid var(--line);
-  box-shadow: 0 40px 80px -40px rgba(10, 10, 10, 0.2);
+  box-shadow: 0 40px 80px -40px rgba(3, 27, 54, 0.2);
 }
 
 .figureImg {
@@ -482,7 +482,7 @@
   gap: 12px;
   padding: 26px 28px;
   border-radius: 22px;
-  background: #181818;
+  background: #0B2846;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -610,7 +610,7 @@
   background: repeating-linear-gradient(
     -45deg,
     transparent 0 14px,
-    rgba(10, 10, 10, 0.025) 14px 28px
+    rgba(3, 27, 54, 0.025) 14px 28px
   );
   text-align: center;
   color: var(--ink-dim);
@@ -653,7 +653,7 @@
 /* === Chips on dark sections ============================================= */
 .chipsOnDark li {
   background: transparent;
-  border: 1px solid rgba(153, 255, 0, 0.45);
+  border: 1px solid rgba(255, 44, 22, 0.45);
   color: var(--ink-on-dark);
 }
 
@@ -672,7 +672,7 @@
   padding: 1.75rem;
   border-radius: 24px;
   background: var(--bg-elev);
-  box-shadow: 0 40px 80px -40px rgba(10, 10, 10, 0.16);
+  box-shadow: 0 40px 80px -40px rgba(3, 27, 54, 0.16);
 }
 
 .queryText {
@@ -715,7 +715,7 @@
   gap: 14px;
   padding: 1.75rem;
   border-radius: 24px;
-  background: #181818;
+  background: #0B2846;
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -780,7 +780,7 @@
 .chain li span {
   padding: 12px 20px;
   border-radius: 999px;
-  background: #181818;
+  background: #0B2846;
   border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
