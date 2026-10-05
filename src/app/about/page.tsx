@@ -8,6 +8,7 @@ import RevealOnScroll from "../components/RevealOnScroll";
 import hub from "../services/page.module.css";
 import ind from "../industries/page.module.css";
 import styles from "./page.module.css";
+import Contact from "../components/ContactCta";
 
 export const metadata: Metadata = {
   title: "About Scale SEO — Corbin Jensen",
@@ -698,50 +699,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* === CTA — dark === */}
-      <section className={hub.cta} data-nav-theme="dark">
-        <h2 className={hub.ctaHeadline}>
-          Work With <span className={hub.accent}>Scale SEO</span>
-        </h2>
-        <div className={hub.ctaSub}>
-          <p>
-            If you&rsquo;re looking for an SEO partner who can work directly on
-            your website, understand the commercial side of your business, and
-            stay personally involved in the strategy, tell me what you&rsquo;re
-            trying to achieve.
-          </p>
-          <p>
-            I&rsquo;ll take a look at your website, existing search visibility,
-            and the market you&rsquo;re competing in to determine where SEO may
-            be able to help.
-          </p>
-        </div>
-        <div className={`${hub.buttonGroupCenter} ${styles.ctaButtons}`}>
-          <Link href="/services/seo" className={hub.buttonSecondaryDark}>
-            <span>Explore SEO Services</span>
-            <span className={hub.arrow}>→</span>
-          </Link>
-          <a
-            href={BOOKING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={hub.buttonPrimaryDark}
-          >
-            <span>Book a Strategy Call</span>
-            <span className={hub.arrow}>→</span>
-          </a>
-          <Link href="/contact" className={hub.buttonSecondaryDark}>
-            <span>Send a Message</span>
-            <span className={hub.arrow}>→</span>
-          </Link>
-        </div>
-        <p className={styles.ctaNote}>
-          Looking for an independent assessment first?{" "}
-          <Link href="/services/seo-audits" className={styles.ctaNoteLink}>
-            Explore Standalone SEO Audits →
-          </Link>
-        </p>
-      </section>
+      <Contact />
 
       <RevealOnScroll />
     </main>

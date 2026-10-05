@@ -4,6 +4,7 @@ import Breadcrumbs from "../components/Breadcrumbs";
 import RevealOnScroll from "../components/RevealOnScroll";
 import ServicesFaq from "./ServicesFaq";
 import styles from "./page.module.css";
+import Contact from "../components/ContactCta";
 
 export const metadata: Metadata = {
   title: "SEO & Digital Marketing Services Calgary | Scale SEO",
@@ -740,42 +741,7 @@ export default function ServicesPage() {
       {/* === FAQ — light === */}
       <ServicesFaq />
 
-      {/* === CTA — dark === */}
-      <section className={styles.cta} data-nav-theme="dark">
-        <h2 className={styles.ctaHeadline}>
-          Not Sure Which Service{" "}
-          <span className={styles.accent}>Your Business Needs?</span>
-        </h2>
-        <div className={styles.ctaSub}>
-          <p>You don&rsquo;t need to diagnose the problem before getting in touch.</p>
-          <p>
-            Tell me about your website, what you&rsquo;re currently doing to
-            generate leads, and where you&rsquo;re trying to grow. I&rsquo;ll
-            review the situation and tell you which service makes
-            sense&mdash;or whether I think you need one at all.
-          </p>
-          <p>
-            For businesses looking to grow through organic search, we can also
-            discuss whether an ongoing month-to-month SEO campaign is a
-            realistic fit.
-          </p>
-        </div>
-        <div className={styles.buttonGroupCenter}>
-          <a
-            href={BOOKING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.buttonPrimaryDark}
-          >
-            <span>Book a Strategy Call</span>
-            <span className={styles.arrow}>→</span>
-          </a>
-          <Link href="/contact" className={styles.buttonSecondaryDark}>
-            <span>Send a Message</span>
-            <span className={styles.arrow}>→</span>
-          </Link>
-        </div>
-      </section>
+      <Contact />
       <RevealOnScroll />
     </main>
   );

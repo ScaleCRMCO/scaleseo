@@ -11,6 +11,7 @@ import hub from "../services/page.module.css";
 import ind from "../industries/page.module.css";
 import about from "../about/page.module.css";
 import styles from "./page.module.css";
+import Contact from "../components/ContactCta";
 
 export const metadata: Metadata = {
   title: "Corbin Jensen | Founder & Lead Specialist, Scale SEO",
@@ -759,47 +760,7 @@ export default function CorbinJensenPage() {
         </div>
       </section>
 
-      {/* === CTA — dark === */}
-      <section className={hub.cta} data-nav-theme="dark">
-        <h2 className={hub.ctaHeadline}>
-          Work With <span className={hub.accent}>Corbin</span>
-        </h2>
-        <div className={hub.ctaSub}>
-          <p>
-            Corbin works directly with a limited number of businesses through
-            Scale SEO.
-          </p>
-          <p>
-            If you&rsquo;re looking for ongoing SEO support, a standalone SEO
-            audit, or help improving the search performance and structure of an
-            existing website, you can get in touch directly.
-          </p>
-        </div>
-        <p className={styles.ctaPromise}>
-          Based in Calgary · Working with businesses across Canada &amp;
-          internationally
-        </p>
-        <div className={`${hub.buttonGroupCenter} ${styles.ctaButtons}`}>
-          <a
-            href={BOOKING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={hub.buttonPrimaryDark}
-          >
-            <span>Book a Strategy Call</span>
-            <span className={hub.arrow}>→</span>
-          </a>
-          <Link href="/contact" className={hub.buttonSecondaryDark}>
-            <span>Send a Message</span>
-            <span className={hub.arrow}>→</span>
-          </Link>
-        </div>
-        <p className={about.ctaNote}>
-          <Link href="/services" className={about.ctaNoteLink}>
-            Explore Scale SEO Services →
-          </Link>
-        </p>
-      </section>
+      <Contact />
 
       <RevealOnScroll />
     </main>

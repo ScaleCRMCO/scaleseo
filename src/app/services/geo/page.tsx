@@ -8,6 +8,7 @@ import RevealOnScroll from "../../components/RevealOnScroll";
 import hub from "../page.module.css";
 import ind from "../../industries/page.module.css";
 import styles from "./page.module.css";
+import Contact from "../../components/ContactCta";
 
 export const metadata: Metadata = {
   title: "AI Search Optimization & GEO Services | Scale SEO",
@@ -889,56 +890,7 @@ export default function GeoServicePage() {
         </div>
       </section>
 
-      {/* === GET STARTED — CTA === */}
-      <section className={`${hub.cta} ${styles.ctaLight}`}>
-        <div className={`section-label ${styles.labelCenter}`}>Get Started</div>
-        <h2 className={hub.ctaHeadline}>
-          Build Visibility Beyond{" "}
-          <span className="title-block">Traditional Search</span>
-        </h2>
-        <div className={hub.ctaSub}>
-          <p>
-            Search is changing, but the objective remains the same: make it
-            easier for the right people to discover and understand your
-            business.
-          </p>
-          <p>
-            Scale SEO combines traditional SEO with AI search optimization to
-            strengthen your website across the search experiences people are
-            increasingly using.
-          </p>
-          <p>
-            If you already invest in SEO, we can identify where your existing
-            strategy could better account for AI search.
-          </p>
-          <p>
-            If you&rsquo;re not sure where to start, a standalone SEO audit can
-            help identify the technical, content, and website issues worth
-            addressing first.
-          </p>
-        </div>
-        <div className={`${hub.buttonGroupCenter} ${styles.ctaButtons}`}>
-          <a
-            href={BOOKING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.ctaPrimary}
-          >
-            <span>Book a Strategy Call</span>
-            <span className={hub.arrow}>→</span>
-          </a>
-          <Link href="/contact" className={styles.ctaSecondary}>
-            <span>Send a Message</span>
-            <span className={hub.arrow}>→</span>
-          </Link>
-        </div>
-        <p className={styles.ctaNote}>
-          Prefer to start with an independent website review?{" "}
-          <Link href="/services/seo-audits" className={styles.ctaNoteLink}>
-            Explore SEO Audits →
-          </Link>
-        </p>
-      </section>
+      <Contact />
 
       <RevealOnScroll />
     </main>

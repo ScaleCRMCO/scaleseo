@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Contact from "../sections/home/Contact";
+import Contact from "../components/ContactCta";
 import MapEmbed from "./MapEmbed";
 
 export const metadata: Metadata = {

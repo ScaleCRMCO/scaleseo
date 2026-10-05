@@ -6,6 +6,7 @@ import ServicesFaq, { type FaqItem } from "../ServicesFaq";
 // Section/card system shared with the /services hub so all service pages match.
 import hub from "../page.module.css";
 import styles from "./page.module.css";
+import Contact from "../../components/ContactCta";
 
 export const metadata: Metadata = {
   title: "SEO Audit Services Calgary | Scale SEO",
@@ -1011,56 +1012,7 @@ export default function SeoAuditsPage() {
         }
       />
 
-      {/* === CTA — dark === */}
-      <section className={hub.cta} data-nav-theme="dark">
-        <h2 className={hub.ctaHeadline}>
-          Find Out What&rsquo;s{" "}
-          <span className={hub.accent}>Holding Your Website Back</span>
-        </h2>
-        <div className={hub.ctaSub}>
-          <p>
-            If you&rsquo;re not sure why your website isn&rsquo;t performing as
-            well as it should in Google, an SEO audit can give you a clearer
-            place to start.
-          </p>
-          <p>
-            I&rsquo;ll review your website, identify the issues and
-            opportunities that matter, and give you a prioritized roadmap for
-            what should happen next.
-          </p>
-          <p>
-            Choose a standalone audit if you want the findings and
-            recommendations without committing to monthly SEO.
-          </p>
-        </div>
-        <div className={styles.ctaPrices}>
-          <span className={styles.ctaPrice}>SEO Audit &mdash; Starting from $500&nbsp;+&nbsp;GST</span>
-          <span className={styles.ctaPrice}>
-            Advanced SEO Audit &mdash; Starting from $1,500&nbsp;+&nbsp;GST
-          </span>
-        </div>
-        <div className={hub.buttonGroupCenter}>
-          <a
-            href={BOOKING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={hub.buttonPrimaryDark}
-          >
-            <span>Book an SEO Audit</span>
-            <span className={hub.arrow}>→</span>
-          </a>
-          <Link href="/contact" className={hub.buttonSecondaryDark}>
-            <span>Send a Message</span>
-            <span className={hub.arrow}>→</span>
-          </Link>
-        </div>
-        <p className={styles.ctaNote}>
-          Looking for ongoing implementation and strategy instead?{" "}
-          <Link href="/services/seo" className={styles.ctaNoteLink}>
-            Explore Ongoing SEO Services →
-          </Link>
-        </p>
-      </section>
+      <Contact />
 
       <RevealOnScroll />
     </main>

@@ -4,6 +4,7 @@ import RevealOnScroll from "../components/RevealOnScroll";
 import { posts } from "./posts";
 import PostCard from "./PostCard";
 import styles from "./page.module.css";
+import Contact from "../components/ContactCta";
 
 export const metadata: Metadata = {
   title: "SEO Insights & Strategy | Scale SEO Blog",
@@ -38,6 +39,7 @@ export default function BlogPage() {
         </div>
       </section>
       <RevealOnScroll />
+      <Contact />
     </main>
   );
 }

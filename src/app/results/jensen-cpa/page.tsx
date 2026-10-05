@@ -10,6 +10,7 @@ import hub from "../../services/page.module.css";
 import ind from "../../industries/page.module.css";
 import about from "../../about/page.module.css";
 import styles from "../caseStudy.module.css";
+import Contact from "../../components/ContactCta";
 
 export const metadata: Metadata = {
   title: "Jensen CPA SEO Case Study | Scale SEO",
@@ -859,45 +860,7 @@ export default function JensenCpaCaseStudy() {
         </div>
       </section>
 
-      {/* === WORK WITH SCALE SEO — dark CTA === */}
-      <section className={hub.cta} data-nav-theme="dark">
-        <div className={`section-label ${ind.labelOnDark} ${styles.labelCenter}`}>
-          Work With Scale SEO
-        </div>
-        <h2 className={hub.ctaHeadline}>
-          Grow Your Accounting Firm <span className={hub.accent}>Through Search</span>
-        </h2>
-        <div className={hub.ctaSub}>
-          <p>
-            If your accounting firm has strong expertise but your website and
-            search presence don&rsquo;t reflect it, Scale SEO can help.
-          </p>
-          <p>
-            I work directly with accounting and professional service firms to
-            improve their websites, strengthen organic visibility, and build
-            search strategies around the services and clients they want to grow.
-          </p>
-        </div>
-        <div className={`${hub.buttonGroupCenter} ${styles.ctaButtons}`}>
-          <Link href="/industries/accounting-firms" className={hub.buttonSecondaryDark}>
-            <span>Explore SEO for Accounting Firms</span>
-            <span className={hub.arrow}>→</span>
-          </Link>
-          <Link href="/services/seo" className={hub.buttonSecondaryDark}>
-            <span>Explore SEO Services</span>
-            <span className={hub.arrow}>→</span>
-          </Link>
-          <a
-            href={BOOKING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={hub.buttonPrimaryDark}
-          >
-            <span>Book a Strategy Call</span>
-            <span className={hub.arrow}>→</span>
-          </a>
-        </div>
-      </section>
+      <Contact />
 
       <RevealOnScroll />
     </main>

@@ -6,6 +6,7 @@ import ServicesFaq, { type FaqItem } from "../ServicesFaq";
 // Section/card system shared with the /services hub so both pages match.
 import hub from "../page.module.css";
 import styles from "./page.module.css";
+import Contact from "../../components/ContactCta";
 
 export const metadata: Metadata = {
   title: "Search Engine Optimization Services Calgary | Scale SEO",
@@ -1093,52 +1094,7 @@ export default function SeoServicePage() {
         }
       />
 
-      {/* === CTA — dark === */}
-      <section className={hub.cta} data-nav-theme="dark">
-        <h2 className={hub.ctaHeadline}>
-          Find Out What&rsquo;s Limiting{" "}
-          <span className={hub.accent}>Your Organic Growth</span>
-        </h2>
-        <div className={hub.ctaSub}>
-          <p>
-            If your website isn&rsquo;t generating enough qualified traffic
-            from Google, I&rsquo;ll help you identify where the biggest
-            opportunities and constraints are.
-          </p>
-          <p>
-            We&rsquo;ll look at your current search visibility, website,
-            competitors, target customers, and growth goals to determine whether
-            ongoing SEO makes sense and what I would prioritize first.
-          </p>
-          <p>If we&rsquo;re a good fit, I&rsquo;ll explain the recommended scope and why.</p>
-          <p>If we&rsquo;re not, I&rsquo;ll tell you that too.</p>
-        </div>
-        <p className={styles.ctaPromise}>
-          Month-to-month SEO · No long-term contracts · Managed directly from
-          Calgary
-        </p>
-        <div className={hub.buttonGroupCenter}>
-          <a
-            href={BOOKING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={hub.buttonPrimaryDark}
-          >
-            <span>Book a Strategy Call</span>
-            <span className={hub.arrow}>→</span>
-          </a>
-          <Link href="/contact" className={hub.buttonSecondaryDark}>
-            <span>Send a Message</span>
-            <span className={hub.arrow}>→</span>
-          </Link>
-        </div>
-        <p className={styles.ctaNote}>
-          Looking for an independent assessment rather than ongoing SEO?{" "}
-          <Link href="/services/seo-audits" className={styles.ctaNoteLink}>
-            Explore SEO Audits →
-          </Link>
-        </p>
-      </section>
+      <Contact />
 
       <RevealOnScroll />
     </main>

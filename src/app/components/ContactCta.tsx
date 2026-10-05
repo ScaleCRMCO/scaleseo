@@ -2,7 +2,7 @@
 
 import { useState, FormEvent } from "react";
 import { useRouter } from "next/navigation";
-import styles from "./Contact.module.css";
+import styles from "./ContactCta.module.css";
 
 type Status = "idle" | "sending" | "success" | "error";
 

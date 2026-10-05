@@ -9,7 +9,7 @@ import IndustriesTeaser from "./sections/home/IndustriesTeaser";
 import Process from "./sections/home/Process";
 import BlogTeaser from "./sections/home/BlogTeaser";
 import FAQ from "./sections/home/FAQ";
-import Contact from "./sections/home/Contact";
+import Contact from "./components/ContactCta";
 import RevealOnScroll from "./components/RevealOnScroll";
 
 export const metadata: Metadata = {

@@ -5,6 +5,7 @@ import Breadcrumbs from "../../components/Breadcrumbs";
 import RevealOnScroll from "../../components/RevealOnScroll";
 import { posts, getPost } from "../posts";
 import styles from "./page.module.css";
+import Contact from "../../components/ContactCta";
 
 export function generateStaticParams() {
   return posts.map((p) => ({ slug: p.slug }));
@@ -213,20 +214,7 @@ export default function BlogPostPage({
         </div>
       </article>
 
-      <section className={styles.cta}>
-        <h2 className={styles.ctaHeadline}>
-          Want a second opinion on your firm&rsquo;s search visibility?
-        </h2>
-        <a
-          href="https://cal.com/corbinjensen-scaleseo/30min"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={styles.ctaButton}
-        >
-          <span>Book a call</span>
-          <span className={styles.arrow}>→</span>
-        </a>
-      </section>
+      <Contact />
 
       <script
         type="application/ld+json"

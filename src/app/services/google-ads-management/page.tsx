@@ -5,6 +5,7 @@ import servicePageStyles from "../../components/ServicePage.module.css";
 import processStyles from "../../sections/home/Process.module.css";
 import faqStyles from "../../sections/home/FAQ.module.css";
 import styles from "./page.module.css";
+import Contact from "../../components/ContactCta";
 
 export const metadata: Metadata = {
   title: "Google Ads Management Services in Calgary & Canada | Scale SEO",
@@ -246,38 +247,7 @@ export default function GoogleAdsPage() {
         </div>
       </section>
 
-      {/* === BOTTOM CTA === */}
-      <section className={servicePageStyles.cta}>
-        <div className={servicePageStyles.ctaEyebrow}>
-          <span className={servicePageStyles.dot} />
-          Now booking new clients
-        </div>
-        <h2 className={servicePageStyles.ctaHeadline}>
-          Ready for a PPC audit?
-        </h2>
-        <p className={servicePageStyles.ctaSub}>
-          Tell me about your business and current ad spend — I&rsquo;ll
-          tell you honestly what&rsquo;s working, what&rsquo;s wasted, and
-          whether I&rsquo;m the right fit.
-        </p>
-        <div className={servicePageStyles.ctaGroup}>
-          <a
-            href="https://cal.com/corbinjensen-scaleseo/30min"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={servicePageStyles.ctaButton}
-          >
-            <span>Book a call</span>
-            <span className={servicePageStyles.arrow}>→</span>
-          </a>
-          <a href="/contact" className={servicePageStyles.ctaButtonSecondary}>
-            <span>Send a Message</span>
-          </a>
-        </div>
-        <p className={servicePageStyles.relatedNote}>
-          Want the organic side too? <a href="/services/seo">See how SEO works →</a>
-        </p>
-      </section>
+      <Contact />
 
       <RevealOnScroll />
     </main>

@@ -10,6 +10,7 @@ import hub from "../../services/page.module.css";
 import ind from "../../industries/page.module.css";
 import about from "../../about/page.module.css";
 import styles from "../caseStudy.module.css";
+import Contact from "../../components/ContactCta";
 
 export const metadata: Metadata = {
   title: "Kinsmen Consulting SEO Case Study | Scale SEO",
@@ -600,48 +601,7 @@ export default function KinsmenConsultingCaseStudy() {
         </div>
       </section>
 
-      {/* === WORK WITH SCALE SEO — light CTA (follows a dark section) === */}
-      <section className={`${hub.cta} ${styles.ctaLight}`}>
-        <div className={`section-label ${styles.labelCenter} ${styles.ctaLabelInk}`}>
-          Work With Scale SEO
-        </div>
-        <h2 className={hub.ctaHeadline}>
-          Turn Search Visibility Into{" "}
-          <span className="title-block">Business Growth</span>
-        </h2>
-        <div className={hub.ctaSub}>
-          <p>Good SEO shouldn&rsquo;t stop at rankings and traffic.</p>
-          <p>
-            For B2B and service businesses, the real objective is getting in
-            front of the right potential customers and turning that visibility
-            into qualified opportunities.
-          </p>
-          <p>
-            Scale SEO combines search strategy with hands-on website
-            improvements to build organic visibility around the services that
-            matter to your business.
-          </p>
-        </div>
-        <div className={`${hub.buttonGroupCenter} ${styles.ctaButtons}`}>
-          <Link href="/services/seo" className={styles.ctaSecondary}>
-            <span>Explore SEO Services</span>
-            <span className={hub.arrow}>→</span>
-          </Link>
-          <Link href="/services/web-development" className={styles.ctaSecondary}>
-            <span>Explore Web Development</span>
-            <span className={hub.arrow}>→</span>
-          </Link>
-          <a
-            href={BOOKING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.ctaPrimary}
-          >
-            <span>Book a Strategy Call</span>
-            <span className={hub.arrow}>→</span>
-          </a>
-        </div>
-      </section>
+      <Contact />
 
       <RevealOnScroll />
     </main>

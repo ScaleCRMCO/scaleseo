@@ -10,6 +10,7 @@ import hub from "../../services/page.module.css";
 import ind from "../../industries/page.module.css";
 import about from "../../about/page.module.css";
 import styles from "../caseStudy.module.css";
+import Contact from "../../components/ContactCta";
 
 export const metadata: Metadata = {
   title: "Empire Accountants SEO Case Study | Scale SEO",
@@ -631,46 +632,7 @@ export default function EmpireAccountantsCaseStudy() {
         </div>
       </section>
 
-      {/* === WORK WITH SCALE SEO — dark CTA === */}
-      <section className={hub.cta} data-nav-theme="dark">
-        <div className={`section-label ${ind.labelOnDark} ${styles.labelCenter}`}>
-          Work With Scale SEO
-        </div>
-        <h2 className={hub.ctaHeadline}>
-          Looking for <span className={hub.accent}>Similar SEO Support?</span>
-        </h2>
-        <div className={hub.ctaSub}>
-          <p>
-            If you run an accounting or professional service firm and want to
-            improve visibility for the services that matter most to your
-            business, Scale SEO can help.
-          </p>
-          <p>
-            Ongoing SEO campaigns combine technical improvements, content,
-            service-page optimization, internal linking, local SEO, and search
-            strategy around your actual business priorities.
-          </p>
-        </div>
-        <div className={`${hub.buttonGroupCenter} ${styles.ctaButtons}`}>
-          <Link href="/industries/accounting-firms" className={hub.buttonSecondaryDark}>
-            <span>Explore SEO for Accounting Firms</span>
-            <span className={hub.arrow}>→</span>
-          </Link>
-          <Link href="/services/seo" className={hub.buttonSecondaryDark}>
-            <span>Explore SEO Services</span>
-            <span className={hub.arrow}>→</span>
-          </Link>
-          <a
-            href={BOOKING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={hub.buttonPrimaryDark}
-          >
-            <span>Book a Strategy Call</span>
-            <span className={hub.arrow}>→</span>
-          </a>
-        </div>
-      </section>
+      <Contact />
 
       <RevealOnScroll />
     </main>

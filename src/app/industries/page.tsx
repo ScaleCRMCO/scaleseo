@@ -5,6 +5,7 @@ import RevealOnScroll from "../components/RevealOnScroll";
 // Section/card system shared with the /services pages so the site matches.
 import hub from "../services/page.module.css";
 import styles from "./page.module.css";
+import Contact from "../components/ContactCta";
 
 export const metadata: Metadata = {
   title: "SEO for Professional Services & B2B | Scale SEO",
@@ -407,46 +408,7 @@ export default function IndustriesPage() {
         </div>
       </section>
 
-      {/* === DON'T SEE YOUR INDUSTRY — light CTA === */}
-      <section className={`${hub.section} ${hub.light} ${styles.ctaLight}`}>
-        <div className={styles.ctaInner}>
-          <h2 className={styles.ctaHeadline}>
-            Don&rsquo;t See <span className="title-block">Your Industry?</span>
-          </h2>
-          <div className={styles.ctaBody}>
-            <p>
-              You don&rsquo;t need to fit neatly into one of the industries
-              above to work with Scale SEO.
-            </p>
-            <p>
-              If you run a professional service or B2B business and potential
-              clients use Google to research the services you provide, there may
-              be an opportunity to build organic search into a meaningful
-              acquisition channel.
-            </p>
-            <p>
-              Tell me what your business does, who you&rsquo;re trying to reach,
-              and where you want to grow. I&rsquo;ll take a look at the search
-              opportunity and tell you whether I think SEO makes sense.
-            </p>
-          </div>
-          <div className={styles.ctaGroup}>
-            <a
-              href={BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.ctaPrimary}
-            >
-              <span>Book a Strategy Call</span>
-              <span className={styles.arrow}>→</span>
-            </a>
-            <Link href="/contact" className={styles.ctaSecondary}>
-              <span>Send a Message</span>
-              <span className={styles.arrow}>→</span>
-            </Link>
-          </div>
-        </div>
-      </section>
+      <Contact />
 
       <RevealOnScroll />
     </main>

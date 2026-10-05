@@ -8,6 +8,7 @@ import ServicesFaq, { type FaqItem } from "../../services/ServicesFaq";
 import hub from "../../services/page.module.css";
 import ind from "../page.module.css";
 import styles from "./page.module.css";
+import Contact from "../../components/ContactCta";
 
 export const metadata: Metadata = {
   title: "SEO for Accounting Firms & CPA Practices in Canada | Scale SEO",
@@ -1098,58 +1099,7 @@ export default function AccountingFirmsPage() {
         }
       />
 
-      {/* === CTA — dark === */}
-      <section className={hub.cta} data-nav-theme="dark">
-        <h2 className={hub.ctaHeadline}>
-          Grow Your Accounting Firm{" "}
-          <span className={hub.accent}>Through Organic Search</span>
-        </h2>
-        <div className={hub.ctaSub}>
-          <p>
-            If your accounting firm wants to generate more qualified
-            opportunities through Google, the first step is understanding where
-            you stand today.
-          </p>
-          <p>
-            I&rsquo;ll review your website, current search visibility, services,
-            competitors, and target market to identify where the strongest
-            organic opportunities exist.
-          </p>
-          <p>
-            If I think ongoing SEO is a good fit, I&rsquo;ll explain what I
-            would prioritize and why.
-          </p>
-          <p>
-            If your primary market is already represented by a directly
-            competing Scale SEO client, I&rsquo;ll tell you upfront.
-          </p>
-        </div>
-        <p className={styles.ctaPromise}>
-          SEO for accounting firms across Canada · Month-to-month · Managed
-          directly by me
-        </p>
-        <div className={hub.buttonGroupCenter}>
-          <a
-            href={BOOKING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={hub.buttonPrimaryDark}
-          >
-            <span>Book a Strategy Call</span>
-            <span className={hub.arrow}>→</span>
-          </a>
-          <Link href="/contact" className={hub.buttonSecondaryDark}>
-            <span>Send a Message</span>
-            <span className={hub.arrow}>→</span>
-          </Link>
-        </div>
-        <p className={styles.ctaNote}>
-          Not ready for ongoing SEO?{" "}
-          <Link href="/services/seo-audits" className={styles.ctaNoteLink}>
-            Explore Standalone SEO Audits →
-          </Link>
-        </p>
-      </section>
+      <Contact />
 
       <RevealOnScroll />
     </main>

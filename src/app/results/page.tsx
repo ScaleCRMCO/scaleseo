@@ -8,6 +8,7 @@ import RevealOnScroll from "../components/RevealOnScroll";
 import hub from "../services/page.module.css";
 import ind from "../industries/page.module.css";
 import styles from "./page.module.css";
+import Contact from "../components/ContactCta";
 
 export const metadata: Metadata = {
   title: "Client Results & Case Studies | Scale SEO",
@@ -363,43 +364,7 @@ export default function ResultsPage() {
         </div>
       </section>
 
-      {/* === WORK WITH SCALE SEO — light CTA (follows the dark section) === */}
-      <section className={`${hub.cta} ${styles.ctaLight}`}>
-        <div className={`section-label ${styles.labelCenter}`}>Work With Scale SEO</div>
-        <h2 className={hub.ctaHeadline}>
-          Build Your Own <span className="title-block">Search Growth Story</span>
-        </h2>
-        <div className={hub.ctaSub}>
-          <p>
-            If your business has strong services but isn&rsquo;t getting the
-            search visibility it should, I can help identify where the
-            opportunities are and what needs to change.
-          </p>
-          <p>
-            Scale SEO works primarily with professional service and B2B
-            businesses through ongoing SEO campaigns and standalone SEO audits.
-          </p>
-        </div>
-        <div className={`${hub.buttonGroupCenter} ${styles.ctaButtons}`}>
-          <Link href="/services/seo" className={styles.ctaSecondary}>
-            <span>Explore SEO Services</span>
-            <span className={hub.arrow}>→</span>
-          </Link>
-          <a
-            href={BOOKING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.ctaPrimary}
-          >
-            <span>Book a Strategy Call</span>
-            <span className={hub.arrow}>→</span>
-          </a>
-          <Link href="/contact" className={styles.ctaSecondary}>
-            <span>Send a Message</span>
-            <span className={hub.arrow}>→</span>
-          </Link>
-        </div>
-      </section>
+      <Contact />
 
       <RevealOnScroll />
     </main>

@@ -4,6 +4,7 @@ import { type Crumb } from "./Breadcrumbs";
 import RevealOnScroll from "./RevealOnScroll";
 import SellingHero from "./SellingHero";
 import styles from "./ServicePage.module.css";
+import Contact from "./ContactCta";
 
 export type IncludedItem = {
   num: string;
@@ -161,29 +162,12 @@ export default function ServicePage({
         </section>
       )}
 
-      <section className={styles.cta}>
-        <div className={styles.ctaEyebrow}>
-          <span className={styles.dot} />
-          Now booking new clients
+      {relatedNote && (
+        <div className={styles.relatedStrip}>
+          <p className={styles.relatedNote}>{relatedNote}</p>
         </div>
-        <h2 className={styles.ctaHeadline}>{ctaHeadline}</h2>
-        <p className={styles.ctaSub}>{ctaSub}</p>
-        <div className={styles.ctaGroup}>
-          <a
-            href="https://cal.com/corbinjensen-scaleseo/30min"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.ctaButton}
-          >
-            <span>Book a call</span>
-            <span className={styles.arrow}>→</span>
-          </a>
-          <Link href="/contact" className={styles.ctaButtonSecondary}>
-            <span>Send a Message</span>
-          </Link>
-        </div>
-        {relatedNote && <p className={styles.relatedNote}>{relatedNote}</p>}
-      </section>
+      )}
+      <Contact />
       <RevealOnScroll />
     </main>
   );
