@@ -38,15 +38,9 @@ export default function BlogPage() {
           <div className={styles.crumbsOnDark}>
             <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Blog" }]} />
           </div>
-          <h1 className={styles.title}>
-            SEO Insights &amp;{" "}
-            <span className={styles.accent}>Growth Strategies</span> for
-            Professional Services
-          </h1>
+          <h1 className={styles.title}>Blog</h1>
           <p className={styles.sub}>
-            Practical search engine optimization tactics, algorithm updates,
-            and revenue-focused advice built specifically for Canadian
-            accounting firms and B2B businesses.
+            SEO insights and practical strategies for Canadian businesses.
           </p>
         </div>
         <SketchIcon name="newspaper" className={styles.heroSketch} />
