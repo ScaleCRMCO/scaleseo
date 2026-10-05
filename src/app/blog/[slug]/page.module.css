@@ -1,6 +1,6 @@
 /* === HERO — black, bold display type === */
 .hero {
-  padding: 190px 40px 120px;
+  padding: 190px 3% 120px;
   background: var(--bg-dark);
   color: var(--ink-on-dark);
 }
@@ -60,7 +60,7 @@
   position: relative;
   margin-top: -48px;
   border-radius: 48px 48px 0 0;
-  padding: 100px 40px 80px;
+  padding: 100px 3% 80px;
   background: var(--bg);
 }
 
@@ -238,7 +238,7 @@
 
 /* === CTA === */
 .cta {
-  padding: 100px 40px;
+  padding: 100px 3%;
   text-align: center;
 }
 
@@ -256,7 +256,7 @@
   display: inline-flex;
   align-items: center;
   gap: 14px;
-  padding: 20px 40px;
+  padding: 20px 3%;
   background: var(--accent);
   color: var(--on-accent);
   text-decoration: none;

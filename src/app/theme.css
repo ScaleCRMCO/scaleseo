@@ -151,8 +151,9 @@ footer {
 }
 
 /* Square section edges — rounded corners stay on cards/buttons only */
-.home > section,
-.home > header,
+main > section,
+main > header,
+main > div > section,
 footer {
   border-radius: 0 !important;
 }
@@ -227,4 +228,12 @@ footer [class*="wordmark"] {
   --dots-mask: radial-gradient(circle at top right, #000 0%, #000 38%, transparent 92%);
   --dots-w-sm: 60vw;
   --dots-opacity-sm: 0.8;
+}
+
+/* Highlighted heading words: plain orange text, no box (see .title-block) */
+.title-block {
+  padding: 0;
+}
+h1:has(.title-block) {
+  line-height: 1.05 !important;
 }

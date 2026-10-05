@@ -1,6 +1,6 @@
 /* === HERO — black, simple, matches sitewide dark hero pattern === */
 .hero {
-  padding: 170px 40px 120px;
+  padding: 170px 3% 120px;
   background: var(--bg-dark);
   color: var(--ink-on-dark);
 }
@@ -68,7 +68,7 @@
 
 .sub {
   font-family: var(--sans);
-  font-weight: 400;
+  font-weight: 500;
   font-size: clamp(16px, 1.3vw, 19px);
   line-height: 1.65;
   color: var(--ink-dim-on-dark);
@@ -95,6 +95,7 @@
   color: var(--bg-dark);
   text-decoration: none;
   font-family: var(--mono);
+  font-weight: 700;
   font-size: 12px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -118,6 +119,7 @@
   color: var(--ink-on-dark);
   text-decoration: none;
   font-family: var(--mono);
+  font-weight: 700;
   font-size: 12px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -144,7 +146,7 @@
 /* === PRICING TIERS — dark, rounded === */
 .tiers {
   position: relative;
-  padding: 100px 40px 120px;
+  padding: 100px 3% 120px;
   margin-top: -48px;
   border-radius: 48px 48px 0 0;
   overflow: hidden;
@@ -186,7 +188,7 @@
   background: #0B2846;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 28px;
-  padding: 44px 40px;
+  padding: 44px 3%;
 }
 
 .tierCardFeatured {
@@ -200,7 +202,8 @@
   background: var(--highlight);
   color: var(--on-highlight);
   font-family: var(--mono);
-  font-size: 11px;
+  font-weight: 700;
+  font-size: 12px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   padding: 6px 16px;
@@ -229,7 +232,8 @@
 
 .tierIncludedLabel {
   font-family: var(--mono);
-  font-size: 11px;
+  font-weight: 700;
+  font-size: 12px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--highlight);
@@ -315,7 +319,8 @@
   color: var(--bg-dark);
   text-decoration: none;
   font-family: var(--mono);
-  font-size: 11px;
+  font-weight: 700;
+  font-size: 12px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   border: 1px solid var(--ink-on-dark);
@@ -392,7 +397,8 @@
 
 .questionNum {
   font-family: var(--mono);
-  font-size: 11px;
+  font-weight: 700;
+  font-size: 12px;
   letter-spacing: 0.1em;
   opacity: 0.6;
 }
@@ -430,7 +436,7 @@
 
 .tierBestFor {
   font-family: var(--display);
-  font-weight: 600;
+  font-weight: 800;
   font-size: 16.5px;
   line-height: 1.5;
   color: var(--highlight);
@@ -449,7 +455,8 @@
 /* Checklists inside light cards */
 .listLabel {
   font-family: var(--mono);
-  font-size: 11px;
+  font-weight: 700;
+  font-size: 12px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--ink-dim);
@@ -490,6 +497,7 @@
   border: 1px solid rgba(255, 44, 22, 0.4);
   border-radius: 999px;
   font-family: var(--mono);
+  font-weight: 700;
   font-size: 12px;
   letter-spacing: 0.08em;
   text-transform: uppercase;

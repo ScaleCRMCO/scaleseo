@@ -5,7 +5,7 @@
    ========================================================================== */
 
 .hero {
-  padding: 170px 40px 120px;
+  padding: 170px 3% 120px;
   background: var(--bg-dark);
   color: var(--ink-on-dark);
 }
@@ -33,7 +33,7 @@
 
 .sub {
   font-family: var(--sans);
-  font-weight: 400;
+  font-weight: 500;
   font-size: clamp(16px, 1.3vw, 19px);
   line-height: 1.65;
   color: var(--ink-dim-on-dark);
@@ -150,7 +150,7 @@ a:hover > .arrow {
   padding: 16px 4px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   font-family: var(--display);
-  font-weight: 600;
+  font-weight: 800;
   font-size: 16px;
   color: var(--ink-on-dark);
   text-decoration: none;
@@ -164,7 +164,8 @@ a:hover > .arrow {
 
 .heroIndexNum {
   font-family: var(--mono);
-  font-size: 11px;
+  font-weight: 700;
+  font-size: 12px;
   letter-spacing: 0.1em;
   color: var(--ink-dim-on-dark);
 }
@@ -251,6 +252,7 @@ a:hover > .arrow {
   padding: 18px 34px;
   border-radius: 999px;
   font-family: var(--mono);
+  font-weight: 700;
   font-size: 12px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
