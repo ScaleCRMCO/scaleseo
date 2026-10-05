@@ -286,15 +286,13 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* === SERVICES — dark, editorial rows === */}
-      <section className={`${hub.section} ${hub.dark}`} data-nav-theme="dark">
+      {/* === SERVICES — light blue, editorial rows === */}
+      <section className={`${hub.section} ${styles.blue}`}>
         <div className={hub.inner}>
           <div className={hub.head}>
             <div>
-              <div className={`section-label reveal-up ${ind.labelOnDark}`}>
-                Services
-              </div>
-              <h2 className={`${hub.h2} reveal-up`}>What Scale SEO Does</h2>
+              <div className={`section-label reveal-up`}>Services</div>
+              <h2 className={`${hub.h2} ${styles.bigH2} reveal-up`}>What Scale SEO Does</h2>
             </div>
             <div className={`${hub.headBody} reveal-up`}>
               <p>

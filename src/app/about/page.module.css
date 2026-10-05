@@ -167,6 +167,44 @@
   color: var(--highlight);
 }
 
+/* === Light blue variant of the services rows: navy text, no orange === */
+.blue {
+  --ink: #031B36;
+  --ink-dim: #031B36;
+  --ink-on-dark: #031B36;
+  --ink-dim-on-dark: #031B36;
+  --text-dim: #031B36;
+  --text-faint: #031B36;
+  --accent: #031B36;
+  --highlight: #031B36;
+  --line: rgba(3, 27, 54, 0.22);
+  background: #B6FFFF;
+  color: #031B36;
+}
+
+.blue .rowDark,
+.blue .rowsDark {
+  border-color: rgba(3, 27, 54, 0.22);
+}
+
+.blue .rowLinkDark {
+  border-bottom-color: rgba(3, 27, 54, 0.4);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.blue .rowLinkDark:hover {
+  color: #031B36;
+  transform: translateX(6px);
+}
+
+/* Large section heading, matching the homepage H2s */
+.bigH2 {
+  font-size: clamp(44px, 6.4vw, 96px);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  max-width: 12ch;
+}
+
 /* === Who I work with: two audience cards ================================ */
 .audienceGrid {
   display: grid;
