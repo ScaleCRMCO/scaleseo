@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Breadcrumbs from "../components/Breadcrumbs";
+import PageHero from "../components/PageHero";
 import RevealOnScroll from "../components/RevealOnScroll";
 
 // Hero from the industries hub, sections from the shared /services hub
@@ -22,13 +22,6 @@ const BOOKING_URL = "https://cal.com/corbinjensen-scaleseo/30min";
 const pad = (i: number) => String(i + 1).padStart(2, "0");
 
 /* === Content ============================================================ */
-
-const heroFacts = [
-  "Based in Calgary",
-  "Serving Canada & Beyond",
-  "Founder-Led",
-  "Month-to-Month",
-];
 
 const services = [
   {
@@ -225,58 +218,34 @@ export default function AboutPage() {
       />
 
       {/* === HERO — dark, full-width left-aligned === */}
-      <header className={ind.hero} data-nav-theme="dark">
-        <div className={ind.heroContent}>
-          <div className={ind.crumbsOnDark}>
-            <Breadcrumbs
-              items={[{ name: "Home", href: "/" }, { name: "About" }]}
-              schema={false}
-            />
-          </div>
-          <h1 className={ind.title}>
+      <PageHero
+        breadcrumbs={[{ name: "Home", href: "/" }, { name: "About" }]}
+        breadcrumbSchema={false}
+        title={
+          <>
             About <span className="title-block">Scale SEO</span>
-          </h1>
-
-          <div className={ind.heroBottom}>
-            <div className={ind.heroMain}>
-              <div className={ind.sub}>
-                <p>
-                  Scale SEO is an independent SEO practice based in Calgary,
-                  Alberta, helping professional service and B2B businesses
-                  improve their visibility in Google and turn organic search
-                  into a more consistent source of qualified opportunities.
-                </p>
-                <p>
-                  Founded and operated by SEO specialist{" "}
-                  <strong className={styles.strongOnDark}>Corbin Jensen</strong>,
-                  Scale SEO provides ongoing SEO, technical SEO, SEO audits, web
-                  development, Google Ads management, and AI search optimization
-                  for businesses across Canada and internationally.
-                </p>
-              </div>
-              <div className={ind.heroCtaGroup}>
-                <Link href="/services/seo" className={ind.heroCta}>
-                  <span>Explore SEO Services</span>
-                  <span className={ind.arrow}>→</span>
-                </Link>
-                <Link href="/corbin-jensen" className={ind.heroCtaSecondary}>
-                  <span>Meet Corbin Jensen</span>
-                  <span className={ind.arrow}>→</span>
-                </Link>
-              </div>
-            </div>
-
-            <ul className={styles.heroFacts}>
-              {heroFacts.map((f, i) => (
-                <li key={f} className={styles.heroFact}>
-                  <span className={styles.heroFactNum}>{pad(i)}</span>
-                  {f}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </header>
+          </>
+        }
+        icon="about"
+        actions={
+          <>
+            <Link href="/services/seo">
+              <span>Explore SEO Services</span>
+              <span>→</span>
+            </Link>
+            <Link href="/corbin-jensen">
+              <span>Meet Corbin Jensen</span>
+              <span>→</span>
+            </Link>
+          </>
+        }
+      >
+        <p>
+          Scale SEO is an independent SEO practice based in Calgary, Alberta,
+          providing SEO services for professional service and B2B businesses
+          across Canada.
+        </p>
+      </PageHero>
 
       {/* === THE BUSINESS — light === */}
       <section className={`${hub.section} ${hub.light}`}>
@@ -297,28 +266,21 @@ export default function AboutPage() {
           </div>
           <div className={`${hub.splitBody} reveal-up`}>
             <p className={ind.leadInk}>
-              Scale SEO was established in 2025 to provide businesses with a
-              more direct way to work with an SEO specialist.
+              Scale SEO was established in 2025 by SEO specialist Corbin
+              Jensen and is based in Calgary, Alberta.
             </p>
             <p>
-              Rather than building a traditional agency structure around a
-              large client roster, I chose to keep Scale SEO independent and
-              hands-on.
+              The practice provides ongoing SEO campaign management, technical
+              SEO, SEO audits, web development, Google Ads management, and AI
+              search optimization, with a primary focus on professional service
+              and B2B businesses.
             </p>
             <p>
-              That means the person you speak with about strategy is also the
-              person reviewing your search data, researching competitors,
-              improving your website, planning content, resolving technical
-              issues, and measuring the results.
-            </p>
-            <p>
-              Scale SEO is now based in Calgary, Alberta, with a primary focus
-              on Canadian businesses.
-            </p>
-            <p>
-              Because most SEO work can be researched, implemented, and managed
-              remotely, I also continue to work with businesses outside Calgary
-              and internationally.
+              Scale SEO primarily serves businesses across Canada while
+              continuing to work with clients internationally. SEO campaigns
+              are managed directly by Corbin, from strategy and competitor
+              research through to technical improvements, content planning,
+              implementation, and performance monitoring.
             </p>
           </div>
         </div>

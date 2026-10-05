@@ -31,6 +31,19 @@ const icons: Record<string, ReactNode> = {
       <path d="M128 92l10 10 22-26" />
     </g>
   ),
+  // Person beside a map pin and a small house — about the practice
+  about: (
+    <g>
+      <circle cx="64" cy="58" r="22" />
+      <path d="M24 152c0-28 18-46 40-46s40 18 40 46" />
+      <path d="M58 62c4 4 10 4 14 0" />
+      <path d="M140 92s-22-22-22-40a22 22 0 0 1 44 0c0 18-22 40-22 40z" />
+      <circle cx="140" cy="52" r="7" />
+      <path d="M118 152v-26l22-16 22 16v26z" />
+      <path d="M134 152v-14h12v14" />
+      <path d="M12 160h160" />
+    </g>
+  ),
   // Stacked coins with a price tag — pricing articles
   pricing: (
     <g>
@@ -69,6 +82,7 @@ const icons: Record<string, ReactNode> = {
 const viewBoxes: Record<string, string> = {
   newspaper: "0 0 180 180",
   caseStudy: "0 0 180 180",
+  about: "0 0 180 180",
 };
 
 export default function SketchIcon({
