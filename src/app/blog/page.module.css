@@ -26,9 +26,9 @@
 .title {
   font-family: var(--display);
   font-weight: 800;
-  font-size: clamp(38px, 5.5vw, 72px);
-  line-height: 1.08;
-  letter-spacing: -0.03em;
+  font-size: clamp(44px, 6.4vw, 96px);
+  line-height: 1;
+  letter-spacing: -0.04em;
   color: var(--ink-on-dark);
   margin-top: 28px;
   margin-bottom: 32px;
@@ -55,8 +55,7 @@
   height: auto;
   margin-right: 4%;
   fill: none;
-  stroke: #B6FFFF;
-  stroke-opacity: 0.8;
+  stroke: #FF2C16;
   stroke-width: 6;
   stroke-linecap: round;
   stroke-linejoin: round;
