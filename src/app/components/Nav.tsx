@@ -151,7 +151,11 @@ export default function Nav() {
     >
       <Link href="/" className={styles.brand} onClick={close}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/favicon.svg" alt="" className={styles.brandCrow} />
+        <img
+          src={darkMode ? "/brand/scaleseo-mark-orange.svg" : "/brand/scaleseo-mark-navy.svg"}
+          alt=""
+          className={styles.brandCrow}
+        />
         <span className={styles.wordmark}>
           Scale<span className={styles.wordmarkAccent}>SEO</span>
         </span>
