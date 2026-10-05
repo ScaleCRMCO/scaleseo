@@ -50,15 +50,15 @@
 }
 
 .inner {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 140px 40px 36px;
+  /* Full width with the same 3% gutters as the wide page sections */
+  padding: 140px 3% 36px;
 }
 
 /* === Wordmark =========================================================== */
 .wordmark {
   display: inline-flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  column-gap: 0.28em;
   font-family: var(--brand);
   font-weight: 400;
   font-size: clamp(64px, 9vw, 150px);
