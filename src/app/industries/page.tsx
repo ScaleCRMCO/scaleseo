@@ -224,8 +224,8 @@ export default function IndustriesPage() {
       <section className={`${hub.section} ${hub.light}`}>
         <div className={`${hub.inner} ${hub.split}`}>
           <div className={hub.splitAside}>
-            <h2 className={`${hub.h2} reveal-up`}>
-              SEO Built for <em>Expertise-Led Businesses</em>
+            <h2 className={`${hub.h2} ${styles.bigH2} reveal-up`}>
+              SEO Built for Expertise-Led Businesses
             </h2>
           </div>
           <div className={`${hub.splitBody} reveal-up`}>
