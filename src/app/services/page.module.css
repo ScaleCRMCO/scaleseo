@@ -247,8 +247,10 @@ a:hover > .arrow {
 }
 
 .inner {
-  max-width: 1400px;
-  margin: 0 auto;
+  /* Full width (3% section gutters) so headings sit at the left edge,
+     matching the homepage */
+  max-width: none;
+  margin: 0;
 }
 
 /* Heading left, supporting copy right — same as the homepage intros */

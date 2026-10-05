@@ -220,39 +220,30 @@ export default function IndustriesPage() {
         </p>
       </PageHero>
 
-      {/* === SEO BUILT FOR EXPERTISE-LED BUSINESSES — light === */}
+      {/* === WHY I FOCUS ON PROFESSIONAL SERVICES — light === */}
       <section className={`${hub.section} ${hub.light}`}>
-        <div className={`${hub.inner} ${hub.split}`}>
+        <div className={`${hub.inner} ${hub.split} ${styles.wideSplit}`}>
           <div className={hub.splitAside}>
             <h2 className={`${hub.h2} ${styles.bigH2} reveal-up`}>
-              SEO Built for Expertise-Led Businesses
+              Why I Focus on Professional Services
             </h2>
           </div>
           <div className={`${hub.splitBody} reveal-up`}>
             <p className={styles.leadInk}>
-              Professional services require a different approach to organic
-              search.
+              Professional service businesses compete on expertise, experience,
+              credibility, and the ability to solve specific client
+              problems&mdash;not simply price or proximity.
             </p>
             <p>
-              Potential clients aren&rsquo;t simply looking for the closest or
-              cheapest provider. They&rsquo;re evaluating expertise, experience,
-              services, credibility, and whether your business understands the
-              problem they&rsquo;re trying to solve.
-            </p>
-            <p className={styles.leadInk}>
-              That means SEO needs to do more than increase traffic.
+              That makes organic search particularly valuable. Strong service
+              pages, useful content, technical foundations, and clear trust
+              signals can help your business appear while potential clients
+              are actively researching their options.
             </p>
             <p>
-              Your website needs strong service pages, clear site architecture,
-              useful content, technical foundations, and the right trust signals
-              to turn relevant searches into qualified enquiries.
-            </p>
-            <p>
-              For B2B businesses in particular, search volume doesn&rsquo;t
-              always need to be high to be valuable. A smaller number of
-              searches from the right decision-makers can represent
-              significantly more commercial value than thousands of unrelated
-              visitors.
+              For B2B businesses, search volume doesn&rsquo;t always need to be
+              high to matter. A smaller number of relevant searches from the
+              right decision-makers can represent significant commercial value.
             </p>
           </div>
         </div>
@@ -262,9 +253,9 @@ export default function IndustriesPage() {
       <section className={`${hub.section} ${styles.industriesBlue}`} id="industries">
         <div className={styles.industriesSplit}>
           <div className={styles.industriesAside}>
-            <div className="section-label reveal-up">Industries I Work With</div>
+            <div className="section-label reveal-up">Industries</div>
             <h2 className={`${hub.h2} ${styles.bigH2} reveal-up`}>
-              SEO for Professional Service Industries
+              Industries I Work With
             </h2>
             <p className={`${styles.industriesIntro} reveal-up`}>
               I focus on professional service and B2B businesses where organic
