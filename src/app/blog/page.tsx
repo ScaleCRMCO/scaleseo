@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Breadcrumbs from "../components/Breadcrumbs";
+import PageHero from "../components/PageHero";
 import RevealOnScroll from "../components/RevealOnScroll";
 import { posts } from "./posts";
 import Link from "next/link";
@@ -33,21 +33,18 @@ const formatDate = (iso: string) =>
 export default function BlogPage() {
   return (
     <main>
-      <header className={styles.hero} data-nav-theme="dark">
-        <div className={styles.heroContent}>
-          <div className={styles.crumbsOnDark}>
-            <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Blog" }]} />
-          </div>
-          <h1 className={styles.title}>Blog</h1>
-          <p className={styles.sub}>
-            Explore practical SEO insights, strategies, and research from
-            Scale SEO. Each article is written to help Canadian businesses
-            better understand search, improve their organic visibility, and
-            make smarter decisions about SEO.
-          </p>
-        </div>
-        <SketchIcon name="newspaper" className={styles.heroSketch} />
-      </header>
+      <PageHero
+        breadcrumbs={[{ name: "Home", href: "/" }, { name: "Blog" }]}
+        title="Blog"
+        icon="newspaper"
+      >
+        <p>
+          Explore practical SEO insights, strategies, and research from Scale
+          SEO. Each article is written to help Canadian businesses better
+          understand search, improve their organic visibility, and make
+          smarter decisions about SEO.
+        </p>
+      </PageHero>
 
       <section className={styles.list}>
         <div className={styles.grid}>

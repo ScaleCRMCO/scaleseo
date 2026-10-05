@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Breadcrumbs from "../components/Breadcrumbs";
+import PageHero from "../components/PageHero";
 import RevealOnScroll from "../components/RevealOnScroll";
 
 // Hero from the industries hub, sections from the shared /services hub
@@ -197,53 +197,31 @@ export default function ResultsPage() {
       />
 
       {/* === HERO — dark, full-width left-aligned === */}
-      <header className={ind.hero} data-nav-theme="dark">
-        <div className={ind.heroContent}>
-          <div className={ind.crumbsOnDark}>
-            <Breadcrumbs
-              items={[{ name: "Home", href: "/" }, { name: "Results" }]}
-              schema={false}
-            />
-          </div>
-          <h1 className={ind.title}>
+      <PageHero
+        breadcrumbs={[{ name: "Home", href: "/" }, { name: "Results" }]}
+        breadcrumbSchema={false}
+        title={
+          <>
             SEO Results &amp; <span className="title-block">Case Studies</span>
-          </h1>
-
-          <div className={ind.heroBottom}>
-            <div className={ind.heroMain}>
-              <p className={styles.tagline}>
-                Real SEO work. Real businesses. Measurable results.
-              </p>
-              <div className={ind.sub}>
-                <p>
-                  Explore selected Scale SEO projects across accounting, B2B,
-                  construction, and local service businesses in Canada and
-                  Australia.
-                </p>
-                <p>
-                  Each case study breaks down the starting point, the work
-                  completed, and the results that followed.
-                </p>
-              </div>
-              <div className={ind.heroCtaGroup}>
-                <a href="#case-studies" className={ind.heroCta}>
-                  <span>Explore Case Studies</span>
-                  <span className={ind.arrow}>↓</span>
-                </a>
-              </div>
-            </div>
-
-            <nav className={ind.heroIndex} aria-label="Case studies">
-              {studies.map((s) => (
-                <a key={s.id} href={`#${s.id}`} className={styles.heroIndexItem}>
-                  <span className={styles.heroIndexClient}>{s.client}</span>
-                  <span className={styles.heroIndexMetric}>{s.metrics[0].value}</span>
-                </a>
-              ))}
-            </nav>
-          </div>
-        </div>
-      </header>
+          </>
+        }
+        icon="caseStudy"
+        actions={
+          <a href="#case-studies">
+            <span>Explore Case Studies</span>
+            <span>↓</span>
+          </a>
+        }
+      >
+        <p>
+          Explore selected Scale SEO projects across accounting, B2B,
+          construction, and local service businesses in Canada and Australia.
+        </p>
+        <p>
+          Each case study breaks down the starting point, the work completed,
+          and the results that followed.
+        </p>
+      </PageHero>
 
       {/* === CASE STUDIES — light, one large card each === */}
       <section className={`${hub.section} ${hub.light}`} id="case-studies">

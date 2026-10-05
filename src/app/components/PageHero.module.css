@@ -1,0 +1,98 @@
+/* Standard inner-page hero (see PageHero.tsx) */
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+  padding: 180px 3% 120px;
+  background: #031B36;
+  color: #F5F1E8;
+}
+
+/* Breadcrumbs read light tokens; point them at the dark-ground values */
+.crumbs {
+  --ink-dim: rgba(245, 241, 232, 0.72);
+  --accent: #FF2C16;
+}
+
+.content {
+  max-width: 1000px;
+}
+
+.title {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(44px, 6.4vw, 96px);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: #F5F1E8;
+  margin-top: 28px;
+  margin-bottom: 32px;
+}
+
+.sub {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: clamp(16px, 1.3vw, 19px);
+  line-height: 1.65;
+  color: rgba(245, 241, 232, 0.72);
+  max-width: 640px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 40px;
+}
+
+/* Default hero button: Ivory on navy, modest radius */
+.actions a {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 28px;
+  border-radius: 4px;
+  background: #F5F1E8;
+  color: #031B36;
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.actions a:hover {
+  transform: translateX(4px);
+}
+
+/* Hand-drawn sketch on the right */
+.sketch {
+  flex-shrink: 0;
+  width: clamp(200px, 22vw, 340px);
+  height: auto;
+  margin-right: 4%;
+  fill: none;
+  stroke: #FF2C16;
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 130px 24px 80px;
+  }
+  .sketch {
+    width: 180px;
+    margin: 0;
+  }
+}

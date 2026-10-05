@@ -19,6 +19,18 @@ const icons: Record<string, ReactNode> = {
       <circle cx="125" cy="101" r="2" />
     </g>
   ),
+  // Clipboard report with a rising bar chart and a check — case studies
+  caseStudy: (
+    <g>
+      <path d="M40 28h-14v136h128V28h-14" />
+      <path d="M62 16h56v24H62z" />
+      <path d="M48 140V112M72 140V96M96 140V82M120 140V62" />
+      <path d="M44 146h92" />
+      <path d="M48 76l22-18 18 10 34-26" />
+      <path d="M112 42h12v12" />
+      <path d="M128 92l10 10 22-26" />
+    </g>
+  ),
   // Stacked coins with a price tag — pricing articles
   pricing: (
     <g>
@@ -56,6 +68,7 @@ const icons: Record<string, ReactNode> = {
 
 const viewBoxes: Record<string, string> = {
   newspaper: "0 0 180 180",
+  caseStudy: "0 0 180 180",
 };
 
 export default function SketchIcon({
