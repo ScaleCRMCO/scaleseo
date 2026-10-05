@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import PageHero from "../components/PageHero";
+import SketchIcon from "../components/SketchIcon";
 import RevealOnScroll from "../components/RevealOnScroll";
 // Section/card system shared with the /services pages so the site matches.
 import hub from "../services/page.module.css";
@@ -23,10 +24,12 @@ const industries: {
   title: string;
   body: string[];
   featured?: boolean;
+  icon: string;
   link?: { href: string; label: string };
 }[] = [
   {
     id: "accounting-firms",
+    icon: "ledger",
     title: "Accounting Firms",
     featured: true,
     body: [
@@ -41,6 +44,7 @@ const industries: {
   },
   {
     id: "consulting-firms",
+    icon: "consulting",
     title: "Consulting Firms",
     body: [
       "Consulting businesses often sell complex services where credibility and expertise matter as much as visibility.",
@@ -50,6 +54,7 @@ const industries: {
   },
   {
     id: "financial-advisory",
+    icon: "financial",
     title: "Financial & Advisory Services",
     body: [
       "Financial and advisory businesses operate in markets where trust plays an important role in how potential clients evaluate providers.",
@@ -59,6 +64,7 @@ const industries: {
   },
   {
     id: "professional-b2b",
+    icon: "b2b",
     title: "Other Professional & B2B Services",
     body: [
       "Scale SEO also works with other expertise-led professional and B2B businesses where organic search can become a meaningful source of qualified opportunities.",
@@ -258,19 +264,13 @@ export default function IndustriesPage() {
       </section>
 
       {/* === INDUSTRIES — dark === */}
-      <section
-        className={`${hub.section} ${hub.dark}`}
-        id="industries"
-        data-nav-theme="dark"
-      >
+      <section className={`${hub.section} ${styles.industriesBlue}`} id="industries">
         <div className={hub.inner}>
           <div className={hub.head}>
             <div>
-              <div className={`section-label reveal-up ${styles.labelOnDark}`}>
-                Industries I Work With
-              </div>
-              <h2 className={`${hub.h2} reveal-up`}>
-                SEO for Professional <em>Service Industries</em>
+              <div className="section-label reveal-up">Industries I Work With</div>
+              <h2 className={`${hub.h2} ${styles.bigH2} reveal-up`}>
+                SEO for Professional Service Industries
               </h2>
             </div>
             <div className={`${hub.headBody} reveal-up`}>
@@ -282,26 +282,19 @@ export default function IndustriesPage() {
             </div>
           </div>
 
-          <div className={styles.industryGrid}>
+          <div className={styles.industryTiles}>
             {industries.map((ind, i) => (
-              <article
-                key={ind.id}
-                id={ind.id}
-                className={`${hub.darkCard} ${ind.featured ? styles.featuredCard : ""} reveal-up`}
-              >
-                <div className={styles.cardMeta}>
-                  <span className="index">{pad(i)}</span>
-                </div>
-                <h3 className={styles.industryTitle}>{ind.title}</h3>
-                <div className={hub.cardBody}>
-                  {ind.body.map((para) => (
-                    <p key={para}>{para}</p>
-                  ))}
-                </div>
+              <article key={ind.id} id={ind.id} className={`${styles.industryTile} reveal-up`}>
+                <span className={styles.tileTick} aria-hidden="true" />
+                <span className={styles.tileIndex}>{pad(i)}</span>
+                <h3 className={styles.tileTitle}>{ind.title}</h3>
+                <SketchIcon name={ind.icon} className={styles.tileIcon} />
+                {ind.body.map((para) => (
+                  <p key={para} className={styles.tileDesc}>{para}</p>
+                ))}
                 {ind.link && (
-                  <Link href={ind.link.href} className={hub.pillLime}>
-                    <span>{ind.link.label}</span>
-                    <span className={hub.arrow}>→</span>
+                  <Link href={ind.link.href} className={styles.tileLink}>
+                    {ind.link.label} <span className={styles.tileArrow}>→</span>
                   </Link>
                 )}
               </article>

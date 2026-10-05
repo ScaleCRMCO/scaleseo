@@ -57,6 +57,50 @@ const icons: Record<string, ReactNode> = {
       <path d="M8 156h164" />
     </g>
   ),
+  // Open ledger with a pen and tick marks — accounting firms
+  ledger: (
+    <g>
+      <path d="M16 40c18-8 34-8 50 2v84c-16-10-32-10-50-2z" />
+      <path d="M66 42c16-10 32-10 50-2v84c-18-8-34-8-50 2" />
+      <path d="M28 60h26M28 74h26M28 88h20M78 60l6 6 10-12M78 82l6 6 10-12" />
+      <path d="M110 112l14-62 8 2-14 62-8 6z" />
+    </g>
+  ),
+  // Lightbulb with a speech bubble — consulting
+  consulting: (
+    <g>
+      <path d="M50 92c-14-8-20-22-16-36 4-16 18-24 32-22 16 2 26 16 24 32-1 12-8 20-16 26v14H50z" />
+      <path d="M52 116h22M56 126h14" />
+      <path d="M60 70l4 10 4-10" />
+      <path d="M86 18h40c6 0 10 4 10 10v20c0 6-4 10-10 10h-20l-12 12V58h-8c-6 0-10-4-10-10" />
+      <path d="M96 32h28M96 44h18" />
+      <path d="M22 40l-8-6M20 66H10M28 22l-4-8" />
+    </g>
+  ),
+  // Shield with a dollar sign and a rising line — financial & advisory
+  financial: (
+    <g>
+      <path d="M60 20l40 14v30c0 28-18 46-40 56-22-10-40-28-40-56V34z" />
+      <path d="M70 52c-4-6-20-6-20 2s20 6 20 14-16 8-20 2" />
+      <path d="M60 44v6M60 76v6" />
+      <path d="M104 116l10-14 10 6 12-22" />
+      <path d="M128 86h8v8" />
+    </g>
+  ),
+  // Two buildings linked by arrows — B2B
+  b2b: (
+    <g>
+      <path d="M14 124V54h36v70" />
+      <path d="M24 66h6M36 66h6M24 80h6M36 80h6M24 94h6M36 94h6" />
+      <path d="M90 124V36h40v88" />
+      <path d="M100 50h6M114 50h6M100 66h6M114 66h6M100 82h6M114 82h6M100 98h6M114 98h6" />
+      <path d="M56 64c10-8 20-8 28 0" />
+      <path d="M78 58l6 6-8 4" />
+      <path d="M84 102c-10 8-20 8-28 0" />
+      <path d="M62 108l-6-6 8-4" />
+      <path d="M6 128h132" />
+    </g>
+  ),
   // Stacked coins with a price tag — pricing articles
   pricing: (
     <g>
