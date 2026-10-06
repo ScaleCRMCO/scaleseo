@@ -65,6 +65,21 @@ const serviceLinks = [
   },
 ];
 
+// Sixth cell of the services dropdown grid
+const allServicesLink = {
+  href: "/services",
+  name: "All Services",
+  desc: "One specialist, five services. Explore everything on offer.",
+  icon: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
+      <rect x="4" y="4" width="6.5" height="6.5" />
+      <rect x="13.5" y="4" width="6.5" height="6.5" />
+      <rect x="4" y="13.5" width="6.5" height="6.5" />
+      <rect x="13.5" y="13.5" width="6.5" height="6.5" />
+    </svg>
+  ),
+};
+
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
@@ -171,28 +186,15 @@ export default function Nav() {
           <Link href="/services">Services</Link>
           <div className={`${styles.servicesDropdown} ${servicesOpen ? styles.servicesDropdownOpen : ""}`}>
             <div className={styles.servicesDropdownInner}>
-              <Link href="/services" className={styles.dropdownFeatured} onClick={close}>
-                <span className={styles.dropdownFeaturedIcon} aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
-                    <circle cx="10.5" cy="10.5" r="6.5" />
-                    <line x1="15.5" y1="15.5" x2="21" y2="21" strokeLinecap="round" />
-                  </svg>
-                </span>
-                <span className={styles.dropdownFeaturedName}>All Services</span>
-                <span className={styles.dropdownFeaturedDesc}>
-                  One specialist, five services. Explore everything on offer.
-                </span>
-                <span className={styles.dropdownFeaturedBtn}>All services &rarr;</span>
-              </Link>
-              <div className={styles.dropdownGrid}>
-                {serviceLinks.map((s) => (
-                  <Link key={s.href} href={s.href} className={styles.dropdownItem} onClick={close}>
-                    <span className={styles.dropdownItemIcon} aria-hidden="true">{s.icon}</span>
+              {[...serviceLinks, allServicesLink].map((s) => (
+                <Link key={s.href} href={s.href} className={styles.dropdownItem} onClick={close}>
+                  <span className={styles.dropdownItemIcon} aria-hidden="true">{s.icon}</span>
+                  <span className={styles.dropdownItemText}>
                     <span className={styles.dropdownItemName}>{s.name}</span>
                     <span className={styles.dropdownItemDesc}>{s.desc}</span>
-                  </Link>
-                ))}
-              </div>
+                  </span>
+                </Link>
+              ))}
             </div>
           </div>
         </div>
