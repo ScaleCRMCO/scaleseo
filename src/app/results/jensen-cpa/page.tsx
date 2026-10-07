@@ -364,7 +364,7 @@ export default function JensenCpaCaseStudy() {
       <figure className={styles.showcase}>
         <img
           src="/images/jensen-cpa-website.webp"
-          alt="Jensen CPA website: Fractional CFO & Controller Services in Calgary"
+          alt="Jensen CPA website: Fractional CFO Services for Calgary Businesses"
           className={styles.showcaseImg}
         />
       </figure>
