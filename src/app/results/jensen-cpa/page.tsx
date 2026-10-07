@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Breadcrumbs from "../../components/Breadcrumbs";
+import PageHero from "../../components/PageHero";
 import RevealOnScroll from "../../components/RevealOnScroll";
 
 // Same building blocks as the other case studies: hero from the industries
@@ -35,6 +35,53 @@ function Placeholder({ label, dark }: { label: string; dark?: boolean }) {
 }
 
 /* === Content ============================================================ */
+
+const tags = ["Website Redesign", "SEO Campaign", "Content Strategy", "Technical SEO", "Google Ads"];
+
+const priorityAreas = [
+  "Corporate tax",
+  "Monthly bookkeeping",
+  "Personal tax",
+  "Fractional CFO & controller services",
+];
+
+const problems: { problem: string; solution: string; tone: string }[] = [
+  {
+    problem:
+      "The existing website didn’t fully represent the depth of the firm’s services, expertise, or target clients.",
+    solution:
+      "The site was redesigned and expanded with clear pathways between services, client types, team, pricing, and resources.",
+    tone: "toneBlue",
+  },
+  {
+    problem:
+      "Several commercially important accounting services needed stronger dedicated pages.",
+    solution:
+      "Core services were expanded into detailed landing pages built around specific client needs and search intent.",
+    tone: "tonePink",
+  },
+  {
+    problem:
+      "Educational content was limited, and the firm’s expertise wasn’t connected to what potential clients search for.",
+    solution:
+      "Articles were built around Alberta tax and business questions tied directly to Jensen CPA’s services.",
+    tone: "toneNavy",
+  },
+  {
+    problem:
+      "The website architecture needed to be expanded and its technical foundations strengthened.",
+    solution:
+      "Page targeting, internal linking, crawl and indexation, structured data, and breadcrumbs were improved as the site grew.",
+    tone: "toneOrange",
+  },
+  {
+    problem:
+      "Organic visibility was limited compared with the opportunity in the Calgary market.",
+    solution:
+      "Targeted Google Ads captured high-intent searches and generated new client conversions while organic visibility grew.",
+    tone: "toneStone",
+  },
+];
 
 const headlineStats = [
   { value: "+227%", label: "Average daily search impressions" },
@@ -281,68 +328,121 @@ export default function JensenCpaCaseStudy() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(caseStudyJsonLd) }}
       />
 
-      {/* === HERO — dark, copy left, site placeholder right, stats below === */}
-      <header className={ind.hero} data-nav-theme="dark">
-        <div className={ind.heroContent}>
-          <div className={ind.crumbsOnDark}>
-            <Breadcrumbs
-              items={[
-                { name: "Home", href: "/" },
-                { name: "Results", href: "/results" },
-                { name: "Jensen CPA" },
-              ]}
-              schema={false}
-            />
+      {/* === HERO === */}
+      <PageHero
+        breadcrumbs={[
+          { name: "Home", href: "/" },
+          { name: "Results", href: "/results" },
+          { name: "Jensen CPA" },
+        ]}
+        breadcrumbSchema={false}
+        title={
+          <>
+            Jensen CPA <span className="title-block">SEO Case Study</span>
+          </>
+        }
+        icon="caseStudy"
+        actions={
+          <a href={CLIENT_URL} target="_blank" rel="nofollow noopener noreferrer">
+            <span>Visit Jensen CPA</span>
+            <span>→</span>
+          </a>
+        }
+      >
+        <p>
+          Building a stronger digital presence for a Calgary CPA firm through
+          website redevelopment, SEO, content strategy, and Google Ads.
+        </p>
+        <ul className={styles.tags}>
+          {tags.map((t) => (
+            <li key={t}>{t}</li>
+          ))}
+        </ul>
+      </PageHero>
+
+      {/* === FULL-WIDTH WEBSITE IMAGE === */}
+      <figure className={styles.showcase}>
+        <img
+          src="/images/jensen-cpa-website.webp"
+          alt="Jensen CPA website: Fractional CFO & Controller Services in Calgary"
+          className={styles.showcaseImg}
+        />
+      </figure>
+
+      {/* === OVERVIEW === */}
+      <section className={`${hub.section} ${hub.light} ${styles.overviewSection}`}>
+        <div className={styles.overview}>
+          <div className={`${styles.overviewBody} reveal-up`}>
+            <div className="section-label">Overview</div>
+            <p>
+              Jensen CPA is a Chartered Professional Accounting firm based in
+              Calgary, Alberta. Founded in 2017, the firm provides corporate
+              tax, monthly bookkeeping, personal tax, and fractional CFO and
+              controller services for businesses and individuals.
+            </p>
+            <p>
+              When I began working with Jensen CPA, the firm already had an
+              established reputation and experienced accounting team. The
+              opportunity was to build a digital presence that better reflected
+              the quality of the firm behind it&mdash;and create a stronger
+              foundation for attracting new clients through search.
+            </p>
           </div>
 
-          <div className={styles.heroGrid}>
-            <div className={styles.heroMain}>
-              <p className={styles.heroEyebrow}>SEO Case Study · Accounting Firms</p>
-              <h1 className={ind.title}>
-                Jensen CPA <span className="title-block">SEO Case Study</span>
-              </h1>
-              <p className={styles.heroLead}>
-                Building a stronger digital presence for a Calgary CPA firm
-                through website redevelopment, SEO, content strategy, and Google
-                Ads.
-              </p>
-              <p className={styles.heroMeta}>Accounting &amp; Tax · Calgary, Alberta</p>
-              <a
-                href={CLIENT_URL}
-                target="_blank"
-                rel="nofollow noopener noreferrer"
-                className={ind.heroCta}
-              >
-                <span>Visit Jensen CPA</span>
-                <span className={ind.arrow}>→</span>
-              </a>
-            </div>
+          <aside className={`${styles.overviewAside} reveal-up`}>
+            <div className="section-label">Services</div>
+            <ul className={styles.asideList}>
+              {strategy.map((x) => (
+                <li key={x.title}>{x.title}</li>
+              ))}
+            </ul>
+            <div className="section-label">Priority Areas</div>
+            <ul className={styles.asideList}>
+              {priorityAreas.map((x) => (
+                <li key={x}>{x}</li>
+              ))}
+            </ul>
+            <div className="section-label">Industry</div>
+            <ul className={styles.asideList}>
+              <li>Accounting &amp; Tax</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
 
-            <div className={styles.browser}>
-              <div className={styles.browserBar} aria-hidden="true">
-                <span />
-                <span />
-                <span />
-                <em>jensencpa.ca</em>
-              </div>
-              <img
-                src="/images/jensen-cpa-homepage.webp"
-                alt="Jensen CPA website homepage"
-                className={styles.browserImg}
-              />
-            </div>
+      {/* === PROBLEM / SOLUTION — coloured cards === */}
+      <section className={`${hub.section} ${hub.light} ${styles.workSection}`}>
+        <div className={styles.workSplit}>
+          <div className={styles.workAside}>
+            <div className="section-label reveal-up">The Work</div>
+            <h2 className={`${hub.h2} ${styles.bigH2} reveal-up`}>Problems Solved</h2>
           </div>
-
-          <div className={styles.statRow}>
-            {headlineStats.map((s, i) => (
-              <div key={s.label} className={`${styles.stat} ${i === 0 ? styles.statLead : ""}`}>
-                <span className={styles.statValue}>{s.value}</span>
-                <span className={styles.statLabel}>{s.label}</span>
-              </div>
+          <div className={styles.cards}>
+            {problems.map((c) => (
+              <article key={c.solution} className={`${styles.card} ${styles[c.tone]} reveal-up`}>
+                <div className={styles.cardLabel}>Problem</div>
+                <p className={styles.cardProblem}>{c.problem}</p>
+                <div className={styles.cardLabel}>Solution</div>
+                <p className={styles.cardSolution}>{c.solution}</p>
+              </article>
             ))}
+            <figure className={`${styles.figure} reveal-up`}>
+              <div className={styles.figureFrame}>
+                <img
+                  src="/images/jensen-cpa-bookkeeping-service-page.webp"
+                  alt="Jensen CPA monthly bookkeeping services page"
+                  className={styles.figureImg}
+                  loading="lazy"
+                />
+              </div>
+              <figcaption className={styles.caption}>
+                Example of a dedicated service page: Monthly Bookkeeping
+                Services in Calgary.
+              </figcaption>
+            </figure>
           </div>
         </div>
-      </header>
+      </section>
 
       {/* === THE RESULTS — light === */}
       <section className={`${hub.section} ${hub.light}`} id="results">
@@ -401,143 +501,6 @@ export default function JensenCpaCaseStudy() {
             <figcaption className={styles.caption}>
               Google Search Console performance showing the growth in organic
               search visibility during the initial SEO campaign.
-            </figcaption>
-          </figure>
-        </div>
-      </section>
-
-      {/* === THE CLIENT — dark === */}
-      <section className={`${hub.section} ${hub.dark}`} data-nav-theme="dark">
-        <div className={`${hub.inner} ${hub.split}`}>
-          <div className={hub.splitAside}>
-            <div>
-              <div className={`section-label reveal-up ${ind.labelOnDark} ${about.label}`}>
-                The Client
-              </div>
-              <h2 className={`${hub.h2} reveal-up`}>About Jensen CPA</h2>
-            </div>
-          </div>
-          <div className={`${hub.splitBody} reveal-up`}>
-            <p className={hub.lead}>
-              Jensen CPA is a Chartered Professional Accounting firm based in
-              Calgary, Alberta.
-            </p>
-            <p>
-              Founded in 2017, the firm provides corporate tax, monthly
-              bookkeeping, personal tax, and fractional CFO and controller
-              services for businesses and individuals.
-            </p>
-            <p>
-              When I began working with Jensen CPA, the firm already had an
-              established reputation and experienced accounting team.
-            </p>
-            <p>
-              The opportunity was to build a digital presence that better
-              reflected the quality of the firm behind it&mdash;and create a
-              stronger foundation for attracting new clients through search.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* === THE CHALLENGE — light === */}
-      <section className={`${hub.section} ${hub.light}`}>
-        <div className={`${hub.inner} ${hub.split}`}>
-          <div className={hub.splitAside}>
-            <div>
-              <div className={`section-label reveal-up ${about.label}`}>The Challenge</div>
-              <h2 className={`${hub.h2} reveal-up`}>
-                An Established Firm With an Underdeveloped Search Presence
-              </h2>
-            </div>
-          </div>
-          <div className={`${hub.splitBody} reveal-up`}>
-            <p className={ind.leadInk}>
-              Jensen CPA&rsquo;s existing website didn&rsquo;t fully represent the
-              depth of the firm&rsquo;s services, expertise, or target clients.
-            </p>
-            <p>
-              Several commercially important accounting services needed stronger
-              dedicated pages. The website architecture could be expanded,
-              educational content was limited, and there was an opportunity to
-              better connect the firm&rsquo;s accountants and expertise with the
-              topics potential clients were searching for.
-            </p>
-            <p>
-              Organic visibility was also relatively limited compared with the
-              opportunity available in the Calgary market.
-            </p>
-            <p className={about.strongInk}>The objective was broader than increasing rankings.</p>
-          </div>
-        </div>
-        <div className={hub.inner}>
-          <p className={`${styles.objective} reveal-up`}>
-            Jensen CPA needed a website and search strategy capable of supporting
-            the firm&rsquo;s next stage of growth.
-          </p>
-        </div>
-      </section>
-
-      {/* === THE STRATEGY — dark, editorial rows === */}
-      <section className={`${hub.section} ${hub.dark}`} data-nav-theme="dark">
-        <div className={hub.inner}>
-          <div className={hub.head}>
-            <div>
-              <div className={`section-label reveal-up ${ind.labelOnDark}`}>The Strategy</div>
-              <h2 className={`${hub.h2} reveal-up`}>
-                Rebuilding the Website Around Search &amp; Client Acquisition
-              </h2>
-            </div>
-            <div className={`${hub.headBody} reveal-up`}>
-              <p>
-                The project combined website redevelopment, SEO, content
-                strategy, technical improvements, and paid search.
-              </p>
-              <p>
-                Rather than treating each channel separately, the website became
-                the foundation connecting them together.
-              </p>
-            </div>
-          </div>
-
-          <div className={`${about.rows} ${about.rowsDark}`}>
-            {strategy.map((s, i) => (
-              <article key={s.title} className={`${about.row} ${about.rowDark} reveal-up`}>
-                <div className={about.rowHead}>
-                  <span className={about.rowNum}>{pad(i)}</span>
-                  <h3 className={about.rowTitle}>{s.title}</h3>
-                </div>
-                <div className={about.rowBody}>
-                  {s.before.map((p) => (
-                    <p key={p}>{p}</p>
-                  ))}
-                  {s.list && (
-                    <ul className={`${styles.chips} ${styles.chipsOnDark}`}>
-                      {s.list.map((item) => (
-                        <li key={item}>{item}</li>
-                      ))}
-                    </ul>
-                  )}
-                  {s.after?.map((p) => (
-                    <p key={p}>{p}</p>
-                  ))}
-                </div>
-              </article>
-            ))}
-          </div>
-
-          <figure className={`${styles.figure} reveal-up`}>
-            <div className={styles.figureFrame}>
-              <img
-                src="/images/jensen-cpa-bookkeeping-service-page.webp"
-                alt="Jensen CPA monthly bookkeeping services page"
-                className={styles.figureImg}
-                loading="lazy"
-              />
-            </div>
-            <figcaption className={`${styles.caption} ${styles.captionOnDark}`}>
-              Example of a dedicated service page: Monthly Bookkeeping Services
-              in Calgary.
             </figcaption>
           </figure>
         </div>
