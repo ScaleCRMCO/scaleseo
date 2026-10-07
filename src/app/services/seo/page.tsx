@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Breadcrumbs from "../../components/Breadcrumbs";
+import PageHero from "../../components/PageHero";
 import RevealOnScroll from "../../components/RevealOnScroll";
 import ServicesFaq, { type FaqItem } from "../ServicesFaq";
 // Section/card system shared with the /services hub so both pages match.
 import hub from "../page.module.css";
 import styles from "./page.module.css";
+import cs from "../../results/caseStudy.module.css";
 import Contact from "../../components/ContactCta";
 
 export const metadata: Metadata = {
@@ -220,6 +221,8 @@ const areas: {
     ],
   },
 ];
+
+const scenarioTones = ["toneBlue", "tonePink", "toneNavy", "toneOrange"];
 
 const scenarios = [
   "If important pages aren’t being indexed correctly, publishing more blog content probably isn’t the first priority.",
@@ -547,90 +550,51 @@ export default function SeoServicePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(seoJsonLd) }}
       />
 
-      <header className={styles.hero} data-nav-theme="dark">
-        <div className={styles.heroTop}>
-        <div className={styles.heroContent}>
-          <div className={styles.crumbsOnDark}>
-            <Breadcrumbs
-              items={[
-                { name: "Home", href: "/" },
-                { name: "Services", href: "/services" },
-                { name: "SEO" },
-              ]}
-              schema={false}
-            />
-          </div>
-          <h1 className={styles.title}>
+      <PageHero
+        breadcrumbs={[
+          { name: "Home", href: "/" },
+          { name: "Services", href: "/services" },
+          { name: "SEO" },
+        ]}
+        breadcrumbSchema={false}
+        title={
+          <>
             Search Engine Optimization Services{" "}
             <span className="title-block">Calgary</span>
-          </h1>
-          <div className={styles.sub}>
-            <p>
-              Scale SEO provides ongoing search engine optimization for
-              professional service and B2B businesses that want to generate
-              more qualified traffic, enquiries, and customers through Google.
-            </p>
-            <p>
-              Based in Calgary and working with businesses across Canada, I
-              personally manage every SEO campaign&mdash;from technical
-              improvements and keyword research to content, local SEO, internal
-              linking, and website optimization.
-            </p>
-          </div>
-          <div className={styles.heroCtaGroup}>
-            <a
-              href="https://cal.com/corbinjensen-scaleseo/30min"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.heroCta}
-            >
+          </>
+        }
+        icon="search"
+        actions={
+          <>
+            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
               <span>Book a Calgary Strategy Call</span>
-              <span className={styles.arrow}>→</span>
+              <span>→</span>
             </a>
-            <a href="#results" className={styles.heroCtaSecondary}>
+            <a href="#results">
               <span>Explore Our Alberta Case Studies</span>
               <span>↓</span>
             </a>
-          </div>
-        </div>
-
-        <div className={styles.visual}>
-          <div className={styles.visualFrame}>
-            <img
-              src="/images/gsc-performance-mockup-3d.webp"
-              alt="Google Search Console performance data showing clicks and impressions growth"
-              className={styles.visualImg}
-            />
-            <div className={styles.visualBadge}>
-              <span className={styles.visualBadgeValue}>+125%</span>
-              <span className={styles.visualBadgeLabel}>
-                Search impressions for an accounting firm
-              </span>
-            </div>
-          </div>
-          <span className={styles.visualCaption}>
-            Real Google Search Console Data
-          </span>
-        </div>
-        </div>
-
-        {/* === TRUST BAR — thin strip attached to the bottom of the hero,
-            no card/rounded treatment === */}
-        <div className={styles.trustBar}>
-          <span className={styles.trustItem}>
-            <span className={styles.trustIcon} aria-hidden="true">★</span>
-            5.0 Client Rating | Founder-Led in Calgary, AB
-          </span>
-          <span className={styles.trustItem}>
-            <span className={styles.trustIcon} aria-hidden="true">✺</span>
-            Advanced SEO Content Built for Google AI Overviews &amp; ChatGPT
-          </span>
-          <span className={styles.trustItem}>
-            <span className={styles.trustIcon} aria-hidden="true">✓</span>
-            Flexible Month-to-Month Retainers | No Long-Term Lock-in Contracts
-          </span>
-        </div>
-      </header>
+          </>
+        }
+      >
+        <p>
+          Scale SEO provides ongoing search engine optimization for
+          professional service and B2B businesses that want to generate more
+          qualified traffic, enquiries, and customers through Google.
+        </p>
+        <p>
+          Based in Calgary and working with businesses across Canada, I
+          personally manage every SEO campaign&mdash;from technical
+          improvements and keyword research to content, local SEO, internal
+          linking, and website optimization.
+        </p>
+        <ul className={cs.tags}>
+          <li>★ 5.0 Client Rating</li>
+          <li>Founder-Led in Calgary, AB</li>
+          <li>Built for Google AI Overviews &amp; ChatGPT</li>
+          <li>Month-to-Month · No Lock-in Contracts</li>
+        </ul>
+      </PageHero>
 
       {/* === SEO SHOULD GENERATE MORE THAN RANKINGS — light === */}
       <section className={`${hub.section} ${hub.light}`}>
@@ -678,20 +642,14 @@ export default function SeoServicePage() {
         </div>
       </section>
 
-      {/* === WHAT'S INCLUDED — dark, wide service-area cards === */}
-      <section
-        className={`${hub.section} ${hub.dark}`}
-        id="included"
-        data-nav-theme="dark"
-      >
+      {/* === WHAT'S INCLUDED — editorial rows (same as /services) === */}
+      <section className={`${hub.section} ${hub.light}`} id="included">
         <div className={hub.inner}>
           <div className={hub.head}>
             <div>
-              <div className={`section-label reveal-up ${styles.labelOnDark}`}>
-                What&rsquo;s Included
-              </div>
-              <h2 className={`${hub.h2} reveal-up`}>
-                What&rsquo;s Included in an <em>Ongoing SEO Campaign?</em>
+              <div className="section-label reveal-up">What&rsquo;s Included</div>
+              <h2 className={`${hub.h2} ${hub.bigH2} reveal-up`}>
+                What&rsquo;s Included in an Ongoing SEO Campaign?
               </h2>
             </div>
             <div className={`${hub.headBody} reveal-up`}>
@@ -713,35 +671,30 @@ export default function SeoServicePage() {
             </div>
           </div>
 
-          <div className={hub.serviceStack}>
+          <div className={hub.svcRows}>
             {areas.map((area, i) => (
-              <article key={area.title} className={`${hub.serviceCard} reveal-up`}>
-                <div className={hub.serviceMain}>
-                  <div className={hub.serviceMeta}>
-                    <span className="index">{String(i + 1).padStart(2, "0")}</span>
+              <article key={area.title} className={`${hub.svcRow} reveal-up`}>
+                <div className={hub.svcAside}>
+                  <div className={hub.svcMeta}>
+                    <span>{String(i + 1).padStart(2, "0")}</span>
                   </div>
-                  <h3 className={hub.serviceTitle}>{area.title}</h3>
-                  <div className={hub.serviceBody}>
-                    {area.body.map((para) => (
-                      <p key={para}>{para}</p>
-                    ))}
-                  </div>
+                  <h3 className={hub.svcTitle}>{area.title}</h3>
                   {area.note && (
-                    <div className={styles.serviceNote}>
+                    <div className={hub.svcTagline}>
                       {area.note.map((para) => (
                         <p key={para}>{para}</p>
                       ))}
                     </div>
                   )}
                 </div>
-                <div className={hub.servicePanel}>
-                  <div className={hub.panelLabel}>{area.listLabel}</div>
-                  <ul className={hub.checkList}>
+                <div className={hub.svcBody}>
+                  {area.body.map((para) => (
+                    <p key={para}>{para}</p>
+                  ))}
+                  <div className={hub.svcListLabel}>{area.listLabel}</div>
+                  <ul className={hub.svcList}>
                     {area.list.map((item) => (
-                      <li key={item}>
-                        <span className={hub.check} aria-hidden="true">✓</span>
-                        {item}
-                      </li>
+                      <li key={item}>{item}</li>
                     ))}
                   </ul>
                 </div>
@@ -751,14 +704,15 @@ export default function SeoServicePage() {
         </div>
       </section>
 
-      {/* === HOW I DECIDE WHAT TO WORK ON — light === */}
-      <section className={`${hub.section} ${hub.light}`}>
-        <div className={hub.inner}>
-          <div className={hub.head}>
-            <h2 className={`${hub.h2} reveal-up`}>
-              How I Decide What to Work on <em>Each Month</em>
+      {/* === HOW I DECIDE WHAT TO WORK ON — coloured cards === */}
+      <section className={`${hub.section} ${hub.light} ${cs.workSection}`}>
+        <div className={cs.workSplit}>
+          <div className={cs.workAside}>
+            <div className="section-label reveal-up">Monthly Priorities</div>
+            <h2 className={`${hub.h2} ${cs.bigH2} ${hub.comboH2} reveal-up`}>
+              How I Decide What to Work on Each Month
             </h2>
-            <div className={`${hub.headBody} reveal-up`}>
+            <div className={`${hub.comboIntro} reveal-up`}>
               <p>
                 SEO campaigns shouldn&rsquo;t be built around completing the
                 same list of tasks every 30 days.
@@ -766,29 +720,25 @@ export default function SeoServicePage() {
               <p>Priorities change as your website improves.</p>
             </div>
           </div>
-
-          <div className={hub.comboGrid}>
+          <div className={cs.cards}>
             {scenarios.map((text, i) => (
-              <div key={text} className={`${hub.lightCard} reveal-up`}>
-                <span className="index">{String(i + 1).padStart(2, "0")}</span>
-                <p className={styles.scenario}>{text}</p>
-              </div>
+              <article key={text} className={`${cs.card} ${cs[scenarioTones[i % scenarioTones.length]]} reveal-up`}>
+                <div className={cs.cardLabel}>Scenario {String(i + 1).padStart(2, "0")}</div>
+                <p className={cs.cardSolution}>{text}</p>
+              </article>
             ))}
-          </div>
-
-          <div className={`${styles.closing} reveal-up`}>
-            <p>
-              That&rsquo;s why I work from an evolving strategy rather than a
-              fixed package.
-            </p>
-            <p>
-              Each month, I look at the available search data, current
-              rankings, completed work, competitive landscape, and business
-              priorities to determine what should happen next.
-            </p>
-            <p className={styles.closingLead}>
-              The campaign changes as the opportunity changes.
-            </p>
+            <article className={`${cs.card} ${cs.toneStone} reveal-up`}>
+              <div className={cs.cardLabel}>The Approach</div>
+              <p className={cs.cardProblem}>
+                That&rsquo;s why I work from an evolving strategy rather than a
+                fixed package. Each month, I look at the available search data,
+                current rankings, completed work, competitive landscape, and
+                business priorities to determine what should happen next.
+              </p>
+              <p className={cs.cardSolution}>
+                The campaign changes as the opportunity changes.
+              </p>
+            </article>
           </div>
         </div>
       </section>
