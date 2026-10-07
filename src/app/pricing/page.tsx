@@ -174,6 +174,15 @@ const faqs: FaqItem[] = [
   },
 ];
 
+const SELLER = {
+  "@type": "ProfessionalService",
+  "@id": `${BASE}/#business`,
+  name: "Scale SEO",
+  url: BASE,
+  telephone: "+1-403-875-1110",
+  priceRange: "$500 – $3,000+ CAD",
+};
+
 const fmt = (n: number) => `$${n.toLocaleString("en-CA")}`;
 
 const jsonLd = {
@@ -188,7 +197,7 @@ const jsonLd = {
     description: p.summary,
     priceCurrency: "CAD",
     areaServed: { "@type": "City", name: "Calgary" },
-    seller: { "@type": "ProfessionalService", name: "Scale SEO", url: BASE },
+    seller: SELLER,
     itemOffered: { "@type": "Service", name: p.name, serviceType: p.name },
     priceSpecification: {
       "@type": "UnitPriceSpecification",
