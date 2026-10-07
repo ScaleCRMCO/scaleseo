@@ -95,13 +95,19 @@ export default function ServicesFaq({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <div className={styles.inner}>
-        <div className={`index ${styles.eyebrow}`}>{eyebrow}</div>
-        <h2 className={`${styles.heading} reveal-up`}>{title}</h2>
+        <div className={styles.head}>
+          <div className={`index ${styles.eyebrow}`}>{eyebrow}</div>
+          <h2 className={styles.heading}>{title}</h2>
+        </div>
 
         <div className={styles.list}>
-          {faqs.map((item) => (
-            <div key={item.q} className={`${styles.item} reveal-up`}>
-              <h3 className={styles.question}>{item.q}</h3>
+          {faqs.map((item, i) => (
+            <details key={item.q} className={styles.item} open={i === 0}>
+              <summary className={styles.summary}>
+                <span className={styles.num}>{String(i + 1).padStart(2, "0")}</span>
+                <h3 className={styles.question}>{item.q}</h3>
+                <span className={styles.toggle} aria-hidden="true" />
+              </summary>
               <div className={styles.answer}>
                 {item.a.map((para) => (
                   <p key={para}>{para}</p>
@@ -112,7 +118,7 @@ export default function ServicesFaq({
                   </Link>
                 )}
               </div>
-            </div>
+            </details>
           ))}
         </div>
       </div>
