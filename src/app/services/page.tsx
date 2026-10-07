@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Breadcrumbs from "../components/Breadcrumbs";
+import PageHero from "../components/PageHero";
+import SketchIcon from "../components/SketchIcon";
 import RevealOnScroll from "../components/RevealOnScroll";
 import ServicesFaq from "./ServicesFaq";
 import styles from "./page.module.css";
@@ -160,6 +161,14 @@ const services: {
     cta: { href: "/services/geo", label: "Explore AI Search Optimization" },
   },
 ];
+
+const serviceIcon: Record<string, string> = {
+  seo: "search",
+  "seo-audits": "ledger",
+  "web-development": "browser",
+  "google-ads": "target",
+  "ai-search": "consulting",
+};
 
 const combos: { title: string; body: string[] }[] = [
   {
@@ -384,79 +393,58 @@ export default function ServicesPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesJsonLd) }}
       />
 
-      {/* === HERO — dark === */}
-      <header className={styles.hero} data-nav-theme="dark">
-        <div className={styles.heroTop}>
-        <div className={styles.heroContent}>
-          <div className={styles.crumbsOnDark}>
-            <Breadcrumbs
-              items={[{ name: "Home", href: "/" }, { name: "Services" }]}
-              schema={false}
-            />
-          </div>
-          <h1 className={styles.title}>
+      {/* === HERO === */}
+      <PageHero
+        breadcrumbs={[{ name: "Home", href: "/" }, { name: "Services" }]}
+        breadcrumbSchema={false}
+        title={
+          <>
             SEO &amp; Digital Marketing Services in{" "}
             <span className="title-block">Calgary</span>
-          </h1>
-          <div className={styles.sub}>
-            <p>
-              Scale SEO provides SEO, SEO audits, web development, Google Ads
-              management, and AI search optimization for professional service
-              and B2B businesses.
-            </p>
-            <p>
-              Based in Calgary and working with businesses across Canada, I
-              manage every engagement directly. There are no account managers
-              or outsourced campaign teams&mdash;just a search strategy built
-              around your website, market, competition, and business goals.
-            </p>
-          </div>
-          <div className={styles.buttonGroup}>
-            <Link href="/services/seo" className={styles.buttonPrimaryDark}>
+          </>
+        }
+        icon="search"
+        actions={
+          <>
+            <Link href="/services/seo">
               <span>Explore SEO Services</span>
-              <span className={styles.arrow}>→</span>
+              <span>→</span>
             </Link>
-            <a
-              href={BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.buttonSecondaryDark}
-            >
+            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
               <span>Book a Strategy Call</span>
-              <span className={styles.arrow}>→</span>
+              <span>→</span>
             </a>
-          </div>
-        </div>
+          </>
+        }
+      >
+        <p>
+          Scale SEO provides SEO, SEO audits, web development, Google Ads
+          management, and AI search optimization for professional service and
+          B2B businesses.
+        </p>
+        <p>
+          Based in Calgary and working with businesses across Canada, I manage
+          every engagement directly. There are no account managers or
+          outsourced campaign teams&mdash;just a search strategy built around
+          your website, market, competition, and business goals.
+        </p>
+      </PageHero>
 
-        {/* Same floating Search Console proof image as the homepage hero */}
-        <div className={styles.visual}>
-          <div className={styles.visualFrame}>
-            <img
-              src="/images/gsc-performance-mockup-3d.webp"
-              alt="Google Search Console performance data showing clicks and impressions growth"
-              className={styles.visualImg}
-            />
-            <div className={styles.visualBadge}>
-              <span className={styles.visualBadgeValue}>+125%</span>
-              <span className={styles.visualBadgeLabel}>
-                Search impressions for an accounting firm
-              </span>
-            </div>
-          </div>
-          <span className={styles.visualCaption}>
-            Real Google Search Console Data
-          </span>
-        </div>
-        </div>
-      </header>
+      {/* === QUICK-JUMP BAR === */}
+      <nav className={styles.jumpBar} aria-label="Services on this page">
+        {services.map((s) => (
+          <a key={s.id} href={`#${s.id}`}>
+            <span>{s.num}</span> {s.title}
+          </a>
+        ))}
+      </nav>
 
-      {/* === SERVICES — light section, dark service cards === */}
-      <section className={`${styles.section} ${styles.light}`} id="services">
+      {/* === SERVICES — editorial rows === */}
+      <section className={`${styles.section} ${styles.light} ${styles.afterJump}`} id="services">
         <div className={styles.inner}>
           <div className={styles.head}>
-            <h2 className={`${styles.h2} reveal-up`}>
-              Search &amp; Digital Growth Services{" "}
-              <em>Built Around Your Business</em>
+            <h2 className={`${styles.h2} ${styles.bigH2} reveal-up`}>
+              Search &amp; Digital Growth Services Built Around Your Business
             </h2>
             <div className={`${styles.headBody} reveal-up`}>
               <p>Not every business needs the same combination of services.</p>
@@ -473,42 +461,31 @@ export default function ServicesPage() {
             </div>
           </div>
 
-          <div className={styles.serviceStack}>
+          <div className={styles.svcRows}>
             {services.map((s) => (
-              <article
-                key={s.id}
-                id={s.id}
-                className={`${styles.serviceCard} ${
-                  serviceTint[s.id] ? `${styles.pastel} ${serviceTint[s.id]}` : ""
-                } reveal-up`}
-              >
-                <div className={styles.serviceMain}>
-                  <div className={styles.serviceMeta}>
-                    <span className="index">{s.num}</span>
-                    {s.core && <span className={styles.coreBadge}>Core service</span>}
+              <article key={s.id} id={s.id} className={`${styles.svcRow} reveal-up`}>
+                <div className={styles.svcAside}>
+                  <div className={styles.svcMeta}>
+                    <span>{s.num}</span>
+                    {s.core && <span className={styles.svcCore}>Core service</span>}
                   </div>
-                  <h3 className={styles.serviceTitle}>{s.title}</h3>
-                  <p className={styles.serviceTagline}>{s.tagline}</p>
-                  <div className={styles.serviceBody}>
-                    {s.body.map((para) => (
-                      <p key={para}>{para}</p>
-                    ))}
-                  </div>
-                  <Link href={s.cta.href} className={styles.pillLime}>
-                    <span>{s.cta.label}</span>
-                    <span className={styles.arrow}>→</span>
-                  </Link>
+                  <h3 className={styles.svcTitle}>{s.title}</h3>
+                  <p className={styles.svcTagline}>{s.tagline}</p>
+                  <SketchIcon name={serviceIcon[s.id] ?? "article"} className={styles.svcIcon} />
                 </div>
-                <div className={styles.servicePanel}>
-                  <div className={styles.panelLabel}>{s.listLabel}</div>
-                  <ul className={styles.checkList}>
+                <div className={styles.svcBody}>
+                  {s.body.map((para) => (
+                    <p key={para}>{para}</p>
+                  ))}
+                  <div className={styles.svcListLabel}>{s.listLabel}</div>
+                  <ul className={styles.svcList}>
                     {s.list.map((item) => (
-                      <li key={item}>
-                        <span className={styles.check} aria-hidden="true">✓</span>
-                        {item}
-                      </li>
+                      <li key={item}>{item}</li>
                     ))}
                   </ul>
+                  <Link href={s.cta.href} className={styles.svcLink}>
+                    {s.cta.label} <span>→</span>
+                  </Link>
                 </div>
               </article>
             ))}

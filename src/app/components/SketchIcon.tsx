@@ -101,6 +101,35 @@ const icons: Record<string, ReactNode> = {
       <path d="M6 128h132" />
     </g>
   ),
+  // Magnifying glass over a rising line — SEO
+  search: (
+    <g>
+      <circle cx="74" cy="72" r="44" />
+      <path d="M106 104l46 46" />
+      <path d="M48 90l16-18 14 10 24-28" />
+      <path d="M92 54h10v10" />
+    </g>
+  ),
+  // Browser window with layout blocks — web development
+  browser: (
+    <g>
+      <rect x="18" y="34" width="144" height="110" rx="6" />
+      <path d="M18 56h144" />
+      <circle cx="32" cy="45" r="3" />
+      <circle cx="44" cy="45" r="3" />
+      <path d="M32 72h50v54H32zM98 72h48M98 90h48M98 108h32" />
+    </g>
+  ),
+  // Target with an arrow — Google Ads
+  target: (
+    <g>
+      <circle cx="80" cy="96" r="58" />
+      <circle cx="80" cy="96" r="36" />
+      <circle cx="80" cy="96" r="12" />
+      <path d="M80 96l70-70" />
+      <path d="M150 26l-4 22M150 26l-22 4" />
+    </g>
+  ),
   // Stacked coins with a price tag — pricing articles
   pricing: (
     <g>
@@ -141,6 +170,9 @@ const viewBoxes: Record<string, string> = {
   caseStudy: "0 0 180 180",
   about: "0 0 180 180",
   industries: "0 0 180 180",
+  search: "0 0 180 180",
+  browser: "0 0 180 180",
+  target: "0 0 180 180",
 };
 
 // Pick a sketch that matches a blog article's category
