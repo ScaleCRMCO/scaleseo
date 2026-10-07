@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import PageHero from "../../components/PageHero";
-import SketchIcon from "../../components/SketchIcon";
 import RevealOnScroll from "../../components/RevealOnScroll";
 import ServicesFaq, { type FaqItem } from "../ServicesFaq";
 // Section/card system shared with the /services hub so both pages match.
 import hub from "../page.module.css";
 import styles from "./page.module.css";
+import grid from "../../sections/home/ServicesGrid.module.css";
 import cs from "../../results/caseStudy.module.css";
 import Contact from "../../components/ContactCta";
 
@@ -426,26 +426,44 @@ export default function SeoServicePage() {
         </p>
       </PageHero>
 
-      {/* === WHAT'S INCLUDED — alternating full-width bands === */}
-      <section className={styles.inclHead} id="included">
-        <div className="section-label reveal-up">What&rsquo;s Included</div>
-        <h2 className={`${hub.h2} ${hub.bigH2} reveal-up`}>
-          What&rsquo;s Included in an Ongoing SEO Campaign?
-        </h2>
-      </section>
-      {included.map((item, i) => (
-        <section
-          key={item.title}
-          className={`${styles.inclBand} ${i % 2 ? styles.inclAlt : ""}`}
-        >
-          <div className={styles.inclTop}>
-            <span className={styles.inclNum}>{String(i + 1).padStart(2, "0")}</span>
-            <h3 className={`${styles.inclTitle} reveal-up`}>{item.title}</h3>
-            <SketchIcon name={item.icon} className={styles.inclIcon} />
+      {/* === WHAT'S INCLUDED — homepage services grid on the light canvas === */}
+      <section className={`${grid.section} ${styles.inclGrid}`} id="included">
+        <div className={grid.intro}>
+          <h2 className={grid.introTitle}>
+            What&rsquo;s Included in an Ongoing SEO Campaign?
+          </h2>
+          <div className={grid.introBody}>
+            <p>
+              Every campaign is built around your website, market, and
+              competitors. These are the areas the work draws on, with
+              priorities set by what will move results most each month.
+            </p>
           </div>
-          <p className={`${styles.inclBody} reveal-up`}>{item.body}</p>
-        </section>
-      ))}
+        </div>
+
+        <div className={grid.grid}>
+          {included.map((item, i) => (
+            <article key={item.title} className={grid.cell}>
+              <span className={grid.cellIndex}>{String(i + 1).padStart(2, "0")}</span>
+              <h3 className={grid.cellTitle}>{item.title}</h3>
+              <p className={grid.cellDesc}>{item.body}</p>
+            </article>
+          ))}
+          <article className={`${grid.cell} ${styles.inclCta}`}>
+            <span className={grid.cellIndex}>Pricing</span>
+            <h3 className={grid.cellTitle}>
+              Campaigns start from $2,000 + GST per month.
+            </h3>
+            <p className={grid.cellDesc}>
+              Month-to-month, scoped around your business, and run directly by
+              me &mdash; no junior account managers.
+            </p>
+            <Link href="/pricing" className={grid.cellLink}>
+              See SEO pricing →
+            </Link>
+          </article>
+        </div>
+      </section>
 
       {/* === HOW I DECIDE WHAT TO WORK ON — coloured cards === */}
       <section className={`${hub.section} ${hub.light} ${cs.workSection}`}>

@@ -657,3 +657,19 @@
   .inclIcon { width: 110px; }
   .inclBody { margin-left: 0; }
 }
+
+/* What's Included — homepage services grid, light canvas instead of blue */
+section.inclGrid {
+  --canvas: #FDFFEE;
+}
+/* 7 services + a pricing cell spanning the last two columns */
+.inclCta {
+  grid-column: span 2;
+  padding-right: 0 !important;
+}
+@media (max-width: 1024px) {
+  .inclCta { grid-column: span 1; padding-left: 32px !important; }
+}
+@media (max-width: 640px) {
+  .inclCta { padding-left: 0 !important; }
+}
