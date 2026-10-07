@@ -599,3 +599,61 @@
   .flow { grid-template-columns: 1fr; }
   .flowStep:not(:last-child)::after { display: none; }
 }
+
+/* ==== What's included: alternating full-width bands ==== */
+.inclHead {
+  padding: 140px 3% 64px;
+  background: #FDFFEE;
+  color: #031B36;
+}
+.inclBand {
+  padding: 72px 3% 88px;
+  background: #FDFFEE;
+  color: #031B36;
+  border-top: 1px solid rgba(3, 27, 54, 0.12);
+}
+.inclAlt { background: #EDE7DA; }
+.inclTop {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 24px;
+}
+.inclNum {
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  padding-top: 18px;
+}
+.inclTitle {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(36px, 5vw, 76px);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  max-width: 12ch;
+}
+.inclIcon {
+  width: clamp(120px, 12vw, 190px);
+  height: auto;
+  fill: none;
+  stroke: #031B36;
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.inclBody {
+  margin: 32px 0 0 auto;
+  max-width: 620px;
+  font-size: clamp(18px, 1.5vw, 22px);
+  font-weight: 500;
+  line-height: 1.6;
+  color: #031B36;
+}
+@media (max-width: 760px) {
+  .inclTop { grid-template-columns: 1fr; }
+  .inclNum { padding-top: 0; }
+  .inclIcon { width: 110px; }
+  .inclBody { margin-left: 0; }
+}

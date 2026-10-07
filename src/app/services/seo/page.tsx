@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import PageHero from "../../components/PageHero";
+import SketchIcon from "../../components/SketchIcon";
 import RevealOnScroll from "../../components/RevealOnScroll";
 import ServicesFaq, { type FaqItem } from "../ServicesFaq";
 // Section/card system shared with the /services hub so both pages match.
@@ -27,198 +28,41 @@ const flow = [
   "Real business opportunities",
 ];
 
-const areas: {
-  title: string;
-  body: string[];
-  listLabel: string;
-  list: string[];
-  note?: string[];
-}[] = [
+const included: { title: string; body: string; icon: string }[] = [
   {
-    title: "SEO Strategy & Keyword Research",
-    body: [
-      "Good SEO starts with understanding what your potential customers actually search for and why.",
-      "I research the commercial queries, services, problems, and topics relevant to your business, then map those searches to the pages that should rank for them.",
-      "This helps prevent multiple pages from unnecessarily competing for the same keywords and identifies where existing pages should be improved versus where genuinely useful new pages are needed.",
-    ],
-    listLabel: "Strategy can include:",
-    list: [
-      "Commercial keyword research",
-      "Search intent analysis",
-      "Competitor research",
-      "Keyword-to-page mapping",
-      "Existing ranking analysis",
-      "Content gap identification",
-      "Prioritization based on commercial value",
-      "Local, regional, and national search opportunities",
-    ],
-    note: [
-      "The goal isn’t to target every keyword with search volume. It’s to identify the searches most likely to put your business in front of the right potential customers.",
-    ],
+    title: "SEO Strategy & Research",
+    body: "Keyword research, search intent, competitor analysis, existing rankings, content gaps, and keyword-to-page mapping help determine where the strongest organic opportunities exist.",
+    icon: "search",
   },
   {
     title: "Technical SEO",
-    body: [
-      "Before a page can rank, search engines need to be able to find, crawl, render, understand, and index it correctly.",
-      "I review and improve the technical foundation supporting your organic visibility rather than treating technical SEO as a one-time score from an automated audit tool.",
-    ],
-    listLabel: "Depending on your website, technical SEO can include:",
-    list: [
-      "Crawling and indexation issues",
-      "XML sitemaps",
-      "Robots directives",
-      "Canonicalization",
-      "Redirects and broken URLs",
-      "Duplicate content",
-      "Core Web Vitals and performance",
-      "Mobile usability",
-      "JavaScript rendering issues",
-      "Structured data and schema markup",
-      "HTTPS and technical site configuration",
-      "Website migrations",
-      "Search Console errors",
-    ],
-    note: [
-      "I work directly with platforms including WordPress, Webflow, custom-coded websites, and modern JavaScript frameworks, allowing many technical recommendations to be implemented as part of the campaign rather than simply handed back to you in a report.",
-    ],
+    body: "I identify and resolve issues affecting crawling, indexation, rendering, performance, redirects, canonicalization, structured data, sitemaps, migrations, and other technical foundations.",
+    icon: "ledger",
   },
   {
-    title: "On-Page SEO",
-    body: [
-      "On-page optimization helps search engines understand what each page represents and helps visitors quickly determine whether they’ve found what they’re looking for.",
-      "I review your most important commercial pages against search intent, competing results, and the wider structure of your website.",
-    ],
-    listLabel: "Improvements can include:",
-    list: [
-      "Page titles and meta descriptions",
-      "H1, H2, and H3 structure",
-      "Service page content",
-      "Keyword and topical relevance",
-      "Search intent alignment",
-      "Internal linking",
-      "Image optimization",
-      "Calls to action",
-      "Supporting entities and terminology",
-      "Content structure and readability",
-    ],
-    note: [
-      "The objective isn’t to repeat a target keyword as many times as possible. It’s to create the strongest useful page for the search intent you’re trying to satisfy.",
-    ],
+    title: "On-Page SEO & Site Structure",
+    body: "Important service and landing pages are improved around search intent, content quality, headings, internal linking, metadata, topical relevance, site architecture, and usability.",
+    icon: "b2b",
   },
   {
-    title: "SEO Content Strategy",
-    body: [
-      "More content isn’t automatically better.",
-      "Publishing dozens of articles that have little connection to your services can generate traffic without generating meaningful business.",
-      "I use search data, competitor research, existing rankings, and customer intent to identify content that supports your wider organic strategy.",
-    ],
-    listLabel: "That may involve:",
-    list: [
-      "Creating new service pages",
-      "Expanding thin commercial pages",
-      "Building industry-specific content",
-      "Updating existing articles",
-      "Developing supporting guides",
-      "Consolidating overlapping pages",
-      "Building topic clusters",
-      "Answering questions potential customers research before making contact",
-    ],
-    note: [
-      "Every new page should have a clear reason to exist and a defined role within the wider site architecture.",
-    ],
+    title: "SEO Content",
+    body: "Content strategy can include improving existing service pages, creating new commercial pages, building useful guides, developing industry content, and consolidating pages that overlap or compete.",
+    icon: "article",
   },
   {
     title: "Local SEO",
-    body: [
-      "For businesses serving customers within a specific city or region, traditional organic rankings are only part of the search landscape.",
-      "Local SEO focuses on improving the signals that help your business appear for geographically relevant searches and within Google’s local results.",
-    ],
-    listLabel: "Depending on your business, this can include:",
-    list: [
-      "Google Business Profile optimization",
-      "Local keyword research",
-      "Google Maps visibility",
-      "Business citations and NAP consistency",
-      "Review strategy",
-      "Local service pages",
-      "Location and service-area content",
-      "Local competitor analysis",
-      "Internal links supporting geographic relevance",
-      "Local authority and business mentions",
-    ],
-    note: [
-      "Scale SEO is based in Calgary, but I also manage local search strategies for businesses operating in other Canadian and international markets.",
-    ],
-  },
-  {
-    title: "Internal Linking & Site Architecture",
-    body: [
-      "Your website’s structure influences how easily both users and search engines can discover and understand important pages.",
-      "I review how authority and context move through your website and build internal relationships between your homepage, service pages, industry pages, location pages, articles, and case studies.",
-    ],
-    listLabel: "This can involve:",
-    list: [
-      "Navigation improvements",
-      "Service hub architecture",
-      "Industry and topic hubs",
-      "Contextual internal links",
-      "Breadcrumbs",
-      "URL structure",
-      "Orphan page identification",
-      "Page hierarchy",
-      "Content consolidation",
-      "Redirect planning",
-    ],
-    note: [
-      "A well-structured website makes it clearer which pages are most important and how different services and topics relate to one another.",
-    ],
+    body: "For businesses targeting specific geographic markets, campaigns can include Google Business Profile optimization, local search research, Google Maps visibility, citations, reviews, location content, and local authority signals.",
+    icon: "about",
   },
   {
     title: "Website & Conversion Improvements",
-    body: [
-      "Getting somebody to your website is only half the job.",
-      "If a page ranks but doesn’t clearly communicate your service, establish credibility, or make the next step obvious, increasing traffic alone may not produce better business results.",
-      "Because I work directly with websites as part of my SEO campaigns, I can also improve the pages receiving organic traffic.",
-    ],
-    listLabel: "That can include:",
-    list: [
-      "Page layouts",
-      "Calls to action",
-      "Navigation",
-      "Service page structure",
-      "Trust signals",
-      "Mobile usability",
-      "Forms and conversion paths",
-      "Page speed",
-      "Content presentation",
-      "New landing pages",
-    ],
-    note: [
-      "This allows SEO and the website itself to develop together rather than treating them as completely separate projects.",
-    ],
+    body: "Where required, I can improve layouts, calls to action, navigation, trust signals, forms, landing pages, and other elements affecting how organic visitors interact with your website.",
+    icon: "browser",
   },
   {
-    title: "SEO Tracking & Reporting",
-    body: [
-      "SEO decisions should be based on what is actually happening in search.",
-      "I monitor organic performance using first-party search and analytics data alongside keyword tracking and campaign-specific metrics.",
-    ],
-    listLabel: "Depending on the business, reporting can include:",
-    list: [
-      "Google Search Console performance",
-      "Organic traffic",
-      "Keyword visibility",
-      "Important landing pages",
-      "Local search performance",
-      "Conversions and enquiries",
-      "Technical issues",
-      "Content performance",
-      "Competitor movement",
-      "Work completed and upcoming priorities",
-    ],
-    note: [
-      "Reporting is designed to explain what changed, why it matters, and what we’re doing next rather than simply sending a monthly collection of charts.",
-    ],
+    title: "Tracking & Reporting",
+    body: "Performance is monitored through Google Search Console, analytics, keyword visibility, important landing pages, conversions, enquiries, local search performance, and campaign-specific metrics.",
+    icon: "caseStudy",
   },
 ];
 
@@ -559,150 +403,49 @@ export default function SeoServicePage() {
         breadcrumbSchema={false}
         title={
           <>
-            Search Engine Optimization Services{" "}
-            <span className="title-block">Calgary</span>
+            SEO Services in <span className="title-block">Calgary</span>
           </>
         }
         icon="search"
         actions={
           <>
             <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
-              <span>Book a Calgary Strategy Call</span>
+              <span>Book a Strategy Call</span>
               <span>→</span>
             </a>
             <a href="#results">
-              <span>Explore Our Alberta Case Studies</span>
+              <span>View Client Results</span>
               <span>↓</span>
             </a>
           </>
         }
       >
         <p>
-          Scale SEO provides ongoing search engine optimization for
-          professional service and B2B businesses that want to generate more
-          qualified traffic, enquiries, and customers through Google.
+          Scale SEO provides ongoing SEO campaign management for professional
+          service and B2B businesses in Calgary and across Canada.
         </p>
-        <p>
-          Based in Calgary and working with businesses across Canada, I
-          personally manage every SEO campaign&mdash;from technical
-          improvements and keyword research to content, local SEO, internal
-          linking, and website optimization.
-        </p>
-        <ul className={cs.tags}>
-          <li>★ 5.0 Client Rating</li>
-          <li>Founder-Led in Calgary, AB</li>
-          <li>Built for Google AI Overviews &amp; ChatGPT</li>
-          <li>Month-to-Month · No Lock-in Contracts</li>
-        </ul>
       </PageHero>
 
-      {/* === SEO SHOULD GENERATE MORE THAN RANKINGS — light === */}
-      <section className={`${hub.section} ${hub.light}`}>
-        <div className={`${hub.inner} ${hub.split}`}>
-          <div className={hub.splitAside}>
-            <h2 className={`${hub.h2} reveal-up`}>
-              SEO Should Generate <em>More Than Rankings</em>
-            </h2>
-          </div>
-          <div className={`${hub.splitBody} reveal-up`}>
-            <p className={styles.leadInk}>
-              Ranking higher is useful, but rankings alone don&rsquo;t grow a
-              business.
-            </p>
-            <p>
-              The purpose of an SEO campaign is to connect your website with
-              the people already searching for the services you provide&mdash;and
-              make sure they reach a page capable of turning that search into
-              an enquiry.
-            </p>
-            <p className={styles.leadInk}>
-              That means looking beyond individual keywords.
-            </p>
-            <p>
-              A successful SEO strategy needs to consider what your potential
-              customers search for, which pages should appear, whether Google
-              can properly crawl and understand those pages, how your website
-              compares with competing results, and what happens after somebody
-              arrives.
-            </p>
-            <p>
-              At Scale SEO, the objective is to build a search presence that
-              connects:
-            </p>
-            <ol className={styles.flow} aria-label="How an SEO campaign connects searches to business">
-              {flow.map((step, i) => (
-                <li key={step} className={styles.flowStep}>
-                  <span className={styles.flowNum}>{String(i + 1).padStart(2, "0")}</span>
-                  <span className={styles.flowText}>{step}</span>
-                </li>
-              ))}
-            </ol>
-            <p>That requires several areas of SEO working together.</p>
-          </div>
-        </div>
+      {/* === WHAT'S INCLUDED — alternating full-width bands === */}
+      <section className={styles.inclHead} id="included">
+        <div className="section-label reveal-up">What&rsquo;s Included</div>
+        <h2 className={`${hub.h2} ${hub.bigH2} reveal-up`}>
+          What&rsquo;s Included in an Ongoing SEO Campaign?
+        </h2>
       </section>
-
-      {/* === WHAT'S INCLUDED — editorial rows (same as /services) === */}
-      <section className={`${hub.section} ${hub.light}`} id="included">
-        <div className={hub.inner}>
-          <div className={hub.head}>
-            <div>
-              <div className="section-label reveal-up">What&rsquo;s Included</div>
-              <h2 className={`${hub.h2} ${hub.bigH2} reveal-up`}>
-                What&rsquo;s Included in an Ongoing SEO Campaign?
-              </h2>
-            </div>
-            <div className={`${hub.headBody} reveal-up`}>
-              <p>Every website starts from a different position.</p>
-              <p>
-                Some businesses have strong websites with weak content. Others
-                have good content sitting on a poor technical foundation. Some
-                rank well outside their target city but struggle locally.
-                Others have hundreds of pages competing against each other.
-              </p>
-              <p>
-                For that reason, I don&rsquo;t run SEO from a fixed monthly
-                checklist.
-              </p>
-              <p>
-                Instead, each campaign draws from the areas below based on what
-                will have the greatest impact.
-              </p>
-            </div>
+      {included.map((item, i) => (
+        <section
+          key={item.title}
+          className={`${styles.inclBand} ${i % 2 ? styles.inclAlt : ""}`}
+        >
+          <div className={styles.inclTop}>
+            <span className={styles.inclNum}>{String(i + 1).padStart(2, "0")}</span>
+            <h3 className={`${styles.inclTitle} reveal-up`}>{item.title}</h3>
+            <SketchIcon name={item.icon} className={styles.inclIcon} />
           </div>
-
-          <div className={hub.svcRows}>
-            {areas.map((area, i) => (
-              <article key={area.title} className={`${hub.svcRow} reveal-up`}>
-                <div className={hub.svcAside}>
-                  <div className={hub.svcMeta}>
-                    <span>{String(i + 1).padStart(2, "0")}</span>
-                  </div>
-                  <h3 className={hub.svcTitle}>{area.title}</h3>
-                  {area.note && (
-                    <div className={hub.svcTagline}>
-                      {area.note.map((para) => (
-                        <p key={para}>{para}</p>
-                      ))}
-                    </div>
-                  )}
-                </div>
-                <div className={hub.svcBody}>
-                  {area.body.map((para) => (
-                    <p key={para}>{para}</p>
-                  ))}
-                  <div className={hub.svcListLabel}>{area.listLabel}</div>
-                  <ul className={hub.svcList}>
-                    {area.list.map((item) => (
-                      <li key={item}>{item}</li>
-                    ))}
-                  </ul>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+          <p className={`${styles.inclBody} reveal-up`}>{item.body}</p>
+        </section>
+      ))}
 
       {/* === HOW I DECIDE WHAT TO WORK ON — coloured cards === */}
       <section className={`${hub.section} ${hub.light} ${cs.workSection}`}>
