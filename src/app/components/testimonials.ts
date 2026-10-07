@@ -15,7 +15,7 @@ export type Testimonial = {
 export const testimonials: Testimonial[] = [
   {
     quote:
-      "I had the chance to work with Corbin from Scale SEO on improving my website performance for my phone repair business. His expertise has boosted my online sales and I gained valuable insights to improving my local presence in the Calgary area. Highly recommend!",
+      "I had the chance to work with Corbin from Scale SEO on improving my Website performance for my Phone repair business. His expertise has boosted my online sales and I gained valuable insights to improving my local presence in the Calgary area. Highly recommend!",
     name: "Ben P.",
     role: "Business Owner, Phone Repair",
     source: "Google Review",
