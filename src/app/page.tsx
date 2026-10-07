@@ -11,6 +11,7 @@ import BlogTeaser from "./sections/home/BlogTeaser";
 import FAQ from "./sections/home/FAQ";
 import Contact from "./components/ContactCta";
 import RevealOnScroll from "./components/RevealOnScroll";
+import Testimonials from "./components/Testimonials";
 
 export const metadata: Metadata = {
   title: "Calgary SEO Services | Scale SEO",
@@ -56,6 +57,7 @@ export default function Home() {
       <CampaignAreas />
       <IndustriesTeaser />
       <Process />
+      <Testimonials />
       <FAQ />
       <BlogTeaser />
       <Contact />

@@ -1,0 +1,146 @@
+/* Testimonials slider — light blue canvas, navy type */
+.section {
+  background: #B6FFFF;
+  color: #031B36;
+  padding: 140px 3% 120px;
+  text-align: center;
+}
+
+.label {
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 56px;
+}
+
+.stage {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr) 56px;
+  align-items: center;
+  gap: clamp(24px, 5vw, 96px);
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.slide {
+  grid-column: 2;
+  margin: 0;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+
+.source {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+}
+
+.stars {
+  font-size: 16px;
+  letter-spacing: 0.1em;
+}
+
+.quote {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(26px, 3.2vw, 48px);
+  line-height: 1.22;
+  letter-spacing: -0.025em;
+  margin: 0 auto 40px;
+  max-width: 1050px;
+}
+
+.cite {
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 17px;
+}
+
+.cite strong {
+  font-weight: 800;
+}
+
+.arrow {
+  grid-row: 1;
+  grid-column: 1;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 1px solid #031B36;
+  background: transparent;
+  color: #031B36;
+  font-size: 22px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.arrowNext {
+  grid-column: 3;
+  background: #031B36;
+  color: #F5F1E8;
+}
+
+.arrow:hover {
+  background: #031B36;
+  color: #F5F1E8;
+}
+
+.arrow span {
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.arrow:hover span {
+  transform: translateX(-3px);
+}
+
+.arrowNext:hover span {
+  transform: translateX(3px);
+}
+
+.bars {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 80px;
+}
+
+.bar {
+  width: 56px;
+  height: 4px;
+  border: none;
+  padding: 0;
+  background: rgba(3, 27, 54, 0.25);
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+
+.barActive {
+  background: #031B36;
+}
+
+@media (max-width: 760px) {
+  .section { padding: 96px 24px 88px; }
+  .stage {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px 16px;
+  }
+  .slide { grid-column: 1 / -1; grid-row: 1; }
+  .arrow { grid-row: 2; justify-self: end; }
+  .arrowNext { grid-column: 2; justify-self: start; }
+  .bars { margin-top: 48px; }
+}
