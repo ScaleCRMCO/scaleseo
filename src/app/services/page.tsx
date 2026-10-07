@@ -5,6 +5,7 @@ import SketchIcon from "../components/SketchIcon";
 import RevealOnScroll from "../components/RevealOnScroll";
 import ServicesFaq from "./ServicesFaq";
 import styles from "./page.module.css";
+import cs from "../results/caseStudy.module.css";
 import Contact from "../components/ContactCta";
 
 export const metadata: Metadata = {
@@ -169,6 +170,8 @@ const serviceIcon: Record<string, string> = {
   "google-ads": "target",
   "ai-search": "consulting",
 };
+
+const comboTones = ["toneBlue", "tonePink", "toneNavy", "toneOrange"];
 
 const combos: { title: string; body: string[] }[] = [
   {
@@ -493,62 +496,15 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* === SEO AT THE CORE — dark === */}
-      <section className={`${styles.section} ${styles.dark}`} data-nav-theme="dark">
-        <div className={`${styles.inner} ${styles.split}`}>
-          <div className={styles.splitAside}>
-            <h2 className={`${styles.h2} reveal-up`}>
-              SEO Is at the Core <em>of What I Do</em>
+      {/* === HOW SERVICES WORK TOGETHER — coloured cards === */}
+      <section className={`${styles.section} ${styles.light} ${cs.workSection}`}>
+        <div className={cs.workSplit}>
+          <div className={cs.workAside}>
+            <div className="section-label reveal-up">Combinations</div>
+            <h2 className={`${styles.h2} ${cs.bigH2} ${styles.comboH2} reveal-up`}>
+              How These Services Work Together
             </h2>
-            <Link href="/services/seo" className={`${styles.pillLime} reveal-up`}>
-              <span>See How Ongoing SEO Campaigns Work</span>
-              <span className={styles.arrow}>→</span>
-            </Link>
-          </div>
-          <div className={`${styles.splitBody} reveal-up`}>
-            <p>
-              Scale SEO isn&rsquo;t designed as a full-service marketing agency
-              offering every possible digital service.
-            </p>
-            <p className={styles.lead}>
-              The core offering is ongoing search engine optimization.
-            </p>
-            <p>
-              That means improving the technical foundation of your website,
-              strengthening the pages that should rank, creating content where
-              genuine search opportunities exist, improving local visibility
-              where relevant, and continually measuring what Google is actually
-              responding to.
-            </p>
-            <p className={styles.lead}>
-              The other services exist because SEO doesn&rsquo;t operate in
-              isolation.
-            </p>
-            <p>
-              A poorly structured website can restrict organic growth. Google
-              Ads can provide valuable commercial keyword and conversion data.
-              An SEO audit can uncover problems before an ongoing campaign
-              begins. AI search visibility increasingly overlaps with the same
-              content, authority, and entity signals required for traditional
-              organic search.
-            </p>
-            <p>
-              Bringing those disciplines together when necessary allows the
-              strategy to focus on the overall search opportunity rather than
-              completing disconnected marketing tasks.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* === HOW SERVICES WORK TOGETHER — light === */}
-      <section className={`${styles.section} ${styles.light}`}>
-        <div className={styles.inner}>
-          <div className={styles.head}>
-            <h2 className={`${styles.h2} reveal-up`}>
-              How These Services <em>Work Together</em>
-            </h2>
-            <div className={`${styles.headBody} reveal-up`}>
+            <div className={`${styles.comboIntro} reveal-up`}>
               <p>
                 You don&rsquo;t necessarily need every service listed on this
                 page.
@@ -560,20 +516,15 @@ export default function ServicesPage() {
               </p>
             </div>
           </div>
-
-          <div className={styles.comboGrid}>
+          <div className={cs.cards}>
             {combos.map((c, i) => (
-              <div
-                key={c.title}
-                className={`${styles.lightCard} ${styles.pastel} ${comboTints[i % comboTints.length]} reveal-up`}
-              >
-                <h3 className={styles.cardTitle}>{c.title}</h3>
-                <div className={styles.cardBody}>
-                  {c.body.map((para) => (
-                    <p key={para}>{para}</p>
-                  ))}
-                </div>
-              </div>
+              <article key={c.title} className={`${cs.card} ${cs[comboTones[i % comboTones.length]]} reveal-up`}>
+                <div className={cs.cardLabel}>Combination {String(i + 1).padStart(2, "0")}</div>
+                <h3 className={`${cs.cardSolution} ${styles.comboTitle}`}>{c.title}</h3>
+                {c.body.map((para) => (
+                  <p key={para} className={styles.comboBody}>{para}</p>
+                ))}
+              </article>
             ))}
           </div>
         </div>

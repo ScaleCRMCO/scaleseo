@@ -943,3 +943,22 @@ a:hover > .arrow {
 }
 
 .afterJump { margin-top: 0; }
+
+/* "How these services work together" — uses the case-study card styles */
+.comboIntro p {
+  margin-top: 24px;
+  max-width: 440px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.65;
+  color: #031B36;
+}
+.comboTitle { margin-bottom: 24px; }
+.comboBody {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+
+h2.comboH2 { font-size: clamp(40px, 4.6vw, 72px); }
