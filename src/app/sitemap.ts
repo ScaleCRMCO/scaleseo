@@ -26,6 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/results/empire-accountants`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/results/kinsmen-consulting`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/results/jensen-cpa`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/pricing`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/blog`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     ...blogEntries,
     { url: `${base}/corbin-jensen`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
