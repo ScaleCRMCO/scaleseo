@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Breadcrumbs from "../../components/Breadcrumbs";
+import PageHero from "../../components/PageHero";
 import RevealOnScroll from "../../components/RevealOnScroll";
 
 // Hero from the industries hub, sections from the shared /services hub
@@ -25,6 +25,55 @@ const CLIENT_URL = "https://www.empireaccountants.com.au/";
 const pad = (i: number) => String(i + 1).padStart(2, "0");
 
 /* === Content ============================================================ */
+
+const tags = ["SEO Campaign", "Technical SEO", "Content Strategy", "Local SEO", "Structured Data"];
+
+const servicesProvided = [
+  "Ongoing SEO",
+  "Service Page Optimization",
+  "Website Architecture & Internal Linking",
+  "Accounting Content Strategy",
+  "Technical SEO & Structured Data",
+  "Local SEO",
+];
+
+const problems: { problem: string; solution: string; tone: string }[] = [
+  {
+    problem:
+      "Several commercially important accounting services had limited search visibility.",
+    solution:
+      "Priority service pages were expanded around the questions, services, and search intent of prospective clients.",
+    tone: "toneBlue",
+  },
+  {
+    problem:
+      "Parts of the website needed clearer page targeting and a more structured relationship between services, industries, articles, and the firm.",
+    solution:
+      "The service structure and internal linking were rebuilt to direct authority toward commercially valuable pages.",
+    tone: "tonePink",
+  },
+  {
+    problem:
+      "The firm’s expertise wasn’t visible online in the way potential clients actually search.",
+    solution:
+      "Supporting articles were built around client questions and connected back to the relevant services.",
+    tone: "toneNavy",
+  },
+  {
+    problem:
+      "Pages needed to be easier for search engines to crawl, index, and understand.",
+    solution:
+      "Technical and on-page issues were addressed, with business, service, article, and breadcrumb structured data added.",
+    tone: "toneOrange",
+  },
+  {
+    problem:
+      "Empire needed a stronger presence for relevant accounting searches in Brisbane.",
+    solution:
+      "Google Business Profile, content, and location signals were strengthened to build genuine local relevance.",
+    tone: "toneStone",
+  },
+];
 
 const headlineStats = [
   { value: "Page 5 → Page 1", label: "Target keyword rankings" },
@@ -208,87 +257,59 @@ export default function EmpireAccountantsCaseStudy() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(caseStudyJsonLd) }}
       />
 
-      {/* === HERO — dark, copy + stats left, site screenshot right === */}
-      <header className={ind.hero} data-nav-theme="dark">
-        <div className={ind.heroContent}>
-          <div className={ind.crumbsOnDark}>
-            <Breadcrumbs
-              items={[
-                { name: "Home", href: "/" },
-                { name: "Results", href: "/results" },
-                { name: "Empire Accountants" },
-              ]}
-              schema={false}
-            />
-          </div>
+      {/* === HERO === */}
+      <PageHero
+        breadcrumbs={[
+          { name: "Home", href: "/" },
+          { name: "Results", href: "/results" },
+          { name: "Empire Accountants" },
+        ]}
+        breadcrumbSchema={false}
+        title={
+          <>
+            Empire Accountants{" "}
+            <span className="title-block">SEO Case Study</span>
+          </>
+        }
+        icon="caseStudy"
+        actions={
+          <a href={CLIENT_URL} target="_blank" rel="nofollow noopener noreferrer">
+            <span>Visit Empire Accountants</span>
+            <span>→</span>
+          </a>
+        }
+      >
+        <p>
+          How ongoing SEO helped a Brisbane accounting firm improve search
+          visibility, move priority keywords onto page one, and generate more
+          organic enquiries.
+        </p>
+        <ul className={styles.tags}>
+          {tags.map((t) => (
+            <li key={t}>{t}</li>
+          ))}
+        </ul>
+      </PageHero>
 
-          <div className={styles.heroGrid}>
-            <div className={styles.heroMain}>
-              <h1 className={ind.title}>
-                Empire Accountants{" "}
-                <span className="title-block">SEO Case Study</span>
-              </h1>
-              <p className={styles.heroLead}>
-                How ongoing SEO helped a Brisbane accounting firm improve search
-                visibility, move priority keywords onto page one, and generate
-                more organic enquiries.
-              </p>
-              <p className={styles.heroMeta}>Accounting &amp; Advisory · Brisbane, Australia</p>
-              <a
-                href={CLIENT_URL}
-                target="_blank"
-                rel="nofollow noopener noreferrer"
-                className={ind.heroCta}
-              >
-                <span>Visit Empire Accountants</span>
-                <span className={ind.arrow}>→</span>
-              </a>
-            </div>
+      {/* === FULL-WIDTH WEBSITE IMAGE === */}
+      <figure className={styles.showcase}>
+        <img
+          src="/images/empire-accountants-website.webp"
+          alt="Empire Accountants website: Dedicated Business Accountants in Brisbane Since 2015"
+          className={styles.showcaseImg}
+        />
+      </figure>
 
-            <div className={styles.browser}>
-              <div className={styles.browserBar} aria-hidden="true">
-                <span />
-                <span />
-                <span />
-                <em>empireaccountants.com.au</em>
-              </div>
-              <img
-                src="/images/empireaccountants-hero-image.png"
-                alt="Empire Accountants website homepage"
-                className={styles.browserImg}
-              />
-            </div>
-          </div>
-
-          <div className={styles.statRow}>
-            {headlineStats.map((s, i) => (
-              <div key={s.label} className={`${styles.stat} ${i === 0 ? styles.statLead : ""}`}>
-                <span className={styles.statValue}>{s.value}</span>
-                <span className={styles.statLabel}>{s.label}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </header>
-
-      {/* === THE CLIENT — light === */}
+      {/* === OVERVIEW — copy left, services + results right === */}
       <section className={`${hub.section} ${hub.light}`}>
-        <div className={`${hub.inner} ${hub.split}`}>
-          <div className={`${hub.splitAside} ${about.sticky}`}>
-            <div>
-              <div className={`section-label reveal-up ${about.label}`}>The Client</div>
-              <h2 className={`${hub.h2} reveal-up`}>About Empire Accountants</h2>
-            </div>
-          </div>
-          <div className={`${hub.splitBody} reveal-up`}>
-            <p className={ind.leadInk}>
-              Empire Accountants is an accounting and business advisory firm
-              based in Brisbane, Australia.
-            </p>
+        <div className={styles.overview}>
+          <div className={`${styles.overviewBody} reveal-up`}>
+            <div className="section-label">Overview</div>
             <p>
-              The firm works primarily with businesses and provides services
-              across tax, accounting, business advisory, bookkeeping, SMSFs, and
-              other areas of financial management.
+              Empire Accountants is an accounting and business advisory firm
+              based in Brisbane, Australia, providing services across tax,
+              accounting, business advisory, bookkeeping, SMSFs, and other
+              areas of financial management.
             </p>
             <p>
               When I began working with Empire Accountants, the opportunity
@@ -297,87 +318,50 @@ export default function EmpireAccountantsCaseStudy() {
               and searches most relevant to the clients the firm wanted to
               attract.
             </p>
-          </div>
-        </div>
-      </section>
-
-      {/* === THE CHALLENGE — dark === */}
-      <section className={`${hub.section} ${hub.dark}`} data-nav-theme="dark">
-        <div className={`${hub.inner} ${hub.split}`}>
-          <div className={`${hub.splitBody} reveal-up`}>
-            <div className={`section-label ${ind.labelOnDark}`}>The Challenge</div>
-            <h2 className={`${hub.h2} ${styles.h2OnDark}`}>
-              Building Visibility for High-Value Accounting Services
-            </h2>
-            <p className={hub.lead}>
-              Empire Accountants already had an established website, service
-              offering, and experienced team.
-            </p>
             <p>
-              The challenge was translating that expertise into stronger organic
-              search visibility.
-            </p>
-            <p>
-              Several commercially important services had limited search
-              visibility, while parts of the website needed clearer page
-              targeting, stronger content, improved internal linking, and a more
-              structured relationship between services, industries, articles,
-              and the accounting firm itself.
+              The firm already had an established website, service offering,
+              and experienced team. The challenge was translating that
+              expertise into stronger organic search visibility.
             </p>
           </div>
 
-          <div className={`${styles.panel} reveal-up`}>
-            <p className={hub.panelLabel}>Priority areas included services such as:</p>
-            <ol className={styles.panelList}>
-              {priorityServices.map((s, i) => (
-                <li key={s}>
-                  <span className={styles.panelNum}>{pad(i)}</span>
-                  {s}
-                </li>
+          <aside className={`${styles.overviewAside} reveal-up`}>
+            <div className="section-label">Services</div>
+            <ul className={styles.asideList}>
+              {servicesProvided.map((x) => (
+                <li key={x}>{x}</li>
               ))}
-            </ol>
-          </div>
-        </div>
-
-        <div className={hub.inner}>
-          <p className={`${styles.objective} reveal-up`}>
-            The objective was to build a stronger organic search presence around
-            these services while attracting more relevant business and advisory
-            enquiries.
-          </p>
+            </ul>
+            <div className="section-label">Priority Areas</div>
+            <ul className={styles.asideList}>
+              {priorityServices.map((x) => (
+                <li key={x}>{x}</li>
+              ))}
+            </ul>
+            <div className="section-label">Industry</div>
+            <ul className={styles.asideList}>
+              <li>Accounting &amp; Advisory</li>
+            </ul>
+          </aside>
         </div>
       </section>
 
-      {/* === THE STRATEGY — light, editorial rows === */}
+      {/* === PROBLEM / SOLUTION — coloured cards === */}
       <section className={`${hub.section} ${hub.light}`}>
-        <div className={hub.inner}>
-          <div className={hub.head}>
-            <div>
-              <div className={`section-label reveal-up ${about.label}`}>The Strategy</div>
-              <h2 className={`${hub.h2} reveal-up`}>The SEO Strategy</h2>
-            </div>
-            <div className={`${hub.headBody} reveal-up`}>
-              <p>There wasn&rsquo;t one isolated change behind the improvement.</p>
-              <p>
-                The campaign has involved ongoing work across technical SEO,
-                service pages, content, website structure, local search, and
-                structured data.
-              </p>
-            </div>
+        <div className={styles.workSplit}>
+          <div className={styles.workAside}>
+            <div className="section-label reveal-up">The Work</div>
+            <h2 className={`${hub.h2} ${styles.bigH2} reveal-up`}>
+              Problems Solved
+            </h2>
           </div>
-
-          <div className={about.rows}>
-            {strategy.map((s, i) => (
-              <article key={s.title} className={`${about.row} reveal-up`}>
-                <div className={about.rowHead}>
-                  <span className={about.rowNum}>{pad(i)}</span>
-                  <h3 className={about.rowTitle}>{s.title}</h3>
-                </div>
-                <div className={about.rowBody}>
-                  {s.body.map((p) => (
-                    <p key={p}>{p}</p>
-                  ))}
-                </div>
+          <div className={styles.cards}>
+            {problems.map((c) => (
+              <article key={c.solution} className={`${styles.card} ${styles[c.tone]} reveal-up`}>
+                <div className={styles.cardLabel}>Problem</div>
+                <p className={styles.cardProblem}>{c.problem}</p>
+                <div className={styles.cardLabel}>Solution</div>
+                <p className={styles.cardSolution}>{c.solution}</p>
               </article>
             ))}
           </div>
