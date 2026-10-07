@@ -976,3 +976,9 @@
   .workSplit { grid-template-columns: 1fr; }
   .workAside { position: static; }
 }
+
+/* Tighter rhythm between the overview and the problem cards */
+.overviewSection { padding-bottom: 40px; }
+.workSection { padding-top: 40px; }
+.overviewAside :global(.section-label) { margin-bottom: 16px; }
+.overviewAside .asideList { margin-bottom: 32px; gap: 8px; }

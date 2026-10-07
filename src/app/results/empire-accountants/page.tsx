@@ -301,7 +301,7 @@ export default function EmpireAccountantsCaseStudy() {
       </figure>
 
       {/* === OVERVIEW — copy left, services + results right === */}
-      <section className={`${hub.section} ${hub.light}`}>
+      <section className={`${hub.section} ${hub.light} ${styles.overviewSection}`}>
         <div className={styles.overview}>
           <div className={`${styles.overviewBody} reveal-up`}>
             <div className="section-label">Overview</div>
@@ -347,7 +347,7 @@ export default function EmpireAccountantsCaseStudy() {
       </section>
 
       {/* === PROBLEM / SOLUTION — coloured cards === */}
-      <section className={`${hub.section} ${hub.light}`}>
+      <section className={`${hub.section} ${hub.light} ${styles.workSection}`}>
         <div className={styles.workSplit}>
           <div className={styles.workAside}>
             <div className="section-label reveal-up">The Work</div>
