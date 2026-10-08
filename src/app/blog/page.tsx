@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import PageHero from "../components/PageHero";
 import RevealOnScroll from "../components/RevealOnScroll";
 import { posts } from "./posts";
-import Link from "next/link";
-import SketchIcon, { iconForCategory as iconFor } from "../components/SketchIcon";
+import BlogTile from "./BlogTile";
 import styles from "./page.module.css";
 import Contact from "../components/ContactCta";
 
@@ -13,14 +12,6 @@ export const metadata: Metadata = {
     "Notes on what actually moves search rankings and revenue for accounting firms and professional service businesses in Canada — written by Corbin Jensen.",
   alternates: { canonical: "/blog" },
 };
-
-const formatDate = (iso: string) =>
-  new Date(iso).toLocaleDateString("en-CA", {
-    month: "long",
-    day: "numeric",
-    year: "numeric",
-    timeZone: "America/Edmonton",
-  });
 
 export default function BlogPage() {
   return (
@@ -41,23 +32,7 @@ export default function BlogPage() {
       <section className={styles.list}>
         <div className={styles.grid}>
           {posts.map((post) => (
-            <Link
-              key={post.slug}
-              href={`/blog/${post.slug}`}
-              className={`${styles.tile} reveal-up`}
-            >
-              <span className={styles.tick} aria-hidden="true" />
-              <span className={styles.tileCategory}>{post.category}</span>
-              <h2 className={styles.tileTitle}>{post.title}</h2>
-              <SketchIcon name={iconFor(post.category)} className={styles.tileIcon} />
-              <p className={styles.tileExcerpt}>{post.description}</p>
-              <span className={styles.tileMeta}>
-                {formatDate(post.date)} · {post.readTime}
-              </span>
-              <span className={styles.tileLink}>
-                Read article <span className={styles.tileArrow}>→</span>
-              </span>
-            </Link>
+            <BlogTile key={post.slug} post={post} />
           ))}
         </div>
       </section>

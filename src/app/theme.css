@@ -121,8 +121,7 @@ footer {
 /* Light canvases */
 .home #comparison,
 .home #work,
-.home #process,
-.home #blog {
+.home #process {
   --bg: var(--canvas);
   --bg-dark: var(--canvas);
   --ink-on-dark: var(--midnight);
