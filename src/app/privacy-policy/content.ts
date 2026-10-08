@@ -84,32 +84,35 @@ export const blocks: Block[] = [
   ],
   [
     "p",
-    "Providing SEO and digital marketing services may require Scale SEO to access client-owned websites, analytics platforms, advertising accounts, business listings, search performance data, content management systems, or other digital platforms."
+    "Providing SEO and digital marketing services may require Scale SEO to access client-owned websites, analytics platforms, advertising accounts, business listings, and search performance data."
   ],
   [
     "p",
-    "Depending on the services being provided, this may include access to platforms or information such as:"
+    "Depending on the services being provided, this may include access to:"
   ],
   [
     "ul",
     [
-      "Website content management systems",
       "Google Search Console",
       "Google Analytics",
-      "Google Business Profile",
-      "Advertising platforms",
-      "Website hosting or development platforms",
-      "Search ranking and SEO tools",
-      "Other accounts necessary to provide the agreed services"
+      "Google Ads",
+      "Client website platforms and content management systems",
+      "Local Falcon",
+      "Google Business Profile and other Google services where required",
+      "Other website or marketing platforms necessary to provide the agreed services"
     ]
   ],
   [
     "p",
-    "Scale SEO accesses and uses this information only as reasonably necessary to provide, manage, measure, and improve the services requested by the client."
+    "Scale SEO accesses and uses client account information only as reasonably necessary to provide, manage, measure, and improve the services requested by the client."
   ],
   [
     "p",
-    "Clients remain responsible for ensuring they have the authority to provide Scale SEO with access to any accounts, information, or personal information supplied as part of an engagement."
+    "This may include reviewing organic search performance, website traffic, search queries, keyword rankings, geographic search visibility, advertising performance, conversions, and other information relevant to an SEO or digital marketing campaign."
+  ],
+  [
+    "p",
+    "Clients remain responsible for ensuring they have the authority to provide Scale SEO with access to accounts, information, and personal information supplied as part of an engagement."
   ],
   [
     "h2",
@@ -141,27 +144,150 @@ export const blocks: Block[] = [
   ],
   [
     "h2",
-    "4. Cookies and Analytics"
+    "4. Cookies, Google Analytics and Website Measurement"
   ],
   [
     "p",
-    "Scale SEO may use cookies and similar technologies to operate the website, understand website usage, measure marketing performance, and improve our services."
+    "Scale SEO may use cookies and similar technologies to understand how visitors find and use the Scale SEO website and to measure website and marketing performance."
   ],
   [
     "p",
-    "These technologies may collect information about your browser, device, website activity, and how you arrived at the Scale SEO website."
+    "Scale SEO uses Google Analytics to collect information about website usage. Depending on the information available through Google Analytics, this may include information such as:"
+  ],
+  [
+    "ul",
+    [
+      "Pages viewed",
+      "Approximate geographic location",
+      "Device and browser information",
+      "Traffic and referral sources",
+      "Website interactions",
+      "Session and engagement information"
+    ]
   ],
   [
     "p",
-    "We may use third-party analytics and advertising services, including services provided by Google and other technology providers. These providers may use cookies or similar technologies in accordance with their own privacy policies."
+    "Google Analytics uses cookies and other technologies to collect and process information about website activity."
   ],
   [
     "p",
-    "You can control or disable cookies through your browser settings. Disabling certain cookies may affect how some website features function."
+    "You can learn more about how Google handles information collected from sites and apps that use its services through Google's privacy documentation."
+  ],
+  [
+    "p",
+    "Visitors may also control or disable cookies through their browser settings. Disabling certain technologies may affect website functionality or the information available for website measurement."
   ],
   [
     "h2",
-    "5. How We Share Information"
+    "5. Google Ads"
+  ],
+  [
+    "p",
+    "Scale SEO uses Google Ads for advertising and may use Google advertising and measurement technologies to understand advertising performance."
+  ],
+  [
+    "p",
+    "Depending on the advertising features in use, Google may process information about visits to the Scale SEO website, interactions with advertisements, conversions, devices, and other information used to measure or improve advertising campaigns."
+  ],
+  [
+    "p",
+    "Google's collection and processing of information is governed by its own privacy policies and terms."
+  ],
+  [
+    "p",
+    "Scale SEO may also access and manage Google Ads accounts on behalf of clients where Google Ads management forms part of the services being provided."
+  ],
+  [
+    "h2",
+    "6. SEO and Client Service Platforms"
+  ],
+  [
+    "p",
+    "Scale SEO uses third-party platforms to research, implement, monitor, and report on client SEO campaigns."
+  ],
+  [
+    "p",
+    "These currently include:"
+  ],
+  [
+    "h3",
+    "Google Search Console"
+  ],
+  [
+    "p",
+    "Google Search Console is used to review information about how client websites perform in Google Search, including search queries, impressions, clicks, indexing information, and technical search issues."
+  ],
+  [
+    "h3",
+    "Google Analytics"
+  ],
+  [
+    "p",
+    "Where authorized by a client, Google Analytics may be used to review website traffic, landing-page performance, engagement, conversions, and other information relevant to measuring website and SEO performance."
+  ],
+  [
+    "h3",
+    "Local Falcon"
+  ],
+  [
+    "p",
+    "Local Falcon may be used to research and monitor local search and Google Maps visibility for client businesses."
+  ],
+  [
+    "h3",
+    "Client Website Platforms"
+  ],
+  [
+    "p",
+    "Scale SEO may access the website platform or content management system used by a client when necessary to implement SEO, content, technical, structural, or website improvements."
+  ],
+  [
+    "p",
+    "The specific platform depends on the client's existing website and may include third-party hosting, content management, or development providers."
+  ],
+  [
+    "h3",
+    "Google Ads"
+  ],
+  [
+    "p",
+    "Where Google Ads management is included in an engagement, Scale SEO may access and manage client advertising accounts and review campaign, conversion, and performance information."
+  ],
+  [
+    "p",
+    "Scale SEO uses information available through these platforms only as reasonably necessary to provide the services requested by the client."
+  ],
+  [
+    "h2",
+    "7. Third-Party Service Providers and Processing Outside Canada"
+  ],
+  [
+    "p",
+    "Scale SEO relies on third-party technology providers to operate the business and provide services to clients."
+  ],
+  [
+    "p",
+    "These include Google and may include client-selected website platforms, hosting providers, and other technology services required to manage a particular website or campaign."
+  ],
+  [
+    "p",
+    "Some of these providers may store, process, or access information outside Canada, including in the United States and other jurisdictions."
+  ],
+  [
+    "p",
+    "When information is processed outside Canada, it may be subject to the laws of the jurisdiction where it is stored or processed and may be accessible to courts, law enforcement, or government authorities in accordance with those laws."
+  ],
+  [
+    "p",
+    "Scale SEO takes reasonable steps appropriate to the circumstances when selecting and using third-party service providers."
+  ],
+  [
+    "p",
+    "If you have questions about Scale SEO's use of service providers outside Canada, you can contact us using the information provided in this Privacy Policy."
+  ],
+  [
+    "h2",
+    "8. How We Share Information"
   ],
   [
     "p",
@@ -201,27 +327,7 @@ export const blocks: Block[] = [
   ],
   [
     "h2",
-    "6. Service Providers Outside Canada"
-  ],
-  [
-    "p",
-    "Scale SEO uses technology and service providers that may store, process, or access information outside Canada, including in the United States and potentially other jurisdictions."
-  ],
-  [
-    "p",
-    "This may include providers used for website hosting, analytics, email, cloud software, payments, advertising, SEO tools, and other business operations."
-  ],
-  [
-    "p",
-    "When personal information is processed outside Canada, it may be subject to the laws of the jurisdiction in which it is stored or processed and may be accessible to courts, law enforcement, or government authorities in accordance with those laws."
-  ],
-  [
-    "p",
-    "If you have questions about Scale SEO's use of service providers outside Canada or how your personal information may be handled by those providers, you can contact us using the information provided below."
-  ],
-  [
-    "h2",
-    "7. Data Security"
+    "9. Data Security"
   ],
   [
     "p",
@@ -249,7 +355,7 @@ export const blocks: Block[] = [
   ],
   [
     "h2",
-    "8. Data Retention"
+    "10. Data Retention"
   ],
   [
     "p",
@@ -261,7 +367,7 @@ export const blocks: Block[] = [
   ],
   [
     "h2",
-    "9. Marketing Communications"
+    "11. Marketing Communications"
   ],
   [
     "p",
@@ -281,7 +387,7 @@ export const blocks: Block[] = [
   ],
   [
     "h2",
-    "10. Third-Party Websites"
+    "12. Third-Party Websites"
   ],
   [
     "p",
@@ -293,7 +399,7 @@ export const blocks: Block[] = [
   ],
   [
     "h2",
-    "11. Accessing or Correcting Your Personal Information"
+    "13. Accessing or Correcting Your Personal Information"
   ],
   [
     "p",
@@ -313,7 +419,7 @@ export const blocks: Block[] = [
   ],
   [
     "h2",
-    "12. Withdrawing Consent"
+    "14. Withdrawing Consent"
   ],
   [
     "p",
@@ -325,7 +431,7 @@ export const blocks: Block[] = [
   ],
   [
     "h2",
-    "13. Privacy of Children"
+    "15. Privacy of Children"
   ],
   [
     "p",
@@ -337,7 +443,7 @@ export const blocks: Block[] = [
   ],
   [
     "h2",
-    "14. Changes to This Privacy Policy"
+    "16. Changes to This Privacy Policy"
   ],
   [
     "p",
@@ -349,7 +455,7 @@ export const blocks: Block[] = [
   ],
   [
     "h2",
-    "15. Contact Scale SEO"
+    "17. Contact Scale SEO"
   ],
   [
     "p",
