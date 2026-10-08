@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Logo from "../../components/Logo";
+import Image from "next/image";
 import styles from "./About.module.css";
 export default function About() {
   return (
@@ -29,25 +29,31 @@ export default function About() {
           </Link>
         </div>
         <div className={`${styles.stamp} reveal-up`}>
-          <div className={styles.circleOuter}>
-            <svg className={styles.circleText} viewBox="0 0 240 240" aria-hidden="true">
+          <figure className={styles.portrait}>
+            <Image
+              src="/images/corbin-about.jpg"
+              alt="Corbin Jensen, Calgary SEO specialist and founder of Scale SEO"
+              fill
+              sizes="(max-width: 900px) 90vw, 40vw"
+              className={styles.portraitImg}
+            />
+          </figure>
+          {/* Rotating badge pinned over the photo's bottom-left corner */}
+          <div className={styles.badge} aria-hidden="true">
+            <svg className={styles.circleText} viewBox="0 0 240 240">
               <defs>
                 <path
                   id="aboutCirclePath"
-                  d="M 120,120 m -100,0 a 100,100 0 1,1 200,0 a 100,100 0 1,1 -200,0"
+                  d="M 120,120 m -92,0 a 92,92 0 1,1 184,0 a 92,92 0 1,1 -184,0"
                 />
               </defs>
               <text className={styles.circleTextInner}>
                 <textPath href="#aboutCirclePath" startOffset="0%">
-               SCALE SEO · EST 2025 · CANADA · CORBIN JENSEN · SEO SPECIALIST · REMOTE ·&nbsp;
-               </textPath>
+                  SCALE SEO · EST 2025 · CANADA · CORBIN JENSEN · SEO SPECIALIST ·&nbsp;
+                </textPath>
               </text>
             </svg>
-           <div className={styles.photo}>
-              <div className={styles.photoLogo}>
-                <Logo className={styles.photoLogoImg} />
-              </div>
-            </div>
+            <img src="/brand/scaleseo-mark-navy.svg" alt="" className={styles.badgeMark} />
           </div>
         </div>
       </div>

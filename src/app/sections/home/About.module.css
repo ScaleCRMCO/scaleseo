@@ -23,18 +23,40 @@
 }
 
 .stamp {
-  position: sticky;
-  top: 120px;
+  position: relative;
+  justify-self: end;
+  width: 100%;
+  max-width: 520px;
+}
+
+/* Square-cornered portrait */
+.portrait {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  margin: 0;
+  overflow: hidden;
+  background: #0B2846;
+}
+
+.portraitImg {
+  object-fit: cover;
+  object-position: 60% 30%;
+}
+
+/* Orange rotating badge overlapping the bottom-left corner */
+.badge {
+  position: absolute;
+  left: -64px;
+  bottom: -56px;
+  width: clamp(140px, 12vw, 180px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #FF2C16;
   display: flex;
+  align-items: center;
   justify-content: center;
 }
-/* === ROTATING CIRCLE === */
-.circleOuter {
-  width: clamp(300px, 26vw, 460px);
-  aspect-ratio: 1;
-  height: auto;
-  position: relative;
-}
+
 .circleText {
   position: absolute;
   inset: 0;
@@ -43,81 +65,19 @@
   animation: rotate 40s linear infinite;
   transform-origin: center;
 }
+
 .circleTextInner {
   font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.18em;
-  fill: var(--ink-dim-on-dark);
+  font-weight: 700;
+  font-size: 12.5px;
+  letter-spacing: 0.1em;
+  fill: #031B36;
   text-transform: uppercase;
 }
-.photo {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 68%;
-  height: 68%;
-  border-radius: 50%;
-  overflow: hidden;
-  background: var(--about-disc, rgba(255,255,255,0.04));
-  border: 1px solid var(--line-on-dark);
-  transition: transform 0.5s ease;
-}
-.photoLogo {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--about-disc, rgba(255,255,255,0.04));
-  color: var(--about-mark, var(--ink-on-dark));
-  padding: 20px;
-  transition: transform 0.5s ease;
-}
 
-.photoLogo svg {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-.circleOuter:hover .photoLogo {
-  transform: scale(1.04);
-}
-
-.circleOuter:hover .photo {
-  transform: translate(-50%, -50%) scale(1.05);
-}
-
-.photoLogoImg {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transform: scale(1.3);
-  box-sizing: border-box;
-}
-
-.circleOuter:hover .photoImg {
-  filter: grayscale(0%) contrast(1.05);
-}
-
-.photoPlaceholder {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--display);
-  font-weight: 600;
-  font-size: 56px;
-  color: var(--accent);
-  background: repeating-linear-gradient(
-    45deg,
-    var(--bg-elev),
-    var(--bg-elev) 8px,
-    var(--bg) 8px,
-    var(--bg) 16px
-  );
+.badgeMark {
+  width: 34%;
+  height: auto;
 }
 
 /* === TEXT COLUMN === */
@@ -214,7 +174,6 @@
     grid-template-columns: 1fr;
     gap: 60px;
   }
-  .stamp { position: static; }
-  .circleOuter { width: clamp(240px, 70vw, 320px); }
-  .photo { width: 68%; height: 68%; }
+  .stamp { justify-self: start; max-width: 440px; margin-bottom: 40px; }
+  .badge { left: auto; right: -12px; bottom: -40px; width: 128px; }
 }
