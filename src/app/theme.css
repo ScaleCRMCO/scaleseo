@@ -135,17 +135,7 @@ footer {
 }
 
 .home #faq {
-  --bg: var(--stone);
-  --bg-elev: var(--ivory);
-  --bg-dark: var(--stone);
-  --ink-on-dark: var(--midnight);
-  --ink-dim-on-dark: var(--graphite);
-  --surface-dark: var(--ivory);
-  --surface-dark-hover: var(--ivory-2);
-  --surface-light: var(--ivory);
-  --surface-open: var(--ivory);
-  --line: rgba(3, 27, 54, 0.18);
-  background: var(--stone);
+  background: #FFFFFF;
   color: var(--midnight);
 }
 
@@ -173,12 +163,6 @@ footer {
 .home #industries {
   --row-link-bg: var(--ivory);
   --row-link-ink: var(--midnight);
-}
-
-/* FAQ help card is Midnight on the Stone canvas — restore light text */
-.home #faq [class*="helpCard"] {
-  --ink-on-dark: var(--ivory);
-  --ink-dim-on-dark: rgba(245, 241, 232, 0.72);
 }
 
 /* Footer wordmark fully in the brand orange */

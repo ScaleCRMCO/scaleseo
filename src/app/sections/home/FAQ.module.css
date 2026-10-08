@@ -1,125 +1,75 @@
 /* ==========================================================================
-   Homepage FAQ — pinned heading on the left, compact accordion on the right.
-   Native <details> so every answer stays in the HTML (FAQPage schema + SEO).
+   Homepage FAQ — huge heading + sketch on the left, stacked colour boxes on
+   the right. Native <details> so every answer stays in the HTML.
    ========================================================================== */
 
 .section {
-  padding: 140px 40px;
-  background: var(--bg);
+  padding: 140px 3%;
+  background: #FFFFFF;
+  color: #031B36;
 }
 
 .inner {
-  max-width: 1400px;
-  margin: 0 auto;
   display: grid;
-  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
-  gap: 80px;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(40px, 5vw, 96px);
   align-items: start;
 }
 
-/* === Left column ======================================================== */
 .aside {
   position: sticky;
   top: 120px;
   display: flex;
   flex-direction: column;
-}
-
-.label {
-  margin-bottom: 24px;
+  gap: clamp(48px, 7vw, 120px);
 }
 
 .heading {
   font-family: var(--display);
   font-weight: 800;
-  font-size: clamp(36px, 4vw, 56px);
-  line-height: 1.06;
-  letter-spacing: -0.03em;
-  color: var(--ink);
-  margin-bottom: 40px;
+  font-size: clamp(56px, 7.4vw, 124px);
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+  text-transform: uppercase;
+  color: #031B36;
 }
 
-.heading em {
-  font-style: normal;
-  color: var(--heading-accent, var(--ink-faint));
+.sketch {
+  width: clamp(160px, 16vw, 260px);
+  height: auto;
+  margin-left: 4%;
+  fill: none;
+  stroke: #031B36;
+  stroke-width: 7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
-.helpCard {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  padding: 2rem;
-  border-radius: 24px;
-  background: var(--help-card-bg, var(--bg-dark));
-  border: 1px solid var(--help-card-border, transparent);
-  color: var(--ink-on-dark);
-  max-width: 420px;
-}
-
-.helpTitle {
-  font-family: var(--display);
-  font-weight: 800;
-  font-size: 22px;
-  line-height: 1.2;
-}
-
-.helpCard p {
-  font-family: var(--sans);
-  font-size: 15px;
-  line-height: 1.6;
-  color: var(--ink-dim-on-dark);
-}
-
-.helpBtn {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  align-self: flex-start;
-  margin-top: 8px;
-  padding: 14px 24px;
-  border-radius: 999px;
-  background: var(--highlight);
-  color: var(--on-highlight);
-  font-family: var(--sans);
-  font-weight: 700;
-  font-size: 14px;
-  text-decoration: none;
-  transition: transform 0.2s ease;
-}
-
-.helpBtn:hover {
-  transform: translateY(-2px);
-}
-
-/* === Accordion ========================================================== */
 .list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 20px;
 }
 
 .item {
-  border-radius: 20px;
-  background: var(--bg-elev);
-  border: 1px solid transparent;
-  transition: background-color 0.25s ease, border-color 0.25s ease;
+  --ink: #031B36;
+  background: var(--tone);
+  color: var(--ink);
 }
 
-.item:hover {
-  border-color: var(--line);
-}
-
-.item[open] {
-  background: var(--surface-open, #fff);
-  border-color: var(--ink);
-}
+.blue { --tone: #B6FFFF; }
+.pink { --tone: #FFE3F3; }
+.navy { --tone: #031B36; --ink: #F5F1E8; }
+.orange { --tone: #FF2C16; --ink: #FFFFFF; }
+.white { --tone: #FFFFFF; box-shadow: inset 0 0 0 2px #031B36; }
+.stone { --tone: #D8D2C7; }
 
 .summary {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
+  display: flex;
   align-items: center;
-  gap: 20px;
-  padding: 22px 26px;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 30px 32px;
   cursor: pointer;
   list-style: none;
 }
@@ -128,99 +78,61 @@
   display: none;
 }
 
-.num {
-  font-family: var(--mono);
-  font-size: 12px;
-  letter-spacing: 0.08em;
-  color: var(--ink-faint);
-}
-
 .question {
   font-family: var(--display);
-  font-weight: 700;
-  font-size: clamp(17px, 1.5vw, 20px);
-  line-height: 1.3;
-  letter-spacing: -0.01em;
+  font-weight: 800;
+  font-size: clamp(19px, 1.7vw, 26px);
+  line-height: 1.25;
+  letter-spacing: -0.015em;
   color: var(--ink);
 }
 
-/* + / − toggle in a circle; lime when open */
+/* Plus that turns into a minus */
 .icon {
   position: relative;
-  width: 36px;
-  height: 36px;
   flex-shrink: 0;
-  border-radius: 50%;
-  background: var(--ink);
-  transition: background-color 0.25s ease, transform 0.3s ease;
+  width: 22px;
+  height: 22px;
 }
 
 .icon::before,
 .icon::after {
   content: "";
   position: absolute;
+  left: 0;
   top: 50%;
-  left: 50%;
-  width: 12px;
-  height: 2px;
-  margin: -1px 0 0 -6px;
-  border-radius: 2px;
-  background: var(--bg);
-  transition: transform 0.3s ease, background-color 0.25s ease;
+  width: 100%;
+  height: 2.5px;
+  background: var(--ink);
+  transform: translateY(-50%);
+  transition: transform 0.25s ease;
 }
 
 .icon::after {
-  transform: rotate(90deg);
-}
-
-.item[open] .icon {
-  background: var(--highlight);
-  transform: rotate(180deg);
-}
-
-.item[open] .icon::before,
-.item[open] .icon::after {
-  background: var(--on-highlight);
+  transform: translateY(-50%) rotate(90deg);
 }
 
 .item[open] .icon::after {
-  transform: rotate(0deg);
+  transform: translateY(-50%) rotate(0deg);
 }
 
 .answer {
+  padding: 0 72px 30px 32px;
   display: flex;
   flex-direction: column;
   gap: 12px;
-  padding: 0 26px 26px calc(26px + 20px + 2ch);
   font-family: var(--sans);
-  font-size: 15.5px;
-  line-height: 1.7;
-  color: var(--ink-dim);
-}
-
-/* === Responsive ========================================================= */
-@media (max-width: 1000px) {
-  .inner {
-    grid-template-columns: 1fr;
-    gap: 48px;
-  }
-  .aside {
-    position: static;
-  }
+  font-weight: 500;
+  font-size: 16.5px;
+  line-height: 1.65;
+  color: var(--ink);
 }
 
 @media (max-width: 900px) {
-  .section {
-    padding: 90px 24px;
-  }
-  .summary {
-    gap: 14px;
-    padding: 18px 18px;
-  }
-  .answer {
-    padding: 0 18px 22px;
-  }
-  .helpCard {
-    max-width: none;
-  }
+  .section { padding: 80px 16px; }
+  .inner { grid-template-columns: 1fr; }
+  .aside { position: static; gap: 32px; }
+  .sketch { width: 140px; }
+  .summary { padding: 22px 20px; }
+  .answer { padding: 0 20px 22px; }
 }

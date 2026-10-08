@@ -144,6 +144,18 @@ const icons: Record<string, ReactNode> = {
       <path d="M44 56h12" />
     </g>
   ),
+  // Magnifying glass with a question mark and spark lines — FAQ
+  question: (
+    <g>
+      <circle cx="104" cy="70" r="46" />
+      <path d="M90 112a34 34 0 0 1-18-56M118 36a34 34 0 0 1 8 52" />
+      <path d="M96 58c0-8 6-12 12-12s12 4 12 11c0 9-12 10-12 20" />
+      <path d="M108 90v2" />
+      <path d="M72 104l-10 10" />
+      <path d="M62 114l-36 36c-4 4-2 10 4 12l6 2 36-40" />
+      <path d="M38 22l14 14M24 50h16" />
+    </g>
+  ),
   // Wall clock with ticks and a motion swoosh — SEO timeline articles
   clock: (
     <g>
@@ -184,6 +196,7 @@ const viewBoxes: Record<string, string> = {
   search: "0 0 180 180",
   browser: "0 0 180 180",
   target: "0 0 180 180",
+  question: "0 0 160 180",
 };
 
 // Pick a sketch that matches a blog article's category

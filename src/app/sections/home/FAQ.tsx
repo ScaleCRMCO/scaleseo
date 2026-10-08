@@ -1,4 +1,7 @@
+import SketchIcon from "../../components/SketchIcon";
 import styles from "./FAQ.module.css";
+
+const tones = ["blue", "pink", "navy", "orange", "white", "stone"];
 
 // Each answer is a list of paragraphs; the FAQPage schema joins them.
 const faqs: { q: string; a: string[] }[] = [
@@ -78,28 +81,12 @@ export default function FAQ() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <div className={styles.inner}>
-        {/* LEFT — pinned heading + help card */}
+        {/* LEFT — big heading, sketch underneath */}
         <div className={styles.aside}>
-          <div className={`section-label reveal-up ${styles.label}`}>FAQ</div>
           <h2 className={`${styles.heading} reveal-up`}>
-            Common Questions About <em>Working With Scale SEO</em>
+            Frequently Asked Questions
           </h2>
-          <div className={`${styles.helpCard} reveal-up`}>
-            <span className={styles.helpTitle}>Still have a question?</span>
-            <p>
-              Book a free 30-minute call and ask me directly. No pitch deck, no
-              pressure.
-            </p>
-            <a
-              href="https://cal.com/corbinjensen-scaleseo/30min"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.helpBtn}
-            >
-              <span>Book a Strategy Call</span>
-              <span aria-hidden="true">→</span>
-            </a>
-          </div>
+          <SketchIcon name="question" className={styles.sketch} />
         </div>
 
         {/* RIGHT — accordion; answers stay in the HTML for search engines */}
@@ -107,12 +94,11 @@ export default function FAQ() {
           {faqs.map((item, i) => (
             <details
               key={item.q}
-              className={`${styles.item} reveal-up`}
+              className={`${styles.item} ${styles[tones[i % tones.length]]} reveal-up`}
               name="home-faq"
               open={i === 0}
             >
               <summary className={styles.summary}>
-                <span className={styles.num}>{String(i + 1).padStart(2, "0")}</span>
                 <h3 className={styles.question}>{item.q}</h3>
                 <span className={styles.icon} aria-hidden="true" />
               </summary>
