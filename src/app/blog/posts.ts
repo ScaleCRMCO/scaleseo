@@ -26,6 +26,742 @@ export type Post = {
 
 export const posts: Post[] = [
   {
+    "slug": "how-long-does-seo-take",
+    "title": "How Long Does SEO Take? A Realistic Timeline for Canadian Businesses",
+    "metaTitle": "How Long Does SEO Take? A Realistic SEO Timeline for Canadian Businesses",
+    "description": "How long does SEO take to work? A realistic month-by-month SEO timeline for Canadian businesses, what affects it, and how to measure progress before rankings improve.",
+    "date": "2026-10-08T09:00:00-06:00",
+    "readTime": "11 min read",
+    "category": "SEO Timelines",
+    "excerpt": "There isn't a universal SEO timeline. This guide explains what a realistic 6–12 month campaign looks like, what happens in the first several months, what affects how long SEO takes, and how to tell if it's working before rankings improve.",
+    "body": [
+      {
+        "type": "p",
+        "text": "If you're considering investing in search engine optimization (SEO), one of the first questions you'll probably ask is: How long will it take to see results?"
+      },
+      {
+        "type": "p",
+        "text": "It's a reasonable question. SEO requires an investment of time and money, and business owners want to understand when that investment might begin producing meaningful results."
+      },
+      {
+        "type": "p",
+        "text": "The challenge is that there isn't a universal timeline."
+      },
+      {
+        "type": "p",
+        "text": "An established accounting firm with an existing website and several pages already ranking on Google is starting from a very different position than a new business launching its first website."
+      },
+      {
+        "type": "p",
+        "text": "Competition, technical issues, website authority, existing content, and the searches you're targeting all influence how quickly progress can happen."
+      },
+      {
+        "type": "p",
+        "text": "In this guide, I'll explain what a realistic SEO timeline looks like, what happens during the first several months of a campaign, and how Canadian businesses can evaluate progress before significant traffic or enquiries arrive."
+      },
+      {
+        "type": "h2",
+        "text": "How Long Does SEO Usually Take?"
+      },
+      {
+        "type": "p",
+        "text": "For planning purposes, many businesses should approach SEO as a 6–12 month investment, although improvements can appear much earlier and competitive campaigns may take longer."
+      },
+      {
+        "type": "p",
+        "text": "This isn't a guaranteed timeframe or an official industry benchmark. It's a practical way to set expectations for an ongoing campaign."
+      },
+      {
+        "type": "p",
+        "text": "Some improvements, particularly those involving existing pages that already have search visibility, may begin producing measurable changes within weeks."
+      },
+      {
+        "type": "p",
+        "text": "Other campaigns require substantial technical work, website restructuring, content development, and time for Google to discover and evaluate those changes."
+      },
+      {
+        "type": "p",
+        "text": "Google itself explains that changes made to a website can take anywhere from a few hours to several months to be reflected in search results."
+      },
+      {
+        "type": "p",
+        "text": "Importantly, not every SEO improvement produces a noticeable ranking increase."
+      },
+      {
+        "type": "p",
+        "text": "The objective should be to build a stronger organic search presence over time, rather than expecting every change to deliver an immediate result."
+      },
+      {
+        "type": "h2",
+        "text": "What Does an SEO Campaign Look Like Over the First 12 Months?"
+      },
+      {
+        "type": "p",
+        "text": "Every campaign is different, but the following timeline illustrates how an ongoing SEO strategy may develop."
+      },
+      {
+        "type": "p",
+        "text": "These stages describe typical work and potential indicators of progress—not guaranteed results."
+      },
+      {
+        "type": "h3",
+        "text": "Month 1: SEO Audit, Research & Strategy"
+      },
+      {
+        "type": "p",
+        "text": "The first month should establish where your website stands and what needs to improve."
+      },
+      {
+        "type": "p",
+        "text": "Before creating new content or targeting additional keywords, I want to understand how Google currently sees the website and where the strongest commercial opportunities exist."
+      },
+      {
+        "type": "p",
+        "text": "This typically involves reviewing:"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Google Search Console performance",
+          "Existing keyword rankings",
+          "Technical SEO and indexing issues",
+          "Important service and landing pages",
+          "Website structure and internal linking",
+          "Competitor websites",
+          "Local search visibility, where relevant",
+          "Content gaps and search intent"
+        ]
+      },
+      {
+        "type": "p",
+        "text": "The outcome should be a prioritized SEO strategy."
+      },
+      {
+        "type": "p",
+        "text": "For example, if a Calgary accounting firm already has a corporate tax page appearing on Google's second page, improving that existing page may be a better initial opportunity than publishing several unrelated blog articles."
+      },
+      {
+        "type": "p",
+        "text": "Similarly, if important service pages aren't being indexed correctly, those technical issues may need attention before expanding the website."
+      },
+      {
+        "type": "p",
+        "text": "**What should you expect?**"
+      },
+      {
+        "type": "p",
+        "text": "By the end of the first month, you should understand your website's main SEO problems, its opportunities, and which improvements are being prioritized."
+      },
+      {
+        "type": "p",
+        "text": "Significant ranking or traffic growth isn't a reasonable requirement at this stage."
+      },
+      {
+        "type": "h3",
+        "text": "Months 2–3: Technical Improvements & On-Page SEO"
+      },
+      {
+        "type": "p",
+        "text": "Once the initial priorities are established, implementation becomes the focus."
+      },
+      {
+        "type": "p",
+        "text": "Depending on the website, this may involve:"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Resolving crawling and indexing problems",
+          "Improving important service pages",
+          "Updating page titles and headings",
+          "Strengthening internal linking",
+          "Improving website navigation and structure",
+          "Implementing relevant structured data",
+          "Addressing technical performance issues",
+          "Improving Google Business Profile information",
+          "Updating existing content"
+        ]
+      },
+      {
+        "type": "p",
+        "text": "This is often where the first measurable changes can begin appearing."
+      },
+      {
+        "type": "p",
+        "text": "For example, improving a service page that already ranks for relevant keywords may help it become more competitive."
+      },
+      {
+        "type": "p",
+        "text": "However, Google still needs to crawl and process the updated content."
+      },
+      {
+        "type": "p",
+        "text": "According to Google's documentation, requesting a recrawl doesn't guarantee immediate indexing, and crawling can take anywhere from several days to several weeks."
+      },
+      {
+        "type": "p",
+        "text": "**What should you expect?**"
+      },
+      {
+        "type": "p",
+        "text": "Some businesses may begin seeing changes in keyword positions, impressions, or organic clicks."
+      },
+      {
+        "type": "p",
+        "text": "Others may still be working through foundational improvements."
+      },
+      {
+        "type": "p",
+        "text": "Both situations can be reasonable depending on the website's starting position."
+      },
+      {
+        "type": "h3",
+        "text": "Months 4–6: Content Development & Growing Visibility"
+      },
+      {
+        "type": "p",
+        "text": "As the website's technical foundation and priority pages improve, the campaign can begin expanding into additional opportunities."
+      },
+      {
+        "type": "p",
+        "text": "This might involve developing new service pages, improving existing content, creating useful supporting articles, or strengthening the website's coverage of important topics."
+      },
+      {
+        "type": "p",
+        "text": "For a professional service business, this could mean expanding the website around specific services rather than publishing general articles simply to increase traffic."
+      },
+      {
+        "type": "p",
+        "text": "An accounting firm, for example, may benefit from stronger pages covering corporate tax, bookkeeping, business advisory, and fractional CFO services."
+      },
+      {
+        "type": "p",
+        "text": "Supporting articles can then answer relevant questions potential clients research before making contact."
+      },
+      {
+        "type": "p",
+        "text": "During this period, you may begin seeing clearer trends in Google Search Console."
+      },
+      {
+        "type": "p",
+        "text": "Important pages might receive more impressions, appear for additional relevant searches, or move into more competitive ranking positions."
+      },
+      {
+        "type": "p",
+        "text": "However, increased visibility doesn't necessarily mean enquiries will increase at the same rate."
+      },
+      {
+        "type": "p",
+        "text": "**What should you expect?**"
+      },
+      {
+        "type": "p",
+        "text": "Look for sustained improvements across commercially relevant pages and search queries rather than judging the campaign on a single keyword."
+      },
+      {
+        "type": "h3",
+        "text": "Months 6–12: Refinement, Expansion & Long-Term Growth"
+      },
+      {
+        "type": "p",
+        "text": "As more performance data becomes available, the strategy should become increasingly informed by what's actually working."
+      },
+      {
+        "type": "p",
+        "text": "Pages gaining visibility may need further improvements. Some content may require updating, while other opportunities may justify new pages."
+      },
+      {
+        "type": "p",
+        "text": "At this stage, I would typically be reviewing questions such as:"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Which service pages are gaining relevant traffic?",
+          "Which keywords are approaching first-page positions?",
+          "Are organic visitors submitting enquiries?",
+          "Which content is attracting the right audience?",
+          "Where are competitors still outperforming the website?",
+          "What should the next campaign priorities be?"
+        ]
+      },
+      {
+        "type": "p",
+        "text": "The focus shifts toward strengthening successful pages, addressing remaining weaknesses, and expanding into relevant opportunities."
+      },
+      {
+        "type": "p",
+        "text": "For some businesses, this period may bring meaningful growth in qualified enquiries."
+      },
+      {
+        "type": "p",
+        "text": "For others, particularly those competing nationally or entering established markets, significant work may still be required."
+      },
+      {
+        "type": "p",
+        "text": "**What should you expect?**"
+      },
+      {
+        "type": "p",
+        "text": "By this stage, there should be enough performance information to evaluate whether the strategy is making meaningful progress and where further investment is justified."
+      },
+      {
+        "type": "p",
+        "text": "SEO should not continue indefinitely without clear priorities, transparent reporting, and evidence supporting the direction of the campaign."
+      },
+      {
+        "type": "h2",
+        "text": "What Factors Affect How Long SEO Takes?"
+      },
+      {
+        "type": "p",
+        "text": "Two businesses investing similar amounts in SEO can experience very different results."
+      },
+      {
+        "type": "p",
+        "text": "Several factors influence how quickly improvements may become visible."
+      },
+      {
+        "type": "h3",
+        "text": "1. Your Website's Starting Position"
+      },
+      {
+        "type": "p",
+        "text": "An established website with years of content, relevant backlinks, and existing search visibility may have opportunities to improve pages that Google already understands."
+      },
+      {
+        "type": "p",
+        "text": "A new website has a different challenge."
+      },
+      {
+        "type": "p",
+        "text": "Google first needs to discover its pages, crawl them, and determine whether they should appear for relevant searches."
+      },
+      {
+        "type": "p",
+        "text": "A new domain also may not have the same established reputation or external references as competing websites."
+      },
+      {
+        "type": "p",
+        "text": "This doesn't mean new websites cannot rank. It means their initial strategy and expectations should reflect their starting position."
+      },
+      {
+        "type": "h3",
+        "text": "2. Competition in Your Industry"
+      },
+      {
+        "type": "p",
+        "text": "The level of competition matters."
+      },
+      {
+        "type": "p",
+        "text": "A business targeting a specialized service in a smaller market may face fewer established competitors than a company targeting a broad commercial keyword across Canada."
+      },
+      {
+        "type": "p",
+        "text": "For example, an accounting firm targeting a specific corporate tax service in Calgary faces a different competitive environment than a national financial services company pursuing broad financial keywords."
+      },
+      {
+        "type": "p",
+        "text": "The more competitive the search results, the more important it becomes to evaluate the quality, relevance, and overall strength of competing websites."
+      },
+      {
+        "type": "h3",
+        "text": "3. Your Website's Technical Condition"
+      },
+      {
+        "type": "p",
+        "text": "Technical problems can prevent otherwise useful content from performing properly."
+      },
+      {
+        "type": "p",
+        "text": "Examples include:"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Important pages blocked from indexing",
+          "Incorrect canonical tags",
+          "Broken internal links",
+          "Redirect problems",
+          "Poor website architecture",
+          "JavaScript rendering issues",
+          "Duplicate or overlapping pages"
+        ]
+      },
+      {
+        "type": "p",
+        "text": "Some technical problems can be resolved relatively quickly."
+      },
+      {
+        "type": "p",
+        "text": "However, fixing a technical issue doesn't automatically mean a page will rank highly. It simply removes a potential obstacle to being discovered, understood, or indexed correctly."
+      },
+      {
+        "type": "h3",
+        "text": "4. The Quality of Your Existing Content"
+      },
+      {
+        "type": "p",
+        "text": "A website with clear, detailed service pages may need fewer foundational content improvements than one with only a homepage and a short list of services."
+      },
+      {
+        "type": "p",
+        "text": "This is particularly relevant for professional service businesses."
+      },
+      {
+        "type": "p",
+        "text": "Potential clients often want to understand your expertise, the services you provide, who you work with, and whether your business is suitable for their needs."
+      },
+      {
+        "type": "p",
+        "text": "If that information is missing or difficult to find, improving the website's content and structure may be an important part of the campaign."
+      },
+      {
+        "type": "h3",
+        "text": "5. Local SEO vs. National SEO"
+      },
+      {
+        "type": "p",
+        "text": "Geographic targeting can also influence the strategy."
+      },
+      {
+        "type": "p",
+        "text": "A Calgary business targeting customers within the city may need to improve its website alongside its Google Business Profile and local search presence."
+      },
+      {
+        "type": "p",
+        "text": "A company targeting clients across Canada may rely more heavily on service pages, industry content, technical SEO, and broader organic search visibility."
+      },
+      {
+        "type": "p",
+        "text": "Neither approach guarantees faster results."
+      },
+      {
+        "type": "p",
+        "text": "The important distinction is that the competitive landscape and the work required can be substantially different."
+      },
+      {
+        "type": "h2",
+        "text": "Can SEO Results Happen Faster Than Six Months?"
+      },
+      {
+        "type": "p",
+        "text": "Yes."
+      },
+      {
+        "type": "p",
+        "text": "Some websites can experience measurable improvements much sooner, particularly when they already have relevant pages appearing in search results."
+      },
+      {
+        "type": "p",
+        "text": "For example, a page ranking near the bottom of Google's first page or on its second page may have an opportunity to improve through better content, stronger internal linking, or technical corrections."
+      },
+      {
+        "type": "p",
+        "text": "Resolving an indexing problem can also make previously inaccessible content eligible to appear in search results."
+      },
+      {
+        "type": "p",
+        "text": "However, there's an important distinction between making a page eligible to rank and making it competitive enough to rank well."
+      },
+      {
+        "type": "p",
+        "text": "Google determines which pages appear in search results, and no SEO provider can guarantee that a particular change will produce a specific ranking."
+      },
+      {
+        "type": "p",
+        "text": "Faster results are possible, but they shouldn't be the foundation of a business's SEO expectations."
+      },
+      {
+        "type": "h2",
+        "text": "How Do You Know If SEO Is Working Before Rankings Improve?"
+      },
+      {
+        "type": "p",
+        "text": "One mistake businesses make is evaluating SEO exclusively through a handful of keyword positions."
+      },
+      {
+        "type": "p",
+        "text": "Rankings matter, but they don't tell the whole story."
+      },
+      {
+        "type": "p",
+        "text": "I prefer to look at several indicators together."
+      },
+      {
+        "type": "h3",
+        "text": "Search Impressions"
+      },
+      {
+        "type": "p",
+        "text": "Impressions show how often your website appears in Google Search results."
+      },
+      {
+        "type": "p",
+        "text": "An increase in relevant impressions can indicate that Google is displaying your pages for more searches, even if those appearances haven't yet translated into significant traffic."
+      },
+      {
+        "type": "h3",
+        "text": "Organic Clicks"
+      },
+      {
+        "type": "p",
+        "text": "Clicks show how many visits your website receives directly from Google Search results."
+      },
+      {
+        "type": "p",
+        "text": "Increasing clicks to important service pages can be a useful indicator of progress."
+      },
+      {
+        "type": "p",
+        "text": "However, traffic quality matters."
+      },
+      {
+        "type": "p",
+        "text": "An article attracting hundreds of unrelated visitors may contribute less commercial value than a service page attracting a smaller number of potential customers."
+      },
+      {
+        "type": "h3",
+        "text": "Keyword Visibility"
+      },
+      {
+        "type": "p",
+        "text": "Keyword tracking helps identify whether important pages are becoming more competitive for relevant searches."
+      },
+      {
+        "type": "p",
+        "text": "I pay particular attention to commercial queries connected to the services a business actually wants to sell."
+      },
+      {
+        "type": "h3",
+        "text": "Organic Enquiries and Conversions"
+      },
+      {
+        "type": "p",
+        "text": "Ultimately, businesses invest in SEO because they want meaningful commercial outcomes."
+      },
+      {
+        "type": "p",
+        "text": "Depending on the website, this may include contact form submissions, phone enquiries, consultation bookings, or other valuable actions."
+      },
+      {
+        "type": "p",
+        "text": "Google Search Console and Google Analytics can be used together to understand search visibility, website traffic, and visitor behaviour."
+      },
+      {
+        "type": "p",
+        "text": "The two platforms measure different things, so their figures won't always match exactly."
+      },
+      {
+        "type": "p",
+        "text": "The goal is to understand whether the website is becoming more visible to the right people and whether that visibility is contributing to business opportunities."
+      },
+      {
+        "type": "h2",
+        "text": "When Should You Be Concerned About Your SEO Campaign?"
+      },
+      {
+        "type": "p",
+        "text": "SEO takes time, but that shouldn't become an excuse for a lack of accountability."
+      },
+      {
+        "type": "p",
+        "text": "A campaign may take several months to produce meaningful organic growth. However, you should still understand what work is being completed and why."
+      },
+      {
+        "type": "p",
+        "text": "I'd be concerned if:"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "There is no clear SEO strategy or prioritized roadmap.",
+          "Your provider cannot explain what work has been completed.",
+          "Reporting focuses entirely on irrelevant keywords or traffic.",
+          "Important technical problems remain unaddressed without explanation.",
+          "New content is being published without a clear purpose.",
+          "There is no discussion of enquiries, conversions, or commercial objectives.",
+          "The provider guarantees specific Google rankings."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "Not every campaign will grow consistently."
+      },
+      {
+        "type": "p",
+        "text": "Rankings fluctuate, competitors improve their websites, and Google updates its search systems."
+      },
+      {
+        "type": "p",
+        "text": "But your SEO provider should be able to explain the work, evaluate the available evidence, and adjust the strategy when necessary."
+      },
+      {
+        "type": "h2",
+        "text": "Is SEO Worth the Wait for Canadian Businesses?"
+      },
+      {
+        "type": "p",
+        "text": "That depends on your business, the competition, and the value of acquiring customers through organic search."
+      },
+      {
+        "type": "p",
+        "text": "For professional service firms, even a relatively small number of qualified enquiries can have significant commercial value."
+      },
+      {
+        "type": "p",
+        "text": "An accounting firm, consultancy, or other B2B business doesn't necessarily need thousands of monthly website visitors to benefit from SEO."
+      },
+      {
+        "type": "p",
+        "text": "It needs to become visible for searches connected to the services its potential clients are looking for."
+      },
+      {
+        "type": "p",
+        "text": "Unlike Google Ads, organic search visibility doesn't require paying Google for every click."
+      },
+      {
+        "type": "p",
+        "text": "However, SEO isn't free. Maintaining and improving that visibility still requires investment, and rankings or traffic are never guaranteed."
+      },
+      {
+        "type": "p",
+        "text": "If you need immediate enquiries, paid advertising may be a more suitable short-term channel."
+      },
+      {
+        "type": "p",
+        "text": "If you're looking to develop an additional source of qualified enquiries over time, SEO may be worth considering."
+      },
+      {
+        "type": "p",
+        "text": "For a breakdown of the investment involved, read my guide on [how much SEO costs in Canada](/blog/seo-cost-canada)."
+      },
+      {
+        "type": "h2",
+        "text": "My Approach to SEO Timelines at Scale SEO"
+      },
+      {
+        "type": "p",
+        "text": "At Scale SEO, I don't promise that every business will rank on Google's first page within three or six months."
+      },
+      {
+        "type": "p",
+        "text": "There are too many variables outside any SEO provider's control to make that claim responsibly."
+      },
+      {
+        "type": "p",
+        "text": "Instead, I start by reviewing the website's current performance, technical condition, competitors, and the search opportunities most relevant to the business."
+      },
+      {
+        "type": "p",
+        "text": "From there, I develop a strategy around the work most likely to improve its organic visibility."
+      },
+      {
+        "type": "p",
+        "text": "For some businesses, that means improving existing service pages that already have ranking potential."
+      },
+      {
+        "type": "p",
+        "text": "For others, the priority may be resolving technical issues, restructuring the website, strengthening local search visibility, or developing new content."
+      },
+      {
+        "type": "p",
+        "text": "I personally manage each campaign, from the initial research and strategy through to implementation and performance monitoring."
+      },
+      {
+        "type": "p",
+        "text": "My focus is on building a stronger search presence that supports the business's long-term goals—not completing the same checklist every month."
+      },
+      {
+        "type": "p",
+        "text": "You can learn more about my approach on the [SEO services page](/services/seo)."
+      },
+      {
+        "type": "h2",
+        "text": "Final Thoughts: How Long Should You Give SEO?"
+      },
+      {
+        "type": "p",
+        "text": "SEO should generally be approached as a long-term investment rather than a quick marketing fix."
+      },
+      {
+        "type": "p",
+        "text": "Some businesses may see improvements within weeks, while others require several months of technical, content, and structural work before meaningful results become apparent."
+      },
+      {
+        "type": "p",
+        "text": "For many Canadian businesses, planning around a 6–12 month horizon is a reasonable starting point, provided the campaign has clear priorities and progress is being measured."
+      },
+      {
+        "type": "p",
+        "text": "The most important question isn't simply how quickly your website can rank."
+      },
+      {
+        "type": "p",
+        "text": "It's whether your SEO strategy is improving your visibility for searches that matter to your business."
+      },
+      {
+        "type": "p",
+        "text": "If you're considering SEO for your business and want a clearer understanding of your current opportunities, Scale SEO can help."
+      },
+      {
+        "type": "p",
+        "text": "I provide ongoing SEO services for professional service and B2B businesses in Calgary and across Canada."
+      },
+      {
+        "type": "p",
+        "text": "[Get in touch to discuss your website and SEO goals.](/contact)"
+      },
+      {
+        "type": "h2",
+        "text": "References & Further Reading"
+      },
+      {
+        "type": "p",
+        "text": "The following resources provide additional information about how Google Search works, how SEO improvements are evaluated, and how businesses can measure organic search performance."
+      },
+      {
+        "type": "references",
+        "items": [
+          {
+            "title": "Google Search Central — SEO Starter Guide",
+            "href": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide",
+            "desc": "Google's introductory guide to search engine optimization. It explains how Google discovers and understands website content, recommended optimization practices, and why changes can take time to affect search results."
+          },
+          {
+            "title": "Google Search Central — Do You Need an SEO?",
+            "href": "https://developers.google.com/search/docs/fundamentals/do-i-need-seo",
+            "desc": "Official guidance on evaluating SEO providers, understanding the services they offer, setting realistic expectations, and identifying potentially misleading promises."
+          },
+          {
+            "title": "Google Search Central — Ask Google to Recrawl Your URLs",
+            "href": "https://developers.google.com/search/docs/crawling-indexing",
+            "desc": "Explains how Google discovers and revisits website pages, how website owners can request crawling, and why requesting indexing doesn't guarantee immediate inclusion in search results."
+          },
+          {
+            "title": "Google Search Central — Get Started With Search Console",
+            "href": "https://developers.google.com/search/docs/monitor-debug/search-console-start",
+            "desc": "Explains how website owners can monitor search performance, identify indexing problems, and review impressions, clicks, search queries, and other useful SEO metrics."
+          },
+          {
+            "title": "Google Search Central — Using Search Console and Google Analytics Data for SEO",
+            "href": "https://developers.google.com/search/docs/monitor-debug/google-analytics-search-console",
+            "desc": "Explains how the two platforms can be used together to evaluate organic search visibility, website traffic, visitor behaviour, and conversions."
+          }
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Disclaimer"
+      },
+      {
+        "type": "p",
+        "text": "This article is provided for general educational purposes and reflects SEO practices and observations at the time of publication. Search engine algorithms, ranking factors, and results can change. The timelines discussed are illustrative and do not guarantee specific rankings, traffic increases, or business outcomes. Results will vary depending on each website, industry, competition, and SEO strategy."
+      }
+    ]
+  },
+  {
     slug: "seo-cost-canada",
     title: "How Much Does SEO Cost in Canada? 2026 Pricing Guide",
     metaTitle: "How Much Does SEO Cost in Canada? 2026 Pricing Guide",

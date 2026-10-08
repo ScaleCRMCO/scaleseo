@@ -144,6 +144,17 @@ const icons: Record<string, ReactNode> = {
       <path d="M44 56h12" />
     </g>
   ),
+  // Wall clock with ticks and a motion swoosh — SEO timeline articles
+  clock: (
+    <g>
+      <circle cx="62" cy="62" r="42" />
+      <circle cx="62" cy="62" r="4" />
+      <path d="M62 26v8M62 90v8M26 62h8M90 62h8" />
+      <path d="M62 62V38M62 62l16 12" />
+      <path d="M34 24l-12-10M90 24l12-10" />
+      <path d="M112 34c8 10 10 24 6 36M120 26c12 14 14 34 8 50" />
+    </g>
+  ),
   // Calculator beside a rising arrow — accounting firms
   accounting: (
     <g>
@@ -180,6 +191,7 @@ export function iconForCategory(category: string) {
   const c = category.toLowerCase();
   if (c.includes("pric") || c.includes("cost")) return "pricing";
   if (c.includes("account")) return "accounting";
+  if (c.includes("time")) return "clock";
   return "article";
 }
 
