@@ -30,7 +30,98 @@ export const posts: Post[] = [
     "title": "How Long Does SEO Take? A Realistic Timeline for Canadian Businesses",
     "metaTitle": "How Long Does SEO Take? A Realistic SEO Timeline for Canadian Businesses",
     "description": "How long does SEO take to work? A realistic month-by-month SEO timeline for Canadian businesses, what affects it, and how to measure progress before rankings improve.",
-    "date": "2026-10-08T09:00:00-06:00",
+    "date": "2026-10-08T10:30:00-06:00",
+    "schema": {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BlogPosting",
+          "@id": "https://scaleseo.co/blog/how-long-does-seo-take#article",
+          "url": "https://scaleseo.co/blog/how-long-does-seo-take",
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://scaleseo.co/blog/how-long-does-seo-take"
+          },
+          "headline": "How Long Does SEO Take? A Realistic Timeline for Canadian Businesses",
+          "description": "Learn how long SEO takes for Canadian businesses, what to expect during the first 12 months, and which factors can influence your SEO timeline.",
+          "author": {
+            "@type": "Person",
+            "@id": "https://scaleseo.co/corbin-jensen#person",
+            "name": "Corbin Jensen",
+            "url": "https://scaleseo.co/corbin-jensen"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "@id": "https://scaleseo.co/#organization",
+            "name": "Scale SEO",
+            "url": "https://scaleseo.co/"
+          },
+          "datePublished": "2026-10-08T10:30:00-06:00",
+          "dateModified": "2026-10-08T10:30:00-06:00",
+          "inLanguage": "en-CA",
+          "articleSection": "SEO",
+          "keywords": [
+            "how long does SEO take",
+            "SEO timeline",
+            "SEO timeline Canada",
+            "how long does SEO take in Canada",
+            "SEO services Canada",
+            "SEO results"
+          ],
+          "citation": [
+            {
+              "@type": "CreativeWork",
+              "name": "SEO Starter Guide",
+              "url": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide"
+            },
+            {
+              "@type": "CreativeWork",
+              "name": "Do You Need an SEO?",
+              "url": "https://developers.google.com/search/docs/fundamentals/do-i-need-seo"
+            },
+            {
+              "@type": "CreativeWork",
+              "name": "Ask Google to Recrawl Your URLs",
+              "url": "https://developers.google.com/search/docs/crawling-indexing/ask-google-to-recrawl"
+            },
+            {
+              "@type": "CreativeWork",
+              "name": "Get Started With Search Console",
+              "url": "https://developers.google.com/search/docs/monitor-debug/search-console-start"
+            },
+            {
+              "@type": "CreativeWork",
+              "name": "Using Search Console and Google Analytics Data for SEO",
+              "url": "https://developers.google.com/search/docs/monitor-debug/google-analytics-search-console"
+            }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://scaleseo.co/blog/how-long-does-seo-take#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://scaleseo.co/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Blog",
+              "item": "https://scaleseo.co/blog"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "How Long Does SEO Take? A Realistic Timeline for Canadian Businesses",
+              "item": "https://scaleseo.co/blog/how-long-does-seo-take"
+            }
+          ]
+        }
+      ]
+    },
     "readTime": "11 min read",
     "category": "SEO Timelines",
     "excerpt": "There isn't a universal SEO timeline. This guide explains what a realistic 6–12 month campaign looks like, what happens in the first several months, what affects how long SEO takes, and how to tell if it's working before rankings improve.",
