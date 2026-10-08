@@ -234,3 +234,13 @@
     color: var(--ink-on-dark);
   }
 }
+
+.privacyLink {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.privacyLink:hover {
+  color: var(--highlight);
+}

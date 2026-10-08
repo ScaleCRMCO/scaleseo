@@ -81,7 +81,10 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className={styles.bottom}>
-          <div className={styles.copy}>© 2026 Scale SEO · Corbin Jensen</div>
+          <div className={styles.copy}>
+            © 2026 Scale SEO · Corbin Jensen ·{" "}
+            <Link href="/privacy-policy" className={styles.privacyLink}>Privacy Policy</Link>
+          </div>
           <div className={styles.taglineGroup}>
             <Link href="/llm-info" className={styles.llmLink}>LLM Info</Link>
             <span className={styles.tagline}>SEO for Calgary · Serving Canada</span>
