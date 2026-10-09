@@ -962,3 +962,38 @@ a:hover > .arrow {
 }
 
 h2.comboH2 { font-size: clamp(40px, 4.6vw, 72px); }
+
+/* Coloured service rows — full-bleed bands behind the row content */
+/* Bleed out through the section's 3% side padding (3% of the section =
+   3/94 of this column) so the band is a real full-width box the nav can sample */
+.svcRow[class*="tone"] {
+  --bleed: calc(100% * 3 / 94);
+  background: var(--row-bg);
+  margin-inline: calc(-1 * var(--bleed));
+  padding-inline: var(--bleed);
+  border-bottom-color: transparent;
+}
+@media (max-width: 900px) {
+  .svcRow[class*="tone"] { --bleed: 24px; }
+}
+.toneBlue { --row-bg: #B6FFFF; }
+.tonePink { --row-bg: #FFE3F3; }
+.toneStone { --row-bg: #D8D2C7; }
+.toneNavy { --row-bg: #031B36; }
+.toneOrange { --row-bg: #FF2C16; }
+
+/* Light text on the dark rows */
+.toneNavy, .toneOrange { --row-ink: #F5F1E8; }
+.toneOrange { --row-ink: #FFFFFF; }
+.toneNavy :is(.svcMeta, .svcTitle, .svcTagline, .svcListLabel, .svcList li, .svcLink),
+.toneOrange :is(.svcMeta, .svcTitle, .svcTagline, .svcListLabel, .svcList li, .svcLink) {
+  color: var(--row-ink);
+}
+.toneNavy .svcBody p { color: rgba(245, 241, 232, 0.82); }
+.toneOrange .svcBody p { color: rgba(255, 255, 255, 0.92); }
+.toneNavy .svcIcon { stroke: #FF2C16; }
+.toneOrange .svcIcon { stroke: #FFFFFF; }
+.toneNavy .svcList li, .toneOrange .svcList li { border-top-color: rgba(255, 255, 255, 0.22); }
+.toneNavy .svcLink, .toneOrange .svcLink { border-bottom-color: rgba(255, 255, 255, 0.6); }
+.toneOrange .svcList li::before { background: #031B36; }
+.toneOrange .svcCore { background: #031B36; }

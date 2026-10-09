@@ -163,6 +163,9 @@ const services: {
   },
 ];
 
+// Background tones for the service rows after SEO (same order as the homepage FAQ)
+const rowTones = ["toneBlue", "tonePink", "toneNavy", "toneOrange", "toneStone"];
+
 const serviceIcon: Record<string, string> = {
   seo: "search",
   "seo-audits": "ledger",
@@ -425,12 +428,6 @@ export default function ServicesPage() {
           management, and AI search optimization for professional service and
           B2B businesses.
         </p>
-        <p>
-          Based in Calgary and working with businesses across Canada, I manage
-          every engagement directly. There are no account managers or
-          outsourced campaign teams&mdash;just a search strategy built around
-          your website, market, competition, and business goals.
-        </p>
       </PageHero>
 
       {/* === QUICK-JUMP BAR === */}
@@ -465,8 +462,12 @@ export default function ServicesPage() {
           </div>
 
           <div className={styles.svcRows}>
-            {services.map((s) => (
-              <article key={s.id} id={s.id} className={`${styles.svcRow} reveal-up`}>
+            {services.map((s, i) => (
+              <article
+                key={s.id}
+                id={s.id}
+                className={`${styles.svcRow} ${i > 0 ? styles[rowTones[(i - 1) % rowTones.length]] : ""} reveal-up`}
+              >
                 <div className={styles.svcAside}>
                   <div className={styles.svcMeta}>
                     <span>{s.num}</span>
