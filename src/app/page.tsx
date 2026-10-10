@@ -14,7 +14,7 @@ import RevealOnScroll from "./components/RevealOnScroll";
 import Testimonials from "./components/Testimonials";
 
 export const metadata: Metadata = {
-  title: "Calgary SEO Services | Scale SEO",
+  title: { absolute: "SEO Company Calgary, AB | Scale SEO" },
   description:
     "Calgary SEO services for professional service and B2B businesses. Work directly with an SEO specialist on a month-to-month campaign with no long-term contracts.",
   alternates: { canonical: "/" },
