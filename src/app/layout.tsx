@@ -37,53 +37,71 @@ const jsonLd = {
     {
       "@type": "Organization",
       "@id": "https://scaleseo.co/#organization",
-      name: "Scale SEO",
-      url: "https://scaleseo.co/",
-      logo: {
+      "name": "Scale SEO",
+      "url": "https://scaleseo.co/",
+      "logo": {
         "@type": "ImageObject",
         "@id": "https://scaleseo.co/#logo",
-        url: "https://scaleseo.co/brand/scaleseo-logo-navy.png",
+        "url": "https://scaleseo.co/brand/scaleseo-logo-navy.png"
       },
-      description:
-        "Scale SEO is an independent SEO practice based in Calgary, Alberta, providing SEO, web development, Google Ads management, SEO audits, and AI search optimization for professional service and B2B businesses.",
-      foundingDate: "2025",
-      founder: {
-        "@id": "https://scaleseo.co/#corbin-jensen",
+      "description": "Scale SEO is an independent SEO practice based in Calgary, Alberta, providing SEO services, technical SEO, SEO audits, web development, Google Ads management, and AI search optimization for professional service and B2B businesses.",
+      "foundingDate": "2025",
+      "founder": {
+        "@id": "https://scaleseo.co/corbin-jensen#person"
       },
-      areaServed: [
-        { "@type": "City", name: "Calgary" },
-        { "@type": "AdministrativeArea", name: "Alberta" },
-        { "@type": "Country", name: "Canada" },
+      "email": "team@scaleseo.co",
+      "telephone": "(403) 875-1110",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Calgary",
+        "addressRegion": "AB",
+        "addressCountry": "CA"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Calgary"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Alberta"
+        },
+        {
+          "@type": "Country",
+          "name": "Canada"
+        }
       ],
-      sameAs: [
+      "sameAs": [
         "https://www.linkedin.com/company/scale-seo/",
         "https://www.instagram.com/scaleseo.co/",
         "https://maps.app.goo.gl/DbV1TQJZQWrpiNf38",
-        "https://clutch.co/profile/scale-seo",
-      ],
+        "https://clutch.co/profile/scale-seo"
+      ]
     },
     {
       "@type": "Person",
-      "@id": "https://scaleseo.co/#corbin-jensen",
-      name: "Corbin Jensen",
-      url: "https://scaleseo.co/corbin-jensen",
-      jobTitle: "SEO Specialist",
-      worksFor: {
-        "@id": "https://scaleseo.co/#organization",
+      "@id": "https://scaleseo.co/corbin-jensen#person",
+      "name": "Corbin Jensen",
+      "url": "https://scaleseo.co/corbin-jensen",
+      "jobTitle": "SEO Specialist",
+      "worksFor": {
+        "@id": "https://scaleseo.co/#organization"
       },
-      sameAs: ["https://www.linkedin.com/in/corbin-jensen-seo/"],
+      "sameAs": [
+        "https://www.linkedin.com/in/corbin-jensen-seo/"
+      ]
     },
     {
       "@type": "WebSite",
       "@id": "https://scaleseo.co/#website",
-      url: "https://scaleseo.co/",
-      name: "Scale SEO",
-      publisher: {
-        "@id": "https://scaleseo.co/#organization",
+      "url": "https://scaleseo.co/",
+      "name": "Scale SEO",
+      "publisher": {
+        "@id": "https://scaleseo.co/#organization"
       },
-      inLanguage: "en-CA",
-    },
-  ],
+      "inLanguage": "en-CA"
+    }
+  ]
 };
 
 export default function RootLayout({

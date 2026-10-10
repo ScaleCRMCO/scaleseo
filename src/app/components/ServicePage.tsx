@@ -70,6 +70,7 @@ function buildServiceSchema(schema: ServicePageSchema) {
       url: "https://scaleseo.co",
       founder: {
         "@type": "Person",
+        "@id": "https://scaleseo.co/corbin-jensen#person",
         name: "Corbin Jensen",
         url: "https://scaleseo.co/corbin-jensen",
       },

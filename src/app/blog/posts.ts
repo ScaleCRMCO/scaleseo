@@ -876,7 +876,7 @@ export const posts: Post[] = [
           description: "How much does SEO cost in Canada? Compare monthly SEO pricing, audits, freelancers and agencies, and learn what your business should expect to pay in 2026.",
           author: {
             "@type": "Person",
-            "@id": "https://scaleseo.co/#corbin-jensen",
+            "@id": "https://scaleseo.co/corbin-jensen#person",
             name: "Corbin Jensen",
             url: "https://scaleseo.co/corbin-jensen"
           },

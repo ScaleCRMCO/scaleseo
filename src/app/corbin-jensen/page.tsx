@@ -153,7 +153,7 @@ const profileJsonLd = {
         "@id": "https://scaleseo.co/#website"
       },
       mainEntity: {
-        "@id": "https://scaleseo.co/#corbin-jensen"
+        "@id": "https://scaleseo.co/corbin-jensen#person"
       },
       breadcrumb: {
         "@id": "https://scaleseo.co/corbin-jensen#breadcrumb"
@@ -162,7 +162,7 @@ const profileJsonLd = {
     },
     {
       "@type": "Person",
-      "@id": "https://scaleseo.co/#corbin-jensen",
+      "@id": "https://scaleseo.co/corbin-jensen#person",
       name: "Corbin Jensen",
       jobTitle: "Founder & SEO Specialist",
       url: "https://scaleseo.co/corbin-jensen",

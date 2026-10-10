@@ -200,7 +200,7 @@ const caseStudyJsonLd = {
         "@id": "https://scaleseo.co/results/empire-accountants#webpage"
       },
       author: {
-        "@id": "https://scaleseo.co/#corbin-jensen"
+        "@id": "https://scaleseo.co/corbin-jensen#person"
       },
       publisher: {
         "@id": "https://scaleseo.co/#organization"
