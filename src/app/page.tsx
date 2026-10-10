@@ -27,9 +27,9 @@ const webPageJsonLd = {
   "@type": "WebPage",
   "@id": "https://scaleseo.co/#webpage",
   url: "https://scaleseo.co/",
-  name: "Calgary SEO Services for Growing Businesses | Scale SEO",
+  name: "SEO Company Calgary, AB | Scale SEO",
   description:
-    "Scale SEO provides Calgary SEO services for professional service and B2B businesses. Founder-led SEO campaigns combine technical SEO, content, local SEO and website improvements to grow organic visibility and qualified traffic.",
+    "Scale SEO is a Calgary SEO company providing ongoing SEO services for professional service and B2B businesses across Canada. Campaigns combine technical SEO, content, local SEO and website improvements to grow organic visibility and qualified traffic.",
   isPartOf: {
     "@id": "https://scaleseo.co/#website",
   },
