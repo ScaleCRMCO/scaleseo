@@ -31,18 +31,23 @@ const industries: {
 export default function IndustriesTeaser() {
   return (
     <section className={styles.section} id="industries" data-nav-theme="dark">
-      <div className={styles.inner}>
-        <h2 className={`${styles.heading} reveal-up`}>
-          SEO for Professional Service &amp; B2B Businesses
-        </h2>
-        <div className={`${styles.intro} reveal-up`}>
-          <p className={styles.introLead}>
+      <div className={styles.layout}>
+        {/* LEFT — heading + intro, same column as the FAQ / process headings */}
+        <div className={styles.aside}>
+          <h2 className={`${styles.heading} reveal-up`}>
+            SEO for Professional Service &amp; B2B Businesses
+          </h2>
+          <p className={`${styles.introLead} reveal-up`}>
             I work primarily with businesses where a single qualified search
             enquiry can turn into a valuable, long-term client relationship.
           </p>
+          <p className={`${styles.footNote} reveal-up`}>
+            Based in Calgary. Working with businesses across Canada and
+            internationally.
+          </p>
         </div>
 
-        {/* One row per industry: name left, description + link right */}
+        {/* RIGHT — one row per industry: name | description + link */}
         <div className={styles.rows}>
           {industries.map((item) => (
             <div key={item.num} className={`${styles.row} reveal-up`}>
@@ -59,11 +64,6 @@ export default function IndustriesTeaser() {
             </div>
           ))}
         </div>
-
-        <p className={`${styles.footNote} reveal-up`}>
-          Based in Calgary. Working with businesses across Canada and
-          internationally.
-        </p>
       </div>
     </section>
   );

@@ -1,39 +1,22 @@
-/* "SEO for Professional Service & B2B Businesses" — editorial layout:
-   big green heading, large lead line, then hairline-separated rows with
-   the industry name on the left and the description + link on the right. */
+/* "SEO for Professional Service & B2B Businesses" — heading left (same
+   grid as the process and FAQ sections), hairline rows on the right with
+   the industry name and its description side by side. */
 .section {
-  position: relative;
-  margin-top: -48px;
-  border-radius: 48px 48px 0 0;
-  overflow: hidden;
-  isolation: isolate;
-  padding: 120px 40px 140px;
-  background: var(--bg-elev);
+  padding: 140px 3%;
+  background: var(--bg);
   color: var(--ink);
 }
 
-/* Dot grid in the top-right corner (same element as the CTA section) */
-.section::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: -1;
-  /* Square patch of dots in the corner, fading out before the text */
-  width: var(--dots-w, min(28vw, 400px));
-  height: var(--dots-h, auto);
-  aspect-ratio: var(--dots-ratio, 1);
-  background-image: radial-gradient(circle, var(--dots-color, rgba(11, 19, 43, 0.55)) var(--dots-size, 1.6px), transparent calc(var(--dots-size, 1.6px) + 0.4px));
-  background-size: 30px 30px;
-  background-position: top right;
-  -webkit-mask-image: var(--dots-mask, radial-gradient(circle at top right, #000 0%, #000 18%, transparent 68%));
-  mask-image: var(--dots-mask, radial-gradient(circle at top right, #000 0%, #000 18%, transparent 68%));
-  pointer-events: none;
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(40px, 5vw, 96px);
+  align-items: start;
 }
 
-.inner {
-  max-width: 1400px;
-  margin: 0 auto;
+.aside {
+  position: sticky;
+  top: 120px;
 }
 
 .heading {
@@ -42,96 +25,82 @@
   font-size: clamp(44px, 6.4vw, 96px);
   line-height: 1;
   letter-spacing: -0.04em;
-  max-width: 1100px;
   color: var(--industries-heading, var(--ink));
-}
-
-.intro {
-  max-width: 900px;
-  margin-top: 28px;
-  margin-bottom: 80px;
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
+  margin-bottom: 28px;
 }
 
 .introLead {
-  font-family: var(--display);
-  font-weight: 400;
-  font-size: clamp(22px, 2.6vw, 36px);
-  line-height: 1.25;
-  letter-spacing: -0.015em;
+  max-width: 520px;
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 19px;
+  line-height: 1.6;
   color: var(--ink);
 }
 
-.introBody {
-  max-width: 680px;
-  font-family: var(--sans);
-  font-size: 17px;
-  line-height: 1.65;
+.footNote {
+  margin-top: 28px;
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
   color: var(--ink-dim);
 }
 
 .rows {
-  border-top: 1px solid var(--line);
+  border-top: 1px solid var(--line-strong);
 }
 
 .row {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
-  gap: 48px;
-  padding: 48px 0;
-  border-bottom: 1px solid var(--line);
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: clamp(24px, 3vw, 56px);
+  align-items: start;
+  padding: 48px 0 56px;
+  border-bottom: 1px solid var(--line-strong);
 }
 
 .rowTitle {
   font-family: var(--display);
-  font-weight: 500;
-  font-size: clamp(28px, 3vw, 44px);
+  font-weight: 800;
+  font-size: clamp(26px, 2.4vw, 38px);
   line-height: 1.1;
   letter-spacing: -0.025em;
-}
-
-.rowBody {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 24px;
-}
-
-.rowBody p {
-  font-family: var(--display);
-  font-weight: 700;
-  font-size: clamp(17px, 1.5vw, 21px);
-  line-height: 1.45;
-  letter-spacing: -0.01em;
   color: var(--ink);
 }
 
-/* White button with an arrow, like the reference */
+.rowBody p {
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: clamp(17px, 1.3vw, 19px);
+  line-height: 1.6;
+  color: var(--ink);
+}
+
 .rowLink {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 16px 26px;
-  background: var(--row-link-bg, #FFFFFF);
-  color: var(--row-link-ink, #151515);
-  border-radius: 10px;
-  font-family: var(--sans);
-  font-weight: 600;
-  font-size: 14.5px;
+  margin-top: 24px;
+  padding: 12px 20px;
+  background: var(--row-link-bg, #F5F1E8);
+  color: var(--row-link-ink, #031B36);
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   text-decoration: none;
-  box-shadow: 0 10px 24px -14px rgba(11, 19, 43, 0.25);
   transition: background 0.2s ease, color 0.2s ease;
 }
 
 .rowLink:hover {
-  background: var(--highlight);
-  color: var(--on-highlight);
+  background: #FF2C16;
+  color: #FFFFFF;
 }
 
 .arrow {
-  display: inline-block;
   transition: transform 0.3s ease;
 }
 
@@ -139,29 +108,13 @@
   transform: translateX(4px);
 }
 
-.footNote {
-  margin-top: 40px;
-  font-family: var(--sans);
-  font-weight: 700;
-  font-size: 16px;
-  color: var(--ink);
+@media (max-width: 1100px) {
+  .row { grid-template-columns: 1fr; gap: 14px; }
 }
 
 @media (max-width: 900px) {
-  .section {
-    padding: 90px 24px 110px;
-  }
-  .section::before {
-    width: var(--dots-w-sm, 26vw);
-    height: var(--dots-h-sm, auto);
-    opacity: var(--dots-opacity-sm, 0.55);
-  }
-  .intro {
-    margin-bottom: 48px;
-  }
-  .row {
-    grid-template-columns: 1fr;
-    gap: 16px;
-    padding: 32px 0;
-  }
+  .section { padding: 80px 16px; }
+  .layout { grid-template-columns: 1fr; }
+  .aside { position: static; }
+  .row { padding: 32px 0 40px; }
 }
