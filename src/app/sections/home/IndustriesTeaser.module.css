@@ -8,7 +8,6 @@
 }
 
 .aside {
-  max-width: 820px;
   margin-bottom: clamp(56px, 7vw, 96px);
 }
 
@@ -19,6 +18,7 @@
   line-height: 1;
   letter-spacing: -0.04em;
   color: var(--industries-heading, var(--ink));
+  max-width: none;
   margin-bottom: 28px;
 }
 
