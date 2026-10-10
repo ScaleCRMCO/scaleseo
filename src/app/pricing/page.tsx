@@ -14,7 +14,6 @@ export const metadata: Metadata = {
 };
 
 const BOOKING_URL = "https://cal.com/corbinjensen-scaleseo/30min";
-const BASE = "https://scaleseo.co";
 
 type Plan = {
   name: string;
@@ -174,40 +173,136 @@ const faqs: FaqItem[] = [
   },
 ];
 
-const SELLER = {
-  "@type": "ProfessionalService",
-  "@id": `${BASE}/#business`,
-  name: "Scale SEO",
-  url: BASE,
-  telephone: "+1-403-875-1110",
-  priceRange: "$500 – $3,000+ CAD",
-};
-
 const fmt = (n: number) => `$${n.toLocaleString("en-CA")}`;
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "OfferCatalog",
-  name: "Scale SEO Pricing",
-  url: `${BASE}/pricing`,
-  itemListElement: plans.map((p) => ({
-    "@type": "Offer",
-    name: p.name,
-    url: `${BASE}${p.href}`,
-    description: p.summary,
-    priceCurrency: "CAD",
-    areaServed: { "@type": "City", name: "Calgary" },
-    seller: SELLER,
-    itemOffered: { "@type": "Service", name: p.name, serviceType: p.name },
-    priceSpecification: {
-      "@type": "UnitPriceSpecification",
-      minPrice: p.price,
-      price: p.price,
-      priceCurrency: "CAD",
-      valueAddedTaxIncluded: false,
-      ...(p.unit === "month" ? { unitCode: "MON", unitText: "month" } : {}),
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://scaleseo.co/pricing#webpage",
+      "url": "https://scaleseo.co/pricing",
+      "name": "SEO Pricing in Calgary — Monthly SEO, Audits & Websites | Scale SEO",
+      "description": "View Scale SEO starting prices for monthly SEO campaigns, SEO audits and website development in Calgary. All pricing is in CAD and engagements are scoped around your business, website and market.",
+      "isPartOf": {
+        "@id": "https://scaleseo.co/#website"
+      },
+      "about": {
+        "@id": "https://scaleseo.co/#organization"
+      },
+      "publisher": {
+        "@id": "https://scaleseo.co/#organization"
+      },
+      "breadcrumb": {
+        "@id": "https://scaleseo.co/pricing#breadcrumb"
+      },
+      "mainEntity": {
+        "@id": "https://scaleseo.co/pricing#offers"
+      },
+      "inLanguage": "en-CA"
     },
-  })),
+    {
+      "@type": "OfferCatalog",
+      "@id": "https://scaleseo.co/pricing#offers",
+      "name": "Scale SEO Services & Starting Prices",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "Monthly SEO Campaign",
+          "url": "https://scaleseo.co/services/seo",
+          "price": "2000",
+          "priceCurrency": "CAD",
+          "description": "Ongoing SEO campaign management starting from $2,000 CAD per month plus GST.",
+          "seller": {
+            "@id": "https://scaleseo.co/#organization"
+          },
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Monthly SEO Campaign",
+            "url": "https://scaleseo.co/services/seo",
+            "provider": {
+              "@id": "https://scaleseo.co/#organization"
+            }
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Website Build",
+          "url": "https://scaleseo.co/services/web-development",
+          "price": "3000",
+          "priceCurrency": "CAD",
+          "description": "Custom website design and development starting from $3,000 CAD as a one-time fee plus GST.",
+          "seller": {
+            "@id": "https://scaleseo.co/#organization"
+          },
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Website Design & Development",
+            "url": "https://scaleseo.co/services/web-development",
+            "provider": {
+              "@id": "https://scaleseo.co/#organization"
+            }
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "SEO Audit",
+          "url": "https://scaleseo.co/services/seo-audits",
+          "price": "500",
+          "priceCurrency": "CAD",
+          "description": "Focused technical and on-page SEO audit starting from $500 CAD as a one-time fee plus GST.",
+          "seller": {
+            "@id": "https://scaleseo.co/#organization"
+          },
+          "itemOffered": {
+            "@type": "Service",
+            "name": "SEO Audit",
+            "url": "https://scaleseo.co/services/seo-audits",
+            "provider": {
+              "@id": "https://scaleseo.co/#organization"
+            }
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Advanced SEO Audit",
+          "url": "https://scaleseo.co/services/seo-audits",
+          "price": "1500",
+          "priceCurrency": "CAD",
+          "description": "Advanced SEO audit with keyword, competitor, content, website architecture and local SEO analysis starting from $1,500 CAD as a one-time fee plus GST.",
+          "seller": {
+            "@id": "https://scaleseo.co/#organization"
+          },
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Advanced SEO Audit",
+            "url": "https://scaleseo.co/services/seo-audits",
+            "provider": {
+              "@id": "https://scaleseo.co/#organization"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://scaleseo.co/pricing#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://scaleseo.co/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Pricing",
+          "item": "https://scaleseo.co/pricing"
+        }
+      ]
+    }
+  ]
 };
 
 export default function PricingPage() {
@@ -220,6 +315,7 @@ export default function PricingPage() {
 
       <PageHero
         breadcrumbs={[{ name: "Home", href: "/" }, { name: "Pricing" }]}
+        breadcrumbSchema={false}
         title={
           <>
             SEO Pricing in <span className="title-block">Calgary</span>
