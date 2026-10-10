@@ -3,7 +3,7 @@ import Contact from "../components/ContactCta";
 import MapEmbed from "./MapEmbed";
 
 export const metadata: Metadata = {
-  title: "Contact — Scale SEO | Corbin Jensen",
+  title: { absolute: "Contact - Scale SEO" },
   description:
     "Get in touch with Scale SEO. Email, phone, and Google Business Profile for Corbin Jensen, independent SEO specialist serving established businesses across Canada.",
   alternates: { canonical: "/contact" },
