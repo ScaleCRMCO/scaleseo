@@ -179,7 +179,7 @@
 /* === Articles === */
 .articleGrid {
   display: grid;
-  grid-template-columns: 1.3fr 1fr;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
   align-items: stretch;
 }
@@ -257,4 +257,13 @@
   .articleCard,
   .futureCard { padding: 2rem 1.5rem; }
   .manifestoBody { font-size: 16.5px; }
+}
+
+.allArticles {
+  display: inline-flex;
+  margin-top: 32px;
+}
+
+@media (max-width: 1000px) {
+  .articleGrid { grid-template-columns: 1fr; }
 }
