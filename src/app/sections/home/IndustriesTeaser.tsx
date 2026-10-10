@@ -31,8 +31,8 @@ const industries: {
 export default function IndustriesTeaser() {
   return (
     <section className={styles.section} id="industries" data-nav-theme="dark">
-      <div className={styles.layout}>
-        {/* LEFT — heading + intro, same column as the FAQ / process headings */}
+      <div>
+        {/* Heading + intro top-left, rows full width below */}
         <div className={styles.aside}>
           <h2 className={`${styles.heading} reveal-up`}>
             SEO for Professional Service &amp; B2B Businesses
@@ -41,13 +41,9 @@ export default function IndustriesTeaser() {
             I work primarily with businesses where a single qualified search
             enquiry can turn into a valuable, long-term client relationship.
           </p>
-          <p className={`${styles.footNote} reveal-up`}>
-            Based in Calgary. Working with businesses across Canada and
-            internationally.
-          </p>
         </div>
 
-        {/* RIGHT — one row per industry: name | description + link */}
+        {/* Full-width rows: name left half, description + link right half */}
         <div className={styles.rows}>
           {industries.map((item) => (
             <div key={item.num} className={`${styles.row} reveal-up`}>
