@@ -171,7 +171,7 @@ const profileJsonLd = {
       worksFor: {
         "@id": "https://scaleseo.co/#organization"
       },
-      homeLocation: {
+      workLocation: {
         "@type": "Place",
         name: "Calgary, Alberta, Canada"
       },
