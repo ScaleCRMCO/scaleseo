@@ -30,28 +30,32 @@ const steps = [
 export default function Process() {
   return (
     <section className={styles.section} id="process">
-      <div className={styles.inner}>
-        <h2 className={`${styles.headingBig} reveal-up`}>
-          4 easy steps to get started.
-        </h2>
-        <p className={`${styles.intro} ${styles.introStrong} reveal-up`}>
-          Every engagement starts by understanding where your website stands
-          today and whether SEO represents a realistic growth opportunity for
-          your business.
-        </p>
-      </div>
+      <div className={styles.layout}>
+        {/* LEFT — heading + intro, same column as the FAQ heading */}
+        <div className={styles.aside}>
+          <h2 className={`${styles.headingBig} reveal-up`}>
+            4 easy steps to get started.
+          </h2>
+          <p className={`${styles.intro} ${styles.introStrong} reveal-up`}>
+            Every engagement starts by understanding where your website stands
+            today and whether SEO represents a realistic growth opportunity for
+            your business.
+          </p>
+        </div>
 
-      <div className={`${styles.grid} reveal-up`}>
-        {steps.map((step) => (
-          <div key={step.num} className={styles.step}>
-            <div>
-              <div className={styles.num}>{step.num}</div>
+        {/* RIGHT — numbered rows: big number | name | description */}
+        <ol className={styles.rows}>
+          {steps.map((step) => (
+            <li key={step.num} className={`${styles.row} reveal-up`}>
+              <span className={styles.num}>{step.num}</span>
               <h3 className={styles.name}>{step.name}</h3>
-              <p className={styles.body}>{step.body}</p>
-            </div>
-            <div className={styles.time}>{step.time}</div>
-          </div>
-        ))}
+              <div>
+                <p className={styles.body}>{step.body}</p>
+                <span className={styles.time}>{step.time}</span>
+              </div>
+            </li>
+          ))}
+        </ol>
       </div>
     </section>
   );
