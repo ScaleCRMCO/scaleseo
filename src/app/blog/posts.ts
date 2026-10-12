@@ -31,6 +31,164 @@ export const posts: Post[] = [
     "metaTitle": "Why Your Calgary Business Isn't Showing on Google",
     "description": "Not showing up on Google in Calgary? Learn how indexing, Google Business Profiles, service pages and technical SEO affect your visibility.",
     "date": "2026-10-12T09:00:00-06:00",
+    "schema": {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BlogPosting",
+          "@id": "https://scaleseo.co/blog/why-business-not-showing-on-google-calgary#article",
+          "headline": "Why Your Calgary Business Isn't Showing Up on Google (And How to Fix It)",
+          "description": "Learn why your Calgary business may not be appearing on Google. Explore website indexing, Google Business Profile issues, local rankings, service pages, and technical SEO.",
+          "url": "https://scaleseo.co/blog/why-business-not-showing-on-google-calgary",
+          "mainEntityOfPage": {
+            "@id": "https://scaleseo.co/blog/why-business-not-showing-on-google-calgary#webpage"
+          },
+          "author": {
+            "@id": "https://scaleseo.co/corbin-jensen#person"
+          },
+          "publisher": {
+            "@id": "https://scaleseo.co/#organization"
+          },
+          "isPartOf": {
+            "@id": "https://scaleseo.co/#website"
+          },
+          "inLanguage": "en-CA",
+          "articleSection": "Local SEO",
+          "keywords": [
+            "Calgary SEO",
+            "Local SEO Calgary",
+            "Google Business Profile",
+            "Google Maps rankings",
+            "Website indexing",
+            "Technical SEO",
+            "Google Search Console",
+            "Calgary business search visibility"
+          ],
+          "about": [
+            {
+              "@type": "Thing",
+              "name": "Local search engine optimization"
+            },
+            {
+              "@type": "Thing",
+              "name": "Google Search indexing"
+            },
+            {
+              "@type": "Thing",
+              "name": "Google Business Profile optimization"
+            }
+          ],
+          "mentions": [
+            {
+              "@type": "City",
+              "name": "Calgary",
+              "sameAs": "https://www.wikidata.org/wiki/Q36312"
+            },
+            {
+              "@type": "Organization",
+              "name": "Calgary Economic Development",
+              "url": "https://www.calgaryeconomicdevelopment.com/"
+            }
+          ],
+          "citation": [
+            {
+              "@type": "CreativeWork",
+              "name": "Get Started with Search Console",
+              "url": "https://developers.google.com/search/docs/monitor-debug/search-console-start",
+              "publisher": {
+                "@type": "Organization",
+                "name": "Google"
+              }
+            },
+            {
+              "@type": "CreativeWork",
+              "name": "Page Indexing Report",
+              "url": "https://support.google.com/webmasters/answer/7440203",
+              "publisher": {
+                "@type": "Organization",
+                "name": "Google"
+              }
+            },
+            {
+              "@type": "CreativeWork",
+              "name": "Guidelines for Representing Your Business on Google",
+              "url": "https://support.google.com/business/answer/3038177",
+              "publisher": {
+                "@type": "Organization",
+                "name": "Google"
+              }
+            },
+            {
+              "@type": "CreativeWork",
+              "name": "Tips to Improve Your Local Ranking on Google",
+              "url": "https://support.google.com/business/answer/7091",
+              "publisher": {
+                "@type": "Organization",
+                "name": "Google"
+              }
+            },
+            {
+              "@type": "CreativeWork",
+              "name": "URL Inspection Tool",
+              "url": "https://support.google.com/webmasters/answer/9012289",
+              "publisher": {
+                "@type": "Organization",
+                "name": "Google"
+              }
+            },
+            {
+              "@type": "CreativeWork",
+              "name": "Calgary Economic Snapshot",
+              "url": "https://www.calgaryeconomicdevelopment.com/why-calgary/economy/economic-snapshot/",
+              "publisher": {
+                "@type": "Organization",
+                "name": "Calgary Economic Development"
+              }
+            }
+          ]
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://scaleseo.co/blog/why-business-not-showing-on-google-calgary#webpage",
+          "url": "https://scaleseo.co/blog/why-business-not-showing-on-google-calgary",
+          "name": "Why Your Calgary Business Isn't Showing Up on Google (And How to Fix It)",
+          "isPartOf": {
+            "@id": "https://scaleseo.co/#website"
+          },
+          "mainEntity": {
+            "@id": "https://scaleseo.co/blog/why-business-not-showing-on-google-calgary#article"
+          },
+          "breadcrumb": {
+            "@id": "https://scaleseo.co/blog/why-business-not-showing-on-google-calgary#breadcrumb"
+          },
+          "inLanguage": "en-CA"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://scaleseo.co/blog/why-business-not-showing-on-google-calgary#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://scaleseo.co/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Blog",
+              "item": "https://scaleseo.co/blog"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Why Your Calgary Business Isn't Showing Up on Google",
+              "item": "https://scaleseo.co/blog/why-business-not-showing-on-google-calgary"
+            }
+          ]
+        }
+      ]
+    },
     "readTime": "9 min read",
     "category": "Local SEO",
     "excerpt": "Having a website and a Google Business Profile doesn't guarantee your Calgary business will appear in search results. This guide covers the most common causes, from indexing and Business Profiles to service pages and technical SEO, and how to diagnose them.",
