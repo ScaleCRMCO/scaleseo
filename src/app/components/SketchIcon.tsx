@@ -205,6 +205,7 @@ export function iconForCategory(category: string) {
   if (c.includes("pric") || c.includes("cost")) return "pricing";
   if (c.includes("account")) return "accounting";
   if (c.includes("time")) return "clock";
+  if (c.includes("local")) return "about";
   return "article";
 }
 

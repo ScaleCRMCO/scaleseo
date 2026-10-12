@@ -26,6 +26,604 @@ export type Post = {
 
 export const posts: Post[] = [
   {
+    "slug": "why-business-not-showing-on-google-calgary",
+    "title": "Why Your Calgary Business Isn't Showing Up on Google (And How to Fix It)",
+    "metaTitle": "Why Your Calgary Business Isn't Showing on Google",
+    "description": "Not showing up on Google in Calgary? Learn how indexing, Google Business Profiles, service pages and technical SEO affect your visibility.",
+    "date": "2026-10-12T09:00:00-06:00",
+    "readTime": "9 min read",
+    "category": "Local SEO",
+    "excerpt": "Having a website and a Google Business Profile doesn't guarantee your Calgary business will appear in search results. This guide covers the most common causes, from indexing and Business Profiles to service pages and technical SEO, and how to diagnose them.",
+    "body": [
+      {
+        "type": "p",
+        "text": "For many Calgary businesses, Google is one of the first places prospective customers look when they need a service. Whether someone is searching for an accountant, consultant, contractor, or another local provider, appearing in relevant search results can influence which businesses they consider contacting."
+      },
+      {
+        "type": "p",
+        "text": "Calgary has a diverse business environment spanning professional services, technology, financial services, construction, and other industries. As outlined by [Calgary Economic Development](https://www.calgaryeconomicdevelopment.com/why-calgary/economy/economic-snapshot/), the city's economy includes a broad range of established and emerging sectors. For businesses competing for customers in these markets, online visibility can play an important role in attracting new enquiries."
+      },
+      {
+        "type": "p",
+        "text": "However, having a website and a Google Business Profile does not automatically mean your business will appear prominently in search results."
+      },
+      {
+        "type": "p",
+        "text": "Some businesses struggle to appear even when customers search for their company name. Others can be found by name but remain largely invisible for searches related to their services."
+      },
+      {
+        "type": "p",
+        "text": "These are different problems, and understanding the distinction is the first step toward improving your search visibility."
+      },
+      {
+        "type": "h2",
+        "text": "1. Your Website May Not Be Properly Indexed"
+      },
+      {
+        "type": "p",
+        "text": "Before a website can appear in Google's organic search results, Google needs to discover, crawl, and index its pages."
+      },
+      {
+        "type": "p",
+        "text": "A website can be live and accessible to visitors without all its pages being included in Google's search index."
+      },
+      {
+        "type": "p",
+        "text": "This can happen for several reasons, including:"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Pages containing a noindex directive",
+          "Incorrect canonical tags",
+          "Redirect or server configuration problems",
+          "Important pages that are difficult to discover through internal links",
+          "Duplicate or substantially similar content",
+          "Pages that Google has discovered but chosen not to index"
+        ]
+      },
+      {
+        "type": "p",
+        "text": "For example, a Calgary accounting firm might have a homepage indexed correctly while its corporate tax, bookkeeping, and business advisory pages remain excluded."
+      },
+      {
+        "type": "p",
+        "text": "The business may appear when someone searches its name but struggle to appear for the individual accounting services it provides."
+      },
+      {
+        "type": "h3",
+        "text": "How to Check Your Website's Indexing"
+      },
+      {
+        "type": "p",
+        "text": "Google Search Console is the most reliable starting point."
+      },
+      {
+        "type": "p",
+        "text": "Its Page Indexing report identifies pages Google has indexed and pages that have been excluded. The URL Inspection tool provides more detailed information about individual URLs, including their indexing status and selected canonical URL."
+      },
+      {
+        "type": "p",
+        "text": "Google explains these tools in its official [Search Console documentation](https://developers.google.com/search/docs/monitor-debug/search-console-start)."
+      },
+      {
+        "type": "p",
+        "text": "It's important to remember that not every excluded page represents a problem. Some pages are intentionally excluded, while others may be duplicates or redirects."
+      },
+      {
+        "type": "p",
+        "text": "The objective is to identify whether commercially important pages are missing from Google's index and understand why."
+      },
+      {
+        "type": "h2",
+        "text": "2. Your Google Business Profile May Be Incomplete or Incorrect"
+      },
+      {
+        "type": "p",
+        "text": "For businesses serving customers in Calgary, a Google Business Profile can be an important source of local visibility."
+      },
+      {
+        "type": "p",
+        "text": "These profiles appear in Google Maps and may appear in local search results when someone searches for a nearby business or service."
+      },
+      {
+        "type": "p",
+        "text": "However, Google Business Profiles and organic website rankings operate through different systems."
+      },
+      {
+        "type": "p",
+        "text": "A business might appear in Google Maps without ranking prominently in traditional organic results. The reverse can also occur."
+      },
+      {
+        "type": "h3",
+        "text": "What Should You Review?"
+      },
+      {
+        "type": "p",
+        "text": "Start by checking that your Google Business Profile accurately represents your business."
+      },
+      {
+        "type": "p",
+        "text": "Important details include:"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Your actual business name and primary business category",
+          "Relevant secondary categories",
+          "Business hours and contact information",
+          "Your official website URL",
+          "Your physical location or service area, where applicable",
+          "A clear description of your services",
+          "Relevant business photos and customer reviews"
+        ]
+      },
+      {
+        "type": "p",
+        "text": "Your primary category is particularly important because it helps Google understand the type of business you operate."
+      },
+      {
+        "type": "p",
+        "text": "A business offering accounting services, for example, should select categories that accurately describe its actual services rather than unrelated categories chosen simply because they appear popular."
+      },
+      {
+        "type": "p",
+        "text": "Google's [Business Profile guidelines](https://support.google.com/business/answer/3038177) explain how businesses should represent their names, locations, service areas, and other information."
+      },
+      {
+        "type": "p",
+        "text": "Businesses operating from home or travelling to customer locations should also review Google's address and service-area requirements."
+      },
+      {
+        "type": "p",
+        "text": "Adding Calgary or surrounding communities to a service-area list does not guarantee rankings in those locations."
+      },
+      {
+        "type": "h2",
+        "text": "3. Your Website May Be Targeting the Wrong Searches"
+      },
+      {
+        "type": "p",
+        "text": "One of the most common SEO problems is a mismatch between the language used on a website and the searches potential customers actually perform."
+      },
+      {
+        "type": "p",
+        "text": "A business might describe itself using broad phrases such as professional solutions, business support, or industry-leading expertise."
+      },
+      {
+        "type": "p",
+        "text": "While these descriptions may communicate something about the company, they don't always explain its services clearly enough."
+      },
+      {
+        "type": "p",
+        "text": "Consider a Calgary consulting firm that offers financial forecasting, operational planning, and fractional CFO support."
+      },
+      {
+        "type": "p",
+        "text": "If its website only describes these offerings as strategic business solutions, it may be missing opportunities to establish relevance for more specific searches."
+      },
+      {
+        "type": "h3",
+        "text": "Understanding Local Search Intent"
+      },
+      {
+        "type": "p",
+        "text": "Search intent refers to what someone is trying to accomplish when entering a query into Google."
+      },
+      {
+        "type": "p",
+        "text": "For Calgary service businesses, this may include:"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Finding a specific company by name",
+          "Comparing local providers",
+          "Researching a particular professional service",
+          "Looking for information before making a purchasing decision",
+          "Finding a provider that serves a particular geographic area"
+        ]
+      },
+      {
+        "type": "p",
+        "text": "A search for accounting services Calgary is different from a search for how to register a corporation in Alberta."
+      },
+      {
+        "type": "p",
+        "text": "The first may indicate that someone is evaluating accounting firms. The second suggests they are researching a business or tax-related question."
+      },
+      {
+        "type": "p",
+        "text": "Both can be valuable, but they should not necessarily be targeted with the same page."
+      },
+      {
+        "type": "p",
+        "text": "Effective keyword research helps determine which searches deserve dedicated service pages, which are better addressed through educational content, and which may not be commercially relevant to the business."
+      },
+      {
+        "type": "h2",
+        "text": "4. Your Service Pages May Not Be Specific Enough"
+      },
+      {
+        "type": "p",
+        "text": "Many business websites rely heavily on their homepage to explain everything the company offers."
+      },
+      {
+        "type": "p",
+        "text": "This can create problems when the business provides several distinct services."
+      },
+      {
+        "type": "p",
+        "text": "For example, a Calgary accounting firm might offer corporate tax planning, bookkeeping, personal tax preparation, and fractional CFO services."
+      },
+      {
+        "type": "p",
+        "text": "These services have different audiences, requirements, and search intent."
+      },
+      {
+        "type": "p",
+        "text": "Placing all of them into a short homepage section may not provide enough information for prospective customers or search engines to understand each offering."
+      },
+      {
+        "type": "h3",
+        "text": "The Importance of Dedicated Service Pages"
+      },
+      {
+        "type": "p",
+        "text": "A well-structured service page should explain:"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "What the service involves",
+          "Who it is intended for",
+          "The problems or requirements it addresses",
+          "How the business delivers the service",
+          "Relevant experience or qualifications",
+          "How a prospective customer can make an enquiry"
+        ]
+      },
+      {
+        "type": "p",
+        "text": "This does not mean every minor variation of a service requires a separate page."
+      },
+      {
+        "type": "p",
+        "text": "Creating numerous pages with substantially similar content can make a website harder to navigate and may contribute little additional value."
+      },
+      {
+        "type": "p",
+        "text": "The objective is to give genuinely distinct services sufficient coverage while maintaining a logical website structure."
+      },
+      {
+        "type": "p",
+        "text": "Internal links should then connect related services, industry pages, and supporting articles."
+      },
+      {
+        "type": "p",
+        "text": "For businesses reviewing their existing website, this is often one of the most practical areas to investigate before investing in additional content."
+      },
+      {
+        "type": "h2",
+        "text": "5. Your Competitors May Have Stronger Local Search Signals"
+      },
+      {
+        "type": "p",
+        "text": "Even when a business has a properly indexed website and an accurate Google Business Profile, it may still struggle to appear prominently in competitive Calgary searches."
+      },
+      {
+        "type": "p",
+        "text": "Google identifies three principal factors affecting local rankings: relevance, distance, and prominence."
+      },
+      {
+        "type": "p",
+        "text": "Relevance concerns how closely a business matches the search. Distance considers the relationship between the searcher and the business. Prominence reflects how well-known or established the business appears to be."
+      },
+      {
+        "type": "p",
+        "text": "Google discusses these factors in its official guide to [improving local rankings](https://support.google.com/business/answer/7091)."
+      },
+      {
+        "type": "h3",
+        "text": "Why Location Matters"
+      },
+      {
+        "type": "p",
+        "text": "A business located in southwest Calgary may not appear in the same position for a search performed in the northeast."
+      },
+      {
+        "type": "p",
+        "text": "Local results can vary according to the searcher's location, the search terms used, and the businesses Google considers most relevant."
+      },
+      {
+        "type": "p",
+        "text": "This is why checking a single keyword from one location does not provide a complete picture of local visibility."
+      },
+      {
+        "type": "h3",
+        "text": "Reviews, Reputation, and Business Information"
+      },
+      {
+        "type": "p",
+        "text": "Google also considers signals related to a business's prominence, including information available across the web and customer reviews."
+      },
+      {
+        "type": "p",
+        "text": "A business with an established reputation, relevant reviews, and accurate information may have advantages over a competitor with a less developed online presence."
+      },
+      {
+        "type": "p",
+        "text": "However, there is no fixed number of reviews or backlinks that guarantees a particular ranking."
+      },
+      {
+        "type": "p",
+        "text": "The priority should be building a credible business presence and making it easier for customers and search engines to understand the services provided."
+      },
+      {
+        "type": "h2",
+        "text": "6. Technical SEO Problems May Be Limiting Your Visibility"
+      },
+      {
+        "type": "p",
+        "text": "Some websites have useful content and a clear service offering but still experience search visibility problems because of their technical configuration."
+      },
+      {
+        "type": "p",
+        "text": "These issues are not always visible to someone browsing the website."
+      },
+      {
+        "type": "p",
+        "text": "Common examples include:"
+      },
+      {
+        "type": "h3",
+        "text": "Incorrect Redirects and Canonical Tags"
+      },
+      {
+        "type": "p",
+        "text": "Redirects tell browsers and search engines when a page has moved."
+      },
+      {
+        "type": "p",
+        "text": "Canonical tags indicate the preferred version of a page when multiple URLs contain identical or similar content."
+      },
+      {
+        "type": "p",
+        "text": "Incorrect configurations can cause Google to focus on an unintended URL or prevent important pages from performing as expected."
+      },
+      {
+        "type": "h3",
+        "text": "Weak Internal Linking"
+      },
+      {
+        "type": "p",
+        "text": "If important service pages are difficult to reach from the homepage or main navigation, search engines may have fewer opportunities to discover and understand them."
+      },
+      {
+        "type": "p",
+        "text": "Internal links also help communicate relationships between services, industries, and supporting information."
+      },
+      {
+        "type": "h3",
+        "text": "Website Performance and Mobile Usability"
+      },
+      {
+        "type": "p",
+        "text": "A website should be accessible and usable across devices."
+      },
+      {
+        "type": "p",
+        "text": "Slow-loading pages, unstable layouts, difficult navigation, and mobile display problems can affect the visitor experience."
+      },
+      {
+        "type": "p",
+        "text": "These issues should be reviewed alongside content relevance, indexing, and site architecture rather than treated as the sole explanation for poor rankings."
+      },
+      {
+        "type": "h3",
+        "text": "Website Changes and Redesigns"
+      },
+      {
+        "type": "p",
+        "text": "Search visibility problems sometimes emerge after a website redesign or migration."
+      },
+      {
+        "type": "p",
+        "text": "Changed URLs, missing redirects, altered content, and indexing directives can all affect how Google processes the updated website."
+      },
+      {
+        "type": "p",
+        "text": "Businesses planning a redesign should account for existing search performance before replacing important pages."
+      },
+      {
+        "type": "p",
+        "text": "For more complex issues, a [technical SEO audit](/services/seo-audits) can help identify the underlying problems and prioritize the changes required."
+      },
+      {
+        "type": "h2",
+        "text": "7. You May Be Measuring the Wrong Results"
+      },
+      {
+        "type": "p",
+        "text": "Another common mistake is judging SEO performance entirely by checking whether a business appears for one or two keywords."
+      },
+      {
+        "type": "p",
+        "text": "Search results are not identical for every person. Location, query wording, device, and other factors can influence what appears."
+      },
+      {
+        "type": "p",
+        "text": "A business may also gain visibility for relevant searches without immediately appearing in the top positions for its most competitive keywords."
+      },
+      {
+        "type": "p",
+        "text": "Google Search Console provides a more useful starting point because it shows how a website performs across a wider range of queries."
+      },
+      {
+        "type": "p",
+        "text": "Businesses should review:"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Search impressions and clicks",
+          "Queries generating visibility",
+          "Pages appearing in search results",
+          "Changes in average search position",
+          "Whether important service pages are gaining relevant exposure",
+          "Whether organic search enquiries are improving"
+        ]
+      },
+      {
+        "type": "p",
+        "text": "For professional service firms, qualified enquiries are particularly important."
+      },
+      {
+        "type": "p",
+        "text": "An increase in traffic has limited commercial value if the additional visitors are not looking for services the business provides."
+      },
+      {
+        "type": "h2",
+        "text": "How to Diagnose Your Calgary Business's Google Visibility"
+      },
+      {
+        "type": "p",
+        "text": "Before making major changes to your website or Google Business Profile, it helps to establish exactly where the problem exists."
+      },
+      {
+        "type": "p",
+        "text": "A practical starting process is:"
+      },
+      {
+        "type": "p",
+        "text": "**First, search for your business name.** Determine whether your website, Google Business Profile, or both appear."
+      },
+      {
+        "type": "p",
+        "text": "**Second, review Google Search Console.** Confirm that your homepage and important service pages are indexed and receiving impressions."
+      },
+      {
+        "type": "p",
+        "text": "**Third, review your Google Business Profile.** Check verification, categories, contact details, website links, and location settings."
+      },
+      {
+        "type": "p",
+        "text": "**Fourth, evaluate your service pages.** Consider whether they clearly explain your services and match the searches potential customers are likely to perform."
+      },
+      {
+        "type": "p",
+        "text": "**Fifth, compare relevant competitors.** Review the structure, depth, and usefulness of websites appearing for your target searches."
+      },
+      {
+        "type": "p",
+        "text": "**Finally, prioritize the underlying issues.** Indexing and technical problems may need attention before additional content or broader SEO work can deliver value."
+      },
+      {
+        "type": "p",
+        "text": "Not every business requires a complete website rebuild or a large content campaign."
+      },
+      {
+        "type": "p",
+        "text": "In some cases, improvements to a small number of important pages can provide a more appropriate starting point."
+      },
+      {
+        "type": "h2",
+        "text": "When Should You Consider a Professional SEO Audit?"
+      },
+      {
+        "type": "p",
+        "text": "If your Calgary business has an established website but receives limited organic visibility, an SEO audit can help distinguish technical problems from content, targeting, and competition issues."
+      },
+      {
+        "type": "p",
+        "text": "A useful audit should go beyond identifying missing metadata or producing an automated website score."
+      },
+      {
+        "type": "p",
+        "text": "It should examine how Google accesses the website, how the site is structured, which searches are commercially relevant, and where existing pages may be underperforming."
+      },
+      {
+        "type": "p",
+        "text": "At [Scale SEO](/), I work directly with professional service and B2B businesses on technical SEO, website structure, service-page optimization, and ongoing organic search strategy."
+      },
+      {
+        "type": "p",
+        "text": "For businesses that want to understand their current position before committing to an ongoing campaign, I also offer [standalone SEO audits](/services/seo-audits)."
+      },
+      {
+        "type": "h2",
+        "text": "Final Thoughts"
+      },
+      {
+        "type": "p",
+        "text": "If your Calgary business isn't showing up on Google, the explanation may be straightforward—or it may involve several overlapping issues."
+      },
+      {
+        "type": "p",
+        "text": "A missing page in Google's index requires a different solution from a business struggling to compete in Google Maps. Similarly, improving website performance will not necessarily resolve a mismatch between your content and the searches your customers perform."
+      },
+      {
+        "type": "p",
+        "text": "The most effective starting point is to establish what is preventing visibility and address those issues in order of importance."
+      },
+      {
+        "type": "p",
+        "text": "For businesses where organic search represents a meaningful source of potential clients, that process should be guided by search data, technical evidence, and an understanding of the services that matter commercially."
+      },
+      {
+        "type": "p",
+        "text": "[Explore SEO Services in Calgary →](/services/seo)"
+      },
+      {
+        "type": "p",
+        "text": "[Book an SEO Consultation →](https://cal.com/corbinjensen-scaleseo/30min)"
+      },
+      {
+        "type": "h2",
+        "text": "References & Sources"
+      },
+      {
+        "type": "p",
+        "text": "The following resources provide additional information on Google's indexing processes, local search ranking factors, business profile requirements, and Calgary's business environment."
+      },
+      {
+        "type": "references",
+        "items": [
+          {
+            "title": "Google Search Central — Get Started with Search Console",
+            "href": "https://developers.google.com/search/docs/monitor-debug/search-console-start",
+            "desc": "Guidance on using Google Search Console to monitor website indexing, search performance, and technical issues."
+          },
+          {
+            "title": "Google Search Console Help — Page Indexing Report",
+            "href": "https://support.google.com/webmasters/answer/7440203",
+            "desc": "Information about indexing status, excluded pages, and investigating why pages may not appear in Google Search."
+          },
+          {
+            "title": "Google Business Profile Help — Guidelines for Representing Your Business on Google",
+            "href": "https://support.google.com/business/answer/3038177",
+            "desc": "Official guidelines covering business names, categories, locations, service areas, and accurate business information."
+          },
+          {
+            "title": "Google Business Profile Help — Tips to Improve Your Local Ranking on Google",
+            "href": "https://support.google.com/business/answer/7091",
+            "desc": "Google's explanation of relevance, distance, and prominence in local search rankings."
+          },
+          {
+            "title": "Google Search Console Help — URL Inspection Tool",
+            "href": "https://support.google.com/webmasters/answer/12482179?hl=en",
+            "desc": "Instructions for inspecting individual pages, reviewing indexing status, and identifying crawl or canonicalization issues."
+          },
+          {
+            "title": "Calgary Economic Development — Calgary Economic Snapshot",
+            "href": "https://www.calgaryeconomicdevelopment.com/why-calgary/economy/economic-snapshot/",
+            "desc": "Overview of Calgary's economy, business environment, and major industries."
+          }
+        ]
+      }
+    ]
+  },
+  {
     "slug": "how-long-does-seo-take",
     "title": "How Long Does SEO Take? A Realistic Timeline for Canadian Businesses",
     "metaTitle": "How Long Does SEO Take? A Realistic SEO Timeline for Canadian Businesses",
