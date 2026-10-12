@@ -97,14 +97,13 @@
   position: relative;
   flex-shrink: 0;
   width: clamp(320px, 36vw, 560px);
-  aspect-ratio: 1165 / 1600;
+  aspect-ratio: 1300 / 1592;
   max-height: 78vh;
-  overflow: hidden;
-  background: #D8D8D8;
 }
 
+/* contain: the image may be a cut-out (transparent background) */
 .mediaImg {
-  object-fit: cover;
+  object-fit: contain;
 }
 
 @media (max-width: 900px) {
@@ -120,6 +119,6 @@
   .media {
     width: 100%;
     max-height: none;
-    aspect-ratio: 4 / 5;
+    max-width: 420px;
   }
 }

@@ -327,8 +327,8 @@ export default function WebDevelopmentPage() {
         }
         icon="browser"
         image={{
-          src: "/images/web-development-hero.avif",
-          alt: "Responsive website designs shown on two tablets",
+          src: "/images/web-development-hero.webp",
+          alt: "Laptop showing a website technical health dashboard",
         }}
         actions={
           <>
