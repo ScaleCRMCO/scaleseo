@@ -241,10 +241,11 @@
   --selection-color: var(--on-highlight);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: safe center;
   align-items: flex-start;
   gap: 8px;
-  padding: 0 24px;
+  padding: 96px 24px 40px;
+  overflow-y: auto;
   font-family: var(--display);
   font-weight: 700;
   font-size: clamp(36px, 10vw, 58px);
@@ -255,6 +256,56 @@
   transform: translateY(-12px);
   transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
   z-index: 200;
+}
+/* Services group: toggle row + collapsible list of child pages */
+.mobileGroup {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.mobileGroupToggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 0;
+  background: none;
+  border: 0;
+  color: var(--ink-on-dark);
+  font: inherit;
+  letter-spacing: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.mobileChevron {
+  width: 0.38em;
+  height: 0.38em;
+  margin-right: 0.15em;
+  border-right: 3px solid currentColor;
+  border-bottom: 3px solid currentColor;
+  transform: rotate(45deg) translate(-25%, -25%);
+  transition: transform 0.3s ease;
+}
+.mobileChevronOpen {
+  transform: rotate(-135deg) translate(-25%, -25%);
+}
+.mobileSub {
+  display: flex;
+  flex-direction: column;
+  max-height: 0;
+  overflow: hidden;
+  padding-left: 18px;
+  border-left: 2px solid var(--highlight);
+  transition: max-height 0.35s ease, margin 0.35s ease;
+}
+.mobileSubOpen {
+  max-height: 480px;
+  margin: 4px 0 12px;
+}
+.mobileMenu .mobileSub a {
+  padding: 8px 0;
+  font-size: clamp(20px, 5.4vw, 26px);
+  font-weight: 700;
 }
 .mobileMenuOpen {
   opacity: 1;

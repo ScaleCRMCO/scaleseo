@@ -84,6 +84,7 @@ export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
   const navRef = useRef<HTMLElement | null>(null);
   const servicesCloseTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -155,7 +156,10 @@ export default function Nav() {
     document.body.style.overflow = open ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
   }, [open]);
-  const close = () => setOpen(false);
+  const close = () => {
+    setOpen(false);
+    setMobileServicesOpen(false);
+  };
   return (
     <>
     <nav
@@ -235,7 +239,31 @@ export default function Nav() {
         content on mobile). Kept in the same component/close() state. */}
     <div className={`${styles.mobileMenu} ${open ? styles.mobileMenuOpen : ""}`}>
       <Link href="/results" onClick={close}>Case Studies</Link>
-      <Link href="/services" onClick={close}>Services</Link>
+      <div className={styles.mobileGroup}>
+        <button
+          type="button"
+          className={styles.mobileGroupToggle}
+          aria-expanded={mobileServicesOpen}
+          aria-controls="mobile-services"
+          onClick={() => setMobileServicesOpen((v) => !v)}
+        >
+          <span>Services</span>
+          <span
+            className={`${styles.mobileChevron} ${mobileServicesOpen ? styles.mobileChevronOpen : ""}`}
+            aria-hidden="true"
+          />
+        </button>
+        <div
+          id="mobile-services"
+          className={`${styles.mobileSub} ${mobileServicesOpen ? styles.mobileSubOpen : ""}`}
+        >
+          {[...serviceLinks, allServicesLink].map((s) => (
+            <Link key={s.href} href={s.href} onClick={close}>
+              {s.name}
+            </Link>
+          ))}
+        </div>
+      </div>
       <Link href="/industries" onClick={close}>Industries</Link>
       <Link href="/pricing" onClick={close}>Pricing</Link>
       <Link href="/about" onClick={close}>About</Link>
