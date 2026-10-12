@@ -1,0 +1,141 @@
+.bigH2 {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(44px, 6.4vw, 96px);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+/* --- Problem (navy) --- */
+.problem {
+  padding: 140px 3%;
+  background: #031B36;
+  color: #F5F1E8;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: clamp(40px, 5vw, 96px);
+  align-items: end;
+}
+
+.accent {
+  color: #FF2C16;
+}
+
+.problemBody {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: clamp(17px, 1.4vw, 20px);
+  line-height: 1.65;
+  color: rgba(245, 241, 232, 0.85);
+}
+
+.problemLead {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(22px, 2vw, 28px);
+  line-height: 1.25;
+  color: #F5F1E8;
+}
+
+/* --- Included grid on the light canvas --- */
+section.inclGrid {
+  --canvas: #FDFFEE;
+}
+
+/* --- Pricing (light blue, navy only) --- */
+.pricing {
+  padding: 140px 3%;
+  background: #B6FFFF;
+  color: #031B36;
+}
+
+.pricingHead {
+  margin-bottom: clamp(48px, 6vw, 88px);
+}
+
+.pricingIntro {
+  margin-top: 24px;
+  max-width: 560px;
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 19px;
+  line-height: 1.6;
+}
+
+.rows {
+  border-top: 1px solid rgba(3, 27, 54, 0.35);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(24px, 4vw, 72px);
+  padding: 36px 0;
+  border-bottom: 1px solid rgba(3, 27, 54, 0.35);
+}
+
+.rowTitle {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(26px, 2.6vw, 40px);
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+}
+
+.rowBody {
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: clamp(17px, 1.4vw, 20px);
+  line-height: 1.6;
+}
+
+.pricingLink {
+  display: inline-flex;
+  gap: 12px;
+  margin-top: 48px;
+  padding: 16px 26px;
+  background: #031B36;
+  color: #F5F1E8;
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.pricingLink:hover {
+  background: #FF2C16;
+  color: #FFFFFF;
+}
+
+/* --- Related note between FAQ and contact --- */
+.related {
+  margin: 0;
+  padding: 0 3% 80px;
+  background: #FDFFEE;
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 16px;
+  color: #3E474D;
+}
+
+.related a {
+  color: #031B36;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+@media (max-width: 900px) {
+  .problem, .pricing { padding: 80px 16px; }
+  .split { grid-template-columns: 1fr; }
+  .row { grid-template-columns: 1fr; gap: 10px; padding: 28px 0; }
+  .related { padding: 0 16px 60px; }
+}
