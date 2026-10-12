@@ -213,25 +213,90 @@ const faqs: FaqItem[] = [
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Service",
-  "@id": "https://scaleseo.co/services/web-development#service",
-  name: "Web Development & Website Design",
-  description:
-    "Custom website design and development for established businesses in Calgary and across Canada, built for performance, search visibility, and enquiries.",
-  serviceType: "Web Development",
-  url: "https://scaleseo.co/services/web-development",
-  provider: { "@id": "https://scaleseo.co/#organization" },
-  areaServed: [
-    { "@type": "City", name: "Calgary" },
-    { "@type": "Country", name: "Canada" },
-  ],
-  offers: {
-    "@type": "Offer",
-    price: "3000",
-    priceCurrency: "CAD",
-    description:
-      "Custom website design and development starting from $3,000 CAD as a one-time fee plus GST.",
-  },
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://scaleseo.co/services/web-development#webpage",
+      "url": "https://scaleseo.co/services/web-development",
+      "name": "Web Development & Website Design in Calgary | Scale SEO",
+      "description": "Custom web development and website design for established businesses in Calgary and across Canada. Scale SEO builds professional, SEO-ready websites using Webflow and modern development technologies.",
+      "isPartOf": {
+        "@id": "https://scaleseo.co/#website"
+      },
+      "about": {
+        "@id": "https://scaleseo.co/services/web-development#service"
+      },
+      "mainEntity": {
+        "@id": "https://scaleseo.co/services/web-development#service"
+      },
+      "publisher": {
+        "@id": "https://scaleseo.co/#organization"
+      },
+      "breadcrumb": {
+        "@id": "https://scaleseo.co/services/web-development#breadcrumb"
+      },
+      "inLanguage": "en-CA"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://scaleseo.co/services/web-development#service",
+      "name": "Web Development & Website Design",
+      "serviceType": "Website Design and Development",
+      "url": "https://scaleseo.co/services/web-development",
+      "description": "Custom website design, development, redesigns, and improvements for established businesses in Calgary and across Canada. Services include Webflow development, custom-coded websites, responsive design, website architecture, and technical SEO foundations.",
+      "mainEntityOfPage": {
+        "@id": "https://scaleseo.co/services/web-development#webpage"
+      },
+      "provider": {
+        "@id": "https://scaleseo.co/#organization"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Calgary",
+          "containedInPlace": {
+            "@type": "AdministrativeArea",
+            "name": "Alberta"
+          }
+        },
+        {
+          "@type": "Country",
+          "name": "Canada"
+        }
+      ],
+      "offers": {
+        "@type": "AggregateOffer",
+        "lowPrice": "3000",
+        "priceCurrency": "CAD",
+        "offerCount": 1,
+        "description": "Custom website development projects start from $3,000 CAD plus GST. Final pricing depends on project scope and requirements."
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://scaleseo.co/services/web-development#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://scaleseo.co/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://scaleseo.co/services"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Web Development",
+          "item": "https://scaleseo.co/services/web-development"
+        }
+      ]
+    }
+  ]
 };
 
 const pad = (i: number) => String(i + 1).padStart(2, "0");
@@ -252,6 +317,7 @@ export default function WebDevelopmentPage() {
           { name: "Services", href: "/services" },
           { name: "Web Development" },
         ]}
+        breadcrumbSchema={false}
         title={
           <>
             Web Development &amp; Website Design in{" "}
