@@ -92,6 +92,21 @@
   stroke-linejoin: round;
 }
 
+/* Optional photo on the right, square corners */
+.media {
+  position: relative;
+  flex-shrink: 0;
+  width: clamp(320px, 36vw, 560px);
+  aspect-ratio: 1165 / 1600;
+  max-height: 78vh;
+  overflow: hidden;
+  background: #D8D8D8;
+}
+
+.mediaImg {
+  object-fit: cover;
+}
+
 @media (max-width: 900px) {
   .hero {
     flex-direction: column;
@@ -101,5 +116,10 @@
   .sketch {
     width: 180px;
     margin: 0;
+  }
+  .media {
+    width: 100%;
+    max-height: none;
+    aspect-ratio: 4 / 5;
   }
 }

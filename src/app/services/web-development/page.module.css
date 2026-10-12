@@ -12,6 +12,18 @@
 
 .accent { color: #FF2C16; }
 
+.sketch {
+  display: block;
+  width: clamp(180px, 18vw, 280px);
+  height: auto;
+  margin-top: clamp(40px, 5vw, 72px);
+  fill: none;
+  stroke: #FF2C16;
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
 .heroTag {
   font-family: var(--display);
   font-weight: 800;

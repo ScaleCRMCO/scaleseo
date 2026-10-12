@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Image from "next/image";
 import Breadcrumbs, { type Crumb } from "./Breadcrumbs";
 import SketchIcon from "./SketchIcon";
 import styles from "./PageHero.module.css";
@@ -13,6 +14,7 @@ export default function PageHero({
   icon,
   children,
   actions,
+  image,
 }: {
   breadcrumbs: Crumb[];
   breadcrumbSchema?: boolean;
@@ -20,6 +22,8 @@ export default function PageHero({
   icon: string;
   children?: ReactNode;
   actions?: ReactNode;
+  // Optional photo shown on the right instead of the sketch icon
+  image?: { src: string; alt: string };
 }) {
   return (
     <header className={styles.hero} data-nav-theme="dark">
@@ -31,7 +35,20 @@ export default function PageHero({
         {children && <div className={styles.sub}>{children}</div>}
         {actions && <div className={styles.actions}>{actions}</div>}
       </div>
-      <SketchIcon name={icon} className={styles.sketch} />
+      {image ? (
+        <div className={styles.media}>
+          <Image
+            src={image.src}
+            alt={image.alt}
+            fill
+            priority
+            sizes="(max-width: 900px) 100vw, 40vw"
+            className={styles.mediaImg}
+          />
+        </div>
+      ) : (
+        <SketchIcon name={icon} className={styles.sketch} />
+      )}
     </header>
   );
 }

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import PageHero from "../../components/PageHero";
+import SketchIcon from "../../components/SketchIcon";
 import RevealOnScroll from "../../components/RevealOnScroll";
 import ServicesFaq, { type FaqItem } from "../ServicesFaq";
 import Contact from "../../components/ContactCta";
@@ -325,6 +326,10 @@ export default function WebDevelopmentPage() {
           </>
         }
         icon="browser"
+        image={{
+          src: "/images/web-development-hero.avif",
+          alt: "Responsive website designs shown on two tablets",
+        }}
         actions={
           <>
             <Link href="/contact">
@@ -358,10 +363,13 @@ export default function WebDevelopmentPage() {
       {/* === WEBSITE DESIGN THAT SUPPORTS YOUR BUSINESS — navy split === */}
       <section className={styles.navy} data-nav-theme="dark">
         <div className={styles.split}>
-          <h2 className={`${styles.bigH2} reveal-up`}>
-            Website Design That{" "}
-            <span className={styles.accent}>Supports Your Business</span>
-          </h2>
+          <div>
+            <h2 className={`${styles.bigH2} reveal-up`}>
+              Website Design That{" "}
+              <span className={styles.accent}>Supports Your Business</span>
+            </h2>
+            <SketchIcon name="browser" className={styles.sketch} />
+          </div>
           <div className={`${styles.prose} reveal-up`}>
             <p className={styles.lead}>
               Your website is often one of the first places a prospective
