@@ -12,7 +12,7 @@ export default function BlogTeaser() {
     <section className={styles.section} id="blog">
       <div className={styles.top}>
         <div>
-          <div className="section-label reveal-up">Recent Articles</div>
+          <div className={`${styles.eyebrow} reveal-up`}>Recent Articles</div>
           <h2 className={`${styles.heading} reveal-up`}>
             SEO Insights &amp; Resources
           </h2>

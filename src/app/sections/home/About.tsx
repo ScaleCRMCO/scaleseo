@@ -3,7 +3,7 @@ import Image from "next/image";
 import styles from "./About.module.css";
 export default function About() {
   return (
-    <section className={`${styles.section} section-dark`} id="about" data-nav-theme="dark">
+    <section className={styles.section} id="about">
       <div className={styles.grid}>
         <div className={`${styles.text} reveal-up`}>
           <h2 className={styles.headline}>
@@ -38,23 +38,6 @@ export default function About() {
               className={styles.portraitImg}
             />
           </figure>
-          {/* Rotating badge pinned over the photo's bottom-left corner */}
-          <div className={styles.badge} aria-hidden="true">
-            <svg className={styles.circleText} viewBox="0 0 240 240">
-              <defs>
-                <path
-                  id="aboutCirclePath"
-                  d="M 120,120 m -92,0 a 92,92 0 1,1 184,0 a 92,92 0 1,1 -184,0"
-                />
-              </defs>
-              <text className={styles.circleTextInner}>
-                <textPath href="#aboutCirclePath" startOffset="0%">
-                  SCALE SEO · EST 2025 · CANADA · CORBIN JENSEN · SEO SPECIALIST ·&nbsp;
-                </textPath>
-              </text>
-            </svg>
-            <img src="/brand/scaleseo-mark-navy.svg" alt="" className={styles.badgeMark} />
-          </div>
         </div>
       </div>
     </section>

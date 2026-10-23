@@ -1,137 +1,61 @@
-/* ==========================================================================
-   Homepage FAQ — huge heading + sketch on the left, stacked colour boxes on
-   the right. Native <details> so every answer stays in the HTML.
-   ========================================================================== */
-
+/* Light grey section: heading left, white accordion rows right */
 .section {
-  padding: 140px 3%;
-  background: #FDFFEE;
-  color: #031B36;
+  padding: 96px 40px;
+  background: var(--h-grey);
+  color: var(--h-navy);
 }
-
-.inner {
-  display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  gap: clamp(40px, 5vw, 96px);
-  align-items: start;
-}
-
-.aside {
-  position: sticky;
-  top: 120px;
-  display: flex;
-  flex-direction: column;
-  gap: clamp(48px, 7vw, 120px);
-}
-
+.inner { display: grid; grid-template-columns: 1fr 1.4fr; gap: 40px; align-items: start; }
+.aside { position: sticky; top: 136px; }
 .heading {
-  font-family: var(--display);
-  font-weight: 800;
-  font-size: clamp(56px, 7.4vw, 124px);
-  line-height: 0.95;
-  letter-spacing: -0.045em;
-  color: #031B36;
+  font-size: clamp(40px, 5vw, 84px);
+  line-height: 1.02;
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  max-width: 10ch;
 }
-
-.sketch {
-  width: clamp(160px, 16vw, 260px);
-  height: auto;
-  margin-left: 4%;
-  fill: none;
-  stroke: #031B36;
-  stroke-width: 7;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.list {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.item {
-  --ink: #031B36;
-  background: var(--tone);
-  color: var(--ink);
-}
-
-.blue { --tone: #B6FFFF; }
-.pink { --tone: #FFE3F3; }
-.navy { --tone: #031B36; --ink: #F5F1E8; }
-.orange { --tone: #FF2C16; --ink: #FFFFFF; }
-.white { --tone: #FFFFFF; box-shadow: inset 0 0 0 2px #031B36; }
-.stone { --tone: #D8D2C7; }
-
+.list { background: var(--h-white); }
+.item { border-bottom: 1px solid var(--h-rule); }
+.item:last-child { border-bottom: 0; }
 .summary {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  padding: 30px 32px;
-  cursor: pointer;
   list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding: 22px 22px;
+  cursor: pointer;
 }
-
-.summary::-webkit-details-marker {
-  display: none;
-}
-
-.question {
-  font-family: var(--display);
-  font-weight: 800;
-  font-size: clamp(19px, 1.7vw, 26px);
-  line-height: 1.25;
-  letter-spacing: -0.015em;
-  color: var(--ink);
-}
-
-/* Plus that turns into a minus */
+.summary::-webkit-details-marker { display: none; }
+.summary:hover .question { color: var(--h-blue); }
+.question { font-size: 21px; line-height: 1.3; font-weight: 400; letter-spacing: -0.01em; transition: color 0.2s ease; }
 .icon {
   position: relative;
-  flex-shrink: 0;
-  width: 22px;
-  height: 22px;
+  flex: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
 }
-
-.icon::before,
-.icon::after {
+.icon::before, .icon::after {
   content: "";
   position: absolute;
-  left: 0;
+  left: 50%;
   top: 50%;
-  width: 100%;
-  height: 2.5px;
-  background: var(--ink);
-  transform: translateY(-50%);
+  width: 14px;
+  height: 1.5px;
+  background: currentColor;
+  transform: translate(-50%, -50%);
   transition: transform 0.25s ease;
 }
-
-.icon::after {
-  transform: translateY(-50%) rotate(90deg);
-}
-
-.item[open] .icon::after {
-  transform: translateY(-50%) rotate(0deg);
-}
-
-.answer {
-  padding: 0 72px 30px 32px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  font-family: var(--sans);
-  font-weight: 500;
-  font-size: 16.5px;
-  line-height: 1.65;
-  color: var(--ink);
-}
+.icon::after { transform: translate(-50%, -50%) rotate(90deg); }
+.item[open] .icon { background: var(--h-blue); color: var(--h-white); }
+.item[open] .icon::after { transform: translate(-50%, -50%) rotate(0deg); }
+.answer { display: flex; flex-direction: column; gap: 12px; padding: 0 22px 26px; font-size: 16px; line-height: 1.6; color: var(--h-dim); max-width: 760px; }
 
 @media (max-width: 900px) {
-  .section { padding: 80px 16px; }
+  .section { padding: 64px 16px; }
   .inner { grid-template-columns: 1fr; }
-  .aside { position: static; gap: 32px; }
-  .sketch { width: 140px; }
-  .summary { padding: 22px 20px; }
-  .answer { padding: 0 20px 22px; }
+  .aside { position: static; }
+  .summary { padding: 18px 16px; }
+  .answer { padding: 0 16px 22px; }
 }

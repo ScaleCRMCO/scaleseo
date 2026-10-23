@@ -30,7 +30,7 @@ const industries: {
 
 export default function IndustriesTeaser() {
   return (
-    <section className={styles.section} id="industries" data-nav-theme="dark">
+    <section className={styles.section} id="industries">
       <div>
         {/* Heading + intro top-left, rows full width below */}
         <div className={styles.aside}>

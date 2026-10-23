@@ -1,4 +1,3 @@
-"use client";
 import Link from "next/link";
 import styles from "./ServicesGrid.module.css";
 
@@ -74,18 +73,19 @@ export default function ServicesGrid() {
 
       <div className={styles.grid}>
         {services.map((s) => (
-          <article key={s.href} className={styles.cell}>
+          <Link key={s.href} href={s.href} className={styles.cell}>
             <span className={styles.cellIndex}>{s.num}</span>
             <h3 className={styles.cellTitle}>{s.title}</h3>
             <div className={styles.cellSubtitle}>{s.subtitle}</div>
             <p className={styles.cellDesc}>{s.desc}</p>
-            <Link href={s.href} className={styles.cellLink}>
-              {s.cta} →
-            </Link>
-          </article>
+            <span className={styles.cellLink}>
+              <span>{s.cta}</span>
+              <span className={styles.plus} aria-hidden="true">+</span>
+            </span>
+          </Link>
         ))}
 
-        <article className={styles.cell}>
+        <Link href="/services" className={`${styles.cell} ${styles.cellDark}`}>
           <span className={styles.cellIndex}>Core Services</span>
           <h3 className={styles.cellTitle}>
             SEO, PPC, and AI Search Optimization.
@@ -95,10 +95,11 @@ export default function ServicesGrid() {
             strictly on generating qualified business inquiries, and
             tracked using daily keyword reports.
           </p>
-          <Link href="/services" className={styles.cellLink}>
-            View all services →
-          </Link>
-        </article>
+          <span className={styles.cellLink}>
+            <span>View all services</span>
+            <span className={styles.plus} aria-hidden="true">+</span>
+          </span>
+        </Link>
       </div>
     </section>
   );

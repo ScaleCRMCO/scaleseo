@@ -1,465 +1,250 @@
-/* Full-width editorial bar: transparent with a hairline rule at the top
-   of the page, then a blurred Paper backdrop once scrolled so links stay
-   legible over any section colour. Colours are set here explicitly rather
-   than via page tokens so the bar reads the same on every page. */
+/* Boxy white header: logo | tagline | link columns split by a hairline |
+   solid blue Contact box | Book a call. Always white, hairline underneath. */
+
 .nav {
-  --nav-fg: #031B36;
-  --nav-rule: rgba(3, 27, 54, 0.18);
+  --nav-ink: #031B36;
+  --nav-blue: #0099FF;
+  --nav-rule: rgba(3, 27, 54, 0.14);
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 50;
-  padding: 0 6%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 84px;
-  background: transparent;
-  transition: background-color 0.35s ease, height 0.35s ease;
-}
-.nav::after {
-  content: "";
-  position: absolute;
-  left: 6%;
-  right: 6%;
-  bottom: 0;
-  height: 1px;
-  background: var(--nav-rule);
-  transition: left 0.35s ease, right 0.35s ease;
-}
-.scrolled {
-  height: 68px;
-  /* --nav-bg is set from Nav.tsx to the colour of the section behind */
-  background: color-mix(in srgb, var(--nav-bg, #FDFFEE) 90%, transparent);
-  backdrop-filter: blur(18px) saturate(160%);
-  -webkit-backdrop-filter: blur(18px) saturate(160%);
-}
-.scrolled::after {
-  left: 0;
-  right: 0;
-}
-
-/* Inverted appearance while a dark section (data-nav-theme="dark") sits
-   behind the bar */
-.darkMode {
-  --nav-fg: #F5F1E8;
-  --nav-rule: rgba(245, 241, 232, 0.22);
-}
-.darkMode .brand,
-.darkMode .links a,
-.darkMode .num,
-.darkMode .wordmark {
-  color: var(--nav-fg);
-}
-.darkMode .mark {
-  color: #b8b8b8;
-}
-
-
-.brandCrow {
-  height: 34px;
-  width: 34px;
-  border-radius: 0;
-  display: block;
-  flex-shrink: 0;
-  transition: transform 0.4s ease, color 0.3s ease;
-}
-  .brand {
-  font-family: var(--display);
-  font-weight: 800;
-  font-size: 20px;
-  letter-spacing: -0.02em;
-  color: var(--nav-fg);
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-.brand:hover .brandCrow {
-  transform: rotate(-4deg) scale(1.05);
-}
-.wordmark {
-  font-family: var(--brand);
-}
-.wordmarkAccent {
-  color: inherit;
-  transition: color 0.3s ease;
-}
-
-.mark {
-  font-family: var(--mono);
+  height: 96px;
+  padding: 10px 24px 10px 28px;
+  display: grid;
+  grid-template-columns: auto 1fr auto auto auto 168px 140px;
+  align-items: stretch;
+  gap: 0;
+  background: #FEFEFE;
+  border-bottom: 1px solid var(--nav-rule);
+  color: var(--nav-ink);
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 16px;
   font-weight: 400;
-  font-size: 10px;
-  color: var(--ink-dim);
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
 }
-.leaf {
-  width: 30px;
-  height: 30px;
-  color: var(--accent);
-  flex-shrink: 0;
-  display: block;
-}
-.onDark .leaf {
-  color: var(--accent);
-}
-.links {
+
+.brand {
   display: flex;
-  gap: 40px;
-  margin-left: auto;
-  margin-right: 40px;
-  font-family: var(--mono);
-  font-weight: 700;
-  font-size: 13px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-.links a {
-  color: var(--nav-fg);
-  text-decoration: none;
-  position: relative;
-  transition: color 0.2s;
-  display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 10px;
+  color: var(--nav-ink);
+  text-decoration: none;
+  padding-right: 40px;
 }
-.num {
-  color: var(--ink-faint);
+.brandMark { width: 30px; height: 30px; }
+.wordmark {
+  font-size: 30px;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  white-space: nowrap;
 }
-.onDark .num {
-  color: var(--ink-dim-on-dark);
+
+.tagline {
+  align-self: center;
+  font-size: 15px;
+  line-height: 1.35;
+  max-width: 180px;
 }
-.navCta {
+
+.col {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 8px 40px 6px 28px;
+  min-width: 190px;
+}
+.colRule { border-left: 1px solid var(--nav-rule); }
+.col a,
+.plusBtn {
+  color: var(--nav-ink);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.col a:hover,
+.plusBtn:hover { color: var(--nav-blue); }
+
+.plusBtn {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 11px 18px;
-  border-radius: 4px;
-  border: 1px solid var(--nav-fg);
-  background: transparent;
-  color: var(--nav-fg);
-  text-decoration: none;
-  font-family: var(--mono);
-  font-weight: 700;
-  font-size: 12px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  transition: background-color 0.25s ease, color 0.25s ease;
+  background: none;
+  border: 0;
+  font: inherit;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
 }
-.navCta:hover {
-  background: var(--nav-fg);
-  color: #F5F1E8;
-}
-.darkMode .navCta:hover {
-  color: #031B36;
-}
-.navCtaArrow {
-  transition: transform 0.3s ease;
-}
-.navCta:hover .navCtaArrow {
-  transform: translateX(3px);
-}
-@media (max-width: 1080px) {
-  .navCta { display: none; }
-}
-.links a::after {
-  content: '';
+.plus { font-size: 20px; line-height: 1; width: 12px; }
+
+/* Services panel: navy header block + white rows */
+.panel {
   position: absolute;
-  bottom: -4px;
+  top: calc(100% + 18px);
   left: 0;
-  width: 0;
-  height: 1px;
-  background: #FF2C16;
-  transition: width 0.3s ease;
+  width: 420px;
+  background: #FEFEFE;
+  box-shadow: 0 20px 50px rgba(3, 27, 54, 0.14);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
 }
-.links a:hover::after {
-  width: 100%;
+.panelOpen { opacity: 1; visibility: visible; transform: none; }
+.panelHead {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 18px 20px;
+  background: var(--nav-ink);
+  color: #FEFEFE;
 }
-/* ============ DARK PAGE STYLES ============ */
-.onDark .brand {
-  color: var(--ink-on-dark);
+.panelHead button {
+  background: none;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
 }
-.onDark .brandDeer {
-  filter: brightness(0) invert(1);
+.panelRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  font-size: 20px;
+  border-bottom: 1px solid var(--nav-rule);
 }
-.onDark .mark {
-  color: var(--ink-dim-on-dark);
+.panelRow:last-child { border-bottom: 0; }
+.panelRow span:last-child { color: rgba(3, 27, 54, 0.4); }
+.panelRow:hover { background: #F1F3F6; }
+
+/* Boxed links with a corner arrow, label bottom-left */
+.contactBox,
+.bookLink {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding: 14px 18px;
+  text-decoration: none;
 }
-.onDark .links a {
-  color: var(--ink-on-dark);
+.contactBox {
+  background: var(--nav-blue);
+  color: #FEFEFE;
+  transition: background-color 0.2s ease;
 }
-.onDark .links a:hover {
-  color: var(--accent);
+.contactBox:hover { background: var(--nav-ink); }
+.bookLink { color: var(--nav-ink); }
+.bookLink:hover { color: var(--nav-blue); }
+.corner {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  width: 10px;
+  height: 10px;
+  display: flex;
 }
-/* When the mobile menu is open, drop the pill chrome so the full-screen
-   overlay isn't trapped inside the nav's containing block */
-.menuOpen::after { display: none; }
-.menuOpen {
-  background: transparent;
-  border-color: transparent;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-}
-/* === Hamburger button (hidden on desktop) === */
+.corner svg { width: 100%; height: 100%; }
+
 .burger {
   display: none;
+  background: none;
+  border: 0;
+  width: 44px;
+  height: 44px;
+  align-self: center;
+  justify-self: end;
   flex-direction: column;
   justify-content: center;
-  gap: 6px;
-  width: 32px;
-  height: 32px;
-  background: none;
-  border: none;
+  gap: 7px;
   cursor: pointer;
-  padding: 0;
-  z-index: 60;
 }
 .burgerLine {
   display: block;
   width: 26px;
-  height: 1.5px;
-  background: var(--nav-fg);
-  transition: transform 0.35s ease, opacity 0.3s ease;
+  height: 2px;
+  margin: 0 auto;
+  background: var(--nav-ink);
+  transition: transform 0.25s ease;
 }
-.onDark .burgerLine { background: var(--ink-on-dark); }
-/* animate into an X when open */
-.menuOpen .burgerLine:nth-child(1) {
-  transform: translateY(3.75px) rotate(45deg);
+.menuOpen .burgerLine:first-child { transform: translateY(4.5px) rotate(45deg); }
+.menuOpen .burgerLine:last-child { transform: translateY(-4.5px) rotate(-45deg); }
+
+@media (max-width: 1280px) {
+  .tagline { display: none; }
+  .nav { grid-template-columns: auto 1fr auto auto auto 150px 130px; }
+  .col { min-width: 150px; padding: 8px 24px 6px 20px; }
 }
-.menuOpen .burgerLine:nth-child(2) {
-  transform: translateY(-3.75px) rotate(-45deg);
+
+@media (max-width: 1000px) {
+  .nav {
+    height: 72px;
+    padding: 0 16px;
+    grid-template-columns: 1fr auto;
+  }
+  .col, .contactBox, .bookLink, .tagline { display: none; }
+  .brand { padding-right: 0; }
+  .wordmark { font-size: 24px; }
+  .burger { display: flex; }
 }
-.menuOpen .burgerLine { background: var(--ink-on-dark); }
-/* === Full-screen mobile menu === */
+
+/* Mobile menu: white sheet with hairline rows */
 .mobileMenu {
   position: fixed;
-  inset: 0;
-  background: var(--bg-dark);
-  --selection-bg: var(--highlight);
-  --selection-color: var(--on-highlight);
+  inset: 72px 0 0 0;
+  z-index: 49;
+  background: #FEFEFE;
+  color: #031B36;
   display: flex;
   flex-direction: column;
-  justify-content: safe center;
-  align-items: flex-start;
-  gap: 8px;
-  padding: 96px 24px 40px;
+  padding: 8px 16px 32px;
   overflow-y: auto;
-  font-family: var(--display);
-  font-weight: 700;
-  font-size: clamp(36px, 10vw, 58px);
-  letter-spacing: -0.02em;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 26px;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transform: translateY(-12px);
-  transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
-  z-index: 200;
+  transition: opacity 0.25s ease, visibility 0.25s;
 }
-/* Services group: toggle row + collapsible list of child pages */
-.mobileGroup {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
+.mobileMenuOpen { opacity: 1; visibility: visible; pointer-events: auto; }
+.mobileMenu > a,
 .mobileGroupToggle {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
-  padding: 10px 0;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(3, 27, 54, 0.14);
+  color: inherit;
+  text-decoration: none;
+}
+.mobileGroupToggle {
   background: none;
-  border: 0;
-  color: var(--ink-on-dark);
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
   font: inherit;
-  letter-spacing: inherit;
-  text-align: left;
   cursor: pointer;
 }
-.mobileChevron {
-  width: 0.38em;
-  height: 0.38em;
-  margin-right: 0.15em;
-  border-right: 3px solid currentColor;
-  border-bottom: 3px solid currentColor;
-  transform: rotate(45deg) translate(-25%, -25%);
-  transition: transform 0.3s ease;
-}
-.mobileChevronOpen {
-  transform: rotate(-135deg) translate(-25%, -25%);
-}
 .mobileSub {
-  display: flex;
-  flex-direction: column;
-  max-height: 0;
-  overflow: hidden;
-  padding-left: 18px;
-  border-left: 2px solid var(--highlight);
-  transition: max-height 0.35s ease, margin 0.35s ease;
-}
-.mobileSubOpen {
-  max-height: 480px;
-  margin: 4px 0 12px;
-}
-.mobileMenu .mobileSub a {
-  padding: 8px 0;
-  font-size: clamp(20px, 5.4vw, 26px);
-  font-weight: 700;
-}
-.mobileMenuOpen {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-  transform: translateY(0);
-}
-.mobileMenu a {
-  color: var(--ink-on-dark);
-  text-decoration: none;
-  padding: 10px 0;
-  transition: color 0.3s ease;
-}
-.mobileMenu a:hover,
-.mobileMenu a:active {
-  color: var(--highlight);
-}
-/* Two classes so this beats the ".mobileMenu a" rule above (equal-looking
-   selectors, but ".mobileMenu a" is more specific than a single class and
-   was silently overriding this button's color/padding — the white-on-green
-   text and cramped padding bug). */
-.mobileMenu .mobileMenuCta {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  width: 100%;
-  margin-top: 32px;
-  padding: 20px 36px;
-  background: var(--highlight);
-  color: var(--on-highlight);
-  border-radius: 9999px;
-  text-decoration: none;
-  font-family: var(--mono);
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-.mobileMenu .mobileMenuCta:hover,
-.mobileMenu .mobileMenuCta:active {
-  color: var(--on-highlight);
-}
-@media (max-width: 900px) {
-  .nav { padding: 0 24px; height: 72px; }
-  .nav::after { left: 24px; right: 24px; }
-  .links { display: none; }
-  .burger { display: flex; }
-  /* keep brand above the open menu overlay */
-  .brand { z-index: 60; position: relative; }
-  .menuOpen .brand { color: var(--ink-on-dark); }
-}
-
-/* === Services hover dropdown (desktop only) === */
-.navItem {
-  position: relative;
-}
-/* No margin-top gap between the trigger and the dropdown — a gap here
-   is dead space with no element under the pointer, so moving the
-   mouse down from the "Services" link into the menu fired mouseleave
-   on .navItem before ever reaching the dropdown, closing it early.
-   The same 14px offset is now padding-top instead, which is part of
-   the hoverable box, so the pointer never leaves navItem's hit area
-   on the way down. */
-.servicesDropdown {
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translate(-50%, 8px);
-  padding-top: 14px;
-  width: auto;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.25s ease, transform 0.25s ease;
-  z-index: 60;
-}
-/* Services dropdown: navy panel, 3 x 2 grid of icon + title + blurb */
-.servicesDropdownInner {
-  width: min(980px, 92vw);
-  background: #031B36;
-  border: 1px solid rgba(245, 241, 232, 0.14);
-  box-shadow: 0 32px 64px -24px rgba(3, 27, 54, 0.55);
-  padding: 32px;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  align-items: start;
-  gap: 8px;
-}
-.servicesDropdownOpen {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translate(-50%, 0);
-}
-
-.dropdownItem {
-  display: flex !important;
-  align-items: flex-start !important;
-  gap: 16px !important;
-  padding: 18px;
-  text-decoration: none;
-  transition: background-color 0.2s ease;
-}
-.dropdownItem::after {
   display: none;
-}
-.dropdownItem:hover {
-  background: #0B2846;
-}
-
-.dropdownItemIcon {
-  flex-shrink: 0;
-  width: 48px;
-  height: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid rgba(182, 255, 255, 0.45);
-  color: #B6FFFF;
-}
-.dropdownItemIcon svg {
-  width: 24px;
-  height: 24px;
-}
-
-.dropdownItemText {
-  display: flex;
   flex-direction: column;
-  gap: 6px;
-  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  padding: 8px 0 8px 16px;
+  border-bottom: 1px solid rgba(3, 27, 54, 0.14);
 }
-.dropdownItem:hover .dropdownItemText {
-  transform: translateX(4px);
+.mobileSubOpen { display: flex; }
+.mobileSub a {
+  padding: 8px 0;
+  font-size: 19px;
+  color: inherit;
+  text-decoration: none;
 }
-
-.dropdownItemName {
-  font-family: var(--display);
-  font-weight: 800;
-  font-size: 17px;
-  letter-spacing: -0.01em;
-  text-transform: none;
-  color: #F5F1E8;
-}
-
-.dropdownItemDesc {
-  font-family: var(--sans);
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.45;
-  letter-spacing: normal;
-  text-transform: none;
-  color: rgba(245, 241, 232, 0.72);
-}
-
-@media (max-width: 900px) {
-  .servicesDropdown { display: none; }
+.mobileMenu > a.mobileCta {
+  margin-top: 24px;
+  padding: 18px 20px;
+  background: #0099FF;
+  color: #FEFEFE;
+  border: 0;
 }

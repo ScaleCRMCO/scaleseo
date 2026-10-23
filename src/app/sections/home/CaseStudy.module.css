@@ -1,323 +1,97 @@
-/* ==========================================================================
-   Homepage case studies — pinned scroll section. The section is tall; the
-   stage inside it sticks to the viewport while cards rise past the heading.
-   ========================================================================== */
-
+/* Light grey section: split heading row, then a 2x2 grid of white boxes */
 .case {
-  position: relative;
-  margin-top: -48px;
-  border-radius: 48px 48px 0 0;
-  /* clip (not hidden) so the sticky stage still works */
-  overflow: clip;
-  background: var(--bg);
-  color: var(--ink);
-  height: 420vh;
+  padding: 0 0 40px;
+  background: var(--h-grey);
+  color: var(--h-navy);
 }
-
-.stage {
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.head {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 1px solid var(--h-rule);
+  margin-bottom: 40px;
 }
-
-/* === Centre heading ===================================================== */
-.center {
-  position: relative;
-  z-index: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 22px;
-  max-width: 760px;
-  padding: 0 24px;
-  text-align: center;
+.headLeft {
+  padding: 72px 40px;
+  border-right: 1px solid var(--h-rule);
 }
-
-.eyebrow {
-  font-family: var(--mono);
-  font-size: 12px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--ink-dim);
-}
-
+.eyebrow { display: block; margin-bottom: 20px; font-size: 16px; color: var(--h-dim); }
 .heading {
-  font-family: var(--display);
-  font-weight: 800;
-  font-size: clamp(40px, 5.6vw, 84px);
-  line-height: 1.02;
+  font-size: clamp(38px, 4.4vw, 76px);
+  line-height: 1.04;
+  font-weight: 400;
   letter-spacing: -0.035em;
-  color: var(--ink);
 }
-
-.intro {
+.headRight {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  max-width: 560px;
-  font-family: var(--sans);
-  font-size: 15.5px;
-  line-height: 1.65;
-  color: var(--ink-dim);
+  justify-content: space-between;
+  gap: 40px;
+  padding: 72px 40px 40px;
 }
-
+.intro { display: flex; flex-direction: column; gap: 14px; font-size: 18px; line-height: 1.5; max-width: 640px; }
 .button {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  margin-top: 6px;
-  padding: 18px 32px;
-  border-radius: 999px;
-  background: var(--ink);
-  color: var(--bg);
-  font-family: var(--mono);
-  font-weight: 600;
-  font-size: 12px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  position: relative;
+  align-self: flex-end;
+  display: flex;
+  align-items: flex-end;
+  width: min(100%, 340px);
+  min-height: 120px;
+  padding: 20px 22px;
+  background: var(--h-blue);
+  color: var(--h-white);
+  font-size: 18px;
   text-decoration: none;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.2s ease;
 }
+.button:hover { background: var(--h-navy); }
+.corner { position: absolute; top: 16px; right: 18px; width: 10px; height: 10px; }
 
-.button:hover {
-  background: var(--highlight);
-  color: var(--on-highlight);
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  padding: 0 40px;
 }
-
-/* === Floating cards ===================================================== */
-.floating {
-  position: absolute;
-  top: 0;
-  z-index: 1;
-  width: min(440px, 34vw);
-  will-change: transform;
-}
-
-.left {
-  left: max(24px, 4vw);
-}
-
-.right {
-  right: max(24px, 4vw);
-}
-
 .card {
   display: flex;
   flex-direction: column;
-  height: min(620px, 78vh);
-  border-radius: 28px;
-  overflow: hidden;
+  background: var(--h-white);
+  color: var(--h-navy);
   text-decoration: none;
-  color: var(--card-ink);
-  background: var(--card-bg);
-  box-shadow: 0 50px 100px -40px rgba(18, 18, 18, 0.4),
-              0 16px 32px -16px rgba(18, 18, 18, 0.2);
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
-
-.card:hover {
-  transform: translateY(-6px) scale(1.01);
-}
-
-/* Screenshot at the top, dissolving into the brand gradient */
-.cardImage {
-  position: relative;
-  height: 46%;
-  flex-shrink: 0;
-  overflow: hidden;
-}
-
-.cardImage img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top center;
-}
-
-.cardImage::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, transparent 20%, var(--card-fade) 100%);
-}
-
-.cardBody {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  padding: 8px 32px 30px;
-}
-
-.cardTag {
-  align-self: flex-start;
-  margin-bottom: 10px;
-  padding: 5px 12px;
-  border-radius: 999px;
-  background: var(--card-chip);
-  font-family: var(--mono);
-  font-size: 10.5px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.cardMetric {
-  font-family: var(--display);
-  font-weight: 800;
-  font-size: clamp(34px, 3.4vw, 50px);
-  line-height: 1;
-  letter-spacing: -0.03em;
-  color: var(--card-metric, inherit);
-}
-
-.cardMetricLabel {
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  opacity: 0.75;
-}
-
-.cardTitle {
-  margin-top: auto;
-  font-family: var(--display);
-  font-weight: 700;
-  font-size: clamp(20px, 1.8vw, 25px);
-  line-height: 1.25;
-  letter-spacing: -0.015em;
-}
-
+.cardImage { aspect-ratio: 16 / 9; overflow: hidden; background: var(--h-tint); }
+.cardImage img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; transition: transform 0.6s ease; }
+.card:hover .cardImage img { transform: scale(1.03); }
+.cardBody { display: flex; flex-direction: column; gap: 6px; padding: 24px 22px 22px; flex: 1; }
+.cardTag { font-size: 14px; color: var(--h-dim); }
+.cardMetric { margin-top: 12px; font-size: clamp(40px, 3.6vw, 60px); line-height: 1; letter-spacing: -0.03em; color: var(--h-blue); }
+.cardMetricLabel { font-size: 15px; color: var(--h-dim); }
+.cardTitle { margin: 16px 0 32px; font-size: 24px; line-height: 1.2; font-weight: 400; letter-spacing: -0.015em; }
 .cardFooter {
+  margin-top: auto;
+  padding-top: 18px;
+  border-top: 1px solid var(--h-rule);
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  margin-top: 14px;
-  padding-top: 16px;
-  border-top: 1px solid var(--card-line);
-}
-
-.cardClient {
-  font-family: var(--display);
-  font-weight: 700;
-  font-size: 15px;
-}
-
-.cardArrow {
-  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  background: var(--card-ink);
-  color: var(--card-arrow);
-  font-size: 16px;
-  transition: transform 0.3s ease;
+  font-size: 17px;
 }
-
-.card:hover .cardArrow {
-  transform: translateX(4px);
+.cardArrow {
+  display: grid; place-items: center; width: 44px; height: 44px;
+  border-radius: 50%; font-size: 24px; font-weight: 300;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
+.card:hover .cardArrow { background: var(--h-blue); color: var(--h-white); }
 
-/* === Card themes — dark cards, one subtle accent each ================ */
-.themeSky,
-.themeMidnight,
-.themeLime,
-.themePink {
-  --card-bg: #031B36;
-  --card-ink: #F5F1E8;
-  --card-chip: rgba(245, 241, 232, 0.08);
-  --card-line: rgba(245, 241, 232, 0.16);
-  border: 1px solid #031B36;
-}
+.cardDark { background: var(--h-navy); color: var(--h-white); }
+.cardDark .cardTag, .cardDark .cardMetricLabel { color: rgba(254, 254, 254, 0.7); }
+.cardDark .cardFooter { border-top-color: rgba(254, 254, 254, 0.3); }
+.cardDark .cardArrow { background: var(--h-blue); }
 
-/* Screenshot sits cleanly on the card — no fade into the colour */
-.themeSky .cardImage::after,
-.themeMidnight .cardImage::after,
-.themeLime .cardImage::after,
-.themePink .cardImage::after {
-  display: none;
-}
-
-.themeSky .cardBody,
-.themeMidnight .cardBody,
-.themeLime .cardBody,
-.themePink .cardBody {
-  padding-top: 22px;
-}
-
-/* Accent: metric + arrow in Electric Orange */
-.themeSky { --card-metric: #FF2C16; --card-accent: #FF2C16; }
-.themeMidnight { --card-metric: #FF2C16; --card-accent: #FF2C16; }
-.themeLime { --card-metric: #FF2C16; --card-accent: #FF2C16; }
-.themePink { --card-metric: #FF2C16; --card-accent: #FF2C16; }
-
-.themeSky .cardArrow,
-.themeMidnight .cardArrow,
-.themeLime .cardArrow,
-.themePink .cardArrow {
-  background: var(--card-accent);
-  color: #F5F1E8;
-}
-
-.themeSky .cardMetricLabel,
-.themeMidnight .cardMetricLabel,
-.themeLime .cardMetricLabel,
-.themePink .cardMetricLabel {
-  color: rgba(245, 241, 232, 0.72);
-  opacity: 1;
-}
-
-/* === Reduced motion fallback ============================================ */
-.static {
-  height: auto;
-  padding: 120px 40px 150px;
-}
-
-.staticGrid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
-  max-width: 1000px;
-  margin: 64px auto 0;
-}
-
-/* === Responsive ========================================================= */
 @media (max-width: 900px) {
-  .case {
-    border-radius: 32px 32px 0 0;
-    height: 460vh;
-  }
-  .heading {
-    font-size: clamp(34px, 9vw, 48px);
-  }
-  .intro p + p {
-    display: none;
-  }
-  .floating {
-    width: min(360px, 82vw);
-  }
-  .left {
-    left: 5vw;
-  }
-  .right {
-    right: 5vw;
-  }
-  .card {
-    height: min(520px, 72vh);
-  }
-  .cardBody {
-    padding: 6px 24px 24px;
-  }
-  .static {
-    padding: 80px 24px 110px;
-  }
-  .staticGrid {
-    grid-template-columns: 1fr;
-  }
+  .head { grid-template-columns: 1fr; margin-bottom: 16px; }
+  .headLeft { border-right: 0; border-bottom: 1px solid var(--h-rule); padding: 48px 16px; }
+  .headRight { padding: 32px 16px; }
+  .button { width: 100%; }
+  .grid { grid-template-columns: 1fr; gap: 16px; padding: 0 16px; }
 }

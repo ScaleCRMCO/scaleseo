@@ -1,213 +1,81 @@
+/* White section, heading left of a hairline-ruled comparison table */
 .section {
-  position: relative;
-  padding: 160px 40px 160px;
-  margin-top: -48px;
-  border-radius: 48px 48px 0 0;
-  overflow: hidden;
-  background: var(--bg);
-  color: var(--ink);
+  padding: 0;
+  background: var(--h-white);
+  color: var(--h-navy);
+  border-bottom: 1px solid var(--h-rule);
 }
-
 .inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.heading {
-  font-family: var(--display);
-  font-weight: 800;
-  font-size: clamp(40px, 6vw, 80px);
-  line-height: 1.04;
-  letter-spacing: -0.035em;
-  color: var(--ink);
-  max-width: 14ch;
-  margin: 0 auto 80px;
-}
-
-@media (max-width: 900px) {
-  .heading { margin-bottom: 48px; }
-}
-
-/* === Comparison table === */
-.tableWrap {
-  text-align: left;
-  border-radius: 24px;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  box-shadow: 0 40px 80px -48px rgba(10, 10, 10, 0.16);
-  margin-bottom: 48px;
-}
-
-.tableHead {
   display: grid;
-  grid-template-columns: 1.1fr 1.3fr 1.3fr;
-  background: var(--table-head-bg, var(--ink));
-  color: var(--table-head-ink, var(--bg));
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  font-weight: 500;
+  grid-template-columns: 1fr 2fr;
 }
-
-.tableHead span {
-  padding: 20px 24px;
+.heading {
+  grid-row: span 2;
+  padding: 72px 40px;
+  border-right: 1px solid var(--h-rule);
+  font-size: clamp(36px, 3.8vw, 64px);
+  line-height: 1.05;
+  font-weight: 400;
+  letter-spacing: -0.035em;
 }
-
-.tableBody {
-  background: var(--bg);
-}
-
+.tableWrap { padding: 72px 40px 0; }
+.tableHead,
 .row {
   display: grid;
-  grid-template-columns: 1.1fr 1.3fr 1.3fr;
-  border-bottom: 1px solid var(--line);
+  grid-template-columns: 1fr 1.4fr 1.4fr;
+  gap: 24px;
 }
-
-.row:last-child {
-  border-bottom: none;
+.tableHead {
+  padding: 16px 20px;
+  background: var(--h-navy);
+  color: var(--h-white);
+  font-size: 15px;
 }
-
-.row:nth-child(even) {
-  background: var(--bg-elev);
-}
-
-.row > span {
-  padding: 18px 24px;
-  font-family: var(--sans);
-  font-size: 14.5px;
+.row {
+  padding: 22px 20px;
+  border-bottom: 1px solid var(--h-rule);
+  font-size: 16px;
   line-height: 1.5;
-  display: flex;
-  align-items: center;
-  gap: 10px;
 }
-
-.capability {
-  font-weight: 600;
-  color: var(--ink);
-}
-
-.us {
-  color: var(--ink);
-}
-
-.them {
-  color: var(--ink-faint);
-}
-
-.checkIcon {
-  flex-shrink: 0;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  background: var(--highlight);
-  color: var(--on-highlight);
-  font-size: 11px;
-  font-weight: 700;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.xIcon {
-  flex-shrink: 0;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  background: var(--line);
-  color: var(--ink-faint);
-  font-size: 10px;
-  font-weight: 700;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* === CTA === */
-.cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  padding: 18px 34px;
-  background: var(--ink);
-  color: var(--bg);
-  border-radius: 999px;
-  text-decoration: none;
-  font-family: var(--mono);
+.capability { font-weight: 500; }
+.us, .them { display: flex; gap: 10px; align-items: flex-start; }
+.them { color: var(--h-dim); }
+.checkIcon, .xIcon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
   font-size: 12px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  transition: background-color 0.3s cubic-bezier(0.25, 1, 0.5, 1), color 0.3s ease;
+  margin-top: 1px;
 }
+.checkIcon { background: var(--h-blue); color: var(--h-white); }
+.xIcon { background: var(--h-grey); color: var(--h-dim); }
 
-.cta:hover {
-  background: var(--highlight);
-  color: var(--on-highlight);
+.cta {
+  position: relative;
+  justify-self: end;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  width: min(100% - 80px, 340px);
+  min-height: 120px;
+  margin: 40px 40px 72px;
+  padding: 20px 22px;
+  background: var(--h-navy);
+  color: var(--h-white);
+  font-size: 18px;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
 }
-
-.ctaArrow {
-  transition: transform 0.3s ease;
-}
-
-.cta:hover .ctaArrow {
-  transform: translateX(4px);
-}
+.cta:hover { background: var(--h-blue); }
 
 @media (max-width: 900px) {
-  .section {
-    padding: 64px 20px 90px;
-  }
-  .heading {
-    font-size: clamp(28px, 7vw, 38px);
-  }
-  .sub {
-    font-size: 15px;
-    margin-bottom: 36px;
-  }
-
-  /* Keep the 3-column grid on mobile instead of stacking into one long
-     column — same compact, skim-in-a-row layout the reference table
-     uses, just with narrower columns and smaller type. */
-  .tableWrap {
-    border-radius: 16px;
-  }
-  .tableHead,
-  .row {
-    grid-template-columns: 0.85fr 1fr 1fr;
-  }
-  .tableHead span {
-    padding: 12px 8px;
-    font-size: 8.5px;
-    letter-spacing: 0.06em;
-    line-height: 1.3;
-  }
-  .row > span {
-    padding: 12px 8px;
-    font-size: 11.5px;
-    line-height: 1.35;
-    align-items: flex-start;
-    gap: 6px;
-  }
-  .capability {
-    font-size: 11.5px;
-  }
-  .checkIcon,
-  .xIcon {
-    width: 14px;
-    height: 14px;
-    font-size: 8px;
-    margin-top: 1px;
-  }
-}
-
-@media (max-width: 520px) {
-  .tableHead,
-  .row {
-    grid-template-columns: 0.8fr 1fr 1fr;
-  }
-  .tableHead span,
-  .row > span {
-    padding: 10px 6px;
-  }
+  .inner { grid-template-columns: 1fr; }
+  .heading { grid-row: auto; border-right: 0; border-bottom: 1px solid var(--h-rule); padding: 48px 16px; }
+  .tableWrap { padding: 32px 16px 0; overflow-x: auto; }
+  .tableHead, .row { grid-template-columns: 1fr; gap: 8px; }
+  .tableHead span:not(:first-child) { display: none; }
+  .cta { width: calc(100% - 32px); margin: 32px 16px 48px; }
 }

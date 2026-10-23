@@ -1,18 +1,8 @@
-"use client";
-import { useRef } from "react";
 import Link from "next/link";
-import {
-  motion,
-  useReducedMotion,
-  useScroll,
-  useTransform,
-  type MotionValue,
-} from "motion/react";
 import styles from "./CaseStudy.module.css";
 
-/* Pinned "case study" scroller: the heading holds in the centre of the
-   screen while the four case study cards rise up past it, alternating left
-   and right. Once the last card has passed, the page scrolls on normally. */
+/* Case studies: split heading row, then a 2x2 grid of boxed cards
+   (image on top, metric and title below). */
 
 type Card = {
   href: string;
@@ -69,16 +59,12 @@ const cards: Card[] = [
   },
 ];
 
-const themeClass: Record<Card["theme"], string> = {
-  sky: styles.themeSky,
-  midnight: styles.themeMidnight,
-  lime: styles.themeLime,
-  pink: styles.themePink,
-};
-
 function CaseCard({ card }: { card: Card }) {
   return (
-    <Link href={card.href} className={`${styles.card} ${themeClass[card.theme]}`}>
+    <Link
+      href={card.href}
+      className={`${styles.card} ${card.theme === "midnight" ? styles.cardDark : ""} reveal-up`}
+    >
       <div className={styles.cardImage}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={card.image} alt={`${card.client} website`} loading="lazy" />
@@ -90,94 +76,45 @@ function CaseCard({ card }: { card: Card }) {
         <h3 className={styles.cardTitle}>{card.title}</h3>
         <span className={styles.cardFooter}>
           <span className={styles.cardClient}>{card.client}</span>
-          <span className={styles.cardArrow} aria-hidden="true">→</span>
+          <span className={styles.cardArrow} aria-hidden="true">+</span>
         </span>
       </div>
     </Link>
   );
 }
 
-function FloatingCard({
-  card,
-  index,
-  progress,
-}: {
-  card: Card;
-  index: number;
-  progress: MotionValue<number>;
-}) {
-  // Each card rises from below the screen to above it over its own slice
-  // of the section's scroll range; slices overlap so two cards can share
-  // the screen, like the reference.
-  const start = index * 0.2;
-  const end = start + 0.42;
-  const y = useTransform(progress, (p) => {
-    const t = Math.min(1, Math.max(0, (p - start) / (end - start)));
-    // From just below the screen (105vh) to fully above it (-110% of card)
-    return `calc(${((1 - t) * 105).toFixed(3)}vh - ${(t * 110).toFixed(3)}%)`;
-  });
-  const side = index % 2 === 0 ? styles.left : styles.right;
-
-  return (
-    <motion.div className={`${styles.floating} ${side}`} style={{ y }}>
-      <CaseCard card={card} />
-    </motion.div>
-  );
-}
-
-function Heading() {
-  return (
-    <div className={styles.center}>
-      <span className={styles.eyebrow}>Case Studies</span>
-      <h2 className={styles.heading}>SEO Results From Real Client Campaigns</h2>
-      <div className={styles.intro}>
-        <p>
-          Search rankings are useful, but they only matter when increased
-          visibility contributes to real business growth.
-        </p>
-        <p>
-          Scale SEO campaigns are built around improving the search visibility
-          that matters to each client, whether that means ranking important
-          service pages, expanding organic traffic, generating qualified
-          enquiries, or supporting broader revenue growth.
-        </p>
-      </div>
-      <Link href="/results" className={styles.button}>
-        <span>View All Case Studies</span>
-        <span aria-hidden="true">→</span>
-      </Link>
-    </div>
-  );
-}
-
 export default function CaseStudy() {
-  const ref = useRef<HTMLElement>(null);
-  const reduce = useReducedMotion();
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end end"],
-  });
-
-  // Reduced motion: no pinning, just the heading and a simple card grid.
-  if (reduce) {
-    return (
-      <section className={`${styles.case} ${styles.static}`} id="work">
-        <Heading />
-        <div className={styles.staticGrid}>
-          {cards.map((c) => (
-            <CaseCard key={c.client} card={c} />
-          ))}
-        </div>
-      </section>
-    );
-  }
-
   return (
-    <section ref={ref} className={styles.case} id="work">
-      <div className={styles.stage}>
-        <Heading />
-        {cards.map((c, i) => (
-          <FloatingCard key={c.client} card={c} index={i} progress={scrollYProgress} />
+    <section className={styles.case} id="work">
+      <div className={styles.head}>
+        <div className={styles.headLeft}>
+          <span className={styles.eyebrow}>Case Studies</span>
+          <h2 className={styles.heading}>SEO Results From Real Client Campaigns</h2>
+        </div>
+        <div className={styles.headRight}>
+          <div className={styles.intro}>
+            <p>
+              Search rankings are useful, but they only matter when increased
+              visibility contributes to real business growth.
+            </p>
+            <p>
+              Scale SEO campaigns are built around improving the search visibility
+              that matters to each client, whether that means ranking important
+              service pages, expanding organic traffic, generating qualified
+              enquiries, or supporting broader revenue growth.
+            </p>
+          </div>
+          <Link href="/results" className={styles.button}>
+            <svg className={styles.corner} viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+              <path d="M1 1.5h7.5V9" />
+            </svg>
+            <span>View All Case Studies</span>
+          </Link>
+        </div>
+      </div>
+      <div className={styles.grid}>
+        {cards.map((c) => (
+          <CaseCard key={c.client} card={c} />
         ))}
       </div>
     </section>

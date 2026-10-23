@@ -7,6 +7,15 @@
    SEO wordmark or other brand-level lockups appear (nav, footer, etc.) via
    the --brand token below. Everything else stays on Manrope. */
 @font-face {
+  font-family: 'DM Sans';
+  src: url('/fonts/DMSans-Variable.woff2') format('woff2-variations'),
+       url('/fonts/DMSans-Variable.woff2') format('woff2');
+  font-weight: 100 1000;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
   font-family: 'Archivo Black';
   src: url('/fonts/ArchivoBlack-Regular.woff2') format('woff2'),
        url('/fonts/ArchivoBlack-Regular.ttf') format('truetype');

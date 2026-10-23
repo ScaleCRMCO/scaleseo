@@ -1,103 +1,46 @@
-/* "SEO for Professional Service & B2B Businesses" — heading left (same
-   grid as the process and FAQ sections), hairline rows on the right with
-   the industry name and its description side by side. */
+/* Navy section: big heading + lead, then full-width hairline rows */
 .section {
-  padding: 140px 3%;
-  background: var(--bg);
-  color: var(--ink);
+  padding: 96px 40px 72px;
+  background: var(--h-navy);
+  color: var(--h-white);
 }
-
 .aside {
-  margin-bottom: clamp(56px, 7vw, 96px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: end;
+  margin-bottom: 64px;
 }
-
 .heading {
-  font-family: var(--display);
-  font-weight: 800;
-  font-size: clamp(44px, 6.4vw, 96px);
-  line-height: 1;
-  letter-spacing: -0.04em;
-  color: var(--industries-heading, var(--ink));
-  max-width: none;
-  margin-bottom: 28px;
+  font-size: clamp(38px, 4.4vw, 76px);
+  line-height: 1.04;
+  font-weight: 400;
+  letter-spacing: -0.035em;
 }
-
-.introLead {
-  max-width: 520px;
-  font-family: var(--sans);
-  font-weight: 600;
-  font-size: 19px;
-  line-height: 1.6;
-  color: var(--ink);
-}
-
-.rows {
-  border-top: 1px solid var(--line-strong);
-}
-
+.introLead { font-size: clamp(18px, 1.5vw, 24px); line-height: 1.4; max-width: 640px; color: rgba(254, 254, 254, 0.82); }
+.rows { border-top: 1px solid rgba(254, 254, 254, 0.25); }
 .row {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: clamp(24px, 4vw, 72px);
-  align-items: start;
-  padding: 48px 0 56px;
-  border-bottom: 1px solid var(--line-strong);
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  padding: 36px 0;
+  border-bottom: 1px solid rgba(254, 254, 254, 0.25);
 }
-
-.rowTitle {
-  font-family: var(--display);
-  font-weight: 800;
-  font-size: clamp(30px, 3vw, 48px);
-  line-height: 1.1;
-  letter-spacing: -0.025em;
-  color: var(--ink);
-}
-
-.rowBody { max-width: 760px; }
-
-.rowBody p {
-  font-family: var(--sans);
-  font-weight: 500;
-  font-size: clamp(18px, 1.5vw, 22px);
-  line-height: 1.6;
-  color: var(--ink);
-}
-
+.rowTitle { font-size: clamp(26px, 2.4vw, 40px); line-height: 1.1; font-weight: 400; letter-spacing: -0.025em; }
+.rowBody { display: flex; flex-direction: column; align-items: flex-start; gap: 20px; font-size: 17px; line-height: 1.55; color: rgba(254, 254, 254, 0.78); }
 .rowLink {
   display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 24px;
-  padding: 12px 20px;
-  background: var(--row-link-bg, #F5F1E8);
-  color: var(--row-link-ink, #031B36);
-  font-family: var(--mono);
-  font-weight: 700;
-  font-size: 12px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  gap: 16px;
+  padding: 14px 18px;
+  background: var(--h-blue);
+  color: var(--h-white);
   text-decoration: none;
-  transition: background 0.2s ease, color 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
+.rowLink:hover { background: var(--h-white); color: var(--h-navy); }
 
-.rowLink:hover {
-  background: #FF2C16;
-  color: #FFFFFF;
-}
-
-.arrow {
-  transition: transform 0.3s ease;
-}
-
-.rowLink:hover .arrow {
-  transform: translateX(4px);
-}
-
-@media (max-width: 900px) {
-  .row { grid-template-columns: 1fr; gap: 14px; }
-}
-
-@media (max-width: 900px) {
-  .section { padding: 80px 16px; }
-  .row { padding: 32px 0 40px; }
+@media (max-width: 800px) {
+  .section { padding: 64px 16px 48px; }
+  .aside, .row { grid-template-columns: 1fr; gap: 16px; }
+  .aside { margin-bottom: 40px; }
 }

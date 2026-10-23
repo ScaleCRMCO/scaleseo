@@ -1,7 +1,4 @@
-import SketchIcon from "../../components/SketchIcon";
 import styles from "./FAQ.module.css";
-
-const tones = ["blue", "pink", "navy", "orange", "white", "stone"];
 
 // Each answer is a list of paragraphs; the FAQPage schema joins them.
 const faqs: { q: string; a: string[] }[] = [
@@ -86,7 +83,6 @@ export default function FAQ() {
           <h2 className={`${styles.heading} reveal-up`}>
             Frequently Asked Questions
           </h2>
-          <SketchIcon name="question" className={styles.sketch} />
         </div>
 
         {/* RIGHT — accordion; answers stay in the HTML for search engines */}
@@ -94,7 +90,7 @@ export default function FAQ() {
           {faqs.map((item, i) => (
             <details
               key={item.q}
-              className={`${styles.item} ${styles[tones[i % tones.length]]} reveal-up`}
+              className={`${styles.item} reveal-up`}
               name="home-faq"
               open={i === 0}
             >

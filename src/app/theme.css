@@ -88,55 +88,130 @@ body {
   background: var(--canvas);
 }
 
-/* === Section rhythm =====================================================
-   Hero Ivory → Services Powder Blue → Comparison Ivory → About Midnight →
-   Case study Ivory → Campaign areas Light Blue → Industries Midnight →
-   Process Ivory → FAQ Stone → Blog Ivory → Contact Midnight → Footer
-   Midnight */
-
-/* Midnight sections: flip the core tokens */
-.home #about,
-.home #industries,
-footer {
-  --bg: var(--midnight);
-  --bg-elev: var(--midnight-2);
-  --ink: var(--ivory);
-  --ink-dim: rgba(245, 241, 232, 0.72);
-  --ink-faint: rgba(245, 241, 232, 0.55);
-  --accent: var(--ivory);
-  --on-accent: var(--midnight);
-  --line: rgba(245, 241, 232, 0.16);
-  --line-strong: rgba(245, 241, 232, 0.4);
-  --surface-light: var(--midnight-2);
-  --surface-open: var(--midnight-2);
-  --about-heading: var(--orange);
-  --industries-heading: var(--orange);
-  --dots-color: var(--orange);
-  --about-mark: var(--orange);
-  --about-accent: var(--orange);
-  background: var(--midnight);
-  color: var(--ivory);
+/* === Homepage (new brand) =============================================
+   White #FEFEFE, light grey, dominant blue #0099FF, navy #031B36.
+   Section components read the --h-* tokens below. */
+.home {
+  --h-white: #FEFEFE;
+  --h-grey: #F1F3F6;
+  --h-tint: #E9F5FF;
+  --h-blue: #0099FF;
+  --h-navy: #031B36;
+  --h-dim: rgba(3, 27, 54, 0.68);
+  --h-rule: rgba(3, 27, 54, 0.14);
+  --selection-bg: var(--h-blue);
+  --selection-color: var(--h-white);
+  background: var(--h-white);
+  color: var(--h-navy);
+  font-family: 'DM Sans', system-ui, sans-serif;
+}
+.home,
+.home * {
+  font-family: 'DM Sans', system-ui, sans-serif !important;
 }
 
-/* Light canvases */
-.home #comparison,
-.home #work,
-.home #process {
-  --bg: var(--canvas);
-  --bg-dark: var(--canvas);
-  --ink-on-dark: var(--midnight);
-  --ink-dim-on-dark: var(--graphite);
-  --line-on-dark: var(--line-strong);
-  --line-strong-on-dark: var(--midnight);
-  --surface-dark: var(--ivory-2);
-  --surface-dark-hover: var(--stone);
-  background: var(--canvas);
-  color: var(--midnight);
+/* Testimonials (shared component) on the homepage: blue band */
+.home [class*="Testimonials_section"] {
+  background: var(--h-blue);
+  color: var(--h-white);
+  --ink: var(--h-white);
+  --ink-dim: rgba(254, 254, 254, 0.8);
+  --line: rgba(254, 254, 254, 0.35);
+  --line-strong: var(--h-white);
+  font-family: inherit;
 }
+.home [class*="Testimonials_section"] * { font-family: inherit !important; }
+.home [class*="Testimonials_quote"] { font-weight: 400 !important; letter-spacing: -0.02em; }
+.home [class*="Testimonials_arrow"] { border-radius: 0 !important; }
 
-.home #faq {
-  background: #FDFFEE;
-  color: var(--midnight);
+/* Blog tiles on the homepage: grey boxes */
+.home #blog [class*="page_tile"] {
+  background: var(--h-grey);
+  border: 0;
+  border-radius: 0;
+  color: var(--h-navy);
+}
+.home #blog [class*="page_tile"]:hover { background: var(--h-tint); }
+.home #blog [class*="page_tick"] { display: none; }
+.home #blog [class*="page_tileTitle"] { font-weight: 400; letter-spacing: -0.02em; }
+
+/* Contact (shared component) on the homepage: navy box | blue box */
+.home #contact {
+  --bg: var(--h-white);
+  --ink: var(--h-white);
+  --ink-dim: rgba(254, 254, 254, 0.8);
+  --line: rgba(254, 254, 254, 0.3);
+  --highlight: var(--h-navy);
+  --on-highlight: var(--h-white);
+  background: var(--h-white);
+  color: var(--h-white);
+  padding: 40px;
+}
+.home #contact > div { gap: 28px; align-items: stretch; }
+.home #contact [class*="ContactCta_left"],
+.home #contact [class*="ContactCta_right"] {
+  --navy: #FEFEFE;
+  --rule: rgba(254, 254, 254, 0.4);
+  --rule-soft: rgba(254, 254, 254, 0.25);
+}
+.home #contact [class*="ContactCta_left"] {
+  padding: 28px 24px;
+  background: var(--h-navy);
+  color: var(--h-white);
+}
+.home #contact [class*="ContactCta_right"] {
+  padding: 28px 24px;
+  background: var(--h-blue);
+  color: var(--h-white);
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+.home #contact [class*="ContactCta_headline"] {
+  font-size: clamp(34px, 3.4vw, 58px);
+  line-height: 1.06;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  color: var(--h-white);
+  margin-bottom: 40px;
+}
+.home #contact [class*="ContactCta_headline"] em { font-style: normal; color: var(--h-blue); }
+.home #contact [class*="ContactCta_sketchWrap"] { display: none; }
+.home #contact [class*="ContactCta_bookCard"],
+.home #contact [class*="ContactCta_method"]:not([class*="Icon"]):not([class*="Body"]):not([class*="Label"]):not([class*="Value"]):not([class*="Arrow"]) {
+  border-radius: 0;
+  background: rgba(254, 254, 254, 0.08);
+  border-color: rgba(254, 254, 254, 0.2);
+  color: var(--h-white);
+}
+.home #contact [class*="ContactCta_bookCard"] { background: var(--h-blue); border-color: var(--h-blue); }
+.home #contact [class*="Icon"] { border-radius: 0; }
+.home #contact a { color: inherit; }
+.home #contact input,
+.home #contact textarea {
+  border-radius: 0;
+  background: var(--h-white);
+  color: var(--h-navy);
+  border-color: transparent;
+}
+.home #contact label,
+.home #contact [class*="ContactCta_formHeadline"] { color: var(--h-white); }
+.home #contact [class*="ContactCta_tag"] {
+  border-radius: 0;
+  background: transparent;
+  border-color: rgba(254, 254, 254, 0.6);
+  color: var(--h-white);
+}
+.home #contact [class*="ContactCta_tagActive"] { background: var(--h-white); color: var(--h-navy); }
+.home #contact [class*="ContactCta_submit"] {
+  border-radius: 0;
+  background: var(--h-navy);
+  color: var(--h-white);
+}
+.home #contact [class*="ContactCta_submit"]:hover { background: var(--h-white); color: var(--h-navy); }
+.home #contact [class*="ContactCta_status"] { color: var(--h-white); }
+@media (max-width: 900px) {
+  .home #contact { padding: 16px; }
 }
 
 /* Square section edges — rounded corners stay on cards/buttons only */
@@ -149,69 +224,13 @@ footer {
 }
 
 /* Hairline between stacked sections of the same colour */
-.home #process + #faq,
 footer {
   border-top: 1px solid rgba(245, 241, 232, 0.12);
-}
-
-/* Process step numbers in the brand accent */
-.home #process {
-  --process-num: var(--orange);
-}
-
-/* Industries row buttons: Ivory on Midnight (no pure white) */
-.home #industries {
-  --row-link-bg: var(--ivory);
-  --row-link-ink: var(--midnight);
 }
 
 /* Footer wordmark fully in the brand orange */
 footer [class*="wordmark"] {
   color: var(--orange);
-}
-
-/* Contact CTA on the light blue canvas, Midnight text, no orange */
-.home #contact {
-  --bg: var(--powder);
-  --ink: var(--midnight);
-  --ink-dim: var(--midnight);
-  --highlight: var(--midnight);
-  --on-highlight: var(--ivory);
-  --selection-bg: var(--midnight);
-  --selection-color: var(--ivory);
-  background: var(--powder);
-  color: var(--midnight);
-}
-
-/* "What goes into a campaign" on the light blue canvas with Midnight text */
-.home #campaign {
-  --bg: var(--powder);
-  --bg-elev: var(--ivory);
-  --bg-dark: var(--powder);
-  --ink: var(--midnight);
-  --ink-dim: var(--midnight);
-  --ink-on-dark: var(--midnight);
-  --ink-dim-on-dark: var(--midnight);
-  --surface-dark: var(--ivory);
-  --surface-dark-hover: var(--ivory-2);
-  --surface-light: var(--ivory);
-  --line: rgba(3, 27, 54, 0.18);
-  background: var(--powder);
-  color: var(--midnight);
-}
-
-/* No orange in light blue sections: accents there are Midnight */
-.home #campaign {
-  --highlight: var(--midnight);
-  --on-highlight: var(--ivory);
-}
-
-/* Industries corner dots: larger patch that fades out more gradually */
-.home #industries {
-  --dots-w: min(58vw, 860px);
-  --dots-mask: radial-gradient(circle at top right, #000 0%, #000 38%, transparent 92%);
-  --dots-w-sm: 60vw;
-  --dots-opacity-sm: 0.8;
 }
 
 /* Highlighted heading words: plain orange text, no box (see .title-block) */
