@@ -7,10 +7,10 @@
 .footer {
   /* Brand palette set here so the footer is identical on every page */
   --bg-dark: #031B36;
-  --ink-on-dark: #F5F1E8;
-  --ink-dim-on-dark: rgba(245, 241, 232, 0.72);
-  --highlight: #FF2C16;
-  --on-highlight: #F5F1E8;
+  --ink-on-dark: #FEFEFE;
+  --ink-dim-on-dark: rgba(254, 254, 254, 0.6);
+  --highlight: #0099FF;
+  --on-highlight: #FEFEFE;
   --footer-glow:
     radial-gradient(110% 100% at 100% 100%, rgba(255, 44, 22, 0.95) 0%, rgba(255, 44, 22, 0.6) 28%, rgba(255, 44, 22, 0.2) 55%, transparent 78%),
     radial-gradient(60% 50% at 70% 115%, rgba(255, 44, 22, 0.25) 0%, transparent 70%);
@@ -19,7 +19,8 @@
 
   position: relative;
   overflow: hidden;
-  margin-top: -48px;
+  margin-top: 0;
+  font-family: 'DM Sans', system-ui, sans-serif;
   border-radius: 0;
   background: var(--bg-dark);
   color: var(--ink-on-dark);
@@ -29,6 +30,7 @@
 /* Layered radial glows: soft haze across the lower half, strongest lime
    in the bottom-right corner */
 .glow {
+  display: none;
   position: absolute;
   inset: 0;
   z-index: -2;
@@ -40,6 +42,7 @@
 
 /* Fine film grain over the gradient */
 .grain {
+  display: none;
   position: absolute;
   inset: 0;
   z-index: -1;
@@ -50,6 +53,7 @@
 }
 
 .inner {
+  position: relative;
   /* Full width with the same 3% gutters as the wide page sections */
   padding: 140px 3% 36px;
 }
@@ -59,18 +63,18 @@
   display: inline-flex;
   flex-wrap: wrap;
   column-gap: 0.28em;
-  font-family: var(--brand);
+  font-family: 'DM Sans', system-ui, sans-serif;
   font-weight: 400;
-  font-size: clamp(64px, 9vw, 150px);
-  line-height: 0.88;
-  letter-spacing: -0.03em;
-  color: var(--highlight);
+  font-size: clamp(64px, 11vw, 180px);
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+  color: var(--ink-on-dark);
   text-decoration: none;
   user-select: none;
 }
 
 .wordmarkAccent {
-  color: var(--highlight);
+  color: var(--ink-on-dark);
 }
 
 /* === Links + mark ======================================================= */
@@ -96,18 +100,16 @@
 }
 
 .colLabel {
-  font-family: var(--mono);
-  font-weight: 700;
-  font-size: 12px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 14px;
   color: var(--ink-dim-on-dark);
   margin-bottom: 10px;
 }
 
 .colText,
 .colLink {
-  font-family: var(--display);
+  font-family: inherit;
   font-size: 17px;
   line-height: 1.4;
   color: var(--ink-on-dark);
@@ -118,7 +120,7 @@
 }
 
 .colLink {
-  font-weight: 600;
+  font-weight: 400;
   text-decoration: none;
   width: fit-content;
   transition: color 0.3s ease;
@@ -136,7 +138,8 @@
 .mark {
   width: clamp(180px, 20vw, 300px);
   height: auto;
-  filter: drop-shadow(0 12px 24px rgba(3, 27, 54, 0.55));
+  filter: brightness(0) invert(1);
+
 }
 
 /* === Bottom bar ========================================================= */
@@ -147,12 +150,10 @@
   gap: 16px 32px;
   margin-top: 96px;
   padding-top: 22px;
-  border-top: 1px solid rgba(255, 255, 255, 0.14);
-  font-family: var(--sans);
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  border-top: 1px solid rgba(254, 254, 254, 0.2);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 400;
 }
 
 .copy {
@@ -176,7 +177,7 @@
 }
 
 .llmLink:hover {
-  opacity: 0.7;
+  color: var(--highlight);
 }
 
 .preferredSource {
@@ -199,7 +200,7 @@
 
 @media (max-width: 900px) {
   .footer {
-    border-radius: 32px 32px 0 0;
+    border-radius: 0;
   }
   .inner {
     padding: 96px 24px 28px;

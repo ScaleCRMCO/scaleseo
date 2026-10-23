@@ -225,12 +225,7 @@ footer {
 
 /* Hairline between stacked sections of the same colour */
 footer {
-  border-top: 1px solid rgba(245, 241, 232, 0.12);
-}
-
-/* Footer wordmark fully in the brand orange */
-footer [class*="wordmark"] {
-  color: var(--orange);
+  border-top: 0;
 }
 
 /* Highlighted heading words: plain orange text, no box (see .title-block) */
