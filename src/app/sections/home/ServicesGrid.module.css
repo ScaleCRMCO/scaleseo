@@ -39,9 +39,13 @@
   background: var(--h-tint);
   color: var(--h-navy);
   text-decoration: none;
-  transition: background-color 0.25s ease;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
-.cell:hover { background: var(--h-white); }
+.cell:hover { background: var(--h-navy); color: var(--h-white); }
+.cell:hover .cellIndex,
+.cell:hover .cellDesc { color: rgba(254, 254, 254, 0.72); }
+.cell:hover .cellLink { border-top-color: rgba(254, 254, 254, 0.3); }
+.cellIndex, .cellDesc, .cellLink { transition: color 0.25s ease, border-color 0.25s ease; }
 .cellIndex { font-size: 15px; color: var(--h-dim); }
 .cellTitle {
   margin-top: 12px;
