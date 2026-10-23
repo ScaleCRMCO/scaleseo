@@ -9,7 +9,48 @@ const Corner = () => (
 export default function Hero() {
   return (
     <header className={styles.hero}>
-      <div className={styles.split}>
+      {/* Brand intro: giant wordmark left, one-line summary right */}
+      <div className={styles.brandRow}>
+        <div className={styles.wordmark} aria-hidden="true">Scale SEO</div>
+        <div className={styles.brandSide}>
+          <p className={styles.brandLine}>
+            An independent SEO practice for professional service and B2B
+            businesses.
+          </p>
+          <p className={styles.brandNote}>
+            Founder-led SEO
+            <br />
+            since 2025
+          </p>
+        </div>
+      </div>
+
+      {/* Proof band: full-width grey band with the data image and a stat card */}
+      <figure className={styles.band}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/images/gsc-performance-mockup-3d.webp"
+          alt="Google Search Console performance data showing clicks and impressions growth"
+          className={styles.bandImg}
+        />
+        <div className={styles.card}>
+          <div className={styles.cardTag}>
+            <Corner />
+            <span>Results</span>
+          </div>
+          <div className={styles.cardBody}>
+            <span className={styles.cardValue}>+125%</span>
+            <span className={styles.cardLabel}>
+              Search impressions for an accounting firm
+            </span>
+            <figcaption className={styles.cardCaption}>
+              Real Google Search Console Data
+            </figcaption>
+          </div>
+        </div>
+      </figure>
+
+      <div className={`${styles.split} ${styles.splitBelow}`}>
         <div className={styles.left}>
           <h1 className={styles.title}>
             Calgary SEO Expert&nbsp;–
@@ -46,30 +87,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Proof band: full-width grey band with the data image and a stat card */}
-      <figure className={styles.band}>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/images/gsc-performance-mockup-3d.webp"
-          alt="Google Search Console performance data showing clicks and impressions growth"
-          className={styles.bandImg}
-        />
-        <div className={styles.card}>
-          <div className={styles.cardTag}>
-            <Corner />
-            <span>Results</span>
-          </div>
-          <div className={styles.cardBody}>
-            <span className={styles.cardValue}>+125%</span>
-            <span className={styles.cardLabel}>
-              Search impressions for an accounting firm
-            </span>
-            <figcaption className={styles.cardCaption}>
-              Real Google Search Console Data
-            </figcaption>
-          </div>
-        </div>
-      </figure>
     </header>
   );
 }

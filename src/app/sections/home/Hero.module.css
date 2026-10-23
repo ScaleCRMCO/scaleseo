@@ -136,3 +136,39 @@
   .card { position: static; transform: none; width: 100%; grid-template-columns: 1fr; }
   .cardTag { min-height: 90px; }
 }
+
+/* Brand intro row (top of page) */
+.brandRow {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  border-bottom: 1px solid var(--h-rule);
+}
+.wordmark {
+  padding: 32px 40px 40px;
+  border-right: 1px solid var(--h-rule);
+  font-size: clamp(72px, 15vw, 270px);
+  line-height: 0.9;
+  letter-spacing: -0.06em;
+  white-space: nowrap;
+}
+.brandSide {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 40px;
+}
+.brandLine { font-size: clamp(22px, 2.2vw, 36px); line-height: 1.15; letter-spacing: -0.015em; }
+.brandNote { font-size: 17px; line-height: 1.35; }
+
+/* H1 + intro section after the proof band */
+.splitBelow { border-top: 0; }
+.splitBelow .left { padding-top: 72px; }
+.splitBelow .right { padding-top: 72px; }
+
+@media (max-width: 1000px) {
+  .brandRow { grid-template-columns: 1fr; }
+  .wordmark { border-right: 0; border-bottom: 1px solid var(--h-rule); padding: 24px 16px 28px; font-size: 22vw; }
+  .brandSide { padding: 24px 16px 32px; }
+  .splitBelow .left, .splitBelow .right { padding-top: 40px; }
+}
