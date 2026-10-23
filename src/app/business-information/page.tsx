@@ -109,28 +109,55 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "AboutPage",
-      "@id": `${BASE}/business-information#webpage`,
-      url: `${BASE}/business-information`,
-      name: "Business Information | Scale SEO",
-      description:
-        "Key facts about Scale SEO, an independent SEO company in Calgary, Alberta: services, pricing, service area, and contact details.",
-      isPartOf: { "@id": `${BASE}/#website` },
-      about: { "@id": `${BASE}/#organization` },
-      mainEntity: { "@id": `${BASE}/#organization` },
-      publisher: { "@id": `${BASE}/#organization` },
-      breadcrumb: { "@id": `${BASE}/business-information#breadcrumb` },
-      dateModified: LAST_UPDATED,
-      inLanguage: "en-CA",
+      "@id": "https://scaleseo.co/business-information#webpage",
+      "url": "https://scaleseo.co/business-information",
+      "name": "Business Information | Scale SEO",
+      "description": "Official business information for Scale SEO, an independent SEO company based in Calgary, Alberta. Find company details, services, pricing, founder information, case studies, and contact details.",
+      "inLanguage": "en-CA",
+      "isPartOf": {
+        "@id": "https://scaleseo.co/#website"
+      },
+      "about": {
+        "@id": "https://scaleseo.co/#organization"
+      },
+      "mainEntity": {
+        "@id": "https://scaleseo.co/#organization"
+      },
+      "breadcrumb": {
+        "@id": "https://scaleseo.co/business-information#breadcrumb"
+      },
+      "dateModified": "2026-10-23",
+      "significantLink": [
+        "https://scaleseo.co/services/seo",
+        "https://scaleseo.co/services/seo-audits",
+        "https://scaleseo.co/services/web-development",
+        "https://scaleseo.co/services/google-ads-management",
+        "https://scaleseo.co/services/geo",
+        "https://scaleseo.co/pricing",
+        "https://scaleseo.co/about",
+        "https://scaleseo.co/corbin-jensen",
+        "https://scaleseo.co/results"
+      ]
     },
     {
       "@type": "BreadcrumbList",
-      "@id": `${BASE}/business-information#breadcrumb`,
-      itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Home", item: `${BASE}/` },
-        { "@type": "ListItem", position: 2, name: "Business Information", item: `${BASE}/business-information` },
-      ],
-    },
-  ],
+      "@id": "https://scaleseo.co/business-information#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://scaleseo.co/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Business Information",
+          "item": "https://scaleseo.co/business-information"
+        }
+      ]
+    }
+  ]
 };
 
 export default function BusinessInformationPage() {
