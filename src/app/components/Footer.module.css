@@ -91,7 +91,7 @@
   text-decoration: none;
   white-space: nowrap;
 }
-.mark { width: 0.78em; height: 0.78em; margin-right: 0.06em; }
+.mark { height: 0.78em; width: auto; margin-right: 0.06em; }
 
 .bottom {
   display: flex;

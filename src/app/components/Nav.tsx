@@ -61,7 +61,7 @@ export default function Nav() {
       <nav className={`${styles.nav} ${open ? styles.menuOpen : ""}`}>
         <Link href="/" className={styles.brand} onClick={close}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/brand/scaleseo-logo-square-2026.svg" alt="" className={styles.brandMark} />
+          <img src="/brand/scaleseo-logo-2026.svg" alt="" className={styles.brandMark} />
           <span className={styles.wordmark}>Scale SEO</span>
         </Link>
 

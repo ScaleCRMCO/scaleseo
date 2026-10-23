@@ -98,7 +98,7 @@ export default function Footer() {
         {/* Giant wordmark across the bottom */}
         <Link href="/" className={styles.wordmark} aria-label="Scale SEO home">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/brand/scaleseo-logo-square-2026.svg" alt="" className={styles.mark} />
+          <img src="/brand/scaleseo-logo-2026.svg" alt="" className={styles.mark} />
           <span>Scale SEO</span>
         </Link>
       </div>
