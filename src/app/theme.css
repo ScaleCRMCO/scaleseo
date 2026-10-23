@@ -91,7 +91,7 @@ body {
 /* === Homepage (new brand) =============================================
    White #FEFEFE, light grey, dominant blue #0099FF, navy #031B36.
    Section components read the --h-* tokens below. */
-.home {
+:is(.home, .v2) {
   --h-white: #FEFEFE;
   --h-grey: #F1F3F6;
   --h-tint: #E9F5FF;
@@ -105,13 +105,13 @@ body {
   color: var(--h-navy);
   font-family: 'DM Sans', system-ui, sans-serif;
 }
-.home,
-.home * {
+:is(.home, .v2),
+:is(.home, .v2) * {
   font-family: 'DM Sans', system-ui, sans-serif !important;
 }
 
 /* Testimonials (shared component) on the homepage: blue band */
-.home [class*="Testimonials_section"] {
+:is(.home, .v2) [class*="Testimonials_section"] {
   background: var(--h-blue);
   color: var(--h-white);
   --ink: var(--h-white);
@@ -120,13 +120,13 @@ body {
   --line-strong: var(--h-white);
   font-family: inherit;
 }
-.home [class*="Testimonials_section"] * { font-family: inherit !important; }
-.home [class*="Testimonials_quote"] { font-weight: 400 !important; letter-spacing: -0.02em; }
-.home [class*="Testimonials_arrow"] { border-radius: 0 !important; }
+:is(.home, .v2) [class*="Testimonials_section"] * { font-family: inherit !important; }
+:is(.home, .v2) [class*="Testimonials_quote"] { font-weight: 400 !important; letter-spacing: -0.02em; }
+:is(.home, .v2) [class*="Testimonials_arrow"] { border-radius: 0 !important; }
 
 /* Blog tiles on the homepage: clean left-aligned grey boxes
    (category, title, excerpt; date and link on a hairline footer) */
-.home #blog [class*="page_tile__"] {
+:is(.home, .v2) #blog [class*="page_tile__"] {
   align-items: stretch;
   text-align: left;
   min-height: 460px;
@@ -137,10 +137,10 @@ body {
   color: var(--h-navy);
   transition: background-color 0.25s ease;
 }
-.home #blog [class*="page_tile__"]:hover { background: var(--h-tint); }
-.home #blog [class*="page_tick"],
-.home #blog [class*="page_tileIcon"] { display: none; }
-.home #blog [class*="page_tileCategory"] {
+:is(.home, .v2) #blog [class*="page_tile__"]:hover { background: var(--h-tint); }
+:is(.home, .v2) #blog [class*="page_tick"],
+:is(.home, .v2) #blog [class*="page_tileIcon"] { display: none; }
+:is(.home, .v2) #blog [class*="page_tileCategory"] {
   margin-bottom: 20px;
   font-size: 15px;
   font-weight: 400;
@@ -148,14 +148,14 @@ body {
   text-transform: none;
   color: var(--h-blue);
 }
-.home #blog [class*="page_tileTitle"] {
+:is(.home, .v2) #blog [class*="page_tileTitle"] {
   margin-bottom: 20px;
   font-size: clamp(26px, 2.2vw, 34px);
   line-height: 1.12;
   font-weight: 400;
   letter-spacing: -0.025em;
 }
-.home #blog [class*="page_tileExcerpt"] {
+:is(.home, .v2) #blog [class*="page_tileExcerpt"] {
   max-width: none;
   margin-bottom: 32px;
   font-size: 16px;
@@ -163,7 +163,7 @@ body {
   line-height: 1.55;
   color: var(--h-dim);
 }
-.home #blog [class*="page_tileMeta"] {
+:is(.home, .v2) #blog [class*="page_tileMeta"] {
   margin: auto 0 0;
   padding-top: 18px;
   border-top: 1px solid var(--h-rule);
@@ -173,7 +173,7 @@ body {
   text-transform: none;
   color: var(--h-dim);
 }
-.home #blog [class*="page_tileLink"] {
+:is(.home, .v2) #blog [class*="page_tileLink"] {
   margin-top: 10px;
   align-self: flex-start;
   border: 0;
@@ -183,7 +183,7 @@ body {
 }
 
 /* Contact (shared component) on the homepage: navy box | blue box */
-.home #contact {
+:is(.home, .v2) #contact {
   --bg: var(--h-white);
   --ink: var(--h-white);
   --ink-dim: rgba(254, 254, 254, 0.8);
@@ -194,19 +194,19 @@ body {
   color: var(--h-white);
   padding: 40px;
 }
-.home #contact > div { gap: 28px; align-items: stretch; }
-.home #contact [class*="ContactCta_left"],
-.home #contact [class*="ContactCta_right"] {
+:is(.home, .v2) #contact > div { gap: 28px; align-items: stretch; }
+:is(.home, .v2) #contact [class*="ContactCta_left"],
+:is(.home, .v2) #contact [class*="ContactCta_right"] {
   --navy: #FEFEFE;
   --rule: rgba(254, 254, 254, 0.4);
   --rule-soft: rgba(254, 254, 254, 0.25);
 }
-.home #contact [class*="ContactCta_left"] {
+:is(.home, .v2) #contact [class*="ContactCta_left"] {
   padding: 28px 24px;
   background: var(--h-navy);
   color: var(--h-white);
 }
-.home #contact [class*="ContactCta_right"] {
+:is(.home, .v2) #contact [class*="ContactCta_right"] {
   padding: 28px 24px;
   background: var(--h-blue);
   color: var(--h-white);
@@ -214,7 +214,7 @@ body {
   border-radius: 0;
   box-shadow: none;
 }
-.home #contact [class*="ContactCta_headline"] {
+:is(.home, .v2) #contact [class*="ContactCta_headline"] {
   font-size: clamp(34px, 3.4vw, 58px);
   line-height: 1.06;
   font-weight: 400;
@@ -222,43 +222,43 @@ body {
   color: var(--h-white);
   margin-bottom: 40px;
 }
-.home #contact [class*="ContactCta_headline"] em { font-style: normal; color: var(--h-blue); }
-.home #contact [class*="ContactCta_sketchWrap"] { display: none; }
-.home #contact [class*="ContactCta_bookCard"],
-.home #contact [class*="ContactCta_method"]:not([class*="Icon"]):not([class*="Body"]):not([class*="Label"]):not([class*="Value"]):not([class*="Arrow"]) {
+:is(.home, .v2) #contact [class*="ContactCta_headline"] em { font-style: normal; color: var(--h-blue); }
+:is(.home, .v2) #contact [class*="ContactCta_sketchWrap"] { display: none; }
+:is(.home, .v2) #contact [class*="ContactCta_bookCard"],
+:is(.home, .v2) #contact [class*="ContactCta_method"]:not([class*="Icon"]):not([class*="Body"]):not([class*="Label"]):not([class*="Value"]):not([class*="Arrow"]) {
   border-radius: 0;
   background: rgba(254, 254, 254, 0.08);
   border-color: rgba(254, 254, 254, 0.2);
   color: var(--h-white);
 }
-.home #contact [class*="ContactCta_bookCard"] { background: var(--h-blue); border-color: var(--h-blue); }
-.home #contact [class*="Icon"] { border-radius: 0; }
-.home #contact a { color: inherit; }
-.home #contact input,
-.home #contact textarea {
+:is(.home, .v2) #contact [class*="ContactCta_bookCard"] { background: var(--h-blue); border-color: var(--h-blue); }
+:is(.home, .v2) #contact [class*="Icon"] { border-radius: 0; }
+:is(.home, .v2) #contact a { color: inherit; }
+:is(.home, .v2) #contact input,
+:is(.home, .v2) #contact textarea {
   border-radius: 0;
   background: var(--h-white);
   color: var(--h-navy);
   border-color: transparent;
 }
-.home #contact label,
-.home #contact [class*="ContactCta_formHeadline"] { color: var(--h-white); }
-.home #contact [class*="ContactCta_tag"] {
+:is(.home, .v2) #contact label,
+:is(.home, .v2) #contact [class*="ContactCta_formHeadline"] { color: var(--h-white); }
+:is(.home, .v2) #contact [class*="ContactCta_tag"] {
   border-radius: 0;
   background: transparent;
   border-color: rgba(254, 254, 254, 0.6);
   color: var(--h-white);
 }
-.home #contact [class*="ContactCta_tagActive"] { background: var(--h-white); color: var(--h-navy); }
-.home #contact [class*="ContactCta_submit"] {
+:is(.home, .v2) #contact [class*="ContactCta_tagActive"] { background: var(--h-white); color: var(--h-navy); }
+:is(.home, .v2) #contact [class*="ContactCta_submit"] {
   border-radius: 0;
   background: var(--h-navy);
   color: var(--h-white);
 }
-.home #contact [class*="ContactCta_submit"]:hover { background: var(--h-white); color: var(--h-navy); }
-.home #contact [class*="ContactCta_status"] { color: var(--h-white); }
+:is(.home, .v2) #contact [class*="ContactCta_submit"]:hover { background: var(--h-white); color: var(--h-navy); }
+:is(.home, .v2) #contact [class*="ContactCta_status"] { color: var(--h-white); }
 @media (max-width: 900px) {
-  .home #contact { padding: 16px; }
+  :is(.home, .v2) #contact { padding: 16px; }
 }
 
 /* Square section edges — rounded corners stay on cards/buttons only */
