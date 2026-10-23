@@ -33,6 +33,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/about`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/contact`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/privacy-policy`, lastModified: now, changeFrequency: "yearly", priority: 0.2 },
-    { url: `${base}/llm-info`, lastModified: now, changeFrequency: "monthly", priority: 0.3 },
+    { url: `${base}/business-information`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
   ];
 }

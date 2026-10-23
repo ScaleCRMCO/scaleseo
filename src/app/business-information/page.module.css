@@ -1,0 +1,147 @@
+.section {
+  padding: 96px 3% 120px;
+  background: #fdffee;
+  color: #031b36;
+}
+
+.body {
+  max-width: 860px;
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 1.7;
+  color: #3e474d;
+}
+
+.body h2 {
+  margin: 64px 0 18px;
+  padding-top: 24px;
+  border-top: 2px solid #031b36;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(26px, 2.6vw, 36px);
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: #031b36;
+}
+
+.body h2:first-child {
+  margin-top: 0;
+}
+
+.body h3 {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 21px;
+  color: #031b36;
+}
+
+.body p {
+  margin: 0 0 14px;
+}
+
+.body ul {
+  list-style: none;
+  padding: 0;
+  margin: 4px 0 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.body li {
+  position: relative;
+  padding-left: 24px;
+  font-weight: 600;
+  color: #031b36;
+}
+
+.body li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 8px;
+  height: 8px;
+  background: #ff2c16;
+}
+
+.body a {
+  color: #031b36;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.body a:hover {
+  color: #ff2c16;
+}
+
+/* Key facts table */
+.facts {
+  margin: 0;
+  border-top: 1px solid rgba(3, 27, 54, 0.2);
+}
+
+.fact {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 24px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(3, 27, 54, 0.2);
+}
+
+.fact dt {
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 12.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #031b36;
+  padding-top: 4px;
+}
+
+.fact dd {
+  margin: 0;
+  font-weight: 600;
+  color: #031b36;
+}
+
+/* Services list: no bullets, ruled rows */
+.body .services {
+  gap: 0;
+  border-top: 1px solid rgba(3, 27, 54, 0.2);
+}
+
+.body .services li {
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(3, 27, 54, 0.2);
+  font-weight: 500;
+  color: #3e474d;
+}
+
+.body .services li::before {
+  display: none;
+}
+
+.price {
+  margin: 4px 0 8px !important;
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #ff2c16;
+}
+
+.body .columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 32px;
+}
+
+@media (max-width: 700px) {
+  .section { padding: 64px 16px 80px; }
+  .fact { grid-template-columns: 1fr; gap: 4px; }
+  .body .columns { grid-template-columns: 1fr; }
+}

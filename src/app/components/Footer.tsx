@@ -86,7 +86,7 @@ export default function Footer() {
             <Link href="/privacy-policy" className={styles.privacyLink}>Privacy Policy</Link>
           </div>
           <div className={styles.taglineGroup}>
-            <Link href="/llm-info" className={styles.llmLink}>LLM Info</Link>
+            <Link href="/business-information" className={styles.llmLink}>Business Information</Link>
             <span className={styles.tagline}>SEO for Calgary · Serving Canada</span>
           </div>
           {/* Google "Add to Preferred Sources" button */}
