@@ -1,13 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import PageHero from "../../components/PageHero";
-import RevealOnScroll from "../../components/RevealOnScroll";
+import Breadcrumbs from "../../components/Breadcrumbs";
 import ServicesFaq, { type FaqItem } from "../ServicesFaq";
-// Section/card system shared with the /services hub so both pages match.
-import hub from "../page.module.css";
-import styles from "./page.module.css";
-import grid from "../../sections/home/ServicesGrid.module.css";
-import cs from "../../results/caseStudy.module.css";
+// Shared service page template (new brand)
+import t from "../svc.module.css";
 import Contact from "../../components/ContactCta";
 
 export const metadata: Metadata = {
@@ -20,13 +16,6 @@ export const metadata: Metadata = {
 const BOOKING_URL = "https://cal.com/corbinjensen-scaleseo/30min";
 
 /* === Content ============================================================ */
-
-const flow = [
-  "Relevant searches",
-  "The right pages",
-  "Qualified organic traffic",
-  "Real business opportunities",
-];
 
 const included: { title: string; body: string; icon: string }[] = [
   {
@@ -65,8 +54,6 @@ const included: { title: string; body: string; icon: string }[] = [
     icon: "caseStudy",
   },
 ];
-
-const scenarioTones = ["toneBlue", "tonePink", "toneNavy", "toneOrange"];
 
 const scenarios = [
   "If important pages aren’t being indexed correctly, publishing more blog content probably isn’t the first priority.",
@@ -384,96 +371,123 @@ const seoJsonLd = {
 
 /* === Page =============================================================== */
 
+const Corner = () => (
+  <svg className={t.corner} viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+    <path d="M1 1.5h7.5V9" />
+  </svg>
+);
+
+const chips = ["Strategy", "Technical SEO", "On-Page", "Content", "Local SEO", "Conversion", "Reporting"];
+
 export default function SeoServicePage() {
-
-
   return (
-    <main>
+    <main className="v2">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(seoJsonLd) }}
       />
 
-      <PageHero
-        breadcrumbs={[
-          { name: "Home", href: "/" },
-          { name: "Services", href: "/services" },
-          { name: "SEO" },
-        ]}
-        breadcrumbSchema={false}
-        title={
-          <>
-            SEO Services in <span className="title-block">Calgary</span>
-          </>
-        }
-        icon="search"
-        actions={
-          <>
-            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
-              <span>Book a Strategy Call</span>
-              <span>→</span>
-            </a>
-            <a href="#results">
-              <span>View Client Results</span>
-              <span>↓</span>
-            </a>
-          </>
-        }
-      >
-        <p>
-          Scale SEO provides ongoing SEO campaign management for professional
-          service and B2B businesses in Calgary and across Canada.
-        </p>
-      </PageHero>
+      {/* === HERO — breadcrumbs + big title, then a full-width image band === */}
+      <header>
+        <div className={t.hero}>
+          <div className={t.crumbs}>
+            <Breadcrumbs
+              items={[
+                { name: "Home", href: "/" },
+                { name: "Services", href: "/services" },
+                { name: "SEO" },
+              ]}
+              schema={false}
+            />
+          </div>
+          <h1 className={t.title}>SEO Services in Calgary</h1>
+        </div>
+        <div className={t.band}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/google-search-console-empire-accountants-data-case-study.png"
+            alt="Google Search Console performance report for an SEO campaign"
+          />
+        </div>
+      </header>
 
-      {/* === WHAT'S INCLUDED — homepage services grid on the light canvas === */}
-      <section className={`${grid.section} ${styles.inclGrid}`} id="included">
-        <div className={grid.intro}>
-          <h2 className={grid.introTitle}>
-            What&rsquo;s Included in an Ongoing SEO Campaign?
-          </h2>
-          <div className={grid.introBody}>
-            <p>
-              Every campaign is built around your website, market, and
-              competitors. These are the areas the work draws on, with
-              priorities set by what will move results most each month.
-            </p>
+      {/* === INTRO — chips + stat left, intro + CTA right === */}
+      <section className={t.split} style={{ padding: 0 }}>
+        <div className={t.splitLeft}>
+          <div className={t.chips}>
+            {chips.map((c) => (
+              <span key={c} className={t.chip}>{c}</span>
+            ))}
+          </div>
+          <div>
+            <div className={t.stat}>Page 5 → 1</div>
+            <p className={t.statLabel}>Target keyword rankings for an accounting firm</p>
           </div>
         </div>
-
-        <div className={grid.grid}>
-          {included.map((item, i) => (
-            <article key={item.title} className={grid.cell}>
-              <span className={grid.cellIndex}>{String(i + 1).padStart(2, "0")}</span>
-              <h3 className={grid.cellTitle}>{item.title}</h3>
-              <p className={grid.cellDesc}>{item.body}</p>
-            </article>
-          ))}
-          <article className={`${grid.cell} ${styles.inclCta}`}>
-            <span className={grid.cellIndex}>Pricing</span>
-            <h3 className={grid.cellTitle}>
-              Campaigns start from $2,000 + GST per month.
-            </h3>
-            <p className={grid.cellDesc}>
-              Month-to-month, scoped around your business, and run directly by
-              me &mdash; no junior account managers.
-            </p>
-            <Link href="/pricing" className={grid.cellLink}>
-              See SEO pricing →
-            </Link>
-          </article>
+        <div className={t.splitRight}>
+          <p className={t.lead}>
+            Scale SEO provides ongoing SEO campaign management for professional
+            service and B2B businesses in Calgary and across Canada.
+          </p>
+          <div className={t.boxRow}>
+            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className={`${t.box} ${t.boxNavy}`}>
+              <Corner />
+              <span>Book a Strategy Call</span>
+            </a>
+            <a href="#results" className={`${t.box} ${t.boxGrey}`}>
+              <Corner />
+              <span>View Client Results</span>
+            </a>
+          </div>
         </div>
       </section>
 
-      {/* === HOW I DECIDE WHAT TO WORK ON — coloured cards === */}
-      <section className={`${hub.section} ${hub.light} ${cs.workSection}`}>
-        <div className={cs.workSplit}>
-          <div className={cs.workAside}>
-            <div className="section-label reveal-up">Monthly Priorities</div>
-            <h2 className={`${hub.h2} ${cs.bigH2} ${hub.comboH2} reveal-up`}>
-              How I Decide What to Work on Each Month
-            </h2>
-            <div className={`${hub.comboIntro} reveal-up`}>
+      {/* === WHAT'S INCLUDED — big heading + ruled rows === */}
+      <section className={t.listSection} id="included" style={{ padding: 0 }}>
+        <div className={t.listHead}>
+          <h2 className={t.h2}>What&rsquo;s Included in an Ongoing SEO Campaign?</h2>
+          <p className={`${t.lead} ${t.listIntro}`}>
+            Every campaign is built around your website, market, and
+            competitors. These are the areas the work draws on, with
+            priorities set by what will move results most each month.
+          </p>
+        </div>
+        <div className={t.rows}>
+          {included.map((item, i) => (
+            <div key={item.title} className={t.row}>
+              <div>
+                <span className={t.rowNum}>{String(i + 1).padStart(2, "0")}</span>
+                <h3 className={t.h3}>{item.title}</h3>
+              </div>
+              <p className={`${t.body} ${t.dim}`}>{item.body}</p>
+            </div>
+          ))}
+          <div className={t.row}>
+            <div>
+              <span className={t.rowNum}>Pricing</span>
+              <h3 className={t.h3}>Campaigns start from $2,000 + GST per month.</h3>
+            </div>
+            <div className={t.body}>
+              <p className={t.dim}>
+                Month-to-month, scoped around your business, and run directly by
+                me &mdash; no junior account managers.
+              </p>
+              <Link href="/pricing" className={`${t.box} ${t.boxBlue}`}>
+                <Corner />
+                <span>See SEO pricing</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* === MONTHLY PRIORITIES — grey, heading aside + white cards === */}
+      <section className={t.grey}>
+        <div className={t.asideGrid}>
+          <div className={t.aside}>
+            <span className={t.eyebrow}>Monthly Priorities</span>
+            <h2 className={t.h2}>How I Decide What to Work on Each Month</h2>
+            <div className={t.body}>
               <p>
                 SEO campaigns shouldn&rsquo;t be built around completing the
                 same list of tasks every 30 days.
@@ -481,85 +495,72 @@ export default function SeoServicePage() {
               <p>Priorities change as your website improves.</p>
             </div>
           </div>
-          <div className={cs.cards}>
+          <div className={t.cardGrid}>
             {scenarios.map((text, i) => (
-              <article key={text} className={`${cs.card} ${cs[scenarioTones[i % scenarioTones.length]]} reveal-up`}>
-                <div className={cs.cardLabel}>Scenario {String(i + 1).padStart(2, "0")}</div>
-                <p className={cs.cardSolution}>{text}</p>
+              <article key={text} className={t.card}>
+                <span className={t.cardLabel}>Scenario {String(i + 1).padStart(2, "0")}</span>
+                <p>{text}</p>
               </article>
             ))}
-            <article className={`${cs.card} ${cs.toneStone} reveal-up`}>
-              <div className={cs.cardLabel}>The Approach</div>
-              <p className={cs.cardProblem}>
+            <article className={`${t.card} ${t.cardWide}`}>
+              <span className={t.cardLabel}>The Approach</span>
+              <p>
                 That&rsquo;s why I work from an evolving strategy rather than a
                 fixed package. Each month, I look at the available search data,
                 current rankings, completed work, competitive landscape, and
                 business priorities to determine what should happen next.
               </p>
-              <p className={cs.cardSolution}>
-                The campaign changes as the opportunity changes.
-              </p>
+              <p className={t.lead}>The campaign changes as the opportunity changes.</p>
             </article>
           </div>
         </div>
       </section>
 
-      {/* === LOCAL vs NATIONAL vs B2B — dark === */}
-      <section className={`${hub.section} ${hub.dark}`} data-nav-theme="dark">
-        <div className={hub.inner}>
-          <div className={hub.head}>
-            <h2 className={`${hub.h2} reveal-up`}>
-              Local SEO, National SEO &amp; B2B Search{" "}
-              <em>Require Different Strategies</em>
-            </h2>
-            <div className={`${hub.headBody} reveal-up`}>
-              <p>
-                There isn&rsquo;t one SEO model that works equally well for
-                every business.
-              </p>
-              <p>
-                The strategy depends heavily on where your customers are, how
-                they search, and how they choose a provider.
-              </p>
-            </div>
+      {/* === LOCAL vs NATIONAL vs B2B — blue section, light boxes === */}
+      <section className={t.blue}>
+        <div className={t.blueHead}>
+          <h2 className={t.h2}>
+            Local SEO, National SEO &amp; B2B Search Require Different Strategies
+          </h2>
+          <div className={t.body}>
+            <p>
+              There isn&rsquo;t one SEO model that works equally well for
+              every business.
+            </p>
+            <p>
+              The strategy depends heavily on where your customers are, how
+              they search, and how they choose a provider.
+            </p>
           </div>
-
-          <div className={hub.threeGrid}>
-            {models.map((m, i) => (
-              <div key={m.title} className={`${hub.darkCard} reveal-up`}>
-                <span className="index">{String(i + 1).padStart(2, "0")}</span>
-                <h3 className={hub.cardTitle}>{m.title}</h3>
-                <div className={hub.cardBody}>
-                  {m.body.map((para) => (
-                    <p key={para}>{para}</p>
-                  ))}
-                </div>
+        </div>
+        <div className={t.threeGrid}>
+          {models.map((m, i) => (
+            <div key={m.title} className={t.lightBox}>
+              <span className={t.cardLabel}>{String(i + 1).padStart(2, "0")}</span>
+              <h3 className={t.h3}>{m.title}</h3>
+              <div className={t.body}>
+                {m.body.map((para) => (
+                  <p key={para}>{para}</p>
+                ))}
               </div>
-            ))}
-          </div>
-
-          <div className={styles.rowCta}>
-            <Link href="/industries" className={hub.pillLime}>
-              <span>Explore Industries I Work With</span>
-              <span className={hub.arrow}>→</span>
-            </Link>
-          </div>
+            </div>
+          ))}
+        </div>
+        <div className={t.blueFoot}>
+          <Link href="/industries" className={`${t.box} ${t.boxNavy}`}>
+            <Corner />
+            <span>Explore Industries I Work With</span>
+          </Link>
         </div>
       </section>
 
-      {/* === RESULTS — light, featured proof card === */}
-      <section className={`${hub.section} ${hub.light}`} id="results">
-        <div className={hub.inner}>
-          <div className={hub.head}>
-            <div>
-              <div className="section-label reveal-up" style={{ marginBottom: 24 }}>
-                Real Client Results
-              </div>
-              <h2 className={`${hub.h2} reveal-up`}>
-                SEO Results From <em>Real Campaigns</em>
-              </h2>
-            </div>
-            <div className={`${hub.headBody} reveal-up`}>
+      {/* === RESULTS — navy feature box === */}
+      <section className={t.featureWrap} id="results">
+        <div className={t.feature}>
+          <div className={t.featureText}>
+            <span className={t.eyebrow}>Real Client Results</span>
+            <h2 className={t.h2}>SEO Results From Real Campaigns</h2>
+            <div className={t.body}>
               <p>SEO should eventually show up in real search data.</p>
               <p>
                 One of the professional service firms I work with came to Scale
@@ -572,242 +573,184 @@ export default function SeoServicePage() {
                 search strategy, those terms moved into first-page positions.
               </p>
             </div>
-          </div>
-
-          <article className={`${styles.proofFeature} reveal-up`}>
-            <div className={styles.proofMain}>
-              <h3 className={styles.proofTitle}>
-                Accounting Firm SEO: Page 5 → Page 1
-              </h3>
-              <div className={styles.metricRow}>
-                <div className={styles.metricBox}>
-                  <span className={styles.metricValue}>Page 5 → Page 1</span>
-                  <span className={styles.metricLabel}>
-                    Target commercial keyword rankings
-                  </span>
-                </div>
-                <div className={styles.metricBox}>
-                  <span className={styles.metricValue}>+125%</span>
-                  <span className={styles.metricLabel}>Search impressions</span>
-                </div>
+            <h3 className={t.h3}>Accounting Firm SEO: Page 5 → Page 1</h3>
+            <div className={t.metrics}>
+              <div className={t.metric}>
+                <span className={t.metricValue}>Page 5 → Page 1</span>
+                <span className={t.metricLabel}>Target commercial keyword rankings</span>
               </div>
-              <div className={styles.proofBody}>
-                <p>
-                  The campaign focused on strengthening the pages most closely
-                  connected to the firm&rsquo;s actual services rather than
-                  chasing unrelated traffic.
-                </p>
-                <p>
-                  As rankings improved, Google Search Console showed
-                  substantial growth in search visibility and clicks, giving
-                  the firm a stronger organic presence for the searches its
-                  potential clients actually make.
-                </p>
-              </div>
-              <div className={styles.proofLinks}>
-                <Link href="/industries/accounting-firms" className={hub.pillLime}>
-                  <span>See How SEO Works for Accounting Firms</span>
-                  <span className={hub.arrow}>→</span>
-                </Link>
-                <Link href="/results" className={styles.textLinkOnDark}>
-                  View More Client Results <span className={hub.arrow}>→</span>
-                </Link>
+              <div className={t.metric}>
+                <span className={t.metricValue}>+125%</span>
+                <span className={t.metricLabel}>Search impressions</span>
               </div>
             </div>
-            <div className={styles.proofVisual}>
-              <img
-                src="/images/google-search-console-empire-accountants-data-case-study.png"
-                alt="Google Search Console performance report for an accounting firm SEO campaign"
-                className={styles.proofImg}
-                loading="lazy"
-              />
-            </div>
-          </article>
-        </div>
-      </section>
-
-      {/* === THE FIRST 90 DAYS — dark === */}
-      <section className={`${hub.section} ${hub.dark}`} data-nav-theme="dark">
-        <div className={hub.inner}>
-          <div className={hub.head}>
-            <div>
-              <div className={`section-label reveal-up ${styles.labelOnDark}`}>
-                The First 90 Days
-              </div>
-              <h2 className={`${hub.h2} reveal-up`}>
-                What an SEO Campaign <em>Looks Like in Practice</em>
-              </h2>
-            </div>
-            <div className={`${hub.headBody} reveal-up`}>
+            <div className={t.body}>
               <p>
-                Every campaign is different, but the first few months usually
-                establish the technical foundation, search strategy, priority
-                pages, and measurement needed for longer-term growth.
+                The campaign focused on strengthening the pages most closely
+                connected to the firm&rsquo;s actual services rather than
+                chasing unrelated traffic.
+              </p>
+              <p>
+                As rankings improved, Google Search Console showed
+                substantial growth in search visibility and clicks, giving
+                the firm a stronger organic presence for the searches its
+                potential clients actually make.
               </p>
             </div>
           </div>
+          <div className={t.featureSide}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/google-search-console-empire-accountants-data-case-study.png"
+              alt="Google Search Console performance report for an accounting firm SEO campaign"
+              className={t.featureImg}
+              loading="lazy"
+            />
+            <div className={t.featureLinks}>
+              <Link href="/industries/accounting-firms" className={`${t.box} ${t.boxBlue}`}>
+                <Corner />
+                <span>See How SEO Works for Accounting Firms</span>
+              </Link>
+              <Link href="/results" className={`${t.box} ${t.boxGrey}`}>
+                <Corner />
+                <span>View More Client Results</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
 
-          <div className={styles.monthGrid}>
-            {months.map((m) => (
-              <div key={m.title} className={`${hub.darkCard} reveal-up`}>
-                <h3 className={hub.cardTitle}>{m.title}</h3>
-                <div className={hub.cardBody}>
-                  {m.body.map((para) => (
-                    <p key={para}>{para}</p>
-                  ))}
-                </div>
+      {/* === FIRST 90 DAYS — heading left, month rows right === */}
+      <section className={t.rowsSplit} style={{ padding: 0 }}>
+        <div className={t.rowsAside}>
+          <span className={t.eyebrow} style={{ margin: 0 }}>The First 90 Days</span>
+          <h2 className={t.h2}>What an SEO Campaign Looks Like in Practice</h2>
+          <p className={t.body}>
+            Every campaign is different, but the first few months usually
+            establish the technical foundation, search strategy, priority
+            pages, and measurement needed for longer-term growth.
+          </p>
+        </div>
+        <div className={t.rowsList}>
+          {months.map((m) => (
+            <div key={m.title} className={t.rowsItem}>
+              <h3 className={t.h3}>{m.title}</h3>
+              <div className={t.body}>
+                {m.body.map((para) => (
+                  <p key={para}>{para}</p>
+                ))}
               </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* === GOOD FIT — two boxes === */}
+      <section className={t.twoWrap}>
+        <div className={t.twoHead}>
+          <h2 className={t.h2}>Who Is Ongoing SEO a Good Fit For?</h2>
+          <p className={t.lead}>
+            Ongoing SEO makes the most sense when organic search can become
+            a meaningful customer acquisition channel for your business.
+          </p>
+        </div>
+        <div className={t.two}>
+          <div className={`${t.panel} ${t.panelGrey}`}>
+            <h3 className={t.h3}>It&rsquo;s generally a strong fit for businesses that:</h3>
+            <ul className={t.checks}>
+              {goodFit.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+            <p className={`${t.body} ${t.dim}`}>
+              I primarily work with professional service and B2B businesses
+              because qualified organic enquiries in these markets can have
+              significant long-term value.
+            </p>
+            <Link href="/industries" className={`${t.box} ${t.boxNavy}`}>
+              <Corner />
+              <span>Explore Industries</span>
+            </Link>
+          </div>
+          <div className={`${t.panel} ${t.panelNavy}`}>
+            <h3 className={t.h3}>When Ongoing SEO Might Not Be the Right Fit</h3>
+            <div className={t.body}>
+              <p>
+                SEO isn&rsquo;t automatically the right acquisition channel
+                for every business.
+              </p>
+              <p>
+                If you need enquiries immediately, paid search may be more
+                appropriate in the short term.
+              </p>
+              <p>
+                If very few people search for what you sell, another
+                acquisition channel may offer a better opportunity.
+              </p>
+              <p>
+                And if you already have an internal marketing or development
+                team and simply need an independent assessment of your
+                website, you may not need an ongoing SEO retainer at all.
+              </p>
+              <p>
+                In that situation, a standalone audit can give your team a
+                prioritized roadmap to work from.
+              </p>
+            </div>
+            <Link href="/services/seo-audits" className={`${t.box} ${t.boxBlue}`}>
+              <Corner />
+              <span>Explore Standalone SEO Audits</span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* === PRICING — split === */}
+      <section className={t.pricing} style={{ padding: 0 }}>
+        <div className={t.pricingAside}>
+          <h2 className={t.h2}>How Monthly SEO Pricing Works</h2>
+          <p className={t.lead}>
+            SEO campaigns are scoped around the business rather than sold as
+            Bronze, Silver, or Gold packages.
+          </p>
+        </div>
+        <div className={t.pricingBody}>
+          <p className={t.body}>The amount of work required depends on factors such as:</p>
+          <ul className={`${t.checks} ${t.checksTwo}`}>
+            {pricingFactors.map((item) => (
+              <li key={item}>{item}</li>
             ))}
+          </ul>
+          <p className={t.body}>
+            After reviewing your website and search landscape, I&rsquo;ll
+            explain what I think needs to be done and what an appropriate
+            monthly scope looks like.
+          </p>
+          <p className={t.pricingLead}>
+            All ongoing SEO engagements are month-to-month with no long-term
+            lock-in contract.
+          </p>
+          <p className={t.body}>
+            For businesses that aren&rsquo;t ready for ongoing SEO,
+            standalone audits are also available.
+          </p>
+          <div className={t.boxRow}>
+            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className={`${t.box} ${t.boxNavy}`}>
+              <Corner />
+              <span>Book a Strategy Call</span>
+            </a>
+            <Link href="/services/seo-audits" className={`${t.box} ${t.boxGrey}`}>
+              <Corner />
+              <span>View SEO Audit Services</span>
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* === WHO IS ONGOING SEO A GOOD FIT FOR — light === */}
-      <section className={`${hub.section} ${hub.light}`}>
-        <div className={hub.inner}>
-          <div className={hub.head}>
-            <h2 className={`${hub.h2} reveal-up`}>
-              Who Is Ongoing SEO <em>a Good Fit For?</em>
-            </h2>
-            <div className={`${hub.headBody} reveal-up`}>
-              <p>
-                Ongoing SEO makes the most sense when organic search can become
-                a meaningful customer acquisition channel for your business.
-              </p>
-            </div>
-          </div>
-
-          <div className={styles.fitGrid}>
-            <div className={`${hub.lightCard} reveal-up`}>
-              <div className={styles.panelLabelInk}>
-                It&rsquo;s generally a strong fit for businesses that:
-              </div>
-              <ul className={styles.fitList}>
-                {goodFit.map((item) => (
-                  <li key={item}>
-                    <span className={hub.check} aria-hidden="true">✓</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <p className={styles.fitNote}>
-                I primarily work with professional service and B2B businesses
-                because qualified organic enquiries in these markets can have
-                significant long-term value.
-              </p>
-              <Link href="/industries" className={hub.pillDark}>
-                <span>Explore Industries</span>
-                <span className={hub.arrow}>→</span>
-              </Link>
-            </div>
-
-            <div className={`${hub.darkCard} reveal-up`}>
-              <h3 className={hub.cardTitle}>
-                When Ongoing SEO Might Not Be the Right Fit
-              </h3>
-              <div className={hub.cardBody}>
-                <p>
-                  SEO isn&rsquo;t automatically the right acquisition channel
-                  for every business.
-                </p>
-                <p>
-                  If you need enquiries immediately, paid search may be more
-                  appropriate in the short term.
-                </p>
-                <p>
-                  If very few people search for what you sell, another
-                  acquisition channel may offer a better opportunity.
-                </p>
-                <p>
-                  And if you already have an internal marketing or development
-                  team and simply need an independent assessment of your
-                  website, you may not need an ongoing SEO retainer at all.
-                </p>
-                <p>
-                  In that situation, a standalone audit can give your team a
-                  prioritized roadmap to work from.
-                </p>
-              </div>
-              <Link href="/services/seo-audits" className={hub.pillLime}>
-                <span>Explore Standalone SEO Audits</span>
-                <span className={hub.arrow}>→</span>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* === PRICING — dark === */}
-      <section className={`${hub.section} ${hub.dark}`} data-nav-theme="dark">
-        <div className={`${hub.inner} ${hub.split}`}>
-          <div className={`${hub.splitAside} reveal-up`}>
-            <h2 className={hub.h2}>
-              How Monthly <em>SEO Pricing Works</em>
-            </h2>
-            <p className={styles.asideBody}>
-              SEO campaigns are scoped around the business rather than sold as
-              Bronze, Silver, or Gold packages.
-            </p>
-          </div>
-          <div className={`${hub.splitBody} reveal-up`}>
-            <div className={hub.servicePanel}>
-              <div className={hub.panelLabel}>
-                The amount of work required depends on factors such as:
-              </div>
-              <ul className={`${hub.checkList} ${styles.twoColList}`}>
-                {pricingFactors.map((item) => (
-                  <li key={item}>
-                    <span className={hub.check} aria-hidden="true">✓</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <p>
-              After reviewing your website and search landscape, I&rsquo;ll
-              explain what I think needs to be done and what an appropriate
-              monthly scope looks like.
-            </p>
-            <p className={hub.lead}>
-              All ongoing SEO engagements are month-to-month with no long-term
-              lock-in contract.
-            </p>
-            <p>
-              For businesses that aren&rsquo;t ready for ongoing SEO,
-              standalone audits are also available.
-            </p>
-            <div className={styles.buttonRow}>
-              <a
-                href={BOOKING_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={hub.buttonPrimaryDark}
-              >
-                <span>Book a Strategy Call</span>
-                <span className={hub.arrow}>→</span>
-              </a>
-              <Link href="/services/seo-audits" className={hub.buttonSecondaryDark}>
-                <span>View SEO Audit Services</span>
-                <span className={hub.arrow}>→</span>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* === FAQ — light === */}
-      <ServicesFaq
-        items={faqs}
-        title={
-          <>
-            Frequently Asked Questions <em>About SEO Services</em>
-          </>
-        }
-      />
+      {/* === FAQ === */}
+      <ServicesFaq items={faqs} title={<>Frequently Asked Questions About SEO Services</>} />
 
       <Contact />
-
-      <RevealOnScroll />
     </main>
   );
 }

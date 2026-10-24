@@ -282,3 +282,26 @@ footer {
 h1:has(.title-block) {
   line-height: 1.05 !important;
 }
+
+/* Services FAQ (shared component) on new-brand pages: grey section,
+   white ruled accordion, regular-weight type, round blue toggle */
+.v2 [class*="ServicesFaq_section"] { background: var(--h-grey); color: var(--h-navy); padding: 96px 40px; }
+.v2 [class*="ServicesFaq_heading"] { font-weight: 400; font-size: clamp(40px, 4.6vw, 80px); letter-spacing: -0.035em; color: var(--h-navy); }
+.v2 [class*="ServicesFaq_heading"] em { font-weight: 400; color: var(--h-navy); }
+.v2 [class*="ServicesFaq_eyebrow"] { font-size: 16px; font-weight: 400; letter-spacing: 0; text-transform: none; color: var(--h-dim); }
+.v2 [class*="ServicesFaq_list"] { border-top: 0; background: var(--h-white); }
+.v2 [class*="ServicesFaq_item"] { border-bottom: 1px solid var(--h-rule); padding: 0 22px; }
+.v2 [class*="ServicesFaq_num"] { font-weight: 400; font-size: 15px; color: var(--h-blue); }
+.v2 [class*="ServicesFaq_question"] { font-weight: 400; color: var(--h-navy); }
+.v2 [class*="ServicesFaq_summary"]:hover [class*="ServicesFaq_question"] { color: var(--h-blue); }
+.v2 [class*="ServicesFaq_toggle"] { width: 36px; height: 36px; border: 0; border-radius: 50%; }
+.v2 [class*="ServicesFaq_toggle"]::before,
+.v2 [class*="ServicesFaq_toggle"]::after { width: 14px; height: 1.5px; background: var(--h-navy); }
+.v2 [class*="ServicesFaq_item"][open] [class*="ServicesFaq_toggle"] { background: var(--h-blue); }
+.v2 [class*="ServicesFaq_item"][open] [class*="ServicesFaq_toggle"]::before,
+.v2 [class*="ServicesFaq_item"][open] [class*="ServicesFaq_toggle"]::after { background: var(--h-white); }
+.v2 [class*="ServicesFaq_answer"] { font-weight: 400; color: var(--h-dim); }
+@media (max-width: 900px) {
+  .v2 [class*="ServicesFaq_section"] { padding: 64px 16px; }
+  .v2 [class*="ServicesFaq_item"] { padding: 0 16px; }
+}
