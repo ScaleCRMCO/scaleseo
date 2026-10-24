@@ -35,16 +35,14 @@ function Column({ title, items }: { title: string; items: Item[] }) {
     <div className={styles.col}>
       <div className={styles.colLabel}>{title}</div>
       <ol className={styles.list}>
-        {items.map((item, i) => (
+        {items.map((item) => (
           <li key={item.href}>
             {item.external ? (
               <a href={item.href} target="_blank" rel="noopener noreferrer" className={styles.row}>
-                <span className={styles.num}>{i + 1}</span>
                 <span>{item.label}</span>
               </a>
             ) : (
               <Link href={item.href} className={styles.row}>
-                <span className={styles.num}>{i + 1}</span>
                 <span>{item.label}</span>
               </Link>
             )}

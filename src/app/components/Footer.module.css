@@ -39,8 +39,7 @@
 }
 .list { list-style: none; }
 .row {
-  display: grid;
-  grid-template-columns: 40px 1fr;
+  display: block;
   padding: 11px 0;
   border-bottom: 1px solid var(--f-rule);
   font-size: 17px;
@@ -49,7 +48,6 @@
   transition: color 0.2s ease;
 }
 .row:hover { color: var(--f-blue); }
-.num { color: var(--f-dim); }
 
 .cta {
   grid-row: span 2;
