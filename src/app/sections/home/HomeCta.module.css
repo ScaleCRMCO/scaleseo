@@ -33,12 +33,12 @@
   min-height: 130px;
   padding: 20px 22px;
   background: #EDEFF2;
-  color: var(--h-navy);
+  color: #031B36 !important;
   font-size: 18px;
   text-decoration: none;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
-.talk:hover { background: var(--h-blue); color: var(--h-white); }
+.talk:hover { background: var(--h-blue); color: var(--h-white) !important; }
 .corner { position: absolute; top: 16px; right: 18px; width: 10px; height: 10px; }
 
 @media (max-width: 800px) {
