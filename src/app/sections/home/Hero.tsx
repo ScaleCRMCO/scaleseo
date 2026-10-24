@@ -53,22 +53,22 @@ export default function Hero() {
       <div className={`${styles.split} ${styles.splitBelow}`}>
         <div className={styles.left}>
           <h1 className={styles.title}>
-            Calgary SEO Expert&nbsp;–
-            <br />
-            SEO, Google Ads,
-            <br />
-            and AI Search Services.
+            Calgary SEO Consultant for Growing Businesses.
           </h1>
         </div>
 
         <div className={styles.right}>
-          <p className={styles.intro}>
-            Scale SEO helps professional service businesses across Canada
-            secure more customers, leads, and sales through search
-            optimization and paid advertising. Run entirely by Corbin Jensen,
-            this practice provides direct, hands-on execution without
-            rotating account managers or outsourced white-labeling.
-          </p>
+          <div className={styles.intro}>
+            <p>
+              Scale SEO is a founder-led SEO consultancy helping businesses
+              across Canada and internationally improve search visibility,
+              attract qualified enquiries, and grow organically.
+            </p>
+            <p>
+              Every campaign is managed directly by Corbin Jensen, with no
+              account managers or outsourced handoffs.
+            </p>
+          </div>
 
           <div className={styles.bottom}>
             <a href="#contact" className={styles.textLink}>
@@ -81,7 +81,7 @@ export default function Hero() {
               className={styles.box}
             >
               <Corner />
-              <span>Book a Strategy Call</span>
+              <span>Book a Consultation →</span>
             </a>
           </div>
         </div>
