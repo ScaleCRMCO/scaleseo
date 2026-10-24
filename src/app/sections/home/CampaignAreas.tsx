@@ -1,90 +1,57 @@
 import Link from "next/link";
 import styles from "./CampaignAreas.module.css";
 
-const areas = [
+const steps = [
   {
     num: "01",
-    title: "Technical SEO",
-    body: [
-      "I identify and fix technical issues that can make it harder for search engines to crawl, index, understand, and rank your website.",
-      "This can include site architecture, indexation, redirects, canonicalization, page speed, structured data, internal linking, metadata, and other technical issues discovered during the campaign.",
-    ],
+    title: "Technical SEO & Website Improvements",
+    body: "Fixing crawlability, indexing, site structure, internal linking, and website issues that affect search visibility and user experience.",
   },
   {
     num: "02",
-    title: "Content & On-Page SEO",
-    body: [
-      "Existing pages are improved around the searches your potential customers actually make, while new content is developed where genuine gaps exist.",
-      "This includes keyword research, service-page optimization, content planning, headings, internal links, search intent, and creating useful supporting content around your core services.",
-    ],
+    title: "Content & Search Optimization",
+    body: "Improving existing pages, targeting relevant search intent, and developing useful content that supports your services and customers.",
   },
   {
     num: "03",
-    title: "Local SEO",
-    body: [
-      "For businesses targeting customers in specific cities or service areas, I work on the signals that influence local organic and Google Maps visibility.",
-      "Depending on the business, this can include Google Business Profile optimization, local landing pages, citations, reviews, local relevance, and competitor analysis.",
-    ],
-  },
-  {
-    num: "04",
-    title: "Website Improvements",
-    body: [
-      "Sometimes the thing holding SEO back is the website itself.",
-      "Because I work directly with websites as part of my SEO campaigns, I can improve page structure, navigation, calls to action, content layouts, site architecture, and other elements that affect both organic visibility and conversions.",
-    ],
-  },
-  {
-    num: "05",
-    title: "Measurement & Ongoing Strategy",
-    body: [
-      "SEO priorities change as rankings improve, competitors move, and new opportunities appear.",
-      "I track organic performance using data from tools including Google Search Console and analytics platforms, then use that data to determine where the campaign should focus next.",
-    ],
+    title: "Local Visibility & Performance",
+    body: "Strengthening local search presence where relevant, monitoring organic performance, and adjusting priorities based on results.",
   },
 ];
 
-
+// Three-step layout: heading + intro on the left, then full-width ruled
+// rows (big number | title | description) on the right.
 export default function CampaignAreas() {
   return (
     <section className={styles.section} id="campaign">
-      <div className={styles.intro}>
-        <h2 className={`${styles.introTitle} reveal-up`}>
-          What Goes Into a Scale SEO Campaign?
-        </h2>
-        <div className={`${styles.introBody} reveal-up`}>
-          <p>
-            SEO isn&rsquo;t one task. Sustainable organic growth usually
-            requires improvements across your website, content, technical
-            foundation, and search presence.
+      <div className={styles.layout}>
+        <div className={styles.aside}>
+          <span className={styles.square} aria-hidden="true" />
+          <h2 className={`${styles.heading} reveal-up`}>
+            What Goes Into an SEO Campaign?
+          </h2>
+          <p className={`${styles.intro} reveal-up`}>
+            Effective SEO involves more than rankings. Every campaign combines
+            the improvements your website needs with an ongoing strategy shaped
+            by search data and business priorities.
           </p>
-          <p>
-            Every campaign is different, but ongoing SEO typically includes the
-            following areas.
-          </p>
+          <Link href="/services/seo" className={styles.cta}>
+            <svg className={styles.corner} viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+              <path d="M1 1.5h7.5V9" />
+            </svg>
+            <span>Explore SEO Services →</span>
+          </Link>
         </div>
-      </div>
 
-      <div className={styles.grid}>
-        {areas.map((a) => (
-          <article key={a.num} className={`${styles.card} reveal-up`}>
-            <span className={styles.cardIndex}>{a.num}</span>
-            <h3 className={styles.cardTitle}>{a.title}</h3>
-            {a.body.map((para) => (
-              <p key={para} className={styles.cardDesc}>
-                {para}
-              </p>
-            ))}
-          </article>
-        ))}
-
-        <Link href="/services/seo" className={`${styles.card} ${styles.ctaCard} reveal-up`}>
-          <span className={styles.cardIndex}>Next step</span>
-          <h3 className={styles.cardTitle}>Explore SEO Services</h3>
-          <span className={styles.ctaLink}>
-            Explore SEO Services <span className={styles.ctaArrow}>+</span>
-          </span>
-        </Link>
+        <ol className={styles.rows}>
+          {steps.map((s) => (
+            <li key={s.num} className={`${styles.row} reveal-up`}>
+              <span className={styles.num}>{s.num}</span>
+              <h3 className={styles.title}>{s.title}</h3>
+              <p className={styles.body}>{s.body}</p>
+            </li>
+          ))}
+        </ol>
       </div>
     </section>
   );

@@ -1,79 +1,76 @@
-/* White section: split heading row, then 3-column grid of grey boxes */
+/* Three-step section: small square + heading/intro/CTA left, ruled rows
+   (big blue number | title | description) right */
 .section {
-  padding: 0 0 40px;
+  padding: 96px 40px;
   background: var(--h-white);
   color: var(--h-navy);
 }
-.intro {
+.layout {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  border-bottom: 1px solid var(--h-rule);
-  margin-bottom: 40px;
+  grid-template-columns: minmax(260px, 1fr) 2.6fr;
+  gap: 48px;
+  align-items: start;
 }
-.introTitle {
-  padding: 72px 40px;
-  border-right: 1px solid var(--h-rule);
-  font-size: clamp(38px, 4.4vw, 76px);
-  line-height: 1.04;
-  font-weight: 400;
-  letter-spacing: -0.035em;
-}
-.introBody {
+.aside {
+  position: sticky;
+  top: 136px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  gap: 14px;
-  padding: 72px 40px;
-  font-size: 18px;
-  line-height: 1.5;
-  max-width: 720px;
+  gap: 24px;
 }
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
-  padding: 0 40px;
-}
-.card {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  min-height: 420px;
-  padding: 24px 22px;
-  background: var(--h-grey);
-  color: var(--h-navy);
-  text-decoration: none;
-}
-.cardIndex { font-size: 15px; color: var(--h-dim); }
-.cardTitle {
-  margin-bottom: auto;
-  padding-bottom: 32px;
-  font-size: clamp(28px, 2.4vw, 40px);
+.square { width: 14px; height: 14px; background: var(--h-blue); }
+.heading {
+  font-size: clamp(32px, 3vw, 48px);
   line-height: 1.08;
   font-weight: 400;
   letter-spacing: -0.03em;
 }
-.cardDesc { font-size: 16px; line-height: 1.55; color: var(--h-dim); }
-.cardDesc:first-of-type { padding-top: 18px; border-top: 1px solid var(--h-rule); }
-
-.ctaCard { background: var(--h-blue); color: var(--h-white); transition: background-color 0.2s ease; }
-.ctaCard:hover { background: var(--h-navy); }
-.ctaCard .cardIndex { color: rgba(254, 254, 254, 0.8); }
-.ctaLink {
-  padding-top: 18px;
-  border-top: 1px solid rgba(254, 254, 254, 0.4);
+.intro { font-size: 16px; line-height: 1.55; color: var(--h-dim); }
+.cta {
+  position: relative;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
+  min-height: 110px;
+  padding: 18px 20px;
+  background: var(--h-navy);
+  color: var(--h-white);
   font-size: 17px;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
 }
-.ctaArrow { font-size: 24px; font-weight: 300; }
+.cta:hover { background: var(--h-blue); }
+.corner { position: absolute; top: 14px; right: 16px; width: 10px; height: 10px; }
 
-@media (max-width: 1100px) { .grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 800px) {
-  .intro { grid-template-columns: 1fr; margin-bottom: 16px; }
-  .introTitle { border-right: 0; border-bottom: 1px solid var(--h-rule); padding: 48px 16px; }
-  .introBody { padding: 32px 16px; }
-  .grid { grid-template-columns: 1fr; gap: 16px; padding: 0 16px; }
-  .card { min-height: 0; }
+.rows { list-style: none; }
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 32px;
+  padding: 40px 0 80px;
+  border-top: 1px solid var(--h-rule);
+}
+.num {
+  font-size: clamp(72px, 8vw, 132px);
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+  color: var(--h-blue);
+}
+.title {
+  font-size: clamp(26px, 2.4vw, 40px);
+  line-height: 1.1;
+  font-weight: 400;
+  letter-spacing: -0.025em;
+}
+.body { font-size: 18px; line-height: 1.55; }
+
+@media (max-width: 1000px) {
+  .layout { grid-template-columns: 1fr; }
+  .aside { position: static; }
+  .row { grid-template-columns: 1fr 1fr; padding: 32px 0 48px; }
+  .num { grid-row: span 2; }
+}
+@media (max-width: 640px) {
+  .section { padding: 64px 16px; }
+  .row { grid-template-columns: 1fr; gap: 16px; }
+  .num { grid-row: auto; }
 }
