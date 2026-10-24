@@ -5,61 +5,68 @@ const industries: {
   num: string;
   title: string;
   body: string;
-  link?: { href: string; label: string };
+  href?: string;
 }[] = [
   {
     num: "01",
     title: "Accounting & Financial Services",
-    body: "SEO strategies for accounting firms and financial service businesses competing for valuable commercial searches.",
-    link: {
-      href: "/industries/accounting-firms",
-      label: "Explore SEO for Accounting Firms",
-    },
+    body: "SEO for accounting and financial service firms targeting competitive, high-value commercial searches.",
+    href: "/industries/accounting-firms",
   },
   {
     num: "02",
     title: "Professional Services",
-    body: "Organic search strategies for established professional service businesses that depend on expertise, reputation, and qualified enquiries rather than high-volume consumer traffic.",
+    body: "Search strategies for established firms that depend on expertise, reputation, and qualified enquiries.",
   },
   {
     num: "03",
     title: "B2B & Consulting",
-    body: "SEO for consultants and B2B companies with longer sales cycles, higher-value engagements, and customers who research extensively before making contact.",
+    body: "SEO for businesses with longer sales cycles, specialist services, and research-driven buyers.",
   },
 ];
 
+// Navy section: heading + intro top-left with open space, then the three
+// boxes stepping down the grid in a staircase (col 3, col 2, col 1).
 export default function IndustriesTeaser() {
   return (
     <section className={styles.section} id="industries">
-      <div>
-        {/* Heading + intro top-left, rows full width below */}
-        <div className={styles.aside}>
+      <div className={styles.grid}>
+        <div className={styles.head}>
           <h2 className={`${styles.heading} reveal-up`}>
             SEO for Professional Service &amp; B2B Businesses
           </h2>
           <p className={`${styles.introLead} reveal-up`}>
-            I work primarily with businesses where a single qualified search
-            enquiry can turn into a valuable, long-term client relationship.
+            I specialize in businesses where search visibility can lead to
+            valuable enquiries, long-term clients, and measurable commercial
+            growth.
           </p>
         </div>
 
-        {/* Full-width rows: name left half, description + link right half */}
-        <div className={styles.rows}>
-          {industries.map((item) => (
-            <div key={item.num} className={`${styles.row} reveal-up`}>
-              <h3 className={styles.rowTitle}>{item.title}</h3>
-              <div className={styles.rowBody}>
-                <p>{item.body}</p>
-                {item.link && (
-                  <Link href={item.link.href} className={styles.rowLink}>
-                    <span>{item.link.label}</span>
-                    <span className={styles.arrow}>→</span>
-                  </Link>
-                )}
-              </div>
+        {industries.map((item, i) => {
+          const inner = (
+            <>
+              <span className={styles.num}>{item.num}</span>
+              <h3 className={styles.title}>{item.title}</h3>
+              <p className={styles.body}>{item.body}</p>
+              {item.href && (
+                <span className={styles.more}>
+                  <span>Explore SEO for Accounting Firms</span>
+                  <span className={styles.plus} aria-hidden="true">+</span>
+                </span>
+              )}
+            </>
+          );
+          const cls = `${styles.box} ${styles[`step${i + 1}`]} reveal-up`;
+          return item.href ? (
+            <Link key={item.num} href={item.href} className={`${cls} ${styles.boxLink}`}>
+              {inner}
+            </Link>
+          ) : (
+            <div key={item.num} className={cls}>
+              {inner}
             </div>
-          ))}
-        </div>
+          );
+        })}
       </div>
     </section>
   );
