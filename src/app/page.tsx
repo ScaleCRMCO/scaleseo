@@ -9,7 +9,7 @@ import IndustriesTeaser from "./sections/home/IndustriesTeaser";
 import Process from "./sections/home/Process";
 import BlogTeaser from "./sections/home/BlogTeaser";
 import FAQ from "./sections/home/FAQ";
-import Contact from "./components/ContactCta";
+import HomeCta from "./sections/home/HomeCta";
 import RevealOnScroll from "./components/RevealOnScroll";
 import Testimonials from "./components/Testimonials";
 
@@ -60,7 +60,7 @@ export default function Home() {
       <Testimonials />
       <FAQ />
       <BlogTeaser />
-      <Contact />
+      <HomeCta />
       <RevealOnScroll />
     </main>
   );
