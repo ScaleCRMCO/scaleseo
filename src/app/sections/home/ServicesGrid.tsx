@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ServicesMark from "./ServicesMark";
 import styles from "./ServicesGrid.module.css";
 
 const services = [
@@ -57,12 +58,7 @@ export default function ServicesGrid() {
           intro paragraph in the bottom-right cell */}
       <div className={styles.grid}>
         <Card s={services[0]} />
-        <div className={styles.markCell} aria-hidden="true">
-          <svg className={styles.mark} viewBox="0 0 330 570" fill="none" stroke="currentColor">
-            <circle cx="110" cy="110" r="98" strokeWidth="22" />
-            <path d="M170 232 L306 553" strokeWidth="21" strokeLinecap="round" />
-          </svg>
-        </div>
+        <ServicesMark />
         <Card s={services[1]} />
         <Card s={services[2]} />
         <Card s={services[3]} />

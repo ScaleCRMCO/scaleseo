@@ -65,7 +65,7 @@
 .cell:hover .plus { background: var(--h-blue); color: var(--h-white); }
 
 .markCell { display: grid; place-items: center; color: #D6EEFF; }
-.mark { width: 34%; max-width: 170px; height: auto; }
+.mark { width: 52%; max-width: 280px; height: auto; overflow: visible; }
 
 .outro {
   grid-column: 3;
