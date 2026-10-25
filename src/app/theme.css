@@ -183,7 +183,7 @@ body {
 }
 
 /* Contact (shared component) on the homepage: navy box | blue box */
-:is(.home, .v2) #contact {
+:is(.home, .v2) #contact[class*="ContactCta_contact"] {
   --bg: var(--h-white);
   --ink: var(--h-white);
   --ink-dim: rgba(254, 254, 254, 0.8);
@@ -194,7 +194,7 @@ body {
   color: var(--h-white);
   padding: 40px;
 }
-:is(.home, .v2) #contact > div { gap: 28px; align-items: stretch; }
+:is(.home, .v2) #contact[class*="ContactCta_contact"] > div { gap: 28px; align-items: stretch; }
 :is(.home, .v2) #contact [class*="ContactCta_left"],
 :is(.home, .v2) #contact [class*="ContactCta_right"] {
   --navy: #FEFEFE;
@@ -233,15 +233,15 @@ body {
 }
 :is(.home, .v2) #contact [class*="ContactCta_bookCard"] { background: var(--h-blue); border-color: var(--h-blue); }
 :is(.home, .v2) #contact [class*="Icon"] { border-radius: 0; }
-:is(.home, .v2) #contact a { color: inherit; }
-:is(.home, .v2) #contact input,
-:is(.home, .v2) #contact textarea {
+:is(.home, .v2) #contact[class*="ContactCta_contact"] a { color: inherit; }
+:is(.home, .v2) #contact[class*="ContactCta_contact"] input,
+:is(.home, .v2) #contact[class*="ContactCta_contact"] textarea {
   border-radius: 0;
   background: var(--h-white);
   color: var(--h-navy);
   border-color: transparent;
 }
-:is(.home, .v2) #contact label,
+:is(.home, .v2) #contact[class*="ContactCta_contact"] label,
 :is(.home, .v2) #contact [class*="ContactCta_formHeadline"] { color: var(--h-white); }
 :is(.home, .v2) #contact [class*="ContactCta_tag"] {
   border-radius: 0;
@@ -258,7 +258,7 @@ body {
 :is(.home, .v2) #contact [class*="ContactCta_submit"]:hover { background: var(--h-white); color: var(--h-navy); }
 :is(.home, .v2) #contact [class*="ContactCta_status"] { color: var(--h-white); }
 @media (max-width: 900px) {
-  :is(.home, .v2) #contact { padding: 16px; }
+  :is(.home, .v2) #contact[class*="ContactCta_contact"] { padding: 16px; }
 }
 
 /* Square section edges — rounded corners stay on cards/buttons only */

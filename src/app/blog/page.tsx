@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Breadcrumbs from "../components/Breadcrumbs";
-import Contact from "../components/ContactCta";
+import ContactSection from "../components/ContactSection";
 import { posts } from "./posts";
 import BlogBrowser, { type PostSummary } from "./BlogBrowser";
 import styles from "./page.module.css";
@@ -53,7 +53,7 @@ export default function BlogPage() {
       </header>
 
       <BlogBrowser posts={summaries} />
-      <Contact />
+      <ContactSection />
     </main>
   );
 }
