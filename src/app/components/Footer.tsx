@@ -1,4 +1,5 @@
 import Link from "next/link";
+import TrustindexWidget from "./TrustindexWidget";
 import styles from "./Footer.module.css";
 
 const pages = [
@@ -82,6 +83,7 @@ export default function Footer() {
         {/* Navy CTA box with a blue booking box inside */}
         <div className={styles.cta}>
           <p className={styles.ctaText}>Every great SEO campaign starts with a conversation</p>
+          <TrustindexWidget id="f90f439848023617fc26d78b37d" className={styles.reviews} />
           <a
             href="https://cal.com/corbinjensen-scaleseo/30min"
             target="_blank"
