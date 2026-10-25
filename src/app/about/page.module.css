@@ -1,588 +1,110 @@
-/* ==========================================================================
-   /about. Hero comes from ../industries/page.module.css (`ind`), sections
-   from the shared /services hub system (`hub`). Below are only the pieces
-   specific to this page — kept deliberately spacious and editorial.
-   ========================================================================== */
+/* About page (new brand) — page-specific pieces; shared section styles
+   come from ../services/svc.module.css */
 
-/* Hero: fact list on the right */
-.heroFacts {
-  list-style: none;
-  min-width: 300px;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-.heroFact {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 18px 4px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-  font-family: var(--display);
-  font-weight: 800;
-  font-size: 17px;
-  color: var(--ink-on-dark);
-}
-
-.heroFactNum {
-  font-family: var(--mono);
-  font-weight: 700;
-  font-size: 12px;
-  letter-spacing: 0.1em;
-  color: var(--highlight);
-}
-
-.strongOnDark {
-  color: var(--ink-on-dark);
-  font-weight: 600;
-}
-
-.strongInk {
-  color: var(--ink);
-  font-weight: 700;
-}
-
-.limeText {
-  color: var(--highlight);
-}
-
-.label {
-  margin-bottom: 24px;
-}
-
-.h2OnDark {
-  color: var(--ink-on-dark);
-  margin-bottom: 8px;
-}
-
-/* Sticky heading column on long split sections */
-.sticky {
-  position: sticky;
-  top: 120px;
-}
-
-.yearMark {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding-top: 28px;
-  border-top: 1px solid var(--line);
-  max-width: 320px;
-}
-
-.yearValue {
-  font-family: var(--display);
-  font-weight: 800;
-  font-size: clamp(64px, 7vw, 112px);
-  line-height: 0.9;
-  letter-spacing: -0.04em;
-  color: var(--ink);
-}
-
-.yearLabel {
-  font-family: var(--mono);
-  font-weight: 700;
-  font-size: 12px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--ink-dim);
-}
-
-/* === Editorial rows (services, reasons) ================================ */
-.rows {
-  border-top: 1px solid var(--line);
-}
-
-.row {
+.hero {
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  gap: 80px;
-  padding: 48px 0;
-  border-bottom: 1px solid var(--line);
+  grid-template-columns: 2fr 1fr;
+  padding-top: 96px;
+  border-bottom: 1px solid var(--h-rule);
 }
-
-.rowDark {
-  border-color: rgba(255, 255, 255, 0.12);
-}
-
-.rowsDark {
-  border-top-color: rgba(255, 255, 255, 0.12);
-}
-
-.rowHead {
-  display: flex;
-  align-items: baseline;
-  gap: 24px;
-}
-
-.rowNum {
-  font-family: var(--mono);
-  font-weight: 700;
-  font-size: 12px;
-  letter-spacing: 0.1em;
-  color: var(--text-faint);
-  flex-shrink: 0;
-}
-
-.rowDark .rowNum {
-  color: var(--highlight);
-}
-
-.rowTitle {
-  font-family: var(--display);
-  font-weight: 700;
-  font-size: clamp(24px, 2.4vw, 32px);
-  line-height: 1.2;
-  letter-spacing: -0.02em;
-}
-
-.rowBody {
+.heroLeft {
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  font-family: var(--sans);
-  font-size: 16.5px;
-  line-height: 1.7;
-  color: var(--text-dim);
+  padding: 32px 40px 56px;
+  border-right: 1px solid var(--h-rule);
 }
-
-.rowLinkDark {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  align-self: flex-start;
+.heroTitle {
   margin-top: 8px;
-  padding-bottom: 4px;
-  border-bottom: 1px solid var(--highlight);
-  font-family: var(--mono);
-  font-weight: 700;
-  font-size: 12px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--ink-on-dark);
-  text-decoration: none;
-  transition: color 0.3s ease;
+  font-size: clamp(64px, 10vw, 180px);
+  line-height: 0.92;
+  font-weight: 400;
+  letter-spacing: -0.05em;
 }
-
-.rowLinkDark:hover {
-  color: var(--highlight);
+.heroLead {
+  margin-top: auto;
+  padding-top: 120px;
+  max-width: 560px;
+  font-size: clamp(20px, 1.8vw, 28px);
+  line-height: 1.3;
 }
-
-/* === Light blue variant of the services rows: navy text, no orange === */
-.blue {
-  --ink: #031B36;
-  --ink-dim: #031B36;
-  --ink-on-dark: #031B36;
-  --ink-dim-on-dark: #031B36;
-  --text-dim: #031B36;
-  --text-faint: #031B36;
-  --accent: #031B36;
-  --highlight: #031B36;
-  --line: rgba(3, 27, 54, 0.22);
-  background: #B6FFFF;
-  color: #031B36;
-}
-
-.blue .rowDark,
-.blue .rowsDark {
-  border-color: rgba(3, 27, 54, 0.22);
-}
-
-.blue .rowLinkDark {
-  border-bottom-color: rgba(3, 27, 54, 0.4);
-  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.blue .rowLinkDark:hover {
-  color: #031B36;
-  transform: translateX(6px);
-}
-
-/* Large section heading, matching the homepage H2s */
-.bigH2 {
-  font-size: clamp(44px, 6.4vw, 96px);
-  line-height: 1;
-  letter-spacing: -0.04em;
-  max-width: 12ch;
-}
-
-/* === Who I work with: two audience cards ================================ */
-.audienceGrid {
-  display: grid;
-  grid-template-columns: 1.25fr 1fr;
-  gap: 24px;
-  padding-top: 88px;
-  align-items: stretch;
-}
-
-.audienceCard {
-  gap: 18px;
-  padding: 3rem;
-}
-
-.audienceTitle {
-  font-family: var(--display);
-  font-weight: 800;
-  font-size: clamp(26px, 2.6vw, 34px);
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-}
-
-.audienceCard :global(.index) {
-  color: var(--ink-faint);
-}
-
-/* === Approach: centred head + vertical timeline ========================= */
-.centerHead {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  max-width: 760px;
-  margin: 0 auto 88px;
-}
-
-.labelCenter {
-  margin-bottom: 24px;
-}
-
-.h2Center {
-  margin: 0 auto 24px;
-}
-
-.centerBody {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  font-family: var(--sans);
-  font-size: 17px;
-  line-height: 1.65;
-  color: var(--ink-dim-on-dark);
-}
-
-.timeline {
-  --dot: 14px;
-  position: relative;
-  list-style: none;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* Centre line */
-.timeline::before {
-  content: "";
+.heroRight { display: flex; flex-direction: column; gap: 40px; padding: 40px; }
+.portrait { position: relative; aspect-ratio: 4 / 3; overflow: hidden; background: var(--h-grey); }
+.portrait img { object-fit: cover; filter: grayscale(1); }
+.portraitMark {
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  width: 1px;
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 44, 22, 0),
-    var(--highlight) 8%,
-    var(--highlight) 92%,
-    rgba(255, 44, 22, 0)
-  );
-  opacity: 0.6;
+  top: 18px;
+  right: 18px;
+  width: 15%;
+  height: auto;
+  color: var(--h-white);
 }
+.heroFacts { display: grid; grid-template-columns: 1fr 1.4fr; gap: 24px; font-size: 17px; line-height: 1.45; }
 
-.step {
-  position: relative;
+.introRow {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  padding: 40px 40px 56px;
+}
+.introText { max-width: 620px; font-size: clamp(20px, 1.8vw, 28px); line-height: 1.3; }
+.band { position: relative; height: clamp(320px, 48vw, 760px); background: var(--h-grey); }
+.band img { object-fit: cover; }
+
+.approach {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  column-gap: 120px;
-  padding: 28px 0;
+  gap: 64px 40px;
+  padding: 96px 40px;
 }
+.approachTitle { grid-column: 1 / -1; max-width: 14ch; }
+.statBlock { align-self: start; }
+.approachBody { display: flex; flex-direction: column; gap: 28px; padding-top: 120px; }
 
-/* Stagger alternating cards so the timeline reads as one flowing column */
-.step + .step {
-  margin-top: -96px;
-}
+.expBody { display: flex; flex-direction: column; gap: 32px; padding-top: 72px; padding-bottom: 72px; }
 
-.stepDot {
-  position: absolute;
-  top: 58px;
-  left: 50%;
-  width: var(--dot);
-  height: var(--dot);
-  margin-left: calc(var(--dot) / -2);
-  border-radius: 50%;
-  background: var(--highlight);
-  box-shadow: 0 0 0 6px rgba(255, 44, 22, 0.14);
-}
+.founderSide { display: flex; flex-direction: column; justify-content: space-between; gap: 32px; padding: 8px; }
+.founderSide .body, .founderSide > div:first-child { color: rgba(254, 254, 254, 0.8); }
+.founderSide a { align-self: flex-end; }
 
-.stepCard {
-  grid-column: 1;
+.ctaWrap { padding: 40px; }
+.ctaBox {
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  padding: 2.25rem 2.5rem;
-  background: #0B2846;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 24px;
+  min-height: 560px;
+  padding: 24px;
+  background: var(--h-navy);
+  color: var(--h-white);
 }
-
-.step:nth-child(even) .stepCard {
-  grid-column: 2;
-}
-
-.stepNum {
-  font-family: var(--mono);
-  font-weight: 700;
-  font-size: 12px;
-  letter-spacing: 0.12em;
-  color: var(--highlight);
-}
-
-.stepTitle {
-  font-family: var(--display);
-  font-weight: 700;
-  font-size: clamp(22px, 2.1vw, 28px);
-  line-height: 1.2;
-  letter-spacing: -0.02em;
-  color: var(--ink-on-dark);
-}
-
-.stepBody {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  font-size: 15.5px;
-  line-height: 1.7;
-  color: #b8b8b8;
-}
-
-/* === Founder ============================================================ */
-.founder {
-  display: grid;
-  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
-  gap: 96px;
-  align-items: center;
-}
-
-.portrait {
+.ctaBox h2 { margin-top: 72px; }
+.ctaBottom { margin-top: auto; padding-top: 56px; display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; }
+.ctaNote { max-width: 420px; font-size: 17px; line-height: 1.45; }
+.ctaBtn {
   position: relative;
-  border-radius: 28px;
-  overflow: hidden;
-  aspect-ratio: 4 / 5;
-  background: var(--bg-elev);
-  box-shadow: 0 40px 80px -40px rgba(3, 27, 54, 0.3),
-              0 12px 24px -12px rgba(3, 27, 54, 0.12);
-}
-
-.portraitImg {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.portraitCaption {
-  position: absolute;
-  left: 20px;
-  right: 20px;
-  bottom: 20px;
   display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 14px 20px;
-  border-radius: 999px;
-  background: rgba(3, 27, 54, 0.72);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  color: var(--ink-on-dark);
-  font-family: var(--mono);
-  font-weight: 700;
-  font-size: 12px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.founderBody {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.founderRole {
-  font-family: var(--mono);
-  font-weight: 400;
-  font-size: 12px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--ink-dim);
-  padding-bottom: 20px;
-  border-bottom: 1px solid var(--line);
-}
-
-.prose {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  font-family: var(--sans);
-  font-size: 17px;
-  line-height: 1.7;
-  color: var(--ink-dim);
-  margin-bottom: 12px;
-}
-
-/* === Experience: result card ============================================ */
-.result {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  padding: 3rem;
-  background: #0B2846;
-  border: 1px solid var(--highlight);
-  border-radius: 28px;
-  box-shadow: 0 40px 80px -40px rgba(0, 0, 0, 0.6),
-              0 12px 24px -12px rgba(0, 0, 0, 0.4);
-}
-
-.resultTitle {
-  font-family: var(--mono);
-  font-weight: 400;
-  font-size: 12px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--ink-dim-on-dark);
-}
-
-.resultMetric {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding-bottom: 24px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.resultValue {
-  font-family: var(--display);
-  font-weight: 800;
-  font-size: clamp(38px, 4.2vw, 60px);
-  line-height: 1;
-  letter-spacing: -0.03em;
-  color: var(--highlight);
-}
-
-.resultLabel {
-  font-family: var(--sans);
-  font-size: 15px;
-  line-height: 1.5;
-  color: var(--ink-on-dark);
-}
-
-.resultBody {
-  font-size: 15.5px;
-  line-height: 1.7;
-  color: #b8b8b8;
-}
-
-/* === At a glance: fact sheet ============================================ */
-.glance {
-  border-top: 1px solid var(--ink);
-}
-
-.glanceRow {
-  display: grid;
-  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
-  gap: 32px;
-  padding: 22px 0;
-  border-bottom: 1px solid var(--line);
-}
-
-.glanceRow dt {
-  font-family: var(--mono);
-  font-weight: 700;
-  font-size: 11.5px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--ink-dim);
-  padding-top: 4px;
-}
-
-.glanceRow dd {
-  font-family: var(--display);
-  font-weight: 800;
+  align-items: flex-end;
+  width: min(100%, 360px);
+  min-height: 130px;
+  padding: 20px 22px;
+  background: #EDEFF2;
+  color: #031B36 !important;
   font-size: 18px;
-  line-height: 1.45;
-  color: var(--ink);
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
-
-.glanceLink {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--ink);
-  text-decoration: underline;
-  text-decoration-color: var(--highlight);
-  text-decoration-thickness: 2px;
-  text-underline-offset: 5px;
-}
-
-/* === CTA ================================================================ */
-.ctaButtons {
-  margin-top: 48px;
-}
-
-.ctaNote {
-  margin-top: 36px;
-  font-family: var(--sans);
-  font-size: 15px;
-  color: var(--ink-dim-on-dark);
-}
-
-.ctaNoteLink {
-  color: var(--ink-on-dark);
-  font-weight: 600;
-  text-decoration: underline;
-  text-underline-offset: 4px;
-}
-
-.ctaNoteLink:hover {
-  color: var(--highlight);
-}
-
-/* === Responsive ========================================================= */
-@media (max-width: 1100px) {
-  .heroFacts { min-width: 0; width: 100%; }
-  .sticky { position: static; }
-  .row { gap: 40px; }
-  .founder { grid-template-columns: 1fr 1fr; gap: 56px; }
-  .step { column-gap: 72px; }
-}
+.ctaBtn:hover { background: var(--h-blue); color: var(--h-white) !important; }
 
 @media (max-width: 900px) {
-  .yearMark { display: none; }
-  .row {
-    grid-template-columns: 1fr;
-    gap: 18px;
-    padding: 36px 0;
-  }
-  .audienceGrid {
-    grid-template-columns: 1fr;
-    padding-top: 56px;
-  }
-  .audienceCard,
-  .result { padding: 2rem 1.5rem; }
-  .centerHead { margin-bottom: 56px; }
-
-  /* Timeline collapses to a left rail */
-  .timeline::before { left: 7px; }
-  .step {
-    grid-template-columns: 1fr;
-    padding: 14px 0 14px 36px;
-  }
-  .step + .step { margin-top: 0; }
-  .step:nth-child(even) .stepCard { grid-column: 1; }
-  .stepDot { left: 7px; top: 44px; }
-  .stepCard { padding: 1.75rem 1.5rem; }
-
-  .founder { grid-template-columns: 1fr; gap: 44px; }
-  .portrait { max-width: 460px; }
-
-  .glanceRow {
-    grid-template-columns: 1fr;
-    gap: 6px;
-    padding: 18px 0;
-  }
+  .hero, .introRow, .approach { grid-template-columns: 1fr; }
+  .hero { padding-top: 72px; }
+  .heroLeft { border-right: 0; border-bottom: 1px solid var(--h-rule); padding: 24px 16px 40px; }
+  .heroLead { padding-top: 48px; }
+  .heroRight { padding: 24px 16px; }
+  .introRow { padding: 32px 16px 40px; }
+  .approach { padding: 56px 16px; gap: 32px; }
+  .approachBody { padding-top: 0; }
+  .expBody { padding-top: 24px; padding-bottom: 40px; }
+  .ctaWrap { padding: 16px; }
+  .ctaBox { min-height: 0; padding: 20px; }
+  .ctaBox h2 { margin-top: 32px; }
+  .ctaBottom { flex-direction: column; align-items: stretch; }
+  .ctaBtn { width: 100%; }
 }
