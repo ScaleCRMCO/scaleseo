@@ -83,16 +83,18 @@ export default function Footer() {
         {/* Navy CTA box with a blue booking box inside */}
         <div className={styles.cta}>
           <p className={styles.ctaText}>Every great SEO campaign starts with a conversation</p>
-          <TrustindexWidget id="f90f439848023617fc26d78b37d" className={styles.reviews} />
-          <a
-            href="https://cal.com/corbinjensen-scaleseo/30min"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.ctaBox}
-          >
-            <Corner />
-            <span>Book a call</span>
-          </a>
+          <div className={styles.ctaBottom}>
+            <TrustindexWidget id="17e0136848d8361029462bf7c16" className={styles.reviews} />
+            <a
+              href="https://cal.com/corbinjensen-scaleseo/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.ctaBox}
+            >
+              <Corner />
+              <span>Book a call</span>
+            </a>
+          </div>
         </div>
 
         {/* Giant wordmark across the bottom */}
