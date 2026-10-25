@@ -63,7 +63,7 @@ function CaseCard({ card }: { card: Card }) {
   return (
     <Link
       href={card.href}
-      className={`${styles.card} ${card.theme === "midnight" ? styles.cardDark : ""} reveal-up`}
+      className={`${styles.card} ${styles.cardDark} reveal-up`}
     >
       <div className={styles.cardImage}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
