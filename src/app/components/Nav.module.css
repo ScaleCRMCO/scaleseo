@@ -32,7 +32,7 @@
   text-decoration: none;
   padding-right: 40px;
 }
-.brandMark { height: 38px; width: auto; }
+.logo { display: block; height: 34px; width: auto; }
 .wordmark {
   font-size: 30px;
   font-weight: 500;
@@ -186,7 +186,7 @@
   }
   .col, .contactBox, .bookLink, .tagline { display: none; }
   .brand { padding-right: 0; }
-  .wordmark { font-size: 24px; }
+  .logo { height: 28px; }
   .burger { display: flex; }
 }
 
