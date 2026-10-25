@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import PageHero from "../components/PageHero";
+import Breadcrumbs from "../components/Breadcrumbs";
 import SketchIcon from "../components/SketchIcon";
 import Contact from "../components/ContactCta";
 import ServicesFaq, { type FaqItem } from "../services/ServicesFaq";
@@ -305,44 +305,48 @@ const jsonLd = {
   ]
 };
 
+const Corner = () => (
+  <svg className={styles.corner} viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+    <path d="M1 1.5h7.5V9" />
+  </svg>
+);
+
 export default function PricingPage() {
   return (
-    <main>
+    <main className="v2">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <PageHero
-        breadcrumbs={[{ name: "Home", href: "/" }, { name: "Pricing" }]}
-        breadcrumbSchema={false}
-        title={
-          <>
-            SEO Pricing in <span className="title-block">Calgary</span>
-          </>
-        }
-        icon="pricing"
-        actions={
-          <>
-            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
-              <span>Get a Custom Quote</span>
-              <span>→</span>
+      {/* === Hero — big title left, intro + actions right === */}
+      <header className={styles.hero}>
+        <div className={styles.heroLeft}>
+          <div className={styles.crumbs}>
+            <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Pricing" }]} schema={false} />
+          </div>
+          <h1 className={styles.heroTitle}>SEO Pricing in Calgary</h1>
+        </div>
+        <div className={styles.heroRight}>
+          <p className={styles.heroIntro}>
+            Every business is different, so every campaign is scoped individually —
+            but you shouldn’t have to book a call just to find out what SEO costs.
+            Here are my starting prices.
+          </p>
+          <div className={styles.heroActions}>
+            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className={`${styles.box} ${styles.boxNavy}`}>
+              <Corner />
+              <span>Get a Custom Quote →</span>
             </a>
-            <a href="#plans">
-              <span>See Starting Prices</span>
-              <span>↓</span>
+            <a href="#plans" className={`${styles.box} ${styles.boxGrey}`}>
+              <Corner />
+              <span>See Starting Prices ↓</span>
             </a>
-          </>
-        }
-      >
-        <p>
-          Every business is different, so every campaign is scoped individually —
-          but you shouldn’t have to book a call just to find out what SEO costs.
-          Here are my starting prices.
-        </p>
-      </PageHero>
+          </div>
+        </div>
+      </header>
 
-      {/* === Plans === */}
+      {/* === Plans — grey, white boxes (featured box navy) === */}
       <section className={styles.plansSection} id="plans">
         <div className={styles.head}>
           <h2 className={styles.bigH2}>Starting Prices</h2>
@@ -379,7 +383,8 @@ export default function PricingPage() {
                 ))}
               </ul>
               <Link href={p.href} className={styles.planLink}>
-                Learn more <span aria-hidden="true">→</span>
+                <span>Learn more</span>
+                <span className={styles.plus} aria-hidden="true">+</span>
               </Link>
             </article>
           ))}
@@ -392,21 +397,23 @@ export default function PricingPage() {
         </p>
       </section>
 
-      {/* === What affects your price — navy === */}
-      <section className={styles.factorsSection} data-nav-theme="dark">
-        <h2 className={styles.bigH2}>What Affects Your Price</h2>
-        <div className={styles.factors}>
+      {/* === What affects your price — heading left, ruled rows right === */}
+      <section className={styles.split}>
+        <div className={styles.splitAside}>
+          <h2 className={styles.bigH2}>What Affects Your Price</h2>
+        </div>
+        <div className={styles.rows}>
           {factors.map((f, i) => (
-            <div key={f.title} className={styles.factor}>
-              <span className={styles.factorNum}>{String(i + 1).padStart(2, "0")}</span>
-              <h3 className={styles.factorTitle}>{f.title}</h3>
-              <p className={styles.factorBody}>{f.body}</p>
+            <div key={f.title} className={styles.row}>
+              <span className={styles.rowNum}>{String(i + 1).padStart(2, "0")}</span>
+              <h3 className={styles.rowTitle}>{f.title}</h3>
+              <p className={styles.rowBody}>{f.body}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* === Agency vs direct === */}
+      {/* === Agency vs direct — grey box | navy box === */}
       <section className={styles.compareSection}>
         <h2 className={styles.bigH2}>Where Your Retainer Actually Goes</h2>
         <div className={styles.compare}>
@@ -415,7 +422,7 @@ export default function PricingPage() {
             <ul className={styles.compareList}>
               {agency.map((item) => (
                 <li key={item}>
-                  <span aria-hidden="true">✕</span>
+                  <span className={styles.x} aria-hidden="true">✕</span>
                   {item}
                 </li>
               ))}
@@ -426,7 +433,7 @@ export default function PricingPage() {
             <ul className={styles.compareList}>
               {direct.map((item) => (
                 <li key={item}>
-                  <span aria-hidden="true">✓</span>
+                  <span className={styles.check} aria-hidden="true">✓</span>
                   {item}
                 </li>
               ))}
@@ -435,12 +442,13 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* === Terms — light blue === */}
+      {/* === Terms — blue, light boxes === */}
       <section className={styles.termsSection}>
         <h2 className={styles.bigH2}>The Scale SEO Terms</h2>
         <div className={styles.terms}>
-          {terms.map((t) => (
+          {terms.map((t, i) => (
             <div key={t.title} className={styles.term}>
+              <span className={styles.rowNum}>{String(i + 1).padStart(2, "0")}</span>
               <h3 className={styles.termTitle}>{t.title}</h3>
               <p className={styles.termBody}>{t.body}</p>
             </div>

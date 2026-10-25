@@ -1,338 +1,194 @@
-.bigH2 {
-  font-family: var(--display);
-  font-weight: 800;
-  font-size: clamp(44px, 6.4vw, 96px);
-  line-height: 1;
-  letter-spacing: -0.04em;
-  max-width: 16ch;
-}
+/* Pricing page (new brand): split hero, grey plans with boxed cards,
+   ruled factor rows, grey/navy comparison, blue terms boxes */
 
-/* --- Plans --- */
-.plansSection {
-  padding: 110px 3% 100px;
-  background: #fdffee;
-  color: #031b36;
-}
-
-.head {
+/* Boxed links */
+.box {
+  position: relative;
   display: flex;
-  justify-content: space-between;
   align-items: flex-end;
-  gap: 40px;
-  margin-bottom: 64px;
+  width: min(100%, 320px);
+  min-height: 120px;
+  padding: 20px 22px;
+  font-size: 18px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.boxNavy { background: var(--h-navy); color: var(--h-white); }
+.boxNavy:hover { background: var(--h-blue); }
+.boxGrey { background: #EDEFF2; color: var(--h-navy); }
+.boxGrey:hover { background: var(--h-blue); color: var(--h-white); }
+.corner { position: absolute; top: 16px; right: 18px; width: 10px; height: 10px; }
+
+.bigH2 {
+  font-size: clamp(38px, 4.6vw, 80px);
+  line-height: 1.04;
+  font-weight: 400;
+  letter-spacing: -0.035em;
 }
 
-.headBody {
-  max-width: 460px;
-  font-family: var(--sans);
-  font-weight: 500;
-  font-size: 17px;
-  line-height: 1.6;
-  color: #3e474d;
-}
-
-.plans {
+/* Hero */
+.hero {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 16px;
+  grid-template-columns: 3fr 2fr;
+  padding-top: 96px;
+  border-bottom: 1px solid var(--h-rule);
 }
+.heroLeft { padding: 32px 40px 72px; border-right: 1px solid var(--h-rule); }
+.crumbs { margin-bottom: 32px; }
+.crumbs a, .crumbs span, .crumbs li { color: var(--h-dim) !important; }
+.heroTitle {
+  max-width: 10ch;
+  font-size: clamp(56px, 8vw, 140px);
+  line-height: 0.95;
+  font-weight: 400;
+  letter-spacing: -0.045em;
+}
+.heroRight { display: flex; flex-direction: column; justify-content: space-between; gap: 40px; padding: 40px; }
+.heroIntro { font-size: clamp(19px, 1.6vw, 24px); line-height: 1.4; }
+.heroActions { display: flex; flex-wrap: wrap; gap: 16px; }
 
+/* Plans */
+.plansSection { padding: 96px 40px; background: var(--h-grey); }
+.head { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: end; margin-bottom: 56px; }
+.headBody { font-size: 18px; line-height: 1.5; max-width: 620px; }
+.plans { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
 .plan {
   display: flex;
   flex-direction: column;
-  padding: 32px 28px;
-  background: #fff;
-  border: 2px solid #031b36;
+  gap: 20px;
+  padding: 24px 22px;
+  background: var(--h-white);
+  color: var(--h-navy);
 }
-
-.featured {
-  background: #031b36;
-  color: #f5f1e8;
-}
-
-.planTop {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 12px;
-  min-height: 64px;
-}
-
-.planName {
-  font-family: var(--display);
-  font-weight: 800;
-  font-size: 22px;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-}
-
+.planTop { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
+.planName { font-size: clamp(26px, 2.2vw, 36px); line-height: 1.1; font-weight: 400; letter-spacing: -0.025em; }
 .planIcon {
+  flex: none;
   width: 64px;
-  height: 64px;
-  flex-shrink: 0;
+  height: auto;
   fill: none;
-  stroke: #031b36;
-  stroke-width: 6;
+  stroke: var(--h-blue);
+  stroke-width: 5;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
-
-.featured .planIcon {
-  stroke: #ff2c16;
-}
-
-.priceRow {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  margin: 28px 0 20px;
-  padding-bottom: 22px;
-  border-bottom: 1px solid currentColor;
-}
-
-.from {
-  font-family: var(--mono);
-  font-weight: 700;
-  font-size: 12px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  opacity: 0.7;
-}
-
-.price {
-  font-family: var(--display);
-  font-weight: 800;
-  font-size: clamp(40px, 3.6vw, 56px);
-  line-height: 1;
-  letter-spacing: -0.04em;
-}
-
-.featured .price {
-  color: #ff2c16;
-}
-
-.unit {
-  display: block;
-  margin-top: 8px;
-  font-family: var(--sans);
-  font-weight: 700;
-  font-size: 14px;
-  letter-spacing: 0;
-  opacity: 0.75;
-}
-
-.planSummary {
-  font-family: var(--sans);
-  font-weight: 500;
-  font-size: 15px;
-  line-height: 1.6;
-  margin-bottom: 20px;
-  opacity: 0.85;
-}
-
-.planList {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 28px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  font-family: var(--sans);
-  font-weight: 700;
-  font-size: 14.5px;
-}
-
+.priceRow { display: flex; flex-direction: column; gap: 6px; padding: 18px 0; border-top: 1px solid var(--h-rule); border-bottom: 1px solid var(--h-rule); }
+.from { font-size: 15px; color: var(--h-dim); }
+.price { font-size: clamp(44px, 4vw, 64px); line-height: 1; letter-spacing: -0.04em; color: var(--h-blue); }
+.unit { font-size: 16px; letter-spacing: 0; color: var(--h-dim); }
+.planSummary { font-size: 17px; line-height: 1.5; }
+.planList { list-style: none; display: flex; flex-direction: column; }
 .planList li {
   position: relative;
-  padding-left: 22px;
+  padding: 10px 0 10px 24px;
+  border-bottom: 1px solid var(--h-rule);
+  font-size: 16px;
+  line-height: 1.45;
 }
-
 .planList li::before {
   content: "";
   position: absolute;
-  left: 0;
-  top: 7px;
-  width: 9px;
-  height: 9px;
-  background: #ff2c16;
+  left: 2px;
+  top: 18px;
+  width: 7px;
+  height: 7px;
+  background: var(--h-blue);
 }
-
 .planLink {
   margin-top: auto;
-  font-family: var(--mono);
-  font-weight: 700;
-  font-size: 13px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  padding-top: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   color: inherit;
-  text-decoration: underline;
-  text-underline-offset: 5px;
-}
-
-.planLink:hover {
-  color: #ff2c16;
-}
-
-.plansNote {
-  margin-top: 28px;
-  max-width: 760px;
-  font-family: var(--sans);
-  font-weight: 600;
-  font-size: 15px;
-  line-height: 1.6;
-  color: #3e474d;
-}
-
-/* --- Factors (navy) --- */
-.factorsSection {
-  padding: 110px 3%;
-  background: #031b36;
-  color: #f5f1e8;
-}
-
-.factors {
-  margin-top: 64px;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  border-top: 2px solid rgba(245, 241, 232, 0.35);
-}
-
-.factor {
-  padding: 28px 28px 8px 0;
-}
-
-.factorNum {
-  font-family: var(--mono);
-  font-weight: 700;
-  font-size: 13px;
-  color: #ff2c16;
-}
-
-.factorTitle {
-  margin: 14px 0 12px;
-  font-family: var(--display);
-  font-weight: 800;
-  font-size: 24px;
-  letter-spacing: -0.02em;
-}
-
-.factorBody {
-  font-family: var(--sans);
-  font-weight: 500;
-  font-size: 15.5px;
-  line-height: 1.6;
-  color: rgba(245, 241, 232, 0.8);
-}
-
-/* --- Agency vs direct --- */
-.compareSection {
-  padding: 110px 3%;
-  background: #ede7da;
-  color: #031b36;
-}
-
-.compare {
-  margin-top: 64px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-
-.compareCol {
-  padding: 40px 36px;
-  background: #d8d2c7;
-}
-
-.compareUs {
-  background: #031b36;
-  color: #f5f1e8;
-}
-
-.compareLabel {
-  font-family: var(--display);
-  font-weight: 800;
-  font-size: clamp(24px, 2.4vw, 34px);
-  letter-spacing: -0.02em;
-  margin-bottom: 28px;
-}
-
-.compareList {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  font-family: var(--sans);
-  font-weight: 700;
   font-size: 17px;
+  text-decoration: none;
 }
+.plus {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 24px;
+  font-weight: 300;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.planLink:hover .plus { background: var(--h-blue); color: var(--h-white); }
+.featured { background: var(--h-navy); color: var(--h-white); }
+.featured .from, .featured .unit { color: rgba(254, 254, 254, 0.7); }
+.featured .priceRow, .featured .planList li { border-color: rgba(254, 254, 254, 0.25); }
+.featured .plus { background: var(--h-blue); }
+.plansNote { margin-top: 40px; max-width: 760px; font-size: 17px; line-height: 1.5; color: var(--h-dim); }
 
+/* Factors */
+.split { display: grid; grid-template-columns: 1fr 1.4fr; border-bottom: 1px solid var(--h-rule); }
+.splitAside { padding: 72px 40px; border-right: 1px solid var(--h-rule); }
+.rows { padding: 40px; }
+.row {
+  display: grid;
+  grid-template-columns: 56px 1fr 1.4fr;
+  gap: 24px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--h-rule);
+}
+.row:last-child { border-bottom: 0; }
+.rowNum { font-size: 15px; color: var(--h-blue); padding-top: 6px; }
+.rowTitle { font-size: 24px; line-height: 1.2; font-weight: 400; letter-spacing: -0.02em; }
+.rowBody { font-size: 16px; line-height: 1.55; color: var(--h-dim); }
+
+/* Compare */
+.compareSection { padding: 96px 40px 40px; }
+.compareSection .bigH2 { max-width: 14ch; margin-bottom: 56px; }
+.compare { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.compareCol { padding: 28px 24px; background: var(--h-grey); }
+.compareUs { background: var(--h-navy); color: var(--h-white); }
+.compareLabel { margin-bottom: 20px; font-size: clamp(24px, 2vw, 32px); font-weight: 400; letter-spacing: -0.02em; }
+.compareList { list-style: none; }
 .compareList li {
   display: flex;
-  gap: 14px;
+  gap: 12px;
   padding: 14px 0;
-  border-top: 1px solid currentColor;
-  border-color: rgba(3, 27, 54, 0.2);
+  border-top: 1px solid var(--h-rule);
+  font-size: 17px;
+  line-height: 1.45;
 }
+.compareUs .compareList li { border-top-color: rgba(254, 254, 254, 0.25); }
+.x, .check { flex: none; display: grid; place-items: center; width: 22px; height: 22px; font-size: 12px; margin-top: 1px; }
+.x { background: #DDE1E7; color: var(--h-dim); }
+.check { background: var(--h-blue); color: var(--h-white); }
 
-.compareUs .compareList li {
-  border-color: rgba(245, 241, 232, 0.2);
-}
-
-.compareList span {
-  width: 18px;
-  flex-shrink: 0;
-  opacity: 0.6;
-}
-
-.compareUs .compareList span {
-  color: #ff2c16;
-  opacity: 1;
-}
-
-/* --- Terms (light blue, navy only) --- */
-.termsSection {
-  padding: 110px 3%;
-  background: #b6ffff;
-  color: #031b36;
-}
-
-.terms {
-  margin-top: 64px;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 16px;
-}
-
+/* Terms */
+.termsSection { margin-top: 56px; padding: 96px 40px 40px; background: var(--h-blue); color: var(--h-white); }
+.termsSection .bigH2 { margin-bottom: 56px; }
+.terms { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
 .term {
-  padding: 32px 28px;
-  border: 2px solid #031b36;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-height: 260px;
+  padding: 24px 22px;
+  background: var(--h-tint);
+  color: var(--h-navy);
 }
-
-.termTitle {
-  font-family: var(--display);
-  font-weight: 800;
-  font-size: 24px;
-  letter-spacing: -0.02em;
-  margin-bottom: 14px;
-}
-
-.termBody {
-  font-family: var(--sans);
-  font-weight: 600;
-  font-size: 15.5px;
-  line-height: 1.6;
-}
+.termTitle { font-size: clamp(22px, 1.8vw, 28px); line-height: 1.15; font-weight: 400; letter-spacing: -0.02em; }
+.termBody { font-size: 16px; line-height: 1.55; color: var(--h-dim); }
 
 @media (max-width: 1100px) {
-  .plans, .factors, .terms { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .plans, .terms { grid-template-columns: 1fr 1fr; }
 }
-
-@media (max-width: 700px) {
-  .plansSection, .factorsSection, .compareSection, .termsSection { padding: 70px 16px; }
-  .head { flex-direction: column; align-items: flex-start; }
-  .plans, .factors, .terms, .compare { grid-template-columns: 1fr; }
-  .compareCol { padding: 28px 22px; }
-}
-
-.featured .unit {
-  color: #f5f1e8;
+@media (max-width: 900px) {
+  .hero, .head, .split, .compare { grid-template-columns: 1fr; }
+  .hero { padding-top: 72px; }
+  .heroLeft { border-right: 0; border-bottom: 1px solid var(--h-rule); padding: 24px 16px 40px; }
+  .heroRight { padding: 24px 16px 32px; }
+  .box { width: 100%; }
+  .plansSection, .compareSection { padding: 56px 16px; }
+  .plans, .terms { grid-template-columns: 1fr; gap: 16px; }
+  .splitAside { border-right: 0; border-bottom: 1px solid var(--h-rule); padding: 48px 16px 24px; }
+  .rows { padding: 8px 16px 24px; }
+  .row { grid-template-columns: 40px 1fr; }
+  .row .rowBody { grid-column: 2; }
+  .termsSection { padding: 56px 16px 16px; }
+  .term { min-height: 0; }
 }
