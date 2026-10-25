@@ -175,3 +175,13 @@
   .brandSide { padding: 24px 16px 32px; }
   .splitBelow .left, .splitBelow .right { padding-top: 40px; }
 }
+
+/* Review widget (left) + CTA column (button, email link below) */
+.reviews { flex: 1; min-width: 0; max-width: 420px; }
+.ctaCol { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; width: min(100%, 340px); }
+.ctaCol .box { width: 100%; }
+@media (max-width: 1000px) {
+  .bottom { flex-direction: column; align-items: stretch; }
+  .ctaCol { width: 100%; }
+  .reviews { max-width: none; }
+}

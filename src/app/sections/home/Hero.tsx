@@ -1,3 +1,4 @@
+import TrustindexWidget from "../../components/TrustindexWidget";
 import styles from "./Hero.module.css";
 
 const Corner = () => (
@@ -71,18 +72,21 @@ export default function Hero() {
           </div>
 
           <div className={styles.bottom}>
-            <a href="#contact" className={styles.textLink}>
-              Send an Email →
-            </a>
-            <a
-              href="https://cal.com/corbinjensen-scaleseo/30min"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.box}
-            >
-              <Corner />
-              <span>Book a Consultation →</span>
-            </a>
+            <TrustindexWidget id="6c14fb6849673601c4969fa538a" className={styles.reviews} />
+            <div className={styles.ctaCol}>
+              <a
+                href="https://cal.com/corbinjensen-scaleseo/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.box}
+              >
+                <Corner />
+                <span>Book a Consultation →</span>
+              </a>
+              <a href="#contact" className={styles.textLink}>
+                Send an Email →
+              </a>
+            </div>
           </div>
         </div>
       </div>
