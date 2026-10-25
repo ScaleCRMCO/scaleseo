@@ -6,9 +6,9 @@ import t from "../services/svc.module.css";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: "About Scale SEO — Corbin Jensen",
+  title: { absolute: "About Scale SEO | Independent Calgary SEO Consultancy" },
   description:
-    "Scale SEO provides precise, technical search engine optimization for corporate entities, accounting firms, and professional service practices across Canada. Run directly by lead specialist Corbin Jensen.",
+    "Learn about Scale SEO, a founder-led SEO consultancy based in Calgary. Discover our approach, experience across Canada and Australia, and commitment to clients.",
   alternates: { canonical: "/about" },
 };
 
