@@ -54,7 +54,28 @@ const aboutJsonLd = {
       mainEntity: { "@id": "https://scaleseo.co/#organization" },
       publisher: { "@id": "https://scaleseo.co/#organization" },
       breadcrumb: { "@id": "https://scaleseo.co/about#breadcrumb" },
+      primaryImageOfPage: { "@id": "https://scaleseo.co/about#primaryimage" },
+      image: [
+        { "@id": "https://scaleseo.co/about#primaryimage" },
+        {
+          "@type": "ImageObject",
+          url: "https://scaleseo.co/images/corbin-about.jpg",
+          contentUrl: "https://scaleseo.co/images/corbin-about.jpg",
+          width: 2143,
+          height: 2560,
+          caption: "Corbin Jensen, founder of Scale SEO",
+        },
+      ],
       inLanguage: "en-CA",
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://scaleseo.co/about#primaryimage",
+      url: "https://scaleseo.co/images/calgary-skyline.webp",
+      contentUrl: "https://scaleseo.co/images/calgary-skyline.webp",
+      width: 1200,
+      height: 900,
+      caption: "Calgary skyline, home of Scale SEO",
     },
     {
       "@type": "BreadcrumbList",
