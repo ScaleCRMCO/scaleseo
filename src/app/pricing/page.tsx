@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import Breadcrumbs from "../components/Breadcrumbs";
 import SketchIcon from "../components/SketchIcon";
 import ContactSection from "../components/ContactSection";
@@ -9,7 +10,7 @@ import styles from "./page.module.css";
 export const metadata: Metadata = {
   title: { absolute: "SEO & Website Pricing in Calgary | Scale SEO" },
   description:
-    "Transparent starting prices for SEO and websites in Calgary. Monthly SEO from $3,000 + GST and websites from $4,000 + GST. Month-to-month, no lock-in contracts.",
+    "Transparent starting prices for SEO and websites in Calgary. Monthly SEO from $3,000 + GST and websites from $6,000 + GST. Month-to-month, no lock-in contracts.",
   alternates: { canonical: "/pricing" },
 };
 
@@ -40,7 +41,7 @@ const plans = [
   {
     name: "Website Design & Development",
     icon: "browser",
-    price: "$4,000",
+    price: "$6,000",
     unit: "one-time + GST",
     summary: "Custom websites built with search visibility, usability, and conversions in mind.",
     listLabel: "Projects can include:",
@@ -107,7 +108,7 @@ const faqs: FaqItem[] = [
   {
     q: "How much does a new business website cost?",
     a: [
-      "Website design and development projects start at $4,000 CAD plus GST.",
+      "Website design and development projects start at $6,000 CAD plus GST.",
       "Final pricing depends on the website\u2019s functionality, design requirements, content, and development scope. Optional hosting and ongoing SEO are quoted separately.",
     ],
   },
@@ -179,9 +180,9 @@ const jsonLd = {
           "@type": "Offer",
           "name": "Website Design & Development",
           "url": "https://scaleseo.co/services/web-development",
-          "price": "4000",
+          "price": "6000",
           "priceCurrency": "CAD",
-          "description": "Custom website design and development starting from $4,000 CAD as a one-time fee plus GST.",
+          "description": "Custom website design and development starting from $6,000 CAD as a one-time fee plus GST.",
           "seller": {
             "@id": "https://scaleseo.co/#organization"
           },
@@ -231,36 +232,34 @@ export default function PricingPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* === Hero === */}
+      {/* === Hero — big title + small note left; B&W image, subheading and text right === */}
       <header className={styles.hero}>
         <div className={styles.heroLeft}>
           <div className={styles.crumbs}>
             <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Pricing" }]} schema={false} />
           </div>
           <h1 className={styles.heroTitle}>SEO &amp; Website Pricing in Calgary</h1>
+          <a href="#plans" className={styles.heroNote}>See Starting Prices &darr;</a>
         </div>
         <div className={styles.heroRight}>
-          <div className={styles.heroText}>
-            <p className={styles.heroIntro}>
-              Straightforward pricing for businesses investing in long-term
-              search visibility and growth.
-            </p>
-            <p>
-              Scale SEO offers founder-led SEO campaigns and website
-              development, with transparent starting rates and custom quotes
-              based on your business needs.
-            </p>
+          <div className={styles.heroImage}>
+            <Image
+              src="/images/calgary-skyline.webp"
+              alt="Calgary skyline"
+              fill
+              priority
+              sizes="(max-width: 900px) 90vw, 33vw"
+            />
           </div>
-          <div className={styles.heroActions}>
-            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className={`${styles.box} ${styles.boxNavy}`}>
-              <Corner />
-              <span>Book a Consultation &rarr;</span>
-            </a>
-            <a href="#plans" className={`${styles.box} ${styles.boxGrey}`}>
-              <Corner />
-              <span>See Starting Prices &darr;</span>
-            </a>
-          </div>
+          <p className={styles.heroSub}>
+            Straightforward pricing for businesses investing in long-term
+            search visibility and growth.
+          </p>
+          <p className={styles.heroBody}>
+            Scale SEO offers founder-led SEO campaigns and website development,
+            with transparent starting rates and custom quotes based on your
+            business needs.
+          </p>
         </div>
       </header>
 

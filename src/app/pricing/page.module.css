@@ -200,3 +200,19 @@
 .planNote { font-size: 15px; line-height: 1.5; opacity: 0.8; }
 .plansNote a { color: var(--h-blue); text-decoration: underline; text-underline-offset: 3px; }
 .asideBody { margin-top: 24px; max-width: 460px; font-size: 18px; line-height: 1.5; }
+
+/* Hero (Sincro "Technology" layout) */
+.hero { grid-template-columns: 2fr 1fr; }
+.heroLeft { display: flex; flex-direction: column; }
+.heroTitle { max-width: 11ch; }
+.heroNote { margin-top: auto; padding-top: 120px; color: var(--h-navy); font-size: 17px; text-decoration: none; }
+.heroNote:hover { color: var(--h-blue); }
+.heroRight { justify-content: flex-start; gap: 32px; }
+.heroImage { position: relative; aspect-ratio: 3 / 2; overflow: hidden; background: var(--h-grey); }
+.heroImage img { object-fit: cover; filter: grayscale(1); }
+.heroSub { font-size: clamp(22px, 2vw, 32px); line-height: 1.2; letter-spacing: -0.015em; }
+.heroBody { margin-top: auto; padding-top: 72px; font-size: 18px; line-height: 1.45; }
+@media (max-width: 900px) {
+  .heroNote { padding-top: 40px; }
+  .heroBody { padding-top: 0; }
+}

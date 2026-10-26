@@ -10,7 +10,7 @@ import styles from "./page.module.css";
 export const metadata: Metadata = {
   title: "Web Development & Website Design in Calgary | Scale SEO",
   description:
-    "Custom website design and development in Calgary for established businesses across Canada. Responsive, SEO-ready websites built for performance, search visibility and enquiries. Projects from $3,000 + GST.",
+    "Custom website design and development in Calgary for established businesses across Canada. Responsive, SEO-ready websites built for performance, search visibility and enquiries. Projects from $6,000 + GST.",
   alternates: { canonical: "/services/web-development" },
 };
 
@@ -155,7 +155,7 @@ const faqs: FaqItem[] = [
   {
     q: "How much does website development cost in Calgary?",
     a: [
-      "Website projects at Scale SEO start from $3,000 CAD + GST.",
+      "Website projects at Scale SEO start from $6,000 CAD + GST.",
       "The final price depends on the required design, number and complexity of page layouts, content requirements, functionality, integrations, and development platform.",
       "You'll receive a defined project scope and quote before work begins.",
     ],
@@ -267,10 +267,10 @@ const jsonLd = {
       ],
       "offers": {
         "@type": "AggregateOffer",
-        "lowPrice": "3000",
+        "lowPrice": "6000",
         "priceCurrency": "CAD",
         "offerCount": 1,
-        "description": "Custom website development projects start from $3,000 CAD plus GST. Final pricing depends on project scope and requirements."
+        "description": "Custom website development projects start from $6,000 CAD plus GST. Final pricing depends on project scope and requirements."
       }
     },
     {
@@ -532,11 +532,11 @@ export default function WebDevelopmentPage() {
       <section className={styles.pricing}>
         <div className={styles.label}>Website Development Pricing</div>
         <h2 className={`${styles.bigH2} reveal-up`}>
-          Websites Starting From $3,000 + GST
+          Websites Starting From $6,000 + GST
         </h2>
         <div className={`${styles.pricingIntro} reveal-up`}>
           <p>
-            New website projects start from $3,000 CAD + GST, with the final
+            New website projects start from $6,000 CAD + GST, with the final
             quote determined by the design, content, functionality,
             integrations, and development requirements.
           </p>
@@ -605,7 +605,7 @@ export default function WebDevelopmentPage() {
             </div>
             <p className={styles.meta}>
               Based in Calgary · Serving Canada &amp; Internationally · Website
-              Projects From $3,000 + GST
+              Projects From $6,000 + GST
             </p>
           </div>
         </div>

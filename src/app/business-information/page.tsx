@@ -7,8 +7,8 @@ import styles from "../legal.module.css";
 // Plain, factual reference page about the business. Kept as simple semantic
 // HTML (headings, lists, definition lists) so people, search engines and AI
 // systems can all read it easily. Update LAST_UPDATED when anything changes.
-const LAST_UPDATED = "2026-10-23";
-const LAST_UPDATED_LABEL = "October 23, 2026";
+const LAST_UPDATED = "2026-10-26";
+const LAST_UPDATED_LABEL = "October 26, 2026";
 
 const BASE = "https://scaleseo.co";
 const BOOKING_URL = "https://cal.com/corbinjensen-scaleseo/30min";
@@ -50,7 +50,7 @@ const services = [
   {
     name: "Web Development & Website Design",
     href: "/services/web-development",
-    price: "From $3,000 + GST (one-time project fee)",
+    price: "From $6,000 + GST (one-time project fee)",
     desc: "New websites, redesigns, and improvements to existing sites, built with responsive layouts and SEO foundations. Platforms include Webflow, custom-coded Next.js sites, and existing platforms such as WordPress.",
   },
   {
@@ -126,7 +126,7 @@ const jsonLd = {
       "breadcrumb": {
         "@id": "https://scaleseo.co/business-information#breadcrumb"
       },
-      "dateModified": "2026-10-23",
+      "dateModified": "2026-10-26",
       "significantLink": [
         "https://scaleseo.co/services/seo",
         "https://scaleseo.co/services/seo-audits",
