@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Breadcrumbs from "../components/Breadcrumbs";
 import SketchIcon from "../components/SketchIcon";
-import Contact from "../components/ContactCta";
+import ContactSection from "../components/ContactSection";
 import ServicesFaq, { type FaqItem } from "../services/ServicesFaq";
 import styles from "./page.module.css";
 
@@ -466,7 +466,7 @@ export default function PricingPage() {
         }
       />
 
-      <Contact />
+      <ContactSection />
     </main>
   );
 }
