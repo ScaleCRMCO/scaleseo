@@ -17,7 +17,15 @@ const points = [
 // Closing contact section (new brand): blue band with heading + points on
 // the left, a large translucent navy logo mark in the middle, and a white
 // form card on the right. Posts to /api/contact like the other forms.
-export default function ContactSection() {
+export default function ContactSection({
+  heading = "Ready to Improve Your Organic Search Visibility?",
+  lead = "Tell me about your business and where you want to grow. You\u2019ll hear back from me directly, usually within 24 hours.",
+  cta,
+}: {
+  heading?: string;
+  lead?: string;
+  cta?: { href: string; label: string };
+} = {}) {
   const router = useRouter();
   const [status, setStatus] = useState<Status>("idle");
   const [need, setNeed] = useState("Not sure yet");
@@ -43,11 +51,8 @@ export default function ContactSection() {
   return (
     <section className={styles.section} id="contact">
       <div className={styles.left}>
-        <h2 className={styles.heading}>Ready to Improve Your Organic Search Visibility?</h2>
-        <p className={styles.lead}>
-          Tell me about your business and where you want to grow. You&rsquo;ll
-          hear back from me directly, usually within 24 hours.
-        </p>
+        <h2 className={styles.heading}>{heading}</h2>
+        <p className={styles.lead}>{lead}</p>
         <ul className={styles.points}>
           {points.map((p) => (
             <li key={p}>
@@ -56,6 +61,11 @@ export default function ContactSection() {
             </li>
           ))}
         </ul>
+        {cta && (
+          <a href={cta.href} target="_blank" rel="noopener noreferrer" className={styles.ctaLink}>
+            {cta.label}
+          </a>
+        )}
       </div>
 
       <svg className={styles.mark} viewBox="0 0 366 366" fill="none" stroke="currentColor" aria-hidden="true">

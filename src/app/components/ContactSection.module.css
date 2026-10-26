@@ -102,3 +102,14 @@
   .mark { left: auto; right: -80px; top: 40px; width: 300px; transform: none; opacity: 0.2; }
   .card { padding: 28px 20px; }
 }
+.ctaLink {
+  align-self: flex-start;
+  margin-top: 8px;
+  padding: 14px 18px;
+  background: var(--cs-navy);
+  color: var(--cs-white) !important;
+  font-size: 17px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.ctaLink:hover { background: var(--cs-white); color: var(--cs-navy) !important; }
