@@ -7,173 +7,123 @@ import ServicesFaq, { type FaqItem } from "../services/ServicesFaq";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: "SEO Pricing in Calgary — Monthly SEO, Audits & Websites | Scale SEO",
+  title: { absolute: "SEO & Website Pricing in Calgary | Scale SEO" },
   description:
-    "Transparent starting prices for SEO in Calgary. Monthly SEO from $2,000 + GST, SEO audits from $500, and websites from $3,000. Month-to-month, no lock-in contracts.",
+    "Transparent starting prices for SEO and websites in Calgary. Monthly SEO from $3,000 + GST and websites from $4,000 + GST. Month-to-month, no lock-in contracts.",
   alternates: { canonical: "/pricing" },
 };
 
 const BOOKING_URL = "https://cal.com/corbinjensen-scaleseo/30min";
 
-type Plan = {
-  name: string;
-  price: number;
-  unit: "month" | "one-time";
-  icon: string;
-  href: string;
-  summary: string;
-  includes: string[];
-  note?: string;
-  featured?: boolean;
-};
-
-const plans: Plan[] = [
+const plans = [
   {
-    name: "Monthly SEO Campaign",
-    price: 2000,
-    unit: "month",
+    name: "Monthly SEO Campaigns",
     icon: "search",
-    href: "/services/seo",
+    price: "$3,000",
+    unit: "/month + GST",
     summary:
-      "An ongoing campaign built around your market, competition, and growth targets. Priorities shift month to month based on the data.",
+      "Ongoing SEO campaigns designed to improve organic search visibility, attract qualified enquiries, and support long-term business growth.",
+    listLabel: "Campaigns can include:",
     includes: [
-      "Technical SEO",
-      "Local SEO & Google Business Profile",
-      "On-page SEO & site structure",
-      "GEO (AI search visibility)",
-      "Design & CTA improvements to your existing site",
-      "Tracking & monthly reporting",
+      "Technical SEO and website improvements",
+      "Keyword research and on-page optimization",
+      "Local SEO and Google Business Profile",
+      "Content strategy and internal linking",
+      "AI search visibility optimization",
+      "Performance tracking and monthly reporting",
     ],
+    note: "Every campaign is managed directly by Corbin Jensen, with priorities tailored to your website and competitive market.",
+    href: "/services/seo",
+    cta: "Explore SEO Services",
     featured: true,
   },
   {
-    name: "Website Build",
-    price: 3000,
-    unit: "one-time",
+    name: "Website Design & Development",
     icon: "browser",
+    price: "$4,000",
+    unit: "one-time + GST",
+    summary: "Custom websites built with search visibility, usability, and conversions in mind.",
+    listLabel: "Projects can include:",
+    includes: [
+      "Custom website design and development",
+      "SEO-friendly site structure",
+      "Mobile-responsive layouts",
+      "Technical SEO foundations",
+      "Conversion-focused page design",
+      "Analytics and search tracking setup",
+    ],
+    note: "Website projects are scoped individually, with optional hosting and ongoing SEO services available separately.",
     href: "/services/web-development",
-    summary:
-      "A complete website built from scratch, scoped around what your business needs rather than a per-page count.",
-    includes: [
-      "Custom design & development",
-      "SEO-ready structure from day one",
-      "Conversion-focused page layouts",
-      "Optional monthly hosting add-on",
-      "Monthly SEO can be added on top",
-    ],
-  },
-  {
-    name: "SEO Audit",
-    price: 500,
-    unit: "one-time",
-    icon: "ledger",
-    href: "/services/seo-audits",
-    summary:
-      "A focused review of the core technical and on-page factors affecting your organic search performance.",
-    includes: [
-      "Technical health check",
-      "On-page review",
-      "Prioritized fix list",
-    ],
-  },
-  {
-    name: "Advanced SEO Audit",
-    price: 1500,
-    unit: "one-time",
-    icon: "caseStudy",
-    href: "/services/seo-audits",
-    summary:
-      "Everything in the SEO Audit, plus deeper keyword, competitor, content, architecture, and local SEO analysis.",
-    includes: [
-      "Keyword & competitor analysis",
-      "Content & architecture review",
-      "Local SEO analysis",
-      "Developer-ready roadmap",
-    ],
+    cta: "Explore Web Development",
+    featured: false,
   },
 ];
 
 const factors = [
-  { title: "Market competition", body: "Ranking for competitive commercial terms in Calgary takes more work than a niche with a handful of competitors." },
-  { title: "Geographic reach", body: "Ranking in one city is a different campaign from ranking across Alberta, multiple locations, or nationally." },
-  { title: "Technical debt", body: "Older websites with structural, speed, or indexing problems need more groundwork before growth work pays off." },
-  { title: "Content requirements", body: "How many service, location, and supporting pages are needed to compete for the searches that matter." },
-];
-
-const agency = [
-  "Sales team commissions",
-  "Account managers relaying messages",
-  "Work handed to junior staff",
-  "Office and overhead costs",
-  "Long-term contracts to lock in revenue",
-];
-
-const direct = [
-  "You work directly with the person doing the work",
-  "Retainer goes into technical work and content",
-  "Strategy and execution under one roof",
-  "Month-to-month — stay because it’s working",
-  "Fast decisions, no departmental hand-offs",
+  {
+    title: "Competition & Target Market",
+    body: "Competitive industries and larger geographic markets generally require more extensive SEO strategies.",
+  },
+  {
+    title: "Website Condition",
+    body: "Websites with technical issues, indexing problems, or outdated structures may require additional optimization.",
+  },
+  {
+    title: "Content & Campaign Scope",
+    body: "The number of services, target keywords, locations, and content improvements influences the amount of ongoing work.",
+  },
 ];
 
 const terms = [
-  { title: "Month-to-Month", body: "No long-term commitments. All SEO retainers are strictly month-to-month." },
-  { title: "You Own Everything", body: "You retain 100% ownership of your website, content, accounts, and data from day one." },
-  { title: "Founder-Led", body: "Every campaign is run by Corbin Jensen directly — no junior account managers." },
-  { title: "Clear Starting Prices", body: "Starting rates are published here. Your exact quote is confirmed in writing before any work begins." },
+  {
+    title: "Founder-Led",
+    body: "Work directly with Corbin Jensen, the specialist responsible for your strategy and implementation.",
+  },
+  {
+    title: "Month-to-Month",
+    body: "Ongoing SEO campaigns operate without long-term lock-in contracts.",
+  },
+  {
+    title: "Your Website, Your Assets",
+    body: "You retain ownership of your website, content, accounts, and data.",
+  },
 ];
 
 const faqs: FaqItem[] = [
   {
-    q: "How much does SEO cost in Calgary?",
+    q: "How much do monthly SEO services cost?",
     a: [
-      "Ongoing SEO campaigns with Scale SEO start from $2,000 + GST per month.",
-      "The final price depends on your market competition, the number of locations or regions you want to rank in, your website’s current condition, and how much content is needed.",
+      "Monthly SEO campaigns with Scale SEO start at $3,000 CAD plus GST.",
+      "The final retainer depends on your website\u2019s condition, industry competition, target locations, and campaign requirements.",
     ],
   },
   {
-    q: "Why is working with an independent SEO specialist more cost-effective than a Calgary SEO agency?",
+    q: "What\u2019s included in monthly SEO management?",
     a: [
-      "Agency retainers carry significant overhead — sales commissions, account managers, office space, and layers of staff between you and the person doing the work.",
-      "With Scale SEO, your retainer goes into active technical optimization, content, and website improvements, and you deal directly with the specialist running your campaign.",
+      "Campaigns can include technical SEO, on-page optimization, local SEO, content strategy, internal linking, AI search optimization, website improvements, and performance reporting.",
+      "The exact work is tailored to your business rather than a fixed list of monthly deliverables.",
     ],
   },
   {
-    q: "What factors increase the cost of an SEO campaign?",
+    q: "How much does a new business website cost?",
     a: [
-      "The biggest factors are how competitive your market is, technical problems on older websites, how much content is needed, and geographic reach — ranking across Calgary alone is a smaller job than ranking across Alberta or multiple locations.",
+      "Website design and development projects start at $4,000 CAD plus GST.",
+      "Final pricing depends on the website\u2019s functionality, design requirements, content, and development scope. Optional hosting and ongoing SEO are quoted separately.",
     ],
   },
   {
-    q: "Do you require a long-term contract?",
+    q: "Do you require long-term contracts?",
     a: [
-      "No. All SEO retainers are month-to-month, and your website, content, accounts, and data remain yours.",
+      "No. Ongoing SEO campaigns are offered month-to-month, and clients retain ownership of their websites, content, accounts, and data.",
     ],
   },
   {
-    q: "What’s included in the monthly SEO price?",
+    q: "Do you work with businesses outside Calgary?",
     a: [
-      "Depending on what your business needs, a campaign can include technical SEO, local SEO, on-page optimization, GEO (AI search visibility), and design or CTA improvements to your existing website, along with tracking and reporting.",
+      "Yes. Scale SEO is based in Calgary, Alberta, and works with businesses across Canada and internationally, including clients in Australia.",
     ],
-    link: { href: "/services/seo", label: "See What’s Included in SEO" },
-  },
-  {
-    q: "How much does a new website cost?",
-    a: [
-      "Websites built from scratch start from $3,000 + GST as a one-time upfront fee. I don’t price per page — the scope covers what’s needed for a complete site.",
-      "Monthly hosting is available as an optional add-on, and ongoing SEO can be added from the standard starting rate.",
-    ],
-  },
-  {
-    q: "Can I start with an SEO audit instead of a monthly campaign?",
-    a: [
-      "Yes. The SEO Audit starts from $500 + GST and the Advanced SEO Audit starts from $1,500 + GST. Both are one-time fees with no obligation to continue.",
-    ],
-    link: { href: "/services/seo-audits", label: "Learn More About SEO Audits" },
   },
 ];
-
-const fmt = (n: number) => `$${n.toLocaleString("en-CA")}`;
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -182,8 +132,8 @@ const jsonLd = {
       "@type": "WebPage",
       "@id": "https://scaleseo.co/pricing#webpage",
       "url": "https://scaleseo.co/pricing",
-      "name": "SEO Pricing in Calgary — Monthly SEO, Audits & Websites | Scale SEO",
-      "description": "View Scale SEO starting prices for monthly SEO campaigns, SEO audits and website development in Calgary. All pricing is in CAD and engagements are scoped around your business, website and market.",
+      "name": "SEO & Website Pricing in Calgary | Scale SEO",
+      "description": "View Scale SEO starting prices for monthly SEO campaigns and website development in Calgary. All pricing is in CAD and engagements are scoped around your business, website and market.",
       "isPartOf": {
         "@id": "https://scaleseo.co/#website"
       },
@@ -210,9 +160,9 @@ const jsonLd = {
           "@type": "Offer",
           "name": "Monthly SEO Campaign",
           "url": "https://scaleseo.co/services/seo",
-          "price": "2000",
+          "price": "3000",
           "priceCurrency": "CAD",
-          "description": "Ongoing SEO campaign management starting from $2,000 CAD per month plus GST.",
+          "description": "Ongoing SEO campaign management starting from $3,000 CAD per month plus GST.",
           "seller": {
             "@id": "https://scaleseo.co/#organization"
           },
@@ -227,11 +177,11 @@ const jsonLd = {
         },
         {
           "@type": "Offer",
-          "name": "Website Build",
+          "name": "Website Design & Development",
           "url": "https://scaleseo.co/services/web-development",
-          "price": "3000",
+          "price": "4000",
           "priceCurrency": "CAD",
-          "description": "Custom website design and development starting from $3,000 CAD as a one-time fee plus GST.",
+          "description": "Custom website design and development starting from $4,000 CAD as a one-time fee plus GST.",
           "seller": {
             "@id": "https://scaleseo.co/#organization"
           },
@@ -239,44 +189,6 @@ const jsonLd = {
             "@type": "Service",
             "name": "Website Design & Development",
             "url": "https://scaleseo.co/services/web-development",
-            "provider": {
-              "@id": "https://scaleseo.co/#organization"
-            }
-          }
-        },
-        {
-          "@type": "Offer",
-          "name": "SEO Audit",
-          "url": "https://scaleseo.co/services/seo-audits",
-          "price": "500",
-          "priceCurrency": "CAD",
-          "description": "Focused technical and on-page SEO audit starting from $500 CAD as a one-time fee plus GST.",
-          "seller": {
-            "@id": "https://scaleseo.co/#organization"
-          },
-          "itemOffered": {
-            "@type": "Service",
-            "name": "SEO Audit",
-            "url": "https://scaleseo.co/services/seo-audits",
-            "provider": {
-              "@id": "https://scaleseo.co/#organization"
-            }
-          }
-        },
-        {
-          "@type": "Offer",
-          "name": "Advanced SEO Audit",
-          "url": "https://scaleseo.co/services/seo-audits",
-          "price": "1500",
-          "priceCurrency": "CAD",
-          "description": "Advanced SEO audit with keyword, competitor, content, website architecture and local SEO analysis starting from $1,500 CAD as a one-time fee plus GST.",
-          "seller": {
-            "@id": "https://scaleseo.co/#organization"
-          },
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Advanced SEO Audit",
-            "url": "https://scaleseo.co/services/seo-audits",
             "provider": {
               "@id": "https://scaleseo.co/#organization"
             }
@@ -319,71 +231,76 @@ export default function PricingPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* === Hero — big title left, intro + actions right === */}
+      {/* === Hero === */}
       <header className={styles.hero}>
         <div className={styles.heroLeft}>
           <div className={styles.crumbs}>
             <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Pricing" }]} schema={false} />
           </div>
-          <h1 className={styles.heroTitle}>SEO Pricing in Calgary</h1>
+          <h1 className={styles.heroTitle}>SEO &amp; Website Pricing in Calgary</h1>
         </div>
         <div className={styles.heroRight}>
-          <p className={styles.heroIntro}>
-            Every business is different, so every campaign is scoped individually —
-            but you shouldn’t have to book a call just to find out what SEO costs.
-            Here are my starting prices.
-          </p>
+          <div className={styles.heroText}>
+            <p className={styles.heroIntro}>
+              Straightforward pricing for businesses investing in long-term
+              search visibility and growth.
+            </p>
+            <p>
+              Scale SEO offers founder-led SEO campaigns and website
+              development, with transparent starting rates and custom quotes
+              based on your business needs.
+            </p>
+          </div>
           <div className={styles.heroActions}>
             <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className={`${styles.box} ${styles.boxNavy}`}>
               <Corner />
-              <span>Get a Custom Quote →</span>
+              <span>Book a Consultation &rarr;</span>
             </a>
             <a href="#plans" className={`${styles.box} ${styles.boxGrey}`}>
               <Corner />
-              <span>See Starting Prices ↓</span>
+              <span>See Starting Prices &darr;</span>
             </a>
           </div>
         </div>
       </header>
 
-      {/* === Plans — grey, white boxes (featured box navy) === */}
+      {/* === Starting prices — two plan boxes === */}
       <section className={styles.plansSection} id="plans">
         <div className={styles.head}>
           <h2 className={styles.bigH2}>Starting Prices</h2>
           <p className={styles.headBody}>
-            All prices in CAD, plus GST. I typically work with established
-            businesses generating over $1M in annual revenue that want search to
-            become a serious source of new clients.
+            All prices in Canadian dollars (CAD), plus applicable GST. Final
+            pricing is confirmed after reviewing your website, market, and
+            project requirements.
           </p>
         </div>
 
         <div className={styles.plans}>
           {plans.map((p) => (
-            <article
-              key={p.name}
-              className={`${styles.plan} ${p.featured ? styles.featured : ""}`}
-            >
+            <article key={p.name} className={`${styles.plan} ${p.featured ? styles.featured : ""}`}>
               <div className={styles.planTop}>
                 <h3 className={styles.planName}>{p.name}</h3>
                 <SketchIcon name={p.icon} className={styles.planIcon} />
               </div>
               <div className={styles.priceRow}>
-                <span className={styles.from}>Starting from</span>
+                <span className={styles.from}>Starting at</span>
                 <span className={styles.price}>
-                  {fmt(p.price)}
-                  <span className={styles.unit}>
-                    {p.unit === "month" ? " /month" : " one-time"} + GST
-                  </span>
+                  {p.price}
+                  <span className={styles.unit}> {p.unit}</span>
                 </span>
               </div>
               <p className={styles.planSummary}>{p.summary}</p>
-              <ul className={styles.planList}>
-                {p.includes.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
+              <div>
+                <p className={styles.listLabel}>{p.listLabel}</p>
+                <ul className={styles.planList}>
+                  {p.includes.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+              <p className={styles.planNote}>{p.note}</p>
               <Link href={p.href} className={styles.planLink}>
-                <span>Learn more</span>
+                <span>{p.cta} &rarr;</span>
                 <span className={styles.plus} aria-hidden="true">+</span>
               </Link>
             </article>
@@ -391,16 +308,20 @@ export default function PricingPage() {
         </div>
 
         <p className={styles.plansNote}>
-          Google Ads management is quoted per account. Need a new website and
-          ongoing SEO? The website fee is paid upfront and monthly SEO is added
-          from the standard starting rate.
+          Need a standalone SEO audit?{" "}
+          <Link href="/services/seo-audits">Explore SEO Audit Services</Link> for
+          an independent website assessment and tailored quote.
         </p>
       </section>
 
-      {/* === What affects your price — heading left, ruled rows right === */}
+      {/* === What affects pricing — heading left, ruled rows right === */}
       <section className={styles.split}>
         <div className={styles.splitAside}>
-          <h2 className={styles.bigH2}>What Affects Your Price</h2>
+          <h2 className={styles.bigH2}>What Affects SEO Pricing?</h2>
+          <p className={styles.asideBody}>
+            Every business competes in a different market. Your final quote
+            reflects the work needed to achieve your goals.
+          </p>
         </div>
         <div className={styles.rows}>
           {factors.map((f, i) => (
@@ -413,38 +334,9 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* === Agency vs direct — grey box | navy box === */}
-      <section className={styles.compareSection}>
-        <h2 className={styles.bigH2}>Where Your Retainer Actually Goes</h2>
-        <div className={styles.compare}>
-          <div className={styles.compareCol}>
-            <h3 className={styles.compareLabel}>Typical Agency Retainer</h3>
-            <ul className={styles.compareList}>
-              {agency.map((item) => (
-                <li key={item}>
-                  <span className={styles.x} aria-hidden="true">✕</span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className={`${styles.compareCol} ${styles.compareUs}`}>
-            <h3 className={styles.compareLabel}>Scale SEO Retainer</h3>
-            <ul className={styles.compareList}>
-              {direct.map((item) => (
-                <li key={item}>
-                  <span className={styles.check} aria-hidden="true">✓</span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* === Terms — blue, light boxes === */}
+      {/* === Working with Scale SEO — blue, three boxes === */}
       <section className={styles.termsSection}>
-        <h2 className={styles.bigH2}>The Scale SEO Terms</h2>
+        <h2 className={styles.bigH2}>Working With Scale SEO</h2>
         <div className={styles.terms}>
           {terms.map((t, i) => (
             <div key={t.title} className={styles.term}>
@@ -456,17 +348,13 @@ export default function PricingPage() {
         </div>
       </section>
 
-      <ServicesFaq
-        items={faqs}
-        eyebrow="Pricing Questions"
-        title={
-          <>
-            SEO Pricing <em>Questions</em>
-          </>
-        }
-      />
+      <ServicesFaq items={faqs} title={<>Frequently Asked Questions</>} />
 
-      <ContactSection />
+      <ContactSection
+        heading="Get a Quote for Your Business"
+        lead="Whether you're looking for ongoing SEO management or a new website, I'll review your requirements and recommend a practical starting point."
+        cta={{ href: BOOKING_URL, label: "Book a Consultation \u2192" }}
+      />
     </main>
   );
 }

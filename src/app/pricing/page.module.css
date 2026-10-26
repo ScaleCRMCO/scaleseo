@@ -51,7 +51,7 @@
 .plansSection { padding: 96px 40px; background: var(--h-grey); }
 .head { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: end; margin-bottom: 56px; }
 .headBody { font-size: 18px; line-height: 1.5; max-width: 620px; }
-.plans { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
+.plans { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
 .plan {
   display: flex;
   flex-direction: column;
@@ -139,6 +139,7 @@
 
 /* Compare */
 .compareSection { padding: 96px 40px 40px; }
+.termsSection { margin-top: 0 !important; }
 .compareSection .bigH2 { max-width: 14ch; margin-bottom: 56px; }
 .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
 .compareCol { padding: 28px 24px; background: var(--h-grey); }
@@ -161,7 +162,7 @@
 /* Terms */
 .termsSection { margin-top: 56px; padding: 96px 40px 40px; background: var(--h-blue); color: var(--h-white); }
 .termsSection .bigH2 { margin-bottom: 56px; }
-.terms { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
+.terms { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
 .term {
   display: flex;
   flex-direction: column;
@@ -175,7 +176,7 @@
 .termBody { font-size: 16px; line-height: 1.55; color: var(--h-dim); }
 
 @media (max-width: 1100px) {
-  .plans, .terms { grid-template-columns: 1fr 1fr; }
+  .terms { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 900px) {
   .hero, .head, .split, .compare { grid-template-columns: 1fr; }
@@ -192,3 +193,10 @@
   .termsSection { padding: 56px 16px 16px; }
   .term { min-height: 0; }
 }
+
+/* Additions for the simplified pricing page */
+.heroText { display: flex; flex-direction: column; gap: 14px; font-size: 17px; line-height: 1.5; }
+.listLabel { margin-bottom: 8px; font-size: 15px; opacity: 0.75; }
+.planNote { font-size: 15px; line-height: 1.5; opacity: 0.8; }
+.plansNote a { color: var(--h-blue); text-decoration: underline; text-underline-offset: 3px; }
+.asideBody { margin-top: 24px; max-width: 460px; font-size: 18px; line-height: 1.5; }
