@@ -42,7 +42,14 @@ const jsonLd = {
       "logo": {
         "@type": "ImageObject",
         "@id": "https://scaleseo.co/#logo",
-        "url": "https://scaleseo.co/brand/scaleseo-logo-navy.png"
+        "url": "https://scaleseo.co/brand/scaleseo-logo.png",
+        "contentUrl": "https://scaleseo.co/brand/scaleseo-logo.png",
+        "width": 512,
+        "height": 512,
+        "caption": "Scale SEO"
+      },
+      "image": {
+        "@id": "https://scaleseo.co/#logo"
       },
       "description": "Scale SEO is an independent SEO practice based in Calgary, Alberta, providing SEO services, technical SEO, SEO audits, web development, Google Ads management, and AI search optimization for professional service and B2B businesses.",
       "foundingDate": "2025",
