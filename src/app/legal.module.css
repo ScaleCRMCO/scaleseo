@@ -1,0 +1,101 @@
+/* Text-page template (new brand) for Privacy Policy, Business Information
+   and similar pages: big title, then a sticky contents list on the left
+   and the document on the right. */
+
+.hero { padding: 136px 40px 120px; }
+.crumbs { margin-bottom: 32px; }
+.crumbs a, .crumbs span, .crumbs li { color: var(--h-dim) !important; }
+.title {
+  max-width: 16ch;
+  font-size: clamp(48px, 6vw, 104px);
+  line-height: 1.02;
+  font-weight: 400;
+  letter-spacing: -0.04em;
+}
+.meta { display: flex; flex-direction: column; gap: 6px; margin-top: 32px; max-width: 640px; font-size: 18px; line-height: 1.45; color: var(--h-dim); }
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(240px, 460px) 1fr;
+  gap: 40px 8%;
+  align-items: start;
+  padding: 0 40px 120px;
+}
+.toc { position: sticky; top: 136px; list-style: none; }
+.toc li { border-bottom: 1px solid var(--h-rule); }
+.toc a {
+  display: block;
+  padding: 12px 0;
+  color: var(--h-navy);
+  font-size: 17px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.toc a:hover { color: var(--h-blue); }
+
+.body {
+  max-width: 900px;
+  font-size: clamp(17px, 1.3vw, 20px);
+  line-height: 1.6;
+  color: var(--h-navy);
+}
+.body h2 {
+  scroll-margin-top: 120px;
+  margin: 2.4em 0 0.8em;
+  font-size: clamp(28px, 2.8vw, 46px);
+  line-height: 1.1;
+  font-weight: 400;
+  letter-spacing: -0.025em;
+}
+.body h2:first-child { margin-top: 0; }
+.body h3 { margin: 1.6em 0 0.5em; font-size: clamp(21px, 1.6vw, 26px); line-height: 1.2; font-weight: 500; letter-spacing: -0.015em; }
+.body p { margin: 0 0 1.1em; }
+.body ul { list-style: none; margin: 0 0 1.3em; border-top: 1px solid var(--h-rule); }
+.body li { position: relative; padding: 11px 0 11px 26px; border-bottom: 1px solid var(--h-rule); }
+.body li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 1.15em;
+  width: 7px;
+  height: 7px;
+  background: var(--h-blue);
+}
+.body a { color: var(--h-blue); text-decoration: underline; text-underline-offset: 3px; }
+.body a:hover { color: var(--h-navy); }
+.body strong { font-weight: 600; }
+
+/* Contact / address block */
+.contactBox {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 8px 0 1.3em;
+  padding: 24px 22px;
+  background: var(--h-navy);
+  color: var(--h-white);
+  font-style: normal;
+}
+.contactBox a { color: var(--h-white); }
+.contactBox a:hover { color: var(--h-blue); }
+
+/* Key facts (definition list) */
+.facts { margin: 0 0 1.3em; border-top: 1px solid var(--h-rule); }
+.fact { display: grid; grid-template-columns: 200px 1fr; gap: 24px; padding: 13px 0; border-bottom: 1px solid var(--h-rule); }
+.fact dt { color: var(--h-dim); }
+.fact dd { margin: 0; }
+
+/* Services rows (no bullets) */
+.body .services li { padding: 20px 0; }
+.body .services li::before { display: none; }
+.body .services h3 { margin: 0 0 4px; }
+.price { margin: 0 0 8px !important; font-size: 16px; color: var(--h-blue); }
+.body .columns { display: grid; grid-template-columns: 1fr 1fr; column-gap: 32px; }
+
+@media (max-width: 900px) {
+  .hero { padding: 104px 16px 48px; }
+  .layout { grid-template-columns: 1fr; padding: 0 16px 72px; }
+  .toc { position: static; }
+  .fact { grid-template-columns: 1fr; gap: 2px; }
+  .body .columns { grid-template-columns: 1fr; }
+}

@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
-import PageHero from "../components/PageHero";
+import Breadcrumbs from "../components/Breadcrumbs";
 import { blocks } from "./content";
-import styles from "./page.module.css";
+import styles from "../legal.module.css";
+
+const slug = (t: string) =>
+  t.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+
+// Contents list: the numbered sections
+const toc = blocks.filter((b) => b[0] === "h2").map((b) => b[1] as string);
 
 export const metadata: Metadata = {
   title: "Privacy Policy | Scale SEO",
@@ -12,16 +18,28 @@ export const metadata: Metadata = {
 
 export default function PrivacyPolicyPage() {
   return (
-    <main>
-      <PageHero
-        breadcrumbs={[{ name: "Home", href: "/" }, { name: "Privacy Policy" }]}
-        title="Privacy Policy"
-        icon="ledger"
-      >
-        <p>Last Updated: October 7, 2026</p>
-      </PageHero>
+    <main className="v2">
+      <header className={styles.hero}>
+        <div className={styles.crumbs}>
+          <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Privacy Policy" }]} />
+        </div>
+        <h1 className={styles.title}>Privacy Policy</h1>
+        <div className={styles.meta}>
+          <p>Last Updated: October 7, 2026</p>
+        </div>
+      </header>
 
-      <section className={styles.section}>
+      <div className={styles.layout}>
+        <ol className={styles.toc}>
+          {toc.map((h) => (
+            <li key={h}>
+              <a href={`#${slug(h)}`}>{h}</a>
+            </li>
+          ))}
+          <li>
+            <a href="#privacy-contact">Privacy Contact</a>
+          </li>
+        </ol>
         <article className={styles.body}>
           {blocks.map((b, i) => {
             if (b[0] === "ul")
@@ -32,12 +50,12 @@ export default function PrivacyPolicyPage() {
                   ))}
                 </ul>
               );
-            if (b[0] === "h2") return <h2 key={i}>{b[1]}</h2>;
+            if (b[0] === "h2") return <h2 key={i} id={slug(b[1])}>{b[1]}</h2>;
             if (b[0] === "h3") return <h3 key={i}>{b[1]}</h3>;
             return <p key={i}>{b[1]}</p>;
           })}
 
-          <address className={styles.contact}>
+          <address className={styles.contactBox} id="privacy-contact">
             <strong>Privacy Contact: Corbin Jensen</strong>
             <span>Scale SEO</span>
             <span>Calgary, Alberta, Canada</span>
@@ -54,7 +72,7 @@ export default function PrivacyPolicyPage() {
             first so that we can review and respond to your request.
           </p>
         </article>
-      </section>
+      </div>
     </main>
   );
 }

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import PageHero from "../components/PageHero";
+import Breadcrumbs from "../components/Breadcrumbs";
 import { posts } from "../blog/posts";
-import styles from "./page.module.css";
+import styles from "../legal.module.css";
 
 // Plain, factual reference page about the business. Kept as simple semantic
 // HTML (headings, lists, definition lists) so people, search engines and AI
@@ -162,29 +162,65 @@ const jsonLd = {
 
 export default function BusinessInformationPage() {
   return (
-    <main>
+    <main className="v2">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <PageHero
-        breadcrumbs={[{ name: "Home", href: "/" }, { name: "Business Information" }]}
-        breadcrumbSchema={false}
-        title="Business Information"
-        icon="about"
-      >
-        <p>
-          Key facts about Scale SEO: who we are, what we do, where we work, and
-          how to get in touch.
-        </p>
-        <p>
-          Last updated: <time dateTime={LAST_UPDATED}>{LAST_UPDATED_LABEL}</time>
-        </p>
-      </PageHero>
+      <header className={styles.hero}>
+        <div className={styles.crumbs}>
+          <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Business Information" }]} schema={false} />
+        </div>
+        <h1 className={styles.title}>Business Information</h1>
+        <div className={styles.meta}>
+          <p>
+            Key facts about Scale SEO: who we are, what we do, where we work, and
+            how to get in touch.
+          </p>
+          <p>
+            Last updated: <time dateTime={LAST_UPDATED}>{LAST_UPDATED_LABEL}</time>
+          </p>
+        </div>
+      </header>
 
-      <section className={styles.section}>
+      <div className={styles.layout}>
+        <ol className={styles.toc}>
+          <li>
+            <a href="#summary">Summary</a>
+          </li>
+          <li>
+            <a href="#key-facts">Key Facts</a>
+          </li>
+          <li>
+            <a href="#services-and-starting-prices">Services &amp; Starting Prices</a>
+          </li>
+          <li>
+            <a href="#industries-served">Industries Served</a>
+          </li>
+          <li>
+            <a href="#how-scale-seo-works">How Scale SEO Works</a>
+          </li>
+          <li>
+            <a href="#selected-results">Selected Results</a>
+          </li>
+          <li>
+            <a href="#founder">Founder</a>
+          </li>
+          <li>
+            <a href="#articles">Articles</a>
+          </li>
+          <li>
+            <a href="#online-profiles">Online Profiles</a>
+          </li>
+          <li>
+            <a href="#key-pages">Key Pages</a>
+          </li>
+          <li>
+            <a href="#contact">Contact</a>
+          </li>
+        </ol>
         <article className={styles.body}>
-          <h2>Summary</h2>
+          <h2 id="summary">Summary</h2>
           <p>
             Scale SEO is an independent SEO company based in Calgary, Alberta,
             founded in 2025 by Corbin Jensen. It provides SEO services, SEO
@@ -194,7 +230,7 @@ export default function BusinessInformationPage() {
             advisory firms.
           </p>
 
-          <h2>Key Facts</h2>
+          <h2 id="key-facts">Key Facts</h2>
           <dl className={styles.facts}>
             {facts.map(([k, v]) => (
               <div key={k} className={styles.fact}>
@@ -204,7 +240,7 @@ export default function BusinessInformationPage() {
             ))}
           </dl>
 
-          <h2>Services &amp; Starting Prices</h2>
+          <h2 id="services-and-starting-prices">Services &amp; Starting Prices</h2>
           <p>All prices are in Canadian dollars, before GST. Final pricing depends on scope.</p>
           <ul className={styles.services}>
             {services.map((s) => (
@@ -221,7 +257,7 @@ export default function BusinessInformationPage() {
             Full pricing details: <Link href="/pricing">scaleseo.co/pricing</Link>
           </p>
 
-          <h2>Industries Served</h2>
+          <h2 id="industries-served">Industries Served</h2>
           <ul>
             <li>
               Accounting and financial services firms (
@@ -231,14 +267,14 @@ export default function BusinessInformationPage() {
             <li>B2B companies and consultancies</li>
           </ul>
 
-          <h2>How Scale SEO Works</h2>
+          <h2 id="how-scale-seo-works">How Scale SEO Works</h2>
           <ul>
             {howItWorks.map((h) => (
               <li key={h}>{h}</li>
             ))}
           </ul>
 
-          <h2>Selected Results</h2>
+          <h2 id="selected-results">Selected Results</h2>
           <p>
             In a six-month engagement for an accounting and advisory firm, target
             keyword rankings improved from page 5 to page 1 of Google, alongside
@@ -253,7 +289,7 @@ export default function BusinessInformationPage() {
             ))}
           </ul>
 
-          <h2>Founder</h2>
+          <h2 id="founder">Founder</h2>
           <p>
             <Link href="/corbin-jensen">Corbin Jensen</Link> is the founder and
             SEO specialist behind Scale SEO. He works directly on technical SEO,
@@ -263,7 +299,7 @@ export default function BusinessInformationPage() {
             organic search, local SEO, and website optimization.
           </p>
 
-          <h2>Articles</h2>
+          <h2 id="articles">Articles</h2>
           <ul>
             {posts.map((p) => (
               <li key={p.slug}>
@@ -272,7 +308,7 @@ export default function BusinessInformationPage() {
             ))}
           </ul>
 
-          <h2>Online Profiles</h2>
+          <h2 id="online-profiles">Online Profiles</h2>
           <ul>
             {profiles.map((p) => (
               <li key={p.href}>
@@ -283,7 +319,7 @@ export default function BusinessInformationPage() {
             ))}
           </ul>
 
-          <h2>Key Pages</h2>
+          <h2 id="key-pages">Key Pages</h2>
           <ul className={styles.columns}>
             {keyPages.map((p) => (
               <li key={p.href}>
@@ -292,7 +328,7 @@ export default function BusinessInformationPage() {
             ))}
           </ul>
 
-          <h2>Contact</h2>
+          <h2 id="contact">Contact</h2>
           <p>
             Phone: <a href="tel:+14038751110">(403) 875-1110</a>
             <br />
@@ -306,7 +342,7 @@ export default function BusinessInformationPage() {
             </a>
           </p>
         </article>
-      </section>
+      </div>
     </main>
   );
 }
