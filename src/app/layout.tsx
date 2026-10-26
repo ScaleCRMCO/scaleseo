@@ -91,6 +91,7 @@ const jsonLd = {
       "name": "Corbin Jensen",
       "url": "https://scaleseo.co/corbin-jensen",
       "jobTitle": "SEO Specialist",
+      "image": "https://scaleseo.co/images/corbin-about.jpg",
       "worksFor": {
         "@id": "https://scaleseo.co/#organization"
       },
