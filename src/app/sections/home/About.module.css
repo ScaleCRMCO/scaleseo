@@ -1,8 +1,8 @@
 /* Two boxes side by side on white: navy text box | portrait */
 .section {
   padding: 40px;
-  background: var(--h-white);
-  color: var(--h-navy);
+  background: var(--h-navy);
+  color: var(--h-white);
 }
 .grid {
   display: grid;
