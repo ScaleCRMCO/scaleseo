@@ -11,19 +11,20 @@ export default function About() {
           </h2>
           <div className={styles.body}>
             <p>
-              I&rsquo;m the founder of Scale SEO, an independent SEO
-              consultancy based in Calgary, Alberta, working with businesses
-              across Canada and internationally.
+              I founded Scale SEO to offer businesses a more personal,
+              hands-on approach to search engine optimization.
             </p>
             <p>
-              I work directly with professional service and B2B businesses to
-              improve their search visibility through technical SEO, content
-              optimization, and website development.
+              Having worked with clients across Canada and Australia, I&rsquo;ve
+              seen how different industries and markets require different
+              strategies. I take the time to understand each business before
+              deciding where to focus.
             </p>
             <p>
-              I manage every campaign personally, from the initial strategy to
-              implementation and ongoing performance analysis. That means you
-              work directly with the specialist responsible for your results.
+              From the initial strategy to technical implementation and ongoing
+              performance analysis, I manage every campaign personally.
+              You&rsquo;ll always work directly with the person responsible for
+              the work, without account managers or unnecessary handoffs.
             </p>
           </div>
           <Link href="/corbin-jensen" className={styles.cta}>
