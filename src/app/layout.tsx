@@ -11,6 +11,15 @@ export const metadata: Metadata = {
   description:
     "Bespoke SEO architecture & Google Ads management for accounting firms, legal practices, and professional services in Calgary & across Canada. Book a strategy call to get started.",
   metadataBase: new URL("https://scaleseo.co"),
+  // Favicons at stable root URLs (no hashed query strings) for Google Search:
+  // 48px ICO + 192px PNG (both multiples of 48) and the Apple touch icon.
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "48x48" },
+      { url: "/favicon.png", type: "image/png", sizes: "192x192" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+  },
   openGraph: {
     title: "Scale SEO — Corbin Jensen",
     description:
