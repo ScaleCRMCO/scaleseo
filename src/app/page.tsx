@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Hero from "./sections/home/Hero";
 import About from "./sections/home/About";
 import ServicesGrid from "./sections/home/ServicesGrid";
-import Comparison from "./sections/home/Comparison";
 import CaseStudy from "./sections/home/CaseStudy";
 import CampaignAreas from "./sections/home/CampaignAreas";
 import IndustriesTeaser from "./sections/home/IndustriesTeaser";
@@ -14,7 +13,7 @@ import RevealOnScroll from "./components/RevealOnScroll";
 import Testimonials from "./components/Testimonials";
 
 export const metadata: Metadata = {
-  title: { absolute: "SEO Company Calgary, AB | Scale SEO" },
+  title: { absolute: "Calgary SEO Company | Founder-Led SEO Services | Scale SEO" },
   description:
     "Calgary SEO services for professional service and B2B businesses. Work directly with an SEO specialist on a month-to-month campaign with no long-term contracts.",
   alternates: { canonical: "/" },
@@ -27,7 +26,7 @@ const webPageJsonLd = {
   "@type": "WebPage",
   "@id": "https://scaleseo.co/#webpage",
   url: "https://scaleseo.co/",
-  name: "SEO Company Calgary, AB | Scale SEO",
+  name: "Calgary SEO Company | Founder-Led SEO Services | Scale SEO",
   description:
     "Scale SEO is a Calgary SEO company providing ongoing SEO services for professional service and B2B businesses across Canada. Campaigns combine technical SEO, content, local SEO and website improvements to grow organic visibility and qualified traffic.",
   isPartOf: {
@@ -51,7 +50,6 @@ export default function Home() {
       />
       <Hero />
       <ServicesGrid />
-      <Comparison />
       <About />
       <CaseStudy />
       <CampaignAreas />

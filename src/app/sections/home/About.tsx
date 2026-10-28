@@ -7,23 +7,23 @@ export default function About() {
       <div className={styles.grid}>
         <div className={`${styles.text} reveal-up`}>
           <h2 className={styles.headline}>
-            Hi, I&rsquo;m Corbin. Your SEO Specialist.
+            Hi, I&rsquo;m Corbin. Your Calgary SEO Specialist.
           </h2>
           <div className={styles.body}>
             <p>
               I&rsquo;m the founder of Scale SEO, an independent SEO
-              consultancy based in Calgary, working with businesses across
-              Canada and internationally.
+              consultancy based in Calgary, Alberta, working with businesses
+              across Canada and internationally.
             </p>
             <p>
-              I value long-term client relationships, honest communication,
-              and doing work that makes a measurable difference. From SEO
-              strategy to technical improvements and content, I manage every
-              campaign personally.
+              I work directly with professional service and B2B businesses to
+              improve their search visibility through technical SEO, content
+              optimization, and website development.
             </p>
             <p>
-              No account managers, unnecessary complexity, or agency fluff.
-              Just straightforward SEO focused on helping your business grow.
+              I manage every campaign personally, from the initial strategy to
+              implementation and ongoing performance analysis. That means you
+              work directly with the specialist responsible for your results.
             </p>
           </div>
           <Link href="/corbin-jensen" className={styles.cta}>

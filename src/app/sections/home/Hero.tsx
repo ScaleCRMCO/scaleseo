@@ -54,20 +54,23 @@ export default function Hero() {
       <div className={`${styles.split} ${styles.splitBelow}`}>
         <div className={styles.left}>
           <h1 className={styles.title}>
-            Calgary SEO Consultant for Growing Businesses.
+            Calgary SEO Company for Professional Service Businesses
           </h1>
         </div>
 
         <div className={styles.right}>
           <div className={styles.intro}>
             <p>
-              Scale SEO is a founder-led SEO consultancy helping businesses
-              across Canada and internationally improve search visibility,
-              attract qualified enquiries, and grow organically.
+              Scale SEO is an independent, founder-led SEO consultancy based in
+              Calgary, Alberta. I help accounting firms, professional service
+              businesses, and B2B companies improve their Google rankings,
+              attract qualified enquiries, and build long-term organic
+              visibility.
             </p>
             <p>
-              Every campaign is managed directly by Corbin Jensen, with no
-              account managers or outsourced handoffs.
+              Every SEO campaign is managed directly by me, Corbin Jensen, from
+              strategy and technical optimization to content and website
+              improvements.
             </p>
           </div>
 
