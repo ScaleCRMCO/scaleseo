@@ -61,16 +61,15 @@ export default function Hero() {
         <div className={styles.right}>
           <div className={styles.intro}>
             <p>
-              Scale SEO is an independent, founder-led SEO consultancy based in
-              Calgary, Alberta. I help accounting firms, professional service
-              businesses, and B2B companies improve their Google rankings,
-              attract qualified enquiries, and build long-term organic
-              visibility.
+              Scale SEO is an independent SEO consultancy based in Calgary,
+              Alberta, helping accounting firms, professional service
+              businesses, and B2B companies improve their visibility on Google
+              and attract qualified enquiries.
             </p>
             <p>
-              Every SEO campaign is managed directly by me, Corbin Jensen, from
-              strategy and technical optimization to content and website
-              improvements.
+              Through technical SEO, content optimization, and ongoing website
+              improvements, I build search strategies focused on sustainable
+              organic growth.
             </p>
           </div>
 
