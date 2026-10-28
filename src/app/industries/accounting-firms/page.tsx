@@ -144,6 +144,9 @@ const accountingJsonLd = {
       "about": {
         "@id": "https://scaleseo.co/industries/accounting-firms#service"
       },
+      "mainEntity": {
+        "@id": "https://scaleseo.co/industries/accounting-firms#service"
+      },
       "publisher": {
         "@id": "https://scaleseo.co/#organization"
       },
@@ -163,7 +166,10 @@ const accountingJsonLd = {
       ],
       "serviceType": "Search Engine Optimization for Accounting Firms",
       "url": "https://scaleseo.co/industries/accounting-firms",
-      "description": "SEO services for accounting firms and CPA practices across Canada, including technical SEO, service page optimization, local SEO, content strategy, internal linking and website improvements.",
+      "description": "Founder-led SEO services for accounting firms and CPA practices across Canada, including technical SEO, accounting service page optimization, local SEO, content strategy, internal linking and website improvements.",
+      "mainEntityOfPage": {
+        "@id": "https://scaleseo.co/industries/accounting-firms#webpage"
+      },
       "provider": {
         "@id": "https://scaleseo.co/#organization"
       },
@@ -173,7 +179,7 @@ const accountingJsonLd = {
       },
       "audience": {
         "@type": "BusinessAudience",
-        "audienceType": "Accounting firms, CPA firms, bookkeeping firms and tax advisory practices in Canada"
+        "audienceType": "Accounting firms, CPA practices, bookkeeping firms and tax advisory businesses"
       }
     },
     {
