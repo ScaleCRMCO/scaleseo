@@ -1,0 +1,14 @@
+/* /industries hub — extras on top of ../services/hub.module.css */
+.heroTitle { max-width: 14ch; }
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.staticCard { cursor: default; }
+.staticCard:hover { background: #DCE7F3; color: var(--h-navy); }
+.resultGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.resultName { font-size: clamp(30px, 2.8vw, 46px); line-height: 1.05; font-weight: 400; letter-spacing: -0.03em; color: var(--h-blue); }
+
+@media (max-width: 1100px) {
+  .grid, .resultGrid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 700px) {
+  .grid, .resultGrid { grid-template-columns: 1fr; gap: 16px; }
+}

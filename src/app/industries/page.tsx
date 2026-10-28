@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import PageHero from "../components/PageHero";
-import SketchIcon from "../components/SketchIcon";
-import RevealOnScroll from "../components/RevealOnScroll";
-// Section/card system shared with the /services pages so the site matches.
-import hub from "../services/page.module.css";
-import styles from "./page.module.css";
-import Contact from "../components/ContactCta";
+import Image from "next/image";
+import Breadcrumbs from "../components/Breadcrumbs";
+import ContactSection from "../components/ContactSection";
+import hub from "../services/hub.module.css";
+import styles from "./hub.module.css";
 
 export const metadata: Metadata = {
   title: "SEO for Professional Services & B2B | Scale SEO",
@@ -19,84 +17,100 @@ const BOOKING_URL = "https://cal.com/corbinjensen-scaleseo/30min";
 
 /* === Content ============================================================ */
 
+// href only where the industry page exists; the others show no link yet.
 const industries: {
-  id: string;
+  num: string;
   title: string;
+  sub: string;
   body: string[];
-  featured?: boolean;
-  icon: string;
-  link?: { href: string; label: string };
+  href?: string;
+  cta: string;
 }[] = [
   {
-    id: "accounting-firms",
-    icon: "ledger",
-    title: "Accounting Firms",
-    featured: true,
+    num: "01",
+    title: "Accounting & Financial Services",
+    sub: "SEO for Accounting Firms",
     body: [
-      "Accounting is a core industry focus at Scale SEO. I work with accounting and advisory firms to improve organic visibility for services such as corporate tax, bookkeeping, business advisory, and other high-value accounting services through technical SEO, content, local search, and service-page optimization.",
+      "Search strategies for accounting firms, CPA practices, and advisory businesses looking to attract clients through corporate tax, bookkeeping, business advisory, and other specialized services.",
+      "With hands-on experience working with accounting firms in Canada and Australia, Scale SEO understands the importance of technical accuracy, professional credibility, and service-specific search visibility.",
     ],
-    link: {
-      href: "/industries/accounting-firms",
-      label: "Explore SEO for Accounting Firms",
-    },
+    href: "/industries/accounting-firms",
+    cta: "Explore SEO for Accounting Firms",
   },
   {
-    id: "consulting-firms",
-    icon: "consulting",
-    title: "Consulting Firms",
+    num: "02",
+    title: "Construction & Contracting",
+    sub: "SEO for Construction Companies",
     body: [
-      "I help consulting firms strengthen service pages, demonstrate subject-matter expertise, and build organic visibility around the problems and specialized services potential clients are actively researching.",
+      "SEO for established construction businesses and specialty contractors targeting higher-value residential and commercial projects.",
+      "Strategies can include technical SEO, local search, service-page development, project-specific content, and geographic targeting.",
     ],
-    link: { href: "/contact", label: "Get in Touch" },
+    cta: "Explore SEO for Construction Companies",
   },
   {
-    id: "financial-advisory",
-    icon: "financial",
-    title: "Financial & Advisory Services",
+    num: "03",
+    title: "Consulting & B2B Services",
+    sub: "SEO for Consulting Firms",
     body: [
-      "SEO for financial and advisory firms requires accurate service content, clear expertise, and a strong website structure. I focus on relevant searches connected to the services and clients the business wants to attract rather than broad financial traffic.",
+      "Organic search strategies for consultants and B2B businesses selling specialized services to decision-makers.",
+      "The focus is on relevant commercial searches, clear service positioning, technical SEO, and content that supports longer buying cycles.",
     ],
-    link: { href: "/contact", label: "Get in Touch" },
-  },
-  {
-    id: "professional-b2b",
-    icon: "b2b",
-    title: "Other Professional & B2B Services",
-    body: [
-      "I also work with specialized professional service and B2B businesses selling expertise rather than high-volume consumer products. SEO strategies are built around each business’s services, customers, competitors, target markets, and organic search opportunities.",
-    ],
-    link: { href: "/contact", label: "Get in Touch" },
+    cta: "Explore SEO for Consulting Firms",
   },
 ];
 
-const differences = [
+const results = [
   {
-    title: "High-Value Search Intent",
-    body: [
-      "The most valuable keyword isn’t necessarily the one with the highest search volume.",
-      "For a professional service firm, a relatively small number of searches from people actively looking for a specialized service can be far more valuable than a large volume of informational traffic.",
-      "I prioritize searches based on their relevance to the business and the potential value of the customer behind them.",
-    ],
+    client: "Jensen CPA",
+    place: "Calgary, Alberta",
+    body: "Technical SEO, content strategy, and service-page improvements supporting organic search visibility for a Calgary accounting firm.",
+    href: "/results/jensen-cpa",
   },
   {
-    title: "Expertise Needs to Be Visible",
-    body: [
-      "Potential clients often research a firm before making contact.",
-      "Strong service pages, useful industry content, case studies, team expertise, and a well-structured website help demonstrate that your business understands the work you’re asking Google to rank it for.",
-      "SEO and credibility therefore need to develop together.",
-    ],
+    client: "Empire Accountants",
+    place: "Brisbane, Australia",
+    body: "Search optimization for an established accounting and advisory firm, including service-page architecture, technical improvements, and content strategy.",
+    href: "/results/empire-accountants",
   },
   {
-    title: "Local & National Search Opportunities",
-    body: [
-      "Some professional service businesses depend heavily on their local market. Others can serve clients throughout Alberta, across Canada, or internationally.",
-      "Your SEO strategy should reflect how your clients actually choose a provider rather than automatically creating dozens of location pages.",
-      "That may mean focusing on local search and Google Business Profile visibility, broader organic service rankings, or a combination of both.",
-    ],
+    client: "Kinsmen Consulting",
+    place: "Calgary, Alberta",
+    body: "Website development and SEO supporting visibility for residential and commercial concrete construction services.",
+    href: "/results/kinsmen-consulting",
   },
 ];
 
-const pad = (i: number) => String(i + 1).padStart(2, "0");
+const Corner = () => (
+  <svg className={hub.corner} viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+    <path d="M1 1.5h7.5V9" />
+  </svg>
+);
+
+function IndustryCard({ item }: { item: (typeof industries)[number] }) {
+  const inner = (
+    <>
+      <span className={hub.cardNum}>{item.num}</span>
+      <h3 className={hub.cardTitle}>{item.title}</h3>
+      <p className={hub.cardLead}>{item.sub}</p>
+      <div className={hub.cardBody}>
+        {item.body.map((p) => (
+          <p key={p}>{p}</p>
+        ))}
+      </div>
+      {item.href && (
+        <span className={hub.cardLink}>
+          <span>{item.cta} &rarr;</span>
+          <span className={hub.plus} aria-hidden="true">+</span>
+        </span>
+      )}
+    </>
+  );
+  return item.href ? (
+    <Link href={item.href} className={hub.card}>{inner}</Link>
+  ) : (
+    <div className={`${hub.card} ${styles.staticCard}`}>{inner}</div>
+  );
+}
 
 /* === Schema — CollectionPage + ItemList of industries + BreadcrumbList,
    linked to the global #website and #organization nodes in layout.tsx.
@@ -110,7 +124,7 @@ const industriesJsonLd = {
       "@id": "https://scaleseo.co/industries#webpage",
       "url": "https://scaleseo.co/industries",
       "name": "SEO for Professional Services & B2B Businesses | Scale SEO",
-      "description": "SEO for professional service and B2B businesses, including accounting firms, consultants, financial and advisory businesses. Strategies built around qualified search visibility and long-term organic growth.",
+      "description": "SEO for accounting firms, consulting businesses, construction companies, and other established service providers across Canada and internationally.",
       "isPartOf": {
         "@id": "https://scaleseo.co/#website"
       },
@@ -133,28 +147,23 @@ const industriesJsonLd = {
       "@id": "https://scaleseo.co/industries#industries",
       "name": "Industries Scale SEO Works With",
       "description": "Professional service and B2B industries served by Scale SEO.",
-      "numberOfItems": 4,
+      "numberOfItems": 3,
       "itemListElement": [
         {
           "@type": "ListItem",
           "position": 1,
-          "name": "Accounting Firms",
+          "name": "Accounting & Financial Services",
           "url": "https://scaleseo.co/industries/accounting-firms"
         },
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "Consulting Firms"
+          "name": "Construction & Contracting"
         },
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "Financial & Advisory Services"
-        },
-        {
-          "@type": "ListItem",
-          "position": 4,
-          "name": "Other Professional & B2B Services"
+          "name": "Consulting & B2B Services"
         }
       ]
     },
@@ -183,180 +192,110 @@ const industriesJsonLd = {
 
 export default function IndustriesPage() {
   return (
-    <main>
+    <main className="v2">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(industriesJsonLd) }}
       />
 
-      {/* === HERO — dark, full-width left-aligned (matches /services/seo-audits) === */}
-      <PageHero
-        breadcrumbs={[{ name: "Home", href: "/" }, { name: "Industries" }]}
-        breadcrumbSchema={false}
-        title={
-          <>
-            SEO for Professional Services &amp;{" "}
-            <span className="title-block">B2B Businesses</span>
-          </>
-        }
-        icon="industries"
-        actions={
-          <>
-            <a href="#industries">
-              <span>Explore Industries</span>
-              <span>↓</span>
-            </a>
-            <Link href="/services">
-              <span>View SEO Services</span>
-              <span>→</span>
+      {/* === HERO — big title left, B&W image + intro right === */}
+      <header className={hub.hero}>
+        <div className={hub.heroLeft}>
+          <div className={hub.crumbs}>
+            <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Industries" }]} schema={false} />
+          </div>
+          <h1 className={`${hub.heroTitle} ${styles.heroTitle}`}>SEO for Professional Service &amp; B2B Businesses</h1>
+          <a href="#industries" className={hub.jump}>Industries I Work With &darr;</a>
+        </div>
+        <div className={hub.heroRight}>
+          <div className={hub.heroImage}>
+            <Image src="/images/calgary-skyline.webp" alt="Calgary skyline" fill priority sizes="(max-width: 900px) 90vw, 33vw" />
+          </div>
+          <div className={hub.heroIntro}>
+            <p className={hub.heroLead}>
+              Scale SEO provides search engine optimization for accounting
+              firms, consulting businesses, construction companies, and other
+              established service providers across Canada and internationally.
+            </p>
+            <p>
+              Each campaign is built around your industry&rsquo;s search
+              behaviour, competitive landscape, and the services that generate
+              valuable business opportunities.
+            </p>
+          </div>
+        </div>
+      </header>
+
+      {/* === INDUSTRIES — three boxes === */}
+      <section className={hub.services} id="industries">
+        <h2 className={hub.h2}>Industries I Work With</h2>
+        <div className={styles.grid}>
+          {industries.map((item) => (
+            <IndustryCard key={item.num} item={item} />
+          ))}
+        </div>
+      </section>
+
+      {/* === EXPERIENCE — heading left of a rule, text right === */}
+      <section className={hub.split}>
+        <div className={hub.splitAside}>
+          <h2 className={hub.h2}>Experience Across Different Industries</h2>
+        </div>
+        <div className={hub.splitBody}>
+          <p className={hub.lead}>
+            The fundamentals of SEO remain consistent, but the strategy needs to
+            reflect how customers search within each market.
+          </p>
+          <p>
+            For accounting firms, that may mean building visibility around
+            corporate tax, advisory, and fractional CFO services.
+          </p>
+          <p>
+            For construction companies, it may involve improving visibility for
+            commercial projects, specialized services, and geographic service
+            areas.
+          </p>
+          <p>
+            For B2B consultants, the focus may be on technical service pages and
+            the research potential clients conduct before making an enquiry.
+          </p>
+          <p>
+            I develop each campaign around the business&rsquo;s actual services,
+            competition, and growth objectives rather than applying the same
+            keyword strategy across industries.
+          </p>
+        </div>
+      </section>
+
+      {/* === RESULTS — grey, three navy boxes === */}
+      <section className={hub.results}>
+        <h2 className={hub.h2}>Results From Client Campaigns</h2>
+        <div className={styles.resultGrid}>
+          {results.map((r) => (
+            <Link key={r.href} href={r.href} className={hub.result}>
+              <span className={hub.resultType}>{r.place}</span>
+              <h3 className={styles.resultName}>{r.client}</h3>
+              <p className={hub.resultBody}>{r.body}</p>
+              <span className={hub.cardLink}>
+                <span>View Case Study &rarr;</span>
+                <span className={hub.plus} aria-hidden="true">+</span>
+              </span>
             </Link>
-          </>
-        }
-      >
-        <p>
-          Scale SEO provides specialized SEO services for accounting firms,
-          consultants, financial advisors, and other professional service
-          businesses across Canada and internationally.
-        </p>
-      </PageHero>
-
-      {/* === WHY I FOCUS ON PROFESSIONAL SERVICES — light === */}
-      <section className={`${hub.section} ${hub.light}`}>
-        <div className={`${hub.inner} ${hub.split} ${styles.wideSplit}`}>
-          <div className={hub.splitAside}>
-            <h2 className={`${hub.h2} ${styles.bigH2} reveal-up`}>
-              Why I Focus on Professional Services
-            </h2>
-          </div>
-          <div className={`${hub.splitBody} reveal-up`}>
-            <p className={styles.leadInk}>
-              Professional service businesses compete on expertise, experience,
-              credibility, and the ability to solve specific client
-              problems&mdash;not simply price or proximity.
-            </p>
-            <p>
-              That makes organic search particularly valuable. Strong service
-              pages, useful content, technical foundations, and clear trust
-              signals can help your business appear while potential clients
-              are actively researching their options.
-            </p>
-            <p>
-              For B2B businesses, search volume doesn&rsquo;t always need to be
-              high to matter. A smaller number of relevant searches from the
-              right decision-makers can represent significant commercial value.
-            </p>
-          </div>
+          ))}
+        </div>
+        <div className={hub.resultsFoot}>
+          <Link href="/results" className={`${hub.box} ${hub.boxBlue}`}>
+            <Corner />
+            <span>View All Client Results &rarr;</span>
+          </Link>
         </div>
       </section>
 
-      {/* === INDUSTRIES — dark === */}
-      <section className={`${hub.section} ${styles.industriesBlue}`} id="industries">
-        <div className={styles.industriesSplit}>
-          <div className={styles.industriesAside}>
-            <div className="section-label reveal-up">Industries</div>
-            <h2 className={`${hub.h2} ${styles.bigH2} reveal-up`}>
-              Industries I Work With
-            </h2>
-            <p className={`${styles.industriesIntro} reveal-up`}>
-              I focus on professional service and B2B businesses where organic
-              search can support valuable, long-term client relationships.
-            </p>
-          </div>
-
-          <div className={styles.industryTiles}>
-            {industries.map((ind, i) => (
-              <article key={ind.id} id={ind.id} className={`${styles.industryTile} reveal-up`}>
-                <span className={styles.tileTick} aria-hidden="true" />
-                <span className={styles.tileIndex}>{pad(i)}</span>
-                <h3 className={styles.tileTitle}>{ind.title}</h3>
-                <SketchIcon name={ind.icon} className={styles.tileIcon} />
-                {ind.body.map((para) => (
-                  <p key={para} className={styles.tileDesc}>{para}</p>
-                ))}
-                {ind.link && (
-                  <Link href={ind.link.href} className={styles.tileLink}>
-                    {ind.link.label} <span className={styles.tileArrow}>→</span>
-                  </Link>
-                )}
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* === WHY SEO WORKS DIFFERENTLY — light === */}
-      <section className={`${hub.section} ${hub.light}`}>
-        <div className={hub.inner}>
-          <div className={hub.head}>
-            <h2 className={`${hub.h2} reveal-up`}>
-              Why SEO Works Differently <em>for Professional Services</em>
-            </h2>
-            <div className={`${hub.headBody} reveal-up`}>
-              <p>
-                Professional service SEO often comes down to three things:{" "}
-                <strong className={styles.strongInk}>
-                  intent, expertise, and trust.
-                </strong>
-              </p>
-            </div>
-          </div>
-
-          <div className={hub.threeGrid}>
-            {differences.map((d, i) => (
-              <div key={d.title} className={`${hub.lightCard} reveal-up`}>
-                <span className="index">{pad(i)}</span>
-                <h3 className={hub.cardTitle}>{d.title}</h3>
-                <div className={hub.cardBody}>
-                  {d.body.map((para) => (
-                    <p key={para}>{para}</p>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* === ONE STRATEGY, ADAPTED TO YOUR MARKET — dark === */}
-      <section className={`${hub.section} ${hub.dark}`} data-nav-theme="dark">
-        <div className={`${hub.inner} ${hub.split}`}>
-          <div className={hub.splitAside}>
-            <h2 className={`${hub.h2} reveal-up`}>
-              One SEO Strategy, <em>Adapted to Your Market</em>
-            </h2>
-            <Link href="/services/seo" className={`${hub.pillLime} reveal-up`}>
-              <span>Explore Ongoing SEO Services</span>
-              <span className={hub.arrow}>→</span>
-            </Link>
-          </div>
-          <div className={`${hub.splitBody} reveal-up`}>
-            <p className={hub.lead}>
-              The fundamentals of SEO remain consistent, but the priorities
-              change from one industry to another.
-            </p>
-            <p>
-              An accounting firm targeting Calgary business owners doesn&rsquo;t
-              need the same search strategy as a B2B consultancy selling
-              specialized services across Canada.
-            </p>
-            <p>
-              I look at your existing search visibility, competitors, service
-              mix, target clients, website, and market before determining where
-              the strongest opportunities exist.
-            </p>
-            <p>
-              Depending on the business, that can involve technical SEO, keyword
-              research, service-page improvements, content strategy, local SEO,
-              internal linking, website architecture, and conversion
-              improvements.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <Contact />
-
-      <RevealOnScroll />
+      <ContactSection
+        heading="Don't See Your Industry?"
+        lead="Scale SEO also works with other established professional service and B2B businesses where organic search can support meaningful client acquisition. If your customers use Google to research and compare service providers, we can discuss whether SEO represents a worthwhile opportunity for your business."
+        cta={{ href: BOOKING_URL, label: "Book a Consultation →" }}
+      />
     </main>
   );
 }
