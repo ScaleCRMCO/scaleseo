@@ -3,6 +3,8 @@ import Link from "next/link";
 import styles from "./ServicesFaq.module.css";
 
 // Each answer is a list of paragraphs; the FAQPage schema joins them.
+// Paragraphs may contain [label](/path) links: rendered as links on the
+// page, reduced to their label text in the schema.
 export type FaqItem = {
   q: string;
   a: string[];
@@ -61,6 +63,24 @@ const servicesFaqs: FaqItem[] = [
   },
 ];
 
+const LINK = /\[([^\]]+)\]\(([^)]+)\)/g;
+const plain = (t: string) => t.replace(LINK, "$1");
+function rich(t: string) {
+  const out: ReactNode[] = [];
+  let last = 0;
+  for (const m of t.matchAll(LINK)) {
+    if (m.index! > last) out.push(t.slice(last, m.index));
+    out.push(
+      <Link key={m.index} href={m[2]}>
+        {m[1]}
+      </Link>
+    );
+    last = m.index! + m[0].length;
+  }
+  if (last < t.length) out.push(t.slice(last));
+  return out;
+}
+
 export default function ServicesFaq({
   items = servicesFaqs,
   eyebrow = "Common Questions",
@@ -83,7 +103,7 @@ export default function ServicesFaq({
       name: item.q,
       acceptedAnswer: {
         "@type": "Answer",
-        text: item.a.join(" "),
+        text: item.a.map(plain).join(" "),
       },
     })),
   };
@@ -110,7 +130,7 @@ export default function ServicesFaq({
               </summary>
               <div className={styles.answer}>
                 {item.a.map((para) => (
-                  <p key={para}>{para}</p>
+                  <p key={para}>{rich(para)}</p>
                 ))}
                 {item.link && (
                   <Link href={item.link.href} className={styles.answerLink}>

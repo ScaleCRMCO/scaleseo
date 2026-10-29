@@ -305,3 +305,5 @@ h1:has(.title-block) {
   .v2 [class*="ServicesFaq_section"] { padding: 64px 16px; }
   .v2 [class*="ServicesFaq_item"] { padding: 0 16px; }
 }
+.v2 [class*="ServicesFaq_answer"] a { color: var(--h-blue); text-decoration: underline; text-underline-offset: 3px; }
+.v2 [class*="ServicesFaq_answer"] a:hover { color: var(--h-navy); }

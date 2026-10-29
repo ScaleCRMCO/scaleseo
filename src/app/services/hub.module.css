@@ -135,3 +135,8 @@
   .result { min-height: 0; }
   .box { width: 100%; }
 }
+.inlineLink { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+.inlineLink:hover { color: var(--h-blue); }
+.card:hover .inlineLink:hover { color: var(--h-white); }
+.card .cardLink { color: inherit; text-decoration: none; }
+.card .cardLink:hover .plus { background: var(--h-blue); color: var(--h-white); }

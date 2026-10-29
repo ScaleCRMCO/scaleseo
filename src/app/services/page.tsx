@@ -22,10 +22,10 @@ const services = [
   {
     num: "01",
     title: "Search Engine Optimization (SEO)",
-    lead: "Build long-term organic visibility and attract the right customers.",
+    lead: "Build long-term organic visibility around the services that matter to your business.",
     body: [
-      "Ongoing, month-to-month SEO campaigns combining technical SEO, keyword research, on-page optimization, content strategy, local SEO, and website improvements.",
-      "Campaigns are tailored to your business and adjusted using search performance data rather than a fixed monthly checklist.",
+      "[Monthly SEO campaigns](/services/seo) combine technical improvements, service-page optimization, content development, internal linking, and local search strategy.",
+      "Rather than following a fixed monthly checklist, I prioritize work based on your website’s existing performance, competitive opportunities, and the searches most likely to generate qualified enquiries.",
     ],
     href: "/services/seo",
     cta: "Explore SEO Services",
@@ -33,10 +33,10 @@ const services = [
   {
     num: "02",
     title: "SEO Audits",
-    lead: "Understand what\u2019s holding your website back.",
+    lead: "Understand what’s limiting your website’s search performance.",
     body: [
-      "Standalone SEO audits that uncover technical issues, indexing problems, content gaps, and opportunities to improve organic search performance.",
-      "Receive prioritized recommendations without committing to an ongoing SEO campaign.",
+      "[Standalone SEO audits](/services/seo-audits) investigate technical issues, indexing and crawling problems, website architecture, content gaps, and missed search opportunities.",
+      "Findings are translated into prioritized recommendations, helping you understand what needs attention and where improvements are likely to have the greatest impact.",
     ],
     href: "/services/seo-audits",
     cta: "Explore SEO Audits",
@@ -44,10 +44,10 @@ const services = [
   {
     num: "03",
     title: "Web Development",
-    lead: "Websites designed for search visibility and conversions.",
+    lead: "Websites built with search visibility, usability, and long-term growth in mind.",
     body: [
-      "Search-friendly websites built around clear site architecture, responsive design, technical performance, and user experience.",
-      "Available as standalone projects or alongside ongoing SEO campaigns.",
+      "[Website development](/services/web-development) focuses on clear site architecture, responsive design, technical performance, and dedicated pages for important business services.",
+      "Drawing on experience improving existing client websites, I build sites that are straightforward to navigate, maintain, and expand as your business grows.",
     ],
     href: "/services/web-development",
     cta: "Explore Web Development",
@@ -55,10 +55,10 @@ const services = [
   {
     num: "04",
     title: "Google Ads Management",
-    lead: "Reach potential customers actively searching for your services.",
+    lead: "Reach potential customers when they’re actively searching for your services.",
     body: [
-      "Targeted Google Ads campaigns focused on high-intent keywords, relevant landing pages, conversion tracking, and ongoing optimization.",
-      "Paid search can complement SEO by generating visibility while organic rankings develop.",
+      "[Google Ads management](/services/google-ads-management) focuses on commercially relevant search terms, campaign structure, negative keywords, conversion tracking, and ongoing performance improvements.",
+      "Campaigns are managed around lead quality and business objectives, rather than traffic volume alone. Paid search can also complement an ongoing SEO campaign.",
     ],
     href: "/services/google-ads-management",
     cta: "Explore Google Ads",
@@ -66,10 +66,10 @@ const services = [
   {
     num: "05",
     title: "AI Search Optimization",
-    lead: "Strengthen your visibility across AI-powered search.",
+    lead: "Help search engines and AI systems better understand your business.",
     body: [
-      "Improve how your business is understood and represented across AI-assisted search experiences, including ChatGPT, Perplexity, and Google AI features.",
-      "Services focus on content quality, website structure, entity clarity, and AI search visibility monitoring.",
+      "[AI Search Optimization](/services/geo) strengthens the content, structure, and business information that AI-assisted search systems can use when discovering and referencing websites.",
+      "Work includes improving entity clarity, service information, structured data, and the quality of supporting website content, alongside monitoring visibility where reliable data is available.",
     ],
     href: "/services/geo",
     cta: "Explore AI Search Optimization",
@@ -80,16 +80,18 @@ const results = [
   {
     client: "Empire Accountants",
     type: "Organic SEO",
-    metric: "Page 5 \u2192 Page 1",
-    body: "Improved target keyword rankings for a Brisbane accounting firm through technical SEO, service-page optimization, and content improvements.",
+    metric: "Page 5 → Page 1",
+    body: "Improved target keyword visibility for a Brisbane accounting firm through technical SEO, stronger service-page content, and website structure improvements.",
     href: "/results/empire-accountants",
+    cta: "View Empire Accountants Case Study",
   },
   {
     client: "Kinsmen Consulting",
     type: "Website & SEO",
     metric: "26% Revenue Growth in Six Months",
-    body: "Website development and search optimization supporting growth for a Calgary concrete contractor.",
+    body: "Website development and ongoing SEO supporting growth for a Calgary concrete contractor, including improvements to service-page targeting, technical foundations, and organic search visibility.",
     href: "/results/kinsmen-consulting",
+    cta: "View Kinsmen Consulting Case Study",
   },
 ];
 
@@ -97,22 +99,40 @@ const faqs: FaqItem[] = [
   {
     q: "Which SEO service is right for my business?",
     a: [
-      "If you\u2019re looking for ongoing organic growth, monthly SEO management is generally the best starting point. If you need to understand your website\u2019s current issues first, a standalone SEO audit may be more appropriate.",
+      "If you want ongoing improvements to organic search visibility, a [monthly SEO campaign](/services/seo) may be the best fit. If you’re unsure why your website isn’t performing or want an independent assessment before investing further, a [standalone SEO audit](/services/seo-audits) is a practical starting point.",
     ],
   },
   {
     q: "Can I purchase services individually?",
     a: [
-      "Yes. SEO audits and web development are available as standalone projects. Ongoing SEO and Google Ads management are offered as recurring services, depending on your business needs.",
+      "Yes. [SEO audits](/services/seo-audits) and [web development](/services/web-development) are available as standalone projects. Monthly SEO and Google Ads management are recurring services, with the scope determined by your business needs.",
     ],
   },
   {
     q: "Do you work with businesses outside Calgary?",
     a: [
-      "Yes. Scale SEO is based in Calgary, Alberta, but works with businesses across Canada and internationally, including clients in Australia. Services can be delivered remotely and tailored to your target market.",
+      "Yes. Scale SEO is based in Calgary, Alberta, and works with businesses across Canada and internationally, including Australia. Campaigns are developed around your target market rather than your physical proximity to Calgary.",
     ],
   },
 ];
+
+// Paragraph text with [label](/path) links rendered as <Link>s
+const LINK = /\[([^\]]+)\]\(([^)]+)\)/g;
+function rich(t: string) {
+  const out: React.ReactNode[] = [];
+  let last = 0;
+  for (const m of t.matchAll(LINK)) {
+    if (m.index! > last) out.push(t.slice(last, m.index));
+    out.push(
+      <Link key={m.index} href={m[2]} className={styles.inlineLink}>
+        {m[1]}
+      </Link>
+    );
+    last = m.index! + m[0].length;
+  }
+  if (last < t.length) out.push(t.slice(last));
+  return out;
+}
 
 const Corner = () => (
   <svg className={styles.corner} viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
@@ -120,22 +140,22 @@ const Corner = () => (
   </svg>
 );
 
-function ServiceCard({ s, className = "" }: { s: (typeof services)[number]; className?: string }) {
+function ServiceCard({ s }: { s: (typeof services)[number] }) {
   return (
-    <Link href={s.href} className={`${styles.card} ${className}`}>
+    <div className={styles.card}>
       <span className={styles.cardNum}>{s.num}</span>
       <h3 className={styles.cardTitle}>{s.title}</h3>
       <p className={styles.cardLead}>{s.lead}</p>
       <div className={styles.cardBody}>
         {s.body.map((p) => (
-          <p key={p}>{p}</p>
+          <p key={p}>{rich(p)}</p>
         ))}
       </div>
-      <span className={styles.cardLink}>
+      <Link href={s.href} className={styles.cardLink}>
         <span>{s.cta} &rarr;</span>
         <span className={styles.plus} aria-hidden="true">+</span>
-      </span>
-    </Link>
+      </Link>
+    </div>
   );
 }
 
@@ -251,14 +271,17 @@ export default function ServicesPage() {
           </div>
           <div className={styles.heroIntro}>
             <p className={styles.heroLead}>
-              Scale SEO provides search engine optimization, SEO audits, web
+              Scale SEO provides SEO campaigns, technical audits, web
               development, Google Ads management, and AI search optimization for
-              businesses across Canada and internationally.
+              professional service and B2B businesses across Canada and
+              internationally.
             </p>
             <p>
-              Based in Calgary and managed directly by founder Corbin Jensen,
-              each service is tailored to your website, market, and business
-              goals.
+              Based in Calgary, Scale SEO is led by founder{" "}
+              <Link href="/corbin-jensen" className={styles.inlineLink}>Corbin Jensen</Link>,
+              who works directly on client strategy and implementation. Every
+              engagement is shaped around the business&rsquo;s services,
+              competitive market, and opportunities for measurable growth.
             </p>
           </div>
         </div>
@@ -275,27 +298,35 @@ export default function ServicesPage() {
           <ServiceCard s={services[3]} />
           <ServiceCard s={services[4]} />
         </div>
-        <p className={styles.servicesNote}>
-          Whether you need ongoing SEO, a technical audit, a better website, or
-          paid search management, Scale SEO provides practical solutions to
-          improve your online visibility and attract qualified enquiries.
-        </p>
       </section>
 
       {/* === EXPERIENCE — heading left of a rule, text + link right === */}
       <section className={styles.split}>
         <div className={styles.splitAside}>
-          <h2 className={styles.h2}>SEO Experience Across Canada &amp; Australia</h2>
+          <h2 className={styles.h2}>SEO Experience Applied to Real Businesses</h2>
         </div>
         <div className={styles.splitBody}>
           <p className={styles.lead}>
             Scale SEO works primarily with professional service and B2B
-            businesses, including accounting firms, advisory practices,
-            consultants, and other service providers.
+            businesses, including accounting firms, consultants, and advisory
+            practices.
           </p>
           <p>
-            From Calgary to Brisbane, campaigns are developed around each
-            client&rsquo;s industry, competition, and target market.
+            My approach is informed by hands-on work across Canadian and
+            Australian client websites, from restructuring service pages and
+            resolving technical SEO issues to developing content strategies and
+            improving internal linking.
+          </p>
+          <p>
+            This experience shapes how I prioritize projects. Rather than
+            recommending more content by default, I assess whether existing
+            pages, website structure, or technical limitations should be
+            addressed first.
+          </p>
+          <p>
+            Whether you&rsquo;re improving an established website or building a
+            new one, the focus is on work that supports your business goals and
+            creates a stronger foundation for organic visibility.
           </p>
           <Link href="/industries" className={`${styles.box} ${styles.boxNavy}`}>
             <Corner />
@@ -314,7 +345,7 @@ export default function ServicesPage() {
               <h3 className={styles.resultMetric}>{r.metric}</h3>
               <p className={styles.resultBody}>{r.body}</p>
               <span className={styles.cardLink}>
-                <span>View Case Study &rarr;</span>
+                <span>{r.cta} &rarr;</span>
                 <span className={styles.plus} aria-hidden="true">+</span>
               </span>
             </Link>
@@ -333,6 +364,11 @@ export default function ServicesPage() {
       <ContactSection
         heading="Ready to Improve Your Search Visibility?"
         lead="Tell me about your business, website, and growth goals. I'll help you determine which services make sense for your situation."
+        points={[
+          "Work directly with Corbin, no account managers",
+          "Month-to-month SEO campaigns, no long-term contracts",
+          "You own your website, content, and data",
+        ]}
         cta={{ href: BOOKING_URL, label: "Book a Consultation →" }}
       />
     </main>

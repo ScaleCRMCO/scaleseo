@@ -21,11 +21,14 @@ export default function ContactSection({
   heading = "Ready to Improve Your Organic Search Visibility?",
   lead = "Tell me about your business and where you want to grow. You\u2019ll hear back from me directly, usually within 24 hours.",
   cta,
+  points: pointsOverride,
 }: {
   heading?: string;
   lead?: string;
   cta?: { href: string; label: string };
+  points?: string[];
 } = {}) {
+  const pointList = pointsOverride ?? points;
   const router = useRouter();
   const [status, setStatus] = useState<Status>("idle");
   const [need, setNeed] = useState("Not sure yet");
@@ -54,7 +57,7 @@ export default function ContactSection({
         <h2 className={styles.heading}>{heading}</h2>
         <p className={styles.lead}>{lead}</p>
         <ul className={styles.points}>
-          {points.map((p) => (
+          {pointList.map((p) => (
             <li key={p}>
               <span aria-hidden="true">✓</span>
               {p}
