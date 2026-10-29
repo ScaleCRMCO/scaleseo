@@ -113,3 +113,5 @@
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 .ctaLink:hover { background: var(--cs-white); color: var(--cs-navy) !important; }
+.note { font-size: 16px; line-height: 1.5; }
+.note a { color: var(--cs-white) !important; text-decoration: underline; text-underline-offset: 3px; }

@@ -22,11 +22,13 @@ export default function ContactSection({
   lead = "Tell me about your business and where you want to grow. You\u2019ll hear back from me directly, usually within 24 hours.",
   cta,
   points: pointsOverride,
+  note,
 }: {
   heading?: string;
   lead?: string;
   cta?: { href: string; label: string };
   points?: string[];
+  note?: React.ReactNode;
 } = {}) {
   const pointList = pointsOverride ?? points;
   const router = useRouter();
@@ -69,6 +71,7 @@ export default function ContactSection({
             {cta.label}
           </a>
         )}
+        {note && <p className={styles.note}>{note}</p>}
       </div>
 
       <svg className={styles.mark} viewBox="0 0 366 366" fill="none" stroke="currentColor" aria-hidden="true">

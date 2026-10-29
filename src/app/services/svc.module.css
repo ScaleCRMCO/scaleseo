@@ -223,3 +223,12 @@
   .checksTwo { grid-template-columns: 1fr; }
   .box { width: 100%; }
 }
+
+/* Additions: row lead line, inline links, list on navy */
+.rowLead { margin-top: 10px; font-size: 17px; font-weight: 500; line-height: 1.4; }
+.inlineLink { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+.inlineLink:hover { color: var(--h-blue); }
+.darkList { list-style: none; border-top: 1px solid rgba(254, 254, 254, 0.25); }
+.darkList li { padding: 12px 0; border-bottom: 1px solid rgba(254, 254, 254, 0.25); }
+.darkList strong { color: var(--h-white); font-weight: 600; }
+.card .box { margin-top: 8px; }
