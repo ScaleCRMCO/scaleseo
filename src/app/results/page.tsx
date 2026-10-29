@@ -1,14 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import PageHero from "../components/PageHero";
-import RevealOnScroll from "../components/RevealOnScroll";
-
-// Hero from the industries hub, sections from the shared /services hub
-// system; styles below are only the pieces specific to this page.
-import hub from "../services/page.module.css";
-import ind from "../industries/page.module.css";
-import styles from "./page.module.css";
-import Contact from "../components/ContactCta";
+import Breadcrumbs from "../components/Breadcrumbs";
+import ContactSection from "../components/ContactSection";
+import hub from "../services/hub.module.css";
+import styles from "./results.module.css";
 
 export const metadata: Metadata = {
   title: "Client Results & Case Studies | Scale SEO",
@@ -190,161 +185,105 @@ const resultsJsonLd = {
 
 export default function ResultsPage() {
   return (
-    <main>
+    <main className="v2">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(resultsJsonLd) }}
       />
 
-      {/* === HERO — dark, full-width left-aligned === */}
-      <PageHero
-        breadcrumbs={[{ name: "Home", href: "/" }, { name: "Results" }]}
-        breadcrumbSchema={false}
-        title={
-          <>
-            SEO Results &amp; <span className="title-block">Case Studies</span>
-          </>
-        }
-        icon="caseStudy"
-        actions={
-          <a href="#case-studies">
-            <span>Explore Case Studies</span>
-            <span>↓</span>
-          </a>
-        }
-      >
-        <p>
-          Explore selected Scale SEO projects across accounting, B2B,
-          construction, and local service businesses in Canada and Australia.
-        </p>
-        <p>
-          Each case study breaks down the starting point, the work completed,
-          and the results that followed.
-        </p>
-      </PageHero>
+      {/* === HERO — big title left, intro right === */}
+      <header className={styles.hero}>
+        <div className={styles.heroLeft}>
+          <div className={hub.crumbs}>
+            <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Results" }]} schema={false} />
+          </div>
+          <h1 className={styles.heroTitle}>SEO Results &amp; Case Studies</h1>
+        </div>
+        <div className={styles.heroRight}>
+          <p className={styles.heroLead}>
+            Explore selected Scale SEO projects across accounting, B2B,
+            construction, and local service businesses in Canada and Australia.
+          </p>
+          <p>
+            Each case study breaks down the starting point, the work completed,
+            and the results that followed.
+          </p>
+          <a href="#case-studies" className={styles.jump}>Explore Case Studies &darr;</a>
+        </div>
+      </header>
 
-      {/* === CASE STUDIES — light, one large card each === */}
-      <section className={`${hub.section} ${hub.light}`} id="case-studies">
-        <div className={`${hub.inner} ${styles.studies}`}>
-          {studies.map((s, i) => (
-            <article
-              key={s.id}
-              id={s.id}
-              className={`${styles.study} ${s.tint === "orange" ? styles.tintOrange : s.tint === "blue" ? styles.tintBlue : ""} ${s.featured ? styles.featured : ""} ${
-                i % 2 === 1 ? styles.flip : ""
-              } reveal-up`}
-            >
-              <div className={styles.visual}>
-                {s.image ? (
-                  <img
-                    src={s.image}
-                    alt={`${s.client} website`}
-                    className={styles.visualImg}
-                    loading={i === 0 ? "eager" : "lazy"}
-                  />
+      {/* === CASE STUDIES — card grid: image, tags, client, headline result, button === */}
+      <section className={styles.studies} id="case-studies">
+        <div className={styles.grid}>
+          {studies.map((s, i) => {
+            const [industry, place] = s.meta.split(" · ");
+            const lead = s.metrics[0];
+            return (
+              <article key={s.id} id={s.id} className={styles.card}>
+                <div className={styles.image}>
+                  {s.image ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img src={s.image} alt={`${s.client} website`} loading={i < 2 ? "eager" : "lazy"} />
+                  ) : null}
+                </div>
+                <div className={styles.tags}>
+                  <span>{industry}</span>
+                  {place && <span>{place}</span>}
+                </div>
+                <p className={styles.client}>{s.client}</p>
+                <h2 className={styles.result}>
+                  {lead.value} <span>{lead.label.toLowerCase()}</span>
+                </h2>
+                <p className={styles.summary}>{s.title}</p>
+                {s.caseStudyHref ? (
+                  <Link href={s.caseStudyHref} className={styles.button}>
+                    Read case study
+                  </Link>
                 ) : (
-                  <div className={styles.visualPlaceholder}>
-                    <span>Image coming soon</span>
-                    {s.client} website screenshot
-                  </div>
+                  <span className={`${styles.button} ${styles.buttonSoon}`} aria-disabled="true">
+                    Case study coming soon
+                  </span>
                 )}
-              </div>
-
-              <div className={styles.content}>
-                <div className={styles.eyebrow}>{s.eyebrow}</div>
-                <h2 className={styles.client}>{s.client}</h2>
-                <p className={styles.meta}>{s.meta}</p>
-
-                <div className={styles.metrics}>
-                  {s.metrics.map((m) => (
-                    <div key={m.label} className={styles.metric}>
-                      <span className={styles.metricValue}>{m.value}</span>
-                      <span className={styles.metricLabel}>{m.label}</span>
-                    </div>
-                  ))}
-                </div>
-
-                <h3 className={styles.studyTitle}>{s.title}</h3>
-                <div className={styles.body}>
-                  {s.body.map((p) => (
-                    <p key={p}>{p}</p>
-                  ))}
-                </div>
-
-                <div className={styles.actions}>
-                  {s.caseStudyHref ? (
-                    <Link href={s.caseStudyHref} className={styles.readBtn}>
-                      <span>Read the {s.client.replace(/ Ltd\.$/, "")} Case Study</span>
-                      <span className={hub.arrow}>→</span>
-                    </Link>
-                  ) : (
-                    <span className={`${styles.readBtn} ${styles.readBtnSoon}`} aria-disabled="true">
-                      <span>Read the {s.client.replace(/ Ltd\.$/, "")} Case Study</span>
-                      <span className={styles.soon}>Coming soon</span>
-                    </span>
-                  )}
-                  {s.url && (
-                    <a
-                      href={s.url}
-                      target="_blank"
-                      rel="nofollow noopener noreferrer"
-                      className={styles.visitLink}
-                    >
-                      Visit Client Website <span className={ind.arrow}>→</span>
-                    </a>
-                  )}
-                </div>
-              </div>
-            </article>
-          ))}
+              </article>
+            );
+          })}
         </div>
       </section>
 
-      {/* === THE WORK BEHIND THE NUMBERS — dark === */}
-      <section className={`${hub.section} ${hub.dark}`} data-nav-theme="dark">
-        <div className={`${hub.inner} ${hub.split}`}>
-          <div className={hub.splitAside}>
-            <div>
-              <div className={`section-label reveal-up ${ind.labelOnDark} ${styles.label}`}>
-                The Work Behind the Numbers
-              </div>
-              <h2 className={`${hub.h2} reveal-up`}>
-                Results Built Through <em>Hands-On SEO</em>
-              </h2>
-            </div>
-          </div>
-          <div className={`${hub.splitBody} reveal-up`}>
-            <p className={hub.lead}>There isn&rsquo;t one tactic behind these results.</p>
-            <p>
-              Each campaign is built around the needs of the business and can
-              involve technical SEO, service-page improvements, content
-              strategy, local SEO, internal linking, structured data, website
-              development, and ongoing analysis.
-            </p>
-            <p>
-              The common approach is simple:{" "}
-              <strong className={styles.strongOnDark}>
-                identify the search opportunities that matter to the business,
-                improve the website around them, implement the work, and
-                measure what changes.
-              </strong>
-            </p>
-            <p>
-              All Scale SEO campaigns are managed directly by{" "}
-              <strong className={styles.strongOnDark}>Corbin Jensen</strong>,
-              founder and SEO specialist at Scale SEO.
-            </p>
-            <Link href="/corbin-jensen" className={hub.pillLime}>
-              <span>Meet Corbin Jensen</span>
-              <span className={hub.arrow}>→</span>
-            </Link>
-          </div>
+      {/* === THE WORK BEHIND THE NUMBERS — heading left, text right === */}
+      <section className={hub.split}>
+        <div className={hub.splitAside}>
+          <span className={styles.eyebrow}>The Work Behind the Numbers</span>
+          <h2 className={hub.h2}>Results Built Through Hands-On SEO</h2>
+        </div>
+        <div className={hub.splitBody}>
+          <p className={hub.lead}>There isn&rsquo;t one tactic behind these results.</p>
+          <p>
+            Each campaign is built around the needs of the business and can
+            involve technical SEO, service-page improvements, content strategy,
+            local SEO, internal linking, structured data, website development,
+            and ongoing analysis.
+          </p>
+          <p>
+            The common approach is simple:{" "}
+            <strong>
+              identify the search opportunities that matter to the business,
+              improve the website around them, implement the work, and measure
+              what changes.
+            </strong>
+          </p>
+          <p>
+            All Scale SEO campaigns are managed directly by{" "}
+            <strong>Corbin Jensen</strong>, founder and SEO specialist at Scale
+            SEO.
+          </p>
+          <Link href="/corbin-jensen" className={`${hub.box} ${hub.boxNavy}`}>
+            <span>Meet Corbin Jensen &rarr;</span>
+          </Link>
         </div>
       </section>
 
-      <Contact />
-
-      <RevealOnScroll />
+      <ContactSection />
     </main>
   );
 }

@@ -1,0 +1,51 @@
+/* /results (new brand): split hero + case study card grid */
+.hero { display: grid; grid-template-columns: 2fr 1fr; padding-top: 96px; border-bottom: 1px solid var(--h-rule); }
+.heroLeft { padding: 32px 40px 72px; border-right: 1px solid var(--h-rule); }
+.heroTitle { max-width: 12ch; font-size: clamp(56px, 8vw, 140px); line-height: 0.96; font-weight: 400; letter-spacing: -0.045em; }
+.heroRight { display: flex; flex-direction: column; gap: 16px; padding: 40px; font-size: 17px; line-height: 1.5; }
+.heroLead { font-size: clamp(19px, 1.6vw, 24px); line-height: 1.35; }
+.jump { margin-top: auto; padding-top: 40px; color: var(--h-navy); font-size: 17px; text-decoration: none; }
+.jump:hover { color: var(--h-blue); }
+
+.studies { padding: 72px 40px 96px; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.card {
+  scroll-margin-top: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 18px 18px 22px;
+  background: var(--h-grey);
+  color: var(--h-navy);
+}
+.image { aspect-ratio: 16 / 10; overflow: hidden; background: #DCE7F3; }
+.image img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; transition: transform 0.6s ease; }
+.card:hover .image img { transform: scale(1.03); }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.tags span { padding: 6px 12px; border: 1px solid var(--h-rule); background: var(--h-white); font-size: 14px; color: var(--h-dim); }
+.client { font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; }
+.result { font-size: clamp(28px, 2.6vw, 42px); line-height: 1.1; font-weight: 400; letter-spacing: -0.03em; }
+.result span { color: var(--h-dim); }
+.summary { font-size: 16px; line-height: 1.5; color: var(--h-dim); }
+.button {
+  margin-top: auto;
+  display: block;
+  padding: 15px 18px;
+  background: var(--h-blue);
+  color: var(--h-white);
+  font-size: 17px;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+.button:hover { background: var(--h-navy); }
+.buttonSoon, .buttonSoon:hover { background: #DCE1E8; color: var(--h-dim); cursor: default; }
+.eyebrow { display: block; margin-bottom: 20px; font-size: 16px; color: var(--h-dim); }
+
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; padding-top: 72px; }
+  .heroLeft { border-right: 0; border-bottom: 1px solid var(--h-rule); padding: 24px 16px 40px; }
+  .heroRight { padding: 24px 16px 32px; }
+  .studies { padding: 40px 16px 56px; }
+  .grid { grid-template-columns: 1fr; gap: 16px; }
+}
