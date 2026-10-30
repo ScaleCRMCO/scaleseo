@@ -12,7 +12,6 @@ export const metadata: Metadata = {
 };
 
 const CLIENT_URL = "https://msvplumbingservices.com.au/";
-const PAGE = "https://scaleseo.co/results/msv-plumbing-services";
 
 const toc = [
   ["overview", "Overview"],
@@ -28,50 +27,96 @@ const caseStudyJsonLd = {
   "@graph": [
     {
       "@type": "WebPage",
-      "@id": `${PAGE}#webpage`,
-      url: PAGE,
-      name: "MSV Plumbing SEO & Website Case Study | Scale SEO",
-      description:
-        "How Scale SEO built a 100-page website and helped MSV Plumbing Services generate weekly enquiries through ongoing SEO in Brisbane.",
-      isPartOf: { "@id": "https://scaleseo.co/#website" },
-      publisher: { "@id": "https://scaleseo.co/#organization" },
-      mainEntity: { "@id": `${PAGE}#case-study` },
-      breadcrumb: { "@id": `${PAGE}#breadcrumb` },
-      inLanguage: "en-CA",
+      "@id": "https://scaleseo.co/results/msv-plumbing-services#webpage",
+      "url": "https://scaleseo.co/results/msv-plumbing-services",
+      "name": "MSV Plumbing Services SEO & Website Case Study | Scale SEO",
+      "description": "How Scale SEO developed a 100-page website and implemented ongoing SEO for MSV Plumbing Services, helping the Brisbane plumbing business generate regular customer enquiries.",
+      "isPartOf": {
+        "@id": "https://scaleseo.co/#website"
+      },
+      "mainEntity": {
+        "@id": "https://scaleseo.co/results/msv-plumbing-services#article"
+      },
+      "publisher": {
+        "@id": "https://scaleseo.co/#organization"
+      },
+      "breadcrumb": {
+        "@id": "https://scaleseo.co/results/msv-plumbing-services#breadcrumb"
+      },
+      "inLanguage": "en-CA"
     },
     {
       "@type": "Article",
-      "@id": `${PAGE}#case-study`,
-      url: PAGE,
-      headline: "MSV Plumbing Services SEO & Website Case Study",
-      description:
-        "How website development and ongoing SEO helped a small Brisbane plumbing business establish its online presence and generate weekly enquiries for residential plumbing services.",
-      image: "https://scaleseo.co/images/msv-screenshot.png",
-      mainEntityOfPage: { "@id": `${PAGE}#webpage` },
-      author: { "@id": "https://scaleseo.co/corbin-jensen#person" },
-      publisher: { "@id": "https://scaleseo.co/#organization" },
-      about: { "@type": "Organization", name: "MSV Plumbing Services", url: CLIENT_URL },
-      articleSection: "SEO Case Studies",
-      keywords: [
-        "plumber SEO",
-        "local SEO Brisbane",
-        "plumbing website development",
-        "service business SEO",
-        "AI search optimization",
-        "SEO case study",
+      "@id": "https://scaleseo.co/results/msv-plumbing-services#article",
+      "headline": "MSV Plumbing Services SEO & Website Case Study",
+      "description": "A case study of how Scale SEO built a website of approximately 100 pages and delivered ongoing SEO, local SEO, and AI search optimization for MSV Plumbing Services in Brisbane, Australia.",
+      "url": "https://scaleseo.co/results/msv-plumbing-services",
+      "mainEntityOfPage": {
+        "@id": "https://scaleseo.co/results/msv-plumbing-services#webpage"
+      },
+      "author": {
+        "@id": "https://scaleseo.co/corbin-jensen#person"
+      },
+      "publisher": {
+        "@id": "https://scaleseo.co/#organization"
+      },
+      "about": [
+        {
+          "@type": "Thing",
+          "name": "Search Engine Optimization"
+        },
+        {
+          "@type": "Thing",
+          "name": "Website Development"
+        },
+        {
+          "@type": "Thing",
+          "name": "Local SEO"
+        },
+        {
+          "@type": "Thing",
+          "name": "AI Search Optimization"
+        },
+        {
+          "@type": "Organization",
+          "name": "MSV Plumbing Services",
+          "url": "https://msvplumbingservices.com.au/"
+        }
       ],
-      inLanguage: "en-CA",
+      "keywords": [
+        "SEO case study",
+        "Plumbing SEO",
+        "Website development",
+        "Local SEO Brisbane",
+        "AI search optimization"
+      ],
+      "inLanguage": "en-CA"
     },
     {
       "@type": "BreadcrumbList",
-      "@id": `${PAGE}#breadcrumb`,
-      itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Home", item: "https://scaleseo.co/" },
-        { "@type": "ListItem", position: 2, name: "Results", item: "https://scaleseo.co/results" },
-        { "@type": "ListItem", position: 3, name: "MSV Plumbing Services", item: PAGE },
-      ],
-    },
-  ],
+      "@id": "https://scaleseo.co/results/msv-plumbing-services#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://scaleseo.co/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Results",
+          "item": "https://scaleseo.co/results"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "MSV Plumbing Services",
+          "item": "https://scaleseo.co/results/msv-plumbing-services"
+        }
+      ]
+    }
+  ]
 };
 
 export default function MsvPlumbingCaseStudy() {
