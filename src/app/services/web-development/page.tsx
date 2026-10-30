@@ -224,8 +224,8 @@ export default function WebDevelopmentPage() {
           <ServicesMark className={t.heroMark} />
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/images/web-development-hero.webp"
-            alt="Laptop showing a responsive business website built by Scale SEO"
+            src="/images/web-development-tablets.webp"
+            alt="Two tablets showing a business website being designed and coded in a website builder"
           />
         </div>
       </header>
