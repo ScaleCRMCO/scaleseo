@@ -88,7 +88,7 @@ const results = [
   {
     client: "Kinsmen Consulting",
     type: "Website & SEO",
-    metric: "26% Revenue Growth in Six Months",
+    metric: "$500K in Revenue From New Jobs",
     body: "Website development and ongoing SEO supporting growth for a Calgary concrete contractor, including improvements to service-page targeting, technical foundations, and organic search visibility.",
     href: "/results/kinsmen-consulting",
     cta: "View Kinsmen Consulting Case Study",

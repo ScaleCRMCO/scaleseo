@@ -155,8 +155,8 @@ export default function KinsmenConsultingCaseStudy() {
 
       <div className={styles.stats}>
         <div className={styles.stat}>
-          <span className={styles.statValue}>~$500K</span>
-          <span className={styles.statLabel}>Revenue associated with new projects</span>
+          <span className={styles.statValue}>$500K</span>
+          <span className={styles.statLabel}>Revenue generated from new jobs</span>
         </div>
         <div className={styles.stat}>
           <span className={styles.statValue}>30+ yrs</span>

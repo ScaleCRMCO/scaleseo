@@ -81,7 +81,7 @@ const studies: Study[] = [
     eyebrow: "Calgary · B2B",
     client: "Kinsmen Consulting Ltd.",
     meta: "Concrete & Construction · Calgary, Alberta",
-    metrics: [{ value: "+26%", label: "Revenue growth" }],
+    metrics: [{ value: "$500K", label: "Revenue generated from new jobs" }],
     title: "SEO & Website Strategy for a Calgary Concrete Contractor",
     body: [
       "Scale SEO worked with Kinsmen Consulting to strengthen its website and search presence across residential and commercial concrete services in Calgary.",
