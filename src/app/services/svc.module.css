@@ -272,3 +272,34 @@
   .steps { padding: 56px 16px; }
   .stepGrid { grid-template-columns: 1fr; gap: 32px; margin-top: 32px; }
 }
+
+/* Web dev hero band: navy, extra breathing room, translucent logo behind */
+.heroBand {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 72px 40px;
+  background: var(--h-navy);
+  overflow: hidden;
+}
+.heroBand img { position: relative; z-index: 1; display: block; width: auto; max-width: 100%; height: clamp(280px, 38vw, 560px); object-fit: contain; }
+.heroMark {
+  position: absolute !important;
+  inset: 0;
+  display: grid !important;
+  place-items: center;
+  color: #0099FF !important;
+  opacity: 0.18;
+  z-index: 0;
+}
+.heroMark svg { width: clamp(220px, 34vw, 500px) !important; height: auto !important; max-width: none !important; }
+
+/* Heading + intro above the project cover cards */
+.coversHead { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: end; padding: 32px 0 16px; color: var(--h-white); }
+.coversHead .lead { max-width: 560px; color: rgba(254, 254, 254, 0.8); }
+
+@media (max-width: 800px) {
+  .heroBand { padding: 40px 16px; }
+  .coversHead { grid-template-columns: 1fr; gap: 16px; padding: 16px 0 0; }
+}

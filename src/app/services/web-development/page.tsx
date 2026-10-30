@@ -5,6 +5,7 @@ import ContactSection from "../../components/ContactSection";
 import ServicesFaq, { type FaqItem } from "../ServicesFaq";
 // Shared service page template (new brand)
 import t from "../svc.module.css";
+import ServicesMark from "../../sections/home/ServicesMark";
 
 export const metadata: Metadata = {
   title: "Web Development & Website Design in Calgary | Scale SEO",
@@ -218,12 +219,13 @@ export default function WebDevelopmentPage() {
           </div>
           <h1 className={t.title}>Website Design &amp; Development in Calgary</h1>
         </div>
-        <div className={t.band} style={{ background: "#031B36" }}>
+        <div className={t.heroBand}>
+          {/* Translucent animated logo mark behind the laptop */}
+          <ServicesMark className={t.heroMark} />
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/images/web-development-hero.webp"
             alt="Laptop showing a responsive business website built by Scale SEO"
-            style={{ objectFit: "contain" }}
           />
         </div>
       </header>
@@ -344,6 +346,13 @@ export default function WebDevelopmentPage() {
 
       {/* === COVER CARDS — full-width client project images === */}
       <section className={t.covers} aria-label="Selected website projects">
+        <div className={t.coversHead}>
+          <h2 className={t.h2}>Selected Website Projects</h2>
+          <p className={t.lead}>
+            A selection of websites I&rsquo;ve built, redesigned, and improved
+            for businesses in Canada and Australia.
+          </p>
+        </div>
         {[
           {
             href: "/results/jensen-cpa",
