@@ -221,7 +221,7 @@ export default function WebDevelopmentPage() {
         </div>
         <div className={t.heroBand}>
           {/* Translucent animated logo mark behind the laptop */}
-          <ServicesMark className={t.heroMark} />
+          <ServicesMark className={t.heroMark} slow />
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/images/web-development-tablets.webp"

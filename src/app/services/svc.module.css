@@ -289,11 +289,12 @@
   inset: 0;
   display: grid !important;
   place-items: center;
+  transform: translate(-20%, -14%);
   color: #0099FF !important;
   opacity: 0.18;
   z-index: 0;
 }
-.heroMark svg { width: clamp(220px, 34vw, 500px) !important; height: auto !important; max-width: none !important; }
+.heroMark svg { width: clamp(220px, 30vw, 440px) !important; height: auto !important; max-width: none !important; }
 
 /* Heading + intro above the project cover cards */
 .coversHead { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: end; padding: 32px 0 16px; color: var(--h-white); }

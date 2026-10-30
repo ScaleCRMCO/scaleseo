@@ -6,10 +6,14 @@ import styles from "./ServicesGrid.module.css";
 // Scale SEO mark (ring + corner arrow) that draws itself as the services
 // section scrolls through the viewport: the ring sweeps round, then the
 // arrow draws in and settles from a quarter turn.
-export default function ServicesMark({ className }: { className?: string } = {}) {
+export default function ServicesMark({ className, slow = false }: { className?: string; slow?: boolean } = {}) {
   const ref = useRef<HTMLDivElement>(null);
   const reduce = useReducedMotion();
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "center center"] });
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    // slow: draw over the element's whole pass through the viewport
+    offset: slow ? ["start end", "end start"] : ["start end", "center center"],
+  });
 
   const ring = useTransform(scrollYProgress, [0, 0.7], [0, 1]);
   const ringRotate = useTransform(scrollYProgress, [0, 0.7], [-120, 0]);
