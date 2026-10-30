@@ -38,31 +38,31 @@ const included: { title: string; body: string }[] = [
 
 const steps: { title: string; body: string[] }[] = [
   {
-    title: "01 — Review & Planning",
+    title: "Discovery & Planning",
     body: [
-      "We discuss your business, services, target customers, existing website, and what the new site needs to accomplish.",
-      "I review the required pages, functionality, content, and technical considerations before defining the project scope.",
+      "I review your business, services, competitors, and website goals to determine the pages, functionality, and structure your website needs.",
+      "For new builds, this includes planning the website around your target customers and relevant search opportunities.",
     ],
   },
   {
-    title: "02 — Design & Development",
+    title: "Design & Development",
     body: [
-      "I build the website around the agreed structure, developing the layouts, navigation, service pages, and technical foundations.",
-      "The emphasis is on a clear, functional website that accurately represents your business.",
+      "I design and develop the website with clear navigation, responsive layouts, and dedicated service pages.",
+      "Technical SEO is considered throughout development, including page structure, metadata, internal linking, and search accessibility.",
     ],
   },
   {
-    title: "03 — Review & Launch",
+    title: "Testing & Launch",
     body: [
-      "Before launch, I review the website’s mobile layouts, navigation, page content, key functionality, redirects where required, and search accessibility.",
-      "The website is then prepared for launch with the agreed tracking and search setup.",
+      "Before launch, I review the website across devices, test key functionality, and check technical elements such as redirects, indexing settings, and analytics.",
+      "You\u2019ll have an opportunity to review the website and request changes before it goes live.",
     ],
   },
   {
-    title: "04 — Ongoing Improvements",
+    title: "Ongoing Development",
     body: [
-      "After launch, you can manage the website yourself or continue working with Scale SEO.",
-      "Ongoing SEO campaigns can include additional development, new service pages, technical improvements, and content updates based on search performance.",
+      "Your website can continue evolving as your business grows.",
+      "I also provide ongoing development through monthly SEO campaigns, including new service pages, content improvements, technical fixes, and changes based on search performance.",
     ],
   },
 ];
@@ -383,17 +383,17 @@ export default function WebDevelopmentPage() {
         ))}
       </section>
 
-      {/* === PROCESS — heading left, step rows right === */}
-      <section className={t.rowsSplit} style={{ padding: 0, borderTop: 0 }}>
-        <div className={t.rowsAside}>
-          <h2 className={t.h2}>How a Website Project Works</h2>
-        </div>
-        <div className={t.rowsList}>
-          {steps.map((s) => (
-            <div key={s.title} className={t.rowsItem}>
-              <h3 className={t.h3}>{s.title}</h3>
-              <div className={t.body}>
-                {s.body.map((p) => (
+      {/* === PROCESS — heading, then 2-column grid of numbered steps === */}
+      <section className={t.steps}>
+        <h2 className={t.h2}>How a Website Project Works</h2>
+        <div className={t.stepGrid}>
+          {steps.map((step, i) => (
+            <div key={step.title} className={t.step}>
+              <h3 className={t.stepTitle}>
+                <span>{String(i + 1).padStart(2, "0")}</span> {step.title}
+              </h3>
+              <div className={`${t.body} ${t.dim}`}>
+                {step.body.map((p) => (
                   <p key={p}>{p}</p>
                 ))}
               </div>
