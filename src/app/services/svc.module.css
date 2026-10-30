@@ -232,3 +232,33 @@
 .darkList li { padding: 12px 0; border-bottom: 1px solid rgba(254, 254, 254, 0.25); }
 .darkList strong { color: var(--h-white); font-weight: 600; }
 .card .box { margin-top: 8px; }
+
+/* Full-width client cover cards (image + bottom-left tags, title, link) */
+.covers { display: flex; flex-direction: column; gap: 40px; padding: 40px; background: var(--h-navy); }
+.cover {
+  position: relative;
+  display: block;
+  aspect-ratio: 2000 / 1083;
+  overflow: hidden;
+  color: var(--h-white) !important;
+  text-decoration: none;
+}
+.cover img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease; }
+.cover:hover img { transform: scale(1.03); }
+.cover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(3, 27, 54, 0.85) 0%, rgba(3, 27, 54, 0.35) 35%, transparent 60%);
+}
+.coverText { position: absolute; left: 0; bottom: 0; z-index: 1; display: flex; flex-direction: column; gap: 20px; max-width: 760px; padding: 48px; }
+.coverTags { display: flex; flex-wrap: wrap; gap: 10px; }
+.coverTags span { padding: 6px 14px; border: 1px solid rgba(254, 254, 254, 0.8); border-radius: 999px; font-size: 14px; letter-spacing: 0.04em; text-transform: uppercase; }
+.coverTitle { font-size: clamp(26px, 3vw, 46px); line-height: 1.1; font-weight: 400; letter-spacing: -0.025em; }
+.coverLink { align-self: flex-start; padding-bottom: 4px; border-bottom: 1px solid currentColor; font-size: 17px; letter-spacing: 0.04em; text-transform: uppercase; }
+.cover:hover .coverLink { color: var(--h-blue); }
+@media (max-width: 800px) {
+  .covers { padding: 16px; gap: 16px; }
+  .cover { aspect-ratio: 4 / 5; }
+  .coverText { padding: 20px; gap: 12px; }
+}

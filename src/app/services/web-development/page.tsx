@@ -342,6 +342,40 @@ export default function WebDevelopmentPage() {
         </div>
       </section>
 
+      {/* === COVER CARDS — full-width client project images === */}
+      <section className={t.covers} aria-label="Selected website projects">
+        {[
+          {
+            href: "/results/jensen-cpa",
+            img: "/images/jensen-cpa-cover.webp",
+            alt: "Jensen CPA team in Calgary, website redevelopment client of Scale SEO",
+            tags: ["Website Redesign", "SEO"],
+            title: "Jensen CPA. Website redevelopment for a Calgary accounting firm.",
+          },
+          {
+            href: "/results/empire-accountants",
+            img: "/images/empire-accountants-cover.webp",
+            alt: "Empire Accountants team in their Brisbane office, ongoing SEO and website development client of Scale SEO",
+            tags: ["Website Development", "SEO"],
+            title: "Empire Accountants. Ongoing website development for a Brisbane accounting firm.",
+          },
+        ].map((c) => (
+          <Link key={c.href} href={c.href} className={t.cover}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={c.img} alt={c.alt} loading="lazy" />
+            <div className={t.coverText}>
+              <div className={t.coverTags}>
+                {c.tags.map((x) => (
+                  <span key={x}>{x}</span>
+                ))}
+              </div>
+              <h3 className={t.coverTitle}>{c.title}</h3>
+              <span className={t.coverLink}>View Project</span>
+            </div>
+          </Link>
+        ))}
+      </section>
+
       {/* === CLIENT PROJECTS — grey, aside + boxes === */}
       <section className={t.grey}>
         <div className={t.asideGrid}>
