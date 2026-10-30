@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import PageHero from "../../components/PageHero";
-import SketchIcon from "../../components/SketchIcon";
-import RevealOnScroll from "../../components/RevealOnScroll";
+import Breadcrumbs from "../../components/Breadcrumbs";
+import ContactSection from "../../components/ContactSection";
 import ServicesFaq, { type FaqItem } from "../ServicesFaq";
-import Contact from "../../components/ContactCta";
-import styles from "./page.module.css";
+// Shared service page template (new brand)
+import t from "../svc.module.css";
 
 export const metadata: Metadata = {
   title: "Web Development & Website Design in Calgary | Scale SEO",
@@ -14,203 +13,99 @@ export const metadata: Metadata = {
   alternates: { canonical: "/services/web-development" },
 };
 
-const BOOKING_URL = "https://cal.com/corbinjensen-scaleseo/30min";
-
-/* === Content ============================================================ */
-
-const services: {
-  title: string;
-  body: string[];
-  listLabel?: string;
-  list?: string[];
-  after?: string;
-  link?: { href: string; label: string };
-}[] = [
+const included: { title: string; body: string }[] = [
   {
-    title: "Custom Website Design & Development",
-    body: [
-      "For businesses launching a new website or replacing an outdated one, I develop complete websites with professional layouts, responsive design, clear navigation, and the functionality required to support your services.",
-    ],
-    listLabel: "Projects can include:",
-    list: [
-      "Custom website design and development",
-      "Mobile-responsive page layouts",
-      "Service and industry landing pages",
-      "Contact forms and calls to action",
-      "Navigation and site architecture",
-      "Content management functionality where required",
-      "Analytics and search tracking setup",
-    ],
+    title: "Website Design & User Experience",
+    body: "Clean, responsive layouts that communicate your services clearly and make it easy for prospective customers to find relevant information.",
   },
   {
-    title: "Website Redesigns & Rebuilds",
-    body: [
-      "Not every website needs to be rebuilt. But when an existing design, platform, or structure is limiting performance, a redesign may provide a better long-term foundation.",
-      "I review what can be retained, what needs improvement, and how existing pages and search visibility should be handled during the transition.",
-      "The goal is to create a better website without unnecessarily discarding content, functionality, or existing SEO value.",
-    ],
+    title: "Service Pages & Website Architecture",
+    body: "Dedicated pages for important services, industries, and customer needs, organized into a logical website structure.",
   },
   {
-    title: "Existing Website Improvements",
-    body: [
-      "If your website already has a suitable foundation, individual improvements may make more sense than a complete rebuild.",
-    ],
-    listLabel: "I work across existing website platforms to implement changes such as:",
-    list: [
-      "Service-page improvements",
-      "Navigation and internal linking",
-      "Responsive layout adjustments",
-      "Page speed and technical fixes",
-      "Forms and conversion improvements",
-      "Structured data and metadata",
-      "New landing pages and content sections",
-    ],
-    after: "The scope depends on your platform, access, and the changes required.",
+    title: "Technical SEO Foundations",
+    body: "Crawlable navigation, metadata, canonical URLs, redirects, structured data, mobile usability, and other technical elements appropriate to the website.",
   },
   {
-    title: "SEO-Focused Website Development",
-    body: [
-      "A website should be designed for the people using it while remaining accessible and understandable to search engines.",
-      "I incorporate SEO foundations into website development, including logical page structures, crawlable navigation, appropriate metadata, internal linking, mobile usability, redirects where needed, and technical search requirements.",
-      "This gives your website a stronger foundation for future organic search campaigns without suggesting that development alone guarantees rankings.",
-    ],
-    link: { href: "/services/seo", label: "Explore Ongoing SEO Services" },
+    title: "Content Management & Ongoing Development",
+    body: "Websites built to accommodate new pages, updated services, supporting resources, and future improvements without unnecessary redevelopment.",
+  },
+  {
+    title: "Conversion-Focused Improvements",
+    body: "Clear calls to action, contact pathways, service information, and relevant trust signals that help visitors evaluate your business and make an enquiry.",
   },
 ];
 
-const platforms = [
+const steps: { title: string; body: string[] }[] = [
   {
-    title: "Webflow Websites",
-    tone: "tBlue",
+    title: "01 — Review & Planning",
     body: [
-      "Webflow is often a good fit for professional service businesses that need a custom-designed marketing website with structured content, responsive layouts, and a visual content management experience.",
-      "I use Webflow for new website projects where its design and CMS capabilities match the business's requirements.",
+      "We discuss your business, services, target customers, existing website, and what the new site needs to accomplish.",
+      "I review the required pages, functionality, content, and technical considerations before defining the project scope.",
     ],
   },
   {
-    title: "Custom-Coded Websites",
-    tone: "tNavy",
+    title: "02 — Design & Development",
     body: [
-      "For projects requiring greater flexibility, I also develop websites using modern web technologies and GitHub-based development workflows.",
-      "Depending on the project, this can include frameworks such as Next.js, with deployment and hosting through services such as Vercel.",
-      "Custom development can provide greater control over website structure, functionality, and future extensions. The editing and maintenance arrangement is determined by how the website is built.",
+      "I build the website around the agreed structure, developing the layouts, navigation, service pages, and technical foundations.",
+      "The emphasis is on a clear, functional website that accurately represents your business.",
     ],
   },
   {
-    title: "Existing Website Platforms",
-    tone: "tPink",
+    title: "03 — Review & Launch",
     body: [
-      "If you already have a website, you don't necessarily need to migrate to Webflow or a custom-coded setup.",
-      "I can work within existing platforms, including WordPress and other content management systems, where the required changes are supported and appropriate access is available.",
-      "The objective is to improve the website you have when that makes business and technical sense.",
-    ],
-  },
-];
-
-const steps = [
-  {
-    name: "Discovery & Planning",
-    body: [
-      "We establish your services, target audience, website goals, required functionality, and existing digital assets.",
-      "For redesigns, I also review your current website to identify pages, content, functionality, and search visibility that should be retained.",
+      "Before launch, I review the website’s mobile layouts, navigation, page content, key functionality, redirects where required, and search accessibility.",
+      "The website is then prepared for launch with the agreed tracking and search setup.",
     ],
   },
   {
-    name: "Site Structure & Design",
+    title: "04 — Ongoing Improvements",
     body: [
-      "I plan the website's navigation, page structure, and key layouts before development.",
-      "The focus is on helping visitors understand your services, navigate the website, and reach the appropriate enquiry points.",
+      "After launch, you can manage the website yourself or continue working with Scale SEO.",
+      "Ongoing SEO campaigns can include additional development, new service pages, technical improvements, and content updates based on search performance.",
     ],
   },
-  {
-    name: "Development & SEO Foundations",
-    body: [
-      "The approved design is developed with responsive layouts, appropriate technical configurations, and SEO considerations incorporated.",
-      "Depending on the project, this can include structured data, metadata, internal linking, forms, analytics, and content management functionality.",
-    ],
-  },
-  {
-    name: "Testing & Launch",
-    body: [
-      "Before launch, I review the website across relevant devices and screen sizes, check navigation and forms, and address identified technical issues.",
-      "For existing websites, launch planning also includes appropriate redirect and URL considerations.",
-    ],
-  },
-  {
-    name: "Ongoing Support",
-    body: [
-      "After launch, additional development, website improvements, hosting arrangements, and SEO services can be scoped according to your needs.",
-      "Ongoing SEO is available separately and is not required as part of a website project.",
-    ],
-  },
-];
-
-const pricingRows = [
-  { title: "One-time project fee", body: "Website development is quoted as a standalone project." },
-  { title: "Optional hosting", body: "Hosting or ongoing technical support can be arranged separately depending on the platform and setup." },
-  { title: "Ongoing SEO", body: "Monthly SEO services can be added after launch but are not required." },
 ];
 
 const faqs: FaqItem[] = [
   {
-    q: "How much does website development cost in Calgary?",
-    a: [
-      "Website projects at Scale SEO start from $6,000 CAD + GST.",
-      "The final price depends on the required design, number and complexity of page layouts, content requirements, functionality, integrations, and development platform.",
-      "You'll receive a defined project scope and quote before work begins.",
-    ],
-  },
-  {
-    q: "Which website platforms do you use?",
-    a: [
-      "For new website builds, I generally use Webflow or custom-coded development workflows involving GitHub and modern web frameworks.",
-      "If you already have a website, I can work with WordPress and other existing platforms depending on their capabilities and the required changes.",
-      "I recommend the platform based on the project's requirements rather than using one system for every business.",
-    ],
-  },
-  {
     q: "Can you improve my existing website instead of rebuilding it?",
     a: [
-      "Yes. If your current website has a suitable foundation, I can make targeted improvements to its design, structure, content, technical SEO, and conversion elements.",
-      "A rebuild is generally considered when the existing platform or website structure makes those improvements unnecessarily difficult or restrictive.",
+      "Yes. Many of my clients already have established websites.",
+      "I regularly develop new pages, improve existing content, update website structure, and implement technical changes as part of ongoing SEO campaigns.",
+      "If the existing platform is suitable, a complete rebuild may not be necessary.",
     ],
   },
   {
-    q: "Will my new website be optimized for SEO?",
+    q: "Which website platforms do you work with?",
     a: [
-      "SEO foundations are considered throughout development, including site architecture, responsive design, crawlability, page structure, internal linking, and technical configuration.",
-      "These elements help prepare a website for organic search, but they don't guarantee rankings. Ongoing SEO campaigns can be added separately when required.",
+      "My client work includes Webflow and other content management systems, along with websites that require custom code and technical implementation.",
+      "The appropriate platform depends on your website’s requirements, editing needs, and future development plans.",
     ],
   },
   {
-    q: "Will I be able to update the website myself?",
+    q: "Is SEO included with a new website?",
     a: [
-      "That depends on the website platform and content management setup.",
-      "Webflow websites can be configured with CMS functionality for updating supported content. Custom-coded websites may require a CMS integration or developer support for certain changes.",
-      "We'll establish your content editing requirements before choosing the development approach.",
+      "New website projects include foundational technical and on-page SEO considerations, such as website structure, metadata, crawlable navigation, and search accessibility.",
+      "Ongoing keyword research, content expansion, local SEO, and performance optimization are available through a separate monthly SEO engagement.",
     ],
+    link: { href: "/services/seo", label: "Explore Monthly SEO Services" },
   },
   {
-    q: "Do you offer website hosting and maintenance?",
-    a: [
-      "Hosting can be arranged as an optional service, depending on the website platform.",
-      "Maintenance, ongoing development, and SEO support can also be scoped separately. These requirements will be explained as part of your project proposal.",
-    ],
+    q: "Will I own my website?",
+    a: ["Yes. Your website, content, accounts, and digital assets remain under your ownership."],
   },
   {
-    q: "Who owns the completed website?",
-    a: [
-      "You retain ownership of the agreed website deliverables and your business content, subject to any applicable third-party licences or services.",
-      "The project proposal will outline how access, hosting, repositories, and other relevant assets are handled.",
-    ],
-  },
-  {
-    q: "Do you only build websites for businesses in Calgary?",
-    a: [
-      "No. Scale SEO is based in Calgary, Alberta, but website design and development projects can be delivered remotely for businesses across Canada and internationally.",
-    ],
+    q: "Do you work with businesses outside Calgary?",
+    a: ["Yes. Scale SEO is based in Calgary and works with businesses across Canada, as well as international clients."],
   },
 ];
+
+const Corner = () => (
+  <svg className={t.corner} viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+    <path d="M1 1.5h7.5V9" />
+  </svg>
+);
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -300,319 +195,297 @@ const jsonLd = {
   ]
 };
 
-const pad = (i: number) => String(i + 1).padStart(2, "0");
-
-/* === Page =============================================================== */
-
 export default function WebDevelopmentPage() {
   return (
-    <main>
+    <main className="v2">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <PageHero
-        breadcrumbs={[
-          { name: "Home", href: "/" },
-          { name: "Services", href: "/services" },
-          { name: "Web Development" },
-        ]}
-        breadcrumbSchema={false}
-        title={
-          <>
-            Web Development &amp; Website Design in{" "}
-            <span className="title-block">Calgary</span>
-          </>
-        }
-        icon="browser"
-        image={{
-          src: "/images/web-development-hero.webp",
-          alt: "Laptop showing a website technical health dashboard",
-        }}
-        actions={
-          <>
-            <Link href="/contact">
-              <span>Request a Website Quote</span>
-              <span>→</span>
-            </Link>
-            <Link href="/results">
-              <span>View Website Projects</span>
-              <span>→</span>
-            </Link>
-          </>
-        }
-      >
-        <p className={styles.heroTag}>
-          Custom websites built for performance, search visibility, and
-          business growth.
-        </p>
-        <p>
-          Scale SEO provides web development and website design services for
-          established businesses in Calgary and across Canada. I build
-          professional, responsive websites with clear navigation, strong
-          technical foundations, and a focus on turning visitors into enquiries.
-        </p>
-        <p>
-          Whether you&rsquo;re launching a new website, replacing an outdated
-          one, or improving an existing site, the objective is the same: create
-          a website that supports your business today and can grow alongside it.
-        </p>
-      </PageHero>
+      {/* === HERO === */}
+      <header>
+        <div className={t.hero}>
+          <div className={t.crumbs}>
+            <Breadcrumbs
+              items={[
+                { name: "Home", href: "/" },
+                { name: "Services", href: "/services" },
+                { name: "Web Development" },
+              ]}
+              schema={false}
+            />
+          </div>
+          <h1 className={t.title}>Website Design &amp; Development in Calgary</h1>
+        </div>
+        <div className={t.band} style={{ background: "#F1F3F6" }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/web-development-hero.webp"
+            alt="Laptop showing a responsive business website built by Scale SEO"
+            style={{ objectFit: "contain" }}
+          />
+        </div>
+      </header>
 
-      {/* === WEBSITE DESIGN THAT SUPPORTS YOUR BUSINESS — navy split === */}
-      <section className={styles.navy} data-nav-theme="dark">
-        <div className={styles.split}>
+      {/* === INTRO === */}
+      <section className={t.split} style={{ padding: 0 }}>
+        <div className={t.splitLeft}>
+          <p className={t.lead}>
+            <strong>
+              Custom websites and ongoing development for businesses that want
+              more than a good-looking website.
+            </strong>
+          </p>
           <div>
-            <h2 className={`${styles.bigH2} reveal-up`}>
-              Website Design That{" "}
-              <span className={styles.accent}>Supports Your Business</span>
-            </h2>
-            <SketchIcon name="browser" className={styles.sketch} />
-          </div>
-          <div className={`${styles.prose} reveal-up`}>
-            <p className={styles.lead}>
-              Your website is often one of the first places a prospective
-              client evaluates your business.
-            </p>
-            <p>
-              It needs to communicate what you do, who you work with, and why
-              someone should choose you. It also needs to work properly across
-              devices, load efficiently, and make it easy for visitors to find
-              information and take the next step.
-            </p>
-            <p>
-              At Scale SEO, website design and development are approached
-              together.
-            </p>
-            <p>
-              I consider site structure, user experience, technical performance,
-              search visibility, and conversion opportunities from the beginning
-              rather than treating SEO as something to address after launch.
-            </p>
-            <p className={styles.lead}>
-              The result is a website built around your services, customers,
-              and commercial priorities&mdash;not simply a collection of
-              attractive pages.
-            </p>
+            <div className={t.stat}>~100</div>
+            <p className={t.statLabel}>Pages built for MSV Plumbing Services</p>
           </div>
         </div>
-      </section>
-
-      {/* === WEB DEVELOPMENT SERVICES — intro + alternating bands === */}
-      <section className={styles.svcHead}>
-        <h2 className={`${styles.bigH2} reveal-up`}>Web Development Services</h2>
-        <p className={`${styles.intro} reveal-up`}>
-          I provide both new website development and improvements to existing
-          business websites. Every project is scoped around the functionality,
-          design, content, and technical requirements involved.
-        </p>
-      </section>
-      {services.map((s, i) => (
-        <section
-          key={s.title}
-          className={`${styles.band} ${i % 2 ? styles.bandAlt : ""}`}
-        >
-          <div className={styles.bandGrid}>
-            <div>
-              <span className={styles.num}>{pad(i)}</span>
-              <h3 className={`${styles.bandTitle} reveal-up`}>{s.title}</h3>
-            </div>
-            <div className={`${styles.prose} ${styles.proseDark} reveal-up`}>
-              {s.body.map((p) => (
-                <p key={p}>{p}</p>
-              ))}
-              {s.list && (
-                <>
-                  <p className={styles.listLabel}>{s.listLabel}</p>
-                  <ul className={styles.list}>
-                    {s.list.map((li) => (
-                      <li key={li}>{li}</li>
-                    ))}
-                  </ul>
-                </>
-              )}
-              {s.after && <p>{s.after}</p>}
-              {s.link && (
-                <Link href={s.link.href} className={styles.textLink}>
-                  {s.link.label} <span aria-hidden="true">→</span>
-                </Link>
-              )}
-            </div>
-          </div>
-        </section>
-      ))}
-
-      {/* === PLATFORMS — coloured cards === */}
-      <section className={styles.platforms}>
-        <div className={styles.headRow}>
-          <h2 className={`${styles.bigH2} reveal-up`}>
-            Website Platforms I Work With
-          </h2>
-          <p className={`${styles.intro} reveal-up`}>
-            The right platform depends on your business, the functionality
-            required, and how the website will be managed after launch.
-          </p>
-        </div>
-        <div className={styles.cards}>
-          {platforms.map((p) => (
-            <article
-              key={p.title}
-              className={`${styles.card} ${styles[p.tone]} reveal-up`}
-            >
-              <h3 className={styles.cardTitle}>{p.title}</h3>
-              {p.body.map((b) => (
-                <p key={b}>{b}</p>
-              ))}
-            </article>
-          ))}
-        </div>
-      </section>
-
-      {/* === PROCESS — heading left, numbered rows right === */}
-      <section className={styles.process}>
-        <div className={styles.processGrid}>
-          <div className={styles.processAside}>
-            <h2 className={`${styles.bigH2} reveal-up`}>
-              What&rsquo;s Included in a Website Project?
-            </h2>
-            <p className={`${styles.intro} reveal-up`}>
-              Every website has different requirements, but a typical project
-              follows a structured development process.
-            </p>
-          </div>
-          <ol className={styles.steps}>
-            {steps.map((s, i) => (
-              <li key={s.name} className={`${styles.step} reveal-up`}>
-                <span className={styles.stepNum}>{pad(i)}</span>
-                <h3 className={styles.stepName}>{s.name}</h3>
-                <div className={styles.stepBody}>
-                  {s.body.map((b) => (
-                    <p key={b}>{b}</p>
-                  ))}
-                </div>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </section>
-
-      {/* === SELECTED WORK — navy split === */}
-      <section className={styles.navy} data-nav-theme="dark">
-        <div className={styles.split}>
-          <h2 className={`${styles.bigH2} reveal-up`}>
-            Website Projects &amp;{" "}
-            <span className={styles.accent}>Selected Work</span>
-          </h2>
-          <div className={`${styles.prose} reveal-up`}>
-            <p className={styles.lead}>
-              Website development should be evaluated by more than appearance
-              alone.
+        <div className={t.splitRight}>
+          <div className={t.body}>
+            <p className={t.lead}>
+              Scale SEO designs, builds, and improves websites for professional
+              service and B2B businesses in Calgary and across Canada.
             </p>
             <p>
-              When reviewing a project, I consider how clearly the website
-              communicates its services, how visitors move through the pages,
-              how the technical structure supports search, and whether the
-              website is suitable for the business using it.
+              I handle website development alongside SEO, so the structure,
+              content, and technical foundations support how your business wants
+              to grow. Whether you need a new website or improvements to an
+              existing one, the work is managed directly by me.
             </p>
-            <p>
-              Explore selected website and client projects to see examples of
-              the structure, design, development, and search-focused
-              improvements involved.
-            </p>
-            <Link href="/results" className={styles.btnLight}>
-              <span>View Website Projects &amp; Case Studies</span>
-              <span aria-hidden="true">→</span>
+          </div>
+          <div className={t.boxRow}>
+            <Link href="/contact" className={`${t.box} ${t.boxNavy}`}>
+              <Corner />
+              <span>Book a Strategy Call &rarr;</span>
+            </Link>
+            <Link href="/results" className={`${t.box} ${t.boxGrey}`}>
+              <Corner />
+              <span>View Website Projects &rarr;</span>
             </Link>
           </div>
         </div>
       </section>
 
-      {/* === PRICING — light blue, full-width rows === */}
-      <section className={styles.pricing}>
-        <div className={styles.label}>Website Development Pricing</div>
-        <h2 className={`${styles.bigH2} reveal-up`}>
-          Websites Starting From $6,000 + GST
-        </h2>
-        <div className={`${styles.pricingIntro} reveal-up`}>
-          <p>
-            New website projects start from $6,000 CAD + GST, with the final
-            quote determined by the design, content, functionality,
-            integrations, and development requirements.
-          </p>
-          <p>
-            I don&rsquo;t use a fixed per-page pricing model. Each project is
-            scoped around what your business needs, with the agreed deliverables
-            and price confirmed before development begins.
+      {/* === BEYOND THE BUILD — two boxes === */}
+      <section className={t.twoWrap}>
+        <div className={t.twoHead}>
+          <h2 className={t.h2}>Website Development That Goes Beyond the Initial Build</h2>
+          <p className={t.lead}>Most of my website development work falls into two categories.</p>
+        </div>
+        <div className={t.two}>
+          <div className={`${t.panel} ${t.panelGrey}`}>
+            <h3 className={t.h3}>New Website Design &amp; Development</h3>
+            <div className={t.body}>
+              <p>
+                For businesses starting from scratch or replacing an outdated
+                website, I develop complete websites around their services,
+                customers, and business goals.
+              </p>
+              <p>
+                This includes planning the site structure, designing responsive
+                layouts, developing individual pages, organizing content, and
+                implementing the technical foundations needed for search engines
+                to access and understand the website.
+              </p>
+              <p>
+                The result is a professional website designed to support future
+                content, services, and SEO improvements.
+              </p>
+            </div>
+          </div>
+          <div className={`${t.panel} ${t.panelNavy}`}>
+            <h3 className={t.h3}>Existing Website Development &amp; Improvements</h3>
+            <div className={t.body}>
+              <p>Not every business needs a new website.</p>
+              <p>
+                Much of my ongoing work involves developing and improving
+                websites that clients already own.
+              </p>
+              <p>
+                This can include creating new service pages, restructuring
+                navigation, expanding industry content, improving internal
+                linking, updating page layouts, implementing structured data, and
+                resolving technical issues.
+              </p>
+              <p>
+                When development is part of an ongoing SEO campaign, these
+                changes are prioritized around search performance and commercial
+                opportunities rather than a fixed list of monthly website
+                updates.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* === WHAT'S INCLUDED — ruled rows === */}
+      <section className={t.listSection} style={{ padding: 0, borderTop: "1px solid var(--h-rule)", marginTop: 56 }}>
+        <div className={t.listHead}>
+          <h2 className={t.h2}>What&rsquo;s Included in Website Development?</h2>
+          <p className={`${t.lead} ${t.listIntro}`}>
+            The scope depends on whether we&rsquo;re building a new website or
+            improving an existing one.
           </p>
         </div>
-        <div className={styles.rows}>
-          {pricingRows.map((r) => (
-            <div key={r.title} className={`${styles.row} reveal-up`}>
-              <h3 className={styles.rowTitle}>{r.title}</h3>
-              <p className={styles.rowBody}>{r.body}</p>
+        <div className={t.rows}>
+          {included.map((item, i) => (
+            <div key={item.title} className={t.row}>
+              <div>
+                <span className={t.rowNum}>{String(i + 1).padStart(2, "0")}</span>
+                <h3 className={t.h3}>{item.title}</h3>
+              </div>
+              <p className={`${t.body} ${t.dim}`}>{item.body}</p>
             </div>
           ))}
         </div>
-        <Link href="/pricing" className={styles.btnDark}>
-          <span>View All Pricing</span>
-          <span aria-hidden="true">→</span>
-        </Link>
       </section>
 
-      <ServicesFaq
-        items={faqs}
-        eyebrow="FAQs"
-        title={
+      {/* === CLIENT PROJECTS — grey, aside + boxes === */}
+      <section className={t.grey}>
+        <div className={t.asideGrid}>
+          <div className={t.aside}>
+            <h2 className={t.h2}>Website Development From Real Client Projects</h2>
+            <p className={t.body}>
+              My approach to website development comes from working directly on
+              client websites, not simply producing designs for a portfolio.
+            </p>
+          </div>
+          <div className={t.cardGrid}>
+            <article className={t.card}>
+              <span className={t.cardLabel}>Jensen CPA &mdash; Calgary, Alberta</span>
+              <h3 className={t.h3}>Website redevelopment for an established accounting firm.</h3>
+              <div className={`${t.body} ${t.dim}`} style={{ fontSize: 16 }}>
+                <p>
+                  Jensen CPA needed a website that better represented its
+                  corporate tax, bookkeeping, personal tax, and fractional CFO
+                  services.
+                </p>
+                <p>
+                  I redesigned and expanded the website with dedicated service
+                  pages, improved navigation, supporting accounting resources, and
+                  technical SEO foundations.
+                </p>
+                <p>
+                  The redevelopment formed part of a wider SEO campaign that
+                  increased average daily Google Search impressions by 227% and
+                  organic clicks by 92% over the first four months.
+                </p>
+              </div>
+              <Link href="/results/jensen-cpa" className={t.inlineLink} style={{ marginTop: "auto", fontSize: 16 }}>
+                View Jensen CPA Case Study &rarr;
+              </Link>
+            </article>
+            <article className={t.card}>
+              <span className={t.cardLabel}>MSV Plumbing Services &mdash; Brisbane, Australia</span>
+              <h3 className={t.h3}>A complete website built for a growing local plumbing business.</h3>
+              <div className={`${t.body} ${t.dim}`} style={{ fontSize: 16 }}>
+                <p>
+                  MSV Plumbing Services needed a professional website capable of
+                  supporting customer acquisition beyond word-of-mouth referrals.
+                </p>
+                <p>
+                  I designed and developed a website of approximately 100 pages,
+                  organized around core plumbing services, Brisbane service areas,
+                  and supporting resources.
+                </p>
+                <p>
+                  The project combined website development, local SEO, and ongoing
+                  content improvements. Within approximately six months, the
+                  business was receiving weekly customer calls for services
+                  including blocked drains and hot water systems.
+                </p>
+              </div>
+              <Link href="/results/msv-plumbing-services" className={t.inlineLink} style={{ marginTop: "auto", fontSize: 16 }}>
+                View MSV Plumbing Services Case Study &rarr;
+              </Link>
+            </article>
+            <article className={`${t.card} ${t.cardWide}`}>
+              <span className={t.cardLabel}>Ongoing Development</span>
+              <h3 className={t.h3}>Development as Part of Ongoing SEO</h3>
+              <p>Website development doesn&rsquo;t always involve a full redesign.</p>
+              <p>
+                For Empire Accountants, I&rsquo;ve expanded and improved existing
+                accounting service pages, industry content, internal links, and
+                technical website elements.
+              </p>
+              <p>
+                For Kinsmen Consulting, I&rsquo;ve developed dedicated landing
+                pages targeting higher-value concrete services, including sport
+                court construction in Calgary.
+              </p>
+              <p>
+                These projects demonstrate how ongoing development can improve an
+                existing website without requiring a complete rebuild.
+              </p>
+              <Link href="/results" className={`${t.box} ${t.boxBlue}`}>
+                <Corner />
+                <span>Explore All Client Results &rarr;</span>
+              </Link>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      {/* === PROCESS — heading left, step rows right === */}
+      <section className={t.rowsSplit} style={{ padding: 0, borderTop: 0 }}>
+        <div className={t.rowsAside}>
+          <h2 className={t.h2}>How a Website Project Works</h2>
+        </div>
+        <div className={t.rowsList}>
+          {steps.map((s) => (
+            <div key={s.title} className={t.rowsItem}>
+              <h3 className={t.h3}>{s.title}</h3>
+              <div className={t.body}>
+                {s.body.map((p) => (
+                  <p key={p}>{p}</p>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* === PRICING — split === */}
+      <section className={t.pricing} style={{ padding: 0, borderTop: 0 }}>
+        <div className={t.pricingAside}>
+          <h2 className={t.h2}>Website Development Pricing</h2>
+          <p className={t.lead}><strong>New websites start from $6,000 CAD + GST.</strong></p>
+        </div>
+        <div className={t.pricingBody}>
+          <div className={t.body}>
+            <p>
+              Projects are quoted individually based on the website&rsquo;s size,
+              design requirements, content, functionality, and technical
+              complexity.
+            </p>
+            <p>
+              There are no fixed website packages. I&rsquo;ll review what your
+              business needs and provide a clear scope before work begins.
+            </p>
+            <p>Website hosting and ongoing SEO are available separately where appropriate.</p>
+          </div>
+          <p className={t.pricingLead}>Your website, content, accounts, and data remain yours.</p>
+          <Link href="/pricing" className={`${t.box} ${t.boxNavy}`}>
+            <Corner />
+            <span>View Website &amp; SEO Pricing &rarr;</span>
+          </Link>
+        </div>
+      </section>
+
+      <ServicesFaq items={faqs} title={<>Frequently Asked Questions</>} />
+
+      <ContactSection
+        heading="Work Directly With Your Website Developer"
+        lead="I'm Corbin Jensen, founder of Scale SEO. I work directly on client websites, from initial development through ongoing technical improvements and service-page expansion. If you're planning a new website or need to improve an existing one, I can review your requirements and recommend a practical approach."
+        cta={{ href: "/contact", label: "Book a Strategy Call →" }}
+        note={
           <>
-            Website Design &amp; Development <em>FAQs</em>
+            More about <Link href="/corbin-jensen">Corbin Jensen &rarr;</Link>
           </>
         }
       />
-
-      {/* === DISCUSS YOUR PROJECT — navy === */}
-      <section className={styles.navy} data-nav-theme="dark">
-        <div className={styles.split}>
-          <h2 className={`${styles.bigH2} reveal-up`}>
-            Discuss Your{" "}
-            <span className={styles.accent}>Website Project</span>
-          </h2>
-          <div className={`${styles.prose} reveal-up`}>
-            <p className={styles.lead}>
-              Whether you need a new business website, a complete redesign, or
-              improvements to your existing site, I can help determine the most
-              appropriate development approach.
-            </p>
-            <p>
-              Tell me about your business, current website, and what
-              you&rsquo;re looking to achieve. I&rsquo;ll review the
-              requirements and outline a practical scope for the project.
-            </p>
-            <div className={styles.btnRow}>
-              <Link href="/contact" className={styles.btnLight}>
-                <span>Request a Website Quote</span>
-                <span aria-hidden="true">→</span>
-              </Link>
-              <a
-                href={BOOKING_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.btnOutline}
-              >
-                <span>Book a Consultation</span>
-                <span aria-hidden="true">→</span>
-              </a>
-            </div>
-            <p className={styles.meta}>
-              Based in Calgary · Serving Canada &amp; Internationally · Website
-              Projects From $6,000 + GST
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <Contact />
-      <RevealOnScroll />
     </main>
   );
 }
