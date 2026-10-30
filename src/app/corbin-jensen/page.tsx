@@ -10,7 +10,7 @@ import hub from "../services/page.module.css";
 import ind from "../industries/page.module.css";
 import about from "../about/page.module.css";
 import styles from "./page.module.css";
-import Contact from "../components/ContactCta";
+import ContactSection from "../components/ContactSection";
 
 export const metadata: Metadata = {
   title: "Corbin Jensen | Founder & Lead Specialist, Scale SEO",
@@ -611,7 +611,7 @@ export default function CorbinJensenPage() {
         </div>
       </section>
 
-      <Contact />
+      <ContactSection />
 
       <RevealOnScroll />
     </main>

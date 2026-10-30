@@ -5,7 +5,7 @@ import servicePageStyles from "../../components/ServicePage.module.css";
 import processStyles from "../../sections/home/Process.module.css";
 import faqStyles from "../../sections/home/FAQ.module.css";
 import styles from "./page.module.css";
-import Contact from "../../components/ContactCta";
+import ContactSection from "../../components/ContactSection";
 
 export const metadata: Metadata = {
   title: "Google Ads Management Services in Calgary & Canada | Scale SEO",
@@ -248,7 +248,7 @@ export default function GoogleAdsPage() {
         </div>
       </section>
 
-      <Contact />
+      <ContactSection />
 
       <RevealOnScroll />
     </main>

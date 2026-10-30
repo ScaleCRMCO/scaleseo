@@ -7,7 +7,7 @@ import CopyLink from "./CopyLink";
 import RevealOnScroll from "../../components/RevealOnScroll";
 import { posts, getPost } from "../posts";
 import styles from "./page.module.css";
-import Contact from "../../components/ContactCta";
+import ContactSection from "../../components/ContactSection";
 
 export function generateStaticParams() {
   return posts.map((p) => ({ slug: p.slug }));
@@ -263,7 +263,7 @@ export default function BlogPostPage({
         </div>
       </section>
 
-      <Contact />
+      <ContactSection />
 
       <script
         type="application/ld+json"

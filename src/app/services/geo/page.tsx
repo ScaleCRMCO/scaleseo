@@ -8,7 +8,7 @@ import RevealOnScroll from "../../components/RevealOnScroll";
 import hub from "../page.module.css";
 import ind from "../../industries/page.module.css";
 import styles from "./page.module.css";
-import Contact from "../../components/ContactCta";
+import ContactSection from "../../components/ContactSection";
 
 export const metadata: Metadata = {
   title: "AI Search Optimization & GEO Services | Scale SEO",
@@ -890,7 +890,7 @@ export default function GeoServicePage() {
         </div>
       </section>
 
-      <Contact />
+      <ContactSection />
 
       <RevealOnScroll />
     </main>

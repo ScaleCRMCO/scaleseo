@@ -6,7 +6,7 @@ import ServicesFaq, { type FaqItem } from "../ServicesFaq";
 // Section/card system shared with the /services hub so all service pages match.
 import hub from "../page.module.css";
 import styles from "./page.module.css";
-import Contact from "../../components/ContactCta";
+import ContactSection from "../../components/ContactSection";
 
 export const metadata: Metadata = {
   title: "SEO Audit Services Calgary | Scale SEO",
@@ -1012,7 +1012,7 @@ export default function SeoAuditsPage() {
         }
       />
 
-      <Contact />
+      <ContactSection />
 
       <RevealOnScroll />
     </main>
