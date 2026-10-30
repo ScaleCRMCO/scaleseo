@@ -218,7 +218,7 @@ export default function WebDevelopmentPage() {
           </div>
           <h1 className={t.title}>Website Design &amp; Development in Calgary</h1>
         </div>
-        <div className={t.band} style={{ background: "#F1F3F6" }}>
+        <div className={t.band} style={{ background: "#031B36" }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/images/web-development-hero.webp"
