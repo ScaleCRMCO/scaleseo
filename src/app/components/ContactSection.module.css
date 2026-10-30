@@ -4,7 +4,7 @@
   --cs-blue: #0099FF;
   position: relative;
   display: grid;
-  grid-template-columns: 1fr 1fr minmax(360px, 520px);
+  grid-template-columns: 1fr minmax(360px, 520px);
   align-items: center;
   gap: 40px;
   min-height: 760px;
@@ -26,13 +26,20 @@
 .points li { display: flex; gap: 12px; align-items: baseline; }
 .points span { color: var(--cs-navy); font-weight: 600; }
 
-/* Large translucent navy logo mark in the centre column */
+/* Large translucent logo mark filling the left 3/4 (behind the text,
+   ending before the form) */
 .mark {
-  justify-self: center;
-  width: min(100%, 440px);
+  position: absolute;
+  top: 50%;
+  left: 40px;
+  width: min(calc(100% - 520px - 140px), 900px);
   height: auto;
-  color: var(--cs-navy);
-  opacity: 0.55;
+  max-height: 92%;
+  transform: translateY(-50%);
+  color: var(--cs-white);
+  opacity: 0.14;
+  pointer-events: none;
+  z-index: 0;
 }
 
 .card {
@@ -94,12 +101,11 @@
 .legal a { color: var(--cs-blue) !important; text-decoration: underline; }
 
 @media (max-width: 1200px) {
-  .section { grid-template-columns: 1fr minmax(340px, 480px); }
-  .mark { position: absolute; left: 38%; top: 50%; width: 420px; transform: translate(-50%, -50%); opacity: 0.25; }
+  .mark { width: min(calc(100% - 480px - 120px), 700px); }
 }
 @media (max-width: 860px) {
   .section { grid-template-columns: 1fr; padding: 56px 16px; min-height: 0; }
-  .mark { left: auto; right: -80px; top: 40px; width: 300px; transform: none; opacity: 0.2; }
+  .mark { left: auto; right: -80px; top: 40px; width: 300px; transform: none; opacity: 0.14; }
   .card { padding: 28px 20px; }
 }
 .ctaLink {
