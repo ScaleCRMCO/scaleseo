@@ -147,8 +147,8 @@ export default function EmpireAccountantsCaseStudy() {
       <div className={styles.band}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/images/empire-accountants-website.webp"
-          alt="Empire Accountants website homepage, a Brisbane accounting and business advisory firm"
+          src="/images/empire-accountants-cover.webp"
+          alt="The Empire Accountants partners in their Brisbane office, an accounting firm Scale SEO works with"
         />
       </div>
 

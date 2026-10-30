@@ -147,7 +147,8 @@ export default function JensenCpaCaseStudy() {
 
       <div className={styles.band}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/images/jensen-cpa-website.webp" alt="Jensen CPA website: Fractional CFO Services for Calgary Businesses" />
+        <img src="/images/jensen-cpa-cover.webp"
+          alt="The Jensen CPA team in Calgary, an accounting firm Scale SEO works with" />
       </div>
 
       <div className={styles.stats}>
