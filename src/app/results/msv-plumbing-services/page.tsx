@@ -164,8 +164,8 @@ export default function MsvPlumbingCaseStudy() {
       <div className={styles.band}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/images/msv-screenshot.png"
-          alt="MSV Plumbing Services website homepage, a Brisbane plumbing business"
+          src="/images/msv-plumbing-cover.webp"
+          alt="Matthew Main, licensed plumber and founder of MSV Plumbing Services, with his work ute in Brisbane"
         />
       </div>
 

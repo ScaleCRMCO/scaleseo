@@ -359,6 +359,13 @@ export default function WebDevelopmentPage() {
             tags: ["Website Development", "SEO"],
             title: "Empire Accountants. Ongoing website development for a Brisbane accounting firm.",
           },
+          {
+            href: "/results/msv-plumbing-services",
+            img: "/images/msv-plumbing-cover.webp",
+            alt: "Matthew Main of MSV Plumbing Services with his work ute in Brisbane, website and SEO client of Scale SEO",
+            tags: ["Website Design", "Local SEO"],
+            title: "MSV Plumbing Services. A 100-page website for a Brisbane plumbing business.",
+          },
         ].map((c) => (
           <Link key={c.href} href={c.href} className={t.cover}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
