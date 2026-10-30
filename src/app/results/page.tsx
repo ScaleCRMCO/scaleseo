@@ -104,6 +104,7 @@ const studies: Study[] = [
       "Scale SEO combined website development with local SEO, service-page optimization, Google Business Profile improvements, and ongoing search strategy to build visibility across Brisbane.",
       "The business now receives consistent customer enquiries and bookings through its online presence.",
     ],
+    caseStudyHref: "/results/msv-plumbing-services",
     image: "/images/msv-screenshot.png",
     url: "https://msvplumbingservices.com.au/",
     tint: "blue",

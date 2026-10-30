@@ -47,8 +47,7 @@ const cards: Card[] = [
     theme: "lime",
   },
   {
-    // No dedicated page yet — links to its card on the results hub.
-    href: "/results#msv-plumbing-services",
+    href: "/results/msv-plumbing-services",
     client: "MSV Plumbing Services",
     tag: "Plumbing Services · Brisbane",
     metric: "0 → Weekly",
