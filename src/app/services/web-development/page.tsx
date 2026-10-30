@@ -442,7 +442,7 @@ export default function WebDevelopmentPage() {
 
       <ContactSection
         heading="Work Directly With Your Website Developer"
-        lead="I'm Corbin Jensen, founder of Scale SEO. I work directly on client websites, from initial development through ongoing technical improvements and service-page expansion. If you're planning a new website or need to improve an existing one, I can review your requirements and recommend a practical approach."
+        lead="If you're planning a new website or need to improve an existing one, I can review your requirements and recommend a practical approach."
         cta={{ href: "/contact", label: "Book a Strategy Call →" }}
         note={
           <>
