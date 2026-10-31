@@ -1,256 +1,371 @@
 import type { Metadata } from "next";
-import SellingHero from "../../components/SellingHero";
-import RevealOnScroll from "../../components/RevealOnScroll";
-import servicePageStyles from "../../components/ServicePage.module.css";
-import processStyles from "../../sections/home/Process.module.css";
-import faqStyles from "../../sections/home/FAQ.module.css";
-import styles from "./page.module.css";
+import Link from "next/link";
+import Breadcrumbs from "../../components/Breadcrumbs";
 import ContactSection from "../../components/ContactSection";
+import ServicesFaq, { type FaqItem } from "../ServicesFaq";
+import ServicesMark from "../../sections/home/ServicesMark";
+// Shared service page template (new brand)
+import t from "../svc.module.css";
 
 export const metadata: Metadata = {
-  title: "Google Ads Management Services in Calgary & Canada | Scale SEO",
+  title: { absolute: "Google Ads Management Calgary | Scale SEO" },
   description:
-    "Google Ads management for accounting firms and professional service businesses in Calgary and across Canada. Campaign setup, keyword research, ad copy, landing pages, and bid management — run directly by one specialist.",
+    "Google Ads management for Calgary and Canadian businesses. Founder-led campaigns, conversion tracking and landing page improvements, with or without SEO.",
   alternates: { canonical: "/services/google-ads-management" },
 };
 
-const included = [
+const PAGE = "https://scaleseo.co/services/google-ads-management";
+
+const included: { title: string; body: string[] }[] = [
   {
-    num: "01",
-    name: "Campaign Setup & Account Architecture",
-    desc: "Clean account structure built around your actual service lines, not a generic template — so budget goes to the campaigns that matter.",
+    title: "Campaign Setup & Targeting",
+    body: [
+      "I build or improve Google Search campaigns around your services, target locations, and business goals.",
+      "This includes campaign structure, keyword research, location targeting, ad copy, and relevant ad assets.",
+    ],
   },
   {
-    num: "02",
-    name: "Keyword & Audience Research",
-    desc: "Intent-based keyword targeting and audience layering focused on high-margin corporate and professional-service buyers, not broad consumer traffic.",
+    title: "Conversion Tracking",
+    body: [
+      "Clicks alone don’t tell us whether advertising is working.",
+      "I review or configure appropriate conversion tracking, such as phone calls and enquiry forms, so we can better understand which campaigns are generating useful customer actions.",
+    ],
   },
   {
-    num: "03",
-    name: "Ad Copywriting & Creative",
-    desc: "Ad copy written to qualify serious buyers before the click, so you're not paying for tire-kickers.",
+    title: "Landing Page Improvements",
+    body: [
+      "The page someone visits after clicking an ad matters.",
+      "I review your landing pages to ensure they match the searcher’s intent, clearly explain your services, and make it easy to enquire.",
+      "Where needed, I can also make website improvements or develop dedicated landing pages as part of an agreed project scope.",
+    ],
   },
   {
-    num: "04",
-    name: "Landing Page Optimization",
-    desc: "Dedicated, conversion-focused landing pages for each campaign — not a generic homepage link that tanks your Quality Score.",
-  },
-  {
-    num: "05",
-    name: "Bid & Budget Management",
-    desc: "Ongoing bid adjustments and budget reallocation toward what's actually converting, reviewed weekly, not left on autopilot.",
-  },
-  {
-    num: "06",
-    name: "Reporting Tied to Revenue",
-    desc: "Monthly, plain-English reporting on cost-per-lead and pipeline value — not just clicks and impressions.",
+    title: "Ongoing Campaign Optimization",
+    body: [
+      "Once campaigns are running, I monitor search terms, negative keywords, budgets, bidding, and conversion performance.",
+      "I use the available data to identify wasted spend, test improvements, and adjust the campaigns as performance develops.",
+    ],
   },
 ];
 
-const process = [
+const steps: { title: string; body: string[] }[] = [
   {
-    num: "01",
-    name: "Audit",
-    body: "A full teardown of your current account — or a from-scratch plan if you're starting new. Wasted spend, missed keywords, weak landing pages, all documented.",
-    time: "Week 1",
+    title: "01 — Review & Strategy",
+    body: [
+      "I review your business, website, advertising goals, and existing campaigns if you have them.",
+      "From there, I recommend a suitable approach, including the campaign focus, initial budget, and any website improvements needed before launch.",
+    ],
   },
   {
-    num: "02",
-    name: "Strategy",
-    body: "Campaign structure, keyword targeting, and budget allocation mapped out around your actual service lines and margins.",
-    time: "Week 1–2",
+    title: "02 — Setup & Launch",
+    body: [
+      "I develop the campaigns, configure targeting and relevant tracking, and review the landing pages before launching.",
+    ],
   },
   {
-    num: "03",
-    name: "Launch",
-    body: "Campaigns built, tracking installed, landing pages live. Nothing goes live until conversion tracking is verified working.",
-    time: "Week 2–3",
-  },
-  {
-    num: "04",
-    name: "Optimize",
-    body: "Weekly bid and budget adjustments, monthly reporting, and continuous testing on ad copy and landing pages.",
-    time: "Ongoing",
+    title: "03 — Monitor & Improve",
+    body: [
+      "After launch, I review performance and make adjustments based on search terms, enquiries, costs, and available conversion data.",
+      "You’ll receive clear updates on campaign performance and the changes being made.",
+    ],
   },
 ];
 
-const faqs = [
+const faqs: FaqItem[] = [
   {
-    q: "How much budget do I need to run Google Ads?",
-    a: "It depends on your market and competition, but for professional service firms I typically recommend enough budget to gather meaningful data within the first 4–6 weeks. I'll give you a specific number for your market during the audit, not a generic minimum.",
+    q: "Can I use Google Ads without monthly SEO?",
+    a: [
+      "Yes. I also consider standalone Google Ads projects.",
+      "Before recommending a campaign, I’ll review your website, goals, and available budget to determine whether paid search is likely to be a suitable investment.",
+    ],
   },
   {
-    q: "How long until I see results?",
-    a: "Google Ads can generate leads within days of launch, unlike SEO which compounds over months. Most accounts hit a stable, optimized cost-per-lead within 60–90 days as we gather enough data to refine targeting and bids.",
+    q: "How quickly can Google Ads generate leads?",
+    a: [
+      "Google Ads can begin showing your business in sponsored search results shortly after an eligible campaign launches.",
+      "However, the time required to generate enquiries varies depending on competition, budget, search demand, landing pages, and campaign performance.",
+    ],
   },
   {
-    q: "What's the difference between SEO and Google Ads — do I need both?",
-    a: "Google Ads gets you in front of buyers immediately, for as long as you keep paying. SEO builds organic authority that keeps generating leads without ongoing ad spend, but takes months to compound. Most of my clients run both — Ads for immediate pipeline, SEO for long-term, lower-cost-per-lead growth.",
+    q: "Do I need a separate landing page?",
+    a: [
+      "Not always. If your existing service pages are relevant and make it easy for visitors to enquire, they may be suitable.",
+      "If the website needs improvement, I’ll explain what I recommend before additional development work begins.",
+    ],
   },
   {
-    q: "Do you require a long-term contract?",
-    a: "No. Same as my SEO work — no lock-in contracts. If the campaigns aren't performing, you're not locked into paying for months of underperformance.",
-  },
-  {
-    q: "Will I get access to my own ad account?",
-    a: "Yes — the account is yours, hosted under your own Google Ads login. I manage it directly, but you always have full ownership and visibility.",
+    q: "Do I own my Google Ads account?",
+    a: ["Yes. Your Google Ads account, campaign data, and advertising assets remain under your ownership."],
   },
 ];
+
+const adsJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": `${PAGE}#webpage`,
+      url: PAGE,
+      name: "Google Ads Management Calgary | Scale SEO",
+      description:
+        "Google Ads management for Calgary and Canadian businesses. Founder-led campaigns, conversion tracking and landing page improvements, with or without SEO.",
+      isPartOf: { "@id": "https://scaleseo.co/#website" },
+      mainEntity: { "@id": `${PAGE}#service` },
+      publisher: { "@id": "https://scaleseo.co/#organization" },
+      breadcrumb: { "@id": `${PAGE}#breadcrumb` },
+      inLanguage: "en-CA",
+    },
+    {
+      "@type": "Service",
+      "@id": `${PAGE}#service`,
+      name: "Google Ads Management",
+      alternateName: ["PPC Management", "Google Search Ads Management"],
+      serviceType: "Google Ads Management",
+      url: PAGE,
+      description:
+        "Google Ads management including campaign setup and targeting, conversion tracking, landing page improvements and ongoing campaign optimization, managed alongside or independently of SEO.",
+      provider: { "@id": "https://scaleseo.co/#organization" },
+      mainEntityOfPage: { "@id": `${PAGE}#webpage` },
+      areaServed: [
+        { "@type": "City", name: "Calgary" },
+        { "@type": "Country", name: "Canada" },
+      ],
+      audience: { "@type": "BusinessAudience", audienceType: "Professional service and B2B businesses" },
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${PAGE}#breadcrumb`,
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://scaleseo.co/" },
+        { "@type": "ListItem", position: 2, name: "Services", item: "https://scaleseo.co/services" },
+        { "@type": "ListItem", position: 3, name: "Google Ads Management", item: PAGE },
+      ],
+    },
+  ],
+};
+
+const Corner = () => (
+  <svg className={t.corner} viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+    <path d="M1 1.5h7.5V9" />
+  </svg>
+);
 
 export default function GoogleAdsPage() {
-  const serviceJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    name: "Google Ads Management Services",
-    description:
-      "Google Ads (PPC) management for accounting firms and professional service businesses in Calgary and across Canada.",
-    serviceType: "Google Ads Management",
-    url: "https://scaleseo.co/services/google-ads-management",
-    provider: {
-      "@type": "ProfessionalService",
-      name: "Scale SEO",
-      url: "https://scaleseo.co",
-      founder: {
-        "@type": "Person",
-        "@id": "https://scaleseo.co/corbin-jensen#person",
-        name: "Corbin Jensen",
-        url: "https://scaleseo.co/corbin-jensen",
-      },
-    },
-    areaServed: [
-      { "@type": "City", name: "Calgary" },
-      { "@type": "Country", name: "Canada" },
-    ],
-  };
-
-  const faqJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: faqs.map((item) => ({
-      "@type": "Question",
-      name: item.q,
-      acceptedAnswer: { "@type": "Answer", text: item.a },
-    })),
-  };
-
   return (
-    <main>
+    <main className="v2">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(adsJsonLd) }}
       />
 
-      <SellingHero
-        breadcrumbs={[
-          { name: "Home", href: "/" },
-          { name: "Services", href: "/services" },
-          { name: "Google Ads" },
-        ]}
-        title={
-          <>
-            Google Ads Management Services in{" "}
-            <span className="title-block">Calgary &amp; Canada.</span>
-          </>
-        }
-        sub="Profitable PPC campaigns for accounting firms and professional service businesses — built, launched, and managed directly by me. Request a PPC audit and I'll show you exactly where your ad spend is being wasted."
-        checkpoints={[
-          "Precision Targeting — your budget goes toward buyers actively searching, not broad, wasted traffic",
-          "Built to Convert — ads and landing pages engineered to turn clicks into booked calls",
-          "Clear, Live Reporting — plain-English performance data, not a dashboard full of noise",
-          "No lock-in contracts",
-        ]}
-      />
+      {/* === HERO === */}
+      <header>
+        <div className={t.hero}>
+          <div className={t.crumbs}>
+            <Breadcrumbs
+              items={[
+                { name: "Home", href: "/" },
+                { name: "Services", href: "/services" },
+                { name: "Google Ads Management" },
+              ]}
+              schema={false}
+            />
+          </div>
+          <h1 className={t.title}>Google Ads Management in Calgary</h1>
+        </div>
+        <div className={t.heroBand}>
+          <ServicesMark className={t.heroMark} slow />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/google-ads-search-results.webp"
+            alt="Monitor showing sponsored Google Ads results for a corporate tax search"
+          />
+        </div>
+      </header>
 
-      {/* === WHY US === */}
-      <section className={servicePageStyles.problem}>
-        <div className={servicePageStyles.problemInner}>
-          <div className="section-label reveal-up">Why Us</div>
-          <h2 className={`${servicePageStyles.problemHeadline} reveal-up`}>
-            Paid search that compounds{" "}
-            <span className={servicePageStyles.accent}>with organic — not against it.</span>
-          </h2>
-          <div className={`${servicePageStyles.problemBody} reveal-up`}>
-            <p>
-              Most agencies run your Google Ads and your SEO in separate
-              silos, sometimes with different people who never talk to each
-              other. I run both, which means your paid campaigns and your
-              organic strategy pull from the same keyword research, the
-              same landing pages, and the same understanding of what your
-              buyers actually search for. Every dollar of ad spend teaches
-              me something that makes your organic rankings stronger, and
-              vice versa.
+      {/* === INTRO === */}
+      <section className={t.split} style={{ padding: 0 }}>
+        <div className={t.splitLeft}>
+          <p className={t.lead}>
+            <strong>
+              Google Ads campaigns focused on reaching potential customers when
+              they&rsquo;re actively searching for your services.
+            </strong>
+          </p>
+          <div className={t.chips}>
+            {["Search Campaigns", "Conversion Tracking", "Landing Pages", "Keyword Research", "Optimization"].map((c) => (
+              <span key={c} className={t.chip}>{c}</span>
+            ))}
+          </div>
+        </div>
+        <div className={t.splitRight}>
+          <div className={t.body}>
+            <p className={t.lead}>
+              Scale SEO provides Google Ads management for professional service and
+              B2B businesses in Calgary and across Canada.
             </p>
             <p>
-              For accounting firms, legal practices, and corporate
-              consultancies across Calgary and Canada, that means faster
-              time-to-lead while your organic authority builds in the
-              background — instead of paying for clicks forever because
-              nobody ever fixed the underlying SEO.
+              I manage search campaigns alongside SEO to help businesses generate
+              enquiries while building their longer-term organic visibility.
             </p>
+            <p>
+              Standalone Google Ads management is also available when your website,
+              budget, and business goals make it a good fit.
+            </p>
+          </div>
+          <div className={t.boxRow}>
+            <Link href="/contact" className={`${t.box} ${t.boxNavy}`}>
+              <Corner />
+              <span>Book a Strategy Call &rarr;</span>
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* === SERVICES LIST === */}
-      <section className={servicePageStyles.list}>
-        <div className="section-label reveal-up">What&rsquo;s Included</div>
-        <div className={servicePageStyles.grid}>
-          {included.map((item) => (
-            <div key={item.num} className={`${servicePageStyles.item} reveal-up`}>
-              <div className={servicePageStyles.itemNum}>{item.num}</div>
-              <h3 className={servicePageStyles.itemName}>{item.name}</h3>
-              <p className={servicePageStyles.itemDesc}>{item.desc}</p>
-            </div>
-          ))}
+      {/* === ADS & SEO === */}
+      <section className={t.rowsSplit} style={{ padding: 0, borderTop: 0 }}>
+        <div className={t.rowsAside}>
+          <h2 className={t.h2}>Google Ads &amp; SEO, Working Together</h2>
+        </div>
+        <div className={t.rowsList}>
+          <div className={t.body} style={{ paddingTop: 32, paddingBottom: 32 }}>
+            <p className={t.lead}>
+              Google Ads can help your business appear in sponsored search results
+              while your organic visibility is still developing.
+            </p>
+            <p>
+              Rather than managing advertising separately from your website, I look
+              at how your campaigns, landing pages, and SEO strategy work together.
+            </p>
+            <p>
+              Paid search can also reveal which search terms generate enquiries,
+              helping identify opportunities for new service pages and ongoing SEO
+              improvements.
+            </p>
+            <p>
+              For businesses investing in both services, this creates a more
+              coordinated approach to attracting customers through Google.
+            </p>
+            <Link href="/services/seo" className={`${t.box} ${t.boxGrey}`} style={{ marginTop: 16 }}>
+              <Corner />
+              <span>Explore Monthly SEO Services &rarr;</span>
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* === PROCESS TIMELINE === */}
-      <section className={`${processStyles.section} ${styles.processSection}`}>
-        <div className="section-label reveal-up">How It Works</div>
-        <h2 className={`${processStyles.heading} reveal-up`}>
-          Audit. Strategy. <em>Launch. Optimize.</em>
-        </h2>
-        <div className={`${processStyles.grid} reveal-up`}>
-          {process.map((step) => (
-            <div key={step.num} className={processStyles.step}>
-              <div>
-                <div className={processStyles.num}>{step.num}</div>
-                <h3 className={processStyles.name}>{step.name}</h3>
-                <p className={processStyles.body}>{step.body}</p>
+      {/* === INCLUDED === */}
+      <section className={t.steps}>
+        <h2 className={t.h2}>What&rsquo;s Included in Google Ads Management?</h2>
+        <div className={t.stepGrid}>
+          {included.map((item, i) => (
+            <div key={item.title} className={t.step}>
+              <h3 className={t.stepTitle}>
+                <span>{String(i + 1).padStart(2, "0")}</span> {item.title}
+              </h3>
+              <div className={`${t.body} ${t.dim}`}>
+                {item.body.map((p) => (
+                  <p key={p}>{p}</p>
+                ))}
               </div>
-              <div className={processStyles.time}>{step.time}</div>
             </div>
           ))}
         </div>
       </section>
 
-      {/* === FAQ === */}
-      <section className={`${faqStyles.section} ${styles.faqSection}`}>
-        <div className="section-label reveal-up">FAQ</div>
-        <h2 className={`${faqStyles.heading} reveal-up`}>
-          Common questions about <em>Google Ads.</em>
-        </h2>
-        <div className={faqStyles.list}>
-          {faqs.map((item) => (
-            <details key={item.q} className={`${faqStyles.item} reveal-up`}>
-              <summary className={faqStyles.question}>
-                <span>{item.q}</span>
-                <span className={faqStyles.toggle} aria-hidden="true">+</span>
-              </summary>
-              <p className={faqStyles.answer}>{item.a}</p>
-            </details>
+      {/* === IN PRACTICE — navy feature === */}
+      <section className={t.featureWrap}>
+        <div className={t.feature}>
+          <div className={t.featureText}>
+            <span className={t.eyebrow}>Client Work</span>
+            <h2 className={t.h2}>Google Ads Management in Practice</h2>
+          </div>
+          <div className={t.featureSide}>
+            <div className={t.body}>
+              <p>
+                My Google Ads work includes managing search campaigns for MSV
+                Plumbing Services, a Brisbane plumbing business.
+              </p>
+              <p>
+                The campaigns focus on high-intent searches for services such as
+                blocked drain clearing, with geographic targeting, call conversion
+                tracking, and ongoing keyword and search-term optimization.
+              </p>
+              <p>
+                Because I also manage MSV&rsquo;s website and SEO, I can review the
+                advertising and landing pages together rather than treating them as
+                separate projects.
+              </p>
+            </div>
+            <div className={t.featureLinks}>
+              <Link href="/results/msv-plumbing-services" className={`${t.box} ${t.boxGrey}`}>
+                <Corner />
+                <span>View MSV Plumbing Services Case Study &rarr;</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* === PROCESS === */}
+      <section className={t.rowsSplit} style={{ padding: 0 }}>
+        <div className={t.rowsAside}>
+          <h2 className={t.h2}>How Google Ads Management Works</h2>
+        </div>
+        <div className={t.rowsList}>
+          {steps.map((s) => (
+            <div key={s.title} className={t.rowsItem}>
+              <h3 className={t.h3}>{s.title}</h3>
+              <div className={t.body}>
+                {s.body.map((p) => (
+                  <p key={p}>{p}</p>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
       </section>
 
-      <ContactSection />
+      {/* === PRICING === */}
+      <section className={t.pricing} style={{ padding: 0, borderTop: 0 }}>
+        <div className={t.pricingAside}>
+          <h2 className={t.h2}>Google Ads Management Pricing</h2>
+        </div>
+        <div className={t.pricingBody}>
+          <p className={t.pricingLead}>
+            Google Ads management is quoted individually based on your campaign
+            requirements, advertising budget, and whether you&rsquo;re also working
+            with Scale SEO on monthly SEO.
+          </p>
+          <div className={t.body}>
+            <p>
+              Your advertising spend is paid directly to Google and is separate
+              from Scale SEO&rsquo;s management fees.
+            </p>
+            <p>You retain ownership of your Google Ads account and its data.</p>
+          </div>
+          <Link href="/contact" className={`${t.box} ${t.boxNavy}`}>
+            <Corner />
+            <span>Discuss Google Ads Management &rarr;</span>
+          </Link>
+        </div>
+      </section>
 
-      <RevealOnScroll />
+      <ServicesFaq items={faqs} title={<>Frequently Asked Questions</>} />
+
+      <ContactSection
+        heading="Work Directly With Your Google Ads Manager"
+        lead="If you're considering Google Ads, either independently or alongside monthly SEO, I can review your goals and recommend an appropriate starting point."
+        cta={{ href: "/contact", label: "Book a Strategy Call →" }}
+        note={
+          <>
+            I&rsquo;m <Link href="/corbin-jensen">Corbin Jensen</Link>, founder of
+            Scale SEO. I work directly on Google Ads campaigns and client websites,
+            connecting paid search with the SEO and development work that supports
+            longer-term visibility.
+          </>
+        }
+      />
     </main>
   );
 }
