@@ -214,6 +214,12 @@ export default function MsvPlumbingCaseStudy() {
             organic search.
           </p>
 
+          <figure className={styles.figure}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/images/msv-screenshot.png" alt="MSV Plumbing Services website homepage, a Brisbane plumbing business" />
+            <figcaption>The MSV Plumbing Services website.</figcaption>
+          </figure>
+
           <h2 id="challenge">The Challenge</h2>
           <p>
             MSV Plumbing Services needed to compete online against established

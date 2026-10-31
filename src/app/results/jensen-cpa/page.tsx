@@ -194,6 +194,12 @@ export default function JensenCpaCaseStudy() {
             foundation for generating qualified enquiries.
           </p>
 
+          <figure className={styles.figure}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/images/jensen-cpa-website.webp" alt="Jensen CPA website homepage after the redevelopment" />
+            <figcaption>The redeveloped Jensen CPA website.</figcaption>
+          </figure>
+
           <h2 id="challenge">The Challenge</h2>
           <p>The original website presented several opportunities for improvement:</p>
           <ul>

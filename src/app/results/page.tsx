@@ -52,7 +52,7 @@ const studies: Study[] = [
       "The result has been significant growth in organic visibility, with priority searches moving from deeper search results onto page one of Google.",
     ],
     caseStudyHref: "/results/empire-accountants",
-    image: "/images/empireaccountants-hero-image.png",
+    image: "/images/empire-accountants-cover.webp",
     url: "https://www.empireaccountants.com.au/",
     featured: true,
     tint: "blue",
@@ -72,7 +72,7 @@ const studies: Study[] = [
       "Within the first four months, organic search visibility increased substantially, with first-page visibility for commercially relevant Calgary accounting searches.",
     ],
     caseStudyHref: "/results/jensen-cpa",
-    image: "/images/jensen-cpa-homepage.webp",
+    image: "/images/jensen-cpa-cover.webp",
     url: "https://www.jensencpa.ca/",
     tint: "neutral",
   },
@@ -105,7 +105,7 @@ const studies: Study[] = [
       "The business now receives consistent customer enquiries and bookings through its online presence.",
     ],
     caseStudyHref: "/results/msv-plumbing-services",
-    image: "/images/msv-screenshot.png",
+    image: "/images/msv-plumbing-cover.webp",
     url: "https://msvplumbingservices.com.au/",
     tint: "blue",
   },
@@ -224,7 +224,7 @@ export default function ResultsPage() {
                 <div className={styles.image}>
                   {s.image ? (
                     // eslint-disable-next-line @next/next/no-img-element
-                    <img src={s.image} alt={`${s.client} website`} loading={i < 2 ? "eager" : "lazy"} />
+                    <img src={s.image} alt={s.id === "kinsmen-consulting" ? `${s.client} website` : `${s.client} team`} loading={i < 2 ? "eager" : "lazy"} />
                   ) : null}
                 </div>
                 <div className={styles.tags}>

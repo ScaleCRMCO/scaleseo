@@ -195,6 +195,12 @@ export default function EmpireAccountantsCaseStudy() {
             through Google.
           </p>
 
+          <figure className={styles.figure}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/images/empire-accountants-website.webp" alt="Empire Accountants website homepage, a Brisbane accounting and business advisory firm" />
+            <figcaption>The Empire Accountants website.</figcaption>
+          </figure>
+
           <h2 id="challenge">The Challenge</h2>
           <p>The existing website presented several opportunities for improvement:</p>
           <ul>
