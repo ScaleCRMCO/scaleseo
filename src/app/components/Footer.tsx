@@ -24,7 +24,6 @@ const services = [
 const connect = [
   { href: "/corbin-jensen", label: "Corbin Jensen" },
   { href: "https://www.linkedin.com/company/scale-seo/", label: "LinkedIn", external: true },
-  { href: "https://www.instagram.com/scaleseo.co/", label: "Instagram", external: true },
   { href: "https://maps.app.goo.gl/FYWSaQ3p81VFnNcc7", label: "Google Business", external: true },
   { href: "https://clutch.co/profile/scale-seo", label: "Clutch", external: true },
 ];
