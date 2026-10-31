@@ -237,8 +237,13 @@ export default function GeoServicePage() {
           </div>
           <h1 className={t.title}>AI Search Optimization &amp; GEO Services</h1>
         </div>
-        <div className={t.heroBand} style={{ minHeight: 420 }}>
-          <ServicesMark className={`${t.heroMark} ${t.heroMarkCenter}`} slow />
+        <div className={t.heroBand} style={{ alignItems: "flex-end", paddingBottom: 0, paddingTop: 88 }}>
+          <ServicesMark className={t.heroMark} slow />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/geo-ai-search-phone.webp"
+            alt="Hand holding a phone showing an AI assistant with ChatGPT, Gemini, Claude and Perplexity icons"
+          />
         </div>
       </header>
 
