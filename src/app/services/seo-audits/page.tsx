@@ -202,8 +202,13 @@ export default function SeoAuditsPage() {
           </div>
           <h1 className={t.title}>SEO Audit Services in Calgary</h1>
         </div>
-        <div className={t.heroBand} style={{ minHeight: 420 }}>
-          <ServicesMark className={`${t.heroMark} ${t.heroMarkCenter}`} slow />
+        <div className={t.heroBand}>
+          <ServicesMark className={t.heroMark} slow />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/web-development-hero.webp"
+            alt="Laptop showing an SEO audit dashboard with site health scores and issue reports"
+          />
         </div>
       </header>
 
