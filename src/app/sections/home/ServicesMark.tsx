@@ -12,7 +12,7 @@ export default function ServicesMark({ className, slow = false }: { className?: 
   const { scrollYProgress } = useScroll({
     target: ref,
     // slow: draw over the element's whole pass through the viewport
-    offset: slow ? ["start end", "end center"] : ["start end", "center center"],
+    offset: slow ? ["start end", "end 60%"] : ["start end", "center center"],
   });
 
   const ring = useTransform(scrollYProgress, [0, 0.7], [0, 1]);
