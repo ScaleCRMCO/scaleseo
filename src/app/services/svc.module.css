@@ -304,3 +304,5 @@
   .heroBand { padding: 40px 16px; }
   .coversHead { grid-template-columns: 1fr; gap: 16px; padding: 16px 0 0; }
 }
+.heroMarkCenter { transform: none !important; opacity: 0.3; }
+.heroMarkCenter svg { width: clamp(200px, 22vw, 320px) !important; }
