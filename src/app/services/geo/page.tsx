@@ -97,91 +97,80 @@ const geoJsonLd = {
     {
       "@type": "WebPage",
       "@id": "https://scaleseo.co/services/geo#webpage",
-      url: "https://scaleseo.co/services/geo",
-      name: "AI Search Optimization & Generative Engine Optimization | Scale SEO",
-      description: "AI search optimization and GEO services for professional service and B2B businesses. Improve how your website is understood across Google, ChatGPT and AI-powered search.",
-      isPartOf: {
+      "url": "https://scaleseo.co/services/geo",
+      "name": "AI Search Optimization & GEO Services | Scale SEO",
+      "description": "AI search optimization and GEO services for Canadian businesses. Improve your website's visibility across ChatGPT, Google AI search and other platforms.",
+      "isPartOf": {
         "@id": "https://scaleseo.co/#website"
       },
-      about: {
+      "mainEntity": {
         "@id": "https://scaleseo.co/services/geo#service"
       },
-      publisher: {
+      "publisher": {
         "@id": "https://scaleseo.co/#organization"
       },
-      breadcrumb: {
+      "breadcrumb": {
         "@id": "https://scaleseo.co/services/geo#breadcrumb"
       },
-      inLanguage: "en-CA"
+      "inLanguage": "en-CA"
     },
     {
       "@type": "Service",
       "@id": "https://scaleseo.co/services/geo#service",
-      name: "AI Search Optimization & Generative Engine Optimization",
-      alternateName: [
+      "name": "AI Search Optimization & GEO Services",
+      "alternateName": [
         "Generative Engine Optimization",
-        "GEO",
+        "GEO Services",
         "AI Search Optimization",
-        "AI SEO"
+        "AI SEO Services"
       ],
-      serviceType: "AI Search Optimization and Generative Engine Optimization",
-      url: "https://scaleseo.co/services/geo",
-      description: "AI search optimization and Generative Engine Optimization services focused on technical accessibility, entity clarity, structured data, content quality and visibility across traditional and AI-powered search.",
-      provider: {
+      "serviceType": "AI Search Optimization",
+      "url": "https://scaleseo.co/services/geo",
+      "description": "AI search optimization and generative engine optimization services focused on improving website content, technical accessibility, business information, structured data and visibility across AI-powered search experiences.",
+      "provider": {
         "@id": "https://scaleseo.co/#organization"
       },
-      areaServed: {
+      "mainEntityOfPage": {
+        "@id": "https://scaleseo.co/services/geo#webpage"
+      },
+      "areaServed": {
         "@type": "Country",
-        name: "Canada"
+        "name": "Canada"
       },
-      audience: {
+      "audience": {
         "@type": "BusinessAudience",
-        audienceType: "Professional service and B2B businesses"
+        "audienceType": "Professional service and B2B businesses"
       },
-      hasOfferCatalog: {
+      "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        name: "AI Search Optimization Services",
-        itemListElement: [
+        "name": "AI Search Optimization Services",
+        "itemListElement": [
           {
             "@type": "Offer",
-            itemOffered: {
+            "itemOffered": {
               "@type": "Service",
-              name: "AI Crawlability and Technical SEO"
+              "name": "AI Search Visibility & Research"
             }
           },
           {
             "@type": "Offer",
-            itemOffered: {
+            "itemOffered": {
               "@type": "Service",
-              name: "Entity and Business Optimization"
+              "name": "Website Content & Structure Optimization"
             }
           },
           {
             "@type": "Offer",
-            itemOffered: {
+            "itemOffered": {
               "@type": "Service",
-              name: "Structured Data Optimization"
+              "name": "Technical SEO & Structured Data"
             }
           },
           {
             "@type": "Offer",
-            itemOffered: {
+            "itemOffered": {
               "@type": "Service",
-              name: "AI Search Content Optimization"
-            }
-          },
-          {
-            "@type": "Offer",
-            itemOffered: {
-              "@type": "Service",
-              name: "Expertise and Trust Signal Optimization"
-            }
-          },
-          {
-            "@type": "Offer",
-            itemOffered: {
-              "@type": "Service",
-              name: "AI Search Visibility Monitoring"
+              "name": "Business Expertise & Trust Optimization"
             }
           }
         ]
@@ -190,24 +179,24 @@ const geoJsonLd = {
     {
       "@type": "BreadcrumbList",
       "@id": "https://scaleseo.co/services/geo#breadcrumb",
-      itemListElement: [
+      "itemListElement": [
         {
           "@type": "ListItem",
-          position: 1,
-          name: "Home",
-          item: "https://scaleseo.co/"
+          "position": 1,
+          "name": "Home",
+          "item": "https://scaleseo.co/"
         },
         {
           "@type": "ListItem",
-          position: 2,
-          name: "Services",
-          item: "https://scaleseo.co/services"
+          "position": 2,
+          "name": "Services",
+          "item": "https://scaleseo.co/services"
         },
         {
           "@type": "ListItem",
-          position: 3,
-          name: "AI Search Optimization",
-          item: "https://scaleseo.co/services/geo"
+          "position": 3,
+          "name": "AI Search Optimization",
+          "item": "https://scaleseo.co/services/geo"
         }
       ]
     }
