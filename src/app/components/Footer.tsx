@@ -1,5 +1,6 @@
 import Link from "next/link";
 import TrustindexWidget from "./TrustindexWidget";
+import DesignRushWidget from "./DesignRushWidget";
 import styles from "./Footer.module.css";
 
 const pages = [
@@ -77,6 +78,7 @@ export default function Footer() {
             </address>
             <span>Remote · Est. 2025</span>
           </div>
+          <DesignRushWidget className={styles.designrush} />
         </div>
 
         <Column title="Company" items={pages} />

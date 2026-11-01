@@ -120,3 +120,4 @@
   .bottomRight { margin-left: 0; }
 }
 .address { font-style: normal; line-height: 1.45; }
+.designrush { min-height: 40px; max-width: 280px; }
