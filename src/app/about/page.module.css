@@ -148,3 +148,7 @@
   .bigMark { --mark: min(64vw, 300px); --sink: 0.5; right: 16px; opacity: 1; }
   .introRow { padding-top: calc(min(64vw, 300px) * 0.5 + 32px) !important; }
 }
+
+/* Extra breathing room below the navy intro band */
+.introRow { padding-bottom: 120px !important; }
+@media (max-width: 900px) { .introRow { padding-bottom: 72px !important; } }
