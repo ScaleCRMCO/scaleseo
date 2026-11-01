@@ -11,6 +11,12 @@ export default function DesignRushWidget({ className }: { className?: string }) 
     s.src = "https://www.designrush.com/topbest/js/widgets/agency-reviews.js";
     s.async = true;
     s.setAttribute("data-designrush-loader", "");
+    // The widget script may wait for DOMContentLoaded/load, which have
+    // already fired by the time React mounts; replay them once it loads.
+    s.onload = () => {
+      document.dispatchEvent(new Event("DOMContentLoaded", { bubbles: true }));
+      window.dispatchEvent(new Event("load"));
+    };
     document.body.appendChild(s);
   }, []);
   return (
