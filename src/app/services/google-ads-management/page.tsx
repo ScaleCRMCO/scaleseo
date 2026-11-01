@@ -179,6 +179,7 @@ export default function GoogleAdsPage() {
           <img
             src="/images/google-ads-search-results.webp"
             alt="Monitor showing sponsored Google Ads results for a corporate tax search"
+            style={{ height: "clamp(220px, 30vw, 440px)", transform: "translate(6%, 12%)" }}
           />
         </div>
       </header>
