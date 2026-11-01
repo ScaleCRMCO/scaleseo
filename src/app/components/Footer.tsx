@@ -79,7 +79,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <Column title="Pages" items={pages} />
+        <Column title="Company" items={pages} />
         <Column title="Services" items={services} />
         <Column title="Connect" items={connect} />
 
@@ -110,7 +110,7 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className={styles.bottom}>
         <div className={styles.copy}>
-          © 2026 Scale SEO · Corbin Jensen ·{" "}
+          © 2026 Scale SEO ·{" "}
           <Link href="/privacy-policy" className={styles.link}>Privacy Policy</Link>
         </div>
         <div className={styles.bottomRight}>
