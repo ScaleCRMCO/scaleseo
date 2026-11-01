@@ -147,8 +147,8 @@ export default function AboutPage() {
       </section>
       <div className={styles.band}>
         <Image
-          src="/images/calgary-skyline.webp"
-          alt="Calgary skyline from above the Bow River"
+          src="/images/calgary-skyline-bw.webp"
+          alt="Black and white panorama of the downtown Calgary skyline above the Bow River valley, home of Scale SEO"
           fill
           sizes="100vw"
         />
