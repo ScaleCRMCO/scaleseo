@@ -29,13 +29,13 @@ export default function Testimonials() {
         <span className={styles.label}>Testimonials</span>
         <h2 className={styles.heading}>What Clients Say</h2>
         <p className={styles.lead}>
-          Feedback from businesses I work with directly on SEO and website
-          improvements.
+          Clients rate 5 stars on Google, reflecting their trust and
+          satisfaction with the work.
         </p>
       </div>
 
       <div className={styles.slider}>
-        {items.length > 1 && (
+        {items.length > 2 && (
           <button className={`${styles.arrow} ${styles.prev}`} onClick={() => scroll(-1)} aria-label="Previous testimonial">
             <span aria-hidden="true">&lsaquo;</span>
           </button>
@@ -52,7 +52,7 @@ export default function Testimonials() {
             </figure>
           ))}
         </div>
-        {items.length > 1 && (
+        {items.length > 2 && (
           <button className={`${styles.arrow} ${styles.next}`} onClick={() => scroll(1)} aria-label="Next testimonial">
             <span aria-hidden="true">&rsaquo;</span>
           </button>

@@ -1,47 +1,51 @@
+/* Monsoon-style testimonials: heading block left (~33%), quote boxes run to
+   the right edge with the third one cut off; round arrows pinned to the far
+   left and right of the screen. */
 .section {
+  position: relative;
   display: grid;
-  grid-template-columns: minmax(280px, 1fr) 1.9fr;
-  gap: 48px;
+  grid-template-columns: 32% 1fr;
   align-items: center;
-  padding: 112px 40px;
+  gap: 4%;
+  padding: 140px 0 140px 9.5%;
   background: #0099FF;
   color: #FEFEFE;
+  overflow: hidden;
   font-family: 'DM Sans', system-ui, sans-serif;
 }
-.label { display: block; margin-bottom: 24px; font-size: 17px; }
-.heading { font-size: clamp(44px, 5.4vw, 96px); line-height: 0.98; font-weight: 400; letter-spacing: -0.045em; }
-.lead { margin-top: 32px; max-width: 420px; font-size: 19px; line-height: 1.4; }
+.label { display: block; margin-bottom: 40px; font-size: 20px; }
+.heading { font-size: clamp(52px, 6.2vw, 120px); line-height: 0.92; font-weight: 400; letter-spacing: -0.05em; }
+.lead { margin-top: 48px; max-width: 460px; font-size: 21px; line-height: 1.5; }
 
-.slider { position: relative; min-width: 0; }
+.slider { position: static; min-width: 0; }
 .track {
   display: flex;
-  gap: 24px;
+  gap: 20px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
-  padding: 4px 0;
 }
 .track::-webkit-scrollbar { display: none; }
 .card {
-  flex: 0 0 calc(50% - 12px);
+  flex: 0 0 clamp(300px, 26.5vw, 540px);
   scroll-snap-align: start;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 24px;
-  min-height: 360px;
+  min-height: 340px;
   margin: 0;
-  padding: 40px 32px 32px;
+  padding: 56px 24px 56px;
   text-align: center;
 }
 .toneTint { background: #D6EEFF; color: #031B36; }
 .toneWhite { background: #FEFEFE; color: #031B36; }
 .toneNavy { background: #031B36; color: #FEFEFE; }
 .stars { color: #0099FF; letter-spacing: 4px; font-size: 18px; }
-.toneNavy .stars { color: #0099FF; }
-.quote { font-size: 19px; line-height: 1.5; }
-.cite { margin-top: auto; display: flex; flex-direction: column; gap: 4px; font-size: 15px; }
-.cite strong { font-weight: 600; font-size: 16px; }
-.cite span { opacity: 0.75; }
+.quote { font-size: 19px; line-height: 1.45; max-width: 460px; }
+.cite { margin-top: auto; display: flex; flex-direction: column; gap: 4px; font-size: 16px; }
+.cite strong { font-weight: 500; }
+.cite span { opacity: 0.75; font-size: 15px; }
 
 .arrow {
   position: absolute;
@@ -52,23 +56,24 @@
   width: 56px;
   height: 56px;
   border: 0;
-  border-radius: 50%;
-  background: #031B36;
-  color: #FEFEFE;
+  border-radius: 50% !important;
   font-size: 30px;
   line-height: 1;
   cursor: pointer;
   transform: translateY(-50%);
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
+.prev { left: 2%; background: rgba(3, 27, 54, 0.25); color: #FEFEFE; }
+.next { right: 2%; background: #031B36; color: #FEFEFE; }
 .arrow:hover { background: #FEFEFE; color: #031B36; }
-.prev { left: -28px; }
-.next { right: -12px; }
 
 @media (max-width: 900px) {
-  .section { grid-template-columns: 1fr; padding: 64px 16px; gap: 32px; }
-  .card { flex-basis: 86%; min-height: 0; padding: 32px 20px 24px; }
-  .prev { left: -8px; }
-  .next { right: -8px; }
-  .arrow { width: 44px; height: 44px; font-size: 24px; }
+  .section { grid-template-columns: 1fr; padding: 72px 0 80px 16px; gap: 32px; }
+  .intro { padding-right: 16px; }
+  .label { margin-bottom: 20px; }
+  .lead { margin-top: 24px; }
+  .card { flex-basis: 80%; min-height: 0; padding: 36px 20px; }
+  .arrow { top: auto; bottom: 16px; transform: none; width: 44px; height: 44px; font-size: 24px; }
+  .prev { left: 16px; }
+  .next { right: 16px; }
 }

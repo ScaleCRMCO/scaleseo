@@ -122,7 +122,6 @@ body {
 }
 :is(.home, .v2) [class*="Testimonials_section"] * { font-family: inherit !important; }
 :is(.home, .v2) [class*="Testimonials_quote"] { font-weight: 400 !important; letter-spacing: -0.02em; }
-:is(.home, .v2) [class*="Testimonials_arrow"] { border-radius: 0 !important; }
 
 /* Blog tiles on the homepage: clean left-aligned grey boxes
    (category, title, excerpt; date and link on a hairline footer) */
