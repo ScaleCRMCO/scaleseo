@@ -1,0 +1,17 @@
+/* Bio page hero: name + intro left, B&W portrait right */
+.hero { display: grid; grid-template-columns: 1.4fr 1fr; padding-top: 96px; border-bottom: 1px solid var(--h-rule); }
+.heroLeft { display: flex; flex-direction: column; gap: 24px; padding: 32px 40px 56px; border-right: 1px solid var(--h-rule); }
+.name { font-size: clamp(56px, 8vw, 140px); line-height: 0.95; font-weight: 400; letter-spacing: -0.045em; }
+.role { font-size: clamp(20px, 1.8vw, 28px); color: var(--h-blue); }
+.intro { max-width: 680px; }
+.location { font-size: 15px; color: var(--h-dim); }
+.heroRight { padding: 40px; }
+.portrait { position: relative; height: 100%; min-height: 520px; overflow: hidden; background: var(--h-grey); }
+.portrait img { object-fit: cover; filter: grayscale(1); }
+.workList { display: flex; flex-direction: column; gap: 20px; }
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; padding-top: 72px; }
+  .heroLeft { border-right: 0; border-bottom: 1px solid var(--h-rule); padding: 24px 16px 40px; }
+  .heroRight { padding: 16px; }
+  .portrait { min-height: 0; aspect-ratio: 4 / 5; }
+}

@@ -1,16 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import Breadcrumbs from "../components/Breadcrumbs";
-import RevealOnScroll from "../components/RevealOnScroll";
-
-// Sections from the shared /services hub system, editorial rows / fact
-// sheet / result card from the About page; styles below are only the
-// pieces specific to this page.
-import hub from "../services/page.module.css";
-import ind from "../industries/page.module.css";
-import about from "../about/page.module.css";
-import styles from "./page.module.css";
 import ContactSection from "../components/ContactSection";
+import t from "../services/svc.module.css";
+import styles from "./bio.module.css";
 
 export const metadata: Metadata = {
   title: "Corbin Jensen | Founder & Lead Specialist, Scale SEO",
@@ -22,58 +16,64 @@ export const metadata: Metadata = {
 const BOOKING_URL = "https://cal.com/corbinjensen-scaleseo/30min";
 const LINKEDIN_URL = "https://www.linkedin.com/in/corbin-jensen-seo/";
 
-const pad = (i: number) => String(i + 1).padStart(2, "0");
+const expertise: [string, string][] = [
+  ["Technical SEO", "Website crawling, indexing, structured data, internal linking, redirects, and technical improvements."],
+  ["Content & Search Strategy", "Keyword research, service-page development, competitor analysis, and useful content built around customer search intent."],
+  ["Local SEO", "Google Business Profile optimization, geographic targeting, local service pages, and local search visibility."],
+  ["Website Development", "Building and improving websites, including their structure, content, navigation, and technical foundations."],
+];
 
-/* === Content ============================================================ */
-
-const expertise = [
+const work = [
   {
-    title: "Technical & On-Page SEO",
+    name: "Jensen CPA — Calgary, Canada",
     body: [
-      "Corbin identifies and resolves issues affecting how search engines crawl, index, understand, and navigate websites. His work includes indexation, canonicalization, redirects, XML sitemaps, robots directives, structured data, URL structure, site architecture, metadata, internal linking, and on-page optimization.",
-      "He also uses keyword research, search results, competitor analysis, and existing search performance to determine which pages should target specific searches and where existing pages can be strengthened.",
+      "Website redevelopment and SEO for a Calgary accounting firm, including technical improvements, service-page optimization, and content strategy.",
+      "The campaign recorded a 227% increase in average daily Google Search impressions and a 92% increase in organic clicks over the comparison periods documented in the case study.",
     ],
+    href: "/results/jensen-cpa",
+    cta: "View Jensen CPA Case Study",
   },
   {
-    title: "Content & Search Strategy",
+    name: "Empire Accountants — Brisbane, Australia",
     body: [
-      "Corbin develops content strategies around relevant search demand, existing rankings, business priorities, competitor coverage, and the questions potential customers research before choosing a provider.",
-      "The focus is not simply publishing more content. It is building useful topical coverage that demonstrates expertise and creates clear relationships between informational content and commercially important service pages.",
+      "Ongoing SEO and website improvements for an accounting and advisory firm, including service-page development, industry content, structured data, and technical optimization.",
     ],
+    href: "/results/empire-accountants",
+    cta: "View Empire Accountants Case Study",
   },
   {
-    title: "Local SEO",
+    name: "MSV Plumbing Services — Brisbane, Australia",
     body: [
-      "For businesses competing within defined geographic markets, Corbin works across both traditional organic search and local search visibility.",
-      "This includes Google Business Profile optimization, local keyword and competitor research, location and service targeting, review strategy, business information consistency, local landing pages, and local rank tracking.",
+      "Website development and local SEO for a plumbing business, including a website of approximately 100 pages covering plumbing services and locations across Brisbane.",
     ],
-  },
-  {
-    title: "Website Architecture & Implementation",
-    body: [
-      "Corbin works directly within client websites to implement SEO recommendations rather than limiting engagements to reports and strategy documents.",
-      "His experience includes Webflow, WordPress, and modern web environments such as Next.js and Vercel. This allows technical, structural, content, internal linking, metadata, and structured-data improvements to be implemented directly where platform access allows.",
-    ],
+    href: "/results/msv-plumbing-services",
+    cta: "View MSV Plumbing Services Case Study",
   },
 ];
 
 const articles = [
   {
-    slug: "seo-cost-canada",
     title: "How Much Does SEO Cost in Canada? 2026 Pricing Guide",
-    body: "A practical look at SEO pricing in Canada, including monthly campaigns, standalone audits, freelancers, agencies, and the factors that influence what businesses can expect to pay.",
+    body: "A practical guide to SEO pricing, monthly services, standalone audits, and the factors that affect costs.",
+    href: "/blog/seo-cost-canada",
   },
   {
-    slug: "how-long-does-seo-take",
     title: "How Long Does SEO Take? A Realistic Timeline for Canadian Businesses",
-    body: "A practical guide to what businesses can expect during the first 12 months of an SEO campaign and the factors that can influence how quickly organic search performance improves.",
+    body: "An overview of realistic SEO timelines and the factors that influence organic search growth.",
+    href: "/blog/how-long-does-seo-take",
   },
   {
-    slug: "how-accounting-firms-rank-on-google-in-canada",
     title: "How Accounting Firms Can Rank on Google in Canada",
-    body: "A guide to how accounting firms can approach service pages, local SEO, content, technical foundations, and organic visibility in competitive Canadian search markets.",
+    body: "A guide to service-page SEO, local search, website content, and technical improvements for Canadian accounting firms.",
+    href: "/blog/how-accounting-firms-rank-on-google-in-canada",
   },
 ];
+
+const Corner = () => (
+  <svg className={t.corner} viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+    <path d="M1 1.5h7.5V9" />
+  </svg>
+);
 
 const profileJsonLd = {
   "@context": "https://schema.org",
@@ -155,465 +155,229 @@ const profileJsonLd = {
   ]
 };
 
-/* === Page =============================================================== */
-
 export default function CorbinJensenPage() {
   return (
-    <main>
+    <main className="v2">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(profileJsonLd) }}
       />
 
-      {/* === HERO — dark, bio left + portrait right === */}
-      <header className={ind.hero} data-nav-theme="dark">
-        <div className={`${ind.heroContent} ${styles.heroGrid}`}>
-          <div className={styles.heroMain}>
-            <div className={ind.crumbsOnDark}>
-              <Breadcrumbs
-                items={[
-                  { name: "Home", href: "/" },
-                  { name: "About", href: "/about" },
-                  { name: "Corbin Jensen" },
-                ]}
-                schema={false}
-              />
-            </div>
-            <h1 className={`${ind.title} ${styles.title}`}>
-              Corbin <span className="title-block">Jensen</span>
-            </h1>
-            <p className={styles.role}>Founder &amp; SEO Specialist at Scale SEO</p>
-
-            <div className={ind.sub}>
-              <p>
-                Corbin Jensen is the founder and SEO specialist behind Scale
-                SEO, an independent SEO company based in Calgary, Alberta. He
-                works directly with professional service and B2B businesses
-                across Canada, with particular experience in accounting and
-                advisory firms.
-              </p>
-              <p>
-                His work spans technical SEO, on-page optimization, content
-                strategy, local SEO, website architecture, structured data, and
-                direct website implementation.
-              </p>
-              <p>
-                Rather than treating rankings or traffic as the end goal, Corbin
-                focuses on how potential customers search for a business&rsquo;s
-                services, how effectively its website communicates expertise,
-                and where organic search can contribute to qualified enquiries
-                and long-term growth.
-              </p>
-            </div>
-
-            <p className={styles.heroMeta}>
-              Based in Calgary, Alberta · Working across Canada &amp;
-              internationally
-            </p>
-
-            <div className={ind.heroCtaGroup}>
-              <a
-                href={LINKEDIN_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={ind.heroCta}
-              >
-                <span>LinkedIn</span>
-                <span className={ind.arrow}>→</span>
-              </a>
-              <Link href="/contact" className={ind.heroCtaSecondary}>
-                <span>Contact Corbin</span>
-                <span className={ind.arrow}>→</span>
-              </Link>
-            </div>
+      {/* === HERO — name + intro left, B&W portrait right === */}
+      <header className={styles.hero}>
+        <div className={styles.heroLeft}>
+          <div className={t.crumbs}>
+            <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Corbin Jensen" }]} schema={false} />
           </div>
-
-          <div className={styles.heroPortrait}>
-            <img
+          <h1 className={styles.name}>Corbin Jensen</h1>
+          <p className={styles.role}>Founder &amp; SEO Specialist at Scale SEO</p>
+          <div className={`${t.body} ${styles.intro}`}>
+            <p className={t.lead}>
+              Corbin Jensen is the founder of Scale SEO, an independent SEO
+              consultancy based in Calgary, Alberta.
+            </p>
+            <p>
+              He works directly with professional service and B2B businesses across
+              Canada and internationally, helping them improve their Google Search
+              visibility through technical SEO, content strategy, website
+              development, and ongoing optimization.
+            </p>
+            <p>
+              His experience includes working with accounting firms, consultants,
+              contractors, and local service businesses in Canadian and Australian
+              markets.
+            </p>
+          </div>
+          <p className={styles.location}>Calgary, Alberta &middot; Serving Canada &amp; International Clients</p>
+          <div className={t.boxRow}>
+            <a href="https://www.linkedin.com/in/corbin-jensen-seo/" target="_blank" rel="noopener noreferrer" className={`${t.box} ${t.boxNavy}`}>
+              <Corner />
+              <span>LinkedIn &rarr;</span>
+            </a>
+            <Link href="/contact" className={`${t.box} ${t.boxGrey}`}>
+              <Corner />
+              <span>Contact Corbin &rarr;</span>
+            </Link>
+          </div>
+        </div>
+        <div className={styles.heroRight}>
+          <div className={styles.portrait}>
+            <Image
               src="/images/corbin-about.jpg"
-              alt="Corbin Jensen, founder of Scale SEO"
-              className={styles.heroPortraitImg}
+              alt="Corbin Jensen, founder and SEO specialist at Scale SEO"
+              fill
+              priority
+              sizes="(max-width: 900px) 90vw, 40vw"
             />
-            <div className={styles.heroPortraitCaption}>
-              <span>Corbin Jensen</span>
-              <span>Calgary, AB</span>
-            </div>
           </div>
         </div>
       </header>
 
-      {/* === BACKGROUND — light === */}
-      <section className={`${hub.section} ${hub.light}`}>
-        <div className={`${hub.inner} ${hub.split}`}>
-          <div className={`${hub.splitAside} ${about.sticky}`}>
-            <div>
-              <div className={`section-label reveal-up ${about.label}`}>
-                Background
-              </div>
-              <h2 className={`${hub.h2} reveal-up`}>SEO Experience</h2>
-            </div>
-          </div>
-          <div className={`${hub.splitBody} reveal-up`}>
-            <p className={ind.leadInk}>
-              Corbin&rsquo;s experience in SEO developed through hands-on work
-              researching, improving, and managing business websites rather
-              than through a traditional agency account-management role.
+      {/* === BACKGROUND === */}
+      <section className={t.rowsSplit} style={{ padding: 0, borderTop: 0 }}>
+        <div className={t.rowsAside}>
+          <h2 className={t.h2}>Background &amp; SEO Experience</h2>
+        </div>
+        <div className={t.rowsList}>
+          <div className={t.body} style={{ paddingTop: 32, paddingBottom: 32 }}>
+            <p className={t.lead}>
+              Corbin developed his SEO experience through hands-on work improving
+              business websites, researching search opportunities, and
+              implementing changes directly.
             </p>
             <p>
-              His work has included analyzing search demand, auditing websites,
-              resolving technical SEO issues, restructuring service pages,
-              developing content strategies, implementing structured data,
-              improving local search visibility, and making changes directly
-              within client websites.
+              Before establishing Scale SEO in Calgary in 2025, he worked with
+              businesses in Australia on local SEO, website development, and
+              organic search strategy.
             </p>
             <p>
-              Before establishing Scale SEO in Calgary, Corbin worked with
-              businesses in Australia across organic search, local SEO, and
-              website optimization. This provided experience across different
-              industries, competitive environments, website platforms, and
-              geographic search markets.
+              Today, his work focuses primarily on professional service and B2B
+              businesses, particularly accounting and advisory firms.
             </p>
-            <p>In 2025, he established Scale SEO as an independent SEO company.</p>
             <p>
-              Today, Corbin manages a deliberately limited client roster and
-              remains directly involved in strategy, implementation, and
-              performance analysis. His work is increasingly focused on
-              professional service and B2B businesses where a relatively small
-              number of commercially relevant searches can represent
-              significant value.
+              Unlike a traditional agency account manager, Corbin remains directly
+              involved in each client&rsquo;s SEO strategy, website improvements, and
+              performance analysis.
             </p>
-            <Link href="/about" className={hub.pillDark}>
-              <span>About Scale SEO</span>
-              <span className={hub.arrow}>→</span>
+            <Link href="/about" className={`${t.box} ${t.boxGrey}`} style={{ marginTop: 16 }}>
+              <Corner />
+              <span>Learn More About Scale SEO &rarr;</span>
             </Link>
           </div>
         </div>
       </section>
 
-      {/* === EXPERTISE — dark, editorial rows === */}
-      <section className={`${hub.section} ${hub.dark}`} data-nav-theme="dark">
-        <div className={hub.inner}>
-          <div className={hub.head}>
-            <div>
-              <div className={`section-label reveal-up ${ind.labelOnDark}`}>
-                Expertise
-              </div>
-              <h2 className={`${hub.h2} reveal-up`}>Areas of SEO Expertise</h2>
+      {/* === EXPERTISE — 2-column numbered === */}
+      <section className={t.steps}>
+        <h2 className={t.h2}>Areas of Expertise</h2>
+        <p className={t.lead} style={{ marginTop: 20, maxWidth: 720 }}>
+          Corbin&rsquo;s work covers the technical, content, and website development
+          elements of SEO.
+        </p>
+        <div className={t.stepGrid}>
+          {expertise.map(([title, body], i) => (
+            <div key={title} className={t.step}>
+              <h3 className={t.stepTitle}>
+                <span>{String(i + 1).padStart(2, "0")}</span> {title}
+              </h3>
+              <p className={`${t.body} ${t.dim}`}>{body}</p>
             </div>
-            <div className={`${hub.headBody} reveal-up`}>
-              <p>
-                Corbin works across the technical, content, local search, and
-                website elements that influence organic visibility.
-              </p>
-            </div>
-          </div>
+          ))}
+        </div>
+        <p className={t.body} style={{ marginTop: 48, maxWidth: 760 }}>
+          His approach combines SEO research with direct implementation, helping
+          businesses move beyond recommendations and make practical improvements to
+          their websites.
+        </p>
+      </section>
 
-          <div className={`${about.rows} ${about.rowsDark}`}>
-            {expertise.map((e, i) => (
-              <article key={e.title} className={`${about.row} ${about.rowDark} reveal-up`}>
-                <div className={about.rowHead}>
-                  <span className={about.rowNum}>{pad(i)}</span>
-                  <h3 className={about.rowTitle}>{e.title}</h3>
-                </div>
-                <div className={about.rowBody}>
-                  {e.body.map((p) => (
+      {/* === CLIENT WORK — grey, aside + boxes === */}
+      <section className={t.grey}>
+        <div className={t.asideGrid}>
+          <div className={t.aside}>
+            <h2 className={t.h2}>Selected Client Work</h2>
+            <p className={t.body}>
+              Corbin has worked on SEO and website development projects for
+              businesses across Canada and Australia.
+            </p>
+            <Link href="/results" className={`${t.box} ${t.boxBlue}`}>
+              <Corner />
+              <span>View All Client Projects &rarr;</span>
+            </Link>
+          </div>
+          <div className={styles.workList}>
+            {work.map((w) => (
+              <article key={w.href} className={t.card} style={{ minHeight: 0 }}>
+                <h3 className={t.h3}>{w.name}</h3>
+                <div className={`${t.body} ${t.dim}`} style={{ fontSize: 16 }}>
+                  {w.body.map((p) => (
                     <p key={p}>{p}</p>
                   ))}
                 </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* === INDUSTRIES — light, two cards === */}
-      <section className={`${hub.section} ${hub.light}`}>
-        <div className={hub.inner}>
-          <div className={hub.head}>
-            <div>
-              <div className={`section-label reveal-up ${about.label}`}>
-                Industries
-              </div>
-              <h2 className={`${hub.h2} reveal-up`}>Professional Services &amp; B2B Experience</h2>
-            </div>
-            <div className={`${hub.headBody} reveal-up`}>
-              <p>
-                Corbin&rsquo;s current work is primarily focused on professional
-                service and B2B businesses, with accounting and advisory firms
-                becoming a particular area of industry experience.
-              </p>
-            </div>
-          </div>
-
-          <div className={styles.industryGrid}>
-            <article className={`${hub.lightCard} ${about.audienceCard} reveal-up`}>
-              <span className="index">01</span>
-              <h3 className={about.audienceTitle}>
-                Accounting &amp; Advisory Firms
-              </h3>
-              <div className={hub.cardBody}>
-                <p>
-                  Corbin has worked extensively on SEO for accounting and
-                  advisory websites, including technical SEO, service-page
-                  strategy, local search, content development, website
-                  architecture, internal linking, structured data, and ongoing
-                  organic search strategy.
-                </p>
-                <p>
-                  This work has covered searches and content related to
-                  corporate tax, bookkeeping, business advisory, fractional CFO
-                  and controller services, personal tax, payroll, SMSFs, and
-                  other accounting services across Canadian and Australian
-                  markets.
-                </p>
-                <p>
-                  His work with accounting firms also includes structuring
-                  educational tax and accounting content so that it supports
-                  relevant commercial services while maintaining clear
-                  authorship, professional context, and appropriate references.
-                </p>
-              </div>
-              <Link href="/industries/accounting-firms" className={hub.pillDark}>
-                <span>Explore SEO for Accounting Firms</span>
-                <span className={hub.arrow}>→</span>
-              </Link>
-            </article>
-            <article className={`${hub.lightCard} ${about.audienceCard} reveal-up`}>
-              <span className="index">02</span>
-              <h3 className={about.audienceTitle}>
-                Broader B2B &amp; Local Search Experience
-              </h3>
-              <div className={hub.cardBody}>
-                <p>
-                  Corbin&rsquo;s broader experience includes B2B organizations
-                  and location-based service businesses across Canada and
-                  Australia.
-                </p>
-                <p>
-                  These campaigns have provided hands-on experience with
-                  competitive local search results, Google Business Profiles,
-                  multi-service websites, geographic targeting, website
-                  redevelopment, and the relationship between organic
-                  visibility and customer acquisition.
-                </p>
-                <p>
-                  While industries and search markets differ, the underlying
-                  approach remains consistent: understand how customers search,
-                  determine which opportunities have commercial relevance, and
-                  build the website and SEO strategy around them.
-                </p>
-              </div>
-              <Link href="/industries" className={hub.pillDark}>
-                <span>Explore Industries</span>
-                <span className={hub.arrow}>→</span>
-              </Link>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      {/* === SELECTED WORK — dark === */}
-      <section className={`${hub.section} ${hub.dark}`} data-nav-theme="dark">
-        <div className={hub.inner}>
-          <div className={hub.head}>
-            <div>
-              <div className={`section-label reveal-up ${ind.labelOnDark}`}>
-                Selected Work
-              </div>
-              <h2 className={`${hub.h2} reveal-up`}>Selected SEO Results</h2>
-            </div>
-            <div className={`${hub.headBody} reveal-up`}>
-              <p>
-                Corbin evaluates SEO performance using actual search visibility
-                and business-relevant outcomes rather than traffic projections
-                alone.
-              </p>
-            </div>
-          </div>
-
-          <div className={styles.workGrid}>
-            <article className={`${about.result} reveal-up`}>
-              <h3 className={about.resultTitle}>Accounting &amp; Advisory SEO</h3>
-              <div className={about.resultMetric}>
-                <span className={about.resultValue}>Page 5 → Page 1</span>
-                <span className={about.resultLabel}>
-                  Improvement in target keyword rankings during a six-month SEO
-                  engagement.
-                </span>
-              </div>
-              <div className={about.resultMetric}>
-                <span className={about.resultValue}>+125%</span>
-                <span className={about.resultLabel}>
-                  Google Search Impressions
-                </span>
-              </div>
-              <p className={about.resultBody}>
-                The campaign combined technical SEO, stronger service-page
-                architecture, on-page optimization, content improvements, and
-                internal linking around commercially relevant accounting and
-                advisory searches.
-              </p>
-            </article>
-
-            <article className={`${hub.darkCard} ${styles.workCard} reveal-up`}>
-              <h3 className={styles.workTitle}>
-                Organic Search Growth Across Client Campaigns
-              </h3>
-              <div className={hub.cardBody}>
-                <p>
-                  Other client campaigns have included improvements to local
-                  search visibility, service-page rankings, organic
-                  impressions, website architecture, and visibility for
-                  commercially important search terms.
-                </p>
-                <p>
-                  Where client confidentiality permits, Scale SEO publishes
-                  selected results and case studies showing both the outcomes
-                  and the work behind them.
-                </p>
-              </div>
-              <Link href="/results" className={hub.pillLime}>
-                <span>View SEO Results &amp; Case Studies</span>
-                <span className={hub.arrow}>→</span>
-              </Link>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      {/* === APPROACH — dark, first-person manifesto === */}
-      <section className={`${hub.section} ${hub.dark}`} data-nav-theme="dark">
-        <div className={`${hub.inner} ${styles.manifesto}`}>
-          <div className={`section-label reveal-up ${ind.labelOnDark} ${about.labelCenter}`}>
-            Approach
-          </div>
-          <h2 className={`${hub.h2} ${styles.manifestoH2} reveal-up`}>
-            How I Approach SEO
-          </h2>
-          <div className={`${styles.manifestoBody} reveal-up`}>
-            <p className={styles.manifestoLead}>
-              I don&rsquo;t think SEO should begin with a list of keywords or a
-              generic technical checklist.
-            </p>
-            <p className={styles.manifestoLead}>
-              It should begin with understanding the business.
-            </p>
-            <p>
-              I want to know which services matter, who the ideal customer is,
-              where those customers are located, how they choose a provider, and
-              what a qualified enquiry is actually worth.
-            </p>
-            <p>
-              From there, I look at search demand, existing rankings,
-              competitors, website structure, content, and technical performance
-              to determine where the strongest opportunities exist.
-            </p>
-            <p>
-              Sometimes that means creating something new. Often it means making
-              an existing service page considerably better, resolving a technical
-              problem, restructuring part of the website, or connecting content
-              that already exists.
-            </p>
-            <p>
-              I also prefer implementation over producing recommendations that
-              never make it onto the website. Where access and platform
-              capabilities allow, I make the changes directly and then use
-              search data to determine what should happen next.
-            </p>
-            <p className={styles.manifestoLead}>The goal isn&rsquo;t simply more traffic.</p>
-            <p className={styles.manifestoClose}>
-              It&rsquo;s{" "}
-              <strong>better visibility for the searches that matter to the business.</strong>
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* === ARTICLES — dark === */}
-      <section className={`${hub.section} ${hub.dark}`} data-nav-theme="dark">
-        <div className={hub.inner}>
-          <div className={hub.head}>
-            <div>
-              <div className={`section-label reveal-up ${ind.labelOnDark}`}>
-                Writing &amp; Research
-              </div>
-              <h2 className={`${hub.h2} reveal-up`}>Articles by Corbin Jensen</h2>
-            </div>
-            <div className={`${hub.headBody} reveal-up`}>
-              <p>
-                Corbin writes about SEO strategy, technical SEO, search
-                visibility, and the practical application of organic search for
-                professional service and B2B businesses.
-              </p>
-              <p>
-                His articles draw on search data, industry research, Google
-                documentation, and practical experience working directly on
-                client websites and SEO campaigns.
-              </p>
-            </div>
-          </div>
-
-          <div className={styles.articleGrid}>
-            {articles.map((a) => (
-              <article key={a.slug} className={`${hub.darkCard} ${styles.articleCard} reveal-up`}>
-                <span className={styles.articleTag}>Article</span>
-                <h3 className={styles.articleTitle}>{a.title}</h3>
-                <div className={hub.cardBody}>
-                  <p>{a.body}</p>
-                </div>
-                <Link href={`/blog/${a.slug}`} className={hub.pillLime}>
-                  <span>Read Article</span>
-                  <span className={hub.arrow}>→</span>
+                <Link href={w.href} className={t.inlineLink} style={{ fontSize: 16 }}>
+                  {w.cta} &rarr;
                 </Link>
               </article>
             ))}
           </div>
-          <Link href="/blog" className={`${about.rowLinkDark} ${styles.allArticles}`}>
-            View All SEO Insights <span className={ind.arrow}>→</span>
-          </Link>
         </div>
       </section>
 
-      {/* === WORK DIRECTLY — light === */}
-      <section className={`${hub.section} ${hub.light}`}>
-        <div className={`${hub.inner} ${hub.split}`}>
-          <div className={hub.splitAside}>
-            <div>
-              <div className={`section-label reveal-up ${about.label}`}>
-                Work Together
-              </div>
-              <h2 className={`${hub.h2} reveal-up`}>Work Directly With Corbin</h2>
+      {/* === APPROACH — navy feature === */}
+      <section className={t.featureWrap}>
+        <div className={t.feature} style={{ minHeight: 0 }}>
+          <div className={t.featureText}>
+            <span className={t.eyebrow}>In Corbin&rsquo;s words</span>
+            <h2 className={t.h2}>My Approach to SEO</h2>
+            <p className={t.lead}>
+              I believe good SEO starts with understanding the business, not simply
+              creating a list of keywords.
+            </p>
+          </div>
+          <div className={t.featureSide}>
+            <div className={t.body}>
+              <p>
+                Before making changes, I look at which services matter most, how
+                potential customers search for them, and where the website has
+                opportunities to improve.
+              </p>
+              <p>
+                Sometimes that means developing new service pages or content. Other
+                times, it means improving existing pages, fixing technical problems,
+                or making the website easier to navigate.
+              </p>
+              <p>
+                I prefer working directly on client websites rather than producing
+                recommendations that never get implemented.
+              </p>
+              <p>
+                The goal is to improve visibility for searches that are relevant to
+                the business and create more opportunities for qualified enquiries.
+              </p>
             </div>
           </div>
-          <div className={`${hub.splitBody} reveal-up`}>
-            <p className={ind.leadInk}>
-              Every Scale SEO engagement is managed directly by Corbin, from
-              initial research and strategy through to technical improvements,
-              content direction, website implementation, and ongoing
-              performance analysis.
-            </p>
-            <p>
-              If you&rsquo;re looking to improve your business&rsquo;s organic
-              search visibility, you can speak directly with Corbin about your
-              website, current search performance, and where SEO may fit into
-              your broader growth strategy.
-            </p>
-            <a
-              href={BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={hub.pillDark}
-            >
-              <span>Book an SEO Consultation</span>
-              <span className={hub.arrow}>→</span>
-            </a>
-          </div>
         </div>
       </section>
 
-      <ContactSection />
+      {/* === ARTICLES — heading left, ruled rows right === */}
+      <section className={t.rowsSplit} style={{ padding: 0 }}>
+        <div className={t.rowsAside}>
+          <h2 className={t.h2}>Articles by Corbin Jensen</h2>
+          <div className={t.body}>
+            <p>
+              Corbin writes about SEO strategy, technical SEO, search visibility,
+              and the practical application of organic search for Canadian
+              businesses.
+            </p>
+            <p>
+              His articles draw on industry research, Google documentation, search
+              performance data, and firsthand experience working on client
+              websites.
+            </p>
+          </div>
+          <Link href="/blog" className={`${t.box} ${t.boxNavy}`}>
+            <Corner />
+            <span>View All SEO Articles &rarr;</span>
+          </Link>
+        </div>
+        <div className={t.rowsList}>
+          {articles.map((a) => (
+            <div key={a.href} className={t.rowsItem}>
+              <h3 className={t.h3}>{a.title}</h3>
+              <p className={`${t.body} ${t.dim}`}>{a.body}</p>
+              <Link href={a.href} className={t.inlineLink} style={{ display: "inline-block", marginTop: 12 }}>
+                Read Article &rarr;
+              </Link>
+            </div>
+          ))}
+        </div>
+      </section>
 
-      <RevealOnScroll />
+      <ContactSection
+        heading="Work Directly With Corbin"
+        lead="As the founder of Scale SEO, Corbin works directly with clients on SEO strategy, technical improvements, website development, and ongoing search performance. If you're considering SEO for your business, you can discuss your website, goals, and opportunities directly with him."
+        cta={{ href: BOOKING_URL, label: "Book an SEO Consultation →" }}
+      />
     </main>
   );
 }
