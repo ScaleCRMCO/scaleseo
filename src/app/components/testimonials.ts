@@ -26,4 +26,11 @@ export const testimonials: Testimonial[] = [
     name: "Terry Jensen",
     role: "President & Founder of Kinsmen Consulting Ltd.",
   },
+  {
+    quote:
+      "I've been working with Scale SEO for a few months now and can't reccommend how great an experience I've had! Corbin helped me improve my online sales and is very attentive for all my questions.",
+    name: "Monika J.",
+    role: "Keto-Chef",
+    source: "Google Review",
+  },
 ];
