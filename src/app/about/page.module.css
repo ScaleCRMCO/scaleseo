@@ -117,7 +117,7 @@
 .introRow { position: relative; overflow: hidden; }
 .introText { position: relative; z-index: 1; }
 .bigMark {
-  --mark: clamp(300px, 30vw, 500px);
+  --mark: clamp(330px, 34vw, 560px);
   --sink: 0.4;
   position: absolute;
   right: 6%;
