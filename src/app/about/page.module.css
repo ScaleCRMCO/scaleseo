@@ -139,3 +139,12 @@
 .heroTitle { margin-top: 48px; }
 .bigMark { --sink: 0.5; }
 @media (max-width: 900px) { .hero { min-height: 0; } .heroTitle { margin-top: 8px; } }
+
+/* Mobile: same split logo as desktop, below the tagline */
+@media (max-width: 900px) {
+  .hero { min-height: 0; }
+  .heroLeft { padding-bottom: calc(min(64vw, 300px) * 0.5 + 40px) !important; }
+  .heroLead { margin-top: 0; padding-top: 48px; }
+  .bigMark { --mark: min(64vw, 300px); --sink: 0.5; right: 16px; opacity: 1; }
+  .introRow { padding-top: calc(min(64vw, 300px) * 0.5 + 32px) !important; }
+}
