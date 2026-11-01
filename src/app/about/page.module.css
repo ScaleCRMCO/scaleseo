@@ -131,3 +131,11 @@
 @media (max-width: 900px) {
   .bigMark { --mark: 220px; right: -40px; opacity: 0.18; }
 }
+
+/* Taller hero: fills the first screen; only the top half of the mark shows
+   until the navy band scrolls into view */
+.hero { min-height: max(640px, calc(100vh - 20px)); }
+.heroLeft { min-height: 100%; }
+.heroTitle { margin-top: 48px; }
+.bigMark { --sink: 0.5; }
+@media (max-width: 900px) { .hero { min-height: 0; } .heroTitle { margin-top: 8px; } }
