@@ -119,3 +119,4 @@
   .bottom { margin: 32px 16px 0; flex-direction: column; align-items: flex-start; }
   .bottomRight { margin-left: 0; }
 }
+.address { font-style: normal; line-height: 1.45; }

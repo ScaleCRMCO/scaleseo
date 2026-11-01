@@ -70,7 +70,11 @@ export default function Footer() {
           <div className={styles.contactLines}>
             <a href="tel:+14038751110">(403) 875-1110</a>
             <a href="mailto:team@scaleseo.co">team@scaleseo.co</a>
-            <span>Calgary, Alberta · Canada</span>
+            <address className={styles.address}>
+              1122 3 St SE Ste 1906
+              <br />
+              Calgary, T2G 0E7, Canada
+            </address>
             <span>Remote · Est. 2025</span>
           </div>
         </div>
