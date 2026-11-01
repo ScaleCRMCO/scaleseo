@@ -358,14 +358,6 @@ export default function GoogleAdsPage() {
         heading="Work Directly With Your Google Ads Manager"
         lead="If you're considering Google Ads, either independently or alongside monthly SEO, I can review your goals and recommend an appropriate starting point."
         cta={{ href: "/contact", label: "Book a Strategy Call →" }}
-        note={
-          <>
-            I&rsquo;m <Link href="/corbin-jensen">Corbin Jensen</Link>, founder of
-            Scale SEO. I work directly on Google Ads campaigns and client websites,
-            connecting paid search with the SEO and development work that supports
-            longer-term visibility.
-          </>
-        }
       />
     </main>
   );
