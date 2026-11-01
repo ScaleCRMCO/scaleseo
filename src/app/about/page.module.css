@@ -110,3 +110,24 @@
   .ctaBottom { flex-direction: column; align-items: stretch; }
   .ctaBtn { width: 100%; }
 }
+
+/* Big split logo mark (hero → navy band) */
+.hero { position: relative; overflow: hidden; grid-template-columns: 1fr !important; }
+.heroLeft { border-right: 0 !important; position: relative; z-index: 1; }
+.introRow { position: relative; overflow: hidden; }
+.introText { position: relative; z-index: 1; }
+.bigMark {
+  --mark: clamp(300px, 30vw, 500px);
+  --sink: 0.4;
+  position: absolute;
+  right: 6%;
+  width: var(--mark);
+  height: var(--mark);
+  pointer-events: none;
+}
+.bigMark svg { display: block; width: 100%; height: 100%; }
+.bigMarkTop { bottom: calc(var(--mark) * var(--sink) * -1); color: var(--h-navy); }
+.bigMarkBottom { top: calc(var(--mark) * (1 - var(--sink)) * -1); color: var(--h-blue); }
+@media (max-width: 900px) {
+  .bigMark { --mark: 220px; right: -40px; opacity: 0.18; }
+}

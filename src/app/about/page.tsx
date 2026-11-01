@@ -120,33 +120,24 @@ export default function AboutPage() {
             and long-term client relationships.
           </p>
         </div>
-        <div className={styles.heroRight}>
-          <div className={styles.portrait}>
-            <Image
-              src="/images/corbin-about.jpg"
-              alt="Corbin Jensen, founder of Scale SEO"
-              fill
-              priority
-              sizes="(max-width: 900px) 90vw, 33vw"
-            />
-            <svg className={styles.portraitMark} viewBox="0 0 366 366" fill="currentColor" aria-hidden="true">
-              <path d="M182.5 0C81.7 0 0 81.7 0 182.5S81.7 365 182.5 365 365 283.3 365 182.5 283.3 0 182.5 0zm0 328.4c-80.5 0-146-65.5-146-145.9s65.5-146 146-146 145.9 65.5 145.9 146-65.4 145.9-145.9 145.9z" />
-              <path d="M205.6 157.9v104.2h37.9V120H101.4v37.9z" />
-            </svg>
-          </div>
-          <div className={styles.heroFacts}>
-            <span>Founded 2025</span>
-            <p>
-              Scale SEO is a founder-led SEO consultancy based in Calgary,
-              Alberta, working with businesses across Canada and
-              internationally.
-            </p>
-          </div>
+        {/* Large logo mark: navy on white; its lower part continues in the
+            navy band below in light blue (matching copy, same position) */}
+        <div className={`${styles.bigMark} ${styles.bigMarkTop}`} aria-hidden="true">
+          <svg viewBox="0 0 366 366" fill="currentColor" aria-hidden="true">
+            <path d="M182.5 0C81.7 0 0 81.7 0 182.5S81.7 365 182.5 365 365 283.3 365 182.5 283.3 0 182.5 0zm0 328.4c-80.5 0-146-65.5-146-145.9s65.5-146 146-146 145.9 65.5 145.9 146-65.4 145.9-145.9 145.9z" />
+            <path d="M205.6 157.9v104.2h37.9V120H101.4v37.9z" />
+          </svg>
         </div>
       </header>
 
       {/* === INTRO + CALGARY BAND === */}
       <section className={styles.introRow}>
+        <div className={`${styles.bigMark} ${styles.bigMarkBottom}`} aria-hidden="true">
+          <svg viewBox="0 0 366 366" fill="currentColor" aria-hidden="true">
+            <path d="M182.5 0C81.7 0 0 81.7 0 182.5S81.7 365 182.5 365 365 283.3 365 182.5 283.3 0 182.5 0zm0 328.4c-80.5 0-146-65.5-146-145.9s65.5-146 146-146 145.9 65.5 145.9 146-65.4 145.9-145.9 145.9z" />
+            <path d="M205.6 157.9v104.2h37.9V120H101.4v37.9z" />
+          </svg>
+        </div>
         <p className={styles.introText}>
           Founded in 2025 by Corbin Jensen, the business provides hands-on
           search engine optimization, website improvements, and digital growth
