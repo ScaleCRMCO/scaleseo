@@ -280,3 +280,5 @@ h1:has(.title-block) {
 
 /* Page background behind the iOS status bar / overscroll matches the nav */
 html { background: #FEFEFE; }
+/* Push page content down by the status-bar inset the nav now covers */
+main { padding-top: env(safe-area-inset-top, 0px); }

@@ -248,3 +248,17 @@
   color: #FEFEFE;
   border: 0;
 }
+
+/* Extend the white nav up under the phone status bar (viewport-fit=cover):
+   the bar keeps its height and gains the safe-area inset on top. */
+.nav {
+  height: calc(96px + env(safe-area-inset-top, 0px));
+  padding-top: calc(10px + env(safe-area-inset-top, 0px));
+}
+@media (max-width: 1000px) {
+  .nav {
+    height: calc(72px + env(safe-area-inset-top, 0px));
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+  .mobileMenu { inset: calc(72px + env(safe-area-inset-top, 0px)) 0 0 0; }
+}
