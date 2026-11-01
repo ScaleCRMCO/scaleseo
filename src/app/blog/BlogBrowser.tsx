@@ -1,7 +1,7 @@
 "use client";
 import { useMemo, useState } from "react";
 import Link from "next/link";
-import SketchIcon, { iconForCategory } from "../components/SketchIcon";
+import PostCard from "./PostCard";
 import styles from "./page.module.css";
 
 export type PostSummary = {
@@ -20,12 +20,6 @@ const formatDate = (iso: string) =>
     year: "numeric",
     timeZone: "America/Edmonton",
   });
-
-const Corner = () => (
-  <svg className={styles.corner} viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
-    <path d="M1 1.5h7.5V9" />
-  </svg>
-);
 
 export default function BlogBrowser({ posts }: { posts: PostSummary[] }) {
   // Filters
@@ -68,18 +62,7 @@ export default function BlogBrowser({ posts }: { posts: PostSummary[] }) {
 
           <div className={styles.cards}>
             {visible.map((p) => (
-              <Link key={p.slug} href={`/blog/${p.slug}`} className={styles.card}>
-                <Corner />
-                <SketchIcon name={iconForCategory(p.category)} className={styles.cardIcon} />
-                <div className={styles.cardMain}>
-                  <div className={styles.cardMeta}>
-                    <span className={styles.tagOutline}>{p.category}</span>
-                    <span>{formatDate(p.date)}</span>
-                  </div>
-                  <h3 className={styles.cardTitle}>{p.title}</h3>
-                  <span className={styles.cardRead}>{p.readTime}</span>
-                </div>
-              </Link>
+              <PostCard key={p.slug} post={p} />
             ))}
             {visible.length === 0 && (
               <p className={styles.empty}>No articles match those filters.</p>

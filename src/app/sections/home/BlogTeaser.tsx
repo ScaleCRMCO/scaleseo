@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { posts } from "../../blog/posts";
-import BlogTile from "../../blog/BlogTile";
-import blog from "../../blog/page.module.css";
+import PostCard from "../../blog/PostCard";
 import styles from "./BlogTeaser.module.css";
 
 export default function BlogTeaser() {
@@ -28,9 +27,9 @@ export default function BlogTeaser() {
         </div>
       </div>
 
-      <div className={blog.grid}>
+      <div className={styles.grid}>
         {latest.map((post) => (
-          <BlogTile key={post.slug} post={post} headingLevel="h3" />
+          <PostCard key={post.slug} post={post} />
         ))}
       </div>
     </section>

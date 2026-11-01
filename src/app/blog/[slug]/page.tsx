@@ -4,10 +4,25 @@ import { notFound } from "next/navigation";
 import Breadcrumbs from "../../components/Breadcrumbs";
 import Image from "next/image";
 import CopyLink from "./CopyLink";
+import { covers, coverUrl } from "../covers";
 import RevealOnScroll from "../../components/RevealOnScroll";
 import { posts, getPost } from "../posts";
 import styles from "./page.module.css";
 import ContactSection from "../../components/ContactSection";
+
+// Add the cover image to hand-written schema's BlogPosting/Article nodes
+// that don't already declare one.
+function withImage(schema: Record<string, unknown> | undefined, img?: string) {
+  if (!schema || !img) return schema;
+  const clone = JSON.parse(JSON.stringify(schema));
+  const nodes: Record<string, unknown>[] = Array.isArray(clone["@graph"]) ? clone["@graph"] : [clone];
+  for (const n of nodes) {
+    if ((n["@type"] === "BlogPosting" || n["@type"] === "Article") && !n.image) {
+      n.image = { "@type": "ImageObject", url: img, width: 1600, height: 1083 };
+    }
+  }
+  return clone;
+}
 
 export function generateStaticParams() {
   return posts.map((p) => ({ slug: p.slug }));
@@ -80,7 +95,7 @@ export default function BlogPostPage({
     "@type": "BlogPosting",
     headline: post.title,
     description: post.description,
-    image: "https://scaleseo.co/images/logo-social.png",
+    image: coverUrl(post.slug) ?? "https://scaleseo.co/images/logo-social.png",
     datePublished: post.date,
     dateModified: post.updated || post.date,
     author: {
@@ -129,6 +144,12 @@ export default function BlogPostPage({
         </div>
         <h1 className={styles.title}>{post.title}</h1>
       </header>
+      {covers[post.slug] && (
+        <div className={styles.cover}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={covers[post.slug].src} alt={covers[post.slug].alt} />
+        </div>
+      )}
 
       <div className={styles.layout}>
         {/* Sticky sidebar: back box, post details, share */}
@@ -267,7 +288,7 @@ export default function BlogPostPage({
 
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(post.schema ?? jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(withImage(post.schema, coverUrl(post.slug)) ?? jsonLd) }}
       />
       <RevealOnScroll />
     </main>
