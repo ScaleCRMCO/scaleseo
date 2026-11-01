@@ -1,10 +1,17 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import "./globals.css";
 import "./theme.css";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import PageTransition from "./components/PageTransition";
+
+// White browser chrome (iOS status-bar area, Android address bar) so the
+// fixed white nav runs to the top of the screen with no strip above it.
+export const viewport: Viewport = {
+  themeColor: "#FEFEFE",
+  colorScheme: "light",
+};
 
 export const metadata: Metadata = {
   title: "Calgary SEO Specialist | Professional Services | Scale SEO",

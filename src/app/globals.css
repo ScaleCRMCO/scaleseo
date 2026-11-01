@@ -277,3 +277,6 @@ section {
 h1:has(.title-block) {
   line-height: 1.22 !important;
 }
+
+/* Page background behind the iOS status bar / overscroll matches the nav */
+html { background: #FEFEFE; }
