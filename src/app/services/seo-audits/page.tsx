@@ -390,12 +390,6 @@ export default function SeoAuditsPage() {
         heading="Get an Independent Review of Your Website"
         lead="If you're unsure why your website isn't performing as expected, I can review your requirements and recommend an appropriate audit scope."
         cta={{ href: "/contact", label: "Request an SEO Audit →" }}
-        note={
-          <>
-            I work directly on client websites, including technical SEO, website
-            development, service-page optimization, and ongoing search strategy.
-          </>
-        }
       />
     </main>
   );

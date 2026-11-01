@@ -400,15 +400,6 @@ export default function GeoServicePage() {
         heading="Work Directly With an SEO Specialist"
         lead="If you're interested in improving how your business is discovered online, I can review your current website and recommend where AI search optimization fits into your broader strategy."
         cta={{ href: "/contact", label: "Book a Strategy Call →" }}
-        note={
-          <>
-            I&rsquo;m <Link href="/corbin-jensen">Corbin Jensen</Link>, founder of
-            Scale SEO, an independent SEO consultancy based in Calgary. I work
-            directly on client websites, implementing the content, technical, and
-            structural improvements that support both traditional and AI-powered
-            search.
-          </>
-        }
       />
     </main>
   );
