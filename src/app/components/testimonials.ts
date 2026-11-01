@@ -22,9 +22,8 @@ export const testimonials: Testimonial[] = [
   },
   {
     quote:
-      "Placeholder testimonial for previewing the slider. Replace this entry with a real client quote before it goes live.",
-    name: "Client Name",
-    role: "Role, Company",
-    placeholder: true,
+      "Corbin from Scale SEO has done a excellent job with our website direction. Ever since partnering with Scale SEO, we've gained more clients and jobs in Calgary with his seo expertise. Highly recommend!",
+    name: "Terry Jensen",
+    role: "President & Founder of Kinsmen Consulting Ltd.",
   },
 ];

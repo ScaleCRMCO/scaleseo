@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useRef } from "react";
 import { testimonials as all } from "./testimonials";
 import styles from "./Testimonials.module.css";
 
@@ -8,64 +8,56 @@ const items = all.filter(
   (t) => !t.placeholder || process.env.NODE_ENV !== "production"
 );
 
-// Reusable testimonials slider: large centred quote, attribution, arrows and
-// progress bars. Drop <Testimonials /> into any page.
+const tones = [styles.toneTint, styles.toneWhite, styles.toneNavy];
+
+// Testimonials: heading block left, horizontally scrolling quote boxes right
+// with round arrow buttons.
 export default function Testimonials() {
-  const [index, setIndex] = useState(0);
+  const track = useRef<HTMLDivElement>(null);
   if (!items.length) return null;
-  const many = items.length > 1;
-  const go = (step: number) =>
-    setIndex((i) => (i + step + items.length) % items.length);
-  const t = items[index];
+  const scroll = (dir: number) => {
+    const el = track.current;
+    if (!el) return;
+    const card = el.querySelector("figure");
+    const step = card ? card.getBoundingClientRect().width + 24 : el.clientWidth * 0.8;
+    el.scrollBy({ left: dir * step, behavior: "smooth" });
+  };
 
   return (
     <section className={styles.section} aria-label="Client testimonials">
-      <div className={styles.label}>Client Testimonials</div>
+      <div className={styles.intro}>
+        <span className={styles.label}>Testimonials</span>
+        <h2 className={styles.heading}>What Clients Say</h2>
+        <p className={styles.lead}>
+          Feedback from businesses I work with directly on SEO and website
+          improvements.
+        </p>
+      </div>
 
-      <div className={styles.stage}>
-        {many && (
-          <button className={styles.arrow} onClick={() => go(-1)} aria-label="Previous testimonial">
-            <span aria-hidden="true">←</span>
+      <div className={styles.slider}>
+        {items.length > 1 && (
+          <button className={`${styles.arrow} ${styles.prev}`} onClick={() => scroll(-1)} aria-label="Previous testimonial">
+            <span aria-hidden="true">&lsaquo;</span>
           </button>
         )}
-
-        <figure key={index} className={styles.slide}>
-          {t.source && (
-            <div className={styles.source}>
+        <div className={styles.track} ref={track}>
+          {items.map((t, i) => (
+            <figure key={t.name} className={`${styles.card} ${tones[i % tones.length]}`}>
               <span className={styles.stars} aria-label="5 out of 5 stars">★★★★★</span>
-              {t.source}
-            </div>
-          )}
-          <blockquote className={styles.quote}>&ldquo;{t.quote}&rdquo;</blockquote>
-          <figcaption className={styles.cite}>
-            <strong>{t.name}</strong>, {t.role}
-          </figcaption>
-        </figure>
-
-        {many && (
-          <button
-            className={`${styles.arrow} ${styles.arrowNext}`}
-            onClick={() => go(1)}
-            aria-label="Next testimonial"
-          >
-            <span aria-hidden="true">→</span>
+              <blockquote className={styles.quote}>&ldquo;{t.quote}&rdquo;</blockquote>
+              <figcaption className={styles.cite}>
+                <strong>{t.name}</strong>
+                <span>{t.role}</span>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+        {items.length > 1 && (
+          <button className={`${styles.arrow} ${styles.next}`} onClick={() => scroll(1)} aria-label="Next testimonial">
+            <span aria-hidden="true">&rsaquo;</span>
           </button>
         )}
       </div>
-
-      {many && (
-        <div className={styles.bars}>
-          {items.map((_, i) => (
-            <button
-              key={i}
-              className={`${styles.bar} ${i === index ? styles.barActive : ""}`}
-              onClick={() => setIndex(i)}
-              aria-label={`Show testimonial ${i + 1}`}
-              aria-current={i === index}
-            />
-          ))}
-        </div>
-      )}
     </section>
   );
 }
