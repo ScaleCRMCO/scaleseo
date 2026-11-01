@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 import Breadcrumbs from "../../components/Breadcrumbs";
 import ContactSection from "../../components/ContactSection";
+import ServicesMark from "../../sections/home/ServicesMark";
 import ServicesFaq, { type FaqItem } from "../ServicesFaq";
 // Shared service page template (new brand)
 import t from "../svc.module.css";
@@ -411,9 +412,13 @@ export default function SeoServicePage() {
           </div>
           <h1 className={t.title}>SEO Services in Calgary</h1>
         </div>
-        <div className={t.band}>
+        <div className={t.heroBand}>
+          <ServicesMark className={t.heroMark} slow />
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/images/calgary-skyline.webp" alt="Calgary skyline" style={{ objectPosition: "center 60%" }} />
+          <img
+            src="/images/gsc-performance-mockup-3d.webp"
+            alt="Google Search Console performance data showing clicks and impressions growth"
+          />
         </div>
       </header>
 
