@@ -269,3 +269,18 @@
 /* Founder text starts lower than the heading (Sincro-style offset) */
 .founderText { padding-top: 220px; padding-bottom: 40px; }
 @media (max-width: 900px) { .founderText { padding-top: 0; padding-bottom: 0; } }
+/* Faint large logo behind the closing CTA */
+.ctaBox { position: relative; overflow: hidden; }
+.ctaBox > *:not(.ctaMark) { position: relative; z-index: 1; }
+.ctaMark {
+  position: absolute;
+  right: -4%;
+  top: 50%;
+  width: min(62%, 640px);
+  height: auto;
+  transform: translateY(-50%);
+  color: var(--h-white);
+  opacity: 0.06;
+  pointer-events: none;
+}
+@media (max-width: 900px) { .ctaMark { width: 90%; right: -30%; } }

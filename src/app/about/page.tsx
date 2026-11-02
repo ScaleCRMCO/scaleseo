@@ -317,6 +317,10 @@ export default function AboutPage() {
       {/* === WORK WITH SCALE SEO — closing navy box === */}
       <section className={styles.ctaWrap}>
         <div className={styles.ctaBox}>
+          <svg className={styles.ctaMark} viewBox="0 0 366 366" fill="none" stroke="currentColor" aria-hidden="true">
+            <circle cx="183" cy="183" r="164" strokeWidth="36" />
+            <path d="M101 139 H224.5 V262" strokeWidth="38" />
+          </svg>
           <h2 className={t.h2}>Work With Scale SEO</h2>
           <div className={styles.ctaBottom}>
             <p className={styles.ctaNote}>
