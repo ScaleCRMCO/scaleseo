@@ -87,7 +87,7 @@ const services = [
 
 const cases = [
   {
-    name: "Jensen CPA — Calgary, Alberta",
+    name: "Jensen CPA",
     body: [
       "SEO and website development for a Calgary accounting firm, including improvements to corporate tax, bookkeeping, and other business accounting service pages.",
       "The campaign recorded a 125% increase in Google Search impressions and a 92% increase in organic clicks during its initial four-month reporting period.",
@@ -101,7 +101,7 @@ const cases = [
     img: "/images/jensen-cpa-cover.webp",
   },
   {
-    name: "Empire Accountants — Brisbane, Australia",
+    name: "Empire Accountants",
     body: [
       "Ongoing SEO for an accounting and advisory firm, including technical improvements, service-page optimization, structured data, and educational accounting content.",
     ],
