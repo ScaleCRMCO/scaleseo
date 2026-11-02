@@ -24,7 +24,7 @@ export default function Hero() {
           <span className={styles.h1Line}>in Calgary</span>
         </h1>
         <div className={styles.topBottom}>
-          <TrustindexWidget id="6c14fb6849673601c4969fa538a" className={styles.reviews} />
+          <TrustindexWidget id="cebaa07845048474c13615cd1b2" className={styles.reviews} />
           <Link href="/contact" className={`${styles.box} ${styles.boxNavy}`}>
             <Corner />
             <span>Start a Project →</span>
