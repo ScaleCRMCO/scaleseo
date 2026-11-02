@@ -1,30 +1,7 @@
 "use client";
 import { useRef, useState } from "react";
 import { motion, useMotionValueEvent, useReducedMotion, useScroll } from "motion/react";
-import s from "./AttractClients.module.css";
-
-const items = [
-  {
-    title: "Get Found for the Right Services",
-    body: "Your firm should appear when potential clients search for the accounting services you want to grow, whether that’s corporate tax, bookkeeping, or business advisory.",
-  },
-  {
-    title: "Make a Strong First Impression",
-    body: "Your website should clearly explain what your firm does, who it works with, and why clients choose you. Simple navigation, helpful information, and clear contact options make a difference.",
-  },
-  {
-    title: "Demonstrate Your Expertise",
-    body: "Useful articles, detailed service pages, and genuine team profiles help potential clients understand your experience before they make an enquiry.",
-  },
-  {
-    title: "Build Trust Before the First Conversation",
-    body: "Consistent business information, client reviews, professional credentials, and clear service descriptions help prospective clients feel confident choosing your firm.",
-  },
-  {
-    title: "Connect Your Marketing Efforts",
-    body: "SEO, website development, Google Ads, and AI search optimization should support the same business goals, helping your firm reach the right audience across different search platforms.",
-  },
-];
+import s from "./PinnedPoints.module.css";
 
 /* Each step arranges up to nine Scale SEO marks (ring + corner arrow) into a
    different shape: [x, y, scale, rotate] per mark; missing marks fade out. */
@@ -67,7 +44,11 @@ function Shape({ step, instant = false }: { step: number; instant?: boolean }) {
   );
 }
 
-export default function AttractClients() {
+export type PinnedItem = { title: string; body: string[] };
+
+// Pinned scroll section: the panel holds still while each scroll step reveals
+// the next point, and the Scale SEO marks rearrange into a new shape.
+export default function PinnedPoints({ title, lead, items }: { title: string; lead?: React.ReactNode; items: PinnedItem[] }) {
   const ref = useRef<HTMLDivElement>(null);
   const [step, setStep] = useState(0);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end end"] });
@@ -78,12 +59,8 @@ export default function AttractClients() {
   return (
     <section className={s.section}>
       <div className={s.intro}>
-        <h2 className={s.title}>What Helps Accounting Firms Attract Clients Online?</h2>
-        <p className={s.lead}>
-          A strong online presence isn&rsquo;t just about ranking higher on
-          Google. It&rsquo;s about helping the right people find your firm,
-          understand your expertise, and feel confident getting in touch.
-        </p>
+        <h2 className={s.title}>{title}</h2>
+        {lead && <p className={s.lead}>{lead}</p>}
       </div>
 
       {/* Desktop: pinned panel — each scroll step reveals the next point */}
@@ -98,7 +75,7 @@ export default function AttractClients() {
             {items.map((it, i) => (
               <div key={it.title} className={s.copyItem} data-active={i === step} aria-hidden={i !== step}>
                 <h3 className={s.itemTitle}>{it.title}</h3>
-                <p className={s.itemBody}>{it.body}</p>
+                <div className={s.itemBody}>{it.body.map((p) => <p key={p}>{p}</p>)}</div>
               </div>
             ))}
           </div>
@@ -119,7 +96,7 @@ export default function AttractClients() {
             </div>
             <span className={s.listNum}>{String(i + 1).padStart(2, "0")}</span>
             <h3 className={s.itemTitle}>{it.title}</h3>
-            <p className={s.itemBody}>{it.body}</p>
+            <div className={s.itemBody}>{it.body.map((p) => <p key={p}>{p}</p>)}</div>
           </li>
         ))}
       </ol>

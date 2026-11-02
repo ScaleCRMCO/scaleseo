@@ -6,7 +6,7 @@ import ServicesFaq, { type FaqItem } from "../../services/ServicesFaq";
 // Shared service-page template (new brand)
 import t from "../../services/svc.module.css";
 import g from "../../sections/home/ServicesGrid.module.css";
-import AttractClients from "./AttractClients";
+import PinnedPoints, { type PinnedItem } from "../../components/PinnedPoints";
 import CountUp from "../../components/CountUp";
 import ServicesMark from "../../sections/home/ServicesMark";
 
@@ -58,6 +58,29 @@ const digital: { href: string; title: string; body: string[]; cta: string }[] = 
       "Scale SEO helps improve how your firm\u2019s services, expertise, and business information are presented and understood across traditional and AI-powered search platforms.",
     ],
     cta: "Explore AI Search Optimization",
+  },
+];
+
+const attract: PinnedItem[] = [
+  {
+    title: "Get Found for the Right Services",
+    body: ["Your firm should appear when potential clients search for the accounting services you want to grow, whether that’s corporate tax, bookkeeping, or business advisory."],
+  },
+  {
+    title: "Make a Strong First Impression",
+    body: ["Your website should clearly explain what your firm does, who it works with, and why clients choose you. Simple navigation, helpful information, and clear contact options make a difference."],
+  },
+  {
+    title: "Demonstrate Your Expertise",
+    body: ["Useful articles, detailed service pages, and genuine team profiles help potential clients understand your experience before they make an enquiry."],
+  },
+  {
+    title: "Build Trust Before the First Conversation",
+    body: ["Consistent business information, client reviews, professional credentials, and clear service descriptions help prospective clients feel confident choosing your firm."],
+  },
+  {
+    title: "Connect Your Marketing Efforts",
+    body: ["SEO, website development, Google Ads, and AI search optimization should support the same business goals, helping your firm reach the right audience across different search platforms."],
   },
 ];
 
@@ -415,7 +438,11 @@ export default function AccountingFirmsPage() {
       </section>
 
       {/* === WHAT HELPS — pinned scroll section with changing logo shapes === */}
-      <AttractClients />
+      <PinnedPoints
+        title="What Helps Accounting Firms Attract Clients Online?"
+        lead="A strong online presence isn’t just about ranking higher on Google. It’s about helping the right people find your firm, understand your expertise, and feel confident getting in touch."
+        items={attract}
+      />
 
       {/* === WHY CHOOSE SCALE SEO — slow marquee heading, then simple points === */}
       <section className={t.whySection}>

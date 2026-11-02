@@ -15,7 +15,7 @@
 
 .top {
   display: grid;
-  grid-template-columns: 1.1fr 1fr 1fr 1fr 300px;
+  grid-template-columns: 1.1fr 1fr 1fr 1fr 1fr 300px;
   grid-template-rows: auto 1fr;
   column-gap: 32px;
   padding: 96px 40px 0;
@@ -78,7 +78,7 @@
 .corner { position: absolute; top: 16px; right: 18px; width: 10px; height: 10px; }
 
 .wordmark {
-  grid-column: 1 / 5;
+  grid-column: 1 / 6;
   align-self: end;
   display: flex;
   align-items: center;
