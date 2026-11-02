@@ -268,3 +268,9 @@
 .h1 { max-width: 22ch; font-size: clamp(52px, 8.4vw, 156px); }
 .mark { width: min(32vw, 460px); top: 42%; transform: translate(-10%, -50%); }
 @media (max-width: 900px) { .h1 { max-width: none; font-size: clamp(48px, 14vw, 72px); } .mark { width: 70vw; transform: translateY(-50%); } }
+/* Mobile H1: three set lines, nudged in from the left edge */
+@media (max-width: 900px) {
+  .h1 { font-size: clamp(30px, 9.2vw, 52px); line-height: 1.02; padding-left: 12px; }
+  .h1Line { display: block; white-space: nowrap; }
+  .top { padding-bottom: 260px; min-height: 0; }
+}
