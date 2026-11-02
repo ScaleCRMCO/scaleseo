@@ -65,12 +65,14 @@ const cases = [
     body: "SEO and content improvements for a Calgary CPA firm, including technical optimization, service-page development, and accounting resources.",
     href: "/results/jensen-cpa",
     cta: "View Jensen CPA Case Study",
+    img: "/images/jensen-cpa-website.webp",
   },
   {
     name: "Empire Accountants \u2014 Brisbane, Australia",
     body: "An ongoing SEO campaign involving accounting service pages, technical improvements, structured data, and content development.",
     href: "/results/empire-accountants",
     cta: "View Empire Accountants Case Study",
+    img: "/images/empire-accountants-website.webp",
   },
 ];
 
@@ -351,44 +353,41 @@ export default function AccountingFirmsPage() {
         </div>
       </section>
 
-      {/* === EXPERIENCE — navy feature box with the two case studies === */}
-      <section className={t.featureWrap}>
-        <div className={t.feature}>
-          <div className={t.featureText}>
-            <span className={t.eyebrow}>Accounting Industry Experience</span>
-            <h2 className={t.h2}>Experience Working With Accounting Firms</h2>
-            <div className={t.body}>
-              <p>Accounting is an industry where I already have direct SEO experience.</p>
-              <p>
-                I&rsquo;ve worked on websites for accounting and advisory firms in
-                Canada and Australia, improving technical SEO, service-page
-                architecture, local search visibility, and content strategies.
-              </p>
-              <p>
-                That experience includes projects involving corporate tax,
-                bookkeeping, SMSF administration, business advisory, and
-                fractional CFO services.
-              </p>
-            </div>
-          </div>
-          <div className={t.featureSide}>
-            {cases.map((c) => (
-              <div key={c.href} className={t.metric}>
-                <h3 className={t.h3}>{c.name}</h3>
-                <p className={t.metricLabel} style={{ fontSize: 16, lineHeight: 1.5 }}>{c.body}</p>
-                <Link href={c.href} className={t.metricLabel} style={{ color: "var(--h-blue)", fontSize: 16 }}>
-                  {c.cta} &rarr;
-                </Link>
-              </div>
-            ))}
-            <div className={t.featureLinks}>
-              <Link href="/results" className={`${t.box} ${t.boxGrey}`}>
-                <Corner />
-                <span>View All Client Results &rarr;</span>
-              </Link>
-            </div>
+      {/* === EXPERIENCE — full-bleed navy: H2 top-left, body right and lower,
+          then one ruled row per case study (name | text + button | image) === */}
+      <section className={t.expSection}>
+        <div className={t.expTop}>
+          <h2 className={t.expTitle}>Experience Working With Accounting Firms</h2>
+          <div className={t.expBody}>
+            <p>Accounting is an industry where I already have direct SEO experience.</p>
+            <p>
+              I&rsquo;ve worked on websites for accounting and advisory firms in
+              Canada and Australia, improving technical SEO, service-page
+              architecture, local search visibility, and content strategies.
+            </p>
+            <p>
+              That experience includes projects involving corporate tax,
+              bookkeeping, SMSF administration, business advisory, and
+              fractional CFO services.
+            </p>
           </div>
         </div>
+        {cases.map((c) => (
+          <div key={c.href} className={t.expRow}>
+            <h3 className={t.expName}>{c.name}</h3>
+            <div className={t.expText}>
+              <p>{c.body}</p>
+              <Link href={c.href} className={`${t.box} ${t.boxBlue}`}>
+                <Corner />
+                <span>{c.cta} &rarr;</span>
+              </Link>
+            </div>
+            <Link href={c.href} className={t.expImg} tabIndex={-1} aria-hidden="true">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={c.img} alt="" loading="lazy" />
+            </Link>
+          </div>
+        ))}
       </section>
 
       {/* === WHY WORK WITH SCALE SEO — grey, aside + four white boxes === */}
