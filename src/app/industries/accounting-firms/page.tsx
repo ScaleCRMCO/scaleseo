@@ -305,14 +305,12 @@ export default function AccountingFirmsPage() {
         </div>
       </section>
 
-      {/* === PRIORITIES — heading left, text right === */}
-      <section className={t.rowsSplit} style={{ padding: 0, borderTop: 0 }}>
-        <div className={t.rowsAside}>
-          <h2 className={t.h2}>SEO Built Around Your Firm&rsquo;s Priorities</h2>
-        </div>
-        <div className={t.rowsList}>
-          <div className={t.body} style={{ paddingTop: 32 }}>
-            <p className={t.lead}>Not every accounting firm wants more of the same clients.</p>
+      {/* === PRIORITIES — big H2 top-left, then label left / text far right === */}
+      <section className={t.prioSection}>
+        <h2 className={t.prioTitle}>SEO Built Around Your Firm&rsquo;s Priorities</h2>
+        <div className={t.prioRow}>
+          <p className={t.prioLabel}>Not every accounting firm wants more of the same clients.</p>
+          <div className={t.prioBody}>
             <p>
               Some firms want to grow their corporate tax and business advisory
               work. Others want more recurring bookkeeping clients, fractional
