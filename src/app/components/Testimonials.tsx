@@ -52,12 +52,12 @@ export default function Testimonials() {
             </figure>
           ))}
         </div>
-        {items.length > 2 && (
+      </div>
+      {items.length > 2 && (
           <button className={`${styles.arrow} ${styles.next}`} onClick={() => scroll(1)} aria-label="Next testimonial">
             <span aria-hidden="true">&rsaquo;</span>
           </button>
         )}
-      </div>
     </section>
   );
 }

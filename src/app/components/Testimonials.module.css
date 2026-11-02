@@ -17,7 +17,7 @@
 .heading { font-size: clamp(52px, 6.2vw, 120px); line-height: 0.92; font-weight: 400; letter-spacing: -0.05em; }
 .lead { margin-top: 48px; max-width: 460px; font-size: 21px; line-height: 1.5; }
 
-.slider { position: static; min-width: 0; }
+.slider { position: relative; min-width: 0; }
 .track {
   display: flex;
   gap: 20px;
@@ -63,7 +63,7 @@
   transform: translateY(-50%);
   transition: background-color 0.2s ease, color 0.2s ease;
 }
-.prev { left: 2%; background: rgba(3, 27, 54, 0.25); color: #FEFEFE; }
+.prev { left: -28px; background: rgba(3, 27, 54, 0.25); color: #FEFEFE; }
 .next { right: 2%; background: #031B36; color: #FEFEFE; }
 .arrow:hover { background: #FEFEFE; color: #031B36; }
 
@@ -74,6 +74,7 @@
   .lead { margin-top: 24px; }
   .card { flex-basis: 80%; min-height: 0; padding: 36px 20px; }
   .arrow { top: auto; bottom: 16px; transform: none; width: 44px; height: 44px; font-size: 24px; }
+  .slider { position: static; }
   .prev { left: 16px; }
   .next { right: 16px; }
 }
