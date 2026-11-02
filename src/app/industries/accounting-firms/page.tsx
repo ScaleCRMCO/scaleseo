@@ -103,6 +103,10 @@ const reasons = [
     title: "Month-to-Month Engagements",
     body: "Ongoing campaigns operate month-to-month, without long-term lock-in contracts.",
   },
+  {
+    title: "Market Exclusivity",
+    body: "I avoid working with directly competing accounting firms in the same market and review potential conflicts before every new engagement. Based in Calgary, I work with firms across Canada and internationally, with each campaign focused on the markets your firm serves.",
+  },
 ];
 
 const faqs: FaqItem[] = [
@@ -437,32 +441,6 @@ export default function AccountingFirmsPage() {
               <p className={t.whyPointBody}>{r.body}</p>
             </article>
           ))}
-        </div>
-      </section>
-
-      {/* === MARKET EXCLUSIVITY — split === */}
-      <section className={t.pricing} style={{ padding: 0 }}>
-        <div className={t.pricingAside}>
-          <h2 className={t.h2}>Accounting Firm Market Exclusivity</h2>
-        </div>
-        <div className={t.pricingBody}>
-          <p className={t.pricingLead}>
-            I avoid working with directly competing accounting firms targeting
-            the same primary services and clients within the same market.
-          </p>
-          <p className={t.body}>
-            Before starting a new engagement, I&rsquo;ll review potential
-            conflicts with existing accounting clients.
-          </p>
-          <p className={t.body}>
-            Scale SEO is based in Calgary and works remotely with accounting
-            firms across Canada and internationally. Your campaign is focused on
-            the markets your firm serves, not where I&rsquo;m located.
-          </p>
-          <Link href="/pricing" className={`${t.box} ${t.boxNavy}`}>
-            <Corner />
-            <span>View SEO Pricing &rarr;</span>
-          </Link>
         </div>
       </section>
 
