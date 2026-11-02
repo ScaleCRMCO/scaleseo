@@ -18,7 +18,7 @@ export default function Hero() {
           <circle cx="183" cy="183" r="164" strokeWidth="36" />
           <path d="M101 139 H224.5 V262" strokeWidth="38" />
         </svg>
-        <h1 className={styles.h1}>Independent SEO Consultancy in Calgary</h1>
+        <h1 className={styles.h1}>Independent SEO Consultancy Located in Calgary</h1>
         <div className={styles.topBottom}>
           <TrustindexWidget id="6c14fb6849673601c4969fa538a" className={styles.reviews} />
           <Link href="/contact" className={`${styles.box} ${styles.boxNavy}`}>
