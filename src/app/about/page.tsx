@@ -139,10 +139,10 @@ export default function AboutPage() {
           </svg>
         </div>
         <p className={styles.introText}>
-          Founded in 2025 by Corbin Jensen, the business provides hands-on
-          search engine optimization, website improvements, and digital growth
-          services, with a particular focus on professional service and B2B
-          businesses.
+          Founded in 2025 by Corbin Jensen, Scale SEO provides hands-on search
+          engine optimization, web development, and digital growth services,
+          with a particular focus on professional service and B2B businesses
+          across Canada &amp; internationally.
         </p>
       </section>
       <div className={styles.band}>
