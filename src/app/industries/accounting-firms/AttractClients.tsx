@@ -39,8 +39,9 @@ const shapes: P[][] = [
   [[0, -U, 0.9, 0], [0, 0, 0.9, 0], [0, U, 0.9, 0]],
   // 4 — four marks turned inward: a closed, trusted circle
   [[-U / 2, -U / 2, 0.9, 180], [U / 2, -U / 2, 0.9, 270], [-U / 2, U / 2, 0.9, 90], [U / 2, U / 2, 0.9, 0]],
-  // 5 — a 3×3 network: connected channels
-  [-1, 0, 1].flatMap((r) => [-1, 0, 1].map((c) => [c * U * 0.72, r * U * 0.72, 0.6, 0] as P)),
+  // 5 — the four trust marks spread outward and a fifth arrives in the
+  //     centre: every channel connected through one hub
+  [[-U * 0.85, -U * 0.85, 0.8, 180], [U * 0.85, -U * 0.85, 0.8, 270], [-U * 0.85, U * 0.85, 0.8, 90], [U * 0.85, U * 0.85, 0.8, 0], [0, 0, 0.95, 0]],
 ];
 
 function Shape({ step, instant = false }: { step: number; instant?: boolean }) {
