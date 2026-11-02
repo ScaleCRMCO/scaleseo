@@ -35,11 +35,6 @@ export default function Testimonials() {
       </div>
 
       <div className={styles.slider}>
-        {items.length > 2 && (
-          <button className={`${styles.arrow} ${styles.prev}`} onClick={() => scroll(-1)} aria-label="Previous testimonial">
-            <span aria-hidden="true">&lsaquo;</span>
-          </button>
-        )}
         <div className={styles.track} ref={track}>
           {items.map((t, i) => (
             <figure key={t.name} className={`${styles.card} ${tones[i % tones.length]}`}>
@@ -52,12 +47,17 @@ export default function Testimonials() {
             </figure>
           ))}
         </div>
-      </div>
-      {items.length > 2 && (
-          <button className={`${styles.arrow} ${styles.next}`} onClick={() => scroll(1)} aria-label="Next testimonial">
-            <span aria-hidden="true">&rsaquo;</span>
-          </button>
+        {items.length > 2 && (
+          <div className={styles.arrows}>
+            <button className={styles.arrow} onClick={() => scroll(-1)} aria-label="Previous testimonial">
+              <span aria-hidden="true">&lsaquo;</span>
+            </button>
+            <button className={styles.arrow} onClick={() => scroll(1)} aria-label="Next testimonial">
+              <span aria-hidden="true">&rsaquo;</span>
+            </button>
+          </div>
         )}
+      </div>
     </section>
   );
 }
