@@ -195,19 +195,20 @@ export default function AboutPage() {
         </div>
         <div className={styles.expText}>
           <p>
-            Based in Calgary, Scale SEO has experience working with businesses
-            across Canada and Australia, including accounting firms,
-            consultants, contractors, and other service-based businesses.
+            Search behaviour, competition, and customer expectations vary
+            between industries and countries. What works for an accounting firm
+            in Canada may look very different from what a plumbing company in
+            Australia needs to attract customers.
           </p>
           <p>
-            Projects have involved technical SEO, website development, content
-            strategy, local search optimization, and ongoing improvements to
-            organic search visibility.
+            Scale SEO takes these differences into account when developing each
+            strategy, from understanding local search trends and
+            industry-specific terminology to identifying how potential customers
+            research and choose a business.
           </p>
           <p>
-            This experience across different industries and markets helps
-            shape an approach that prioritizes each business&rsquo;s goals,
-            competitive environment, and opportunities for growth.
+            The result is an approach shaped around each client&rsquo;s market,
+            rather than applying the same strategy to every website.
           </p>
           <Link href="/results" className={styles.expLink}>
             <Corner />
