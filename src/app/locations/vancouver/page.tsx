@@ -184,45 +184,72 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "WebPage",
-      "@id": `${URL}#webpage`,
-      url: URL,
-      name: TITLE,
-      description: DESCRIPTION,
-      isPartOf: { "@id": "https://scaleseo.co/#website" },
-      about: { "@id": `${URL}#service` },
-      mainEntity: { "@id": `${URL}#service` },
-      publisher: { "@id": "https://scaleseo.co/#organization" },
-      breadcrumb: { "@id": `${URL}#breadcrumb` },
-      primaryImageOfPage: { "@type": "ImageObject", url: "https://scaleseo.co/images/vancouver-skyline.webp" },
-      inLanguage: "en-CA",
+      "@id": "https://scaleseo.co/locations/vancouver#webpage",
+      "url": "https://scaleseo.co/locations/vancouver",
+      "name": "SEO Services Vancouver, BC | Scale SEO",
+      "description": "Founder-led SEO services for Vancouver businesses. Scale SEO helps accounting firms, professional service businesses, and B2B companies improve their visibility on Google.",
+      "isPartOf": {
+        "@id": "https://scaleseo.co/#website"
+      },
+      "about": {
+        "@id": "https://scaleseo.co/locations/vancouver#service"
+      },
+      "publisher": {
+        "@id": "https://scaleseo.co/#organization"
+      },
+      "breadcrumb": {
+        "@id": "https://scaleseo.co/locations/vancouver#breadcrumb"
+      },
+      "inLanguage": "en-CA"
     },
     {
       "@type": "Service",
-      "@id": `${URL}#service`,
-      name: "SEO Services in Vancouver, BC",
-      serviceType: "Search Engine Optimization",
-      url: URL,
-      description: DESCRIPTION,
-      mainEntityOfPage: { "@id": `${URL}#webpage` },
-      provider: { "@id": "https://scaleseo.co/#organization" },
-      areaServed: [
-        { "@type": "City", name: "Vancouver", containedInPlace: { "@type": "AdministrativeArea", name: "British Columbia" } },
-        { "@type": "City", name: "Burnaby" },
-        { "@type": "City", name: "Richmond" },
-        { "@type": "City", name: "North Vancouver" },
-        { "@type": "City", name: "Surrey" },
+      "@id": "https://scaleseo.co/locations/vancouver#service",
+      "name": "SEO Services in Vancouver, BC",
+      "serviceType": "Search Engine Optimization",
+      "description": "Search engine optimization services for Vancouver businesses, including technical SEO, website optimization, content strategy, and ongoing SEO management for professional service and B2B companies.",
+      "url": "https://scaleseo.co/locations/vancouver",
+      "provider": {
+        "@id": "https://scaleseo.co/#organization"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Vancouver",
+          "containedInPlace": {
+            "@type": "AdministrativeArea",
+            "name": "British Columbia"
+          }
+        },
+        {
+          "@type": "Place",
+          "name": "Metro Vancouver"
+        }
       ],
-      offers: { "@type": "Offer", priceSpecification: { "@type": "UnitPriceSpecification", price: 3000, priceCurrency: "CAD", unitText: "MONTH" } },
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "Accounting firms, professional service businesses, and B2B companies"
+      }
     },
     {
       "@type": "BreadcrumbList",
-      "@id": `${URL}#breadcrumb`,
-      itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Home", item: "https://scaleseo.co/" },
-        { "@type": "ListItem", position: 2, name: "Vancouver", item: URL },
-      ],
-    },
-  ],
+      "@id": "https://scaleseo.co/locations/vancouver#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://scaleseo.co/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Vancouver SEO Services",
+          "item": "https://scaleseo.co/locations/vancouver"
+        }
+      ]
+    }
+  ]
 };
 
 /* === Page =============================================================== */
@@ -236,7 +263,7 @@ export default function VancouverPage() {
       <header>
         <div className={t.hero}>
           <div className={t.crumbs}>
-            <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Vancouver" }]} schema={false} />
+            <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Vancouver SEO Services" }]} schema={false} />
           </div>
           <h1 className={t.title}>SEO Services in Vancouver, BC</h1>
         </div>
