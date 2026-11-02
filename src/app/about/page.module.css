@@ -266,3 +266,6 @@
 .exp ::selection { background: var(--h-navy); color: var(--h-white); }
 .expRows li:first-child::selection,
 .expRows li:hover::selection { background: var(--h-navy); color: var(--h-white); }
+/* Founder text starts lower than the heading (Sincro-style offset) */
+.founderText { padding-top: 220px; padding-bottom: 40px; }
+@media (max-width: 900px) { .founderText { padding-top: 0; padding-bottom: 0; } }
