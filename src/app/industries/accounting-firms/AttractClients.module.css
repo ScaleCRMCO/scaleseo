@@ -1,0 +1,32 @@
+.section { padding: 0 !important; background: var(--h-white); color: var(--h-navy); }
+.intro { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; padding: 96px 40px 80px; border-bottom: 1px solid var(--h-rule); }
+.title { font-size: clamp(36px, 4vw, 64px); line-height: 1.05; font-weight: 400; letter-spacing: -0.03em; max-width: 14ch; }
+.lead { align-self: end; max-width: 620px; font-size: clamp(18px, 1.5vw, 23px); line-height: 1.4; }
+
+.track { position: relative; }
+.sticky { position: sticky; top: 0; height: 100vh; overflow: hidden; }
+.rule { position: absolute; top: 0; bottom: 0; left: 50%; width: 1px; background: var(--h-rule); }
+.num { position: absolute; top: calc(var(--nav-h, 96px) + 32px); left: 40px; font-size: clamp(80px, 8vw, 128px); line-height: 1; letter-spacing: -0.04em; color: var(--h-blue); font-variant-numeric: tabular-nums; }
+.shapeWrap { position: absolute; left: 50%; top: 55%; width: min(34vw, 46vh); transform: translate(-50%, -50%); color: var(--h-blue); }
+.shape { display: block; width: 100%; height: auto; overflow: visible; }
+.shape g { transform-box: fill-box; transform-origin: center; }
+.copy { position: absolute; top: calc(var(--nav-h, 96px) + 40px); bottom: 64px; left: calc(50% + clamp(120px, 14vw, 260px)); right: 40px; }
+.copyItem { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: space-between; opacity: 0; transform: translateY(16px); transition: opacity 0.45s ease, transform 0.45s ease; pointer-events: none; }
+.copyItem[data-active="true"] { opacity: 1; transform: none; pointer-events: auto; }
+.itemTitle { font-size: clamp(26px, 2.6vw, 44px); line-height: 1.1; font-weight: 400; letter-spacing: -0.025em; }
+.itemBody { font-size: clamp(17px, 1.4vw, 22px); line-height: 1.4; color: var(--h-dim); max-width: 520px; }
+.dots { position: absolute; left: 40px; bottom: 48px; display: flex; gap: 8px; }
+.dots span { width: 28px; height: 3px; background: var(--h-rule); transition: background 0.3s ease; }
+.dots span[data-active="true"] { background: var(--h-blue); }
+
+.list { display: none; }
+
+@media (max-width: 900px) {
+  .intro { grid-template-columns: 1fr; padding: 56px 16px 40px; gap: 20px; }
+  .track { display: none; }
+  .list { display: block; list-style: none; margin: 0; padding: 0; }
+  .list li { padding: 32px 16px 40px; border-bottom: 1px solid var(--h-rule); }
+  .listIcon { width: 88px; margin-bottom: 20px; color: var(--h-blue); }
+  .listNum { display: block; font-size: 15px; color: var(--h-dim); margin-bottom: 8px; }
+  .list .itemBody { margin-top: 12px; }
+}

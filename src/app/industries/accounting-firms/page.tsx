@@ -6,6 +6,7 @@ import ServicesFaq, { type FaqItem } from "../../services/ServicesFaq";
 // Shared service-page template (new brand)
 import t from "../../services/svc.module.css";
 import g from "../../sections/home/ServicesGrid.module.css";
+import AttractClients from "./AttractClients";
 import CountUp from "../../components/CountUp";
 import ServicesMark from "../../sections/home/ServicesMark";
 
@@ -410,6 +411,9 @@ export default function AccountingFirmsPage() {
           </div>
         ))}
       </section>
+
+      {/* === WHAT HELPS — pinned scroll section with changing logo shapes === */}
+      <AttractClients />
 
       {/* === WHY WORK WITH SCALE SEO — grey, aside + four white boxes === */}
       <section className={t.grey}>
