@@ -187,39 +187,47 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* === EXPERIENCE — heading left of a rule, text right === */}
-      <section className={t.rowsSplit} style={{ padding: 0 }}>
-        <div className={t.rowsAside}>
-          <h2 className={t.h2}>Experience Across Different Markets</h2>
-          <div className={t.chips}>
-            {["Canada", "Australia", "Accounting & Advisory", "Professional Services", "Local Service"].map((c) => (
-              <span key={c} className={t.chip}>{c}</span>
-            ))}
-          </div>
+      {/* === EXPERIENCE — blue grid: heading | text, then markets/industries rows === */}
+      <section className={styles.exp}>
+        <div className={styles.expHead}>
+          <h2 className={styles.expTitle}>Experience Across Different Markets</h2>
+          <span className={styles.expNote}>Where the work happens</span>
         </div>
-        <div className={`${t.rowsList} ${styles.expBody}`}>
-          <div className={t.body}>
-            <p className={t.lead}>
-              Based in Calgary, Scale SEO has experience working with businesses
-              across Canada and Australia, including accounting firms,
-              consultants, contractors, and other service-based businesses.
-            </p>
-            <p>
-              Projects have involved technical SEO, website development, content
-              strategy, local search optimization, and ongoing improvements to
-              organic search visibility.
-            </p>
-            <p>
-              This experience across different industries and markets helps
-              shape an approach that prioritizes each business&rsquo;s goals,
-              competitive environment, and opportunities for growth.
-            </p>
-          </div>
-          <Link href="/results" className={`${t.box} ${t.boxBlue}`}>
+        <div className={styles.expText}>
+          <p>
+            Based in Calgary, Scale SEO has experience working with businesses
+            across Canada and Australia, including accounting firms,
+            consultants, contractors, and other service-based businesses.
+          </p>
+          <p>
+            Projects have involved technical SEO, website development, content
+            strategy, local search optimization, and ongoing improvements to
+            organic search visibility.
+          </p>
+          <p>
+            This experience across different industries and markets helps
+            shape an approach that prioritizes each business&rsquo;s goals,
+            competitive environment, and opportunities for growth.
+          </p>
+          <Link href="/results" className={styles.expLink}>
             <Corner />
             <span>View Client Results →</span>
           </Link>
         </div>
+
+        <h3 className={styles.expGroup}>Markets</h3>
+        <ul className={styles.expRows}>
+          {["Canada", "Australia", "United States"].map((m) => (
+            <li key={m}>{m}</li>
+          ))}
+        </ul>
+
+        <h3 className={styles.expGroup}>Industries</h3>
+        <ul className={styles.expRows}>
+          {["Accounting & Finance", "Professional Services", "Consulting & B2B", "Construction & Contracting", "Home Services"].map((m) => (
+            <li key={m}>{m}</li>
+          ))}
+        </ul>
       </section>
 
       {/* === MEET THE FOUNDER — full navy section, profile left, text right === */}

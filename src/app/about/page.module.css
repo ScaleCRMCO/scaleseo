@@ -188,3 +188,77 @@
   .founderPhoto { width: 180px; }
   .founderText { gap: 32px; }
 }
+
+/* Experience: Sincro-style blue grid */
+.exp {
+  padding: 0 !important;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--h-blue);
+  color: var(--h-white);
+  border-top: 1px solid rgba(254, 254, 254, 0.35);
+}
+.expHead, .expGroup { border-right: 1px solid rgba(254, 254, 254, 0.35); }
+.expHead {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 48px;
+  min-height: 560px;
+  padding: 48px 40px 40px;
+  border-bottom: 1px solid rgba(254, 254, 254, 0.35);
+}
+.expTitle { max-width: 14ch; font-size: clamp(40px, 4.6vw, 80px); line-height: 1.05; font-weight: 400; letter-spacing: -0.035em; }
+.expNote { font-size: 17px; }
+.expText {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 48px 40px 40px 33%;
+  border-bottom: 1px solid rgba(254, 254, 254, 0.35);
+  font-size: 19px;
+  line-height: 1.5;
+}
+.expLink {
+  position: relative;
+  align-self: flex-start;
+  display: flex;
+  align-items: flex-end;
+  width: min(100%, 300px);
+  min-height: 110px;
+  margin-top: 16px;
+  padding: 18px 20px;
+  background: var(--h-navy);
+  color: var(--h-white) !important;
+  font-size: 17px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.expLink:hover { background: var(--h-white); color: var(--h-navy) !important; }
+.expGroup {
+  padding: 40px;
+  font-size: clamp(32px, 3vw, 48px);
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  border-bottom: 1px solid rgba(254, 254, 254, 0.35);
+}
+.expRows { list-style: none; border-bottom: 1px solid rgba(254, 254, 254, 0.35); }
+.expRows li {
+  padding: 22px 40px;
+  border-bottom: 1px solid rgba(254, 254, 254, 0.35);
+  font-size: clamp(20px, 1.7vw, 26px);
+  text-align: right;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.expRows li:last-child { border-bottom: 0; }
+.expRows li:first-child,
+.expRows li:hover { background: var(--h-white); color: var(--h-blue); text-align: left; }
+@media (max-width: 900px) {
+  .exp { grid-template-columns: 1fr; }
+  .expHead, .expGroup { border-right: 0; }
+  .expHead { min-height: 0; padding: 48px 16px 32px; }
+  .expText { padding: 32px 16px; }
+  .expGroup { padding: 32px 16px 16px; }
+  .expRows li { padding: 18px 16px; }
+  .expLink { width: 100%; }
+}
