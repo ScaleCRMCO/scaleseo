@@ -163,19 +163,21 @@ export default function AboutPage() {
         </div>
         <div className={styles.approachBody}>
           <p className={t.lead}>
-            Scale SEO was built on a simple idea: businesses should work
-            directly with the specialist responsible for their results.
+            Scale SEO was founded on a simple principle: businesses should have
+            direct access to the specialist responsible for their SEO strategy
+            and website improvements.
           </p>
           <div className={t.body}>
             <p>
-              Rather than operating through account managers, outsourced teams,
-              or standardized monthly packages, I work personally with a select
-              number of clients.
+              Rather than relying on layers of account management or
+              standardized monthly packages, Scale SEO takes a hands-on approach
+              to each engagement.
             </p>
             <p>
-              This allows me to understand each business, develop strategies
-              around its actual goals, and implement the improvements needed to
-              strengthen its online presence.
+              Every strategy begins with understanding the client&rsquo;s
+              business, its customers, and the services that matter most. From
+              there, the focus is on practical improvements that strengthen
+              search visibility and support long-term growth.
             </p>
           </div>
           <Link href="/services" className={`${t.box} ${t.boxNavy}`}>
@@ -198,24 +200,19 @@ export default function AboutPage() {
         <div className={`${t.rowsList} ${styles.expBody}`}>
           <div className={t.body}>
             <p className={t.lead}>
-              Although Scale SEO is based in Calgary, my experience extends
-              beyond the Canadian market.
+              Based in Calgary, Scale SEO has experience working with businesses
+              across Canada and Australia, including accounting firms,
+              consultants, contractors, and other service-based businesses.
             </p>
             <p>
-              I&rsquo;ve worked with businesses across Canada and Australia,
-              including accounting and advisory firms, professional service
-              businesses, and local service companies.
+              Projects have involved technical SEO, website development, content
+              strategy, local search optimization, and ongoing improvements to
+              organic search visibility.
             </p>
             <p>
-              These engagements have involved technical SEO, website
-              development, content strategy, local search optimization, and
-              improving how businesses are represented in organic search.
-            </p>
-            <p>
-              Working across different industries and markets has shaped how
-              Scale SEO approaches each campaign: understanding the business
-              first, identifying meaningful opportunities, and focusing on
-              improvements that support long-term growth.
+              This experience across different industries and markets helps
+              shape an approach that prioritizes each business&rsquo;s goals,
+              competitive environment, and opportunities for growth.
             </p>
           </div>
           <Link href="/results" className={`${t.box} ${t.boxBlue}`}>
