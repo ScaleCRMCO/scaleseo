@@ -339,3 +339,8 @@
   .expImg { order: -1; aspect-ratio: 16/10; }
 }
 .expText .boxBlue:hover { background: var(--h-white); color: var(--h-navy); }
+.expStats { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; width: 100%; margin-top: auto; padding-top: 24px; border-top: 1px solid rgba(254,254,254,0.16); }
+.expStats > div { display: flex; flex-direction: column; gap: 8px; }
+.expStat { font-size: clamp(34px, 3.4vw, 56px); line-height: 1; letter-spacing: -0.03em; color: var(--h-white); font-variant-numeric: tabular-nums; }
+.expStatLabel { font-size: 15px; line-height: 1.35; color: rgba(254,254,254,0.7); }
+.expText { height: 100%; }

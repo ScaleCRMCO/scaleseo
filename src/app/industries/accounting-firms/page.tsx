@@ -6,6 +6,7 @@ import ServicesFaq, { type FaqItem } from "../../services/ServicesFaq";
 // Shared service-page template (new brand)
 import t from "../../services/svc.module.css";
 import g from "../../sections/home/ServicesGrid.module.css";
+import CountUp from "../../components/CountUp";
 import ServicesMark from "../../sections/home/ServicesMark";
 
 export const metadata: Metadata = {
@@ -66,6 +67,10 @@ const cases = [
     href: "/results/jensen-cpa",
     cta: "View Jensen CPA Case Study",
     img: "/images/jensen-cpa-cover.webp",
+    stats: [
+      { to: 227, prefix: "+", suffix: "%", label: "Average daily search impressions" },
+      { to: 92, prefix: "+", suffix: "%", label: "Average daily organic clicks" },
+    ],
   },
   {
     name: "Empire Accountants",
@@ -73,6 +78,10 @@ const cases = [
     href: "/results/empire-accountants",
     cta: "View Empire Accountants Case Study",
     img: "/images/empire-accountants-cover.webp",
+    stats: [
+      { from: 5, to: 1, prefix: "Page ", suffix: "", label: "Target keyword rankings, up from page 5" },
+      { to: 100, prefix: "+", suffix: "%+", label: "Organic search visibility" },
+    ],
   },
 ];
 
@@ -383,6 +392,16 @@ export default function AccountingFirmsPage() {
             </div>
             <div className={t.expText}>
               <p>{c.body}</p>
+              <div className={t.expStats}>
+                {c.stats.map((m) => (
+                  <div key={m.label}>
+                    <span className={t.expStat}>
+                      <CountUp from={"from" in m ? m.from : 0} to={m.to} prefix={m.prefix} suffix={m.suffix} />
+                    </span>
+                    <span className={t.expStatLabel}>{m.label}</span>
+                  </div>
+                ))}
+              </div>
             </div>
             <Link href={c.href} className={t.expImg} tabIndex={-1} aria-hidden="true">
               {/* eslint-disable-next-line @next/next/no-img-element */}
