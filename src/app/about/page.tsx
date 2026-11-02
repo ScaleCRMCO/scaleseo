@@ -17,19 +17,19 @@ const BOOKING_URL = "https://cal.com/corbinjensen-scaleseo/30min";
 const principles = [
   {
     title: "Direct Collaboration",
-    body: "Clients work directly with me throughout the engagement, without layers of account management.",
+    body: "Clients work directly with the specialist managing their SEO, without unnecessary layers of account management.",
   },
   {
     title: "Practical Execution",
-    body: "SEO recommendations are supported by hands-on implementation wherever access and website capabilities allow.",
+    body: "SEO strategies are supported by hands-on website improvements, not just reports and recommendations.",
   },
   {
     title: "Transparent Communication",
-    body: "Clear priorities, straightforward reporting, and honest conversations about progress and opportunities.",
+    body: "Clear priorities, straightforward reporting, and honest conversations about progress, challenges, and opportunities.",
   },
   {
     title: "Flexible Engagements",
-    body: "Ongoing SEO campaigns are offered month-to-month, without long-term lock-in contracts.",
+    body: "Ongoing SEO services are offered month-to-month, without long-term contracts or unnecessary commitments.",
   },
 ];
 
@@ -287,30 +287,36 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* === PRINCIPLES — grey, heading aside + four white boxes === */}
-      <section className={t.grey}>
-        <div className={t.asideGrid}>
-          <div className={t.aside}>
-            <h2 className={t.h2}>Built for Long-Term Partnerships</h2>
-            <div className={t.body}>
-              <p>
-                Scale SEO is intentionally kept small. The goal isn&rsquo;t to
-                become the largest agency, but to provide consistent,
-                specialist-led SEO services to businesses that value quality
-                and accountability.
-              </p>
-              <p>That approach is built around four principles:</p>
-            </div>
+      {/* === PRINCIPLES — heading + text, then staggered 4-col box grid
+           (outer two boxes empty) === */}
+      <section className={styles.partners}>
+        <div className={styles.partnersHead}>
+          <h2 className={styles.partnersTitle}>Built for Long-Term Partnerships</h2>
+          <div className={styles.partnersText}>
+            <p>
+              Scale SEO is built around a focused, specialist-led approach rather
+              than the traditional high-volume agency model.
+            </p>
+            <p>
+              The emphasis is on building lasting client relationships through
+              consistent work, clear communication, and accountability.
+            </p>
           </div>
-          <div className={t.cardGrid}>
-            {principles.map((p, i) => (
-              <article key={p.title} className={t.card}>
-                <span className={t.cardLabel}>{String(i + 1).padStart(2, "0")}</span>
-                <h3 className={t.h3}>{p.title}</h3>
-                <p>{p.body}</p>
-              </article>
-            ))}
-          </div>
+        </div>
+        <div className={styles.partnersGrid}>
+          <div className={`${styles.pBox} ${styles.pEmpty}`} style={{ gridColumn: 4, gridRow: 1 }} aria-hidden="true" />
+          {principles.map((p, i) => (
+            <article
+              key={p.title}
+              className={styles.pBox}
+              style={{ gridColumn: (i % 2) + 2, gridRow: i < 2 ? 1 : 2 }}
+            >
+              <span className={styles.pNum}>{String(i + 1).padStart(2, "0")}</span>
+              <h3 className={styles.pTitle}>{p.title}</h3>
+              <p className={styles.pBody}>{p.body}</p>
+            </article>
+          ))}
+          <div className={`${styles.pBox} ${styles.pEmpty}`} style={{ gridColumn: 1, gridRow: 2 }} aria-hidden="true" />
         </div>
       </section>
 

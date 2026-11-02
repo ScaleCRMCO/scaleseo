@@ -284,3 +284,32 @@
   pointer-events: none;
 }
 @media (max-width: 900px) { .ctaMark { width: 90%; right: -30%; } }
+
+/* Built for Long-Term Partnerships: Sincro-style staggered boxes */
+.partners { padding: 120px 40px 96px !important; background: var(--h-white); color: var(--h-navy); }
+.partnersHead { display: grid; grid-template-columns: 1.6fr 1fr; gap: 48px; margin-bottom: 200px; }
+.partnersTitle { max-width: 14ch; font-size: clamp(42px, 5vw, 88px); line-height: 1.04; font-weight: 400; letter-spacing: -0.035em; }
+.partnersText { display: flex; flex-direction: column; gap: 20px; padding-top: 8px; font-size: clamp(18px, 1.5vw, 22px); line-height: 1.45; }
+.partnersGrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
+.pBox {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 300px;
+  padding: 28px 24px;
+  border: 1px solid var(--h-rule);
+  background: var(--h-white);
+}
+.pEmpty { background: transparent; }
+.pNum { font-size: 15px; color: var(--h-blue); }
+.pTitle { margin-top: auto; font-size: clamp(22px, 1.8vw, 28px); line-height: 1.15; font-weight: 400; letter-spacing: -0.02em; }
+.pBody { font-size: 16px; line-height: 1.5; color: var(--h-dim); }
+@media (max-width: 1000px) {
+  .partners { padding: 64px 16px !important; }
+  .partnersHead { grid-template-columns: 1fr; margin-bottom: 48px; }
+  .partnersGrid { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .partnersGrid > * { grid-column: auto !important; grid-row: auto !important; }
+  .pEmpty { display: none; }
+  .pBox { min-height: 220px; }
+}
+@media (max-width: 600px) { .partnersGrid { grid-template-columns: 1fr; } }
