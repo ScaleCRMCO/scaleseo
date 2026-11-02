@@ -392,21 +392,6 @@ export default function VancouverPage() {
             </Link>
           </div>
         ))}
-        <div className={t.expRow}>
-          <div className={t.expLeft}>
-            <Link href="/results" className={`${t.box} ${t.boxBlue}`}>
-              <Corner />
-              <span>View All Client Results &rarr;</span>
-            </Link>
-          </div>
-          <div className={t.expText}>
-            <p>
-              While these projects are based outside Vancouver, they demonstrate
-              the type of work Scale SEO provides to accounting and professional
-              service businesses.
-            </p>
-          </div>
-        </div>
       </section>
 
       {/* === HOW WE WORK — steps === */}
