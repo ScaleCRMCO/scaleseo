@@ -240,46 +240,44 @@ export default function AccountingFirmsPage() {
         </div>
       </header>
 
-      {/* === INTRO — chips left, intro + actions right === */}
-      <section className={t.split} style={{ padding: 0 }}>
-        <div className={t.splitLeft}>
-          <div className={t.chips}>
-            {chips.map((c) => (
-              <span key={c} className={t.chip}>{c}</span>
-            ))}
-          </div>
-          <div>
-            <div className={t.stat}>Page 5 → 1</div>
-            <p className={t.statLabel}>Target keyword rankings for an accounting firm</p>
-          </div>
+      {/* === INTRO — large statement, label bottom-left, button bottom-right === */}
+      <section className={t.statementSection}>
+        <div className={t.statement}>
+          <p>
+            Running an accounting firm means balancing client work, deadlines,
+            and the day-to-day demands of the business. Finding time to improve
+            your website and attract new clients through Google isn&rsquo;t
+            always a priority.
+          </p>
+          <p>
+            But when business owners search for help with corporate tax,
+            bookkeeping, or financial advisory services, your firm needs to be
+            visible.
+          </p>
+          <p>
+            Scale SEO helps accounting and CPA firms across Canada improve their
+            online presence through search engine optimization, website
+            development, Google Ads, and AI search optimization.
+          </p>
+          <p>
+            The focus is on helping your firm reach the right clients, promote
+            its most valuable services, and build a stronger source of enquiries
+            over time.
+          </p>
         </div>
-        <div className={t.splitRight}>
-          <div className={t.body}>
-            <p className={t.lead}>
-              Scale SEO provides specialized SEO services for accounting firms
-              across Canada, helping practices improve Google visibility and
-              attract qualified enquiries for their most valuable services.
-            </p>
-            <p>
-              From corporate tax and bookkeeping to business advisory and
-              fractional CFO services, I develop strategies around the searches
-              that matter to your firm&rsquo;s growth.
-            </p>
-            <p>
-              Every campaign is managed directly by me, with no account managers
-              or outsourced handoffs.
-            </p>
-          </div>
-          <div className={t.boxRow}>
-            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className={`${t.box} ${t.boxNavy}`}>
-              <Corner />
-              <span>Book a Consultation &rarr;</span>
-            </a>
-            <Link href="/services/seo" className={`${t.box} ${t.boxGrey}`}>
-              <Corner />
-              <span>Explore SEO Services &rarr;</span>
-            </Link>
-          </div>
+        <div className={t.statementBottom}>
+          <span className={t.statementNote}>
+            {chips.map((c) => (
+              <span key={c}>
+                {c}
+                <br />
+              </span>
+            ))}
+          </span>
+          <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className={`${t.box} ${t.boxNavy}`}>
+            <Corner />
+            <span>Book a Consultation &rarr;</span>
+          </a>
         </div>
       </section>
 

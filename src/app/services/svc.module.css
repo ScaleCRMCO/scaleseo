@@ -306,3 +306,14 @@
 }
 .heroMarkCenter { transform: none !important; opacity: 0.3; }
 .heroMarkCenter svg { width: clamp(200px, 22vw, 320px) !important; }
+
+/* Large statement intro (matches the homepage intro) */
+.statementSection { padding: 96px 40px 0 !important; border-bottom: 1px solid var(--h-rule); }
+.statement { display: flex; flex-direction: column; gap: 0.6em; max-width: 1000px; font-size: clamp(20px, 1.9vw, 30px); line-height: 1.25; letter-spacing: -0.012em; color: var(--h-navy); }
+.statementBottom { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; margin-top: 80px; padding-bottom: 40px; }
+.statementNote { font-size: 17px; line-height: 1.35; color: var(--h-navy); }
+@media (max-width: 900px) {
+  .statementSection { padding: 56px 16px 0 !important; }
+  .statement { font-size: 21px; }
+  .statementBottom { flex-direction: column; align-items: stretch; margin-top: 40px; }
+}
