@@ -61,18 +61,18 @@ const digital: { href: string; title: string; body: string[]; cta: string }[] = 
 
 const cases = [
   {
-    name: "Jensen CPA \u2014 Calgary, Canada",
+    name: "Jensen CPA",
     body: "SEO and content improvements for a Calgary CPA firm, including technical optimization, service-page development, and accounting resources.",
     href: "/results/jensen-cpa",
     cta: "View Jensen CPA Case Study",
-    img: "/images/jensen-cpa-website.webp",
+    img: "/images/jensen-cpa-cover.webp",
   },
   {
-    name: "Empire Accountants \u2014 Brisbane, Australia",
+    name: "Empire Accountants",
     body: "An ongoing SEO campaign involving accounting service pages, technical improvements, structured data, and content development.",
     href: "/results/empire-accountants",
     cta: "View Empire Accountants Case Study",
-    img: "/images/empire-accountants-website.webp",
+    img: "/images/empire-accountants-cover.webp",
   },
 ];
 
@@ -374,13 +374,15 @@ export default function AccountingFirmsPage() {
         </div>
         {cases.map((c) => (
           <div key={c.href} className={t.expRow}>
-            <h3 className={t.expName}>{c.name}</h3>
-            <div className={t.expText}>
-              <p>{c.body}</p>
+            <div className={t.expLeft}>
+              <h3 className={t.expName}>{c.name}</h3>
               <Link href={c.href} className={`${t.box} ${t.boxBlue}`}>
                 <Corner />
                 <span>{c.cta} &rarr;</span>
               </Link>
+            </div>
+            <div className={t.expText}>
+              <p>{c.body}</p>
             </div>
             <Link href={c.href} className={t.expImg} tabIndex={-1} aria-hidden="true">
               {/* eslint-disable-next-line @next/next/no-img-element */}
