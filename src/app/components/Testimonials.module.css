@@ -4,10 +4,10 @@
 .section {
   position: relative;
   display: grid;
-  grid-template-columns: 32% 1fr;
+  grid-template-columns: 34% 1fr;
   align-items: center;
-  gap: 4%;
-  padding: 140px 0 140px 9.5%;
+  gap: 96px;
+  padding: 140px 0 140px 40px;
   background: #0099FF;
   color: #FEFEFE;
   overflow: hidden;
@@ -27,7 +27,7 @@
 }
 .track::-webkit-scrollbar { display: none; }
 .card {
-  flex: 0 0 clamp(300px, 26.5vw, 540px);
+  flex: 0 0 clamp(300px, 25vw, 520px);
   scroll-snap-align: start;
   display: flex;
   flex-direction: column;
@@ -63,7 +63,7 @@
   transform: translateY(-50%);
   transition: background-color 0.2s ease, color 0.2s ease;
 }
-.prev { left: -28px; background: rgba(3, 27, 54, 0.25); color: #FEFEFE; }
+.prev { left: -84px; background: #031B36; color: #FEFEFE; }
 .next { right: 2%; background: #031B36; color: #FEFEFE; }
 .arrow:hover { background: #FEFEFE; color: #031B36; }
 
