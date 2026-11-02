@@ -5,6 +5,8 @@ import ContactSection from "../../components/ContactSection";
 import ServicesFaq, { type FaqItem } from "../../services/ServicesFaq";
 // Shared service-page template (new brand)
 import t from "../../services/svc.module.css";
+import g from "../../sections/home/ServicesGrid.module.css";
+import ServicesMark from "../../sections/home/ServicesMark";
 
 export const metadata: Metadata = {
   title: { absolute: "SEO for Accounting Firms in Canada | Scale SEO" },
@@ -19,35 +21,41 @@ const BOOKING_URL = "https://cal.com/corbinjensen-scaleseo/30min";
 
 const chips = ["Founder-led SEO", "Month-to-month engagements", "Market conflict checks"];
 
-const included: { title: string; body: string[] }[] = [
+const digital: { href: string; title: string; body: string[]; cta: string }[] = [
   {
-    title: "Accounting Service Page Optimization",
+    href: "/services/seo",
+    title: "Search Engine Optimization (SEO)",
     body: [
-      "Improving the pages that target commercial searches for corporate tax, bookkeeping, business advisory, fractional CFO, payroll, and other accounting services.",
-      "This includes keyword research, search intent, on-page optimization, internal linking, and content improvements.",
+      "Improve your firm\u2019s visibility for the accounting services you want to grow. This includes service-page improvements, local search optimization, technical SEO, and helpful content that answers prospective clients\u2019 questions.",
     ],
+    cta: "Explore SEO Services",
   },
   {
-    title: "Local SEO & Google Business Profile",
+    href: "/services/web-development",
+    title: "Website Development",
     body: [
-      "Strengthening your firm\u2019s visibility in relevant local searches and Google Maps through Google Business Profile optimization, local search research, reviews, and location-specific website improvements.",
-      "For firms serving multiple locations, I develop strategies around genuine office locations and the markets they serve.",
+      "Your website should make it easy for prospective clients to understand your services, learn about your team, and get in touch.",
+      "Scale SEO builds and improves accounting websites with clear navigation, useful service information, and a strong foundation for organic search.",
     ],
+    cta: "Explore Website Development",
   },
   {
-    title: "Accounting Content Strategy",
+    href: "/services/google-ads-management",
+    title: "Google Ads Management",
     body: [
-      "Developing useful content around the questions business owners research before engaging an accountant.",
-      "This can include corporate tax guides, payroll resources, accounting software information, and other topics that support your firm\u2019s services.",
-      "Technical accounting content should be reviewed by appropriately qualified professionals to maintain accuracy.",
+      "Google Ads can help your firm reach prospective clients searching for specific accounting services while your organic visibility develops.",
+      "Scale SEO manages search campaigns with a focus on relevant enquiries, practical budgets, and clear performance tracking.",
     ],
+    cta: "Explore Google Ads",
   },
   {
-    title: "Technical SEO & Website Architecture",
+    href: "/services/geo",
+    title: "AI Search Optimization (GEO)",
     body: [
-      "Improving crawlability, indexing, website structure, performance, structured data, and internal linking.",
-      "I also review how your service pages, industry pages, team profiles, and educational resources work together to support organic search visibility.",
+      "Prospective clients are also using AI-powered search tools to research accounting services and compare firms.",
+      "Scale SEO helps improve how your firm\u2019s services, expertise, and business information are presented and understood across traditional and AI-powered search platforms.",
     ],
+    cta: "Explore AI Search Optimization",
   },
 ];
 
@@ -281,62 +289,64 @@ export default function AccountingFirmsPage() {
         </div>
       </section>
 
-      {/* === MOST VALUABLE SERVICES — heading left, text right === */}
+      {/* === PRIORITIES — heading left, text right === */}
       <section className={t.rowsSplit} style={{ padding: 0, borderTop: 0 }}>
         <div className={t.rowsAside}>
-          <h2 className={t.h2}>SEO Built Around Your Firm&rsquo;s Most Valuable Services</h2>
+          <h2 className={t.h2}>SEO Built Around Your Firm&rsquo;s Priorities</h2>
         </div>
         <div className={t.rowsList}>
           <div className={t.body} style={{ paddingTop: 32 }}>
-            <p className={t.lead}>Not every accounting firm wants to attract the same clients.</p>
+            <p className={t.lead}>Not every accounting firm wants more of the same clients.</p>
             <p>
-              Some practices prioritize corporate tax and business accounting,
-              while others want to grow recurring bookkeeping, tax planning, or
-              advisory engagements.
+              Some firms want to grow their corporate tax and business advisory
+              work. Others want more recurring bookkeeping clients, fractional
+              CFO engagements, or enquiries from specific industries.
             </p>
             <p>
-              I start by understanding your firm&rsquo;s services, target
-              clients, and competitive market before identifying which search
-              opportunities deserve attention.
+              Scale SEO starts by understanding which services your firm wants
+              to grow and who you&rsquo;re trying to reach.
             </p>
             <p>
-              The goal isn&rsquo;t simply more website traffic. It&rsquo;s
-              stronger visibility for the accounting services your firm actually
-              wants to grow.
+              From there, the strategy focuses on making those services easier
+              to find, helping prospective clients understand your expertise,
+              and improving how your website turns visits into enquiries.
             </p>
           </div>
         </div>
       </section>
 
-      {/* === WHAT'S INCLUDED — big heading + ruled rows === */}
-      <section className={t.listSection} style={{ padding: 0 }}>
-        <div className={t.listHead}>
-          <h2 className={t.h2}>What&rsquo;s Included in Accounting Firm SEO?</h2>
-          <p className={`${t.lead} ${t.listIntro}`}>
-            Every campaign is tailored to your firm&rsquo;s website, services,
-            and market. Depending on your priorities, the work may include:
-          </p>
-        </div>
-        <div className={t.rows}>
-          {included.map((item, i) => (
-            <div key={item.title} className={t.row}>
-              <div>
-                <span className={t.rowNum}>{String(i + 1).padStart(2, "0")}</span>
-                <h3 className={t.h3}>{item.title}</h3>
-              </div>
-              <div className={`${t.body} ${t.dim}`}>
-                {item.body.map((p) => (
-                  <p key={p}>{p}</p>
-                ))}
-              </div>
-            </div>
-          ))}
-          <div className={t.row}>
-            <div />
-            <Link href="/services/seo" className={`${t.box} ${t.boxBlue}`}>
-              <Corner />
-              <span>Explore Ongoing SEO Services &rarr;</span>
-            </Link>
+      {/* === SERVICES — homepage-style blue grid: card | mark | card,
+          then card | card | intro === */}
+      <section className={g.section} id="services">
+        <h2 className={g.introTitle} style={{ maxWidth: "16ch" }}>
+          SEO &amp; Digital Services for Accounting Firms
+        </h2>
+        <div className={g.grid}>
+          {[digital[0], null, digital[1], digital[2], digital[3]].map((s, i) =>
+            s ? (
+              <Link key={s.href} href={s.href} className={g.cell}>
+                <span className={g.cellIndex}>{String(digital.indexOf(s) + 1).padStart(2, "0")}</span>
+                <h3 className={g.cellTitle}>{s.title}</h3>
+                <div className={g.cellDesc}>
+                  {s.body.map((p) => (
+                    <p key={p} style={{ marginBottom: 12 }}>{p}</p>
+                  ))}
+                </div>
+                <span className={g.cellLink}>
+                  <span>{s.cta} &rarr;</span>
+                  <span className={g.plus} aria-hidden="true">+</span>
+                </span>
+              </Link>
+            ) : (
+              <ServicesMark key={i} />
+            ),
+          )}
+          <div className={g.outro} style={{ marginTop: 0, justifyContent: "flex-end" }}>
+            <p>
+              SEO is the main focus, supported by website development, paid
+              search, and AI search optimization where they make sense for your
+              firm.
+            </p>
           </div>
         </div>
       </section>
