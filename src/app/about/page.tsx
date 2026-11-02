@@ -225,37 +225,59 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* === MEET THE FOUNDER — navy feature box === */}
-      <section className={t.featureWrap}>
-        <div className={t.feature}>
-          <div className={t.featureText}>
-            <h2 className={t.h2}>Meet the Founder</h2>
-            <h3 className={t.h3}>Corbin Jensen — Founder &amp; SEO Specialist</h3>
+      {/* === MEET THE FOUNDER — full navy section, profile left, text right === */}
+      <section className={styles.founder}>
+        <div className={styles.founderProfile}>
+          <h2 className={t.h2}>Meet the Founder</h2>
+          <div className={styles.founderPhoto}>
+            <Image
+              src="/images/corbin-about.jpg"
+              alt="Corbin Jensen, founder and SEO specialist at Scale SEO"
+              fill
+              sizes="240px"
+              loading="eager"
+            />
           </div>
-          <div className={styles.founderSide}>
-            <div className={t.body}>
-              <p>I&rsquo;m Corbin, the founder and SEO specialist behind Scale SEO.</p>
-              <p>
-                I manage every SEO campaign personally, from research and
-                strategy through to technical improvements, content, and
-                ongoing optimization.
-              </p>
-              <p>
-                My approach is straightforward: clear communication, practical
-                recommendations, and work that contributes to real business
-                outcomes.
-              </p>
-              <p>
-                I believe clients should know exactly who is working on their
-                website and have direct access to that person throughout the
-                engagement.
-              </p>
-            </div>
-            <Link href="/corbin-jensen" className={`${t.box} ${t.boxGrey}`}>
-              <Corner />
-              <span>Read Corbin&rsquo;s Bio →</span>
-            </Link>
+          <p className={styles.founderName}>
+            Corbin Jensen
+            <br />
+            <span>Founder &amp; SEO Specialist</span>
+          </p>
+          <a
+            href="https://www.linkedin.com/in/corbin-jensen-seo/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.linkedin}
+          >
+            Connect in
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+              <path d="M20.4 2H3.6C2.7 2 2 2.7 2 3.6v16.8c0 .9.7 1.6 1.6 1.6h16.8c.9 0 1.6-.7 1.6-1.6V3.6c0-.9-.7-1.6-1.6-1.6zM8 19H5V9.5h3V19zM6.5 8.2a1.7 1.7 0 1 1 0-3.5 1.7 1.7 0 0 1 0 3.5zM19 19h-3v-4.6c0-1.1 0-2.5-1.5-2.5S12.8 13 12.8 14.3V19h-3V9.5h2.9v1.3h.1c.4-.8 1.4-1.6 2.9-1.6 3.1 0 3.7 2 3.7 4.7V19z" />
+            </svg>
+          </a>
+        </div>
+        <div className={styles.founderText}>
+          <p className={styles.founderLead}>
+            I&rsquo;m Corbin, the founder and SEO specialist behind Scale SEO.
+            I manage every SEO campaign personally, from research and strategy
+            through to technical improvements, content, and ongoing
+            optimization.
+          </p>
+          <div className={styles.founderBody}>
+            <p>
+              My approach is straightforward: clear communication, practical
+              recommendations, and work that contributes to real business
+              outcomes.
+            </p>
+            <p>
+              I believe clients should know exactly who is working on their
+              website and have direct access to that person throughout the
+              engagement.
+            </p>
           </div>
+          <Link href="/corbin-jensen" className={`${t.box} ${t.boxGrey}`}>
+            <Corner />
+            <span>Read Corbin&rsquo;s Bio →</span>
+          </Link>
         </div>
       </section>
 
