@@ -262,3 +262,7 @@
   .expRows li { padding: 18px 16px; }
   .expLink { width: 100%; }
 }
+/* Visible text selection on the blue background */
+.exp ::selection { background: var(--h-navy); color: var(--h-white); }
+.expRows li:first-child::selection,
+.expRows li:hover::selection { background: var(--h-navy); color: var(--h-white); }
