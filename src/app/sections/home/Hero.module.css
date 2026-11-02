@@ -185,3 +185,65 @@
   .ctaCol { width: 100%; }
   .reviews { max-width: none; }
 }
+
+
+/* ===== New hero (DD.NYC style) + intro (Sincro style) ===== */
+.hero { padding-top: 96px; }
+.top {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: calc(100vh - 96px);
+  padding: 64px 40px 40px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--h-rule);
+}
+.mark {
+  position: absolute;
+  left: 50%;
+  top: 46%;
+  width: min(46vw, 640px);
+  height: auto;
+  transform: translate(-30%, -50%);
+  color: #D6EEFF;
+  pointer-events: none;
+}
+.h1 {
+  position: relative;
+  max-width: 13ch;
+  font-size: clamp(56px, 9vw, 168px);
+  line-height: 0.94;
+  font-weight: 500;
+  letter-spacing: -0.05em;
+  color: var(--h-navy);
+}
+.topBottom {
+  position: absolute;
+  left: 40px;
+  right: 40px;
+  bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+}
+.boxNavy { background: var(--h-navy); color: var(--h-white) !important; }
+.boxNavy:hover { background: var(--h-blue); }
+
+.introSection { padding: 120px 40px 0 !important; }
+.statement { display: flex; flex-direction: column; gap: 0.6em; max-width: 1200px; font-size: clamp(26px, 2.9vw, 48px); line-height: 1.22; letter-spacing: -0.015em; color: var(--h-navy); }
+.introBottom { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; margin-top: 140px; padding-bottom: 40px; }
+.since { font-size: 17px; line-height: 1.35; color: var(--h-navy); }
+.introBottom .box { width: min(100%, 340px); }
+
+@media (max-width: 900px) {
+  .hero { padding-top: 72px; }
+  .top { min-height: calc(88svh - 72px); padding: 40px 16px 160px; justify-content: flex-start; }
+  .h1 { margin-top: 32px; font-size: clamp(48px, 14vw, 72px); }
+  .mark { width: 78vw; left: auto; right: -18vw; top: 50%; transform: translateY(-50%); }
+  .topBottom { left: 16px; right: 16px; bottom: 24px; flex-direction: column; align-items: stretch; }
+  .introSection { padding: 56px 16px 0 !important; }
+  .introBottom { flex-direction: column; align-items: stretch; margin-top: 48px; }
+  .box { width: 100%; }
+}

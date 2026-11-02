@@ -1,3 +1,4 @@
+import Link from "next/link";
 import TrustindexWidget from "../../components/TrustindexWidget";
 import styles from "./Hero.module.css";
 
@@ -10,19 +11,20 @@ const Corner = () => (
 export default function Hero() {
   return (
     <header className={styles.hero}>
-      {/* Brand intro: giant wordmark left, one-line summary right */}
-      <div className={styles.brandRow}>
-        <div className={styles.wordmark} aria-hidden="true">Scale SEO</div>
-        <div className={styles.brandSide}>
-          <p className={styles.brandLine}>
-            An independent SEO practice for professional service and B2B
-            businesses.
-          </p>
-          <p className={styles.brandNote}>
-            Founder-led SEO
-            <br />
-            since 2025
-          </p>
+      {/* Hero: big H1 over a large light-blue logo mark; reviews bottom-left,
+          contact button bottom-right */}
+      <div className={styles.top}>
+        <svg className={styles.mark} viewBox="0 0 366 366" fill="none" stroke="currentColor" aria-hidden="true">
+          <circle cx="183" cy="183" r="164" strokeWidth="36" />
+          <path d="M101 139 H224.5 V262" strokeWidth="38" />
+        </svg>
+        <h1 className={styles.h1}>Independent SEO Consultancy in Calgary</h1>
+        <div className={styles.topBottom}>
+          <TrustindexWidget id="6c14fb6849673601c4969fa538a" className={styles.reviews} />
+          <Link href="/contact" className={`${styles.box} ${styles.boxNavy}`}>
+            <Corner />
+            <span>Start a Project →</span>
+          </Link>
         </div>
       </div>
 
@@ -51,48 +53,35 @@ export default function Hero() {
         </div>
       </figure>
 
-      <div className={`${styles.split} ${styles.splitBelow}`}>
-        <div className={styles.left}>
-          <h1 className={styles.title}>
-            Calgary SEO Company for Professional Service Businesses
-          </h1>
+      {/* Intro: large statement, label bottom-left, About button bottom-right */}
+      <section className={styles.introSection}>
+        <div className={styles.statement}>
+          <p>
+            Scale SEO is an independent SEO consultancy based in Calgary,
+            Alberta, helping accounting firms, professional service businesses,
+            and B2B companies improve their visibility on Google and attract
+            qualified enquiries.
+          </p>
+          <p>
+            Founded in 2025, Scale SEO provides search engine optimization,
+            website development, Google Ads management, and AI search
+            optimization. Each engagement combines practical strategy, hands-on
+            implementation, and ongoing improvements focused on long-term
+            organic growth.
+          </p>
         </div>
-
-        <div className={styles.right}>
-          <div className={styles.intro}>
-            <p>
-              Scale SEO is an independent SEO consultancy based in Calgary,
-              Alberta, helping accounting firms, professional service
-              businesses, and B2B companies improve their visibility on Google
-              and attract qualified enquiries.
-            </p>
-            <p>
-              Through technical SEO, content optimization, and ongoing website
-              improvements, I build search strategies focused on sustainable
-              organic growth.
-            </p>
-          </div>
-
-          <div className={styles.bottom}>
-            <TrustindexWidget id="6c14fb6849673601c4969fa538a" className={styles.reviews} />
-            <div className={styles.ctaCol}>
-              <a
-                href="https://cal.com/corbinjensen-scaleseo/30min"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.box}
-              >
-                <Corner />
-                <span>Book a Consultation →</span>
-              </a>
-              <a href="#contact" className={styles.textLink}>
-                Send an Email →
-              </a>
-            </div>
-          </div>
+        <div className={styles.introBottom}>
+          <span className={styles.since}>
+            Founder-led
+            <br />
+            since 2025
+          </span>
+          <Link href="/about" className={`${styles.box} ${styles.boxNavy}`}>
+            <Corner />
+            <span>More About Scale SEO →</span>
+          </Link>
         </div>
-      </div>
-
+      </section>
     </header>
   );
 }
