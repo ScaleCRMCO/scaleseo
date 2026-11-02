@@ -28,31 +28,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Proof band: full-width grey band with the data image and a stat card */}
-      <figure className={styles.band}>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/images/gsc-performance-mockup-3d.webp"
-          alt="Google Search Console performance data showing clicks and impressions growth"
-          className={styles.bandImg}
-        />
-        <div className={styles.card}>
-          <div className={styles.cardTag}>
-            <Corner />
-            <span>Results</span>
-          </div>
-          <div className={styles.cardBody}>
-            <span className={styles.cardValue}>+125%</span>
-            <span className={styles.cardLabel}>
-              Search impressions for an accounting firm
-            </span>
-            <figcaption className={styles.cardCaption}>
-              Real Google Search Console Data
-            </figcaption>
-          </div>
-        </div>
-      </figure>
-
       {/* Intro: large statement, label bottom-left, About button bottom-right */}
       <section className={styles.introSection}>
         <div className={styles.statement}>

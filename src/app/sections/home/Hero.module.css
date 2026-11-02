@@ -247,3 +247,20 @@
   .introBottom { flex-direction: column; align-items: stretch; margin-top: 48px; }
   .box { width: 100%; }
 }
+
+/* Edits: DD.NYC-sized H1 higher up, solid blue mark, compact intro */
+.top { justify-content: flex-start; padding-top: 120px; }
+.h1 { font-size: clamp(52px, 7.6vw, 140px); line-height: 0.95; max-width: 14ch; }
+.mark { color: #0099FF; top: 44%; width: min(40vw, 560px); }
+.topBottom { left: 16px; bottom: 16px; right: 40px; }
+.reviews { margin: 0 !important; }
+.statement { font-size: clamp(20px, 1.9vw, 30px); max-width: 1000px; }
+.introSection { padding-top: 96px !important; }
+.introBottom { margin-top: 80px; }
+@media (max-width: 900px) {
+  .top { padding-top: 32px; }
+  .topBottom { left: 8px; right: 16px; bottom: 16px; }
+  .statement { font-size: 21px; }
+  .introSection { padding-top: 56px !important; }
+  .introBottom { margin-top: 40px; }
+}
