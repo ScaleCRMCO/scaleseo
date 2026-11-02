@@ -27,7 +27,7 @@ export default function Hero() {
           <TrustindexWidget id="cebaa07845048474c13615cd1b2" className={styles.reviews} />
           <Link href="/contact" className={`${styles.box} ${styles.boxNavy}`}>
             <Corner />
-            <span>Start a Project →</span>
+            <span>Let&rsquo;s Talk →</span>
           </Link>
         </div>
       </div>
