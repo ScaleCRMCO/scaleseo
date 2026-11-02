@@ -415,21 +415,28 @@ export default function AccountingFirmsPage() {
       {/* === WHAT HELPS — pinned scroll section with changing logo shapes === */}
       <AttractClients />
 
-      {/* === WHY WORK WITH SCALE SEO — grey, aside + four white boxes === */}
-      <section className={t.grey}>
-        <div className={t.asideGrid}>
-          <div className={t.aside}>
-            <h2 className={t.h2}>Why Work With Scale SEO?</h2>
-          </div>
-          <div className={t.cardGrid}>
-            {reasons.map((r, i) => (
-              <article key={r.title} className={t.card}>
-                <span className={t.cardLabel}>{String(i + 1).padStart(2, "0")}</span>
-                <h3 className={t.h3}>{r.title}</h3>
-                <p>{r.body}</p>
-              </article>
+      {/* === WHY CHOOSE SCALE SEO — slow marquee heading, then simple points === */}
+      <section className={t.whySection}>
+        <div className={t.whyMarquee}>
+          <div className={t.whyTrack}>
+            {[0, 1, 2, 3].map((n) => (
+              <span key={n} className={t.whyItem} aria-hidden={n > 0}>
+                {n === 0 ? <h2 className={t.whyTitle}>Why Choose Scale SEO</h2> : <span className={t.whyTitle}>Why Choose Scale SEO</span>}
+                <svg className={t.whyMark} viewBox="0 0 366 366" fill="none" stroke="currentColor" aria-hidden="true">
+                <circle cx="183" cy="183" r="164" strokeWidth="36" />
+                <path d="M101 139 H224.5 V262" strokeWidth="38" />
+              </svg>
+              </span>
             ))}
           </div>
+        </div>
+        <div className={t.whyList}>
+          {reasons.map((r) => (
+            <article key={r.title} className={t.whyPoint}>
+              <h3 className={t.whyPointTitle}>{r.title}</h3>
+              <p className={t.whyPointBody}>{r.body}</p>
+            </article>
+          ))}
         </div>
       </section>
 
