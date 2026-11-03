@@ -373,6 +373,11 @@ export default function EdmontonPage() {
               the services, locations, and types of customers that matter most to
               each business.
             </p>
+            <p>
+              For businesses serving clients across Canada rather than one
+              region, see{" "}
+              <Link href="/services/national-seo" className={t.inlineLink}>national SEO services</Link>.
+            </p>
           </div>
         </div>
       </section>

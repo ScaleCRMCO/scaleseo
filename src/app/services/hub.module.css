@@ -140,3 +140,10 @@
 .card:hover .inlineLink:hover { color: var(--h-white); }
 .card .cardLink { color: inherit; text-decoration: none; }
 .card .cardLink:hover .plus { background: var(--h-blue); color: var(--h-white); }
+
+/* National SEO blurb in the grid's bottom-right cell (homepage style) */
+.outro { grid-column: 3; margin-top: clamp(80px, 10vw, 180px); display: flex; flex-direction: column; justify-content: flex-end; gap: 20px; font-size: clamp(19px, 1.6vw, 24px); line-height: 1.35; }
+.outroLink { align-self: flex-start; color: inherit; font-size: 17px; text-decoration: underline; text-underline-offset: 4px; }
+.outroLink:hover { color: var(--h-blue); }
+@media (max-width: 1100px) { .outro { grid-column: 1 / -1; max-width: 620px; margin-top: 32px; } }
+@media (max-width: 640px) { .outro { margin-top: 16px; } }

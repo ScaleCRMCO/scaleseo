@@ -649,6 +649,25 @@ export default function SeoServicePage() {
         </div>
       </section>
 
+      {/* === NATIONAL SEO — short dedicated link section === */}
+      <section className={t.prioSection} style={{ borderBottom: "1px solid var(--h-rule)" }}>
+        <h2 className={t.prioTitle}>Reaching Customers Across Canada</h2>
+        <div className={t.prioRow}>
+          <p className={t.prioLabel}>Not every business is limited to one city.</p>
+          <div className={t.prioBody}>
+            <p>
+              If you serve clients in several provinces, a national SEO strategy
+              puts more emphasis on specialized service pages, competitor
+              research, and the strength of your website as a whole.
+            </p>
+            <Link href="/services/national-seo" className={`${t.box} ${t.boxNavy}`} style={{ alignSelf: "flex-start", marginTop: 16 }}>
+              <Corner />
+              <span>Explore National SEO Services &rarr;</span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* === FIRST 90 DAYS — heading left, month rows right === */}
       <section className={t.rowsSplit} style={{ padding: 0 }}>
         <div className={t.rowsAside}>

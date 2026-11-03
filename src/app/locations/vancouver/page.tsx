@@ -338,6 +338,11 @@ export default function VancouverPage() {
               businesses identify the services and searches most relevant to
               their growth.
             </p>
+            <p>
+              For businesses serving clients across the country, not just Metro
+              Vancouver, see{" "}
+              <Link href="/services/national-seo" className={t.inlineLink}>national SEO services</Link>.
+            </p>
           </div>
         </div>
       </section>
