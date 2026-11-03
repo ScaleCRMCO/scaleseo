@@ -6,6 +6,7 @@ import CountUp from "../../components/CountUp";
 import PinnedPoints, { type PinnedItem } from "../../components/PinnedPoints";
 import ServicesFaq, { type FaqItem } from "../ServicesFaq";
 import t from "../svc.module.css";
+import ab from "../../about/page.module.css";
 
 const TITLE = "National SEO Services Canada | Scale SEO";
 const DESCRIPTION =
@@ -382,7 +383,7 @@ export default function NationalSeoPage() {
       </section>
 
       {/* === WHAT IS NATIONAL SEO — big H2, label left, text right === */}
-      <section className={t.prioSection}>
+      <section className={t.prioSection} style={{ background: "var(--h-navy)", color: "var(--h-white)" }}>
         <h2 className={t.prioTitle}>What Is National SEO?</h2>
         <div className={t.prioRow}>
           <p className={t.prioLabel} style={{ maxWidth: "26ch" }}>
@@ -435,26 +436,33 @@ export default function NationalSeoPage() {
         </div>
       </section>
 
-      {/* === WHAT'S INCLUDED — numbered grid === */}
-      <section className={t.steps}>
-        <h2 className={t.h2}>What&rsquo;s Included in National SEO Services?</h2>
-        <p className={t.body} style={{ maxWidth: 720, marginTop: 24 }}>
-          Every national SEO campaign begins with an assessment of your website,
-          competition, and target customers. The work is then prioritized around
-          the opportunities most relevant to your business.
-        </p>
-        <div className={t.stepGrid}>
+      {/* === WHAT'S INCLUDED — About-page staggered boxes: three on the right,
+          three on the left === */}
+      <section className={ab.partners} style={{ borderTop: "1px solid var(--h-rule)" }}>
+        <div className={ab.partnersHead}>
+          <h2 className={ab.partnersTitle}>What&rsquo;s Included in National SEO Services?</h2>
+          <div className={ab.partnersText}>
+            <p>
+              Every national SEO campaign begins with an assessment of your
+              website, competition, and target customers. The work is then
+              prioritized around the opportunities most relevant to your
+              business.
+            </p>
+          </div>
+        </div>
+        <div className={ab.partnersGrid}>
           {included.map((item, i) => (
-            <div key={item.title} className={t.step}>
-              <h3 className={t.stepTitle}>
-                <span>{String(i + 1).padStart(2, "0")}.</span> {item.title}
-              </h3>
-              <div className={`${t.body} ${t.dim}`}>
-                {item.body.map((p) => (
-                  <p key={p}>{p}</p>
-                ))}
-              </div>
-            </div>
+            <article
+              key={item.title}
+              className={ab.pBox}
+              style={i < 3 ? { gridColumn: i + 2, gridRow: 1 } : { gridColumn: i - 2, gridRow: 2 }}
+            >
+              <span className={ab.pNum}>{String(i + 1).padStart(2, "0")}</span>
+              <h3 className={ab.pTitle}>{item.title}</h3>
+              {item.body.map((p) => (
+                <p key={p} className={ab.pBody}>{p}</p>
+              ))}
+            </article>
           ))}
         </div>
       </section>
