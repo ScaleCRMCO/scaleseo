@@ -16,6 +16,7 @@ const pages = [
 const services = [
   { href: "/services", label: "All Services" },
   { href: "/services/seo", label: "SEO" },
+  { href: "/services/national-seo", label: "National SEO" },
   { href: "/services/seo-audits", label: "SEO Audits" },
   { href: "/services/web-development", label: "Web Development" },
   { href: "/services/google-ads-management", label: "Google Ads" },
