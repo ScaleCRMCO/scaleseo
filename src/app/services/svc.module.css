@@ -373,3 +373,5 @@
   .prioSection { padding: 64px 16px !important; }
   .prioRow { grid-template-columns: 1fr; margin-top: 48px; gap: 24px; }
 }
+.btnRow { display: flex; gap: 16px; }
+@media (max-width: 900px) { .btnRow { flex-direction: column; } }

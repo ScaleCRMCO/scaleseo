@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import type { ReactNode } from "react";
 import Link from "next/link";
 import Breadcrumbs from "../../components/Breadcrumbs";
 import ContactSection from "../../components/ContactSection";
@@ -7,6 +6,10 @@ import ServicesMark from "../../sections/home/ServicesMark";
 import ServicesFaq, { type FaqItem } from "../ServicesFaq";
 // Shared service page template (new brand)
 import t from "../svc.module.css";
+import ab from "../../about/page.module.css";
+import g from "../../sections/home/ServicesGrid.module.css";
+import CountUp from "../../components/CountUp";
+import PinnedPoints, { type PinnedItem } from "../../components/PinnedPoints";
 
 export const metadata: Metadata = {
   title: "Search Engine Optimization Services Calgary | Scale SEO",
@@ -15,228 +18,104 @@ export const metadata: Metadata = {
   alternates: { canonical: "/services/seo" },
 };
 
-const BOOKING_URL = "https://cal.com/corbinjensen-scaleseo/30min";
 
 /* === Content ============================================================ */
 
-const included: { title: string; lead: string; body: string[] }[] = [
+const included = [
+  { title: "SEO Strategy & Research", body: "Identify valuable search opportunities through keyword research, competitor analysis, and an assessment of your existing website performance." },
+  { title: "Technical SEO", body: "Address crawling, indexing, redirects, structured data, website performance, and other technical issues that may limit organic visibility." },
+  { title: "On-Page SEO", body: "Improve service pages, headings, metadata, internal linking, and website structure to better match search intent and help visitors find what they need." },
+  { title: "SEO Content Strategy", body: "Develop useful service content and supporting resources around the questions, services, and industries most relevant to your customers." },
+  { title: "Local & National SEO", body: "Improve visibility in the markets your business serves, whether that\u2019s Calgary, multiple Canadian cities, or customers across the country." },
+  { title: "Website Optimization & Reporting", body: "Improve navigation, calls to action, and other website elements while monitoring organic traffic, search rankings, and relevant enquiries." },
+];
+
+const cases = [
   {
-    title: "SEO Strategy & Research",
-    lead: "Identify the searches that can generate meaningful business opportunities.",
+    name: "Jensen CPA",
     body: [
-      "Keyword research goes beyond search volume. I assess commercial intent, existing rankings, competing websites, and the services your business wants to grow.",
-      "This includes mapping keywords to appropriate pages, identifying content gaps, and determining whether existing pages should be improved before new ones are created.",
+      "During the first four months, Jensen CPA increased Google Search impressions by 125% and organic clicks by 92%.",
+      "The campaign focused on corporate tax services, website structure, and commercially relevant search opportunities.",
     ],
+    stats: [
+      { from: 0, to: 125, prefix: "+", suffix: "%", label: "Search Impressions" },
+      { from: 0, to: 92, prefix: "+", suffix: "%", label: "Organic Clicks" },
+    ],
+    href: "/results/jensen-cpa",
+    cta: "View Jensen CPA Case Study",
+    img: "/images/jensen-cpa-cover.webp",
   },
   {
-    title: "Technical SEO",
-    lead: "Resolve technical issues that can limit organic visibility.",
+    name: "Empire Accountants",
     body: [
-      "I investigate crawling, indexation, rendering, redirects, canonicalization, website performance, structured data, and other technical issues affecting how search engines access and understand your website.",
-      "Working directly with platforms including Webflow, WordPress, and custom-coded websites allows me to implement many improvements rather than simply provide recommendations.",
+      "Ongoing SEO helped improve priority commercial keyword rankings and organic search performance.",
+      "The work included service-page optimization, technical SEO, content development, and internal linking.",
     ],
-  },
-  {
-    title: "On-Page SEO & Website Structure",
-    lead: "Strengthen the pages most important to your business.",
-    body: [
-      "I improve commercial landing pages around search intent, content quality, headings, metadata, internal linking, and site architecture.",
-      "The objective is to make each page a useful resource for potential customers while establishing a clearer relationship between your website’s services, industries, and supporting content.",
+    stats: [
+      { from: 5, to: 1, prefix: "Page ", suffix: "", label: "Up from page 5" },
+      { from: 0, to: 2, prefix: "", suffix: "\u00d7", label: "Search Visibility & Clicks" },
     ],
+    href: "/results/empire-accountants",
+    cta: "View Empire Accountants Case Study",
+    img: "/images/empire-accountants-cover.webp",
   },
-  {
-    title: "SEO Content Strategy",
-    lead: "Create content with a clear purpose.",
-    body: [
-      "More content doesn’t automatically produce better SEO results.",
-      "I prioritize improving existing pages, developing commercially relevant service content, and publishing useful supporting resources where genuine search opportunities exist.",
-      "Content should answer real customer questions and connect naturally to the services your business provides.",
-    ],
-  },
+];
+
+const markets = [
   {
     title: "Local SEO",
-    lead: "Improve visibility in the geographic markets you serve.",
-    body: [
-      "For businesses targeting local customers, campaigns can include Google Business Profile optimization, local keyword research, Google Maps visibility, citations, location content, and local search performance analysis.",
-      "The approach depends on whether your business serves one city, multiple locations, or a broader regional market.",
-    ],
+    body: "For businesses targeting customers in Calgary or other specific service areas, SEO can include Google Business Profile improvements, local service pages, and geographic keyword targeting.",
   },
   {
-    title: "Website & Conversion Improvements",
-    lead: "Turn relevant search traffic into better business opportunities.",
-    body: [
-      "A page can rank well without generating enquiries.",
-      "Where necessary, I improve website navigation, service-page layouts, calls to action, trust signals, forms, and other elements that influence how visitors interact with your website.",
-      "Because I work directly on client websites, these improvements can be incorporated into the wider SEO strategy.",
-    ],
+    title: "National SEO",
+    body: "For businesses serving customers across Canada, the focus shifts toward broader search competition, specialized service pages, website structure, and content relevant to a national audience.",
+    href: "/services/national-seo",
+    cta: "Explore National SEO Services",
   },
   {
-    title: "Tracking & Reporting",
-    lead: "Measure what changes and what matters.",
-    body: [
-      "I use Google Search Console, website analytics, keyword tracking, and relevant conversion data to monitor campaign performance.",
-      "Reporting focuses on changes in organic visibility, important landing pages, qualified traffic, enquiries, completed work, and upcoming priorities.",
-      "The objective is to understand what’s working and use that information to guide future decisions.",
-    ],
+    title: "Professional Services & B2B SEO",
+    body: "For accounting firms, consultants, and B2B businesses, I prioritize commercially relevant searches rather than traffic volume alone.",
+    href: "/industries/accounting-firms",
+    cta: "Explore SEO for Accounting Firms",
   },
 ];
 
-const exampleWork: [string, string][] = [
-  ["Service-page optimization", "Expanding important accounting pages around relevant services, customer questions, and commercial search intent."],
-  ["Website architecture", "Strengthening relationships between the main accounting services, individual service pages, and industry content."],
-  ["Internal linking", "Connecting supporting articles, service pages, and team profiles to improve navigation and reinforce topical relationships."],
-  ["Technical SEO", "Reviewing crawling, indexing, structured data, and other technical foundations."],
-  ["Content strategy", "Developing supporting resources connected to the accounting services the firm wanted to grow."],
+const process: PinnedItem[] = [
+  { title: "Review & Research", body: ["Assess your website\u2019s current search performance, technical issues, competitors, and opportunities."] },
+  { title: "Build a Strategy", body: ["Develop a prioritized SEO plan based on your most valuable services and the improvements your website needs."] },
+  { title: "Implement Improvements", body: ["Make technical changes, optimize important pages, improve website structure, and develop relevant content."] },
+  { title: "Monitor & Refine", body: ["Track search performance, review results, and adjust priorities as your website develops."] },
 ];
 
-const models: { title: string; body: string[] }[] = [
-  {
-    title: "Local SEO",
-    body: [
-      "For businesses serving customers in a specific city or region, local search visibility can be an important source of enquiries.",
-      "A Calgary business may need to compete in traditional organic search results while also strengthening its Google Business Profile and visibility within Google Maps.",
-      "The strategy needs to reflect its actual service area, competitors, and how customers search locally.",
-    ],
-  },
-  {
-    title: "Regional & National SEO",
-    body: [
-      "Businesses serving customers across Alberta or Canada often depend more heavily on strong service pages, industry-specific content, technical foundations, and website authority.",
-      "In these markets, the website needs to clearly communicate its services and expertise without relying entirely on proximity-based searches.",
-    ],
-  },
-  {
-    title: "B2B & Professional Services SEO",
-    body: [
-      "Professional service searches often have lower search volumes but greater commercial value.",
-      "For example, someone searching for fractional CFO services in Calgary may represent a more relevant opportunity for an accounting firm than a much broader informational search attracting thousands of visitors.",
-      "That doesn’t mean low-volume keywords are automatically valuable. Search intent, service relevance, competition, and potential client value all need to be considered.",
-      "This is why my approach prioritizes commercially relevant search opportunities rather than traffic volume alone.",
-    ],
-  },
+const fit = [
+  "Offers services people actively search for on Google.",
+  "Operates in a competitive local or national market.",
+  "Wants to improve its existing website and search visibility.",
+  "Values ongoing website improvements rather than one-off recommendations.",
 ];
 
-const months: { title: string; body: string[] }[] = [
-  {
-    title: "Month 1 — Audit, Research & Strategy",
-    body: [
-      "The first step is understanding your website’s existing performance and identifying the most important opportunities.",
-      "I review Google Search Console data, technical issues, existing rankings, priority service pages, competitors, website architecture, and target markets.",
-      "From there, I establish a prioritized roadmap that identifies what needs attention first and why.",
-    ],
-  },
-  {
-    title: "Month 2 — Implementation & Optimization",
-    body: [
-      "Once the main priorities are established, the focus shifts toward implementing improvements.",
-      "Depending on the website, this may involve resolving technical problems, improving commercial service pages, restructuring content, strengthening internal links, or optimizing local search signals.",
-      "The highest-priority work is addressed first rather than spreading effort equally across every SEO activity.",
-    ],
-  },
-  {
-    title: "Month 3 — Expansion & Performance Review",
-    body: [
-      "As initial improvements are implemented, I review available performance data and identify the next opportunities.",
-      "This may involve expanding service content, improving pages gaining search visibility, developing supporting articles, or addressing additional technical and competitive issues.",
-      "The next phase is determined by the website’s progress and remaining opportunities.",
-    ],
-  },
-  {
-    title: "Month 4+ — Continue Improving What Works",
-    body: [
-      "SEO is an ongoing process, not a series of disconnected monthly projects.",
-      "As more search data becomes available, I refine existing pages, expand into relevant opportunities, monitor competitors, and adjust priorities based on performance and business goals.",
-      "The aim is to build on previous improvements rather than repeatedly starting from scratch.",
-    ],
-  },
-];
-
-const goodFit = [
-  "Offer services potential customers actively search for",
-  "Have valuable client relationships or commercially important services",
-  "Operate in competitive local, regional, or national markets",
-  "Want to strengthen organic visibility over time",
-  "Have the capacity to take on additional customers",
-  "Need someone who can implement improvements directly",
+const pricingPoints = [
+  "Month-to-month engagements",
+  "No long-term contract lock-ins",
+  "Direct access to the person doing the work",
+  "You retain ownership of your website, content, and accounts",
 ];
 
 const faqs: FaqItem[] = [
-  {
-    q: "How long does SEO take to work?",
-    a: [
-      "SEO generally develops over months rather than days or weeks. Some technical and on-page improvements can produce relatively quick changes, while competitive commercial searches may take considerably longer.",
-      "The timeline depends on your website’s starting position, competition, existing authority, content, and target market. I assess these factors before setting expectations.",
-    ],
-  },
-  {
-    q: "How much do SEO services cost?",
-    a: [
-      "Monthly SEO campaigns start from $3,000 CAD + GST, with the final scope determined by your website, competition, and business goals.",
-    ],
-    link: { href: "/pricing", label: "View SEO Pricing" },
-  },
-  {
-    q: "Do you guarantee first-page Google rankings?",
-    a: [
-      "No. No SEO provider controls Google’s rankings or can guarantee specific positions.",
-      "I focus on improving the factors within our control and measuring progress through organic visibility, relevant traffic, and business opportunities.",
-    ],
-  },
-  {
-    q: "Can you implement SEO changes directly on my website?",
-    a: [
-      "Yes. I implement many technical, structural, content, and on-page improvements directly on client websites.",
-      "This includes working with platforms such as Webflow, WordPress, and custom-coded websites, depending on the project.",
-    ],
-  },
-  {
-    q: "Do you provide local SEO?",
-    a: [
-      "Yes. Local SEO can form part of an ongoing campaign for businesses targeting specific cities or service areas.",
-      "This may include Google Business Profile optimization, local landing pages, geographic keyword targeting, citations, and local search performance monitoring.",
-    ],
-  },
-  {
-    q: "How do you measure SEO performance?",
-    a: [
-      "I review Google Search Console data, organic traffic, important keyword rankings, landing-page performance, conversions, enquiries, and other metrics relevant to the business.",
-      "The goal is to understand whether your website is becoming more visible to the right audience and contributing to meaningful business opportunities.",
-    ],
-  },
-  {
-    q: "Do I need a long-term SEO contract?",
-    a: [
-      "No. Ongoing SEO campaigns are month-to-month.",
-      "Your website, content, accounts, and other digital assets remain yours.",
-    ],
-  },
+  { q: "How long does SEO take to work?", a: ["SEO generally takes several months to produce meaningful results. Timelines depend on your website\u2019s current condition, competition, existing visibility, and target searches."] },
+  { q: "How much do SEO services cost?", a: ["Ongoing SEO starts at $3,000 CAD per month, plus applicable taxes. Each campaign is scoped individually based on your business needs."] },
+  { q: "Do you provide SEO outside Calgary?", a: ["Yes. Scale SEO is based in Calgary and works remotely with businesses across Canada, including [Vancouver](/locations/vancouver) and [Edmonton](/locations/edmonton). I also work with international clients."] },
+  { q: "Can you make SEO changes directly to my website?", a: ["Yes. I implement technical, content, and structural improvements directly on client websites, including those built with Webflow, WordPress, and other supported platforms."] },
+  { q: "Do you guarantee Google rankings?", a: ["No. Google rankings cannot be guaranteed. I focus on practical improvements and measurable progress in relevant search visibility, traffic, and business enquiries."] },
 ];
 
-// Paragraph text with [label](/path) links rendered as <Link>s
-const LINK = /\[([^\]]+)\]\(([^)]+)\)/g;
-function rich(text: string) {
-  const out: ReactNode[] = [];
-  let last = 0;
-  for (const m of text.matchAll(LINK)) {
-    if (m.index! > last) out.push(text.slice(last, m.index));
-    out.push(
-      <Link key={m.index} href={m[2]} className={t.inlineLink}>
-        {m[1]}
-      </Link>
-    );
-    last = m.index! + m[0].length;
-  }
-  if (last < text.length) out.push(text.slice(last));
-  return out;
-}
+const CONTACT_URL = "/contact";
 
 const Corner = () => (
   <svg className={t.corner} viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
     <path d="M1 1.5h7.5V9" />
   </svg>
 );
-
-const pad = (i: number) => String(i + 1).padStart(2, "0");
 
 /* === Schema — WebPage + Service + BreadcrumbList graph, linked to the
    global #website and #organization nodes in layout.tsx. Includes this
@@ -422,360 +301,224 @@ export default function SeoServicePage() {
         </div>
       </header>
 
-      {/* === INTRO — stat left, intro + actions right === */}
-      <section className={t.split} style={{ padding: 0 }}>
-        <div className={t.splitLeft}>
-          <div className={t.chips}>
-            {["Strategy", "Technical SEO", "On-Page", "Content", "Local SEO", "Conversion", "Reporting"].map((c) => (
-              <span key={c} className={t.chip}>{c}</span>
-            ))}
-          </div>
-          <div>
-            <div className={t.stat}>Page 5 → 1</div>
-            <p className={t.statLabel}>Priority keyword rankings for an accounting firm</p>
-          </div>
+      {/* === INTRO — large statement === */}
+      <section className={t.statementSection}>
+        <div className={t.statement}>
+          <p>
+            Scale SEO provides hands-on search engine optimization for
+            professional service and B2B businesses in Calgary and across Canada.
+          </p>
+          <p>
+            I&rsquo;m Corbin Jensen, founder of Scale SEO. I manage every
+            campaign directly, combining technical SEO, website improvements, and
+            content strategy to help your business reach the right customers.
+          </p>
         </div>
-        <div className={t.splitRight}>
-          <div className={t.body}>
-            <p className={t.lead}>
-              Scale SEO provides ongoing search engine optimization for
-              professional service and B2B businesses looking to attract more
-              qualified enquiries through Google.
-            </p>
-            <p>
-              Based in Calgary, I manage every campaign directly, combining
-              technical SEO, service-page improvements, content strategy, and
-              ongoing performance analysis. The work is tailored to your website,
-              market, and commercial priorities rather than a fixed monthly
-              checklist.
-            </p>
-          </div>
-          <div className={t.boxRow}>
-            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className={`${t.box} ${t.boxNavy}`}>
-              <Corner />
-              <span>Book a Strategy Call</span>
-            </a>
+        <div className={t.statementBottom}>
+          <span className={t.statementNote}>
+            <strong>Ongoing SEO for businesses that want more qualified enquiries through Google.</strong>
+          </span>
+          <div className={t.btnRow}>
             <Link href="/results" className={`${t.box} ${t.boxGrey}`}>
               <Corner />
-              <span>View Client Results</span>
+              <span>View Client Results &rarr;</span>
             </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* === WHAT'S INCLUDED — big heading + ruled rows === */}
-      <section className={t.listSection} id="included" style={{ padding: 0 }}>
-        <div className={t.listHead}>
-          <h2 className={t.h2}>What&rsquo;s Included in an Ongoing SEO Campaign?</h2>
-          <div className={`${t.body} ${t.listIntro}`}>
-            <p>
-              Every website has different challenges. Some need technical
-              improvements, others need stronger service pages, and some have
-              existing rankings that aren&rsquo;t generating enough enquiries.
-            </p>
-            <p>
-              I assess where your website stands, identify the opportunities most
-              relevant to your business, and prioritize the work accordingly.
-            </p>
-          </div>
-        </div>
-        <div className={t.rows}>
-          {included.map((item, i) => (
-            <div key={item.title} className={t.row}>
-              <div>
-                <span className={t.rowNum}>{pad(i)}</span>
-                <h3 className={t.h3}>{item.title}</h3>
-                <p className={t.rowLead}>{item.lead}</p>
-              </div>
-              <div className={`${t.body} ${t.dim}`}>
-                {item.body.map((p) => (
-                  <p key={p}>{p}</p>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* === HOW I PRIORITIZE — heading left, text right === */}
-      <section className={t.rowsSplit} style={{ padding: 0, borderTop: 0 }}>
-        <div className={t.rowsAside}>
-          <h2 className={t.h2}>How I Prioritize SEO Work</h2>
-        </div>
-        <div className={t.rowsList}>
-          <div className={t.body} style={{ paddingTop: 32, paddingBottom: 32 }}>
-            <p className={t.lead}>
-              SEO campaigns shouldn&rsquo;t revolve around completing the same
-              list of tasks every month.
-            </p>
-            <p>
-              A website with indexing problems needs a different strategy from
-              one that ranks well but struggles to convert visitors. Likewise, an
-              established website with strong service pages may benefit more from
-              improving existing rankings than publishing additional content.
-            </p>
-            <p>
-              My approach is to identify the constraints and opportunities that
-              matter most before deciding what to implement.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* === EXAMPLE — navy feature box === */}
-      <section className={t.featureWrap}>
-        <div className={t.feature}>
-          <div className={t.featureText}>
-            <span className={t.eyebrow}>Case Example</span>
-            <h2 className={t.h2}>An Example From a Real Accounting SEO Campaign</h2>
-            <div className={t.body}>
-              <p>
-                When working with{" "}
-                <Link href="/results/empire-accountants" className={t.inlineLink}>Empire Accountants</Link>,
-                a Brisbane accounting and advisory firm, the opportunity extended
-                beyond increasing general website traffic.
-              </p>
-              <p>
-                The firm offered established services across business
-                accounting, tax, bookkeeping, SMSFs, and advisory. The website
-                needed to represent those services more effectively in organic
-                search.
-              </p>
-            </div>
-          </div>
-          <div className={t.featureSide}>
-            <div className={t.body}>
-              <p>The campaign involved several connected improvements:</p>
-              <ul className={t.darkList}>
-                {exampleWork.map(([k, v]) => (
-                  <li key={k}>
-                    <strong>{k}:</strong> {v}
-                  </li>
-                ))}
-              </ul>
-              <p>
-                Rather than treating each activity as an isolated task, the work
-                focused on building a more connected website around the
-                firm&rsquo;s actual expertise and services.
-              </p>
-              <p>
-                This is how I approach ongoing SEO: identify the opportunity,
-                improve the relevant parts of the website, measure the response,
-                and adjust priorities as new information becomes available.
-              </p>
-            </div>
-            <div className={t.featureLinks}>
-              <Link href="/results/empire-accountants" className={`${t.box} ${t.boxGrey}`}>
-                <Corner />
-                <span>Read the Empire Accountants Case Study &rarr;</span>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* === RESULTS — grey, heading + two metric boxes === */}
-      <section className={t.grey} id="results">
-        <div className={t.asideGrid}>
-          <div className={t.aside}>
-            <h2 className={t.h2}>SEO Results From Real Client Campaigns</h2>
-            <p className={t.body}>
-              SEO performance should be evaluated using real search data, not
-              just reports of completed tasks.
-            </p>
-            <span className={t.eyebrow} style={{ margin: 0 }}>Empire Accountants &mdash; Brisbane, Australia</span>
-          </div>
-          <div className={t.cardGrid}>
-            <article className={t.card}>
-              <span className={t.metricValue}>Page 5 &rarr; Page 1</span>
-              <p>
-                Priority commercial keyword rankings improved from deeper Google
-                search results to first-page positions.
-              </p>
-            </article>
-            <article className={t.card}>
-              <span className={t.metricValue}>2&times; Search Impressions and Clicks</span>
-              <p>
-                The campaign has produced substantial improvements in organic
-                search visibility and clicks, supported by ongoing technical SEO,
-                service-page optimization, content development, and internal
-                linking.
-              </p>
-            </article>
-            <article className={`${t.card} ${t.cardWide}`}>
-              <p>
-                The work focused on improving visibility for services relevant to
-                the firm&rsquo;s prospective clients rather than simply increasing
-                traffic through unrelated informational content.
-              </p>
-              <p className={t.cardLabel}>
-                These results reflect the wider campaign, not a single isolated
-                optimization. Rankings and performance vary between businesses,
-                markets, and reporting periods.
-              </p>
-              <Link href="/results/empire-accountants" className={`${t.box} ${t.boxBlue}`}>
-                <Corner />
-                <span>View Full SEO Case Study &rarr;</span>
-              </Link>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      {/* === LOCAL / NATIONAL / B2B — blue section, light boxes === */}
-      <section className={t.blue}>
-        <div className={t.blueHead}>
-          <h2 className={t.h2}>Local, National &amp; Professional Services SEO</h2>
-          <p className={t.lead}>Different businesses require different search strategies.</p>
-        </div>
-        <div className={t.threeGrid}>
-          {models.map((m, i) => (
-            <div key={m.title} className={t.lightBox}>
-              <span className={t.cardLabel}>{pad(i)}</span>
-              <h3 className={t.h3}>{m.title}</h3>
-              <div className={t.body}>
-                {m.body.map((p) => (
-                  <p key={p}>{p}</p>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-        <div className={t.blueFoot}>
-          <Link href="/industries/accounting-firms" className={`${t.box} ${t.boxNavy}`}>
-            <Corner />
-            <span>Explore SEO for Accounting Firms &rarr;</span>
-          </Link>
-        </div>
-      </section>
-
-      {/* === NATIONAL SEO — short dedicated link section === */}
-      <section className={t.prioSection} style={{ borderBottom: "1px solid var(--h-rule)" }}>
-        <h2 className={t.prioTitle}>Reaching Customers Across Canada</h2>
-        <div className={t.prioRow}>
-          <p className={t.prioLabel}>Not every business is limited to one city.</p>
-          <div className={t.prioBody}>
-            <p>
-              If you serve clients in several provinces, a national SEO strategy
-              puts more emphasis on specialized service pages, competitor
-              research, and the strength of your website as a whole.
-            </p>
-            <Link href="/services/national-seo" className={`${t.box} ${t.boxNavy}`} style={{ alignSelf: "flex-start", marginTop: 16 }}>
+            <Link href={CONTACT_URL} className={`${t.box} ${t.boxNavy}`}>
               <Corner />
-              <span>Explore National SEO Services &rarr;</span>
+              <span>Book a Strategy Call &rarr;</span>
             </Link>
           </div>
         </div>
       </section>
 
-      {/* === FIRST 90 DAYS — heading left, month rows right === */}
-      <section className={t.rowsSplit} style={{ padding: 0 }}>
-        <div className={t.rowsAside}>
-          <h2 className={t.h2}>What the First 90 Days of an SEO Campaign Look Like</h2>
-          <p className={t.body}>
-            Every campaign begins from a different position, but the first few
-            months generally focus on establishing priorities, implementing
-            improvements, and building a foundation for continued growth.
-          </p>
+      {/* === WHAT'S INCLUDED — About-page staggered boxes === */}
+      <section className={ab.partners} style={{ borderTop: "1px solid var(--h-rule)" }}>
+        <div className={ab.partnersHead}>
+          <h2 className={ab.partnersTitle}>What&rsquo;s Included in SEO Services?</h2>
+          <div className={ab.partnersText}>
+            <p>
+              Every website has different priorities. I focus on the
+              improvements most likely to strengthen your search visibility and
+              generate relevant business opportunities.
+            </p>
+          </div>
         </div>
-        <div className={t.rowsList}>
-          {months.map((m) => (
-            <div key={m.title} className={t.rowsItem}>
-              <h3 className={t.h3}>{m.title}</h3>
-              <div className={t.body}>
-                {m.body.map((p) => (
-                  <p key={p}>{p}</p>
-                ))}
-              </div>
-            </div>
+        <div className={ab.partnersGrid}>
+          {included.map((item, i) => (
+            <article
+              key={item.title}
+              className={ab.pBox}
+              style={i < 3 ? { gridColumn: i + 2, gridRow: 1 } : { gridColumn: i - 2, gridRow: 2 }}
+            >
+              <span className={ab.pNum}>{String(i + 1).padStart(2, "0")}</span>
+              <h3 className={ab.pTitle}>{item.title}</h3>
+              <p className={ab.pBody}>{item.body}</p>
+            </article>
           ))}
         </div>
       </section>
 
-      {/* === GOOD FIT — two boxes === */}
-      <section className={t.twoWrap}>
-        <div className={t.twoHead}>
-          <h2 className={t.h2}>Who Is Ongoing SEO Right For?</h2>
-          <p className={t.lead}>
-            Ongoing SEO is best suited to businesses where organic search can
-            become a meaningful source of qualified enquiries.
-          </p>
+      {/* === RESULTS — full-bleed navy with case study rows === */}
+      <section className={t.expSection}>
+        <div className={t.expTop}>
+          <h2 className={t.expTitle}>SEO Results From Real Client Campaigns</h2>
+          <div className={t.expBody}>
+            <p>SEO should contribute to meaningful business outcomes, not just higher traffic numbers.</p>
+            <p>
+              Scale SEO works directly with businesses to improve the pages,
+              content, and technical foundations that support their organic
+              search performance.
+            </p>
+          </div>
         </div>
-        <div className={t.two}>
-          <div className={`${t.panel} ${t.panelGrey}`}>
-            <h3 className={t.h3}>It&rsquo;s generally a good fit for businesses that:</h3>
+        {cases.map((c) => (
+          <div key={c.href} className={t.expRow}>
+            <div className={t.expLeft}>
+              <h3 className={t.expName}>{c.name}</h3>
+              <Link href={c.href} className={`${t.box} ${t.boxBlue}`}>
+                <Corner />
+                <span>{c.cta} &rarr;</span>
+              </Link>
+            </div>
+            <div className={t.expText}>
+              {c.body.map((p) => (
+                <p key={p}>{p}</p>
+              ))}
+              <div className={t.expStats}>
+                {c.stats.map((m) => (
+                  <div key={m.label}>
+                    <span className={t.expStat}>
+                      <CountUp from={m.from} to={m.to} prefix={m.prefix} suffix={m.suffix} />
+                    </span>
+                    <span className={t.expStatLabel}>{m.label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <Link href={c.href} className={t.expImg} tabIndex={-1} aria-hidden="true">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={c.img} alt="" loading="lazy" />
+            </Link>
+          </div>
+        ))}
+        <p className={t.expStatLabel} style={{ display: "block", padding: "0 40px 48px" }}>
+          Results reflect individual client campaigns and are not guarantees of future performance.
+        </p>
+      </section>
+
+      {/* === LOCAL / NATIONAL / B2B — homepage-style blue cards === */}
+      <section className={g.section}>
+        <h2 className={g.introTitle} style={{ maxWidth: "18ch" }}>
+          SEO for Local, National &amp; Professional Service Businesses
+        </h2>
+        <div className={g.grid}>
+          {markets.map((m, i) => {
+            const inner = (
+              <>
+                <span className={g.cellIndex}>{String(i + 1).padStart(2, "0")}</span>
+                <h3 className={g.cellTitle}>{m.title}</h3>
+                <p className={g.cellDesc}>{m.body}</p>
+                {m.href && (
+                  <span className={g.cellLink}>
+                    <span>{m.cta} &rarr;</span>
+                    <span className={g.plus} aria-hidden="true">+</span>
+                  </span>
+                )}
+              </>
+            );
+            return m.href ? (
+              <Link key={m.title} href={m.href} className={g.cell}>{inner}</Link>
+            ) : (
+              <div key={m.title} className={g.cell}>{inner}</div>
+            );
+          })}
+          <div className={g.outro} style={{ marginTop: 48 }}>
+            <p>The right SEO strategy depends on your customers, competition, and geographic market.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* === PROCESS — pinned scroll section === */}
+      <PinnedPoints
+        title="How My SEO Process Works"
+        lead={
+          <>
+            Every campaign begins with understanding your website, customers,
+            and business goals. You work directly with me throughout the
+            engagement, from strategy to implementation and reporting.
+          </>
+        }
+        items={process}
+      />
+
+      {/* === GOOD FIT — big H2, label left, text right === */}
+      <section className={t.prioSection} style={{ borderTop: "1px solid var(--h-rule)" }}>
+        <h2 className={t.prioTitle}>Is Ongoing SEO Right for Your Business?</h2>
+        <div className={t.prioRow}>
+          <p className={t.prioLabel} style={{ maxWidth: "24ch" }}>
+            Ongoing SEO is generally best suited to businesses that want to build
+            a sustainable source of qualified enquiries through organic search.
+          </p>
+          <div className={t.prioBody}>
+            <p>It&rsquo;s particularly relevant if your business:</p>
             <ul className={t.checks}>
-              {goodFit.map((item) => (
-                <li key={item}>{item}</li>
+              {fit.map((f) => (
+                <li key={f}>{f}</li>
               ))}
             </ul>
-            <p className={`${t.body} ${t.dim}`}>
-              I primarily work with professional service and B2B businesses,
-              particularly accounting firms, consultants, and advisory practices.
+            <p>
+              I primarily work with accounting firms, professional service
+              businesses, consultants, and B2B companies.
             </p>
-          </div>
-          <div className={`${t.panel} ${t.panelNavy}`}>
-            <h3 className={t.h3}>When Monthly SEO Might Not Be the Best Option</h3>
-            <div className={t.body}>
-              <p>Ongoing SEO isn&rsquo;t necessarily the right starting point for every business.</p>
-              <p>{rich("If you need immediate enquiries, [Google Ads management](/services/google-ads-management) may be more suitable in the short term.")}</p>
-              <p>{rich("If your website has significant problems but you already have an internal team capable of implementing changes, a [standalone SEO audit](/services/seo-audits) may be a better investment.")}</p>
-              <p>{rich("And if your website needs substantial redevelopment before it can support your growth objectives, [web development](/services/web-development) may need to come first.")}</p>
-              <p>The right recommendation depends on your website, market, and business goals.</p>
-            </div>
+            <p>
+              If your business needs a one-time technical assessment or more
+              immediate lead generation, an{" "}
+              <Link href="/services/seo-audits" className={t.inlineLink}>SEO audit</Link> or{" "}
+              <Link href="/services/google-ads-management" className={t.inlineLink}>Google Ads campaign</Link>{" "}
+              may be a better starting point.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* === PRICING — split === */}
-      <section className={t.pricing} style={{ padding: 0 }}>
-        <div className={t.pricingAside}>
-          <h2 className={t.h2}>Monthly SEO Pricing &amp; Engagements</h2>
-          <p className={t.lead}>SEO campaigns start from $3,000 CAD + GST per month.</p>
-        </div>
-        <div className={t.pricingBody}>
-          <div className={t.body}>
+      {/* === PRICING — navy, big H2, label left, text right === */}
+      <section className={t.prioSection} style={{ background: "var(--h-navy)", color: "var(--h-white)" }}>
+        <h2 className={t.prioTitle}>Monthly SEO Pricing</h2>
+        <div className={t.prioRow}>
+          <p className={t.prioLabel}>Ongoing SEO starts at $3,000 CAD per month, plus applicable taxes.</p>
+          <div className={t.prioBody}>
             <p>
-              Campaigns are scoped individually rather than sold through fixed
-              Bronze, Silver, or Gold packages.
+              Every engagement is scoped around your website, competition,
+              target markets, and business priorities.
             </p>
             <p>
-              The appropriate monthly investment depends on your website&rsquo;s
-              current condition, competition, target locations, technical
-              requirements, content needs, and commercial objectives.
+              There are no fixed Bronze, Silver, or Gold packages. Instead, the
+              work is planned around the improvements most relevant to your
+              business.
             </p>
-            <p>
-              Before starting, I&rsquo;ll review your website and explain the
-              priorities I recommend, the scope of work involved, and why those
-              improvements matter.
-            </p>
+            <ul className={t.checks} style={{ borderTopColor: "rgba(254,254,254,0.2)" }}>
+              {pricingPoints.map((f) => (
+                <li key={f} style={{ borderBottomColor: "rgba(254,254,254,0.2)" }}>{f}</li>
+              ))}
+            </ul>
+            <Link href="/pricing" className={`${t.box} ${t.boxBlue}`} style={{ alignSelf: "flex-start", marginTop: 16, color: "var(--h-white)" }}>
+              <Corner />
+              <span>View SEO Pricing &rarr;</span>
+            </Link>
           </div>
-          <p className={t.pricingLead}>
-            All ongoing SEO campaigns are month-to-month, without long-term
-            contract lock-ins.
-          </p>
-          <p className={t.body}>
-            You work directly with me, and your website, content, accounts, and
-            data remain under your ownership.
-          </p>
-          <Link href="/pricing" className={`${t.box} ${t.boxNavy}`}>
-            <Corner />
-            <span>View SEO Pricing &rarr;</span>
-          </Link>
         </div>
       </section>
 
-      <ServicesFaq items={faqs} title={<>Frequently Asked Questions About SEO Services</>} />
+      <ServicesFaq items={faqs} title={<>Frequently Asked Questions</>} />
 
       <ContactSection
-        heading="Find Out What's Limiting Your Organic Growth"
-        lead="If your website isn't generating enough qualified enquiries through Google, I can help identify where the most valuable opportunities and constraints are. We'll discuss your current website, search visibility, competition, target customers, and business goals to determine whether ongoing SEO makes sense. If we're a good fit, I'll explain what I would prioritize and why."
-        points={["Month-to-month SEO", "Direct founder involvement", "Based in Calgary"]}
-        cta={{ href: BOOKING_URL, label: "Book a Strategy Call →" }}
+        heading="Let's Improve Your Organic Search Performance"
+        lead="If your website isn't attracting enough qualified enquiries, I can help identify what's limiting its performance and where the best opportunities may be. You'll work directly with me to understand your website, competition, and the SEO improvements worth prioritizing."
+        cta={{ href: CONTACT_URL, label: "Book a Strategy Call →" }}
         note={
           <>
-            Looking for an independent assessment instead?{" "}
-            <Link href="/services/seo-audits">Explore SEO Audits &rarr;</Link>
+            Looking for a one-time assessment?{" "}
+            <Link href="/services/seo-audits">Explore SEO Audits</Link>.
           </>
         }
       />
