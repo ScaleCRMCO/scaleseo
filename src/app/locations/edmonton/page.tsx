@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AreasWeServe from "../../components/AreasWeServe";
 import Breadcrumbs from "../../components/Breadcrumbs";
 import ContactSection from "../../components/ContactSection";
 import CountUp from "../../components/CountUp";
@@ -539,6 +540,9 @@ export default function EdmontonPage() {
           ))}
         </div>
       </section>
+
+      {/* === AREAS WE SERVE — details + Google Maps embed === */}
+      <AreasWeServe place="Edmonton, AB" areas={["Edmonton", "St. Albert", "Sherwood Park", "Spruce Grove", "Leduc"]} />
 
       <ServicesFaq items={faqs} title={<>Frequently Asked Questions</>} />
 

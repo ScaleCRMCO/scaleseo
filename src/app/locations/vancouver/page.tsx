@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AreasWeServe from "../../components/AreasWeServe";
 import Breadcrumbs from "../../components/Breadcrumbs";
 import ContactSection from "../../components/ContactSection";
 import CountUp from "../../components/CountUp";
@@ -475,6 +476,9 @@ export default function VancouverPage() {
           ))}
         </div>
       </section>
+
+      {/* === AREAS WE SERVE — details + Google Maps embed === */}
+      <AreasWeServe place="Vancouver, BC" areas={["Vancouver", "Burnaby", "Richmond", "North Vancouver", "Surrey", "Metro Vancouver"]} />
 
       <ServicesFaq items={faqs} title={<>Frequently Asked Questions</>} />
 
