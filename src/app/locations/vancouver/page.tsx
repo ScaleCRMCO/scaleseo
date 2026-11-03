@@ -93,8 +93,8 @@ const cases = [
       "The campaign recorded a 125% increase in Google Search impressions and a 92% increase in organic clicks during its initial four-month reporting period.",
     ],
     stats: [
-      { to: 125, label: "Increase in Google Search impressions" },
-      { to: 92, label: "Increase in organic clicks" },
+      { to: 125, prefix: "+", suffix: "%", label: "Increase in Google Search impressions" },
+      { to: 92, prefix: "+", suffix: "%", label: "Increase in organic clicks" },
     ],
     href: "/results/jensen-cpa",
     cta: "View Jensen CPA Case Study",
@@ -105,7 +105,10 @@ const cases = [
     body: [
       "Ongoing SEO for an accounting and advisory firm, including technical improvements, service-page optimization, structured data, and educational accounting content.",
     ],
-    stats: [],
+    stats: [
+      { from: 5, to: 1, prefix: "Page ", suffix: "", label: "Target keyword rankings, up from page 5" },
+      { to: 100, prefix: "+", suffix: "%+", label: "Organic search visibility" },
+    ],
     href: "/results/empire-accountants",
     cta: "View Empire Accountants Case Study",
     img: "/images/empire-accountants-cover.webp",
@@ -405,7 +408,7 @@ export default function VancouverPage() {
                   {c.stats.map((m) => (
                     <div key={m.label}>
                       <span className={t.expStat}>
-                        <CountUp to={m.to} prefix="+" suffix="%" />
+                        <CountUp from={"from" in m ? m.from : 0} to={m.to} prefix={m.prefix} suffix={m.suffix} />
                       </span>
                       <span className={t.expStatLabel}>{m.label}</span>
                     </div>
