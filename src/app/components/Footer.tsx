@@ -24,6 +24,7 @@ const services = [
 
 const locations = [
   { href: "/", label: "Calgary" },
+  { href: "/locations/edmonton", label: "Edmonton" },
   { href: "/locations/vancouver", label: "Vancouver" },
 ];
 
