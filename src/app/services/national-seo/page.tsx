@@ -227,42 +227,101 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "WebPage",
-      "@id": `${URL}#webpage`,
-      url: URL,
-      name: TITLE,
-      description: DESCRIPTION,
-      isPartOf: { "@id": "https://scaleseo.co/#website" },
-      about: { "@id": `${URL}#service` },
-      publisher: { "@id": "https://scaleseo.co/#organization" },
-      breadcrumb: { "@id": `${URL}#breadcrumb` },
-      primaryImageOfPage: { "@type": "ImageObject", url: "https://scaleseo.co/images/toronto-cn-tower.webp" },
-      inLanguage: "en-CA",
+      "@id": "https://scaleseo.co/services/national-seo#webpage",
+      "url": "https://scaleseo.co/services/national-seo",
+      "name": "National SEO Services Canada | Scale SEO",
+      "description": "National SEO services for Canadian businesses. Improve search visibility across Canada with founder-led SEO, technical improvements and content strategy.",
+      "isPartOf": {
+        "@id": "https://scaleseo.co/#website"
+      },
+      "about": {
+        "@id": "https://scaleseo.co/services/national-seo#service"
+      },
+      "mainEntity": {
+        "@id": "https://scaleseo.co/services/national-seo#service"
+      },
+      "publisher": {
+        "@id": "https://scaleseo.co/#organization"
+      },
+      "breadcrumb": {
+        "@id": "https://scaleseo.co/services/national-seo#breadcrumb"
+      },
+      "inLanguage": "en-CA"
     },
     {
       "@type": "Service",
-      "@id": `${URL}#service`,
-      name: "National SEO Services in Canada",
-      serviceType: "National Search Engine Optimization",
-      description:
-        "National SEO services for Canadian businesses, including national keyword and competitor research, technical SEO, service page optimization, content strategy, website structure and internal linking, and performance reporting.",
-      url: URL,
-      provider: { "@id": "https://scaleseo.co/#organization" },
-      areaServed: { "@type": "Country", name: "Canada" },
-      audience: {
-        "@type": "BusinessAudience",
-        audienceType: "Accounting firms, professional service businesses, and B2B companies serving customers across Canada",
+      "@id": "https://scaleseo.co/services/national-seo#service",
+      "name": "National SEO Services",
+      "serviceType": "National Search Engine Optimization",
+      "description": "Founder-led national SEO services helping Canadian businesses improve organic search visibility across the country through technical SEO, keyword research, service page optimization, content strategy, and ongoing search optimization.",
+      "url": "https://scaleseo.co/services/national-seo",
+      "provider": {
+        "@id": "https://scaleseo.co/#organization"
       },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Canada"
+      },
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "Accounting firms, professional service businesses, consulting firms, and B2B companies"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "National SEO Services",
+        "itemListElement": [
+          {
+            "@type": "OfferCatalog",
+            "name": "National Keyword and Competitor Research"
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "Technical SEO"
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "Service Page Optimization"
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "SEO Content Strategy"
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "Website Structure and Internal Linking"
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "SEO Performance Monitoring"
+          }
+        ]
+      }
     },
     {
       "@type": "BreadcrumbList",
-      "@id": `${URL}#breadcrumb`,
-      itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Home", item: "https://scaleseo.co/" },
-        { "@type": "ListItem", position: 2, name: "Services", item: "https://scaleseo.co/services" },
-        { "@type": "ListItem", position: 3, name: "National SEO", item: URL },
-      ],
-    },
-  ],
+      "@id": "https://scaleseo.co/services/national-seo#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://scaleseo.co/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://scaleseo.co/services"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "National SEO Services",
+          "item": "https://scaleseo.co/services/national-seo"
+        }
+      ]
+    }
+  ]
 };
 
 /* === Page =============================================================== */
@@ -277,7 +336,7 @@ export default function NationalSeoPage() {
         <div className={t.hero}>
           <div className={t.crumbs}>
             <Breadcrumbs
-              items={[{ name: "Home", href: "/" }, { name: "Services", href: "/services" }, { name: "National SEO" }]}
+              items={[{ name: "Home", href: "/" }, { name: "Services", href: "/services" }, { name: "National SEO Services" }]}
               schema={false}
             />
           </div>
