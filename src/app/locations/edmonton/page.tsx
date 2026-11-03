@@ -216,12 +216,19 @@ const jsonLd = {
       "@id": "https://scaleseo.co/locations/edmonton#webpage",
       "url": "https://scaleseo.co/locations/edmonton",
       "name": "SEO Services Edmonton, AB | Scale SEO",
-      "description": DESCRIPTION,
-      "isPartOf": { "@id": "https://scaleseo.co/#website" },
-      "about": { "@id": "https://scaleseo.co/locations/edmonton#service" },
-      "publisher": { "@id": "https://scaleseo.co/#organization" },
-      "breadcrumb": { "@id": "https://scaleseo.co/locations/edmonton#breadcrumb" },
-      "primaryImageOfPage": { "@type": "ImageObject", "url": "https://scaleseo.co/images/edmonton-skyline.webp" },
+      "description": "Founder-led SEO services for Edmonton businesses. Scale SEO helps accounting firms, professional services, contractors, and B2B companies improve their Google visibility.",
+      "isPartOf": {
+        "@id": "https://scaleseo.co/#website"
+      },
+      "about": {
+        "@id": "https://scaleseo.co/locations/edmonton#service"
+      },
+      "publisher": {
+        "@id": "https://scaleseo.co/#organization"
+      },
+      "breadcrumb": {
+        "@id": "https://scaleseo.co/locations/edmonton#breadcrumb"
+      },
       "inLanguage": "en-CA"
     },
     {
@@ -229,27 +236,58 @@ const jsonLd = {
       "@id": "https://scaleseo.co/locations/edmonton#service",
       "name": "SEO Services in Edmonton, Alberta",
       "serviceType": "Search Engine Optimization",
-      "description": "Search engine optimization services for Edmonton businesses, including technical SEO, service-page optimization, content development, local SEO and ongoing SEO management for accounting firms, contractors, professional service and B2B companies.",
+      "description": "Search engine optimization services for Edmonton businesses, including technical SEO, service page optimization, content strategy, website improvements, and ongoing SEO management.",
       "url": "https://scaleseo.co/locations/edmonton",
-      "provider": { "@id": "https://scaleseo.co/#organization" },
+      "provider": {
+        "@id": "https://scaleseo.co/#organization"
+      },
       "areaServed": [
-        { "@type": "City", "name": "Edmonton", "containedInPlace": { "@type": "AdministrativeArea", "name": "Alberta" } },
-        { "@type": "Place", "name": "Sherwood Park" },
-        { "@type": "City", "name": "St. Albert" },
-        { "@type": "City", "name": "Spruce Grove" },
-        { "@type": "City", "name": "Leduc" }
+        {
+          "@type": "City",
+          "name": "Edmonton",
+          "containedInPlace": {
+            "@type": "AdministrativeArea",
+            "name": "Alberta"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "St. Albert"
+        },
+        {
+          "@type": "Place",
+          "name": "Sherwood Park"
+        },
+        {
+          "@type": "City",
+          "name": "Spruce Grove"
+        },
+        {
+          "@type": "City",
+          "name": "Leduc"
+        }
       ],
       "audience": {
         "@type": "BusinessAudience",
-        "audienceType": "Accounting firms, professional service businesses, B2B companies, and contractors"
+        "audienceType": "Accounting firms, professional service businesses, construction contractors, and B2B companies"
       }
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://scaleseo.co/locations/edmonton#breadcrumb",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://scaleseo.co/" },
-        { "@type": "ListItem", "position": 2, "name": "Edmonton SEO Services", "item": "https://scaleseo.co/locations/edmonton" }
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://scaleseo.co/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Edmonton SEO Services",
+          "item": "https://scaleseo.co/locations/edmonton"
+        }
       ]
     }
   ]
