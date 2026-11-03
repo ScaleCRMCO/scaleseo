@@ -1,8 +1,9 @@
+import Link from "next/link";
 import styles from "./AreasWeServe.module.css";
 
 // "Areas we serve" block for location pages: label + big heading on the left,
 // contact details on the right, then a full-width Google Maps embed.
-export default function AreasWeServe({ place, areas }: { place: string; areas: string[] }) {
+export default function AreasWeServe({ place, others }: { place: string; others: { label: string; href: string }[] }) {
   const mapSrc = `https://www.google.com/maps?q=${encodeURIComponent(place)}&z=10&output=embed`;
   return (
     <section className={styles.section} aria-labelledby="areas-heading">
@@ -31,8 +32,12 @@ export default function AreasWeServe({ place, areas }: { place: string; areas: s
             </dd>
           </div>
           <div className={styles.wide}>
-            <dt>Including</dt>
-            <dd>{areas.join(" · ")}</dd>
+            <dt>Other locations</dt>
+            <dd className={styles.links}>
+              {others.map((o) => (
+                <Link key={o.href} href={o.href}>SEO in {o.label}</Link>
+              ))}
+            </dd>
           </div>
         </dl>
       </div>

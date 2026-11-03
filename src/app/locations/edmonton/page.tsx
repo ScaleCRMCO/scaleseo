@@ -542,7 +542,7 @@ export default function EdmontonPage() {
       </section>
 
       {/* === AREAS WE SERVE — details + Google Maps embed === */}
-      <AreasWeServe place="Edmonton, AB" areas={["Edmonton", "St. Albert", "Sherwood Park", "Spruce Grove", "Leduc"]} />
+      <AreasWeServe place="Edmonton, AB" others={[{ label: "Calgary", href: "/" }, { label: "Vancouver", href: "/locations/vancouver" }]} />
 
       <ServicesFaq items={faqs} title={<>Frequently Asked Questions</>} />
 

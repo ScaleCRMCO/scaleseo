@@ -478,7 +478,7 @@ export default function VancouverPage() {
       </section>
 
       {/* === AREAS WE SERVE — details + Google Maps embed === */}
-      <AreasWeServe place="Vancouver, BC" areas={["Vancouver", "Burnaby", "Richmond", "North Vancouver", "Surrey", "Metro Vancouver"]} />
+      <AreasWeServe place="Vancouver, BC" others={[{ label: "Calgary", href: "/" }, { label: "Edmonton", href: "/locations/edmonton" }]} />
 
       <ServicesFaq items={faqs} title={<>Frequently Asked Questions</>} />
 
