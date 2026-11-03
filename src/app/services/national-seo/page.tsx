@@ -619,7 +619,7 @@ export default function NationalSeoPage() {
 
       <ContactSection
         heading="National SEO Built Around Your Business"
-        lead="Whether you're an accounting firm serving clients across Canada, a B2B company reaching customers nationwide, or a professional service business expanding beyond its local market, Scale SEO can help develop a search strategy around your goals. Work directly with an independent SEO specialist who understands the importance of useful content, sound technical foundations, and ongoing website improvements."
+        lead="Whether you're an accounting firm serving clients across Canada, a B2B company reaching customers nationwide, or a professional service business expanding beyond its local market, Scale SEO can help develop a search strategy around your goals."
         cta={{ href: CONTACT_URL, label: "Get in Touch With Scale SEO →" }}
       />
     </main>
