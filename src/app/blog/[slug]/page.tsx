@@ -147,7 +147,7 @@ export default function BlogPostPage({
       {covers[post.slug] && (
         <div className={styles.cover}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={covers[post.slug].src} alt={covers[post.slug].alt} />
+          <img src={covers[post.slug].src} alt={covers[post.slug].alt} style={covers[post.slug].fill ? { objectFit: "cover" } : undefined} />
         </div>
       )}
 

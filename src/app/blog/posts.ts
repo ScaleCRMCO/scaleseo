@@ -34,6 +34,105 @@ export const posts: Post[] = [
     "readTime": "10 min read",
     "category": "National SEO",
     "excerpt": "Your business doesn't need an office in every Canadian city to reach customers through Google. Here's how national SEO, service pages and location pages work together.",
+    "schema": {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BlogPosting",
+          "@id": "https://scaleseo.co/blog/how-to-rank-business-across-canada#article",
+          "headline": "How to Rank Your Business Across Canada (Without Offices in Every City)",
+          "description": "Learn how businesses can rank across Canada without offices in every city, using national SEO, strong service pages, and useful content.",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://scaleseo.co/images/toronto-cn-tower.webp",
+            "width": 2000,
+            "height": 1083
+          },
+          "url": "https://scaleseo.co/blog/how-to-rank-business-across-canada",
+          "mainEntityOfPage": {
+            "@id": "https://scaleseo.co/blog/how-to-rank-business-across-canada#webpage"
+          },
+          "author": {
+            "@id": "https://scaleseo.co/#corbin-jensen"
+          },
+          "publisher": {
+            "@id": "https://scaleseo.co/#organization"
+          },
+          "about": [
+            {
+              "@type": "Thing",
+              "name": "National Search Engine Optimization"
+            },
+            {
+              "@type": "Thing",
+              "name": "Organic Search Visibility"
+            },
+            {
+              "@type": "Thing",
+              "name": "SEO for Canadian Businesses"
+            }
+          ],
+          "mentions": [
+            {
+              "@id": "https://scaleseo.co/services/national-seo#service"
+            }
+          ],
+          "inLanguage": "en-CA"
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://scaleseo.co/blog/how-to-rank-business-across-canada#webpage",
+          "url": "https://scaleseo.co/blog/how-to-rank-business-across-canada",
+          "name": "How to Rank Your Business Across Canada (Without Offices in Every City)",
+          "isPartOf": {
+            "@id": "https://scaleseo.co/#website"
+          },
+          "mainEntity": {
+            "@id": "https://scaleseo.co/blog/how-to-rank-business-across-canada#article"
+          },
+          "publisher": {
+            "@id": "https://scaleseo.co/#organization"
+          },
+          "breadcrumb": {
+            "@id": "https://scaleseo.co/blog/how-to-rank-business-across-canada#breadcrumb"
+          },
+          "inLanguage": "en-CA"
+        },
+        {
+          "@type": "Person",
+          "@id": "https://scaleseo.co/#corbin-jensen",
+          "name": "Corbin Jensen",
+          "url": "https://scaleseo.co/corbin-jensen",
+          "worksFor": {
+            "@id": "https://scaleseo.co/#organization"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://scaleseo.co/blog/how-to-rank-business-across-canada#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://scaleseo.co/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Blog",
+              "item": "https://scaleseo.co/blog"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "How to Rank Your Business Across Canada",
+              "item": "https://scaleseo.co/blog/how-to-rank-business-across-canada"
+            }
+          ]
+        }
+      ]
+    },
     "body": [
       {
         "type": "p",

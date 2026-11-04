@@ -1,7 +1,10 @@
 // Cover image per post (card thumbnail, article hero and schema image).
-export const covers: Record<string, { src: string; alt: string }> = {
+// fill: true stretches the image across the full cover width (photos);
+// otherwise it sits centred on navy (3D illustrations).
+export const covers: Record<string, { src: string; alt: string; fill?: boolean }> = {
   "how-to-rank-business-across-canada": {
     src: "/images/toronto-cn-tower.webp",
+    fill: true,
     alt: "Black and white street view of downtown Toronto with the CN Tower, representing ranking a business across Canada",
   },
   "why-business-not-showing-on-google-calgary": {
