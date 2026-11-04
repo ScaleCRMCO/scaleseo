@@ -1,9 +1,9 @@
 /* Navy section: heading + intro top-left, then six outlined boxes in the
    About page's staggered 4-column layout */
-.section { padding: 120px 40px 96px; background: var(--h-navy); color: var(--h-white); }
-.head { display: flex; flex-direction: column; gap: 24px; max-width: 640px; margin-bottom: clamp(96px, 12vw, 200px); }
-.heading { font-size: clamp(38px, 4.4vw, 76px); line-height: 1.04; font-weight: 400; letter-spacing: -0.035em; }
-.introLead { font-size: clamp(18px, 1.4vw, 22px); line-height: 1.45; color: rgba(254, 254, 254, 0.78); }
+.section { padding: 120px 40px 160px; background: var(--h-navy); color: var(--h-white); }
+.head { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; margin-bottom: clamp(72px, 8vw, 128px); }
+.heading { max-width: 14ch; font-size: clamp(38px, 4.4vw, 76px); line-height: 1.04; font-weight: 400; letter-spacing: -0.035em; }
+.introLead { justify-self: end; max-width: 560px; padding-top: 8px; font-size: clamp(18px, 1.5vw, 24px); line-height: 1.45; color: rgba(254, 254, 254, 0.78); }
 
 .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
 .box { display: flex; flex-direction: column; gap: 16px; min-height: 320px; padding: 28px 24px; border: 1px solid rgba(254, 254, 254, 0.18); color: inherit; text-decoration: none; }
@@ -18,8 +18,9 @@
 .plus { font-size: 22px; font-weight: 300; }
 
 @media (max-width: 1000px) {
-  .section { padding: 64px 16px; }
-  .head { margin-bottom: 48px; }
+  .section { padding: 64px 16px 96px; }
+  .head { grid-template-columns: 1fr; gap: 20px; margin-bottom: 48px; }
+  .introLead { justify-self: start; }
   .grid { grid-template-columns: 1fr 1fr; gap: 16px; }
   .grid > * { grid-column: auto !important; grid-row: auto !important; }
   .empty { display: none; }
