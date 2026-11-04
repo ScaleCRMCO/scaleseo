@@ -36,7 +36,7 @@ export default function IndustriesTeaser() {
             SEO for Professional Service &amp; B2B Businesses
           </h2>
           <p className={`${styles.introLead} reveal-up`}>
-            I specialize in businesses where search visibility can lead to
+            We specialize in businesses where search visibility can lead to
             valuable enquiries, long-term clients, and measurable commercial
             growth.
           </p>

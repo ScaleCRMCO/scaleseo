@@ -70,9 +70,9 @@ export default function ServicesGrid() {
         <Card s={services[4]} />
         <div className={styles.outro}>
           <p>
-            SEO is at the core of Scale SEO. I combine search strategy,
-            technical improvements, content, and website development to help
-            businesses compete in organic and paid search.
+            SEO is at the core of what we do. Rather than treating each service
+            separately, we bring together the right mix of strategy, content,
+            and website improvements to support your business goals.
           </p>
           <Link href="/services" className={styles.allLink}>
             Explore all services →
