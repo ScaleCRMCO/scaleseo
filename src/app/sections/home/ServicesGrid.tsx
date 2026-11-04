@@ -7,30 +7,35 @@ const services = [
     href: "/services/seo",
     num: "01",
     title: "SEO Services",
+    cta: "Explore SEO Services",
     desc: "Ongoing SEO campaigns covering technical optimization, content, local search, and organic growth.",
   },
   {
     href: "/services/seo-audits",
     num: "02",
     title: "SEO Audits",
+    cta: "Explore SEO Audits",
     desc: "Standalone audits identifying technical issues, content gaps, and opportunities to improve search performance.",
   },
   {
     href: "/services/web-development",
     num: "03",
     title: "Web Development",
+    cta: "Explore Web Development",
     desc: "Fast, search-friendly websites built for usability, organic visibility, and conversions.",
   },
   {
     href: "/services/geo",
     num: "04",
     title: "AI Search Optimization",
+    cta: "Explore AI Search Optimization",
     desc: "Improve how your business is represented and discovered across AI-powered search experiences.",
   },
   {
     href: "/services/google-ads-management",
     num: "05",
     title: "Google Ads Management",
+    cta: "Explore Google Ads",
     desc: "Targeted search campaigns focused on relevant enquiries, conversion tracking, and ongoing optimization.",
   },
 ];
@@ -42,7 +47,7 @@ function Card({ s }: { s: (typeof services)[number] }) {
       <h3 className={styles.cellTitle}>{s.title}</h3>
       <p className={styles.cellDesc}>{s.desc}</p>
       <span className={styles.cellLink}>
-        <span>See service</span>
+        <span>{s.cta} &rarr;</span>
         <span className={styles.plus} aria-hidden="true">+</span>
       </span>
     </Link>
