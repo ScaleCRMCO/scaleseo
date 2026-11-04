@@ -280,14 +280,18 @@
   .mark { top: 40%; }
 }
 
-/* Reviews hard into the bottom-left corner; revenue metric beside the CTA */
-.topBottom { left: 0; }
-.metricGroup { display: flex; align-items: flex-end; gap: 32px; }
-.metric { display: flex; flex-direction: column; gap: 6px; text-align: right; color: var(--h-navy); }
-.metricValue { font-size: clamp(40px, 4.4vw, 72px); line-height: 1; letter-spacing: -0.04em; font-variant-numeric: tabular-nums; }
+/* Reviews + static revenue metric together in the bottom-left corner.
+   The Trustindex badge carries ~54px of internal left padding, so it is
+   pulled left to line its "G" up with the H1. */
+.topBottom { left: 40px; }
+.leftGroup { display: flex; align-items: center; gap: 40px; }
+.leftGroup .reviews { flex: none; max-width: none; margin-left: -54px !important; }
+.metric { display: flex; flex-direction: column; gap: 6px; padding-left: 32px; border-left: 1px solid var(--h-rule); color: var(--h-navy); }
+.metricValue { font-size: clamp(36px, 3.6vw, 60px); line-height: 1; letter-spacing: -0.04em; }
 .metricLabel { font-size: 15px; color: var(--h-dim); white-space: nowrap; }
 @media (max-width: 900px) {
-  .topBottom { left: 0; }
-  .metricGroup { flex-direction: column; align-items: stretch; gap: 20px; }
-  .metric { text-align: left; }
+  .topBottom { left: 16px; }
+  .leftGroup { gap: 20px; }
+  .leftGroup .reviews { margin-left: -54px !important; }
+  .metric { padding-left: 20px; }
 }
