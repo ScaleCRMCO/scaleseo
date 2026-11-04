@@ -336,3 +336,7 @@
   .metricValue { font-size: 44px; }
   .metricLabel { white-space: normal; text-align: right; max-width: 14ch; }
 }
+@media (max-width: 900px) {
+  .topBottom { margin-top: 120px; }
+  .leftGroup .reviews { align-self: flex-start; width: fit-content; }
+}
