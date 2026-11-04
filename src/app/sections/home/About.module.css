@@ -1,66 +1,28 @@
-/* Two boxes side by side on white: navy text box | portrait */
-.section {
-  padding: 40px;
-  background: var(--h-navy);
-  color: var(--h-white);
-}
-.grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 28px;
-}
-.text {
-  display: flex;
-  flex-direction: column;
-  min-height: 680px;
-  padding: 28px 24px 24px;
-  background: var(--h-navy);
-  color: var(--h-white);
-}
-.headline {
-  margin-top: 24px;
-  font-size: clamp(34px, 3.4vw, 58px);
-  line-height: 1.06;
-  font-weight: 400;
-  letter-spacing: -0.03em;
-  max-width: 15ch;
-}
-.body {
-  margin: 32px 0 48px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  max-width: 560px;
-  font-size: 17px;
-  line-height: 1.55;
-  color: rgba(254, 254, 254, 0.78);
-}
-.cta {
-  align-self: flex-end;
-  margin-top: auto;
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 24px;
-  width: min(100%, 340px);
-  min-height: 120px;
-  padding: 20px 22px;
-  background: var(--h-grey);
-  color: var(--h-navy);
-  font-size: 18px;
-  text-decoration: none;
-  transition: background-color 0.2s ease, color 0.2s ease;
-}
-.cta:hover { background: var(--h-blue); color: var(--h-white); }
-.stamp { position: relative; min-height: 680px; }
-.portrait { position: absolute; inset: 0; margin: 0; overflow: hidden; background: var(--h-grey); }
+/* Founder section: full-bleed navy, heading top-left, intro left / portrait
+   right, then a signed founder's note */
+.section { padding: 112px 40px 96px; background: var(--h-navy); color: var(--h-white); }
+.headline { max-width: 14ch; font-size: clamp(40px, 4.6vw, 80px); line-height: 1.04; font-weight: 400; letter-spacing: -0.035em; }
+
+.grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 64px; align-items: end; margin-top: 88px; }
+.body { display: flex; flex-direction: column; gap: 1em; max-width: 640px; font-size: clamp(18px, 1.5vw, 22px); line-height: 1.45; color: rgba(254, 254, 254, 0.85); }
+.portrait { position: relative; justify-self: end; width: min(100%, 440px); aspect-ratio: 4 / 5; margin: 0; overflow: hidden; }
 .portraitImg { object-fit: cover; }
 
+.note { display: grid; grid-template-columns: 1fr 1.6fr; gap: 64px; margin-top: 96px; padding-top: 40px; border-top: 1px solid rgba(254, 254, 254, 0.16); }
+.noteLabel { font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(254, 254, 254, 0.6); }
+.noteBody { display: flex; flex-direction: column; gap: 40px; }
+.quote { margin: 0; font-size: clamp(22px, 2vw, 32px); line-height: 1.3; letter-spacing: -0.015em; }
+.signRow { display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; flex-wrap: wrap; }
+.sign { display: flex; flex-direction: column; gap: 4px; }
+.signature { width: 120px; height: auto; margin-bottom: 12px; color: #66C2FF; }
+.signName { font-size: 17px; }
+.signRole { font-size: 15px; color: rgba(254, 254, 254, 0.6); }
+.cta { display: inline-flex; gap: 10px; align-items: center; padding: 18px 22px; background: var(--h-blue); color: var(--h-white); font-size: 17px; text-decoration: none; transition: background 0.2s ease, color 0.2s ease; }
+.cta:hover { background: var(--h-white); color: var(--h-navy); }
+
 @media (max-width: 900px) {
-  .section { padding: 16px; }
-  .grid { grid-template-columns: 1fr; gap: 16px; }
-  .text { min-height: 0; }
-  .headline { margin-top: 48px; }
-  .cta { width: 100%; margin-top: 40px; }
-  .stamp { min-height: 0; aspect-ratio: 4 / 5; }
+  .section { padding: 64px 16px; }
+  .grid { grid-template-columns: 1fr; gap: 32px; margin-top: 40px; }
+  .portrait { justify-self: stretch; width: 100%; }
+  .note { grid-template-columns: 1fr; gap: 20px; margin-top: 56px; }
 }
