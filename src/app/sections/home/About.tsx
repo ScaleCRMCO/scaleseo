@@ -24,9 +24,10 @@ export default function About() {
           </p>
           <p>
             Every campaign is managed directly by Corbin, from strategy and
-            technical implementation to ongoing optimization and reporting. Our
-            clients work directly with the person responsible for their SEO,
-            without account managers or unnecessary handoffs.
+            technical SEO to ongoing website design and development. We work
+            closely with every client, building lasting relationships through
+            clear communication, personal attention, and a shared focus on
+            business growth.
           </p>
         </div>
         <figure className={styles.portrait}>

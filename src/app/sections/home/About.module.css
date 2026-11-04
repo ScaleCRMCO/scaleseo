@@ -14,7 +14,7 @@
 .quote { margin: 0; font-size: clamp(22px, 2vw, 32px); line-height: 1.3; letter-spacing: -0.015em; }
 .signRow { display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; flex-wrap: wrap; }
 .sign { display: flex; flex-direction: column; gap: 4px; }
-.signature { width: 120px; height: auto; margin-bottom: 12px; color: #66C2FF; }
+.signature { width: 88px; height: auto; margin-bottom: 12px; color: #66C2FF; }
 .signName { font-size: 17px; }
 .signRole { font-size: 15px; color: rgba(254, 254, 254, 0.6); }
 .cta { display: inline-flex; gap: 10px; align-items: center; padding: 18px 22px; background: var(--h-blue); color: var(--h-white); font-size: 17px; text-decoration: none; transition: background 0.2s ease, color 0.2s ease; }
