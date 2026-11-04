@@ -23,25 +23,40 @@ const industries: {
     title: "B2B & Consulting",
     body: "SEO for businesses with longer sales cycles, specialist services, and research-driven buyers.",
   },
+  {
+    num: "04",
+    title: "Contractors",
+    body: "Local SEO and service pages for contractors who win high-value projects across their service area.",
+  },
 ];
 
-// Navy section: heading + intro top-left with open space, then the three
-// boxes stepping down the grid in a staircase (col 3, col 2, col 1).
+// Grid positions (About-page staggered layout): content boxes fill the
+// central 2x2, with an empty outlined box at top-right and bottom-left.
+const slots = [
+  { col: 2, row: 1 },
+  { col: 3, row: 1 },
+  { col: 2, row: 2 },
+  { col: 3, row: 2 },
+];
+
+// Navy section: heading + intro top-left, then six outlined boxes below in
+// the About page's staggered layout (four industries in the centre).
 export default function IndustriesTeaser() {
   return (
     <section className={styles.section} id="industries">
-      <div className={styles.grid}>
-        <div className={styles.head}>
-          <h2 className={`${styles.heading} reveal-up`}>
-            SEO for Professional Service &amp; B2B Businesses
-          </h2>
-          <p className={`${styles.introLead} reveal-up`}>
-            We specialize in businesses where search visibility can lead to
-            valuable enquiries, long-term clients, and measurable commercial
-            growth.
-          </p>
-        </div>
+      <div className={styles.head}>
+        <h2 className={`${styles.heading} reveal-up`}>
+          SEO for Professional Service &amp; B2B Businesses
+        </h2>
+        <p className={`${styles.introLead} reveal-up`}>
+          We specialize in businesses where search visibility can lead to
+          valuable enquiries, long-term clients, and measurable commercial
+          growth.
+        </p>
+      </div>
 
+      <div className={styles.grid}>
+        <div className={`${styles.box} ${styles.empty}`} style={{ gridColumn: 4, gridRow: 1 }} aria-hidden="true" />
         {industries.map((item, i) => {
           const inner = (
             <>
@@ -56,17 +71,18 @@ export default function IndustriesTeaser() {
               )}
             </>
           );
-          const cls = `${styles.box} ${styles[`step${i + 1}`]} reveal-up`;
+          const pos = { gridColumn: slots[i].col, gridRow: slots[i].row };
           return item.href ? (
-            <Link key={item.num} href={item.href} className={`${cls} ${styles.boxLink}`}>
+            <Link key={item.num} href={item.href} className={`${styles.box} ${styles.boxLink} reveal-up`} style={pos}>
               {inner}
             </Link>
           ) : (
-            <div key={item.num} className={cls}>
+            <div key={item.num} className={`${styles.box} reveal-up`} style={pos}>
               {inner}
             </div>
           );
         })}
+        <div className={`${styles.box} ${styles.empty}`} style={{ gridColumn: 1, gridRow: 2 }} aria-hidden="true" />
       </div>
     </section>
   );
