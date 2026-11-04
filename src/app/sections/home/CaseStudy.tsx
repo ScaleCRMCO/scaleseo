@@ -1,120 +1,122 @@
+"use client";
 import Link from "next/link";
+import { useRef, type MouseEvent } from "react";
+import CountUp from "../../components/CountUp";
 import styles from "./CaseStudy.module.css";
 
-/* Case studies: split heading row, then a 2x2 grid of boxed cards
-   (image on top, metric and title below). */
+/* Case studies (DD.NYC style): a horizontal row of large image cards that
+   runs off the right edge. Each image carries an animated metric in its
+   bottom-left corner; number, client and services sit underneath. Clicking a
+   card that is only partly on screen slides it into view; clicking a fully
+   visible card opens the case study. */
 
 type Card = {
   href: string;
   client: string;
-  tag: string;
-  metric: string;
-  metricLabel: string;
-  title: string;
+  services: string;
   image: string;
-  theme: "sky" | "midnight" | "lime" | "pink";
+  metric: { from?: number; to?: number; prefix?: string; suffix?: string; text?: string };
+  metricLabel: string;
 };
 
 const cards: Card[] = [
   {
     href: "/results/jensen-cpa",
     client: "Jensen CPA",
-    tag: "Accounting & Tax · Calgary",
-    metric: "+227%",
-    metricLabel: "Average daily search impressions",
-    title: "Building a stronger digital presence for a Calgary CPA firm",
-    image: "/images/jensen-cpa-homepage.webp",
-    theme: "sky",
+    services: "SEO / Web Development / Content Strategy / Google Ads",
+    image: "/images/jensen-cpa-cover.webp",
+    metric: { to: 227, prefix: "+", suffix: "%" },
+    metricLabel: "Search impressions",
   },
   {
     href: "/results/empire-accountants",
     client: "Empire Accountants",
-    tag: "Accounting & Advisory · Brisbane",
-    metric: "Page 5 → Page 1",
-    metricLabel: "Target keyword rankings",
-    title: "Moving priority accounting searches onto page one of Google",
-    image: "/images/empireaccountants-hero-image.png",
-    theme: "midnight",
+    services: "SEO / Technical SEO / Content Strategy",
+    image: "/images/empire-accountants-cover.webp",
+    metric: { from: 5, to: 1, prefix: "Page " },
+    metricLabel: "Target rankings, up from page 5",
   },
   {
     href: "/results/kinsmen-consulting",
     client: "Kinsmen Consulting",
-    tag: "Concrete & Construction · Calgary",
-    metric: "$500K",
-    metricLabel: "Revenue generated from new jobs",
-    title: "SEO and website development tied to real project revenue",
+    services: "Web Development / Local SEO / Search Strategy",
     image: "/images/kinsmen-hero.jpg",
-    theme: "lime",
+    metric: { to: 500, prefix: "$", suffix: "K" },
+    metricLabel: "Revenue from new jobs",
   },
   {
     href: "/results/msv-plumbing-services",
     client: "MSV Plumbing Services",
-    tag: "Plumbing Services · Brisbane",
-    metric: "0 → Weekly",
-    metricLabel: "Consistent customer bookings",
-    title: "Building organic visibility for a brand-new plumbing business",
-    image: "/images/msv-screenshot.png",
-    theme: "pink",
+    services: "Web Development / SEO / Google Ads",
+    image: "/images/msv-plumbing-cover.webp",
+    metric: { text: "Weekly" },
+    metricLabel: "Bookings from a standing start",
   },
 ];
 
-function CaseCard({ card }: { card: Card }) {
-  return (
-    <Link
-      href={card.href}
-      className={`${styles.card} ${styles.cardDark} reveal-up`}
-    >
-      <div className={styles.cardImage}>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={card.image} alt={`${card.client} website`} loading="lazy" />
-      </div>
-      <div className={styles.cardBody}>
-        <span className={styles.cardTag}>{card.tag}</span>
-        <span className={styles.cardMetric}>{card.metric}</span>
-        <span className={styles.cardMetricLabel}>{card.metricLabel}</span>
-        <h3 className={styles.cardTitle}>{card.title}</h3>
-        <span className={styles.cardFooter}>
-          <span className={styles.cardClient}>{card.client}</span>
-          <span className={styles.cardArrow} aria-hidden="true">+</span>
-        </span>
-      </div>
-    </Link>
-  );
-}
-
 export default function CaseStudy() {
+  const track = useRef<HTMLDivElement>(null);
+
+  // A card that runs off either edge scrolls into view instead of navigating
+  const onCardClick = (e: MouseEvent<HTMLAnchorElement>) => {
+    const t = track.current;
+    if (!t) return;
+    const card = e.currentTarget.getBoundingClientRect();
+    const box = t.getBoundingClientRect();
+    if (card.right > box.right + 2 || card.left < box.left - 2) {
+      e.preventDefault();
+      t.scrollBy({ left: card.left - box.left - 40, behavior: "smooth" });
+    }
+  };
+
+  const step = (dir: number) => {
+    const t = track.current;
+    if (!t) return;
+    const first = t.querySelector("a");
+    const w = first ? first.getBoundingClientRect().width + 24 : t.clientWidth * 0.6;
+    t.scrollBy({ left: dir * w, behavior: "smooth" });
+  };
+
   return (
     <section className={styles.case} id="work">
       <div className={styles.head}>
-        <div className={styles.headLeft}>
-          <span className={styles.eyebrow}>Case Studies</span>
-          <h2 className={styles.heading}>SEO Results From Real Client Campaigns</h2>
-        </div>
-        <div className={styles.headRight}>
-          <div className={styles.intro}>
-            <p>
-              Search rankings are useful, but they only matter when increased
-              visibility contributes to real business growth.
-            </p>
-            <p>
-              Scale SEO campaigns are built around improving the search visibility
-              that matters to each client, whether that means ranking important
-              service pages, expanding organic traffic, generating qualified
-              enquiries, or supporting broader revenue growth.
-            </p>
-          </div>
-          <Link href="/results" className={styles.button}>
-            <svg className={styles.corner} viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
-              <path d="M1 1.5h7.5V9" />
-            </svg>
-            <span>View All Case Studies</span>
-          </Link>
-        </div>
+        <p className={styles.label}>
+          <span className={styles.rule} aria-hidden="true" />
+          Scale SEO Client Work
+        </p>
+        <h2 className={styles.heading}>SEO Results From Real Client Campaigns</h2>
       </div>
-      <div className={styles.grid}>
-        {cards.map((c) => (
-          <CaseCard key={c.client} card={c} />
+
+      <div className={styles.track} ref={track}>
+        {cards.map((c, i) => (
+          <Link key={c.href} href={c.href} className={styles.card} onClick={onCardClick}>
+            <div className={styles.media}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={c.image} alt={`${c.client} case study`} loading="lazy" />
+              <div className={styles.metric}>
+                <span className={styles.metricValue}>
+                  {c.metric.text ?? (
+                    <CountUp from={c.metric.from ?? 0} to={c.metric.to ?? 0} prefix={c.metric.prefix} suffix={c.metric.suffix} />
+                  )}
+                </span>
+                <span className={styles.metricLabel}>{c.metricLabel}</span>
+              </div>
+            </div>
+            <span className={styles.num}>{String(i + 1).padStart(2, "0")}</span>
+            <h3 className={styles.client}>{c.client}</h3>
+            <p className={styles.services}>{c.services}</p>
+          </Link>
         ))}
+      </div>
+
+      <div className={styles.foot}>
+        <Link href="/results" className={styles.all}>
+          View all case studies <span aria-hidden="true">&rarr;</span>
+        </Link>
+        <div className={styles.arrows}>
+          <button type="button" onClick={() => step(-1)} aria-label="Previous case studies">&larr;</button>
+          <button type="button" onClick={() => step(1)} aria-label="More case studies">&rarr;</button>
+        </div>
       </div>
     </section>
   );
