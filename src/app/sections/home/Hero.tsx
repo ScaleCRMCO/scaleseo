@@ -44,7 +44,12 @@ export default function Hero() {
       </div>
 
       {/* Client logo strip: small grey logos in one row on white (Bilberrry style), between hero and intro */}
-      <div className={styles.logos} aria-label="Selected clients">
+      <div className={styles.logos}>
+        <p className={styles.logosLabel}>
+          <span className={styles.logosRule} aria-hidden="true" />
+          Trusted by local &amp; national brands
+        </p>
+        <div className={styles.logoRow} aria-label="Selected clients">
         {[
           { src: "/images/client-logo-jensen-cpa.png", alt: "Jensen CPA", h: 22 },
           { src: "/images/client-logo-kinsmen-consulting.png", alt: "Kinsmen Consulting Limited", h: 24 },
@@ -56,6 +61,7 @@ export default function Hero() {
             <img src={l.src} alt={l.alt} style={{ height: l.h }} />
           </div>
         ))}
+        </div>
       </div>
 
       {/* Intro: large statement, label bottom-left, About button bottom-right */}
