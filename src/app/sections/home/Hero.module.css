@@ -297,13 +297,14 @@
 }
 
 /* Client logo strip */
-.logos { display: grid; grid-template-columns: repeat(3, 1fr); background: var(--h-navy); }
+.logos { display: grid; grid-template-columns: repeat(4, 1fr); background: var(--h-white); border-bottom: 1px solid var(--h-rule); }
 .logoCell { display: flex; align-items: center; justify-content: center; padding: 36px 24px; }
-.logoCell + .logoCell { border-left: 1px solid rgba(254, 254, 254, 0.14); }
-.logoCell img { display: block; width: auto; max-width: 100%; opacity: 0.92; }
+.logoCell + .logoCell { border-left: 1px solid var(--h-rule); }
+.logoCell img { display: block; width: auto; max-width: 100%; }
 @media (max-width: 700px) {
-  .logos { grid-template-columns: 1fr; }
+  .logos { grid-template-columns: 1fr 1fr; }
   .logoCell { padding: 24px 16px; }
-  .logoCell + .logoCell { border-left: 0; border-top: 1px solid rgba(254, 254, 254, 0.14); }
-  .logoCell img { max-height: 30px; }
+  .logoCell:nth-child(odd) { border-left: 0; }
+  .logoCell:nth-child(n+3) { border-top: 1px solid var(--h-rule); }
+  .logoCell img { max-height: 26px; }
 }
