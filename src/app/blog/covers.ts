@@ -1,5 +1,9 @@
 // Cover image per post (card thumbnail, article hero and schema image).
 export const covers: Record<string, { src: string; alt: string }> = {
+  "how-to-rank-business-across-canada": {
+    src: "/images/toronto-cn-tower.webp",
+    alt: "Black and white street view of downtown Toronto with the CN Tower, representing ranking a business across Canada",
+  },
   "why-business-not-showing-on-google-calgary": {
     src: "/images/blog-why-business-not-showing-on-google-calgary.webp",
     alt: "3D blue map location pin on a navy background, representing local search visibility in Calgary",

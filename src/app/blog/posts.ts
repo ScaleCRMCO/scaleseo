@@ -26,6 +26,669 @@ export type Post = {
 
 export const posts: Post[] = [
   {
+    "slug": "how-to-rank-business-across-canada",
+    "title": "How to Rank Your Business Across Canada (Without Offices in Every City)",
+    "metaTitle": "How to Rank Your Business Across Canada | Scale SEO",
+    "description": "Learn how to rank your business across Canada without offices in every city. Explore national SEO, service pages, local SEO, and Google rankings.",
+    "date": "2026-11-04T09:00:00-07:00",
+    "readTime": "10 min read",
+    "category": "National SEO",
+    "excerpt": "Your business doesn't need an office in every Canadian city to reach customers through Google. Here's how national SEO, service pages and location pages work together.",
+    "body": [
+      {
+        "type": "p",
+        "text": "**Your business doesn't need an office in every Canadian city to reach customers through Google.**"
+      },
+      {
+        "type": "p",
+        "text": "If you run an accounting firm, consulting company, or another service business, you may be able to work with clients across Canada from one location."
+      },
+      {
+        "type": "p",
+        "text": "But how do you get your website to appear in Google searches outside your home city?"
+      },
+      {
+        "type": "p",
+        "text": "The answer depends on what people are searching for, where your customers are located, and how your website is built."
+      },
+      {
+        "type": "p",
+        "text": "In this guide, we'll explain how national SEO works, when you need location pages, and how to reach customers across Canada without opening more offices."
+      },
+      {
+        "type": "h2",
+        "text": "Can Your Business Rank in Other Cities Without an Office?"
+      },
+      {
+        "type": "p",
+        "text": "**Yes. A business can appear in Google's regular search results for people in other cities, even without an office there.**"
+      },
+      {
+        "type": "p",
+        "text": "For example, a Calgary consulting firm may provide services to companies in Vancouver, Toronto, and Edmonton."
+      },
+      {
+        "type": "p",
+        "text": "The firm doesn't need offices in those cities to create useful content or compete for relevant searches."
+      },
+      {
+        "type": "p",
+        "text": "However, there is an important difference between Google's regular search results and Google Maps."
+      },
+      {
+        "type": "p",
+        "text": "**Google Search**"
+      },
+      {
+        "type": "p",
+        "text": "Your website can appear in regular search results based on factors such as its content, relevance, and overall search performance."
+      },
+      {
+        "type": "p",
+        "text": "**Google Maps**"
+      },
+      {
+        "type": "p",
+        "text": "Google's local results are more closely tied to a business's location and the area it serves."
+      },
+      {
+        "type": "p",
+        "text": "A business based in Calgary shouldn't expect to appear in Vancouver's local map results simply because it adds a Vancouver page to its website."
+      },
+      {
+        "type": "p",
+        "text": "Understanding this difference is the first step toward choosing the right SEO strategy."
+      },
+      {
+        "type": "h2",
+        "text": "1. Start With National SEO, Not Just Local SEO"
+      },
+      {
+        "type": "p",
+        "text": "Local SEO and national SEO help businesses reach different audiences."
+      },
+      {
+        "type": "p",
+        "text": "Local SEO focuses on customers searching in a specific city or service area."
+      },
+      {
+        "type": "p",
+        "text": "For example:"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Corporate tax accountant Calgary",
+          "Commercial plumber Edmonton",
+          "Business consultant Vancouver"
+        ]
+      },
+      {
+        "type": "p",
+        "text": "National SEO focuses on reaching customers across a larger market, often without relying on a city name."
+      },
+      {
+        "type": "p",
+        "text": "Examples include:"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Corporate tax planning for businesses",
+          "Fractional CFO services",
+          "Business process consulting",
+          "Accounting services for Canadian corporations"
+        ]
+      },
+      {
+        "type": "p",
+        "text": "These searches may attract customers from different provinces."
+      },
+      {
+        "type": "p",
+        "text": "If your business serves clients across Canada, your website should explain what you offer and who you help, rather than focusing only on your home city."
+      },
+      {
+        "type": "p",
+        "text": "A [national SEO strategy](/services/national-seo) can help you identify these searches and build the right pages to target them."
+      },
+      {
+        "type": "h2",
+        "text": "2. Build Strong Service Pages Before Creating City Pages"
+      },
+      {
+        "type": "p",
+        "text": "One common mistake is creating a separate page for every city before improving the main service pages."
+      },
+      {
+        "type": "p",
+        "text": "For many businesses, the better starting point is a clear page for each important service."
+      },
+      {
+        "type": "p",
+        "text": "Imagine a Calgary accounting firm that serves businesses across Canada."
+      },
+      {
+        "type": "p",
+        "text": "Its website might include:"
+      },
+      {
+        "type": "table",
+        "head": [
+          "Website page",
+          "Purpose"
+        ],
+        "rows": [
+          [
+            "Corporate Tax Services",
+            "Explain corporate tax services and who needs them"
+          ],
+          [
+            "Fractional CFO Services",
+            "Reach businesses looking for ongoing financial advice"
+          ],
+          [
+            "Bookkeeping Services",
+            "Explain bookkeeping support and its benefits"
+          ],
+          [
+            "Accounting for Consultants",
+            "Address the needs of a specific industry"
+          ]
+        ]
+      },
+      {
+        "type": "p",
+        "text": "Each page should answer questions that potential customers are likely to ask."
+      },
+      {
+        "type": "p",
+        "text": "A useful service page explains:"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "What the service includes.",
+          "Who the service is for.",
+          "Which problems it helps solve.",
+          "Where the business can provide the service.",
+          "Why customers should trust the provider.",
+          "How to get started."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "If the service is available across Canada, say so clearly."
+      },
+      {
+        "type": "p",
+        "text": "You don't need to repeat the same list of Canadian cities throughout every page."
+      },
+      {
+        "type": "p",
+        "text": "The goal is to help visitors understand your services, not simply add more location keywords."
+      },
+      {
+        "type": "h2",
+        "text": "3. Do You Need a Location Page for Every City?"
+      },
+      {
+        "type": "p",
+        "text": "**No. You don't need a separate SEO landing page for every city you serve.**"
+      },
+      {
+        "type": "p",
+        "text": "Location pages can be useful, but they need a clear purpose."
+      },
+      {
+        "type": "p",
+        "text": "For example, a business serving Vancouver customers may benefit from a Vancouver page if it provides information that is genuinely useful to people in that market."
+      },
+      {
+        "type": "p",
+        "text": "That could include:"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Services available to Vancouver customers.",
+          "Relevant local business needs.",
+          "How the company works with clients in Vancouver.",
+          "Examples of work completed in that market, if available.",
+          "Answers to questions specific to local customers."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "The problem comes when businesses create dozens of pages that say almost the same thing."
+      },
+      {
+        "type": "p",
+        "text": "Imagine a consulting company publishing 30 city pages where only the city name changes."
+      },
+      {
+        "type": "p",
+        "text": "Those pages offer little new information to customers."
+      },
+      {
+        "type": "p",
+        "text": "Google's spam policies warn against creating substantially similar pages for different cities when they mainly exist to capture search traffic and direct visitors to the same destination."
+      },
+      {
+        "type": "p",
+        "text": "**A smaller number of useful pages is often a better starting point than dozens of repetitive pages.**"
+      },
+      {
+        "type": "p",
+        "text": "If your business serves all of Canada, start with strong service pages. Add city pages when there is a real reason to create them."
+      },
+      {
+        "type": "h2",
+        "text": "4. Target the Services and Industries Your Customers Search For"
+      },
+      {
+        "type": "p",
+        "text": "Ranking across Canada doesn't mean your business needs to target every broad keyword in its industry."
+      },
+      {
+        "type": "p",
+        "text": "In fact, broad searches can attract people who aren't looking for your services."
+      },
+      {
+        "type": "p",
+        "text": "A better approach is to focus on the specific problems your business solves."
+      },
+      {
+        "type": "h3",
+        "text": "Example: A Canadian Accounting Firm"
+      },
+      {
+        "type": "p",
+        "text": "An accounting firm may want more corporate clients rather than individual tax returns."
+      },
+      {
+        "type": "p",
+        "text": "Instead of focusing only on the broad term \"accountant Canada,\" the firm could build content around:"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Corporate tax filing",
+          "Fractional CFO services",
+          "Tax planning for corporations",
+          "Bookkeeping for growing businesses",
+          "Accounting for professional service firms"
+        ]
+      },
+      {
+        "type": "p",
+        "text": "These topics are more closely connected to the services the firm wants to sell."
+      },
+      {
+        "type": "p",
+        "text": "The website can also include useful articles that answer related questions."
+      },
+      {
+        "type": "p",
+        "text": "For example, an article explaining corporate tax deadlines may help business owners understand their obligations and find the firm's corporate tax services."
+      },
+      {
+        "type": "p",
+        "text": "This approach helps create a website built around real customer needs."
+      },
+      {
+        "type": "p",
+        "text": "It also gives Google more useful information about the services your business provides."
+      },
+      {
+        "type": "h2",
+        "text": "5. Make Sure Google Can Find Your Important Pages"
+      },
+      {
+        "type": "p",
+        "text": "Even strong content may struggle if your website has technical problems."
+      },
+      {
+        "type": "p",
+        "text": "Technical SEO helps search engines access and understand your website."
+      },
+      {
+        "type": "p",
+        "text": "Some important areas to review include:"
+      },
+      {
+        "type": "p",
+        "text": "**Crawling and indexing**"
+      },
+      {
+        "type": "p",
+        "text": "Check whether Google can access your important pages and whether those pages are included in its search index."
+      },
+      {
+        "type": "p",
+        "text": "**Website structure**"
+      },
+      {
+        "type": "p",
+        "text": "Organize your services, industries, and resources so visitors can find them easily."
+      },
+      {
+        "type": "p",
+        "text": "**Internal links**"
+      },
+      {
+        "type": "p",
+        "text": "Link related pages together using clear, useful text."
+      },
+      {
+        "type": "p",
+        "text": "For example, an article about reaching customers across Canada can link to a relevant national SEO service page."
+      },
+      {
+        "type": "p",
+        "text": "**Mobile usability**"
+      },
+      {
+        "type": "p",
+        "text": "Make sure your website is easy to read and use on mobile devices."
+      },
+      {
+        "type": "p",
+        "text": "**Page performance**"
+      },
+      {
+        "type": "p",
+        "text": "Check that important pages load reliably and provide a good user experience."
+      },
+      {
+        "type": "p",
+        "text": "Google Search Console can help you review search performance and identify indexing issues."
+      },
+      {
+        "type": "p",
+        "text": "You don't need a perfect technical score to rank, but fixing problems that prevent Google from accessing important content should be a priority."
+      },
+      {
+        "type": "h2",
+        "text": "6. Show Why Customers Should Trust Your Business"
+      },
+      {
+        "type": "p",
+        "text": "When someone finds your business through Google, they need a reason to choose you."
+      },
+      {
+        "type": "p",
+        "text": "This matters even more when they live in another city and can't easily visit your office."
+      },
+      {
+        "type": "p",
+        "text": "Your website should make it clear who runs the business, what experience you have, and how you work with customers."
+      },
+      {
+        "type": "p",
+        "text": "Useful trust signals include:"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Real client case studies.",
+          "Clear information about your team.",
+          "Relevant qualifications and experience.",
+          "Customer reviews and testimonials.",
+          "Examples of completed work.",
+          "Clear contact details and service information."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "For example, a consulting firm could explain how it helped a Canadian business solve a specific problem."
+      },
+      {
+        "type": "p",
+        "text": "A real example is more useful than simply claiming to be the best consulting company in Canada."
+      },
+      {
+        "type": "p",
+        "text": "Google's guidance on helpful content also encourages businesses to demonstrate real experience and provide information readers can trust."
+      },
+      {
+        "type": "p",
+        "text": "You don't need to claim that your business is located in every market you serve."
+      },
+      {
+        "type": "p",
+        "text": "Be clear about where you're based and how you work with customers in other locations."
+      },
+      {
+        "type": "h2",
+        "text": "7. Can You Use Google Business Profile to Rank Across Canada?"
+      },
+      {
+        "type": "p",
+        "text": "Google Business Profile is useful for eligible businesses that meet customers in person or travel to customers at their locations."
+      },
+      {
+        "type": "p",
+        "text": "However, it isn't a way to create a Google Maps presence in every city."
+      },
+      {
+        "type": "p",
+        "text": "Google requires businesses to represent their real locations accurately."
+      },
+      {
+        "type": "p",
+        "text": "For example, a business cannot create a separate Google Business Profile for a Vancouver virtual office simply to appear in local searches there."
+      },
+      {
+        "type": "p",
+        "text": "Businesses with genuine staffed locations may qualify for separate profiles, subject to Google's rules."
+      },
+      {
+        "type": "p",
+        "text": "For companies that work with customers entirely online, regular organic search may be a more suitable way to reach a national audience."
+      },
+      {
+        "type": "p",
+        "text": "**The key difference is that serving customers across Canada doesn't automatically make your business eligible for Google Maps listings across Canada.**"
+      },
+      {
+        "type": "p",
+        "text": "Your national SEO strategy should reflect how your business actually operates."
+      },
+      {
+        "type": "h2",
+        "text": "8. Measure Whether Your SEO Is Bringing the Right Customers"
+      },
+      {
+        "type": "p",
+        "text": "Getting more traffic isn't always the same as getting more business."
+      },
+      {
+        "type": "p",
+        "text": "A national SEO campaign should focus on whether your website is reaching potential customers who need your services."
+      },
+      {
+        "type": "p",
+        "text": "Google Search Console and website analytics can help you measure:"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Which searches bring visitors to your website.",
+          "Which service pages attract organic traffic.",
+          "How your search visibility changes over time.",
+          "Which pages lead to enquiries.",
+          "Whether visitors are finding the services you want to grow."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "You can also review search performance by country in Google Search Console."
+      },
+      {
+        "type": "p",
+        "text": "However, this doesn't give you a complete city-by-city picture of every potential customer."
+      },
+      {
+        "type": "p",
+        "text": "For a business serving clients across Canada, lead forms and customer relationship management tools can help record where enquiries come from."
+      },
+      {
+        "type": "p",
+        "text": "Over time, this information can help you decide which services, industries, and markets deserve more attention."
+      },
+      {
+        "type": "h2",
+        "text": "What Does a Good National SEO Website Look Like?"
+      },
+      {
+        "type": "p",
+        "text": "Let's use a simple example."
+      },
+      {
+        "type": "p",
+        "text": "Imagine a business advisory firm based in Calgary that works with companies across Canada."
+      },
+      {
+        "type": "p",
+        "text": "Instead of creating 20 nearly identical city pages, the firm could start with a website built around its actual services."
+      },
+      {
+        "type": "p",
+        "text": "**Main website**"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "**Homepage** — Explains the business and who it helps.",
+          "**Business Advisory** — Describes its main advisory services.",
+          "**Fractional CFO** — Targets businesses needing financial leadership.",
+          "**Corporate Tax Planning** — Explains a specialized service.",
+          "**Industries** — Covers the types of businesses it serves.",
+          "**Resources** — Answers common customer questions.",
+          "**About** — Introduces the team and its experience.",
+          "**Contact** — Makes it easy for customers across Canada to enquire."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "The firm could then add useful content around common business problems."
+      },
+      {
+        "type": "p",
+        "text": "If there is a clear need for a Toronto or Vancouver page, it can create one with information specific to that market."
+      },
+      {
+        "type": "p",
+        "text": "This approach gives the website a clear structure while leaving room to grow."
+      },
+      {
+        "type": "p",
+        "text": "It doesn't guarantee national rankings, but it provides a practical foundation for reaching customers across different markets."
+      },
+      {
+        "type": "h2",
+        "text": "How Long Does It Take to Rank Across Canada?"
+      },
+      {
+        "type": "p",
+        "text": "There is no fixed timeline."
+      },
+      {
+        "type": "p",
+        "text": "National SEO can be competitive, especially when established companies already rank for the searches you want to target."
+      },
+      {
+        "type": "p",
+        "text": "Your results will depend on factors such as:"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Your website's current search visibility.",
+          "The competition for your services.",
+          "The quality and usefulness of your content.",
+          "Technical issues affecting your website.",
+          "Your business's experience and online reputation."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "Some improvements may become visible within weeks, while more competitive searches can take several months or longer."
+      },
+      {
+        "type": "p",
+        "text": "The best starting point is to review your existing website and identify where meaningful improvements can be made."
+      },
+      {
+        "type": "h2",
+        "text": "Final Thoughts: You Don't Need Offices Across Canada to Grow Through Google"
+      },
+      {
+        "type": "p",
+        "text": "A business doesn't need offices in Toronto, Vancouver, Edmonton, and every other Canadian city to attract customers through organic search."
+      },
+      {
+        "type": "p",
+        "text": "What matters is having a website that clearly explains your services, answers customer questions, and makes it easy for people to trust your business."
+      },
+      {
+        "type": "p",
+        "text": "For many professional service and B2B companies, that means focusing on strong service pages, useful content, technical SEO, and relevant search opportunities."
+      },
+      {
+        "type": "p",
+        "text": "Location pages can support that strategy when they offer something useful, but they shouldn't replace the foundations of a good website."
+      },
+      {
+        "type": "p",
+        "text": "If your business serves customers beyond its local market, [Scale SEO provides national SEO services](/services/national-seo) for Canadian businesses looking to improve their organic search visibility."
+      },
+      {
+        "type": "p",
+        "text": "Based in Calgary, Scale SEO works directly with professional service and B2B companies across Canada, with SEO strategies built around their services, customers, and business goals."
+      },
+      {
+        "type": "h2",
+        "text": "Sources & Further Reading"
+      },
+      {
+        "type": "p",
+        "text": "The following official Google resources support the guidance in this article."
+      },
+      {
+        "type": "references",
+        "items": [
+          {
+            "title": "Google Search Central — SEO Starter Guide",
+            "href": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide",
+            "desc": "Explains how search engines discover content, how to organize websites, and how to write useful pages."
+          },
+          {
+            "title": "Google Search Central — Spam Policies for Google Web Search",
+            "href": "https://developers.google.com/search/docs/essentials/spam-policies",
+            "desc": "Covers doorway abuse, including the risks of creating similar pages to target different cities."
+          },
+          {
+            "title": "Google Business Profile Help — Guidelines for Representing Your Business on Google",
+            "href": "https://support.google.com/business/answer/3038177",
+            "desc": "Explains business location requirements, service areas, and eligibility for Google Business Profiles."
+          },
+          {
+            "title": "Google Search Central — Creating Helpful, Reliable, People-First Content",
+            "href": "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+            "desc": "Explains why useful, original, trustworthy content matters."
+          },
+          {
+            "title": "Google Search Central — SEO Link Best Practices",
+            "href": "https://developers.google.com/search/docs/crawling-indexing/links-crawlable",
+            "desc": "Explains how internal links help users and search engines discover related content."
+          }
+        ]
+      }
+    ]
+  },
+  {
     "slug": "why-business-not-showing-on-google-calgary",
     "title": "Why Your Calgary Business Isn't Showing Up on Google (And How to Fix It)",
     "metaTitle": "Why Your Calgary Business Isn't Showing on Google",
