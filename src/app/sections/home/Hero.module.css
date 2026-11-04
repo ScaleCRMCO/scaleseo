@@ -296,15 +296,11 @@
   .metric { padding-left: 20px; }
 }
 
-/* Client logo strip */
-.logos { display: grid; grid-template-columns: repeat(4, 1fr); background: var(--h-white); border-bottom: 1px solid var(--h-rule); }
-.logoCell { display: flex; align-items: center; justify-content: center; padding: 36px 24px; }
-.logoCell + .logoCell { border-left: 1px solid var(--h-rule); }
+/* Client logo strip: small logos spread across one row on navy */
+.logos { display: flex; justify-content: space-between; align-items: center; gap: 40px; padding: 40px clamp(40px, 10vw, 200px); background: var(--h-navy); }
+.logoCell { display: flex; align-items: center; justify-content: center; }
 .logoCell img { display: block; width: auto; max-width: 100%; }
 @media (max-width: 700px) {
-  .logos { grid-template-columns: 1fr 1fr; }
-  .logoCell { padding: 24px 16px; }
-  .logoCell:nth-child(odd) { border-left: 0; }
-  .logoCell:nth-child(n+3) { border-top: 1px solid var(--h-rule); }
-  .logoCell img { max-height: 26px; }
+  .logos { display: grid; grid-template-columns: 1fr 1fr; gap: 28px 24px; padding: 32px 16px; }
+  .logoCell img { max-height: 22px; }
 }
