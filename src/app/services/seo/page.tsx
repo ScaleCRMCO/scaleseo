@@ -74,7 +74,7 @@ const markets = [
   },
   {
     title: "Professional Services & B2B SEO",
-    body: "For accounting firms, consultants, and B2B businesses, I prioritize commercially relevant searches rather than traffic volume alone.",
+    body: "For accounting firms, consultants, and B2B businesses, we prioritize commercially relevant searches rather than traffic volume alone.",
     href: "/industries/accounting-firms",
     cta: "Explore SEO for Accounting Firms",
   },
@@ -105,8 +105,8 @@ const faqs: FaqItem[] = [
   { q: "How long does SEO take to work?", a: ["SEO generally takes several months to produce meaningful results. Timelines depend on your website\u2019s current condition, competition, existing visibility, and target searches."] },
   { q: "How much do SEO services cost?", a: ["Ongoing SEO starts at $3,000 CAD per month, plus applicable taxes. Each campaign is scoped individually based on your business needs."] },
   { q: "Do you provide SEO outside Calgary?", a: ["Yes. Scale SEO is based in Calgary and works remotely with businesses across Canada, including [Vancouver](/locations/vancouver) and [Edmonton](/locations/edmonton). I also work with international clients."] },
-  { q: "Can you make SEO changes directly to my website?", a: ["Yes. I implement technical, content, and structural improvements directly on client websites, including those built with Webflow, WordPress, and other supported platforms."] },
-  { q: "Do you guarantee Google rankings?", a: ["No. Google rankings cannot be guaranteed. I focus on practical improvements and measurable progress in relevant search visibility, traffic, and business enquiries."] },
+  { q: "Can you make SEO changes directly to my website?", a: ["Yes. We implement technical, content, and structural improvements directly on client websites, including those built with Webflow, WordPress, and other supported platforms."] },
+  { q: "Do you guarantee Google rankings?", a: ["No. Google rankings cannot be guaranteed. We focus on practical improvements and measurable progress in relevant search visibility, traffic, and business enquiries."] },
 ];
 
 const CONTACT_URL = "/contact";
@@ -309,8 +309,7 @@ export default function SeoServicePage() {
             professional service and B2B businesses in Calgary and across Canada.
           </p>
           <p>
-            I&rsquo;m Corbin Jensen, founder of Scale SEO. I manage every
-            campaign directly, combining technical SEO, website improvements, and
+            Scale SEO manages every campaign directly, combining technical SEO, website improvements, and
             content strategy to help your business reach the right customers.
           </p>
         </div>
@@ -337,7 +336,7 @@ export default function SeoServicePage() {
           <h2 className={ab.partnersTitle}>What&rsquo;s Included in SEO Services?</h2>
           <div className={ab.partnersText}>
             <p>
-              Every website has different priorities. I focus on the
+              Every website has different priorities. We focus on the
               improvements most likely to strengthen your search visibility and
               generate relevant business opportunities.
             </p>
@@ -440,12 +439,11 @@ export default function SeoServicePage() {
 
       {/* === PROCESS — pinned scroll section === */}
       <PinnedPoints
-        title="How My SEO Process Works"
+        title="How Our SEO Process Works"
         lead={
           <>
             Every campaign begins with understanding your website, customers,
-            and business goals. You work directly with me throughout the
-            engagement, from strategy to implementation and reporting.
+            and business goals. You work directly with the Scale SEO team throughout the engagement, from strategy to implementation and reporting.
           </>
         }
         items={process}
@@ -467,7 +465,7 @@ export default function SeoServicePage() {
               ))}
             </ul>
             <p>
-              I primarily work with accounting firms, professional service
+              We primarily work with accounting firms, professional service
               businesses, consultants, and B2B companies.
             </p>
             <p>
@@ -513,7 +511,7 @@ export default function SeoServicePage() {
 
       <ContactSection
         heading="Let's Improve Your Organic Search Performance"
-        lead="If your website isn't attracting enough qualified enquiries, I can help identify what's limiting its performance and where the best opportunities may be. You'll work directly with me to understand your website, competition, and the SEO improvements worth prioritizing."
+        lead="If your website isn't attracting enough qualified enquiries, we can help identify what's limiting its performance and where the best opportunities may be. You'll work directly with us to understand your website, competition, and the SEO improvements worth prioritizing."
         cta={{ href: CONTACT_URL, label: "Book a Strategy Call →" }}
         note={
           <>

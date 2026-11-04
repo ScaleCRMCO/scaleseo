@@ -18,7 +18,7 @@ const included: { title: string; body: string[] }[] = [
   {
     title: "AI Search Visibility & Research",
     body: [
-      "I review how your business and its services appear across relevant AI-powered search experiences.",
+      "We review how your business and its services appear across relevant AI-powered search experiences.",
       "This helps identify opportunities to improve your website’s content, strengthen business information, and address topics potential customers are researching.",
     ],
   },
@@ -26,15 +26,15 @@ const included: { title: string; body: string[] }[] = [
     title: "Website Content & Structure",
     body: [
       "AI search optimization starts with useful information.",
-      "I improve important service pages, supporting content, headings, and internal links so your website clearly explains what your business does and who it helps.",
-      "Where appropriate, I also develop new pages that address genuine customer questions and relevant search opportunities.",
+      "We improve important service pages, supporting content, headings, and internal links so your website clearly explains what your business does and who it helps.",
+      "Where appropriate, we also develop new pages that address genuine customer questions and relevant search opportunities.",
     ],
   },
   {
     title: "Technical SEO & Structured Data",
     body: [
       "Your website needs to be accessible to search engines before its information can be discovered.",
-      "I review crawling and indexing issues, website architecture, and relevant structured data. This can include information about your organization, services, people, and published content.",
+      "We review crawling and indexing issues, website architecture, and relevant structured data. This can include information about your organization, services, people, and published content.",
       "Structured data helps describe your website’s information, but it doesn’t guarantee AI citations.",
     ],
   },
@@ -42,7 +42,7 @@ const included: { title: string; body: string[] }[] = [
     title: "Business Expertise & Trust",
     body: [
       "For professional service businesses, knowing who provides a service is often as important as understanding the service itself.",
-      "I strengthen company information, author profiles, service descriptions, and relevant supporting evidence to make your business’s experience and expertise clearer.",
+      "We strengthen company information, author profiles, service descriptions, and relevant supporting evidence to make your business’s experience and expertise clearer.",
       "This work is based on accurate information about your business, not manufactured credentials or artificial authority signals.",
     ],
   },
@@ -73,7 +73,7 @@ const faqs: FaqItem[] = [
     q: "Can you guarantee my business will appear in ChatGPT?",
     a: [
       "No. AI platforms determine which information and sources they use.",
-      "I focus on improving the website and business information you control rather than promising specific AI recommendations or citations.",
+      "We focus on improving the website and business information you control rather than promising specific AI recommendations or citations.",
     ],
   },
   {
@@ -259,7 +259,7 @@ export default function GeoServicePage() {
               across Canada.
             </p>
             <p>
-              I improve your website&rsquo;s content, structure, and technical
+              Scale SEO improves your website&rsquo;s content, structure, and technical
               foundations to help search engines and AI platforms discover and
               understand your business. The goal is to strengthen your visibility
               when potential customers research the services you provide.
@@ -332,7 +332,7 @@ export default function GeoServicePage() {
             <span className={t.eyebrow}>Client Work</span>
             <h2 className={t.h2}>AI Search Optimization in Practice</h2>
             <p className={t.body}>
-              I already incorporate AI search considerations into ongoing SEO work
+              Scale SEO already incorporates AI search considerations into ongoing SEO work
               for professional service businesses.
             </p>
           </div>
@@ -340,13 +340,13 @@ export default function GeoServicePage() {
             <div className={t.body}>
               <ul className={t.darkList}>
                 <li>
-                  For <strong>Empire Accountants</strong>, I&rsquo;ve improved
+                  For <strong>Empire Accountants</strong>, we&rsquo;ve improved
                   business accounting service pages, expanded industry-specific
                   content, implemented structured data, and developed a dedicated
                   business information page.
                 </li>
                 <li>
-                  For <strong>Jensen CPA</strong>, I&rsquo;ve worked on
+                  For <strong>Jensen CPA</strong>, we&rsquo;ve worked on
                   service-page development, accounting articles, author
                   information, technical SEO, and the connections between the
                   firm&rsquo;s expertise and its services.
@@ -374,7 +374,7 @@ export default function GeoServicePage() {
           <h2 className={t.h2}>How Do You Measure AI Search Visibility?</h2>
           <p className={t.body}>
             AI search doesn&rsquo;t work exactly like traditional Google rankings,
-            so I look at several indicators.
+            so we look at several indicators.
           </p>
         </div>
         <div className={t.rowsList}>
@@ -398,7 +398,7 @@ export default function GeoServicePage() {
 
       <ContactSection
         heading="Work Directly With an SEO Specialist"
-        lead="If you're interested in improving how your business is discovered online, I can review your current website and recommend where AI search optimization fits into your broader strategy."
+        lead="If you're interested in improving how your business is discovered online, we can review your current website and recommend where AI search optimization fits into your broader strategy."
         cta={{ href: "/contact", label: "Book a Strategy Call →" }}
       />
     </main>

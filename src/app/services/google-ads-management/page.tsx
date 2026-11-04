@@ -20,7 +20,7 @@ const included: { title: string; body: string[] }[] = [
   {
     title: "Campaign Setup & Targeting",
     body: [
-      "I build or improve Google Search campaigns around your services, target locations, and business goals.",
+      "We build or improve Google Search campaigns around your services, target locations, and business goals.",
       "This includes campaign structure, keyword research, location targeting, ad copy, and relevant ad assets.",
     ],
   },
@@ -28,22 +28,22 @@ const included: { title: string; body: string[] }[] = [
     title: "Conversion Tracking",
     body: [
       "Clicks alone don’t tell us whether advertising is working.",
-      "I review or configure appropriate conversion tracking, such as phone calls and enquiry forms, so we can better understand which campaigns are generating useful customer actions.",
+      "We review or configure appropriate conversion tracking, such as phone calls and enquiry forms, so we can better understand which campaigns are generating useful customer actions.",
     ],
   },
   {
     title: "Landing Page Improvements",
     body: [
       "The page someone visits after clicking an ad matters.",
-      "I review your landing pages to ensure they match the searcher’s intent, clearly explain your services, and make it easy to enquire.",
-      "Where needed, I can also make website improvements or develop dedicated landing pages as part of an agreed project scope.",
+      "We review your landing pages to ensure they match the searcher’s intent, clearly explain your services, and make it easy to enquire.",
+      "Where needed, we can also make website improvements or develop dedicated landing pages as part of an agreed project scope.",
     ],
   },
   {
     title: "Ongoing Campaign Optimization",
     body: [
-      "Once campaigns are running, I monitor search terms, negative keywords, budgets, bidding, and conversion performance.",
-      "I use the available data to identify wasted spend, test improvements, and adjust the campaigns as performance develops.",
+      "Once campaigns are running, we monitor search terms, negative keywords, budgets, bidding, and conversion performance.",
+      "We use the available data to identify wasted spend, test improvements, and adjust the campaigns as performance develops.",
     ],
   },
 ];
@@ -52,20 +52,20 @@ const steps: { title: string; body: string[] }[] = [
   {
     title: "01 — Review & Strategy",
     body: [
-      "I review your business, website, advertising goals, and existing campaigns if you have them.",
-      "From there, I recommend a suitable approach, including the campaign focus, initial budget, and any website improvements needed before launch.",
+      "We review your business, website, advertising goals, and existing campaigns if you have them.",
+      "From there, we recommend a suitable approach, including the campaign focus, initial budget, and any website improvements needed before launch.",
     ],
   },
   {
     title: "02 — Setup & Launch",
     body: [
-      "I develop the campaigns, configure targeting and relevant tracking, and review the landing pages before launching.",
+      "We develop the campaigns, configure targeting and relevant tracking, and review the landing pages before launching.",
     ],
   },
   {
     title: "03 — Monitor & Improve",
     body: [
-      "After launch, I review performance and make adjustments based on search terms, enquiries, costs, and available conversion data.",
+      "After launch, we review performance and make adjustments based on search terms, enquiries, costs, and available conversion data.",
       "You’ll receive clear updates on campaign performance and the changes being made.",
     ],
   },
@@ -75,8 +75,8 @@ const faqs: FaqItem[] = [
   {
     q: "Can I use Google Ads without monthly SEO?",
     a: [
-      "Yes. I also consider standalone Google Ads projects.",
-      "Before recommending a campaign, I’ll review your website, goals, and available budget to determine whether paid search is likely to be a suitable investment.",
+      "Yes. Scale SEO also takes on standalone Google Ads projects.",
+      "Before recommending a campaign, we’ll review your website, goals, and available budget to determine whether paid search is likely to be a suitable investment.",
     ],
   },
   {
@@ -90,7 +90,7 @@ const faqs: FaqItem[] = [
     q: "Do I need a separate landing page?",
     a: [
       "Not always. If your existing service pages are relevant and make it easy for visitors to enquire, they may be suitable.",
-      "If the website needs improvement, I’ll explain what I recommend before additional development work begins.",
+      "If the website needs improvement, we’ll explain what we recommend before additional development work begins.",
     ],
   },
   {
@@ -206,7 +206,7 @@ export default function GoogleAdsPage() {
               B2B businesses in Calgary and across Canada.
             </p>
             <p>
-              I manage search campaigns alongside SEO to help businesses generate
+              Scale SEO manages search campaigns alongside SEO to help businesses generate
               enquiries while building their longer-term organic visibility.
             </p>
             <p>
@@ -235,8 +235,7 @@ export default function GoogleAdsPage() {
               while your organic visibility is still developing.
             </p>
             <p>
-              Rather than managing advertising separately from your website, I look
-              at how your campaigns, landing pages, and SEO strategy work together.
+              Rather than managing advertising separately from your website, we look at how your campaigns, landing pages, and SEO strategy work together.
             </p>
             <p>
               Paid search can also reveal which search terms generate enquiries,
@@ -284,7 +283,7 @@ export default function GoogleAdsPage() {
           <div className={t.featureSide}>
             <div className={t.body}>
               <p>
-                My Google Ads work includes managing search campaigns for MSV
+                Our Google Ads work includes managing search campaigns for MSV
                 Plumbing Services, a Brisbane plumbing business.
               </p>
               <p>
@@ -293,7 +292,7 @@ export default function GoogleAdsPage() {
                 tracking, and ongoing keyword and search-term optimization.
               </p>
               <p>
-                Because I also manage MSV&rsquo;s website and SEO, I can review the
+                Because Scale SEO also manages MSV&rsquo;s website and SEO, we can review the
                 advertising and landing pages together rather than treating them as
                 separate projects.
               </p>
@@ -356,7 +355,7 @@ export default function GoogleAdsPage() {
 
       <ContactSection
         heading="Work Directly With Your Google Ads Manager"
-        lead="If you're considering Google Ads, either independently or alongside monthly SEO, I can review your goals and recommend an appropriate starting point."
+        lead="If you're considering Google Ads, either independently or alongside monthly SEO, we can review your goals and recommend an appropriate starting point."
         cta={{ href: "/contact", label: "Book a Strategy Call →" }}
       />
     </main>

@@ -17,19 +17,19 @@ export const metadata: Metadata = {
 const included: { title: string; body: string }[] = [
   {
     title: "Technical SEO & Indexing",
-    body: "I review how Google can discover and access your website, including indexing issues, redirects, canonical URLs, broken links, and other technical problems affecting important pages.",
+    body: "We review how Google can discover and access your website, including indexing issues, redirects, canonical URLs, broken links, and other technical problems affecting important pages.",
   },
   {
     title: "Website Content & Structure",
-    body: "I assess your main pages, headings, metadata, internal links, and website organization to identify weaknesses, overlapping content, and opportunities for improvement.",
+    body: "We assess your main pages, headings, metadata, internal links, and website organization to identify weaknesses, overlapping content, and opportunities for improvement.",
   },
   {
     title: "Keywords & Search Performance",
-    body: "Where search data is available, I review the queries bringing visitors to your website, the pages gaining visibility, and potential opportunities you’re currently missing.",
+    body: "Where search data is available, we review the queries bringing visitors to your website, the pages gaining visibility, and potential opportunities you’re currently missing.",
   },
   {
     title: "Competitors & Local SEO",
-    body: "For audits requiring a broader strategy review, I examine relevant search competitors and local visibility to identify where your website could better compete for valuable searches.",
+    body: "For audits requiring a broader strategy review, we examine relevant search competitors and local visibility to identify where your website could better compete for valuable searches.",
   },
 ];
 
@@ -38,7 +38,7 @@ const faqs: FaqItem[] = [
     q: "How much does an SEO audit cost?",
     a: [
       "Standalone audits are quoted individually. The cost depends on your website’s size, technical complexity, and whether you need a focused technical review or a broader assessment of keywords, competitors, and search opportunities.",
-      "I’ll confirm the scope and price before beginning.",
+      "We’ll confirm the scope and price before beginning.",
     ],
   },
   {
@@ -55,7 +55,7 @@ const faqs: FaqItem[] = [
   {
     q: "What access do you need?",
     a: [
-      "I can review many aspects of a website without administrative access. Google Search Console access is useful for understanding existing search performance and indexing issues, but I’ll confirm what’s needed before the audit begins.",
+      "We can review many aspects of a website without administrative access. Google Search Console access is useful for understanding existing search performance and indexing issues, but we’ll confirm what’s needed before the audit begins.",
     ],
   },
 ];
@@ -234,7 +234,7 @@ export default function SeoAuditsPage() {
               and across Canada.
             </p>
             <p>
-              I review your website&rsquo;s technical health, search visibility,
+              Scale SEO reviews your website&rsquo;s technical health, search visibility,
               content, and structure to identify problems and opportunities worth
               addressing.
             </p>
@@ -269,7 +269,7 @@ export default function SeoAuditsPage() {
               right searches, or competitors have more useful service pages.
             </p>
             <p>
-              I use website crawling tools, Google Search Console data where
+              We use website crawling tools, Google Search Console data where
               available, and manual analysis to understand what&rsquo;s happening.
             </p>
             <p>
@@ -315,7 +315,7 @@ export default function SeoAuditsPage() {
                 recommendations prioritized by importance.
               </p>
               <p>
-                Rather than recommending every possible improvement, I focus on the
+                Rather than recommending every possible improvement, we focus on the
                 issues and opportunities most relevant to your business.
               </p>
               <p>
@@ -362,7 +362,7 @@ export default function SeoAuditsPage() {
               <p>
                 If you&rsquo;re considering{" "}
                 <Link href="/services/seo" className={t.inlineLink}>monthly SEO services</Link>,
-                I provide a complimentary initial SEO assessment as part of
+                we provide a complimentary initial SEO assessment as part of
                 evaluating a potential engagement.
               </p>
               <p>
@@ -388,7 +388,7 @@ export default function SeoAuditsPage() {
 
       <ContactSection
         heading="Get an Independent Review of Your Website"
-        lead="If you're unsure why your website isn't performing as expected, I can review your requirements and recommend an appropriate audit scope."
+        lead="If you're unsure why your website isn't performing as expected, we can review your requirements and recommend an appropriate audit scope."
         cta={{ href: "/contact", label: "Request an SEO Audit →" }}
       />
     </main>

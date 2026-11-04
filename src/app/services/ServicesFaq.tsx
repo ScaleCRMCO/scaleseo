@@ -26,7 +26,7 @@ const servicesFaqs: FaqItem[] = [
     q: "How are SEO services priced?",
     a: [
       "Ongoing SEO campaigns are structured as monthly retainers based on the website, competition, objectives, and amount of work required.",
-      "I don’t use generic SEO packages because two businesses targeting different markets rarely require exactly the same work.",
+      "We don’t use generic SEO packages because two businesses targeting different markets rarely require exactly the same work.",
       "Standalone SEO audits and web development projects are scoped separately.",
     ],
   },
@@ -41,8 +41,8 @@ const servicesFaqs: FaqItem[] = [
     q: "Can you manage my website as part of SEO?",
     a: [
       "Yes.",
-      "Website changes are often necessary for SEO, which is one reason I work directly with websites rather than limiting campaigns to recommendations and reports.",
-      "Depending on your website and platform, I can implement technical fixes, improve service pages, restructure content, add internal links, create new pages, and make other changes required by the strategy.",
+      "Website changes are often necessary for SEO, which is one reason Scale SEO works directly with websites rather than limiting campaigns to recommendations and reports.",
+      "Depending on your website and platform, we can implement technical fixes, improve service pages, restructure content, add internal links, create new pages, and make other changes required by the strategy.",
     ],
   },
   {
@@ -58,7 +58,7 @@ const servicesFaqs: FaqItem[] = [
     a: [
       "No.",
       "Scale SEO is based in Calgary, Alberta, but SEO, web development, paid search, and AI search work can be managed remotely for businesses throughout Canada and internationally.",
-      "Calgary is my home market, while the strategy itself is built around the locations and customers your business needs to reach.",
+      "Calgary is our home market, while the strategy itself is built around the locations and customers your business needs to reach.",
     ],
   },
 ];

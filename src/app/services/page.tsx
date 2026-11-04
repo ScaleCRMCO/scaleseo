@@ -25,7 +25,7 @@ const services = [
     lead: "Build long-term organic visibility around the services that matter to your business.",
     body: [
       "[Monthly SEO campaigns](/services/seo) combine technical improvements, service-page optimization, content development, internal linking, and local search strategy.",
-      "Rather than following a fixed monthly checklist, I prioritize work based on your website’s existing performance, competitive opportunities, and the searches most likely to generate qualified enquiries.",
+      "Rather than following a fixed monthly checklist, we prioritize work based on your website’s existing performance, competitive opportunities, and the searches most likely to generate qualified enquiries.",
     ],
     href: "/services/seo",
     cta: "Explore SEO Services",
@@ -47,7 +47,7 @@ const services = [
     lead: "Websites built with search visibility, usability, and long-term growth in mind.",
     body: [
       "[Website development](/services/web-development) focuses on clear site architecture, responsive design, technical performance, and dedicated pages for important business services.",
-      "Drawing on experience improving existing client websites, I build sites that are straightforward to navigate, maintain, and expand as your business grows.",
+      "Drawing on experience improving existing client websites, we build sites that are straightforward to navigate, maintain, and expand as your business grows.",
     ],
     href: "/services/web-development",
     cta: "Explore Web Development",
@@ -321,14 +321,13 @@ export default function ServicesPage() {
             practices.
           </p>
           <p>
-            My approach is informed by hands-on work across Canadian and
+            Our approach is informed by hands-on work across Canadian and
             Australian client websites, from restructuring service pages and
             resolving technical SEO issues to developing content strategies and
             improving internal linking.
           </p>
           <p>
-            This experience shapes how I prioritize projects. Rather than
-            recommending more content by default, I assess whether existing
+            This experience shapes how we prioritize projects. Rather than recommending more content by default, we assess whether existing
             pages, website structure, or technical limitations should be
             addressed first.
           </p>
@@ -372,7 +371,7 @@ export default function ServicesPage() {
 
       <ContactSection
         heading="Ready to Improve Your Search Visibility?"
-        lead="Tell me about your business, website, and growth goals. I'll help you determine which services make sense for your situation."
+        lead="Tell us about your business, website, and growth goals. We'll help you determine which services make sense for your situation."
         points={[
           "Work directly with Corbin, no account managers",
           "Month-to-month SEO campaigns, no long-term contracts",

@@ -41,21 +41,21 @@ const steps: { title: string; body: string[] }[] = [
   {
     title: "Discovery & Planning",
     body: [
-      "I review your business, services, competitors, and website goals to determine the pages, functionality, and structure your website needs.",
+      "We review your business, services, competitors, and website goals to determine the pages, functionality, and structure your website needs.",
       "For new builds, this includes planning the website around your target customers and relevant search opportunities.",
     ],
   },
   {
     title: "Design & Development",
     body: [
-      "I design and develop the website with clear navigation, responsive layouts, and dedicated service pages.",
+      "We design and develop the website with clear navigation, responsive layouts, and dedicated service pages.",
       "Technical SEO is considered throughout development, including page structure, metadata, internal linking, and search accessibility.",
     ],
   },
   {
     title: "Testing & Launch",
     body: [
-      "Before launch, I review the website across devices, test key functionality, and check technical elements such as redirects, indexing settings, and analytics.",
+      "Before launch, we review the website across devices, test key functionality, and check technical elements such as redirects, indexing settings, and analytics.",
       "You\u2019ll have an opportunity to review the website and request changes before it goes live.",
     ],
   },
@@ -63,7 +63,7 @@ const steps: { title: string; body: string[] }[] = [
     title: "Ongoing Development",
     body: [
       "Your website can continue evolving as your business grows.",
-      "I also provide ongoing development through monthly SEO campaigns, including new service pages, content improvements, technical fixes, and changes based on search performance.",
+      "We also provide ongoing development through monthly SEO campaigns, including new service pages, content improvements, technical fixes, and changes based on search performance.",
     ],
   },
 ];
@@ -72,15 +72,15 @@ const faqs: FaqItem[] = [
   {
     q: "Can you improve my existing website instead of rebuilding it?",
     a: [
-      "Yes. Many of my clients already have established websites.",
-      "I regularly develop new pages, improve existing content, update website structure, and implement technical changes as part of ongoing SEO campaigns.",
+      "Yes. Many of our clients already have established websites.",
+      "We regularly develop new pages, improve existing content, update website structure, and implement technical changes as part of ongoing SEO campaigns.",
       "If the existing platform is suitable, a complete rebuild may not be necessary.",
     ],
   },
   {
     q: "Which website platforms do you work with?",
     a: [
-      "My client work includes Webflow and other content management systems, along with websites that require custom code and technical implementation.",
+      "Our client work includes Webflow and other content management systems, along with websites that require custom code and technical implementation.",
       "The appropriate platform depends on your website’s requirements, editing needs, and future development plans.",
     ],
   },
@@ -251,10 +251,10 @@ export default function WebDevelopmentPage() {
               service and B2B businesses in Calgary and across Canada.
             </p>
             <p>
-              I handle website development alongside SEO, so the structure,
+              Scale SEO handles website development alongside SEO, so the structure,
               content, and technical foundations support how your business wants
               to grow. Whether you need a new website or improvements to an
-              existing one, the work is managed directly by me.
+              existing one, the work is managed directly by our team.
             </p>
           </div>
           <div className={t.boxRow}>
@@ -274,15 +274,14 @@ export default function WebDevelopmentPage() {
       <section className={t.twoWrap}>
         <div className={t.twoHead}>
           <h2 className={t.h2}>Website Development That Goes Beyond the Initial Build</h2>
-          <p className={t.lead}>Most of my website development work falls into two categories.</p>
+          <p className={t.lead}>Most of our website development work falls into two categories.</p>
         </div>
         <div className={t.two}>
           <div className={`${t.panel} ${t.panelGrey}`}>
             <h3 className={t.h3}>New Website Design &amp; Development</h3>
             <div className={t.body}>
               <p>
-                For businesses starting from scratch or replacing an outdated
-                website, I develop complete websites around their services,
+                For businesses starting from scratch or replacing an outdated website, we develop complete websites around their services,
                 customers, and business goals.
               </p>
               <p>
@@ -302,7 +301,7 @@ export default function WebDevelopmentPage() {
             <div className={t.body}>
               <p>Not every business needs a new website.</p>
               <p>
-                Much of my ongoing work involves developing and improving
+                Much of our ongoing work involves developing and improving
                 websites that clients already own.
               </p>
               <p>
@@ -349,7 +348,7 @@ export default function WebDevelopmentPage() {
         <div className={t.coversHead}>
           <h2 className={t.h2}>Selected Website Projects</h2>
           <p className={t.lead}>
-            A selection of websites I&rsquo;ve built, redesigned, and improved
+            A selection of websites we&rsquo;ve built, redesigned, and improved
             for businesses in Canada and Australia.
           </p>
         </div>
@@ -425,7 +424,7 @@ export default function WebDevelopmentPage() {
               complexity.
             </p>
             <p>
-              There are no fixed website packages. I&rsquo;ll review what your
+              There are no fixed website packages. We&rsquo;ll review what your
               business needs and provide a clear scope before work begins.
             </p>
             <p>Website hosting and ongoing SEO are available separately where appropriate.</p>
@@ -442,7 +441,7 @@ export default function WebDevelopmentPage() {
 
       <ContactSection
         heading="Work Directly With Your Website Developer"
-        lead="If you're planning a new website or need to improve an existing one, I can review your requirements and recommend a practical approach."
+        lead="If you're planning a new website or need to improve an existing one, we can review your requirements and recommend a practical approach."
         cta={{ href: "/contact", label: "Book a Strategy Call →" }}
         note={
           <>
