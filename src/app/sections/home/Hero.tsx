@@ -43,6 +43,20 @@ export default function Hero() {
         </div>
       </div>
 
+      {/* Client logo strip: white logos on navy, between hero and intro */}
+      <div className={styles.logos} aria-label="Selected clients">
+        {[
+          { src: "/images/client-logo-jensen-cpa.png", alt: "Jensen CPA", h: 32 },
+          { src: "/images/client-logo-kinsmen-consulting.png", alt: "Kinsmen Consulting Limited", h: 34 },
+          { src: "/images/client-logo-empire-accountants.png", alt: "Empire Accountants", h: 42 },
+        ].map((l) => (
+          <div key={l.src} className={styles.logoCell}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={l.src} alt={l.alt} style={{ height: l.h }} />
+          </div>
+        ))}
+      </div>
+
       {/* Intro: large statement, label bottom-left, About button bottom-right */}
       <section className={styles.introSection}>
         <div className={styles.statement}>

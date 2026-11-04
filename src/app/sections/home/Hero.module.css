@@ -295,3 +295,15 @@
   .leftGroup .reviews { margin-left: -54px !important; }
   .metric { padding-left: 20px; }
 }
+
+/* Client logo strip */
+.logos { display: grid; grid-template-columns: repeat(3, 1fr); background: var(--h-navy); }
+.logoCell { display: flex; align-items: center; justify-content: center; padding: 36px 24px; }
+.logoCell + .logoCell { border-left: 1px solid rgba(254, 254, 254, 0.14); }
+.logoCell img { display: block; width: auto; max-width: 100%; opacity: 0.92; }
+@media (max-width: 700px) {
+  .logos { grid-template-columns: 1fr; }
+  .logoCell { padding: 24px 16px; }
+  .logoCell + .logoCell { border-left: 0; border-top: 1px solid rgba(254, 254, 254, 0.14); }
+  .logoCell img { max-height: 30px; }
+}
