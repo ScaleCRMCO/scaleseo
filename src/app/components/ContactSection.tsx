@@ -19,7 +19,7 @@ const points = [
 // form card on the right. Posts to /api/contact like the other forms.
 export default function ContactSection({
   heading = "Ready to Improve Your Organic Search Visibility?",
-  lead = "Tell me about your business and where you want to grow. You\u2019ll hear back from me directly, usually within 24 hours.",
+  lead = "Tell us about your business and where you want to grow. You\u2019ll hear back directly, usually within 24 hours.",
   cta,
   points: pointsOverride,
   note,

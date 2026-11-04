@@ -15,7 +15,7 @@ export default function ContactPage() {
     <main className="v2">
       <section className={styles.contact}>
         <div className={styles.left}>
-          <h1 className={styles.title}>Tell me how I can help</h1>
+          <h1 className={styles.title}>How can we help</h1>
           <ul className={styles.methods}>
             <li>
               <span>Email</span>

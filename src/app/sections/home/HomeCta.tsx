@@ -13,8 +13,8 @@ export default function HomeCta() {
         </h2>
         <div className={styles.bottom}>
           <p className={styles.note}>
-            Tell me about your business and where you want to grow. You&rsquo;ll
-            hear back from me directly, usually within 24 hours.
+            Tell us about your business and where you want to grow. You&rsquo;ll
+            hear back directly, usually within 24 hours.
           </p>
           <Link href="/contact" className={styles.talk}>
             <svg className={styles.corner} viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
