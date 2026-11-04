@@ -60,7 +60,6 @@ export default function IndustriesTeaser() {
         {industries.map((item, i) => {
           const inner = (
             <>
-              <span className={styles.num}>{item.num}</span>
               <h3 className={styles.title}>{item.title}</h3>
               <p className={styles.body}>{item.body}</p>
               {item.href && (
