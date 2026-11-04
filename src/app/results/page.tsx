@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import CountUp from "../components/CountUp";
 import Breadcrumbs from "../components/Breadcrumbs";
 import ContactSection from "../components/ContactSection";
 import hub from "../services/hub.module.css";
@@ -212,6 +213,22 @@ export default function ResultsPage() {
           <a href="#case-studies" className={styles.jump}>Explore Case Studies &darr;</a>
         </div>
       </header>
+
+      {/* === REVENUE — animated headline figure + summary === */}
+      <section className={styles.revenue}>
+        <div className={styles.revenueFigure}>
+          <span className={styles.revenueValue}>
+            <CountUp to={1000} prefix="$" suffix="K" final="$1M+" duration={2000} />
+          </span>
+          <span className={styles.revenueLabel}>in Client Revenue Generated</span>
+        </div>
+        <p className={styles.revenueText}>
+          Our SEO and website projects have contributed to more than $1 million
+          in client revenue across multiple businesses. Explore real examples of
+          how we&rsquo;ve improved search visibility, attracted qualified
+          enquiries, and supported business growth.
+        </p>
+      </section>
 
       {/* === CASE STUDIES — card grid: image, tags, client, headline result, button === */}
       <section className={styles.studies} id="case-studies">

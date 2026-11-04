@@ -1,4 +1,5 @@
 import Link from "next/link";
+import CountUp from "../../components/CountUp";
 import TrustindexWidget from "../../components/TrustindexWidget";
 import styles from "./Hero.module.css";
 
@@ -25,6 +26,13 @@ export default function Hero() {
         </h1>
         <div className={styles.topBottom}>
           <TrustindexWidget id="cebaa07845048474c13615cd1b2" className={styles.reviews} />
+          <div className={styles.metricGroup}>
+            <div className={styles.metric}>
+              <span className={styles.metricValue}>
+                <CountUp to={1000} prefix="$" suffix="K" final="$1M+" duration={2000} />
+              </span>
+              <span className={styles.metricLabel}>in Client Revenue Generated</span>
+            </div>
           <a
             href="https://cal.com/corbinjensen-scaleseo/30min"
             target="_blank"
@@ -34,6 +42,7 @@ export default function Hero() {
             <Corner />
             <span>Book A Strategy Call →</span>
           </a>
+          </div>
         </div>
       </div>
 

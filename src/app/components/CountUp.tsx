@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 
 // Counts from `from` to `to` once the number scrolls into view.
-export default function CountUp({ from = 0, to, prefix = "", suffix = "", duration = 1600 }: { from?: number; to: number; prefix?: string; suffix?: string; duration?: number }) {
+export default function CountUp({ from = 0, to, prefix = "", suffix = "", duration = 1600, final }: { from?: number; to: number; prefix?: string; suffix?: string; duration?: number; final?: string }) {
   const ref = useRef<HTMLSpanElement>(null);
   const [n, setN] = useState(to);
   useEffect(() => {
@@ -25,5 +25,6 @@ export default function CountUp({ from = 0, to, prefix = "", suffix = "", durati
     io.observe(el);
     return () => { io.disconnect(); cancelAnimationFrame(raf); };
   }, [from, to, duration]);
-  return <span ref={ref}>{prefix}{n}{suffix}</span>;
+  // `final` swaps in a formatted end value (e.g. "$1M+" after counting to 1000K)
+  return <span ref={ref}>{final && n === to ? final : `${prefix}${n.toLocaleString("en-CA")}${suffix}`}</span>;
 }

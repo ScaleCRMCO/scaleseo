@@ -279,3 +279,15 @@
   .topBottom { position: static; margin-top: 48px; flex-direction: column; align-items: stretch; gap: 24px; }
   .mark { top: 40%; }
 }
+
+/* Reviews hard into the bottom-left corner; revenue metric beside the CTA */
+.topBottom { left: 0; }
+.metricGroup { display: flex; align-items: flex-end; gap: 32px; }
+.metric { display: flex; flex-direction: column; gap: 6px; text-align: right; color: var(--h-navy); }
+.metricValue { font-size: clamp(40px, 4.4vw, 72px); line-height: 1; letter-spacing: -0.04em; font-variant-numeric: tabular-nums; }
+.metricLabel { font-size: 15px; color: var(--h-dim); white-space: nowrap; }
+@media (max-width: 900px) {
+  .topBottom { left: 0; }
+  .metricGroup { flex-direction: column; align-items: stretch; gap: 20px; }
+  .metric { text-align: left; }
+}
