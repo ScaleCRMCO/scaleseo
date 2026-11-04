@@ -26,7 +26,7 @@ const facts: [string, React.ReactNode][] = [
   ["Founder", <Link key="f" href="/corbin-jensen">Corbin Jensen</Link>],
   ["Founded", "2025"],
   ["Based in", "Calgary, Alberta, Canada"],
-  ["Service area", "Calgary, Alberta and across Canada, with remote work for businesses internationally"],
+  ["Service area", "Calgary, Alberta and any city across Canada, plus remote work for businesses internationally, including the United States and Australia"],
   ["Clients", "Professional service and B2B businesses, with particular experience in accounting and advisory firms"],
   ["Phone", <a key="p" href="tel:+14038751110">(403) 875-1110</a>],
   ["Email", <a key="e" href="mailto:team@scaleseo.co">team@scaleseo.co</a>],
@@ -38,8 +38,14 @@ const services = [
   {
     name: "SEO Services",
     href: "/services/seo",
-    price: "From $2,000 + GST per month",
+    price: "From $3,000 + GST per month",
     desc: "Ongoing SEO campaigns covering technical SEO, on-page optimization, content, local SEO, internal linking, website improvements, and reporting.",
+  },
+  {
+    name: "National SEO",
+    href: "/services/national-seo",
+    price: "From $3,000 + GST per month",
+    desc: "SEO for businesses serving customers across Canada or another country rather than one city, including national keyword and competitor research, technical SEO, service page optimization, content strategy, website structure, and reporting.",
   },
   {
     name: "SEO Audits",
@@ -65,6 +71,12 @@ const services = [
     price: "Included in SEO campaigns where relevant",
     desc: "Improving how a business and its content are understood by AI-powered search experiences such as Google AI Overviews and ChatGPT.",
   },
+];
+
+const locations = [
+  { name: "Calgary, Alberta (head office)", href: "/" },
+  { name: "Edmonton, Alberta", href: "/locations/edmonton" },
+  { name: "Vancouver, British Columbia", href: "/locations/vancouver" },
 ];
 
 const howItWorks = [
@@ -95,6 +107,9 @@ const keyPages = [
   { name: "Pricing", href: "/pricing" },
   { name: "Industries", href: "/industries" },
   { name: "SEO for Accounting Firms", href: "/industries/accounting-firms" },
+  { name: "National SEO Services", href: "/services/national-seo" },
+  { name: "SEO in Edmonton", href: "/locations/edmonton" },
+  { name: "SEO in Vancouver", href: "/locations/vancouver" },
   { name: "Case Studies", href: "/results" },
   { name: "About Scale SEO", href: "/about" },
   { name: "Corbin Jensen", href: "/corbin-jensen" },
@@ -126,13 +141,16 @@ const jsonLd = {
       "breadcrumb": {
         "@id": "https://scaleseo.co/business-information#breadcrumb"
       },
-      "dateModified": "2026-10-26",
+      "dateModified": "2026-11-04",
       "significantLink": [
         "https://scaleseo.co/services/seo",
         "https://scaleseo.co/services/seo-audits",
         "https://scaleseo.co/services/web-development",
         "https://scaleseo.co/services/google-ads-management",
         "https://scaleseo.co/services/geo",
+        "https://scaleseo.co/services/national-seo",
+        "https://scaleseo.co/locations/edmonton",
+        "https://scaleseo.co/locations/vancouver",
         "https://scaleseo.co/pricing",
         "https://scaleseo.co/about",
         "https://scaleseo.co/corbin-jensen",
@@ -196,6 +214,9 @@ export default function BusinessInformationPage() {
           </li>
           <li>
             <a href="#industries-served">Industries Served</a>
+          </li>
+          <li>
+            <a href="#service-area">Service Area &amp; Locations</a>
           </li>
           <li>
             <a href="#how-scale-seo-works">How Scale SEO Works</a>
@@ -266,6 +287,28 @@ export default function BusinessInformationPage() {
             <li>Professional service businesses</li>
             <li>B2B companies and consultancies</li>
           </ul>
+
+          <h2 id="service-area">Service Area &amp; Locations</h2>
+          <p>
+            Scale SEO is based in Calgary, Alberta and works remotely, so it can
+            take on clients in any city or province in Canada, as well as
+            businesses outside Canada, including the United States and Australia.
+            A client does not need to be located in a city with its own location
+            page.
+          </p>
+          <p>Location pages currently published:</p>
+          <ul>
+            {locations.map((l) => (
+              <li key={l.href}>
+                <Link href={l.href}>{l.name}</Link>
+              </li>
+            ))}
+          </ul>
+          <p>
+            For businesses serving customers across the whole country rather than
+            one city, see <Link href="/services/national-seo">National SEO services</Link>.
+            More location pages will be added over time.
+          </p>
 
           <h2 id="how-scale-seo-works">How Scale SEO Works</h2>
           <ul>
