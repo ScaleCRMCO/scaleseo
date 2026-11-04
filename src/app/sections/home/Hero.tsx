@@ -43,7 +43,7 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Client logo strip: small logos in one row on navy (Bilberrry style), between hero and intro */}
+      {/* Client logo strip: small grey logos in one row on white (Bilberrry style), between hero and intro */}
       <div className={styles.logos} aria-label="Selected clients">
         {[
           { src: "/images/client-logo-jensen-cpa.png", alt: "Jensen CPA", h: 22 },

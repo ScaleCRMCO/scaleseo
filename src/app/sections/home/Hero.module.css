@@ -296,8 +296,8 @@
   .metric { padding-left: 20px; }
 }
 
-/* Client logo strip: small logos spread across one row on navy */
-.logos { display: flex; justify-content: space-between; align-items: center; gap: 40px; padding: 40px clamp(40px, 10vw, 200px); background: var(--h-navy); }
+/* Client logo strip: small grey logos spread across one row on white */
+.logos { display: flex; justify-content: space-between; align-items: center; gap: 40px; padding: 40px clamp(40px, 10vw, 200px); background: var(--h-white); border-top: 1px solid var(--h-rule); border-bottom: 1px solid var(--h-rule); }
 .logoCell { display: flex; align-items: center; justify-content: center; }
 .logoCell img { display: block; width: auto; max-width: 100%; }
 @media (max-width: 700px) {
