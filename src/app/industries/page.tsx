@@ -3,6 +3,42 @@ import Link from "next/link";
 import Image from "next/image";
 import Breadcrumbs from "../components/Breadcrumbs";
 import ContactSection from "../components/ContactSection";
+import CaseStudy, { type CaseCard } from "../sections/home/CaseStudy";
+
+const industryCases: CaseCard[] = [
+  {
+    href: "/results/jensen-cpa",
+    client: "Jensen CPA",
+    services: "Accounting & Tax / Calgary, Alberta",
+    image: "/images/jensen-cpa-cover.webp",
+    metric: { to: 92, prefix: "+", suffix: "%" },
+    metricLabel: "More organic clicks for a CPA firm",
+  },
+  {
+    href: "/results/empire-accountants",
+    client: "Empire Accountants",
+    services: "Accounting & Advisory / Brisbane, Australia",
+    image: "/images/empire-accountants-cover.webp",
+    metric: { from: 5, to: 1, prefix: "Page " },
+    metricLabel: "Advisory searches, up from page 5",
+  },
+  {
+    href: "/results/kinsmen-consulting",
+    client: "Kinsmen Consulting",
+    services: "Concrete & Construction / Calgary, Alberta",
+    image: "/images/kinsmen-hero.jpg",
+    metric: { to: 500, prefix: "$", suffix: "K" },
+    metricLabel: "In new contracting work",
+  },
+  {
+    href: "/results/msv-plumbing-services",
+    client: "MSV Plumbing Services",
+    services: "Plumbing & Home Services / Brisbane, Australia",
+    image: "/images/msv-plumbing-cover.webp",
+    metric: { text: "Weekly" },
+    metricLabel: "Bookings for a new local trade business",
+  },
+];
 import hub from "../services/hub.module.css";
 import styles from "./hub.module.css";
 
@@ -59,32 +95,6 @@ const industries: {
   },
 ];
 
-const results = [
-  {
-    client: "Jensen CPA",
-    place: "Calgary, Alberta",
-    body: "Technical SEO, content strategy, and service-page improvements supporting organic search visibility for a Calgary accounting firm.",
-    href: "/results/jensen-cpa",
-  },
-  {
-    client: "Empire Accountants",
-    place: "Brisbane, Australia",
-    body: "Search optimization for an established accounting and advisory firm, including service-page architecture, technical improvements, and content strategy.",
-    href: "/results/empire-accountants",
-  },
-  {
-    client: "Kinsmen Consulting",
-    place: "Calgary, Alberta",
-    body: "Website development and SEO supporting visibility for residential and commercial concrete construction services.",
-    href: "/results/kinsmen-consulting",
-  },
-];
-
-const Corner = () => (
-  <svg className={hub.corner} viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
-    <path d="M1 1.5h7.5V9" />
-  </svg>
-);
 
 function IndustryCard({ item }: { item: (typeof industries)[number] }) {
   const inner = (
@@ -267,29 +277,13 @@ export default function IndustriesPage() {
         </div>
       </section>
 
-      {/* === RESULTS — grey, three navy boxes === */}
-      <section className={hub.results}>
-        <h2 className={hub.h2}>Results From Client Campaigns</h2>
-        <div className={styles.resultGrid}>
-          {results.map((r) => (
-            <Link key={r.href} href={r.href} className={hub.result}>
-              <span className={hub.resultType}>{r.place}</span>
-              <h3 className={styles.resultName}>{r.client}</h3>
-              <p className={hub.resultBody}>{r.body}</p>
-              <span className={hub.cardLink}>
-                <span>View Case Study &rarr;</span>
-                <span className={hub.plus} aria-hidden="true">+</span>
-              </span>
-            </Link>
-          ))}
-        </div>
-        <div className={hub.resultsFoot}>
-          <Link href="/results" className={`${hub.box} ${hub.boxBlue}`}>
-            <Corner />
-            <span>View All Client Results &rarr;</span>
-          </Link>
-        </div>
-      </section>
+      {/* === RESULTS — homepage case study row, industry-focused wording === */}
+      <CaseStudy
+        id="results"
+        label="Results by Industry"
+        heading="Results From Client Campaigns"
+        cards={industryCases}
+      />
 
       <ContactSection
         heading="Don't See Your Industry?"

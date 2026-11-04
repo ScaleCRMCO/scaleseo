@@ -10,7 +10,7 @@ import styles from "./CaseStudy.module.css";
    card that is only partly on screen slides it into view; clicking a fully
    visible card opens the case study. */
 
-type Card = {
+export type CaseCard = {
   href: string;
   client: string;
   services: string;
@@ -19,7 +19,7 @@ type Card = {
   metricLabel: string;
 };
 
-const cards: Card[] = [
+const defaultCards: CaseCard[] = [
   {
     href: "/results/jensen-cpa",
     client: "Jensen CPA",
@@ -54,7 +54,12 @@ const cards: Card[] = [
   },
 ];
 
-export default function CaseStudy() {
+export default function CaseStudy({
+  label = "Scale SEO Client Work",
+  heading = "SEO Results From Real Client Campaigns",
+  cards = defaultCards,
+  id = "work",
+}: { label?: string; heading?: string; cards?: CaseCard[]; id?: string } = {}) {
   const track = useRef<HTMLDivElement>(null);
 
   // A card that runs off either edge scrolls into view instead of navigating
@@ -78,13 +83,13 @@ export default function CaseStudy() {
   };
 
   return (
-    <section className={styles.case} id="work">
+    <section className={styles.case} id={id}>
       <div className={styles.head}>
         <p className={styles.label}>
           <span className={styles.rule} aria-hidden="true" />
-          Scale SEO Client Work
+          {label}
         </p>
-        <h2 className={styles.heading}>SEO Results From Real Client Campaigns</h2>
+        <h2 className={styles.heading}>{heading}</h2>
       </div>
 
       <div className={styles.track} ref={track}>
