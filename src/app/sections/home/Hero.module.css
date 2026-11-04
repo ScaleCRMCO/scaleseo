@@ -311,3 +311,18 @@
   .logos { flex-direction: column; align-items: flex-start; gap: 24px; padding: 32px 16px; }
   .logoRow { width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 28px 24px; }
 }
+
+/* Hero mark on the right, solid at the top and fading out toward the bottom
+   (Bilberrry-style) */
+.mark {
+  left: auto;
+  right: 40px;
+  top: 47%;
+  width: min(40vw, 600px);
+  transform: translateY(-50%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.55) 45%, rgba(0, 0, 0, 0.12) 80%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.55) 45%, rgba(0, 0, 0, 0.12) 80%, transparent 100%);
+}
+@media (max-width: 900px) {
+  .mark { right: -12vw; width: 70vw; top: 40%; }
+}
