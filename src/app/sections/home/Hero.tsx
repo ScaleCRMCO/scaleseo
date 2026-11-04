@@ -25,10 +25,15 @@ export default function Hero() {
         </h1>
         <div className={styles.topBottom}>
           <TrustindexWidget id="cebaa07845048474c13615cd1b2" className={styles.reviews} />
-          <Link href="/contact" className={`${styles.box} ${styles.boxNavy}`}>
+          <a
+            href="https://cal.com/corbinjensen-scaleseo/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`${styles.box} ${styles.boxNavy}`}
+          >
             <Corner />
-            <span>Let&rsquo;s Talk →</span>
-          </Link>
+            <span>Book A Strategy Call →</span>
+          </a>
         </div>
       </div>
 
