@@ -93,6 +93,17 @@ const industries: {
     ],
     cta: "Explore SEO for Consulting Firms",
   },
+  {
+    num: "04",
+    title: "Law Firms & Legal Services",
+    sub: "SEO for Law Firms",
+    body: [
+      "SEO for Canadian law firms looking to attract more qualified enquiries for their practice areas, from corporate and employment law to real estate and estate planning.",
+      "Strategies include practice area page optimization, local SEO, technical improvements, and useful content reviewed by your firm.",
+    ],
+    href: "/industries/law-firms",
+    cta: "Explore SEO for Law Firms",
+  },
 ];
 
 
