@@ -6,17 +6,21 @@ const industries: {
   title: string;
   body: string;
   href?: string;
+  cta?: string;
 }[] = [
   {
     num: "01",
     title: "Accounting & Financial Services",
     body: "SEO for accounting and financial service firms targeting competitive, high-value commercial searches.",
     href: "/industries/accounting-firms",
+    cta: "Explore SEO for Accounting Firms",
   },
   {
     num: "02",
-    title: "Professional Services",
-    body: "Search strategies for established firms that depend on expertise, reputation, and qualified enquiries.",
+    title: "Law Firms",
+    body: "SEO for law firms that want more qualified enquiries for their practice areas, from corporate and employment law to real estate and estate planning.",
+    href: "/industries/law-firms",
+    cta: "Explore SEO for Law Firms",
   },
   {
     num: "03",
@@ -64,7 +68,7 @@ export default function IndustriesTeaser() {
               <p className={styles.body}>{item.body}</p>
               {item.href && (
                 <span className={styles.more}>
-                  <span>Explore SEO for Accounting Firms</span>
+                  <span>{item.cta}</span>
                   <span className={styles.plus} aria-hidden="true">+</span>
                 </span>
               )}

@@ -68,41 +68,98 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "WebPage",
-      "@id": `${URL}#webpage`,
-      url: URL,
-      name: TITLE,
-      description: DESCRIPTION,
-      isPartOf: { "@id": "https://scaleseo.co/#website" },
-      about: { "@id": `${URL}#service` },
-      mainEntity: { "@id": `${URL}#service` },
-      publisher: { "@id": "https://scaleseo.co/#organization" },
-      breadcrumb: { "@id": `${URL}#breadcrumb` },
-      primaryImageOfPage: { "@type": "ImageObject", url: "https://scaleseo.co/images/law-books.webp" },
-      inLanguage: "en-CA",
+      "@id": "https://scaleseo.co/industries/law-firms#webpage",
+      "url": "https://scaleseo.co/industries/law-firms",
+      "name": "SEO for Law Firms in Canada | Scale SEO",
+      "description": "SEO services for Canadian law firms. Improve visibility for legal services, attract qualified enquiries, and grow your practice with Scale SEO.",
+      "isPartOf": {
+        "@id": "https://scaleseo.co/#website"
+      },
+      "about": {
+        "@id": "https://scaleseo.co/industries/law-firms#service"
+      },
+      "publisher": {
+        "@id": "https://scaleseo.co/#organization"
+      },
+      "breadcrumb": {
+        "@id": "https://scaleseo.co/industries/law-firms#breadcrumb"
+      },
+      "inLanguage": "en-CA"
     },
     {
       "@type": "Service",
-      "@id": `${URL}#service`,
-      name: "SEO for Law Firms",
-      alternateName: ["Law Firm SEO", "SEO for Lawyers", "Legal SEO"],
-      serviceType: "Search Engine Optimization for Law Firms",
-      url: URL,
-      description:
-        "SEO services for Canadian law firms, including keyword research, technical SEO, practice area page optimization, local SEO and Google Business Profile, content strategy, and website improvements.",
-      provider: { "@id": "https://scaleseo.co/#organization" },
-      areaServed: { "@type": "Country", name: "Canada" },
-      audience: { "@type": "BusinessAudience", audienceType: "Law firms and legal practices" },
+      "@id": "https://scaleseo.co/industries/law-firms#service",
+      "name": "SEO for Law Firms in Canada",
+      "serviceType": "Search Engine Optimization for Law Firms",
+      "description": "Founder-led SEO services for Canadian law firms, including technical SEO, practice area page optimization, local SEO, content strategy, and website improvements.",
+      "url": "https://scaleseo.co/industries/law-firms",
+      "provider": {
+        "@id": "https://scaleseo.co/#organization"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Canada"
+      },
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "Law firms and legal practices"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Law Firm SEO Services",
+        "itemListElement": [
+          {
+            "@type": "OfferCatalog",
+            "name": "SEO Strategy and Keyword Research"
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "Technical SEO"
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "Practice Area Page Optimization"
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "Local SEO and Google Business Profile Optimization"
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "SEO Content Strategy"
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "Website Optimization and Reporting"
+          }
+        ]
+      }
     },
     {
       "@type": "BreadcrumbList",
-      "@id": `${URL}#breadcrumb`,
-      itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Home", item: "https://scaleseo.co/" },
-        { "@type": "ListItem", position: 2, name: "Industries", item: "https://scaleseo.co/industries" },
-        { "@type": "ListItem", position: 3, name: "Law Firms", item: URL },
-      ],
-    },
-  ],
+      "@id": "https://scaleseo.co/industries/law-firms#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://scaleseo.co/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Industries",
+          "item": "https://scaleseo.co/industries"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Law Firms",
+          "item": "https://scaleseo.co/industries/law-firms"
+        }
+      ]
+    }
+  ]
 };
 
 /* === Page =============================================================== */
