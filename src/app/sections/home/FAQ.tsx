@@ -5,9 +5,9 @@ const faqs: { q: string; a: string[] }[] = [
   {
     q: "What SEO services do you provide?",
     a: [
-      "My ongoing SEO campaigns can include technical SEO, on-page optimization, keyword research, content strategy, local SEO, internal linking, structured data, competitor research, and website improvements.",
+      "Our ongoing SEO campaigns can include technical SEO, on-page optimization, keyword research, content strategy, local SEO, internal linking, structured data, competitor research, and website improvements.",
       "The exact work depends on what your website needs rather than a predetermined monthly checklist.",
-      "I also offer standalone SEO audits, web development, Google Ads management, and AI search optimization.",
+      "We also offer standalone SEO audits, web development, Google Ads management, and AI search optimization.",
     ],
   },
   {
@@ -21,7 +21,7 @@ const faqs: { q: string; a: string[] }[] = [
   {
     q: "What types of businesses do you work with?",
     a: [
-      "I primarily work with accounting firms, professional service businesses, consultants, and B2B companies where increasing qualified search traffic can translate into valuable new client relationships.",
+      "We primarily work with accounting firms, professional service businesses, consultants, and B2B companies where increasing qualified search traffic can translate into valuable new client relationships.",
       "Scale SEO is based in Calgary, but SEO campaigns can be managed for businesses throughout Canada and internationally.",
     ],
   },
@@ -30,29 +30,29 @@ const faqs: { q: string; a: string[] }[] = [
     a: [
       "SEO is a long-term acquisition channel rather than an immediate advertising campaign.",
       "Some improvements can appear relatively quickly, while competitive searches often take several months or longer to move meaningfully. Your starting authority, competition, website quality, market, and existing search presence all influence the timeline.",
-      "I’ll give you a more realistic assessment after reviewing your website rather than promising a predetermined result.",
+      "We’ll give you a more realistic assessment after reviewing your website rather than promising a predetermined result.",
     ],
   },
   {
     q: "Do I have to sign a long-term SEO contract?",
     a: [
       "No. Ongoing Scale SEO campaigns are month-to-month.",
-      "I want clients to continue because the work is producing value, not because they’re locked into a long-term agreement.",
+      "We want clients to continue because the work is producing value, not because they’re locked into a long-term agreement.",
     ],
   },
   {
     q: "Do you make changes to my website?",
     a: [
       "Yes. Website improvements are an important part of many SEO campaigns.",
-      "Depending on your website and platform, I can implement technical fixes, update service pages, improve internal linking, restructure content, add new pages, and make other changes needed to support organic performance.",
+      "Depending on your website and platform, we can implement technical fixes, update service pages, improve internal linking, restructure content, add new pages, and make other changes needed to support organic performance.",
     ],
   },
   {
     q: "What’s different about working with Scale SEO?",
     a: [
       "You work directly with the person doing the SEO.",
-      "I personally handle the strategy, audits, website work, content direction, optimization, and reporting rather than passing the campaign through account managers or outsourced teams.",
-      "Keeping the roster intentionally small gives me the ability to understand each client’s business and work directly on the areas most likely to improve performance.",
+      "Scale SEO handles the strategy, audits, website work, content direction, optimization, and reporting rather than passing the campaign through account managers or outsourced teams.",
+      "Keeping the roster intentionally small gives us the ability to understand each client’s business and work directly on the areas most likely to improve performance.",
     ],
   },
 ];
