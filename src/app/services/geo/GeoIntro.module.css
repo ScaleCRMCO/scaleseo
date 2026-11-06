@@ -1,26 +1,22 @@
-/* AI Search intro: big statement + lead, platform tags, two-column copy and
-   a proof bar (reviews, revenue figure, CTA) — generously spaced */
-.intro { padding: 112px 40px 56px !important; background: var(--h-white); color: var(--h-navy); }
+/* AI Search intro: big statement + lead/CTA, proof row (reviews + revenue),
+   then two-column copy — generously spaced */
+.intro { padding: 112px 40px 112px !important; background: var(--h-white); color: var(--h-navy); }
 .top { display: grid; grid-template-columns: 1.4fr 1fr; gap: 64px; align-items: end; }
 .statement { max-width: 16ch; font-size: clamp(36px, 4.2vw, 68px); line-height: 1.04; font-weight: 400; letter-spacing: -0.035em; }
-.lead { justify-self: end; max-width: 30ch; font-size: clamp(18px, 1.6vw, 24px); line-height: 1.4; }
+.lead { max-width: 30ch; font-size: clamp(18px, 1.6vw, 24px); line-height: 1.4; }
 
-.tags { display: flex; flex-wrap: wrap; gap: 12px; margin: 72px 0 0; padding: 0; list-style: none; }
-.tags li { padding: 12px 20px; border: 1px solid var(--h-rule); font-size: 15px; background: var(--h-white); }
-.tags li:nth-child(-n+3) { border-color: rgba(0, 153, 255, 0.45); color: var(--h-blue); }
-
-.cols { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; margin-top: 72px; padding-top: 40px; border-top: 1px solid var(--h-rule); }
+.leadCol { justify-self: end; display: flex; flex-direction: column; align-items: flex-start; gap: 32px; }
+.proofRow { margin-top: 72px; }
+.cols { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: end; margin-top: 72px; padding-top: 40px; border-top: 1px solid var(--h-rule); }
 .colLead { font-size: clamp(20px, 1.8vw, 28px); line-height: 1.35; letter-spacing: -0.01em; }
-.colBody { font-size: 17px; line-height: 1.6; color: var(--h-dim); max-width: 600px; }
+.colBody { justify-self: end; font-size: 17px; line-height: 1.6; color: var(--h-dim); max-width: 520px; }
 
-.proof { display: flex; justify-content: space-between; align-items: center; gap: 32px; margin-top: 88px; }
 
 @media (max-width: 900px) {
-  .intro { padding: 56px 16px 40px !important; }
+  .intro { padding: 56px 16px 64px !important; }
   .top, .cols { grid-template-columns: 1fr; gap: 24px; }
-  .lead { justify-self: start; }
-  .tags { margin-top: 40px; gap: 8px; }
-  .tags li { padding: 10px 14px; font-size: 14px; }
+  .leadCol { justify-self: start; gap: 24px; }
+  .proofRow { margin-top: 40px; }
+  .colBody { justify-self: start; }
   .cols { margin-top: 40px; padding-top: 28px; }
-  .proof { flex-direction: column; align-items: stretch; margin-top: 48px; gap: 24px; }
 }

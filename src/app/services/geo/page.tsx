@@ -277,21 +277,33 @@ export default function GeoServicePage() {
         </div>
       </header>
 
-      {/* === INTRO — statement, platform tags, two-column copy, proof bar === */}
+      <ClientLogos />
+
+      {/* === INTRO — statement + lead/CTA, proof row, two-column copy === */}
       <section className={gi.intro}>
         <div className={gi.top}>
           <h2 className={gi.statement}>Be the brand AI models name when your buyers ask.</h2>
-          <p className={gi.lead}>
-            Help potential customers discover your business through ChatGPT,
-            Google AI search, and other AI-powered platforms.
-          </p>
+          <div className={gi.leadCol}>
+            <p className={gi.lead}>
+              Help potential customers discover your business through ChatGPT,
+              Google AI search, and other AI-powered platforms.
+            </p>
+            <Link href="/contact" className={`${t.box} ${t.boxNavy}`}>
+              <Corner />
+              <span>Book a Strategy Call &rarr;</span>
+            </Link>
+          </div>
         </div>
 
-        <ul className={gi.tags} aria-label="Focus areas">
-          {["ChatGPT", "Google AI Overviews", "Perplexity", "Structured Data", "Content", "Technical SEO"].map((c) => (
-            <li key={c}>{c}</li>
-          ))}
-        </ul>
+        <div className={gi.proofRow}>
+          <div className={hero.leftGroup}>
+            <TrustindexWidget id="cebaa07845048474c13615cd1b2" className={hero.reviews} />
+            <div className={hero.metric}>
+              <span className={hero.metricValue}>$1M+</span>
+              <span className={hero.metricLabel}>in Client Revenue Generated</span>
+            </div>
+          </div>
+        </div>
 
         <div className={gi.cols}>
           <p className={gi.colLead}>
@@ -307,23 +319,7 @@ export default function GeoServicePage() {
             provide.
           </p>
         </div>
-
-        <div className={gi.proof}>
-          <div className={hero.leftGroup}>
-            <TrustindexWidget id="cebaa07845048474c13615cd1b2" className={hero.reviews} />
-            <div className={hero.metric}>
-              <span className={hero.metricValue}>$1M+</span>
-              <span className={hero.metricLabel}>in Client Revenue Generated</span>
-            </div>
-          </div>
-          <Link href="/contact" className={`${t.box} ${t.boxNavy}`}>
-            <Corner />
-            <span>Book a Strategy Call &rarr;</span>
-          </Link>
-        </div>
       </section>
-
-      <ClientLogos />
 
       {/* === WHAT IS — heading left, text right === */}
       <section className={t.rowsSplit} style={{ padding: 0, borderTop: 0 }}>
