@@ -1,0 +1,44 @@
+.section { padding: 120px 40px 128px !important; background: var(--h-navy); color: var(--h-white); overflow: hidden; }
+.head { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+.title { max-width: 15ch; font-size: clamp(36px, 4vw, 64px); line-height: 1.05; font-weight: 400; letter-spacing: -0.03em; }
+.intro { display: flex; flex-direction: column; gap: 0.8em; max-width: 600px; justify-self: end; font-size: clamp(17px, 1.4vw, 21px); line-height: 1.45; color: rgba(254, 254, 254, 0.78); }
+
+.body { display: grid; grid-template-columns: 1fr 1.15fr; gap: clamp(40px, 6vw, 112px); align-items: center; margin-top: clamp(72px, 8vw, 128px); }
+
+/* Diagram */
+.diagram { position: relative; width: min(100%, 520px); aspect-ratio: 1; margin: 0 auto; }
+.diagram::before { content: ""; position: absolute; inset: 8%; border-radius: 50%; background: radial-gradient(circle, rgba(0, 153, 255, 0.28) 0%, rgba(0, 153, 255, 0.08) 45%, transparent 70%); }
+.lines { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.orbit { fill: none; stroke: rgba(254, 254, 254, 0.1); stroke-width: 0.25; stroke-dasharray: 1 1.5; }
+.line { stroke: rgba(0, 153, 255, 0.55); stroke-width: 0.35; stroke-dasharray: 2 2; animation: flow 3s linear infinite; }
+@keyframes flow { to { stroke-dashoffset: -8; } }
+.hub { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 34%; aspect-ratio: 1; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; background: #0A2A4D; border: 1px solid rgba(0, 153, 255, 0.6); box-shadow: 0 0 60px rgba(0, 153, 255, 0.35); color: var(--h-blue); }
+.hub svg { width: 38%; height: auto; }
+.hub span { font-size: clamp(13px, 1.1vw, 16px); color: var(--h-white); }
+.node { position: absolute; transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: center; gap: 8px; animation: float 4s ease-in-out infinite; }
+.node img { width: clamp(48px, 4.6vw, 64px); height: auto; border-radius: 14px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(254, 254, 254, 0.12); }
+.node span { font-size: 13px; color: rgba(254, 254, 254, 0.8); }
+@keyframes float { 50% { transform: translate(-50%, calc(-50% - 6px)); } }
+@media (prefers-reduced-motion: reduce) { .line, .node { animation: none; } }
+
+/* Points */
+.points { display: grid; grid-template-columns: 1fr 1fr; }
+.point { display: flex; flex-direction: column; gap: 14px; padding: 32px 32px 40px; border-left: 1px solid rgba(254, 254, 254, 0.14); }
+.point:nth-child(n+3) { border-top: 1px solid rgba(254, 254, 254, 0.14); }
+.icon { display: grid; place-items: center; width: 48px; height: 48px; margin-bottom: 28px; background: var(--h-white); color: var(--h-navy); }
+.icon svg { width: 24px; height: 24px; }
+.pointTitle { font-size: clamp(22px, 1.8vw, 28px); line-height: 1.15; font-weight: 400; letter-spacing: -0.02em; }
+.pointBody { font-size: 16px; line-height: 1.55; color: rgba(254, 254, 254, 0.68); }
+
+@media (max-width: 1000px) {
+  .section { padding: 64px 16px 72px !important; }
+  .head { grid-template-columns: 1fr; gap: 20px; }
+  .intro { justify-self: start; }
+  .body { grid-template-columns: 1fr; margin-top: 48px; }
+  .diagram { width: min(100%, 380px); }
+}
+@media (max-width: 640px) {
+  .points { grid-template-columns: 1fr; }
+  .point { border-left: 0; border-top: 1px solid rgba(254, 254, 254, 0.14); padding: 28px 0 32px; }
+  .icon { margin-bottom: 12px; }
+}

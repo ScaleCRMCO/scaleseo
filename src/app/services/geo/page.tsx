@@ -6,6 +6,7 @@ import ServicesFaq, { type FaqItem } from "../ServicesFaq";
 import ServicesMark from "../../sections/home/ServicesMark";
 // Shared service page template (new brand)
 import t from "../svc.module.css";
+import AiPlatforms from "./AiPlatforms";
 import CaseStudy, { type CaseCard } from "../../sections/home/CaseStudy";
 
 const geoCases: CaseCard[] = [
@@ -369,6 +370,9 @@ export default function GeoServicePage() {
         aside="Begin seeing results in as soon as 30 days."
         cards={geoCases}
       />
+
+      {/* === AI PLATFORMS — hub diagram + four points === */}
+      <AiPlatforms />
 
       {/* === MEASUREMENT — heading left, ruled rows right === */}
       <section className={t.rowsSplit} style={{ padding: 0 }}>
