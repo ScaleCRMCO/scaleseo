@@ -312,11 +312,9 @@ export default function GeoServicePage() {
             across Canada.
           </p>
           <p className={gi.colBody}>
-            Scale SEO improves your website&rsquo;s content, structure, and
-            technical foundations to help search engines and AI platforms
-            discover and understand your business. The goal is to strengthen
-            your visibility when potential customers research the services you
-            provide.
+            We help businesses build a stronger presence in AI-powered search
+            by improving their website content, technical foundations, and the
+            information available about their services.
           </p>
         </div>
       </section>
@@ -329,25 +327,26 @@ export default function GeoServicePage() {
         <div className={t.rowsList}>
           <div className={t.body} style={{ paddingTop: 32, paddingBottom: 32 }}>
             <p className={t.lead}>
-              AI search optimization, also called Generative Engine Optimization
-              (GEO), helps businesses improve their visibility in AI-powered search
-              experiences such as ChatGPT, Google AI Overviews, and Perplexity.
+              AI search optimization, also known as Generative Engine
+              Optimization (GEO), focuses on improving how businesses are
+              discovered, understood, and referenced in AI-generated search
+              results.
             </p>
             <p>
-              For example, someone might ask an AI tool to recommend an accounting
-              firm that specializes in corporate tax or explain which type of
-              consultant they need.
+              Unlike traditional search, where users typically browse a list of
+              websites, AI platforms can provide direct answers, summaries, and
+              business recommendations.
             </p>
             <p>
-              These searches create opportunities for businesses to be discovered
-              before a potential customer visits their website.
+              For example, a business owner might ask ChatGPT to recommend an
+              accounting firm specializing in corporate tax or compare consulting
+              companies that serve Canadian businesses.
             </p>
             <p>
               GEO builds on traditional{" "}
-              <Link href="/services/seo" className={t.inlineLink}>search engine optimization</Link>.
-              It focuses on making your business information, services, expertise,
-              and website content easier to find and understand across different
-              search experiences.
+              <Link href="/services/seo" className={t.inlineLink}>SEO</Link>,
+              helping businesses adapt their online presence to how customers
+              increasingly research and compare service providers.
             </p>
           </div>
         </div>
