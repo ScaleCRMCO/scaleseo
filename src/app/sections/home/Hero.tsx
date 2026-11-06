@@ -1,6 +1,7 @@
 import Link from "next/link";
 import TrustindexWidget from "../../components/TrustindexWidget";
 import styles from "./Hero.module.css";
+import ClientLogos from "../../components/ClientLogos";
 
 const Corner = () => (
   <svg className={styles.corner} viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
@@ -43,26 +44,8 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Client logo strip: small grey logos in one row on white (Bilberrry style), between hero and intro */}
-      <div className={styles.logos}>
-        <p className={styles.logosLabel}>
-          <span className={styles.logosRule} aria-hidden="true" />
-          Trusted by local &amp; national brands
-        </p>
-        <div className={styles.logoRow} aria-label="Selected clients">
-        {[
-          { src: "/images/client-logo-jensen-cpa.png", alt: "Jensen CPA", h: 22 },
-          { src: "/images/client-logo-kinsmen-consulting.png", alt: "Kinsmen Consulting Limited", h: 24 },
-          { src: "/images/client-logo-empire-accountants.png", alt: "Empire Accountants", h: 36 },
-          { src: "/images/client-logo-msv-plumbing.png", alt: "MSV Plumbing Services", h: 28 },
-        ].map((l) => (
-          <div key={l.src} className={styles.logoCell}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={l.src} alt={l.alt} style={{ height: l.h }} />
-          </div>
-        ))}
-        </div>
-      </div>
+      {/* Client logo strip (shared component) */}
+      <ClientLogos />
 
       {/* Intro: large statement, label bottom-left, About button bottom-right */}
       <section className={styles.introSection}>

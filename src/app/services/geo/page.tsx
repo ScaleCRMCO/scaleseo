@@ -7,6 +7,10 @@ import ServicesMark from "../../sections/home/ServicesMark";
 // Shared service page template (new brand)
 import t from "../svc.module.css";
 import AiPlatforms from "./AiPlatforms";
+import gi from "./GeoIntro.module.css";
+import hero from "../../sections/home/Hero.module.css";
+import ClientLogos from "../../components/ClientLogos";
+import TrustindexWidget from "../../components/TrustindexWidget";
 import CaseStudy, { type CaseCard } from "../../sections/home/CaseStudy";
 
 const geoCases: CaseCard[] = [
@@ -273,43 +277,53 @@ export default function GeoServicePage() {
         </div>
       </header>
 
-      {/* === INTRO === */}
-      <section className={t.split} style={{ padding: 0 }}>
-        <div className={t.splitLeft}>
-          <p className={t.lead}>
-            <strong>
-              Help potential customers discover your business through ChatGPT,
-              Google AI search, and other AI-powered platforms.
-            </strong>
+      {/* === INTRO — statement, platform tags, two-column copy, proof bar === */}
+      <section className={gi.intro}>
+        <div className={gi.top}>
+          <h2 className={gi.statement}>Be the brand AI models name when your buyers ask.</h2>
+          <p className={gi.lead}>
+            Help potential customers discover your business through ChatGPT,
+            Google AI search, and other AI-powered platforms.
           </p>
-          <div className={t.chips}>
-            {["ChatGPT", "Google AI Overviews", "Perplexity", "Structured Data", "Content", "Technical SEO"].map((c) => (
-              <span key={c} className={t.chip}>{c}</span>
-            ))}
-          </div>
         </div>
-        <div className={t.splitRight}>
-          <div className={t.body}>
-            <p className={t.lead}>
-              Scale SEO provides AI search optimization and Generative Engine
-              Optimization (GEO) for professional service and B2B businesses
-              across Canada.
-            </p>
-            <p>
-              Scale SEO improves your website&rsquo;s content, structure, and technical
-              foundations to help search engines and AI platforms discover and
-              understand your business. The goal is to strengthen your visibility
-              when potential customers research the services you provide.
-            </p>
+
+        <ul className={gi.tags} aria-label="Focus areas">
+          {["ChatGPT", "Google AI Overviews", "Perplexity", "Structured Data", "Content", "Technical SEO"].map((c) => (
+            <li key={c}>{c}</li>
+          ))}
+        </ul>
+
+        <div className={gi.cols}>
+          <p className={gi.colLead}>
+            Scale SEO provides AI search optimization and Generative Engine
+            Optimization (GEO) for professional service and B2B businesses
+            across Canada.
+          </p>
+          <p className={gi.colBody}>
+            Scale SEO improves your website&rsquo;s content, structure, and
+            technical foundations to help search engines and AI platforms
+            discover and understand your business. The goal is to strengthen
+            your visibility when potential customers research the services you
+            provide.
+          </p>
+        </div>
+
+        <div className={gi.proof}>
+          <div className={hero.leftGroup}>
+            <TrustindexWidget id="cebaa07845048474c13615cd1b2" className={hero.reviews} />
+            <div className={hero.metric}>
+              <span className={hero.metricValue}>$1M+</span>
+              <span className={hero.metricLabel}>in Client Revenue Generated</span>
+            </div>
           </div>
-          <div className={t.boxRow}>
-            <Link href="/contact" className={`${t.box} ${t.boxNavy}`}>
-              <Corner />
-              <span>Book a Strategy Call &rarr;</span>
-            </Link>
-          </div>
+          <Link href="/contact" className={`${t.box} ${t.boxNavy}`}>
+            <Corner />
+            <span>Book a Strategy Call &rarr;</span>
+          </Link>
         </div>
       </section>
+
+      <ClientLogos />
 
       {/* === WHAT IS — heading left, text right === */}
       <section className={t.rowsSplit} style={{ padding: 0, borderTop: 0 }}>
@@ -343,6 +357,9 @@ export default function GeoServicePage() {
         </div>
       </section>
 
+      {/* === AI PLATFORMS — hub diagram + four points === */}
+      <AiPlatforms />
+
       {/* === WHAT'S INCLUDED — 2-column numbered steps === */}
       <section className={t.steps}>
         <h2 className={t.h2}>What&rsquo;s Included in AI Search Optimization?</h2>
@@ -370,9 +387,6 @@ export default function GeoServicePage() {
         aside="Begin seeing results in as soon as 30 days."
         cards={geoCases}
       />
-
-      {/* === AI PLATFORMS — hub diagram + four points === */}
-      <AiPlatforms />
 
       {/* === MEASUREMENT — heading left, ruled rows right === */}
       <section className={t.rowsSplit} style={{ padding: 0 }}>
