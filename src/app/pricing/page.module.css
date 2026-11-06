@@ -51,74 +51,33 @@
 .plansSection { padding: 96px 40px; background: var(--h-grey); }
 .head { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: end; margin-bottom: 56px; }
 .headBody { font-size: 18px; line-height: 1.5; max-width: 620px; }
-.plans { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
-.plan {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding: 24px 22px;
-  background: var(--h-white);
-  color: var(--h-navy);
+/* Three simple plan columns on one white panel, divided by hairlines;
+   the monthly plan is highlighted with a blue top bar */
+.plans { display: grid; grid-template-columns: repeat(3, 1fr); background: var(--h-white); border: 1px solid var(--h-rule); }
+.plan { display: flex; flex-direction: column; gap: 22px; padding: 36px 32px 32px; color: var(--h-navy); border-top: 3px solid transparent; }
+.plan + .plan { border-left: 1px solid var(--h-rule); }
+.featured { border-top-color: var(--h-blue); }
+.planName { font-size: clamp(22px, 1.8vw, 28px); line-height: 1.15; font-weight: 400; letter-spacing: -0.02em; }
+.priceRow { display: flex; flex-direction: column; gap: 6px; }
+.from { font-size: 14px; color: var(--h-dim); }
+.price { font-size: clamp(36px, 3.2vw, 52px); line-height: 1; letter-spacing: -0.035em; color: var(--h-navy); }
+.featured .price { color: var(--h-blue); }
+.unit { font-size: 15px; color: var(--h-dim); }
+.planSummary { font-size: 16px; line-height: 1.5; color: var(--h-dim); }
+.planList { list-style: none; display: flex; flex-direction: column; gap: 10px; padding-top: 18px; border-top: 1px solid var(--h-rule); }
+.planList li { position: relative; padding-left: 22px; font-size: 15.5px; line-height: 1.45; }
+.planList li::before { content: ""; position: absolute; left: 0; top: 9px; width: 10px; height: 1.5px; background: var(--h-blue); }
+.listLabel { margin-bottom: 4px; font-size: 14px; color: var(--h-dim); }
+.planNote { font-size: 14px; line-height: 1.5; color: var(--h-dim); }
+.planLink { margin-top: auto; display: flex; justify-content: space-between; align-items: center; padding: 16px 18px; background: var(--h-grey); color: var(--h-navy); font-size: 16px; text-decoration: none; transition: background 0.2s ease, color 0.2s ease; }
+.featured .planLink { background: var(--h-navy); color: var(--h-white); }
+.planLink:hover, .featured .planLink:hover { background: var(--h-blue); color: var(--h-white); }
+.plus { font-size: 20px; font-weight: 300; }
+@media (max-width: 1000px) {
+  .plans { grid-template-columns: 1fr; }
+  .plan + .plan { border-left: 0; border-top: 1px solid var(--h-rule); }
+  .featured { border-top: 3px solid var(--h-blue); }
 }
-.planTop { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
-.planName { font-size: clamp(26px, 2.2vw, 36px); line-height: 1.1; font-weight: 400; letter-spacing: -0.025em; }
-.planIcon {
-  flex: none;
-  width: 64px;
-  height: auto;
-  fill: none;
-  stroke: var(--h-blue);
-  stroke-width: 5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-.priceRow { display: flex; flex-direction: column; gap: 6px; padding: 18px 0; border-top: 1px solid var(--h-rule); border-bottom: 1px solid var(--h-rule); }
-.from { font-size: 15px; color: var(--h-dim); }
-.price { font-size: clamp(44px, 4vw, 64px); line-height: 1; letter-spacing: -0.04em; color: var(--h-blue); }
-.unit { font-size: 16px; letter-spacing: 0; color: var(--h-dim); }
-.planSummary { font-size: 17px; line-height: 1.5; }
-.planList { list-style: none; display: flex; flex-direction: column; }
-.planList li {
-  position: relative;
-  padding: 10px 0 10px 24px;
-  border-bottom: 1px solid var(--h-rule);
-  font-size: 16px;
-  line-height: 1.45;
-}
-.planList li::before {
-  content: "";
-  position: absolute;
-  left: 2px;
-  top: 18px;
-  width: 7px;
-  height: 7px;
-  background: var(--h-blue);
-}
-.planLink {
-  margin-top: auto;
-  padding-top: 18px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: inherit;
-  font-size: 17px;
-  text-decoration: none;
-}
-.plus {
-  display: grid;
-  place-items: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  font-size: 24px;
-  font-weight: 300;
-  transition: background-color 0.2s ease, color 0.2s ease;
-}
-.planLink:hover .plus { background: var(--h-blue); color: var(--h-white); }
-.featured { background: var(--h-navy); color: var(--h-white); }
-.featured .from, .featured .unit { color: rgba(254, 254, 254, 0.7); }
-.featured .priceRow, .featured .planList li { border-color: rgba(254, 254, 254, 0.25); }
-.featured .plus { background: var(--h-blue); }
 .plansNote { margin-top: 40px; max-width: 760px; font-size: 17px; line-height: 1.5; color: var(--h-dim); }
 
 /* Factors */
@@ -185,7 +144,7 @@
   .heroRight { padding: 24px 16px 32px; }
   .box { width: 100%; }
   .plansSection, .compareSection { padding: 56px 16px; }
-  .plans, .terms { grid-template-columns: 1fr; gap: 16px; }
+  .terms { grid-template-columns: 1fr; gap: 16px; }
   .splitAside { border-right: 0; border-bottom: 1px solid var(--h-rule); padding: 48px 16px 24px; }
   .rows { padding: 8px 16px 24px; }
   .row { grid-template-columns: 40px 1fr; }
@@ -197,7 +156,6 @@
 /* Additions for the simplified pricing page */
 .heroText { display: flex; flex-direction: column; gap: 14px; font-size: 17px; line-height: 1.5; }
 .listLabel { margin-bottom: 8px; font-size: 15px; opacity: 0.75; }
-.planNote { font-size: 15px; line-height: 1.5; opacity: 0.8; }
 .plansNote a { color: var(--h-blue); text-decoration: underline; text-underline-offset: 3px; }
 .asideBody { margin-top: 24px; max-width: 460px; font-size: 18px; line-height: 1.5; }
 

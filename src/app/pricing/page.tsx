@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import Breadcrumbs from "../components/Breadcrumbs";
-import SketchIcon from "../components/SketchIcon";
 import ContactSection from "../components/ContactSection";
 import ServicesFaq, { type FaqItem } from "../services/ServicesFaq";
 import styles from "./page.module.css";
@@ -37,6 +36,27 @@ const plans = [
     href: "/services/seo",
     cta: "Explore SEO Services",
     featured: true,
+  },
+  {
+    name: "Enterprise SEO",
+    icon: "",
+    price: "Custom Quote",
+    unit: "",
+    summary:
+      "Advanced SEO campaigns for established businesses competing across Canada, managing larger websites, or targeting multiple markets.",
+    listLabel: "Campaigns can include:",
+    includes: [
+      "National SEO strategy and competitor research",
+      "Advanced technical SEO and website architecture",
+      "Multi-location and service page optimization",
+      "Content strategy and ongoing website development",
+      "AI search visibility optimization",
+      "Custom reporting and performance analysis",
+    ],
+    note: "Every engagement is scoped around your website, target markets, and business goals, with direct oversight from Scale SEO\u2019s founder.",
+    href: "/contact",
+    cta: "Request a Custom Quote",
+    featured: false,
   },
   {
     name: "Website Design & Development",
@@ -263,7 +283,7 @@ export default function PricingPage() {
         </div>
       </header>
 
-      {/* === Starting prices — two plan boxes === */}
+      {/* === Starting prices — three plan columns === */}
       <section className={styles.plansSection} id="plans">
         <div className={styles.head}>
           <h2 className={styles.bigH2}>Starting Prices</h2>
@@ -277,16 +297,11 @@ export default function PricingPage() {
         <div className={styles.plans}>
           {plans.map((p) => (
             <article key={p.name} className={`${styles.plan} ${p.featured ? styles.featured : ""}`}>
-              <div className={styles.planTop}>
-                <h3 className={styles.planName}>{p.name}</h3>
-                <SketchIcon name={p.icon} className={styles.planIcon} />
-              </div>
+              <h3 className={styles.planName}>{p.name}</h3>
               <div className={styles.priceRow}>
-                <span className={styles.from}>Starting at</span>
-                <span className={styles.price}>
-                  {p.price}
-                  <span className={styles.unit}> {p.unit}</span>
-                </span>
+                <span className={styles.from}>{p.unit ? "Starting at" : "Pricing"}</span>
+                <span className={styles.price}>{p.price}</span>
+                {p.unit && <span className={styles.unit}>{p.unit}</span>}
               </div>
               <p className={styles.planSummary}>{p.summary}</p>
               <div>
