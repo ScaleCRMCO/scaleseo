@@ -7,9 +7,9 @@ import ServicesFaq, { type FaqItem } from "../services/ServicesFaq";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: { absolute: "SEO & Website Pricing in Calgary | Scale SEO" },
+  title: { absolute: "SEO Pricing & Website Development Costs | Scale SEO" },
   description:
-    "Transparent starting prices for SEO and websites in Calgary. Monthly SEO from $3,000 + GST and websites from $6,000 + GST. Month-to-month, no lock-in contracts.",
+    "Explore Scale SEO's pricing for monthly SEO campaigns and website development. Transparent starting rates, custom quotes, and no long-term SEO contracts.",
   alternates: { canonical: "/pricing" },
 };
 
@@ -133,6 +133,12 @@ const faqs: FaqItem[] = [
     ],
   },
   {
+    q: "How much does enterprise SEO cost?",
+    a: [
+      "Enterprise SEO is quoted individually based on your website\u2019s size, technical requirements, target markets, and campaign scope. We review your business goals and existing search performance before recommending a suitable monthly investment.",
+    ],
+  },
+  {
     q: "Do you require long-term contracts?",
     a: [
       "No. Ongoing SEO campaigns are offered month-to-month, and clients retain ownership of their websites, content, accounts, and data.",
@@ -153,8 +159,8 @@ const jsonLd = {
       "@type": "WebPage",
       "@id": "https://scaleseo.co/pricing#webpage",
       "url": "https://scaleseo.co/pricing",
-      "name": "SEO & Website Pricing in Calgary | Scale SEO",
-      "description": "View Scale SEO starting prices for monthly SEO campaigns and website development in Calgary. All pricing is in CAD and engagements are scoped around your business, website and market.",
+      "name": "SEO Pricing & Website Development Costs | Scale SEO",
+      "description": "Explore Scale SEO's pricing for monthly SEO campaigns and website development. Transparent starting rates, custom quotes, and no long-term SEO contracts.",
       "isPartOf": {
         "@id": "https://scaleseo.co/#website"
       },
@@ -258,7 +264,7 @@ export default function PricingPage() {
           <div className={styles.crumbs}>
             <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Pricing" }]} schema={false} />
           </div>
-          <h1 className={styles.heroTitle}>SEO &amp; Website Pricing in Calgary</h1>
+          <h1 className={styles.heroTitle}>SEO &amp; Website Development Pricing</h1>
           <a href="#plans" className={styles.heroNote}>See Starting Prices &darr;</a>
         </div>
         <div className={styles.heroRight}>
