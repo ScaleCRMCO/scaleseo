@@ -59,7 +59,8 @@ export default function CaseStudy({
   heading = "SEO Results From Real Client Campaigns",
   cards = defaultCards,
   id = "work",
-}: { label?: string; heading?: string; cards?: CaseCard[]; id?: string } = {}) {
+  aside,
+}: { label?: string; heading?: string; cards?: CaseCard[]; id?: string; aside?: string } = {}) {
   const track = useRef<HTMLDivElement>(null);
 
   // A card that runs off either edge scrolls into view instead of navigating
@@ -89,7 +90,10 @@ export default function CaseStudy({
           <span className={styles.rule} aria-hidden="true" />
           {label}
         </p>
-        <h2 className={styles.heading}>{heading}</h2>
+        <div className={styles.headRow}>
+          <h2 className={styles.heading}>{heading}</h2>
+          {aside && <p className={styles.aside}>{aside}</p>}
+        </div>
       </div>
 
       <div className={styles.track} ref={track}>

@@ -6,6 +6,42 @@ import ServicesFaq, { type FaqItem } from "../ServicesFaq";
 import ServicesMark from "../../sections/home/ServicesMark";
 // Shared service page template (new brand)
 import t from "../svc.module.css";
+import CaseStudy, { type CaseCard } from "../../sections/home/CaseStudy";
+
+const geoCases: CaseCard[] = [
+  {
+    href: "/results/empire-accountants",
+    client: "Empire Accountants",
+    services: "Structured Data / Industry Content / Business Information Page",
+    image: "/images/empire-accountants-cover.webp",
+    metric: { from: 5, to: 1, prefix: "Page " },
+    metricLabel: "Target rankings, up from page 5",
+  },
+  {
+    href: "/results/jensen-cpa",
+    client: "Jensen CPA",
+    services: "Service Pages / Author Information / Technical SEO",
+    image: "/images/jensen-cpa-cover.webp",
+    metric: { to: 227, prefix: "+", suffix: "%" },
+    metricLabel: "Search impressions",
+  },
+  {
+    href: "/results/kinsmen-consulting",
+    client: "Kinsmen Consulting",
+    services: "Service Pages / Local SEO / Website Development",
+    image: "/images/kinsmen-hero.jpg",
+    metric: { to: 500, prefix: "$", suffix: "K" },
+    metricLabel: "Revenue from new jobs",
+  },
+  {
+    href: "/results/msv-plumbing-services",
+    client: "MSV Plumbing Services",
+    services: "Website Development / SEO / Google Ads",
+    image: "/images/msv-plumbing-cover.webp",
+    metric: { text: "Weekly" },
+    metricLabel: "Bookings from a standing start",
+  },
+];
 
 export const metadata: Metadata = {
   title: "AI Search Optimization & GEO Services | Scale SEO",
@@ -325,48 +361,14 @@ export default function GeoServicePage() {
         </div>
       </section>
 
-      {/* === IN PRACTICE — navy feature box === */}
-      <section className={t.featureWrap}>
-        <div className={t.feature}>
-          <div className={t.featureText}>
-            <span className={t.eyebrow}>Client Work</span>
-            <h2 className={t.h2}>AI Search Optimization in Practice</h2>
-            <p className={t.body}>
-              Scale SEO already incorporates AI search considerations into ongoing SEO work
-              for professional service businesses.
-            </p>
-          </div>
-          <div className={t.featureSide}>
-            <div className={t.body}>
-              <ul className={t.darkList}>
-                <li>
-                  For <strong>Empire Accountants</strong>, we&rsquo;ve improved
-                  business accounting service pages, expanded industry-specific
-                  content, implemented structured data, and developed a dedicated
-                  business information page.
-                </li>
-                <li>
-                  For <strong>Jensen CPA</strong>, we&rsquo;ve worked on
-                  service-page development, accounting articles, author
-                  information, technical SEO, and the connections between the
-                  firm&rsquo;s expertise and its services.
-                </li>
-              </ul>
-              <p style={{ fontSize: 15, opacity: 0.75 }}>
-                These projects demonstrate the type of practical website
-                improvements involved in GEO. They are not presented as proof of
-                increased AI citations or AI-generated leads.
-              </p>
-            </div>
-            <div className={t.featureLinks}>
-              <Link href="/results" className={`${t.box} ${t.boxGrey}`}>
-                <Corner />
-                <span>View Client Case Studies &rarr;</span>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* === IN PRACTICE — homepage-style case study row === */}
+      <CaseStudy
+        id="client-work"
+        label="Client Work"
+        heading="AI Search Optimization in Practice"
+        aside="Begin seeing results in as soon as 30 days."
+        cards={geoCases}
+      />
 
       {/* === MEASUREMENT — heading left, ruled rows right === */}
       <section className={t.rowsSplit} style={{ padding: 0 }}>
