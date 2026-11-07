@@ -101,7 +101,7 @@ const profileJsonLd = {
       name: "Corbin Jensen",
       jobTitle: "Founder & SEO Specialist",
       url: "https://scaleseo.co/corbin-jensen",
-      image: "https://scaleseo.co/images/corbin-about.jpg",
+      image: "https://scaleseo.co/images/corbin-portrait.webp",
       description: "Corbin Jensen is an SEO specialist and the founder of Scale SEO, based in Calgary, Alberta. He works with professional service and B2B businesses across technical SEO, on-page SEO, content strategy, local SEO, website architecture and structured data.",
       worksFor: {
         "@id": "https://scaleseo.co/#organization"
@@ -203,7 +203,7 @@ export default function CorbinJensenPage() {
         <div className={styles.heroRight}>
           <div className={styles.portrait}>
             <Image
-              src="/images/corbin-about.jpg"
+              src="/images/corbin-portrait.webp"
               alt="Corbin Jensen, founder and SEO specialist at Scale SEO"
               fill
               priority

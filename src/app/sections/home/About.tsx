@@ -32,7 +32,7 @@ export default function About() {
         </div>
         <figure className={styles.portrait}>
           <Image
-            src="/images/corbin-about.jpg"
+            src="/images/corbin-portrait.webp"
             alt="Corbin Jensen, founder of Scale SEO"
             fill
             sizes="(max-width: 900px) 90vw, 32vw"

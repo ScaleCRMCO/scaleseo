@@ -59,8 +59,8 @@ const aboutJsonLd = {
         { "@id": "https://scaleseo.co/about#primaryimage" },
         {
           "@type": "ImageObject",
-          url: "https://scaleseo.co/images/corbin-about.jpg",
-          contentUrl: "https://scaleseo.co/images/corbin-about.jpg",
+          url: "https://scaleseo.co/images/corbin-portrait.webp",
+          contentUrl: "https://scaleseo.co/images/corbin-portrait.webp",
           width: 2143,
           height: 2560,
           caption: "Corbin Jensen, founder of Scale SEO",
@@ -237,7 +237,7 @@ export default function AboutPage() {
           <h2 className={t.h2}>Meet the Founder</h2>
           <div className={styles.founderPhoto}>
             <Image
-              src="/images/corbin-about.jpg"
+              src="/images/corbin-portrait.webp"
               alt="Corbin Jensen, founder and SEO specialist at Scale SEO"
               fill
               sizes="240px"
