@@ -3,14 +3,19 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import styles from "./Nav.module.css";
 
-const serviceLinks = [
-  { href: "/services/seo", name: "SEO" },
-  { href: "/services/seo-audits", name: "SEO Audits" },
-  { href: "/services/google-ads-management", name: "Google Ads" },
-  { href: "/services/web-development", name: "Web Development" },
-  { href: "/services/geo", name: "GEO (AI Search)" },
-  { href: "/services", name: "All Services" },
+const seoLinks = [
+  { href: "/services/seo", name: "SEO Services", sub: "Complete SEO management" },
+  { href: "/services/on-page-seo", name: "On-Page SEO", sub: "Content and page optimization" },
+  { href: "/services/national-seo", name: "National SEO", sub: "Search visibility across Canada" },
+  { href: "/services/seo-audits", name: "SEO Audits", sub: "Website analysis and recommendations" },
 ];
+const otherLinks = [
+  { href: "/services/web-development", name: "Website Development", sub: "Website design and ongoing support" },
+  { href: "/services/geo", name: "AI Search Optimization", sub: "Visibility in AI-powered search" },
+  { href: "/services/google-ads-management", name: "Google Ads Management", sub: "Paid search and lead generation" },
+];
+// Flat list for the mobile menu
+const serviceLinks = [...seoLinks, ...otherLinks, { href: "/services", name: "All Services", sub: "" }];
 
 // Small corner arrow used on boxed links (top-right of the box)
 const Corner = () => (
@@ -98,12 +103,32 @@ export default function Nav() {
                 <span aria-hidden="true">×</span> Close
               </button>
             </div>
-            {serviceLinks.map((s) => (
-              <Link key={s.href} href={s.href} className={styles.panelRow} onClick={close}>
-                <span>{s.name}</span>
-                <span aria-hidden="true">›</span>
+            <div className={styles.mega}>
+              {[["SEO Services", seoLinks], ["Other Services", otherLinks]].map(([label, links]) => (
+                <div key={label as string} className={styles.megaCol}>
+                  <span className={styles.megaLabel}>{label as string}</span>
+                  {(links as typeof seoLinks).map((s) => (
+                    <Link key={s.href} href={s.href} className={styles.megaLink} onClick={close}>
+                      <span className={styles.megaName}>{s.name}</span>
+                      <span className={styles.megaSub}>{s.sub}</span>
+                    </Link>
+                  ))}
+                </div>
+              ))}
+              <Link href="/services/seo" className={styles.megaFeature} onClick={close}>
+                <span className={styles.megaLabel}>Featured</span>
+                <span className={styles.megaImg}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/images/nav-seo-organic.webp" alt="SEO / Organic" />
+                </span>
+                <span className={styles.megaName}>Full-Service SEO</span>
+                <span className={styles.megaSub}>Strategy, content, and technical improvements to help you rank higher on Google.</span>
               </Link>
-            ))}
+            </div>
+            <Link href="/services" className={styles.megaAll} onClick={close}>
+              <span>Explore all services</span>
+              <span aria-hidden="true">&#8599;</span>
+            </Link>
           </div>
         </div>
 

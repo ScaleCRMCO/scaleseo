@@ -262,3 +262,21 @@
   }
   .mobileMenu { inset: calc(72px + env(safe-area-inset-top, 0px)) 0 0 0; }
 }
+
+/* Expanded services mega panel */
+.panel { width: min(1040px, calc(100vw - 80px)); left: 50%; transform: translate(-50%, -6px); }
+.panelOpen { transform: translate(-50%, 0); }
+.mega { display: grid; grid-template-columns: 1fr 1fr 1.15fr; gap: 40px; padding: 32px 32px 28px; }
+.megaCol { display: flex; flex-direction: column; gap: 4px; }
+.megaLabel { margin-bottom: 12px; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(3, 27, 54, 0.5); }
+.megaLink { display: flex; flex-direction: column; gap: 3px; padding: 10px 12px; margin: 0 -12px; color: var(--nav-ink); text-decoration: none; transition: background 0.15s ease; }
+.megaLink:hover { background: #F1F3F6; }
+.megaName { font-size: 19px; line-height: 1.2; letter-spacing: -0.01em; }
+.megaSub { font-size: 14px; line-height: 1.4; color: rgba(3, 27, 54, 0.55); }
+.megaFeature { display: flex; flex-direction: column; gap: 6px; color: var(--nav-ink); text-decoration: none; }
+.megaImg { display: block; aspect-ratio: 16 / 9; margin-bottom: 10px; overflow: hidden; background: #fff; border: 1px solid var(--nav-rule); }
+.megaImg img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+.megaFeature:hover .megaImg img { transform: scale(1.04); }
+.megaFeature:hover .megaName { color: #0099FF; }
+.megaAll { display: flex; justify-content: space-between; align-items: center; padding: 18px 32px; border-top: 1px solid var(--nav-rule); color: var(--nav-ink); font-size: 17px; text-decoration: none; }
+.megaAll:hover { background: #F1F3F6; }
