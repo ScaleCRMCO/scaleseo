@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Hero from "./sections/home/Hero";
 import About from "./sections/home/About";
+import Differently from "./sections/home/Differently";
 import ServicesGrid from "./sections/home/ServicesGrid";
 import CaseStudy from "./sections/home/CaseStudy";
 import CampaignAreas from "./sections/home/CampaignAreas";
@@ -49,6 +50,7 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }}
       />
       <Hero />
+      <Differently />
       <ServicesGrid />
       <About />
       <CaseStudy />
