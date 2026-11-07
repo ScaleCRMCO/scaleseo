@@ -20,9 +20,8 @@ export default function Hero() {
           <path d="M101 139 H224.5 V262" strokeWidth="38" />
         </svg>
         <h1 className={styles.h1}>
-          <span className={styles.h1Line}>Independent SEO</span>{" "}
-          <span className={styles.h1Line}>Consultancy Located</span>{" "}
-          <span className={styles.h1Line}>in Calgary</span>
+          <span className={styles.h1Line}>SEO Company in</span>{" "}
+          <span className={styles.h1Line}>Calgary, Alberta</span>
         </h1>
         <div className={styles.topBottom}>
           <div className={styles.leftGroup}>
