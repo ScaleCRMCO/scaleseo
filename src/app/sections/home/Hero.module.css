@@ -377,3 +377,6 @@
 /* Slightly smaller H1 in the navy hero */
 .darkHero .h1 { font-size: clamp(48px, 6.6vw, 120px); }
 @media (max-width: 900px) { .darkHero .h1 { font-size: clamp(38px, 10.5vw, 52px); } }
+
+.heroSub { position: relative; z-index: 1; max-width: 34ch; margin-top: 28px; font-size: clamp(17px, 1.4vw, 21px); line-height: 1.45; color: rgba(254, 254, 254, 0.78); }
+@media (max-width: 900px) { .heroSub { margin-top: 20px; font-size: 17px; } }

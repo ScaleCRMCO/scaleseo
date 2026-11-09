@@ -22,9 +22,10 @@ export default function Hero() {
           <span className={styles.h1Line}>SEO Company in</span>{" "}
           <span className={styles.h1Line}>Calgary, Alberta</span>
         </h1>
+        <p className={styles.heroSub}>Good SEO should pay for itself. That&rsquo;s what we work toward.</p>
         <div className={styles.topBottom}>
           <div className={styles.leftGroup}>
-            <TrustindexWidget id="cebaa07845048474c13615cd1b2" className={styles.reviews} />
+            <TrustindexWidget id="9776d3285310379d5646ecc7f73" className={styles.reviews} />
             <div className={styles.metric}>
               <span className={styles.metricValue}>$1M+</span>
               <span className={styles.metricLabel}>in Client Revenue Generated</span>
