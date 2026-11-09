@@ -8,3 +8,10 @@
   .label { max-width: none; margin-bottom: 24px; }
   .point { padding: 24px 0; border-left: 0; border-top: 1px solid var(--h-rule); }
 }
+
+.section { padding-top: 72px !important; }
+.foot { grid-column: 1 / -1; display: flex; justify-content: flex-end; margin-top: 64px; }
+.more { position: relative; display: flex; align-items: flex-end; width: min(100%, 340px); min-height: 130px; padding: 20px 22px; background: var(--h-navy); color: var(--h-white); font-size: 18px; text-decoration: none; transition: background 0.2s ease; }
+.more:hover { background: var(--h-blue); }
+.corner { position: absolute; top: 18px; right: 20px; width: 10px; height: 10px; }
+@media (max-width: 1000px) { .foot { margin-top: 32px; justify-content: stretch; } .more { width: 100%; min-height: 96px; } }

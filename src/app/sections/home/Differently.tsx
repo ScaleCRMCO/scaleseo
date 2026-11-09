@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "./Differently.module.css";
 
 // "Here is what we do differently." — label left, three points divided by
@@ -27,6 +28,14 @@ export default function Differently() {
           <p className={styles.body}>{p.body}</p>
         </div>
       ))}
+      <div className={styles.foot}>
+        <Link href="/about" className={styles.more}>
+          <svg className={styles.corner} viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+            <path d="M1 1.5h7.5V9" />
+          </svg>
+          <span>More About Scale SEO &rarr;</span>
+        </Link>
+      </div>
     </section>
   );
 }

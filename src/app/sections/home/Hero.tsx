@@ -74,17 +74,6 @@ export default function Hero() {
             long-term results.
           </p>
         </div>
-        <div className={styles.introBottom}>
-          <span className={styles.since}>
-            Founder-led
-            <br />
-            since 2025
-          </span>
-          <Link href="/about" className={`${styles.box} ${styles.boxNavy}`}>
-            <Corner />
-            <span>More About Scale SEO →</span>
-          </Link>
-        </div>
       </section>
     </header>
   );
