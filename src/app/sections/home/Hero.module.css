@@ -380,3 +380,29 @@
 
 .heroSub { position: relative; z-index: 1; max-width: 34ch; margin-top: 28px; font-size: clamp(17px, 1.4vw, 21px); line-height: 1.45; color: rgba(254, 254, 254, 0.78); }
 @media (max-width: 900px) { .heroSub { margin-top: 20px; font-size: 17px; } }
+
+/* ===== Mobile navy hero: compact, Mamba/Sincro-style =====
+   H1 + subline, then reviews (left) with the Semrush badge (right), then a
+   half-width CTA beside the $1M+ figure. */
+@media (max-width: 900px) {
+  .darkHero .top { padding: 48px 16px 40px; }
+  .darkHero .h1 { font-size: clamp(36px, 10vw, 46px); line-height: 1.02; }
+  .darkHero .heroSub { max-width: 30ch; margin-top: 16px; font-size: 16px; }
+  .darkHero .topBottom {
+    position: static; margin-top: 44px;
+    display: grid; grid-template-columns: 1fr auto; grid-template-areas: "reviews badge" "cta metric";
+    align-items: center; gap: 28px 20px;
+  }
+  .darkHero .leftGroup { display: contents; }
+  .darkHero .leftGroup .reviews { grid-area: reviews; justify-self: start; zoom: 0.8; margin-left: -25px !important; }
+  .darkHero .badge { grid-area: badge; justify-self: end; padding: 0; border: 0; }
+  .darkHero .badge img { width: 48px; height: 48px; }
+  .darkHero .box { grid-area: cta; width: 100%; max-width: 230px; min-height: 92px; padding: 14px 16px; font-size: 16px; }
+  .darkHero .metric {
+    grid-area: metric; justify-self: end; align-self: end;
+    flex-direction: column; align-items: flex-end; gap: 4px; margin: 0; padding: 0; border: 0; text-align: right;
+  }
+  .darkHero .metricValue { font-size: 34px; }
+  .darkHero .metricLabel { max-width: 12ch; font-size: 13px; line-height: 1.3; }
+  .logosDark { padding-top: 32px; padding-bottom: 40px; }
+}
