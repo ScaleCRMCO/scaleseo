@@ -62,59 +62,64 @@ function Column({ title, items }: { title: string; items: Item[] }) {
   );
 }
 
-const Corner = () => (
-  <svg className={styles.corner} viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
-    <path d="M1 1.5h7.5V9" />
-  </svg>
-);
-
 export default function Footer() {
   return (
-    <footer className={styles.footer}>
+    <footer className={styles.footer} data-nav="dark">
       <div className={styles.top}>
-        <div className={styles.intro}>
-          <p className={styles.tagline}>
-            SEO for professional service businesses
-          </p>
+        {/* Left: CTA, contact details, trust badges */}
+        <div className={styles.lead}>
+          <p className={styles.ctaText}>Every great SEO campaign starts with a conversation</p>
+          <a
+            href="https://cal.com/corbinjensen-scaleseo/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.ctaSlim}
+          >
+            <span>Book a call</span>
+            <span aria-hidden="true">&rarr;</span>
+          </a>
           <div className={styles.contactLines}>
             <a href="tel:+14038751110">(403) 875-1110</a>
             <a href="mailto:team@scaleseo.co">team@scaleseo.co</a>
+          </div>
+        </div>
+
+        {/* Right: categorized link columns */}
+        <div className={styles.cols}>
+          <Column title="Company" items={pages} />
+          <Column title="Services" items={services} />
+          <Column title="Locations" items={locations} />
+          <Column title="Connect" items={connect} />
+        </div>
+
+        {/* Trust row: badges left, office address right */}
+        <div className={styles.trust}>
+          <div className={styles.badges}>
+            <TrustindexWidget id="17e0136848d8361029462bf7c16" className={styles.reviews} />
+            <a href="https://agencies.semrush.com/scale-seo/" target="_blank" rel="noopener noreferrer" className={styles.badgeLink} aria-label="Semrush Certified Agency Partner">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/images/semrush-agency-partner.svg" alt="Semrush Certified Agency Partner" width={56} height={56} />
+            </a>
+            <a href="https://clutch.co/profile/scale-seo" target="_blank" rel="noopener noreferrer" className={styles.badgeLink} aria-label="Scale SEO reviews on Clutch">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/images/clutch-reviewed.svg" alt="Reviewed on Clutch" width={158} height={30} className={styles.clutch} />
+            </a>
+            <DesignRushWidget className={styles.designrush} />
+          </div>
+          <div className={styles.office}>
+            <span className={styles.officeLabel}>Calgary Office</span>
             <address className={styles.address}>
               1122 3 St SE Ste 1906
               <br />
-              Calgary, T2G 0E7, Canada
+              Calgary, AB T2G 0E7, Canada
             </address>
-            <span>Remote · Est. 2025</span>
-          </div>
-          <DesignRushWidget className={styles.designrush} />
-        </div>
-
-        <Column title="Company" items={pages} />
-        <Column title="Services" items={services} />
-        <Column title="Locations" items={locations} />
-        <Column title="Connect" items={connect} />
-
-        {/* Navy CTA box with a blue booking box inside */}
-        <div className={styles.cta}>
-          <p className={styles.ctaText}>Every great SEO campaign starts with a conversation</p>
-          <div className={styles.ctaBottom}>
-            <TrustindexWidget id="17e0136848d8361029462bf7c16" className={styles.reviews} />
-            <a
-              href="https://cal.com/corbinjensen-scaleseo/30min"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.ctaBox}
-            >
-              <Corner />
-              <span>Book a call</span>
-            </a>
           </div>
         </div>
 
         {/* Giant wordmark across the bottom */}
         <Link href="/" className={styles.wordmark} aria-label="Scale SEO home">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/brand/scaleseo-wordmark.svg" alt="Scale SEO" className={styles.logo} />
+          <img src="/brand/scaleseo-wordmark-white.svg" alt="Scale SEO" className={styles.logo} />
         </Link>
       </div>
 
@@ -128,7 +133,7 @@ export default function Footer() {
           <Link href="/business-information" className={styles.link}>Business Information</Link>
           <span>SEO for Calgary · Serving Canada</span>
           {/* Google "Add to Preferred Sources" button */}
-          <div google-add-preferred-source-btn="" data-theme="light" />
+          <div google-add-preferred-source-btn="" data-theme="dark" />
         </div>
       </div>
     </footer>

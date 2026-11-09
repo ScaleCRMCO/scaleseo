@@ -1,123 +1,76 @@
-/* White footer: tagline | numbered link columns with hairlines | navy CTA
-   box, then a giant wordmark across the bottom and a fine-print bar. */
+/* Navy footer (Mamba-style): CTA + contact left, categorized link columns
+   right, a trust-badge row with the office address, then a giant wordmark
+   and a fine-print bar. */
 
 .footer {
   --f-white: #FEFEFE;
   --f-navy: #081423;
   --f-blue: #0099FF;
-  --f-dim: rgba(8, 20, 35, 0.6);
-  --f-rule: rgba(8, 20, 35, 0.16);
-  background: var(--f-white);
-  color: var(--f-navy);
-  border-top: 1px solid var(--f-rule);
+  --f-dim: rgba(254, 254, 254, 0.6);
+  --f-rule: rgba(254, 254, 254, 0.14);
+  background: var(--f-navy);
+  color: var(--f-white);
   font-family: 'DM Sans', system-ui, sans-serif;
 }
 
 .top {
   display: grid;
-  grid-template-columns: 1.1fr 1fr 1fr 1fr 1fr 300px;
-  grid-template-rows: auto 1fr;
-  column-gap: 32px;
-  padding: 96px 40px 0;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);
+  column-gap: clamp(40px, 6vw, 120px);
+  row-gap: 88px;
+  padding: 112px 40px 0;
 }
 
-.intro { display: flex; flex-direction: column; gap: 32px; }
-.tagline {
-  font-size: clamp(26px, 2.2vw, 36px);
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-  max-width: 12ch;
-}
-.contactLines { display: flex; flex-direction: column; gap: 6px; font-size: 15px; color: var(--f-dim); }
-.contactLines a { color: var(--f-navy); text-decoration: none; }
-.contactLines a:hover { color: var(--f-blue); }
+/* Left lead */
+.lead { display: flex; flex-direction: column; align-items: flex-start; gap: 32px; }
+.ctaText { max-width: 13ch; font-size: clamp(32px, 3.4vw, 54px); line-height: 1.06; letter-spacing: -0.03em; }
+.ctaSlim { display: inline-flex; align-items: center; gap: 40px; padding: 14px 20px; background: var(--f-blue); color: var(--f-white); font-size: 16px; text-decoration: none; transition: background 0.2s ease, color 0.2s ease; }
+.ctaSlim:hover { background: var(--f-white); color: var(--f-navy); }
+.contactLines { display: flex; flex-direction: column; gap: 6px; margin-top: 8px; font-size: 16px; }
+.contactLines a { color: var(--f-dim); text-decoration: none; }
+.contactLines a:hover { color: var(--f-white); }
 
-.colLabel {
-  padding-bottom: 12px;
-  border-bottom: 1px solid var(--f-rule);
-  font-size: 17px;
-}
-.list { list-style: none; }
-.row {
-  display: block;
-  padding: 11px 0;
-  border-bottom: 1px solid var(--f-rule);
-  font-size: 17px;
-  color: var(--f-navy);
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
+/* Link columns */
+.cols { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 40px 32px; }
+.col { min-width: 0; }
+.colLabel { margin-bottom: 20px; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--f-blue); }
+.list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.row { display: block; font-size: 16px; line-height: 1.3; color: var(--f-white); text-decoration: none; transition: color 0.15s ease; }
 .row:hover { color: var(--f-blue); }
 
-.cta {
-  grid-row: span 2;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 48px;
-  padding: 22px;
-  background: var(--f-navy);
-  color: var(--f-white);
-}
-.ctaBottom { display: flex; flex-direction: column; gap: 16px; }
+/* Trust row */
+.trust { grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: center; gap: 40px; padding-top: 40px; border-top: 1px solid var(--f-rule); }
+.badges { display: flex; flex-wrap: wrap; align-items: center; gap: 28px; }
 .reviews { min-height: 40px; }
-.ctaText { font-size: 24px; line-height: 1.25; letter-spacing: -0.01em; }
-.ctaBox {
-  position: relative;
-  display: flex;
-  align-items: flex-end;
-  min-height: 130px;
-  padding: 20px 22px;
-  background: var(--f-blue);
-  color: var(--f-white);
-  font-size: 18px;
-  text-decoration: none;
-  transition: background-color 0.2s ease, color 0.2s ease;
-}
-.ctaBox:hover { background: var(--f-white); color: var(--f-navy); }
-.corner { position: absolute; top: 16px; right: 18px; width: 10px; height: 10px; }
+.badgeLink { display: block; transition: opacity 0.2s ease; }
+.badgeLink:hover { opacity: 0.8; }
+.badgeLink img { display: block; }
+.clutch { width: 158px; height: auto; }
+.designrush { min-height: 40px; }
+.office { display: flex; flex-direction: column; gap: 8px; text-align: right; }
+.officeLabel { font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--f-blue); }
+.address { font-style: normal; font-size: 15px; line-height: 1.5; color: var(--f-dim); }
 
-.wordmark {
-  grid-column: 1 / 6;
-  align-self: end;
-  display: flex;
-  align-items: center;
-  gap: 0.18em;
-  margin-top: 72px;
-  font-size: clamp(64px, 12.5vw, 220px);
-  line-height: 0.85;
-  letter-spacing: -0.055em;
-  color: var(--f-navy);
-  text-decoration: none;
-  white-space: nowrap;
-}
-.logo { display: block; width: 100%; max-width: 1040px; height: auto; }
+/* Giant wordmark */
+.wordmark { grid-column: 1 / -1; display: block; margin-top: 8px; }
+.logo { display: block; width: 100%; height: auto; }
 
-.bottom {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 12px 32px;
-  margin: 40px 40px 0;
-  padding: 20px 0 28px;
-  border-top: 1px solid var(--f-rule);
-  font-size: 14px;
-}
+/* Bottom bar */
+.bottom { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; padding: 28px 40px 32px; margin-top: 40px; border-top: 1px solid var(--f-rule); font-size: 14px; color: var(--f-dim); }
+.copy { color: var(--f-dim); }
 .bottomRight { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin-left: auto; color: var(--f-dim); }
-.link { color: var(--f-navy); text-decoration: underline; text-underline-offset: 3px; }
+.link { color: var(--f-white); text-decoration: underline; text-underline-offset: 3px; }
 .link:hover { color: var(--f-blue); }
 
-@media (max-width: 1200px) {
-  .top { grid-template-columns: 1fr 1fr 1fr; row-gap: 48px; }
-  .intro { grid-column: 1 / -1; }
-  .cta { grid-row: auto; grid-column: 1 / -1; }
-  .wordmark { grid-column: 1 / -1; margin-top: 0; }
+@media (max-width: 1100px) {
+  .top { grid-template-columns: 1fr; row-gap: 56px; }
+  .cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
-
 @media (max-width: 700px) {
-  .top { grid-template-columns: 1fr; padding: 64px 16px 0; }
-  .bottom { margin: 32px 16px 0; flex-direction: column; align-items: flex-start; }
+  .top { padding: 64px 16px 0; row-gap: 48px; }
+  .trust { flex-direction: column; align-items: flex-start; gap: 28px; }
+  .badges { gap: 20px; }
+  .office { text-align: left; }
+  .bottom { padding: 24px 16px 28px; }
   .bottomRight { margin-left: 0; }
 }
-.address { font-style: normal; line-height: 1.45; }
-.designrush { min-height: 40px; max-width: 280px; }
