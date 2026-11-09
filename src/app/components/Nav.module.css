@@ -287,3 +287,9 @@
 .dark .brand, .dark .col a, .dark .plusBtn, .dark .tagline { color: #FEFEFE; }
 .dark .burgerLine { background: #FEFEFE; }
 .dark .panel { --nav-ink: #081423; --nav-rule: rgba(8, 20, 35, 0.14); }
+/* Dropdown panel is always white: keep its text dark on a dark bar */
+.dark .panel .megaLink, .dark .panel .megaFeature, .dark .panel .megaAll, .dark .panel .megaName { color: #081423; }
+.dark .panel .megaSub { color: rgba(8, 20, 35, 0.55); }
+.dark .panel .megaLabel { color: rgba(8, 20, 35, 0.5); }
+.dark .panel .megaFeature:hover .megaName { color: #0099FF; }
+.dark .panel .panelHead, .dark .panel .panelHead button { color: #FEFEFE; background: #081423; }
