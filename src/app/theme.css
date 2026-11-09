@@ -3,7 +3,7 @@
    after globals.css so these tokens override the old defaults.
 
    Roles
-     Midnight Ink    #031B36  primary dark: dark sections, headings, borders
+     Midnight Ink    #081423  primary dark: dark sections, headings, borders
      Warm Ivory      #F5F1E8  light text on Midnight, light cards
      Canvas          #FDFFEE  light section backgrounds
      Electric Orange #FF2C16  brand accent: metrics, highlights, hovers
@@ -15,7 +15,7 @@
    ========================================================================== */
 
 body {
-  --midnight: #031B36;
+  --midnight: #081423;
   --ivory: #F5F1E8;
   --canvas: #FDFFEE;      /* light section backgrounds */
   --orange: #FF2C16;
@@ -35,8 +35,8 @@ body {
   --accent-dim: var(--graphite);
   --on-accent: var(--ivory);
   --heading-accent: var(--midnight);
-  --line: rgba(3, 27, 54, 0.14);
-  --line-strong: rgba(3, 27, 54, 0.4);
+  --line: rgba(8, 20, 35, 0.14);
+  --line-strong: rgba(8, 20, 35, 0.4);
 
   --highlight: var(--orange);
   --on-highlight: var(--ivory);
@@ -89,16 +89,16 @@ body {
 }
 
 /* === Homepage (new brand) =============================================
-   White #FEFEFE, light grey, dominant blue #0099FF, navy #031B36.
+   White #FEFEFE, light grey, dominant blue #0099FF, navy #081423.
    Section components read the --h-* tokens below. */
 :is(.home, .v2) {
   --h-white: #FEFEFE;
   --h-grey: #F1F3F6;
   --h-tint: #E9F5FF;
   --h-blue: #0099FF;
-  --h-navy: #031B36;
-  --h-dim: rgba(3, 27, 54, 0.68);
-  --h-rule: rgba(3, 27, 54, 0.14);
+  --h-navy: #081423;
+  --h-dim: rgba(8, 20, 35, 0.68);
+  --h-rule: rgba(8, 20, 35, 0.14);
   --selection-bg: var(--h-blue);
   --selection-color: var(--h-white);
   background: var(--h-white);

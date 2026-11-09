@@ -2,9 +2,9 @@
    sketch and contact methods on the left; an open (un-carded) form on the
    right, separated by a single vertical rule. */
 .contact {
-  --navy: #031B36;
-  --rule: rgba(3, 27, 54, 0.35);
-  --rule-soft: rgba(3, 27, 54, 0.22);
+  --navy: #081423;
+  --rule: rgba(8, 20, 35, 0.35);
+  --rule-soft: rgba(8, 20, 35, 0.22);
 
   position: relative;
   padding: 120px 3% 140px;
@@ -228,7 +228,7 @@
 }
 
 .tag:hover {
-  background: rgba(3, 27, 54, 0.06);
+  background: rgba(8, 20, 35, 0.06);
 }
 
 .tagActive,

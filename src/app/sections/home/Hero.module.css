@@ -354,7 +354,7 @@
 .darkHero .h1 { color: var(--h-white); position: relative; z-index: 1; }
 .darkHero .mark {
   position: absolute; left: auto; right: -6vw; top: 4%; width: min(62vw, 900px);
-  transform: none; color: var(--h-blue); opacity: 0.09; pointer-events: none;
+  transform: none; color: var(--h-blue); opacity: 0.045; pointer-events: none;
   -webkit-mask-image: none; mask-image: none; z-index: 0;
 }
 .darkHero .mark svg { display: block; width: 100%; height: auto; overflow: visible; }

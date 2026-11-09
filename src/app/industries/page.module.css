@@ -300,12 +300,12 @@ a:hover > .arrow {
 
 /* === Industries: light blue section with navy tiles (2 x 2) === */
 .industriesBlue {
-  --ink: #031B36;
-  --ink-dim: #031B36;
-  --accent: #031B36;
-  --line: rgba(3, 27, 54, 0.22);
+  --ink: #081423;
+  --ink-dim: #081423;
+  --accent: #081423;
+  --line: rgba(8, 20, 35, 0.22);
   background: #B6FFFF;
-  color: #031B36;
+  color: #081423;
 }
 
 .bigH2 {
@@ -341,7 +341,7 @@ a:hover > .arrow {
   grid-auto-rows: 1fr;
   gap: 24px;
   padding-left: clamp(32px, 4vw, 72px);
-  border-left: 1px solid rgba(3, 27, 54, 0.35);
+  border-left: 1px solid rgba(8, 20, 35, 0.35);
 }
 
 .industryTile {
@@ -349,7 +349,7 @@ a:hover > .arrow {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  background: #031B36;
+  background: #081423;
   color: #F5F1E8;
   padding: 0 clamp(28px, 3vw, 56px) 56px;
 }

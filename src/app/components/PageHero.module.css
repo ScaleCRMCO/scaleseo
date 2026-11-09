@@ -6,7 +6,7 @@
   justify-content: space-between;
   gap: 48px;
   padding: 180px 3% 120px;
-  background: #031B36;
+  background: #081423;
   color: #F5F1E8;
 }
 
@@ -58,7 +58,7 @@
   padding: 18px 28px;
   border-radius: 4px;
   background: #F5F1E8;
-  color: #031B36;
+  color: #081423;
   font-family: var(--mono);
   font-weight: 700;
   font-size: 13px;

@@ -4,7 +4,7 @@
 .hero {
   padding: 120px 40px 64px;
 }
-.cover { margin: 0 40px 96px; background: #031B36; }
+.cover { margin: 0 40px 96px; background: #081423; }
 .cover img { display: block; width: 100%; height: clamp(260px, 38vw, 560px); object-fit: contain; object-position: center; }
 @media (max-width: 1000px) { .cover { margin: 0 16px 48px; } }
 .crumbs { color: var(--h-dim); margin-bottom: 40px; }

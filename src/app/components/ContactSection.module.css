@@ -1,6 +1,6 @@
 .section {
   --cs-white: #FEFEFE;
-  --cs-navy: #031B36;
+  --cs-navy: #081423;
   --cs-blue: #0099FF;
   position: relative;
   display: grid;
@@ -48,7 +48,7 @@
   padding: 40px 36px;
   background: var(--cs-white);
   color: var(--cs-navy);
-  box-shadow: 0 24px 60px rgba(3, 27, 54, 0.18);
+  box-shadow: 0 24px 60px rgba(8, 20, 35, 0.18);
 }
 .cardTitle { margin-bottom: 20px; font-size: 26px; line-height: 1.2; font-weight: 400; letter-spacing: -0.02em; }
 .form { display: flex; flex-direction: column; gap: 12px; }
@@ -56,7 +56,7 @@
 .form textarea {
   width: 100%;
   padding: 14px 14px;
-  border: 1px solid rgba(3, 27, 54, 0.2);
+  border: 1px solid rgba(8, 20, 35, 0.2);
   border-radius: 0;
   background: var(--cs-white);
   color: var(--cs-navy);
@@ -67,14 +67,14 @@
 .form input:focus,
 .form textarea:focus { border-color: var(--cs-blue); }
 .form input::placeholder,
-.form textarea::placeholder { color: rgba(3, 27, 54, 0.6); }
+.form textarea::placeholder { color: rgba(8, 20, 35, 0.6); }
 .form textarea { min-height: 110px; resize: vertical; }
 .need { border: 0; padding: 4px 0; }
-.need legend { margin-bottom: 8px; font-size: 15px; color: rgba(3, 27, 54, 0.7); }
+.need legend { margin-bottom: 8px; font-size: 15px; color: rgba(8, 20, 35, 0.7); }
 .tags { display: flex; flex-wrap: wrap; gap: 8px; }
 .tag {
   padding: 7px 11px;
-  border: 1px solid rgba(3, 27, 54, 0.25);
+  border: 1px solid rgba(8, 20, 35, 0.25);
   background: transparent;
   color: var(--cs-navy);
   font: inherit;
@@ -97,7 +97,7 @@
 .submit:hover { background: var(--cs-navy); }
 .submit:disabled { opacity: 0.6; cursor: wait; }
 .error { color: #B3261E; font-size: 15px; }
-.legal { font-size: 14px; line-height: 1.5; color: rgba(3, 27, 54, 0.75); }
+.legal { font-size: 14px; line-height: 1.5; color: rgba(8, 20, 35, 0.75); }
 .legal a { color: var(--cs-blue) !important; text-decoration: underline; }
 
 @media (max-width: 1200px) {

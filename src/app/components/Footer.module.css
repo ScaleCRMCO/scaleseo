@@ -3,10 +3,10 @@
 
 .footer {
   --f-white: #FEFEFE;
-  --f-navy: #031B36;
+  --f-navy: #081423;
   --f-blue: #0099FF;
-  --f-dim: rgba(3, 27, 54, 0.6);
-  --f-rule: rgba(3, 27, 54, 0.16);
+  --f-dim: rgba(8, 20, 35, 0.6);
+  --f-rule: rgba(8, 20, 35, 0.16);
   background: var(--f-white);
   color: var(--f-navy);
   border-top: 1px solid var(--f-rule);

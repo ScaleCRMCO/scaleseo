@@ -2,7 +2,7 @@
   position: relative;
   padding: 110px 3% 120px;
   background: #fdffee;
-  color: #031b36;
+  color: #081423;
 }
 
 .inner {
@@ -27,7 +27,7 @@
   font-size: clamp(36px, 4.4vw, 68px);
   line-height: 1.02;
   letter-spacing: -0.035em;
-  color: #031b36;
+  color: #081423;
 }
 
 .heading em {
@@ -37,11 +37,11 @@
 }
 
 .list {
-  border-top: 2px solid #031b36;
+  border-top: 2px solid #081423;
 }
 
 .item {
-  border-bottom: 1px solid rgba(3, 27, 54, 0.22);
+  border-bottom: 1px solid rgba(8, 20, 35, 0.22);
 }
 
 .summary {
@@ -62,7 +62,7 @@
   font-family: var(--mono);
   font-weight: 700;
   font-size: 13px;
-  color: rgba(3, 27, 54, 0.55);
+  color: rgba(8, 20, 35, 0.55);
 }
 
 .question {
@@ -71,7 +71,7 @@
   font-size: clamp(18px, 1.6vw, 22px);
   line-height: 1.25;
   letter-spacing: -0.015em;
-  color: #031b36;
+  color: #081423;
   transition: color 0.2s ease;
 }
 
@@ -83,7 +83,7 @@
   position: relative;
   width: 28px;
   height: 28px;
-  border: 2px solid #031b36;
+  border: 2px solid #081423;
   background: transparent;
   transition: background 0.2s ease;
 }
@@ -96,7 +96,7 @@
   top: 50%;
   width: 12px;
   height: 2px;
-  background: #031b36;
+  background: #081423;
   transform: translate(-50%, -50%);
   transition: transform 0.25s ease, background 0.2s ease;
 }
@@ -106,7 +106,7 @@
 }
 
 .item[open] .toggle {
-  background: #031b36;
+  background: #081423;
 }
 
 .item[open] .toggle::before,
@@ -133,7 +133,7 @@
 .answerLink {
   align-self: flex-start;
   font-weight: 700;
-  color: #031b36;
+  color: #081423;
   text-decoration: underline;
   text-underline-offset: 4px;
 }

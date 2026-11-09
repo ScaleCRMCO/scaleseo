@@ -285,8 +285,8 @@
   padding: 2.5rem;
   border-radius: 28px;
   background: var(--bg-elev);
-  box-shadow: 0 40px 80px -40px rgba(3, 27, 54, 0.16),
-              0 12px 24px -12px rgba(3, 27, 54, 0.08);
+  box-shadow: 0 40px 80px -40px rgba(8, 20, 35, 0.16),
+              0 12px 24px -12px rgba(8, 20, 35, 0.08);
 }
 
 .resultLead {
@@ -348,7 +348,7 @@
   overflow: hidden;
   background: #fff;
   border: 1px solid var(--line);
-  box-shadow: 0 40px 80px -40px rgba(3, 27, 54, 0.2);
+  box-shadow: 0 40px 80px -40px rgba(8, 20, 35, 0.2);
 }
 
 .figureImg {
@@ -618,7 +618,7 @@
   background: repeating-linear-gradient(
     -45deg,
     transparent 0 14px,
-    rgba(3, 27, 54, 0.025) 14px 28px
+    rgba(8, 20, 35, 0.025) 14px 28px
   );
   text-align: center;
   color: var(--ink-dim);
@@ -681,7 +681,7 @@
   padding: 1.75rem;
   border-radius: 24px;
   background: var(--bg-elev);
-  box-shadow: 0 40px 80px -40px rgba(3, 27, 54, 0.16);
+  box-shadow: 0 40px 80px -40px rgba(8, 20, 35, 0.16);
 }
 
 .queryText {
@@ -885,7 +885,7 @@
 /* Full-bleed website image */
 .showcase {
   margin: 0;
-  background: #031B36;
+  background: #081423;
 }
 .showcaseImg {
   display: block;
@@ -903,7 +903,7 @@
   font-size: clamp(19px, 1.6vw, 24px);
   font-weight: 500;
   line-height: 1.55;
-  color: #031B36;
+  color: #081423;
   margin-bottom: 28px;
 }
 .overviewAside .asideList {
@@ -915,7 +915,7 @@
   gap: 10px;
   font-size: 17px;
   font-weight: 600;
-  color: #031B36;
+  color: #081423;
 }
 
 /* Problem / solution cards */
@@ -965,11 +965,11 @@
   line-height: 1.2;
   letter-spacing: -0.02em;
 }
-.toneBlue { background: #B6FFFF; color: #031B36; }
-.tonePink { background: #FFE3F3; color: #031B36; }
-.toneNavy { background: #031B36; color: #F5F1E8; }
+.toneBlue { background: #B6FFFF; color: #081423; }
+.tonePink { background: #FFE3F3; color: #081423; }
+.toneNavy { background: #081423; color: #F5F1E8; }
 .toneOrange { background: #FF2C16; color: #F5F1E8; }
-.toneStone { background: #D8D2C7; color: #031B36; }
+.toneStone { background: #D8D2C7; color: #081423; }
 
 @media (max-width: 1000px) {
   .overview,

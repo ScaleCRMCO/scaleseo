@@ -349,8 +349,8 @@ a:hover > .arrow {
   display: flex;
   flex-direction: column;
   gap: 14px;
-  box-shadow: 0 40px 80px -40px rgba(3, 27, 54, 0.16),
-              0 12px 24px -12px rgba(3, 27, 54, 0.08);
+  box-shadow: 0 40px 80px -40px rgba(8, 20, 35, 0.16),
+              0 12px 24px -12px rgba(8, 20, 35, 0.08);
 }
 
 .threeGrid {
@@ -636,16 +636,16 @@ a:hover > .arrow {
 .tintBlue {
   --tint: var(--pop-blue);
   --tint-ink: var(--ink);
-  --tint-dim: rgba(3, 27, 54, 0.78);
+  --tint-dim: rgba(8, 20, 35, 0.78);
   --tint-panel: rgba(255, 255, 255, 0.28);
-  --tint-line: rgba(3, 27, 54, 0.14);
+  --tint-line: rgba(8, 20, 35, 0.14);
 }
 .tintPink {
   --tint: var(--pop-pink);
   --tint-ink: var(--ink);
-  --tint-dim: rgba(3, 27, 54, 0.8);
+  --tint-dim: rgba(8, 20, 35, 0.8);
   --tint-panel: rgba(255, 255, 255, 0.28);
-  --tint-line: rgba(3, 27, 54, 0.14);
+  --tint-line: rgba(8, 20, 35, 0.14);
 }
 .tintPurple {
   --tint: var(--pop-purple);
@@ -657,9 +657,9 @@ a:hover > .arrow {
 .tintYellow {
   --tint: var(--pop-yellow);
   --tint-ink: var(--ink);
-  --tint-dim: rgba(3, 27, 54, 0.78);
+  --tint-dim: rgba(8, 20, 35, 0.78);
   --tint-panel: rgba(255, 255, 255, 0.4);
-  --tint-line: rgba(3, 27, 54, 0.12);
+  --tint-line: rgba(8, 20, 35, 0.12);
 }
 
 .pastel {
@@ -667,8 +667,8 @@ a:hover > .arrow {
   border-color: transparent !important;
   color: var(--tint-ink) !important;
   --text-dim: var(--tint-dim);
-  box-shadow: 0 40px 80px -40px rgba(3, 27, 54, 0.2),
-              0 12px 24px -12px rgba(3, 27, 54, 0.08) !important;
+  box-shadow: 0 40px 80px -40px rgba(8, 20, 35, 0.2),
+              0 12px 24px -12px rgba(8, 20, 35, 0.08) !important;
 }
 
 .pastel :global(.index),
@@ -803,7 +803,7 @@ a:hover > .arrow {
   flex-wrap: wrap;
   gap: 8px 32px;
   padding: 22px 3%;
-  background: #031B36;
+  background: #081423;
   border-top: 1px solid rgba(245, 241, 232, 0.14);
 }
 .jumpBar a {
@@ -828,14 +828,14 @@ a:hover > .arrow {
 
 .svcRows {
   margin-top: 80px;
-  border-top: 1px solid rgba(3, 27, 54, 0.22);
+  border-top: 1px solid rgba(8, 20, 35, 0.22);
 }
 .svcRow {
   display: grid;
   grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
   gap: clamp(40px, 6vw, 120px);
   padding: 72px 0;
-  border-bottom: 1px solid rgba(3, 27, 54, 0.22);
+  border-bottom: 1px solid rgba(8, 20, 35, 0.22);
   scroll-margin-top: 90px;
 }
 .svcAside { display: flex; flex-direction: column; align-items: flex-start; }
@@ -848,7 +848,7 @@ a:hover > .arrow {
   font-size: 13px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #031B36;
+  color: #081423;
   margin-bottom: 20px;
 }
 .svcCore {
@@ -862,14 +862,14 @@ a:hover > .arrow {
   font-size: clamp(30px, 3.2vw, 48px);
   line-height: 1.05;
   letter-spacing: -0.03em;
-  color: #031B36;
+  color: #081423;
   margin-bottom: 18px;
 }
 .svcTagline {
   font-size: 18px;
   font-weight: 600;
   line-height: 1.5;
-  color: #031B36;
+  color: #081423;
   max-width: 440px;
   margin-bottom: 40px;
 }
@@ -877,7 +877,7 @@ a:hover > .arrow {
   width: clamp(110px, 10vw, 150px);
   height: auto;
   fill: none;
-  stroke: #031B36;
+  stroke: #081423;
   stroke-width: 5;
   stroke-linecap: round;
   stroke-linejoin: round;
@@ -896,7 +896,7 @@ a:hover > .arrow {
   font-size: 13px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #031B36;
+  color: #081423;
 }
 .svcList {
   list-style: none;
@@ -909,10 +909,10 @@ a:hover > .arrow {
 .svcList li {
   padding: 12px 0 12px 22px;
   position: relative;
-  border-top: 1px solid rgba(3, 27, 54, 0.14);
+  border-top: 1px solid rgba(8, 20, 35, 0.14);
   font-size: 15px;
   font-weight: 600;
-  color: #031B36;
+  color: #081423;
 }
 .svcList li::before {
   content: "";
@@ -927,9 +927,9 @@ a:hover > .arrow {
   display: inline-block;
   font-weight: 700;
   font-size: 16px;
-  color: #031B36;
+  color: #081423;
   text-decoration: none;
-  border-bottom: 1px solid rgba(3, 27, 54, 0.4);
+  border-bottom: 1px solid rgba(8, 20, 35, 0.4);
   padding-bottom: 4px;
   transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -951,7 +951,7 @@ a:hover > .arrow {
   font-size: 18px;
   font-weight: 500;
   line-height: 1.65;
-  color: #031B36;
+  color: #081423;
 }
 .comboTitle { margin-bottom: 24px; }
 .comboBody {
@@ -979,7 +979,7 @@ h2.comboH2 { font-size: clamp(40px, 4.6vw, 72px); }
 .toneBlue { --row-bg: #B6FFFF; }
 .tonePink { --row-bg: #FFE3F3; }
 .toneStone { --row-bg: #D8D2C7; }
-.toneNavy { --row-bg: #031B36; }
+.toneNavy { --row-bg: #081423; }
 .toneOrange { --row-bg: #FF2C16; }
 
 /* Light text on the dark rows */
@@ -995,5 +995,5 @@ h2.comboH2 { font-size: clamp(40px, 4.6vw, 72px); }
 .toneOrange .svcIcon { stroke: #FFFFFF; }
 .toneNavy .svcList li, .toneOrange .svcList li { border-top-color: rgba(255, 255, 255, 0.22); }
 .toneNavy .svcLink, .toneOrange .svcLink { border-bottom-color: rgba(255, 255, 255, 0.6); }
-.toneOrange .svcList li::before { background: #031B36; }
-.toneOrange .svcCore { background: #031B36; }
+.toneOrange .svcList li::before { background: #081423; }
+.toneOrange .svcCore { background: #081423; }

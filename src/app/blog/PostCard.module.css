@@ -2,10 +2,10 @@
   display: flex;
   flex-direction: column;
   background: #F4F6F9;
-  color: #031B36 !important;
+  color: #081423 !important;
   text-decoration: none;
 }
-.image { aspect-ratio: 1600 / 1083; overflow: hidden; background: #031B36; }
+.image { aspect-ratio: 1600 / 1083; overflow: hidden; background: #081423; }
 .image img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; }
 .body { display: flex; flex-direction: column; justify-content: space-between; gap: 48px; flex: 1; padding: 28px 24px 24px; }
 .title { font-size: clamp(22px, 1.9vw, 30px); line-height: 1.2; font-weight: 400; letter-spacing: -0.02em; transition: color 0.2s ease; }
@@ -13,7 +13,7 @@
 .pills { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
 .pills span {
   padding: 6px 14px;
-  border: 1px solid #031B36;
+  border: 1px solid #081423;
   border-radius: 999px;
   font-size: 13px;
   letter-spacing: 0.04em;

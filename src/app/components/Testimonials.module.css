@@ -38,9 +38,9 @@
   padding: 56px 24px 56px;
   text-align: center;
 }
-.toneTint { background: #D6EEFF; color: #031B36; }
-.toneWhite { background: #FEFEFE; color: #031B36; }
-.toneNavy { background: #031B36; color: #FEFEFE; }
+.toneTint { background: #D6EEFF; color: #081423; }
+.toneWhite { background: #FEFEFE; color: #081423; }
+.toneNavy { background: #081423; color: #FEFEFE; }
 .stars { color: #0099FF; letter-spacing: 4px; font-size: 18px; }
 .quote { font-size: 19px; line-height: 1.45; max-width: 460px; }
 .cite { margin-top: auto; display: flex; flex-direction: column; gap: 4px; font-size: 16px; }
@@ -63,9 +63,9 @@
   transform: translateY(-50%);
   transition: background-color 0.2s ease, color 0.2s ease;
 }
-.prev { left: -84px; background: #031B36; color: #FEFEFE; }
-.next { right: 2%; background: #031B36; color: #FEFEFE; }
-.arrow:hover { background: #FEFEFE; color: #031B36; }
+.prev { left: -84px; background: #081423; color: #FEFEFE; }
+.next { right: 2%; background: #081423; color: #FEFEFE; }
+.arrow:hover { background: #FEFEFE; color: #081423; }
 
 @media (max-width: 900px) {
   .section { grid-template-columns: 1fr; padding: 72px 0 80px 16px; gap: 32px; }
@@ -80,6 +80,6 @@
 }
 /* Arrows side by side, centred below the cards */
 .arrows { display: flex; justify-content: center; gap: 16px; margin-top: 40px; padding-right: 40px; }
-.arrows .arrow { position: static; transform: none; background: #031B36; color: #FEFEFE; }
-.arrows .arrow:hover { background: #FEFEFE; color: #031B36; }
+.arrows .arrow { position: static; transform: none; background: #081423; color: #FEFEFE; }
+.arrows .arrow:hover { background: #FEFEFE; color: #081423; }
 @media (max-width: 900px) { .arrows { margin-top: 28px; padding-right: 16px; } }
