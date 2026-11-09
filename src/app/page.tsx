@@ -53,7 +53,11 @@ export default function Home() {
       <Differently />
       <ServicesGrid />
       <About />
-      <CaseStudy />
+      <CaseStudy
+        centered
+        startIndex={1}
+        order={[3, 0, 1, 2]}
+      />
       <CampaignAreas />
       <IndustriesTeaser />
       <Process />

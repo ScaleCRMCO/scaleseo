@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { useRef, type MouseEvent } from "react";
+import { useEffect, useRef, type MouseEvent } from "react";
 import CountUp from "../../components/CountUp";
 import styles from "./CaseStudy.module.css";
 
@@ -19,7 +19,7 @@ export type CaseCard = {
   metricLabel: string;
 };
 
-const defaultCards: CaseCard[] = [
+const homeCases: CaseCard[] = [
   {
     href: "/results/jensen-cpa",
     client: "Jensen CPA",
@@ -57,11 +57,24 @@ const defaultCards: CaseCard[] = [
 export default function CaseStudy({
   label = "Scale SEO Client Work",
   heading = "SEO Results From Real Client Campaigns",
-  cards = defaultCards,
+  cards = homeCases,
   id = "work",
   aside,
-}: { label?: string; heading?: string; cards?: CaseCard[]; id?: string; aside?: string } = {}) {
+  centered = false,
+  startIndex = 0,
+  order,
+}: { label?: string; heading?: string; cards?: CaseCard[]; id?: string; aside?: string; centered?: boolean; startIndex?: number; order?: number[] } = {}) {
   const track = useRef<HTMLDivElement>(null);
+  if (order) cards = order.map((i) => cards[i]);
+
+  // Centered mode: start with the chosen card in the middle of the screen
+  useEffect(() => {
+    const t = track.current;
+    if (!centered || !t) return;
+    const card = t.querySelectorAll("a")[startIndex] as HTMLElement | undefined;
+    if (!card) return;
+    t.scrollLeft = card.offsetLeft - (t.clientWidth - card.offsetWidth) / 2;
+  }, [centered, startIndex]);
 
   // A card that runs off either edge scrolls into view instead of navigating
   const onCardClick = (e: MouseEvent<HTMLAnchorElement>) => {
@@ -71,7 +84,8 @@ export default function CaseStudy({
     const box = t.getBoundingClientRect();
     if (card.right > box.right + 2 || card.left < box.left - 2) {
       e.preventDefault();
-      t.scrollBy({ left: card.left - box.left - 40, behavior: "smooth" });
+      const target = centered ? card.left - box.left - (box.width - card.width) / 2 : card.left - box.left - 40;
+      t.scrollBy({ left: target, behavior: "smooth" });
     }
   };
 
@@ -96,7 +110,7 @@ export default function CaseStudy({
         </div>
       </div>
 
-      <div className={styles.track} ref={track}>
+      <div className={`${styles.track} ${centered ? styles.centered : ""}`} ref={track}>
         {cards.map((c, i) => (
           <Link key={c.href} href={c.href} className={styles.card} onClick={onCardClick}>
             <div className={styles.media}>

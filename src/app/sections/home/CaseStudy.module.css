@@ -47,3 +47,9 @@
 .headRow { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; }
 .aside { max-width: 22ch; font-size: clamp(17px, 1.4vw, 20px); line-height: 1.4; color: var(--h-dim); text-align: right; }
 @media (max-width: 900px) { .headRow { flex-direction: column; align-items: flex-start; gap: 16px; } .aside { text-align: left; } }
+
+/* Centered carousel (homepage): cards bleed past both edges, active card
+   snaps to the middle */
+.centered { --card: min(46vw, 680px); padding-left: calc((100% - var(--card)) / 2); padding-right: calc((100% - var(--card)) / 2); scroll-padding-left: 0; }
+.centered .card { flex-basis: var(--card); scroll-snap-align: center; }
+@media (max-width: 900px) { .centered { --card: 82vw; } }
