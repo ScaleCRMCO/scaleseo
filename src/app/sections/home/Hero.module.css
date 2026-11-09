@@ -340,3 +340,9 @@
   .topBottom { margin-top: 120px; }
   .leftGroup .reviews { align-self: flex-start; width: fit-content; }
 }
+
+/* Semrush agency badge beside the revenue figure */
+.badge { display: block; flex: none; padding-left: 32px; border-left: 1px solid var(--h-rule); transition: opacity 0.2s ease; }
+.badge img { display: block; width: 64px; height: 64px; }
+.badge:hover { opacity: 0.85; }
+@media (max-width: 900px) { .badge { padding: 20px 0 0; border-left: 0; } .badge img { width: 56px; height: 56px; } }

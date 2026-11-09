@@ -30,6 +30,16 @@ export default function Hero() {
               <span className={styles.metricValue}>$1M+</span>
               <span className={styles.metricLabel}>in Client Revenue Generated</span>
             </div>
+            <a
+              href="https://agencies.semrush.com/scale-seo/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.badge}
+              aria-label="Scale SEO — Semrush Certified Agency Partner"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/images/semrush-agency-partner.svg" alt="Semrush Certified Agency Partner badge" width={64} height={64} />
+            </a>
           </div>
           <a
             href="https://cal.com/corbinjensen-scaleseo/30min"
