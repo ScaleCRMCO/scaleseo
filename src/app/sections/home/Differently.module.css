@@ -15,3 +15,6 @@
 .more:hover { background: var(--h-blue); }
 .corner { position: absolute; top: 18px; right: 20px; width: 10px; height: 10px; }
 @media (max-width: 1000px) { .foot { margin-top: 32px; justify-content: stretch; } .more { width: 100%; min-height: 96px; } }
+.section { padding-top: 128px !important; padding-bottom: 56px !important; }
+.foot { margin-top: 96px; }
+@media (max-width: 1000px) { .section { padding-top: 72px !important; padding-bottom: 40px !important; } .foot { margin-top: 48px; } }
