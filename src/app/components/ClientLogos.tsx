@@ -14,7 +14,7 @@ export default function ClientLogos({ dark = false }: { dark?: boolean } = {}) {
       { src: "/images/client-logo-jensen-cpa.png", alt: "Jensen CPA", h: 22 },
       { src: "/images/client-logo-kinsmen-consulting.png", alt: "Kinsmen Consulting Limited", h: 24 },
       { src: "/images/client-logo-empire-accountants.png", alt: "Empire Accountants", h: 36 },
-      { src: "/images/client-logo-msv-plumbing.png", alt: "MSV Plumbing Services", h: 28 },
+      { src: "/images/client-logo-msv-plumbing.png", alt: "MSV Plumbing Services", h: 24 },
     ].map((l) => (
       <div key={l.src} className={styles.logoCell}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
