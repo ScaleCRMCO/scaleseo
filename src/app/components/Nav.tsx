@@ -49,6 +49,28 @@ export default function Nav() {
     };
   }, [servicesOpen]);
 
+  // Match the bar to the section underneath it: sections marked
+  // data-nav="dark" turn the bar navy with white text.
+  const [dark, setDark] = useState(false);
+  useEffect(() => {
+    let raf = 0;
+    const check = () => {
+      raf = 0;
+      const y = 96 + 1;
+      const hit = document.elementsFromPoint(window.innerWidth / 2, y).find((el) => !el.closest("nav") && !el.closest("[data-nav-skip]"));
+      setDark(!!hit?.closest('[data-nav="dark"]'));
+    };
+    const onScroll = () => { if (!raf) raf = requestAnimationFrame(check); };
+    check();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      cancelAnimationFrame(raf);
+    };
+  }, []);
+
   // Lock body scroll when the mobile menu is open
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -63,10 +85,10 @@ export default function Nav() {
 
   return (
     <>
-      <nav className={`${styles.nav} ${open ? styles.menuOpen : ""}`}>
+      <nav className={`${styles.nav} ${open ? styles.menuOpen : ""} ${dark && !open ? styles.dark : ""}`}>
         <Link href="/" className={styles.brand} onClick={close}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/brand/scaleseo-wordmark.svg" alt="Scale SEO" className={styles.logo} />
+          <img src={dark && !open ? "/brand/scaleseo-wordmark-white.svg" : "/brand/scaleseo-wordmark.svg"} alt="Scale SEO" className={styles.logo} />
         </Link>
 
         <span className={styles.tagline}>

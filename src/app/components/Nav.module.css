@@ -280,3 +280,10 @@
 .megaFeature:hover .megaName { color: #0099FF; }
 .megaAll { display: flex; justify-content: space-between; align-items: center; padding: 18px 32px; border-top: 1px solid var(--nav-rule); color: var(--nav-ink); font-size: 17px; text-decoration: none; }
 .megaAll:hover { background: #F1F3F6; }
+
+/* Dark variant: bar sits over a navy section */
+.nav { transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; }
+.dark { --nav-ink: #FEFEFE; --nav-rule: rgba(254, 254, 254, 0.16); background: #031B36; }
+.dark .brand, .dark .col a, .dark .plusBtn, .dark .tagline { color: #FEFEFE; }
+.dark .burgerLine { background: #FEFEFE; }
+.dark .panel { --nav-ink: #031B36; --nav-rule: rgba(3, 27, 54, 0.14); }

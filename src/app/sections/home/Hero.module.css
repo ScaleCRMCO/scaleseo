@@ -346,3 +346,30 @@
 .badge img { display: block; width: 64px; height: 64px; }
 .badge:hover { opacity: 0.85; }
 @media (max-width: 900px) { .badge { padding: 20px 0 0; border-left: 0; } .badge img { width: 56px; height: 56px; } }
+
+/* ===== Navy hero (Mamba style): hero + logo strip on navy, giant faint
+   floating mark that drops as you scroll ===== */
+.darkHero { position: relative; background: var(--h-navy); color: var(--h-white); overflow: hidden; }
+.darkHero .top { background: transparent; border-bottom: 0; overflow: visible; }
+.darkHero .h1 { color: var(--h-white); position: relative; z-index: 1; }
+.darkHero .mark {
+  position: absolute; left: auto; right: -6vw; top: 4%; width: min(62vw, 900px);
+  transform: none; color: var(--h-blue); opacity: 0.09; pointer-events: none;
+  -webkit-mask-image: none; mask-image: none; z-index: 0;
+}
+.darkHero .mark svg { display: block; width: 100%; height: auto; overflow: visible; }
+.darkHero .topBottom { z-index: 1; }
+.darkHero .metric { color: var(--h-white); border-color: rgba(254, 254, 254, 0.18); }
+.darkHero .metricLabel { color: rgba(254, 254, 254, 0.65); }
+.darkHero .badge { border-color: rgba(254, 254, 254, 0.18); }
+.boxBlue { background: var(--h-blue); color: var(--h-white); }
+.boxBlue:hover { background: var(--h-white); color: var(--h-navy); }
+@media (max-width: 900px) {
+  .darkHero .mark { right: -30vw; top: 10%; width: 110vw; }
+  .darkHero .metric { border-top-color: rgba(254, 254, 254, 0.18); }
+}
+
+.logosDark { position: relative; z-index: 1; background: transparent; border-top: 1px solid rgba(254, 254, 254, 0.12); border-bottom: 0; padding-top: 48px; padding-bottom: 56px; }
+.logosDark .logosLabel { color: rgba(254, 254, 254, 0.75); }
+.logosDark .logosRule { background: rgba(254, 254, 254, 0.5); }
+.logosDark .logoCell img { filter: brightness(0) invert(1); opacity: 0.6; }

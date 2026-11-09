@@ -2,6 +2,7 @@ import Link from "next/link";
 import TrustindexWidget from "../../components/TrustindexWidget";
 import styles from "./Hero.module.css";
 import ClientLogos from "../../components/ClientLogos";
+import HeroMark from "./HeroMark";
 
 const Corner = () => (
   <svg className={styles.corner} viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
@@ -14,11 +15,9 @@ export default function Hero() {
     <header className={styles.hero}>
       {/* Hero: big H1 over a large light-blue logo mark; reviews bottom-left,
           contact button bottom-right */}
+      <div className={styles.darkHero} data-nav="dark">
       <div className={styles.top}>
-        <svg className={styles.mark} viewBox="0 0 366 366" fill="none" stroke="currentColor" aria-hidden="true">
-          <circle cx="183" cy="183" r="164" strokeWidth="36" />
-          <path d="M101 139 H224.5 V262" strokeWidth="38" />
-        </svg>
+        <HeroMark className={styles.mark} />
         <h1 className={styles.h1}>
           <span className={styles.h1Line}>SEO Company in</span>{" "}
           <span className={styles.h1Line}>Calgary, Alberta</span>
@@ -45,7 +44,7 @@ export default function Hero() {
             href="https://cal.com/corbinjensen-scaleseo/30min"
             target="_blank"
             rel="noopener noreferrer"
-            className={`${styles.box} ${styles.boxNavy}`}
+            className={`${styles.box} ${styles.boxBlue}`}
           >
             <Corner />
             <span>Book A Strategy Call →</span>
@@ -53,8 +52,9 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Client logo strip (shared component) */}
-      <ClientLogos />
+      {/* Client logo strip (shared component), part of the navy hero */}
+      <ClientLogos dark />
+      </div>
 
       {/* Intro: large statement, label bottom-left, About button bottom-right */}
       <section className={styles.introSection}>

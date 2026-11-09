@@ -2,9 +2,9 @@ import styles from "../sections/home/Hero.module.css";
 
 // "Trusted by local & national brands" strip: small grey client logos in one
 // row (used on the homepage and the AI Search Optimization page).
-export default function ClientLogos() {
+export default function ClientLogos({ dark = false }: { dark?: boolean } = {}) {
   return (
-  <div className={styles.logos}>
+  <div className={`${styles.logos} ${dark ? styles.logosDark : ""}`}>
     <p className={styles.logosLabel}>
       <span className={styles.logosRule} aria-hidden="true" />
       Trusted by local &amp; national brands
