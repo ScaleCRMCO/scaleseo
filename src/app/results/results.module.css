@@ -57,3 +57,58 @@
 .revenueLabel { font-size: 17px; color: rgba(254,254,254,0.7); }
 .revenueText { font-size: clamp(19px, 1.6vw, 24px); line-height: 1.4; max-width: 620px; }
 @media (max-width: 900px) { .revenue { grid-template-columns: 1fr; padding: 56px 16px !important; gap: 24px; } }
+
+/* ===== Redesign: navy hero, Mamba-style cards, three-point section ===== */
+.navyHero { padding: 128px 40px 96px; background: var(--h-navy); color: var(--h-white); }
+.navyCrumbs { margin-bottom: 72px; }
+.navyCrumbs a, .navyCrumbs span, .navyCrumbs li { color: rgba(254, 254, 254, 0.7) !important; }
+.navyRow { display: grid; grid-template-columns: 1.3fr 1fr; gap: 64px; align-items: end; }
+.navyTitle { max-width: 12ch; font-size: clamp(48px, 6vw, 104px); line-height: 0.98; font-weight: 400; letter-spacing: -0.04em; }
+.navyLead { max-width: 46ch; justify-self: end; font-size: clamp(17px, 1.3vw, 20px); line-height: 1.5; color: rgba(254, 254, 254, 0.85); }
+
+.cardGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.studyCard { position: relative; display: flex; flex-direction: column; justify-content: space-between; aspect-ratio: 4 / 4.4; padding: 32px 28px 28px; overflow: hidden; background: var(--h-navy); color: var(--h-white); text-decoration: none; }
+.cardBg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+.studyCard:hover .cardBg { transform: scale(1.04); }
+.cardShade { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(8, 20, 35, 0.72) 0%, rgba(8, 20, 35, 0.25) 45%, rgba(8, 20, 35, 0.8) 100%); }
+.cardTop, .cardStats { position: relative; z-index: 1; }
+.cardTop { display: flex; flex-direction: column; gap: 22px; }
+.cardLogo { align-self: flex-start; width: auto; max-width: 70%; filter: brightness(0) invert(1); }
+.cardTitle { font-size: clamp(22px, 1.9vw, 30px); line-height: 1.15; font-weight: 400; letter-spacing: -0.02em; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.cardStats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.cardStat { display: flex; flex-direction: column; gap: 8px; padding-left: 16px; border-left: 1px solid rgba(254, 254, 254, 0.35); }
+.cardStatLabel { font-size: 14px; line-height: 1.3; color: rgba(254, 254, 254, 0.85); }
+.cardStatValue { font-size: clamp(26px, 2.4vw, 38px); line-height: 1; letter-spacing: -0.03em; }
+
+.how { padding: 112px 40px 56px; border-top: 1px solid var(--h-rule); }
+.howHead { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: end; margin-bottom: 72px; }
+.howTitle { max-width: 14ch; font-size: clamp(36px, 4vw, 64px); line-height: 1.05; font-weight: 400; letter-spacing: -0.03em; }
+.howLead { justify-self: end; font-size: clamp(18px, 1.5vw, 22px); }
+.howGrid { display: grid; grid-template-columns: repeat(3, 1fr); }
+.howPoint { display: flex; flex-direction: column; gap: 14px; padding: 4px 40px 12px; border-left: 1px solid var(--h-rule); }
+.howValue { display: block; margin-bottom: 10px; font-size: 48px; line-height: 1; letter-spacing: -0.04em; color: var(--h-blue); }
+.howIcon { display: grid; place-items: center; width: 48px; height: 48px; margin-bottom: 10px; background: var(--h-navy); color: var(--h-white); clip-path: polygon(0 0, 100% 0, 100% 78%, 78% 100%, 0 100%); }
+.howIcon svg { width: 22px; height: 22px; }
+.howPointTitle { font-size: clamp(22px, 2vw, 30px); line-height: 1.15; font-weight: 400; letter-spacing: -0.02em; }
+.howBody { max-width: 36ch; font-size: 16px; line-height: 1.55; color: var(--h-dim); }
+.howFoot { display: flex; justify-content: flex-end; margin-top: 88px; }
+.howBtn { position: relative; display: flex; align-items: flex-end; width: min(100%, 340px); min-height: 130px; padding: 20px 22px; background: var(--h-navy); color: var(--h-white); font-size: 18px; text-decoration: none; transition: background 0.2s ease; }
+.howBtn:hover { background: var(--h-blue); }
+.howCorner { position: absolute; top: 18px; right: 20px; width: 10px; height: 10px; }
+
+@media (max-width: 1100px) { .cardGrid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 900px) {
+  .navyHero { padding: 104px 16px 56px; }
+  .navyCrumbs { margin-bottom: 40px; }
+  .navyRow { grid-template-columns: 1fr; gap: 24px; }
+  .navyLead { justify-self: start; }
+  .how { padding: 64px 16px 40px; }
+  .howHead { grid-template-columns: 1fr; gap: 16px; margin-bottom: 40px; }
+  .howLead { justify-self: start; }
+  .howGrid { grid-template-columns: 1fr; }
+  .howPoint { margin-left: 8px; padding: 8px 0 8px 28px; }
+  .howPoint + .howPoint { margin-top: 40px; }
+  .howFoot { margin-top: 48px; }
+  .howBtn { width: 100%; min-height: 96px; }
+}
+@media (max-width: 640px) { .cardGrid { grid-template-columns: 1fr; } .studies { padding: 40px 16px 64px; } }

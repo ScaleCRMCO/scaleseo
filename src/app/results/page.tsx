@@ -185,6 +185,13 @@ const resultsJsonLd = {
 
 /* === Page =============================================================== */
 
+const logos: Record<string, { src: string; h: number }> = {
+  "jensen-cpa": { src: "/images/client-logo-jensen-cpa.png", h: 26 },
+  "empire-accountants": { src: "/images/client-logo-empire-accountants.png", h: 38 },
+  "kinsmen-consulting": { src: "/images/client-logo-kinsmen-consulting.png", h: 28 },
+  "msv-plumbing-services": { src: "/images/client-logo-msv-plumbing.png", h: 30 },
+};
+
 export default function ResultsPage() {
   return (
     <main className="v2">
@@ -194,109 +201,102 @@ export default function ResultsPage() {
       />
 
       {/* === HERO — big title left, intro right === */}
-      <header className={styles.hero}>
-        <div className={styles.heroLeft}>
-          <div className={hub.crumbs}>
-            <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Results" }]} schema={false} />
-          </div>
-          <h1 className={styles.heroTitle}>SEO Results &amp; Case Studies</h1>
+      {/* === HERO — navy: H1 left, intro right === */}
+      <header className={styles.navyHero} data-nav="dark">
+        <div className={styles.navyCrumbs}>
+          <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Results" }]} schema={false} />
         </div>
-        <div className={styles.heroRight}>
-          <p className={styles.heroLead}>
-            Explore selected Scale SEO projects across accounting, B2B,
-            construction, and local service businesses in Canada and Australia.
+        <div className={styles.navyRow}>
+          <h1 className={styles.navyTitle}>SEO Results &amp; Case Studies</h1>
+          <p className={styles.navyLead}>
+            We work with businesses across Canada and Australia to improve their
+            search visibility, strengthen their websites, and attract more
+            customers. Explore our case studies to see how practical SEO
+            strategies, thoughtful execution, and ongoing improvements deliver
+            measurable results.
           </p>
-          <p>
-            Each case study breaks down the starting point, the work completed,
-            and the results that followed.
-          </p>
-          <a href="#case-studies" className={styles.jump}>Explore Case Studies &darr;</a>
         </div>
       </header>
 
-      {/* === REVENUE — animated headline figure + summary === */}
-      <section className={styles.revenue}>
-        <div className={styles.revenueFigure}>
-          <span className={styles.revenueValue}>
-            <CountUp to={1000} prefix="$" suffix="K" final="$1M+" duration={2000} />
-          </span>
-          <span className={styles.revenueLabel}>in Client Revenue Generated</span>
-        </div>
-        <p className={styles.revenueText}>
-          Our SEO and website projects have contributed to more than $1 million
-          in client revenue across multiple businesses. Explore real examples of
-          how we&rsquo;ve improved search visibility, attracted qualified
-          enquiries, and supported business growth.
-        </p>
-      </section>
-
-      {/* === CASE STUDIES — card grid: image, tags, client, headline result, button === */}
+      {/* === CASE STUDIES — compact Mamba-style image cards === */}
       <section className={styles.studies} id="case-studies">
-        <div className={styles.grid}>
+        <div className={styles.cardGrid}>
           {studies.map((s, i) => {
-            const [industry, place] = s.meta.split(" · ");
-            const lead = s.metrics[0];
-            return (
-              <article key={s.id} id={s.id} className={styles.card}>
-                <div className={styles.image}>
-                  {s.image ? (
+            const card = (
+              <>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                {s.image && <img className={styles.cardBg} src={s.image} alt={`${s.client} case study`} loading={i < 3 ? "eager" : "lazy"} />}
+                <span className={styles.cardShade} aria-hidden="true" />
+                <div className={styles.cardTop}>
+                  {logos[s.id] && (
                     // eslint-disable-next-line @next/next/no-img-element
-                    <img src={s.image} alt={s.id === "kinsmen-consulting" ? `${s.client} website` : `${s.client} team`} loading={i < 2 ? "eager" : "lazy"} />
-                  ) : null}
+                    <img className={styles.cardLogo} src={logos[s.id].src} alt={s.client} style={{ height: logos[s.id].h }} />
+                  )}
+                  <h2 className={styles.cardTitle}>{s.client} | {s.title}</h2>
                 </div>
-                <div className={styles.tags}>
-                  <span>{industry}</span>
-                  {place && <span>{place}</span>}
+                <div className={styles.cardStats}>
+                  {s.metrics.slice(0, 2).map((m) => (
+                    <div key={m.label} className={styles.cardStat}>
+                      <span className={styles.cardStatLabel}>{m.label}</span>
+                      <span className={styles.cardStatValue}>{m.value}</span>
+                    </div>
+                  ))}
                 </div>
-                <p className={styles.client}>{s.client}</p>
-                <h2 className={styles.result}>
-                  {lead.value} <span>{lead.label.toLowerCase()}</span>
-                </h2>
-                <p className={styles.summary}>{s.title}</p>
-                {s.caseStudyHref ? (
-                  <Link href={s.caseStudyHref} className={styles.button}>
-                    Read case study
-                  </Link>
-                ) : (
-                  <span className={`${styles.button} ${styles.buttonSoon}`} aria-disabled="true">
-                    Case study coming soon
-                  </span>
-                )}
-              </article>
+              </>
+            );
+            return s.caseStudyHref ? (
+              <Link key={s.id} id={s.id} href={s.caseStudyHref} className={styles.studyCard}>{card}</Link>
+            ) : (
+              <article key={s.id} id={s.id} className={styles.studyCard}>{card}</article>
             );
           })}
         </div>
       </section>
 
-      {/* === THE WORK BEHIND THE NUMBERS — heading left, text right === */}
-      <section className={hub.split}>
-        <div className={hub.splitAside}>
-          <span className={styles.eyebrow}>The Work Behind the Numbers</span>
-          <h2 className={hub.h2}>Results Built Through Hands-On SEO</h2>
+      {/* === RESULTS BUILT THROUGH HANDS-ON SEO — three points === */}
+      <section className={styles.how}>
+        <div className={styles.howHead}>
+          <h2 className={styles.howTitle}>Results Built Through Hands-On SEO</h2>
+          <p className={styles.howLead}>There isn&rsquo;t one tactic behind these results.</p>
         </div>
-        <div className={hub.splitBody}>
-          <p className={hub.lead}>There isn&rsquo;t one tactic behind these results.</p>
-          <p>
-            Each campaign is built around the needs of the business and can
-            involve technical SEO, service-page improvements, content strategy,
-            local SEO, internal linking, structured data, website development,
-            and ongoing analysis.
-          </p>
-          <p>
-            The common approach is simple:{" "}
-            <strong>
-              identify the search opportunities that matter to the business,
-              improve the website around them, implement the work, and measure
-              what changes.
-            </strong>
-          </p>
-          <p>
-            All Scale SEO campaigns are managed directly by{" "}
-            <strong>Corbin Jensen</strong>, founder and SEO specialist at Scale
-            SEO.
-          </p>
-          <Link href="/corbin-jensen" className={`${hub.box} ${hub.boxNavy}`}>
-            <span>Meet Corbin Jensen &rarr;</span>
+        <div className={styles.howGrid}>
+          <div className={styles.howPoint}>
+            <span className={styles.howValue}>
+              <CountUp to={1000} prefix="$" suffix="K" final="$1M+" duration={2000} />
+            </span>
+            <h3 className={styles.howPointTitle}>In Client Revenue Generated</h3>
+            <p className={styles.howBody}>
+              Our SEO and website projects have contributed to more than $1
+              million in client revenue across multiple businesses.
+            </p>
+          </div>
+          <div className={styles.howPoint}>
+            <span className={styles.howIcon} aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M12 3l9 5-9 5-9-5zM3 13l9 5 9-5M3 17l9 5 9-5" /></svg>
+            </span>
+            <h3 className={styles.howPointTitle}>Built Around Each Business</h3>
+            <p className={styles.howBody}>
+              Each campaign can involve technical SEO, service-page improvements,
+              content strategy, local SEO, internal linking, structured data,
+              website development, and ongoing analysis.
+            </p>
+          </div>
+          <div className={styles.howPoint}>
+            <span className={styles.howIcon} aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM4 21a8 8 0 0 1 16 0" /></svg>
+            </span>
+            <h3 className={styles.howPointTitle}>Managed by the Founder</h3>
+            <p className={styles.howBody}>
+              Identify the opportunities that matter, improve the website around
+              them, implement the work, and measure what changes. Every campaign
+              is managed directly by founder Corbin Jensen.
+            </p>
+          </div>
+        </div>
+        <div className={styles.howFoot}>
+          <Link href="/corbin-jensen" className={styles.howBtn}>
+            <svg className={styles.howCorner} viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true"><path d="M1 1.5h7.5V9" /></svg>
+            <span>Meet Corbin Jensen</span>
           </Link>
         </div>
       </section>
