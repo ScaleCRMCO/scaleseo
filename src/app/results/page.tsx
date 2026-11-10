@@ -203,8 +203,8 @@ export default function ResultsPage() {
         <div className={styles.navyRow}>
           <h1 className={styles.navyTitle}>SEO Results &amp; Case Studies</h1>
           <p className={styles.navyLead}>
-            We work with businesses across Canada and Australia to improve their
-            search visibility, strengthen their websites, and attract more
+            We work with businesses across Canada and internationally to improve
+            their search visibility, strengthen their websites, and attract more
             customers. Explore our case studies to see how practical SEO
             strategies, thoughtful execution, and ongoing improvements deliver
             measurable results.
