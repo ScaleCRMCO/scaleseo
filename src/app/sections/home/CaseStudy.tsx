@@ -17,6 +17,7 @@ export type CaseCard = {
   image: string;
   metric: { from?: number; to?: number; prefix?: string; suffix?: string; text?: string };
   metricLabel: string;
+  summary?: string;
 };
 
 const homeCases: CaseCard[] = [
@@ -53,6 +54,14 @@ const homeCases: CaseCard[] = [
     metricLabel: "Bookings from a standing start",
   },
 ];
+
+// Short problem-and-fix line under each case study image
+const summaries: Record<string, string> = {
+  "/results/jensen-cpa": "An established Calgary CPA firm was hard to find for its core services. We rebuilt the website and service pages, and search impressions grew 227%.",
+  "/results/empire-accountants": "Empire's priority accounting searches sat on page five. Service-page, technical and content work moved them onto page one.",
+  "/results/kinsmen-consulting": "A Calgary concrete contractor needed a website that won real projects. A new site and local SEO led to $500K in new jobs.",
+  "/results/msv-plumbing-services": "A brand-new plumbing business started with no online presence. A new website, SEO and Google Ads built steady weekly bookings.",
+};
 
 // Client logo shown centred on each case study image (white via CSS)
 const logos: Record<string, { src: string; h: number }> = {
@@ -125,7 +134,7 @@ export default function CaseStudy({
       </div>
 
       <div className={`${styles.track} ${centered ? styles.centered : ""}`} ref={track}>
-        {cards.map((c, i) => (
+        {cards.map((c) => (
           <Link key={c.href} href={c.href} className={styles.card} onClick={onCardClick}>
             <div className={styles.media}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -143,7 +152,7 @@ export default function CaseStudy({
                 <span className={styles.metricLabel}>{c.metricLabel}</span>
               </div>
             </div>
-            <span className={styles.num}>{String(i + 1).padStart(2, "0")}</span>
+            {(c.summary ?? summaries[c.href]) && <p className={styles.summary}>{c.summary ?? summaries[c.href]}</p>}
             <h3 className={styles.client}>{c.client}</h3>
             <p className={styles.services}>{c.services}</p>
           </Link>

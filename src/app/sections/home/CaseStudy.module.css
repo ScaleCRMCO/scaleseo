@@ -68,3 +68,8 @@
 
 .cornerIcon { position: absolute; top: 12px; right: 14px; width: 10px; height: 10px; }
 .allBox { position: relative; padding: 22px 48px 14px 20px; }
+
+/* No tint or zoom on the photos */
+.media::before { content: none; }
+.card:hover .media img { transform: none; }
+.summary { max-width: 52ch; margin: 20px 0 0; font-size: 17px; line-height: 1.45; color: var(--h-navy); }
