@@ -123,7 +123,7 @@ export default function CaseStudy({
           {label}
         </p>
         <div className={styles.headRow}>
-          <h2 className={styles.heading}>{heading}</h2>
+          {heading && <h2 className={styles.heading}>{heading}</h2>}
           <div className={styles.headSide}>
             {aside && <p className={styles.aside}>{aside}</p>}
 {!hideAll && (

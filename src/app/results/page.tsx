@@ -216,7 +216,7 @@ export default function ResultsPage() {
       <CaseStudy
         id="case-studies"
         label="Client Work"
-        heading="Real Results From Real Client Campaigns"
+        heading=""
         centered
         startIndex={1}
         order={[3, 0, 1, 2]}
