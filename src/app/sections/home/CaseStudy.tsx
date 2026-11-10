@@ -80,7 +80,8 @@ export default function CaseStudy({
   centered = false,
   startIndex = 0,
   order,
-}: { label?: string; heading?: string; cards?: CaseCard[]; id?: string; aside?: string; centered?: boolean; startIndex?: number; order?: number[] } = {}) {
+  hideAll = false,
+}: { label?: string; heading?: string; cards?: CaseCard[]; id?: string; aside?: string; centered?: boolean; startIndex?: number; order?: number[]; hideAll?: boolean } = {}) {
   const track = useRef<HTMLDivElement>(null);
   if (order) cards = order.map((i) => cards[i]);
 
@@ -125,10 +126,12 @@ export default function CaseStudy({
           <h2 className={styles.heading}>{heading}</h2>
           <div className={styles.headSide}>
             {aside && <p className={styles.aside}>{aside}</p>}
+{!hideAll && (
             <Link href="/results" className={styles.allBox}>
               <svg className={styles.cornerIcon} viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true"><path d="M1 1.5h7.5V9" /></svg>
               <span>View all case studies</span>
             </Link>
+            )}
           </div>
         </div>
       </div>

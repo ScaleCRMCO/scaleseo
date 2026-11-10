@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import CaseStudy from "../sections/home/CaseStudy";
 import CountUp from "../components/CountUp";
 import Breadcrumbs from "../components/Breadcrumbs";
 import ContactSection from "../components/ContactSection";
@@ -185,13 +186,6 @@ const resultsJsonLd = {
 
 /* === Page =============================================================== */
 
-const logos: Record<string, { src: string; h: number }> = {
-  "jensen-cpa": { src: "/images/client-logo-jensen-cpa.png", h: 26 },
-  "empire-accountants": { src: "/images/client-logo-empire-accountants.png", h: 38 },
-  "kinsmen-consulting": { src: "/images/client-logo-kinsmen-consulting.png", h: 28 },
-  "msv-plumbing-services": { src: "/images/client-logo-msv-plumbing.png", h: 30 },
-};
-
 export default function ResultsPage() {
   return (
     <main className="v2">
@@ -218,40 +212,16 @@ export default function ResultsPage() {
         </div>
       </header>
 
-      {/* === CASE STUDIES — compact Mamba-style image cards === */}
-      <section className={styles.studies} id="case-studies">
-        <div className={styles.cardGrid}>
-          {studies.map((s, i) => {
-            const card = (
-              <>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                {s.image && <img className={styles.cardBg} src={s.image} alt={`${s.client} case study`} loading={i < 3 ? "eager" : "lazy"} />}
-                <span className={styles.cardShade} aria-hidden="true" />
-                <div className={styles.cardTop}>
-                  {logos[s.id] && (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img className={styles.cardLogo} src={logos[s.id].src} alt={s.client} style={{ height: logos[s.id].h }} />
-                  )}
-                  <h2 className={styles.cardTitle}>{s.client} | {s.title}</h2>
-                </div>
-                <div className={styles.cardStats}>
-                  {s.metrics.slice(0, 2).map((m) => (
-                    <div key={m.label} className={styles.cardStat}>
-                      <span className={styles.cardStatLabel}>{m.label}</span>
-                      <span className={styles.cardStatValue}>{m.value}</span>
-                    </div>
-                  ))}
-                </div>
-              </>
-            );
-            return s.caseStudyHref ? (
-              <Link key={s.id} id={s.id} href={s.caseStudyHref} className={styles.studyCard}>{card}</Link>
-            ) : (
-              <article key={s.id} id={s.id} className={styles.studyCard}>{card}</article>
-            );
-          })}
-        </div>
-      </section>
+      {/* === CASE STUDIES — homepage carousel, centred on Jensen CPA === */}
+      <CaseStudy
+        id="case-studies"
+        label="Client Work"
+        heading="Real Results From Real Client Campaigns"
+        centered
+        startIndex={1}
+        order={[3, 0, 1, 2]}
+        hideAll
+      />
 
       {/* === RESULTS BUILT THROUGH HANDS-ON SEO — three points === */}
       <section className={styles.how}>
