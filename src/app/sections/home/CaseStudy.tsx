@@ -54,6 +54,14 @@ const homeCases: CaseCard[] = [
   },
 ];
 
+// Client logo shown centred on each case study image (white via CSS)
+const logos: Record<string, { src: string; h: number }> = {
+  "/results/jensen-cpa": { src: "/images/client-logo-jensen-cpa.png", h: 34 },
+  "/results/empire-accountants": { src: "/images/client-logo-empire-accountants.png", h: 52 },
+  "/results/kinsmen-consulting": { src: "/images/client-logo-kinsmen-consulting.png", h: 38 },
+  "/results/msv-plumbing-services": { src: "/images/client-logo-msv-plumbing.png", h: 40 },
+};
+
 export default function CaseStudy({
   label = "Scale SEO Client Work",
   heading = "SEO Results From Real Client Campaigns",
@@ -106,7 +114,13 @@ export default function CaseStudy({
         </p>
         <div className={styles.headRow}>
           <h2 className={styles.heading}>{heading}</h2>
-          {aside && <p className={styles.aside}>{aside}</p>}
+          <div className={styles.headSide}>
+            {aside && <p className={styles.aside}>{aside}</p>}
+            <Link href="/results" className={styles.allBox}>
+              <span>View all case studies</span>
+              <span aria-hidden="true">&#8599;</span>
+            </Link>
+          </div>
         </div>
       </div>
 
@@ -116,6 +130,10 @@ export default function CaseStudy({
             <div className={styles.media}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={c.image} alt={`${c.client} case study`} loading="lazy" />
+              {logos[c.href] && (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img src={logos[c.href].src} alt="" aria-hidden="true" className={styles.clientLogo} style={{ height: logos[c.href].h }} />
+              )}
               <div className={styles.metric}>
                 <span className={styles.metricValue}>
                   {c.metric.text ?? (
@@ -133,9 +151,6 @@ export default function CaseStudy({
       </div>
 
       <div className={styles.foot}>
-        <Link href="/results" className={styles.all}>
-          View all case studies <span aria-hidden="true">&rarr;</span>
-        </Link>
         <div className={styles.arrows}>
           <button type="button" onClick={() => step(-1)} aria-label="Previous case studies">&larr;</button>
           <button type="button" onClick={() => step(1)} aria-label="More case studies">&rarr;</button>

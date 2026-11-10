@@ -53,3 +53,15 @@
 .centered { --card: min(46vw, 680px); padding-left: calc((100% - var(--card)) / 2); padding-right: calc((100% - var(--card)) / 2); scroll-padding-left: 0; }
 .centered .card { flex-basis: var(--card); scroll-snap-align: center; }
 @media (max-width: 900px) { .centered { --card: 82vw; } }
+
+/* Client logo centred on the image */
+.clientLogo { position: absolute; left: 50%; top: 50%; z-index: 1; width: auto !important; max-width: 60%; transform: translate(-50%, -50%); filter: brightness(0) invert(1) drop-shadow(0 2px 12px rgba(0, 0, 0, 0.35)); pointer-events: none; transition: none; }
+.card:hover .media .clientLogo { transform: translate(-50%, -50%); }
+.media::before { content: ""; position: absolute; inset: 0; z-index: 0; background: rgba(8, 20, 35, 0.18); pointer-events: none; }
+
+/* "View all" as a box, top-right */
+.headSide { display: flex; flex-direction: column; align-items: flex-end; gap: 20px; }
+.allBox { display: inline-flex; align-items: center; gap: 28px; padding: 14px 20px; background: var(--h-grey); color: var(--h-navy); font-size: 16px; text-decoration: none; white-space: nowrap; transition: background 0.2s ease, color 0.2s ease; }
+.allBox:hover { background: var(--h-navy); color: var(--h-white); }
+.foot { justify-content: flex-end; }
+@media (max-width: 900px) { .headSide { align-items: flex-start; } }
