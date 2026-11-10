@@ -26,3 +26,6 @@
   .portrait { justify-self: stretch; width: 100%; }
   .note { grid-template-columns: 1fr; gap: 20px; margin-top: 56px; }
 }
+
+.cornerIcon { position: absolute; top: 12px; right: 14px; width: 10px; height: 10px; }
+.cta { position: relative; padding: 24px 52px 16px 22px; }

@@ -65,3 +65,6 @@
 .allBox:hover { background: var(--h-navy); color: var(--h-white); }
 .foot { justify-content: flex-end; }
 @media (max-width: 900px) { .headSide { align-items: flex-start; } }
+
+.cornerIcon { position: absolute; top: 12px; right: 14px; width: 10px; height: 10px; }
+.allBox { position: relative; padding: 22px 48px 14px 20px; }

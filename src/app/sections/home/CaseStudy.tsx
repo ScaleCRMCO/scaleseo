@@ -117,8 +117,8 @@ export default function CaseStudy({
           <div className={styles.headSide}>
             {aside && <p className={styles.aside}>{aside}</p>}
             <Link href="/results" className={styles.allBox}>
+              <svg className={styles.cornerIcon} viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true"><path d="M1 1.5h7.5V9" /></svg>
               <span>View all case studies</span>
-              <span aria-hidden="true">&#8599;</span>
             </Link>
           </div>
         </div>
