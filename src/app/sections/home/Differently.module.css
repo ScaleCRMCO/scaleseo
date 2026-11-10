@@ -18,3 +18,13 @@
 .section { padding-top: 128px !important; padding-bottom: 56px !important; }
 .foot { margin-top: 96px; }
 @media (max-width: 1000px) { .section { padding-top: 72px !important; padding-bottom: 40px !important; } .foot { margin-top: 48px; } }
+
+/* Mamba-style icon tile above each point */
+.icon { display: grid; place-items: center; width: 48px; height: 48px; margin-bottom: 24px; background: var(--h-navy); color: var(--h-white); clip-path: polygon(0 0, 100% 0, 100% 78%, 78% 100%, 0 100%); }
+.icon svg { width: 22px; height: 22px; }
+/* Mobile: vertical rule on the left of each point, like Mamba */
+@media (max-width: 1000px) {
+  .point { margin-left: 8px; padding: 8px 0 8px 28px; border-top: 0; border-left: 1px solid var(--h-rule); }
+  .point + .point { margin-top: 40px; }
+  .icon { margin-bottom: 20px; }
+}
