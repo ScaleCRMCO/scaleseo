@@ -417,3 +417,11 @@
   .darkHero .clutchBadge { grid-area: clutch; padding: 0; border: 0; }
   .darkHero .clutchBadge img { width: 132px; }
 }
+
+/* Hero proof row without the reviews widget: metric first, flush left */
+.darkHero .leftGroup .metric { padding-left: 0; border-left: 0; }
+@media (max-width: 900px) {
+  .darkHero .topBottom { grid-template-areas: "metric badge" "clutch clutch" "cta cta"; }
+  .darkHero .metric { justify-self: start; align-items: flex-start; text-align: left; }
+  .darkHero .metricLabel { max-width: none; }
+}

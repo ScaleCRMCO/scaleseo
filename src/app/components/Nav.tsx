@@ -164,15 +164,6 @@ export default function Nav() {
           <span>Contact</span>
         </Link>
 
-        <a
-          href="https://cal.com/corbinjensen-scaleseo/30min"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={styles.bookLink}
-        >
-          <Corner />
-          <span>Book a call</span>
-        </a>
 
         {/* Hamburger button (mobile only) */}
         <button
