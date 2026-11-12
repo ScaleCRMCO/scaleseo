@@ -171,7 +171,7 @@ const industriesJsonLd = {
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "Industries",
+          "name": "Specialties",
           "item": "https://scaleseo.co/industries"
         }
       ]
@@ -193,7 +193,7 @@ export default function IndustriesPage() {
       <header className={hub.hero}>
         <div className={hub.heroLeft}>
           <div className={hub.crumbs}>
-            <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Industries" }]} schema={false} />
+            <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Specialties" }]} schema={false} />
           </div>
           <h1 className={`${hub.heroTitle} ${styles.heroTitle}`}>SEO for Accounting Firms &amp; Financial Professionals</h1>
           <a href="#industries" className={hub.jump}>Explore Accounting Specialties &darr;</a>
