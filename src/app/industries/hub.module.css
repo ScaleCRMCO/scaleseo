@@ -1,6 +1,6 @@
 /* /industries hub — extras on top of ../services/hub.module.css */
 .heroTitle { max-width: 14ch; }
-.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
 .staticCard { cursor: default; }
 .staticCard:hover { background: #DCE7F3; color: var(--h-navy); }
 .resultGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }

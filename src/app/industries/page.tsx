@@ -8,44 +8,30 @@ import CaseStudy, { type CaseCard } from "../sections/home/CaseStudy";
 const industryCases: CaseCard[] = [
   {
     href: "/results/jensen-cpa",
-    client: "Jensen CPA",
-    services: "Accounting & Tax / Calgary, Alberta",
+    client: "Jensen CPA \u2014 Calgary, Canada",
+    services: "Website Development / Technical SEO / Service Pages",
     image: "/images/jensen-cpa-cover.webp",
     metric: { to: 92, prefix: "+", suffix: "%" },
-    metricLabel: "More organic clicks for a CPA firm",
+    metricLabel: "Organic Clicks",
+    summary: "Website redevelopment, technical SEO, service-page improvements, and ongoing search optimization helped Jensen CPA improve visibility for its accounting services.",
   },
   {
     href: "/results/empire-accountants",
-    client: "Empire Accountants",
-    services: "Accounting & Advisory / Brisbane, Australia",
+    client: "Empire Accountants \u2014 Brisbane, Australia",
+    services: "Service Pages / Technical SEO / Accounting Content",
     image: "/images/empire-accountants-cover.webp",
-    metric: { from: 5, to: 1, prefix: "Page " },
-    metricLabel: "Advisory searches, up from page 5",
-  },
-  {
-    href: "/results/kinsmen-consulting",
-    client: "Kinsmen Consulting",
-    services: "Concrete & Construction / Calgary, Alberta",
-    image: "/images/kinsmen-hero.jpg",
-    metric: { to: 500, prefix: "$", suffix: "K" },
-    metricLabel: "In new contracting work",
-  },
-  {
-    href: "/results/msv-plumbing-services",
-    client: "MSV Plumbing Services",
-    services: "Plumbing & Home Services / Brisbane, Australia",
-    image: "/images/msv-plumbing-cover.webp",
-    metric: { text: "Weekly" },
-    metricLabel: "Bookings for a new local trade business",
+    metric: { text: "Page One" },
+    metricLabel: "Search Visibility",
+    summary: "Service-page optimization, technical improvements, and accounting-focused content helped Empire Accountants improve visibility for priority accounting and advisory searches.",
   },
 ];
 import hub from "../services/hub.module.css";
 import styles from "./hub.module.css";
 
 export const metadata: Metadata = {
-  title: "SEO for Professional Services & B2B | Scale SEO",
+  title: { absolute: "SEO for Accounting & Financial Firms | Scale SEO" },
   description:
-    "SEO for professional service and B2B businesses, including accounting firms, consultants and advisory businesses. Build qualified organic visibility with Scale SEO.",
+    "Specialized SEO for CPA firms, tax accountants, bookkeeping practices, and financial advisory businesses in Canada and Australia. Explore Scale SEO's expertise.",
   alternates: { canonical: "/industries" },
 };
 
@@ -60,49 +46,45 @@ const industries: {
   sub: string;
   body: string[];
   href?: string;
-  cta: string;
+  cta?: string;
 }[] = [
   {
     num: "01",
-    title: "Accounting & Financial Services",
+    title: "CPA & Accounting Firms",
     sub: "SEO for Accounting Firms",
     body: [
-      "Search strategies for accounting firms, CPA practices, and advisory businesses looking to attract clients through corporate tax, bookkeeping, business advisory, and other specialized services.",
-      "With hands-on experience working with accounting firms in Canada and Australia, Scale SEO understands the importance of technical accuracy, professional credibility, and service-specific search visibility.",
+      "Help your accounting practice attract more relevant enquiries for corporate tax, business accounting, bookkeeping, and advisory services.",
+      "With hands-on experience supporting accounting firms in Canada and Australia, Scale SEO builds search strategies around how businesses find and compare accounting professionals.",
     ],
     href: "/industries/accounting-firms",
     cta: "Explore SEO for Accounting Firms",
   },
   {
     num: "02",
-    title: "Construction & Contracting",
-    sub: "SEO for Construction Companies",
+    title: "Fractional CFO & Advisory Firms",
+    sub: "SEO for Fractional CFO Services",
     body: [
-      "SEO for established construction businesses and specialty contractors targeting higher-value residential and commercial projects.",
-      "Strategies can include technical SEO, local search, service-page development, project-specific content, and geographic targeting.",
+      "Build visibility among established businesses searching for outsourced CFO services, financial planning, cash flow management, and strategic business advice.",
+      "The focus is on reaching business owners and decision-makers researching long-term financial support.",
     ],
-    cta: "Explore SEO for Construction Companies",
   },
   {
     num: "03",
-    title: "Consulting & B2B Services",
-    sub: "SEO for Consulting Firms",
+    title: "Bookkeeping & Cloud Accounting",
+    sub: "SEO for Bookkeeping Firms",
     body: [
-      "Organic search strategies for consultants and B2B businesses selling specialized services to decision-makers.",
-      "The focus is on relevant commercial searches, clear service positioning, technical SEO, and content that supports longer buying cycles.",
+      "Attract businesses looking for recurring bookkeeping, payroll support, financial reporting, and cloud accounting services.",
+      "Strategies focus on relevant commercial searches, clear service pages, and building trust with prospective long-term clients.",
     ],
-    cta: "Explore SEO for Consulting Firms",
   },
   {
     num: "04",
-    title: "Law Firms & Legal Services",
-    sub: "SEO for Law Firms",
+    title: "Tax & Specialist Accounting Practices",
+    sub: "SEO for Tax Accountants",
     body: [
-      "SEO for Canadian law firms looking to attract more qualified enquiries for their practice areas, from corporate and employment law to real estate and estate planning.",
-      "Strategies include practice area page optimization, local SEO, technical improvements, and useful content reviewed by your firm.",
+      "Improve search visibility for specialized tax services, including corporate tax, tax planning, business structures, and other services relevant to your practice.",
+      "Each strategy is built around your firm\u2019s expertise, target clients, and the services you want to grow.",
     ],
-    href: "/industries/law-firms",
-    cta: "Explore SEO for Law Firms",
   },
 ];
 
@@ -144,8 +126,8 @@ const industriesJsonLd = {
       "@type": "CollectionPage",
       "@id": "https://scaleseo.co/industries#webpage",
       "url": "https://scaleseo.co/industries",
-      "name": "SEO for Professional Services & B2B Businesses | Scale SEO",
-      "description": "SEO for accounting firms, consulting businesses, construction companies, and other established service providers across Canada and internationally.",
+      "name": "SEO for Accounting & Financial Firms | Scale SEO",
+      "description": "Specialized SEO for CPA firms, tax accountants, bookkeeping practices, and financial advisory businesses in Canada and Australia.",
       "isPartOf": {
         "@id": "https://scaleseo.co/#website"
       },
@@ -166,26 +148,14 @@ const industriesJsonLd = {
     {
       "@type": "ItemList",
       "@id": "https://scaleseo.co/industries#industries",
-      "name": "Industries Scale SEO Works With",
-      "description": "Professional service and B2B industries served by Scale SEO.",
-      "numberOfItems": 3,
+      "name": "Accounting Specialties Scale SEO Works With",
+      "description": "Accounting and financial service specialties served by Scale SEO.",
+      "numberOfItems": 4,
       "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Accounting & Financial Services",
-          "url": "https://scaleseo.co/industries/accounting-firms"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Construction & Contracting"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Consulting & B2B Services"
-        }
+        { "@type": "ListItem", "position": 1, "name": "CPA & Accounting Firms", "url": "https://scaleseo.co/industries/accounting-firms" },
+        { "@type": "ListItem", "position": 2, "name": "Fractional CFO & Advisory Firms" },
+        { "@type": "ListItem", "position": 3, "name": "Bookkeeping & Cloud Accounting" },
+        { "@type": "ListItem", "position": 4, "name": "Tax & Specialist Accounting Practices" }
       ]
     },
     {
@@ -225,8 +195,8 @@ export default function IndustriesPage() {
           <div className={hub.crumbs}>
             <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Industries" }]} schema={false} />
           </div>
-          <h1 className={`${hub.heroTitle} ${styles.heroTitle}`}>SEO for Professional Service &amp; B2B Businesses</h1>
-          <a href="#industries" className={hub.jump}>Industries I Work With &darr;</a>
+          <h1 className={`${hub.heroTitle} ${styles.heroTitle}`}>SEO for Accounting Firms &amp; Financial Professionals</h1>
+          <a href="#industries" className={hub.jump}>Explore Accounting Specialties &darr;</a>
         </div>
         <div className={hub.heroRight}>
           <div className={hub.heroImage}>
@@ -234,14 +204,14 @@ export default function IndustriesPage() {
           </div>
           <div className={hub.heroIntro}>
             <p className={hub.heroLead}>
-              Scale SEO provides search engine optimization for accounting
-              firms, consulting businesses, construction companies, and other
-              established service providers across Canada and internationally.
+              Specialized SEO and Google Ads strategies for CPA firms, tax
+              accountants, bookkeeping practices, and financial advisory
+              businesses across Canada and Australia.
             </p>
             <p>
-              Each campaign is built around your industry&rsquo;s search
-              behaviour, competitive landscape, and the services that generate
-              valuable business opportunities.
+              Every campaign focuses on improving visibility for the services
+              that matter most to your firm, from corporate tax and bookkeeping
+              to higher-value advisory work.
             </p>
           </div>
         </div>
@@ -249,7 +219,7 @@ export default function IndustriesPage() {
 
       {/* === INDUSTRIES — three boxes === */}
       <section className={hub.services} id="industries">
-        <h2 className={hub.h2}>Industries I Work With</h2>
+        <h2 className={hub.h2}>Accounting Specialties We Work With</h2>
         <div className={styles.grid}>
           {industries.map((item) => (
             <IndustryCard key={item.num} item={item} />
@@ -257,33 +227,30 @@ export default function IndustriesPage() {
         </div>
       </section>
 
-      {/* === EXPERIENCE — heading left of a rule, text right === */}
+      {/* === STRATEGY — heading left of a rule, text right === */}
       <section className={hub.split}>
         <div className={hub.splitAside}>
-          <h2 className={hub.h2}>Experience Across Different Industries</h2>
+          <h2 className={hub.h2}>Search Strategies Built Around Accounting Firms</h2>
         </div>
         <div className={hub.splitBody}>
           <p className={hub.lead}>
-            The fundamentals of SEO remain consistent, but the strategy needs to
-            reflect how customers search within each market.
+            Accounting firms often offer similar services, but their ideal
+            clients and growth goals can be very different.
           </p>
           <p>
-            For accounting firms, that may mean building visibility around
-            corporate tax, advisory, and fractional CFO services.
+            A CPA firm targeting established corporations needs a different SEO
+            strategy from a bookkeeping practice seeking monthly clients or an
+            advisory firm promoting fractional CFO services.
           </p>
           <p>
-            For construction companies, it may involve improving visibility for
-            commercial projects, specialized services, and geographic service
-            areas.
+            Scale SEO develops each campaign around your firm&rsquo;s most
+            valuable services, the searches prospective clients make, and the
+            competitive landscape in your market.
           </p>
           <p>
-            For B2B consultants, the focus may be on technical service pages and
-            the research potential clients conduct before making an enquiry.
-          </p>
-          <p>
-            I develop each campaign around the business&rsquo;s actual services,
-            competition, and growth objectives rather than applying the same
-            keyword strategy across industries.
+            The goal is not simply more website traffic. It&rsquo;s better
+            visibility among businesses actively looking for the services your
+            firm provides.
           </p>
         </div>
       </section>
@@ -291,14 +258,21 @@ export default function IndustriesPage() {
       {/* === RESULTS — homepage case study row, industry-focused wording === */}
       <CaseStudy
         id="results"
-        label="Results by Industry"
-        heading="Results From Client Campaigns"
+        label="Client Work"
+        heading="Results From Accounting Firm Campaigns"
+        aside="Real SEO work with accounting firms in Canada and Australia."
         cards={industryCases}
       />
 
       <ContactSection
-        heading="Don't See Your Industry?"
-        lead="Scale SEO also works with other established professional service and B2B businesses where organic search can support meaningful client acquisition. If your customers use Google to research and compare service providers, we can discuss whether SEO represents a worthwhile opportunity for your business."
+        heading="Work Directly With an Accounting SEO Specialist"
+        lead="Scale SEO is an independent SEO consultancy founded by Corbin Jensen. You work directly with the person researching, developing, and implementing your search strategy."
+        points={[
+          "Direct communication with Corbin, no account managers",
+          "Month-to-month engagements without long-term contracts",
+          "Full ownership of your website, content, and data",
+          "Experience working with accounting firms in Canada and Australia",
+        ]}
         cta={{ href: BOOKING_URL, label: "Book a Consultation →" }}
       />
     </main>
