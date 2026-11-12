@@ -23,10 +23,6 @@ export default function Hero() {
           <span className={styles.h1Line}>Accounting Firms</span>
         </h1>
         <p className={styles.heroSub}>Good SEO should pay for itself. That&rsquo;s what we work toward.</p>
-        <p className={styles.heroSub2}>
-          Specialized SEO, Google Ads, and website development for CPA firms, tax
-          accountants, and advisory practices across Canada and Australia.
-        </p>
         <div className={styles.topBottom}>
           <div className={styles.leftGroup}>
             <TrustindexWidget id="9776d3285310379d5646ecc7f73" className={styles.reviews} />
@@ -82,8 +78,9 @@ export default function Hero() {
           </p>
           <p>
             Founded in 2025 by Corbin Jensen, Scale SEO combines SEO, Google Ads,
-            and website development to help accounting firms reach businesses
-            and individuals actively searching for their services.
+            and website development for CPA firms, tax accountants, and advisory
+            practices across Canada and Australia, helping them reach clients
+            actively searching for their services.
           </p>
           <p>
             From corporate tax and bookkeeping to fractional CFO and business

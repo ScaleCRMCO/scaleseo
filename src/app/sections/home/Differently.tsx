@@ -6,6 +6,7 @@ export type DiffPoint = { icon: string; title: string; body: string };
 const ICONS = {
   calc: "M6 3h12v18H6zM9 7h6M9 11h2M13 11h2M9 15h2M13 15h2",
   lock: "M7 11V7a5 5 0 0 1 9.9-1M5 11h14v10H5z",
+  heart: "M12 21s-7-4.4-9.3-9C1.2 8.8 3 5 6.6 5c2 0 3.4 1 5.4 3 2-2 3.4-3 5.4-3C21 5 22.8 8.8 21.3 12 19 16.6 12 21 12 21z",
   person: "M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM4 21a8 8 0 0 1 16 0",
   chat: "M4 5h16v11H9l-5 4zM8 9h8M8 12h5",
   briefcase: "M4 8h16v12H4zM9 8V5h6v3M4 13h16",
@@ -25,9 +26,9 @@ const defaultPoints: DiffPoint[] = [
     body: "Flexible month-to-month services with no lengthy commitments. We believe your marketing partner should earn your business every month.",
   },
   {
-    icon: ICONS.person,
-    title: "Direct, Hands-On Management",
-    body: "Work directly with the person responsible for your campaign. No rotating account managers, unnecessary handoffs, or complicated processes.",
+    icon: ICONS.heart,
+    title: "100% Client Retention",
+    body: "Every ongoing SEO client has stayed with us, reflecting the value we place on results and lasting relationships.",
   },
 ];
 
