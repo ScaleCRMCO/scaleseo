@@ -13,21 +13,23 @@ export default function About() {
       <div className={styles.grid}>
         <div className={styles.body}>
           <p>
-            Scale SEO was founded in 2025 by Corbin Jensen to offer businesses a
-            more personal, hands-on approach to search engine optimization.
+            Scale SEO was founded in 2025 by Corbin Jensen to provide businesses
+            with a more direct, hands-on approach to search engine optimization.
           </p>
           <p>
-            Having worked with clients across Canada and Australia, Corbin
-            understands that every business and market requires a different
-            approach. We develop strategies around each client&rsquo;s goals,
-            competition, and opportunities.
+            Through his work with accounting firms in Canada and Australia,
+            Corbin has developed an understanding of how accounting practices
+            compete online and attract different types of clients.
+          </p>
+          <p>
+            From corporate tax and bookkeeping to business advisory and
+            fractional CFO services, he works closely with firms to improve their
+            websites, strengthen their search visibility, and reach the customers
+            they want to work with.
           </p>
           <p>
             Every campaign is managed directly by Corbin, from strategy and
-            technical SEO to ongoing website design and development. We work
-            closely with every client, building lasting relationships through
-            clear communication, personal attention, and a shared focus on
-            business growth.
+            technical SEO to content development and ongoing optimization.
           </p>
         </div>
         <figure className={styles.portrait}>
@@ -45,11 +47,19 @@ export default function About() {
         <span className={styles.noteLabel}>A Note From Our Founder</span>
         <div className={styles.noteBody}>
           <blockquote className={styles.quote}>
-            &ldquo;I built Scale SEO around a simple principle that good marketing
-            should lead to real business growth. Rankings and traffic matter, but
-            they&rsquo;re only part of the picture. We focus on attracting the
-            right customers, generating meaningful opportunities, and building
-            long-term value for the businesses we work with.&rdquo;
+            <p>
+              &ldquo;I started Scale SEO because I believe good marketing should
+              create real opportunities for the businesses investing in it.
+            </p>
+            <p>
+              For accounting firms, that means more than appearing on Google. It
+              means reaching the right clients, building a stronger reputation,
+              and developing a reliable source of new business.
+            </p>
+            <p>
+              Our focus is on doing the work properly, communicating clearly, and
+              building relationships that last.&rdquo;
+            </p>
           </blockquote>
           <div className={styles.signRow}>
             <div className={styles.sign}>

@@ -4,18 +4,18 @@ import styles from "./CampaignAreas.module.css";
 const steps = [
   {
     num: "01",
-    title: "Technical SEO & Website Improvements",
-    body: "Fixing crawlability, indexing, site structure, internal linking, and website issues that affect search visibility and user experience.",
+    title: "Attract More Valuable Clients",
+    body: "Not every accounting enquiry has the same value. We help firms target services such as corporate tax, business advisory, bookkeeping, and fractional CFO support to reach clients looking for ongoing professional services.",
   },
   {
     num: "02",
-    title: "Content & Search Optimization",
-    body: "Improving existing pages, targeting relevant search intent, and developing useful content that supports your services and customers.",
+    title: "Improve Your Visibility on Google",
+    body: "We optimize your website for the services and locations your prospective clients are searching for. This includes improving existing pages, creating useful content, fixing technical issues, and building stronger connections between related services.",
   },
   {
     num: "03",
-    title: "Local Visibility & Performance",
-    body: "Strengthening local search presence where relevant, monitoring organic performance, and adjusting priorities based on results.",
+    title: "Turn More Visitors Into Enquiries",
+    body: "Getting found is only part of the process. We improve how your website presents your services, answers potential clients\u2019 questions, and guides visitors toward contacting your firm.",
   },
 ];
 
@@ -28,18 +28,18 @@ export default function CampaignAreas() {
         <div className={styles.aside}>
           <span className={styles.square} aria-hidden="true" />
           <h2 className={`${styles.heading} reveal-up`}>
-            What Goes Into an SEO Campaign?
+            How We Help Accounting Firms Grow Through Search
           </h2>
           <p className={`${styles.intro} reveal-up`}>
-            Effective SEO involves more than rankings. Every campaign combines
-            the improvements your website needs with an ongoing strategy shaped
-            by search data and business priorities.
+            Accounting firms compete for different clients, services, and
+            locations. We build search strategies around the opportunities that
+            matter most to each practice.
           </p>
           <Link href="/services/seo" className={styles.cta}>
             <svg className={styles.corner} viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
               <path d="M1 1.5h7.5V9" />
             </svg>
-            <span>Explore SEO Services →</span>
+            <span>Explore Our SEO Services →</span>
           </Link>
         </div>
 

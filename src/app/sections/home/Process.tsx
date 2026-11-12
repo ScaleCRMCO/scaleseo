@@ -4,25 +4,25 @@ const steps = [
   {
     num: "01",
     name: "Conversation",
-    body: "A 30-minute strategy call to understand your business, current marketing, target customers, and what you\u2019re trying to achieve.",
+    body: "A 30-minute strategy call to learn about your firm, current marketing, target clients, and growth goals. We\u2019ll discuss the services you want to promote and whether SEO, Google Ads, or a combination of both makes sense.",
     time: "Week 1",
   },
   {
     num: "02",
     name: "Audit & Strategy",
-    body: "I review your website, current rankings, competitors, technical foundation, and organic search opportunities to determine where the biggest gains are likely to come from.",
-    time: "Week 1\u20132",
+    body: "We review your website, search visibility, competitors, and existing marketing. From there, we identify the opportunities most relevant to your firm\u2019s services, location, and budget.",
+    time: "Weeks 1\u20132",
   },
   {
     num: "03",
-    name: "Execution",
-    body: "I implement the strategy directly. Depending on the campaign, that can include technical SEO, on-page optimization, content, local SEO, internal linking, and website improvements.",
-    time: "Month 1\u20133",
+    name: "Implementation",
+    body: "We get to work implementing the agreed strategy. Depending on your campaign, this can include technical SEO, service page improvements, content development, Google Ads management, and website updates.",
+    time: "Months 1\u20133",
   },
   {
     num: "04",
-    name: "Compounding Growth",
-    body: "SEO continues to evolve as rankings improve and new opportunities emerge. Performance is tracked and the strategy is adjusted based on real search data rather than a fixed monthly checklist.",
+    name: "Ongoing Growth",
+    body: "We monitor search performance, review enquiries where tracking is available, and continue improving your campaign based on results. Our goal is to build a reliable, long-term source of new business for your firm.",
     time: "Ongoing",
   },
 ];
@@ -34,12 +34,12 @@ export default function Process() {
         {/* LEFT — heading + intro, same column as the FAQ heading */}
         <div className={styles.aside}>
           <h2 className={`${styles.headingBig} reveal-up`}>
-            4 easy steps to get started.
+            4 Steps to Getting Started
           </h2>
           <p className={`${styles.intro} ${styles.introStrong} reveal-up`}>
-            Every engagement starts by understanding where your website stands
-            today and whether SEO represents a realistic growth opportunity for
-            your business.
+            We start by understanding your accounting firm, the services you
+            want to grow, and where search marketing can make the biggest
+            difference.
           </p>
         </div>
 

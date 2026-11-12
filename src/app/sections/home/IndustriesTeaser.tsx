@@ -10,27 +10,23 @@ const industries: {
 }[] = [
   {
     num: "01",
-    title: "Accounting & Financial Services",
-    body: "SEO for accounting and financial service firms targeting competitive, high-value commercial searches.",
-    href: "/industries/accounting-firms",
-    cta: "Explore SEO for Accounting Firms",
+    title: "CPA & Chartered Accounting Firms",
+    body: "SEO and Google Ads for accounting practices looking to attract more corporate tax, business accounting, and ongoing advisory clients.",
   },
   {
     num: "02",
-    title: "Law Firms",
-    body: "SEO for law firms that want more qualified enquiries for their practice areas, from corporate and employment law to real estate and estate planning.",
-    href: "/industries/law-firms",
-    cta: "Explore SEO for Law Firms",
+    title: "Corporate Tax & Tax Advisory Firms",
+    body: "Search strategies focused on reaching businesses that need corporate tax filing, tax planning, restructuring, and specialized tax advice.",
   },
   {
     num: "03",
-    title: "B2B & Consulting",
-    body: "SEO for businesses with longer sales cycles, specialist services, and research-driven buyers.",
+    title: "Bookkeeping & Cloud Accounting Practices",
+    body: "Improve visibility for monthly bookkeeping, payroll, cloud accounting, and outsourced financial management services.",
   },
   {
     num: "04",
-    title: "Contractors",
-    body: "Local SEO and service pages for contractors who win high-value projects across their service area.",
+    title: "Fractional CFO & Advisory Firms",
+    body: "Reach business owners searching for financial planning, cash flow management, outsourced CFO support, and strategic business advice.",
   },
 ];
 
@@ -50,13 +46,11 @@ export default function IndustriesTeaser() {
     <section className={styles.section} id="industries">
       <div className={styles.head}>
         <h2 className={`${styles.heading} reveal-up`}>
-          SEO for Professional Service &amp; B2B Businesses
+          Who We Work With
         </h2>
-        <p className={`${styles.introLead} reveal-up`}>
-          We specialize in businesses where search visibility can lead to
-          valuable enquiries, long-term clients, and measurable commercial
-          growth.
-        </p>
+        <Link href="/industries/accounting-firms" className={`${styles.introLink} reveal-up`}>
+          Explore SEO for Accounting Firms →
+        </Link>
       </div>
 
       <div className={styles.grid}>

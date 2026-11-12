@@ -13,16 +13,16 @@ export default function BlogTeaser() {
         <div>
           <div className={`${styles.eyebrow} reveal-up`}>Recent Articles</div>
           <h2 className={`${styles.heading} reveal-up`}>
-            SEO Insights &amp; Resources
+            SEO Insights for Accounting Firms
           </h2>
         </div>
         <div className={styles.side}>
           <p className={`${styles.sub} reveal-up`}>
-            Practical guides covering SEO, organic search, websites, and the
-            strategies businesses can use to improve their visibility online.
+            Practical resources covering SEO, Google Ads, website development,
+            and client acquisition for accounting practices.
           </p>
           <Link href="/blog" className={`${styles.viewAll} reveal-up`}>
-            View All SEO Resources →
+            View All Resources →
           </Link>
         </div>
       </div>

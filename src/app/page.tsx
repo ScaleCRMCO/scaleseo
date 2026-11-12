@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Hero from "./sections/home/Hero";
 import About from "./sections/home/About";
-import Differently from "./sections/home/Differently";
+import Differently, { whyPoints } from "./sections/home/Differently";
 import ServicesGrid from "./sections/home/ServicesGrid";
 import CaseStudy from "./sections/home/CaseStudy";
 import CampaignAreas from "./sections/home/CampaignAreas";
@@ -42,6 +42,29 @@ const webPageJsonLd = {
   inLanguage: "en-CA",
 };
 
+const accountingCases = [
+  {
+    href: "/results/jensen-cpa",
+    client: "Jensen CPA \u2014 Calgary, Canada",
+    services: "SEO / Website Development / Content Strategy / Google Ads",
+    image: "/images/jensen-cpa-cover.webp",
+    metric: { to: 227, prefix: "+", suffix: "%" },
+    metricLabel: "Search Impressions",
+    summary:
+      "Jensen CPA wanted to improve its visibility for corporate tax, bookkeeping, and fractional CFO services in Calgary. We improved the firm\u2019s website, developed dedicated service pages, strengthened its technical SEO, and built a content strategy around business accounting topics. The campaign helped increase Google Search visibility and establish stronger rankings for relevant accounting services.",
+  },
+  {
+    href: "/results/empire-accountants",
+    client: "Empire Accountants \u2014 Brisbane, Australia",
+    services: "SEO / Technical SEO / Content Strategy",
+    image: "/images/empire-accountants-cover.webp",
+    metric: { from: 5, to: 1, prefix: "Page " },
+    metricLabel: "Up from page 5",
+    summary:
+      "Empire Accountants wanted to attract more business clients through Google Search. We improved the firm\u2019s accounting service pages, strengthened internal linking, developed supporting content, and implemented technical and local SEO improvements. Targeted accounting searches moved from approximately page five to page one of Google, helping the firm strengthen its online presence in Brisbane.",
+  },
+];
+
 export default function Home() {
   return (
     <main className="home">
@@ -54,13 +77,21 @@ export default function Home() {
       <ServicesGrid />
       <About />
       <CaseStudy
-        centered
-        startIndex={1}
-        order={[3, 0, 1, 2]}
+        label="Scale SEO Client Work"
+        heading="SEO Results From Real Accounting Firms"
+        aside="We work with accounting firms to improve their search visibility, strengthen their websites, and attract more of the clients they want to serve. Here’s a look at some of our work."
+        cards={accountingCases}
       />
       <CampaignAreas />
       <IndustriesTeaser />
       <Process />
+      <Differently
+        id="why-label"
+        label="Why Accounting Firms Choose Scale SEO"
+        points={whyPoints}
+        more={false}
+        wide
+      />
       <Testimonials />
       <FAQ />
       <BlogTeaser />

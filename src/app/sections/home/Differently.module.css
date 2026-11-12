@@ -28,3 +28,7 @@
   .point + .point { margin-top: 40px; }
   .icon { margin-bottom: 20px; }
 }
+.wide { grid-template-columns: repeat(4, 1fr); row-gap: 64px; border-top: 1px solid var(--h-rule); padding-bottom: 112px !important; }
+.wideTitle { grid-column: 1 / -1; max-width: 16ch; font-size: clamp(36px, 4vw, 64px); line-height: 1.05; font-weight: 400; letter-spacing: -0.03em; }
+.wide .point:first-of-type { border-left: 0; padding-left: 0; }
+@media (max-width: 1000px) { .wide { row-gap: 0; padding-bottom: 64px !important; } .wideTitle { margin-bottom: 32px; } .wide .point:first-of-type { margin-left: 8px; padding-left: 28px; border-left: 1px solid var(--h-rule); } }

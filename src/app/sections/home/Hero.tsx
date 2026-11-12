@@ -19,10 +19,14 @@ export default function Hero() {
       <div className={styles.top}>
         <HeroMark className={styles.mark} />
         <h1 className={styles.h1}>
-          <span className={styles.h1Line}>SEO Company in</span>{" "}
-          <span className={styles.h1Line}>Calgary, Alberta</span>
+          <span className={styles.h1Line}>SEO &amp; Google Ads for</span>{" "}
+          <span className={styles.h1Line}>Accounting Firms</span>
         </h1>
         <p className={styles.heroSub}>Good SEO should pay for itself. That&rsquo;s what we work toward.</p>
+        <p className={styles.heroSub2}>
+          Specialized SEO, Google Ads, and website development for CPA firms, tax
+          accountants, and advisory practices across Canada and Australia.
+        </p>
         <div className={styles.topBottom}>
           <div className={styles.leftGroup}>
             <TrustindexWidget id="9776d3285310379d5646ecc7f73" className={styles.reviews} />
@@ -39,6 +43,16 @@ export default function Hero() {
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/images/semrush-agency-partner.svg" alt="Semrush Certified Agency Partner badge" width={64} height={64} />
+            </a>
+            <a
+              href="https://clutch.co/profile/scale-seo"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.clutchBadge}
+              aria-label="Scale SEO reviews on Clutch"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/images/clutch-reviewed.svg" alt="Reviewed on Clutch" width={158} height={30} />
             </a>
           </div>
           <a
@@ -61,17 +75,20 @@ export default function Hero() {
       <section className={styles.introSection}>
         <div className={styles.statement}>
           <p>
-            Scale SEO is an independent SEO and digital marketing consultancy
-            based in Calgary, Alberta. We help accounting firms, professional
-            service businesses, and B2B companies improve their visibility on
-            Google, attract qualified enquiries, and grow their business.
+            Scale SEO is a Calgary-based SEO and digital marketing company
+            specializing in accounting firms. We help practices improve their
+            visibility on Google, attract qualified enquiries, and grow their
+            most valuable services.
           </p>
           <p>
-            Founded in 2025 by Corbin Jensen, Scale SEO provides search engine
-            optimization, website development, Google Ads management, and AI
-            search optimization. Every engagement combines practical strategy,
-            hands-on implementation, and ongoing improvements focused on
-            long-term results.
+            Founded in 2025 by Corbin Jensen, Scale SEO combines SEO, Google Ads,
+            and website development to help accounting firms reach businesses
+            and individuals actively searching for their services.
+          </p>
+          <p>
+            From corporate tax and bookkeeping to fractional CFO and business
+            advisory, we build strategies around the clients your firm wants to
+            attract.
           </p>
         </div>
       </section>

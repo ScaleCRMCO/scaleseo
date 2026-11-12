@@ -3,56 +3,61 @@ import styles from "./FAQ.module.css";
 // Each answer is a list of paragraphs; the FAQPage schema joins them.
 const faqs: { q: string; a: string[] }[] = [
   {
-    q: "What SEO services do you provide?",
+    q: "What SEO services do you provide for accounting firms?",
     a: [
-      "Our ongoing SEO campaigns can include technical SEO, on-page optimization, keyword research, content strategy, local SEO, internal linking, structured data, competitor research, and website improvements.",
-      "The exact work depends on what your website needs rather than a predetermined monthly checklist.",
-      "We also offer standalone SEO audits, web development, Google Ads management, and AI search optimization.",
+      "Our SEO services include keyword research, technical SEO, service page optimization, local SEO, content development, internal linking, and ongoing performance monitoring.",
+      "We build each campaign around the firm\u2019s services, target clients, competition, and existing website.",
     ],
   },
   {
-    q: "How much do SEO services cost?",
+    q: "How much does SEO for accounting firms cost?",
     a: [
-      "Ongoing SEO work is structured as a monthly retainer based on your website, competition, objectives, and the amount of work required.",
-      "A preliminary audit is included for businesses that move forward with an ongoing campaign. More comprehensive standalone SEO audits are available separately.",
-      "There are no long-term lock-in contracts.",
+      "Our ongoing SEO services start at $3,000 CAD per month, with the scope tailored to your firm\u2019s needs.",
+      "We also offer Google Ads management and website development. Combined services are quoted based on the work required.",
     ],
   },
   {
-    q: "What types of businesses do you work with?",
+    q: "Do you work with accounting firms outside Calgary?",
     a: [
-      "We primarily work with accounting firms, professional service businesses, consultants, and B2B companies where increasing qualified search traffic can translate into valuable new client relationships.",
-      "Scale SEO is based in Calgary, but SEO campaigns can be managed for businesses throughout Canada and internationally.",
+      "Yes. Scale SEO is based in Calgary, Alberta, and works with accounting firms across Canada and Australia.",
+      "Our services are delivered remotely, with strategies developed around each firm\u2019s location, services, and target market.",
     ],
   },
   {
-    q: "How long does SEO take?",
+    q: "Can SEO help us attract more corporate tax and business clients?",
     a: [
-      "SEO is a long-term acquisition channel rather than an immediate advertising campaign.",
-      "Some improvements can appear relatively quickly, while competitive searches often take several months or longer to move meaningfully. Your starting authority, competition, website quality, market, and existing search presence all influence the timeline.",
-      "We’ll give you a more realistic assessment after reviewing your website rather than promising a predetermined result.",
+      "Yes. SEO can help your firm appear for relevant searches from businesses looking for corporate tax, bookkeeping, advisory, and other accounting services.",
+      "We focus on improving visibility for the services that align with your ideal clients rather than simply increasing overall website traffic.",
     ],
   },
   {
-    q: "Do I have to sign a long-term SEO contract?",
+    q: "Do you provide Google Ads for accounting firms?",
     a: [
-      "No. Ongoing Scale SEO campaigns are month-to-month.",
-      "We want clients to continue because the work is producing value, not because they’re locked into a long-term agreement.",
+      "Yes. We manage Google Search campaigns targeting people actively looking for accounting and tax services.",
+      "Google Ads can complement an ongoing SEO strategy by providing an additional way to reach potential clients.",
     ],
   },
   {
-    q: "Do you make changes to my website?",
+    q: "How long does SEO take to produce results?",
     a: [
-      "Yes. Website improvements are an important part of many SEO campaigns.",
-      "Depending on your website and platform, we can implement technical fixes, update service pages, improve internal linking, restructure content, add new pages, and make other changes needed to support organic performance.",
+      "SEO results depend on your website\u2019s current visibility, competition, location, and the work required.",
+      "Some improvements may become visible within a few weeks, while more competitive searches can take several months or longer.",
+      "We focus on implementing meaningful improvements early while building toward long-term growth.",
     ],
   },
   {
-    q: "What’s different about working with Scale SEO?",
+    q: "Do I need to sign a long-term contract?",
     a: [
-      "You work directly with the person doing the SEO.",
-      "Scale SEO handles the strategy, audits, website work, content direction, optimization, and reporting rather than passing the campaign through account managers or outsourced teams.",
-      "Keeping the roster intentionally small gives us the ability to understand each client’s business and work directly on the areas most likely to improve performance.",
+      "No. Our ongoing SEO services use flexible month-to-month agreements.",
+      "We believe you should continue working with us because you\u2019re satisfied with the service and progress, not because you\u2019re locked into a lengthy contract.",
+    ],
+  },
+  {
+    q: "What makes Scale SEO different from other SEO agencies?",
+    a: [
+      "We focus on accounting firms and the services that matter to their growth.",
+      "Rather than using a fixed checklist for every client, we develop strategies around each firm\u2019s business goals, competition, and opportunities.",
+      "Every campaign is managed directly by our founder, Corbin Jensen.",
     ],
   },
 ];

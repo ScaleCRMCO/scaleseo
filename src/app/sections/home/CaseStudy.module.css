@@ -73,3 +73,4 @@
 .media::before { content: none; }
 .card:hover .media img { transform: none; }
 .summary { max-width: 52ch; margin: 20px 0 0; font-size: 17px; line-height: 1.45; color: var(--h-navy); }
+.aside { max-width: 44ch; }

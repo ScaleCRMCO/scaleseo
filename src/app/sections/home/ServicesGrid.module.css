@@ -97,3 +97,8 @@
   .cell { min-height: 0; }
   .outro { margin-top: 24px; }
 }
+
+.introSub { max-width: 52ch; margin: -96px 0 96px; font-size: clamp(17px, 1.4vw, 21px); line-height: 1.45; color: rgba(254, 254, 254, 0.85); }
+.outroTitle { font-size: clamp(24px, 2vw, 32px); line-height: 1.15; font-weight: 400; letter-spacing: -0.02em; }
+.outroSmall { font-size: 17px; line-height: 1.5; color: rgba(254, 254, 254, 0.85); }
+@media (max-width: 800px) { .introSub { margin: -24px 0 40px; } }
