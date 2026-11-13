@@ -12,9 +12,9 @@ import CountUp from "../../components/CountUp";
 import PinnedPoints, { type PinnedItem } from "../../components/PinnedPoints";
 
 export const metadata: Metadata = {
-  title: "Search Engine Optimization Services Calgary | Scale SEO",
+  title: { absolute: "SEO Services Calgary | Accounting & Business SEO | Scale SEO" },
   description:
-    "Ongoing SEO services for professional service and B2B businesses. Technical SEO, content, on-page and local SEO managed directly from Calgary.",
+    "Calgary SEO services for accounting firms and established businesses. Technical SEO, content strategy, local SEO and ongoing optimization from Scale SEO.",
   alternates: { canonical: "/services/seo" },
 };
 
@@ -22,38 +22,35 @@ export const metadata: Metadata = {
 /* === Content ============================================================ */
 
 const included = [
-  { title: "SEO Strategy & Research", body: "Identify valuable search opportunities through keyword research, competitor analysis, and an assessment of your existing website performance." },
-  { title: "Technical SEO", body: "Address crawling, indexing, redirects, structured data, website performance, and other technical issues that may limit organic visibility." },
-  { title: "On-Page SEO", body: "Improve service pages, headings, metadata, internal linking, and website structure to better match search intent and help visitors find what they need." },
-  { title: "SEO Content Strategy", body: "Develop useful service content and supporting resources around the questions, services, and industries most relevant to your customers." },
-  { title: "Local & National SEO", body: "Improve visibility in the markets your business serves, whether that\u2019s Calgary, multiple Canadian cities, or customers across the country." },
-  { title: "Website Optimization & Reporting", body: "Improve navigation, calls to action, and other website elements while monitoring organic traffic, search rankings, and relevant enquiries." },
+  { title: "SEO Strategy & Research", body: "We research your market, competitors, and the searches most relevant to your business. Every campaign starts with clear priorities and an understanding of what your customers are looking for." },
+  { title: "Technical SEO", body: "We address crawling, indexing, site structure, website performance, and other technical issues that affect how search engines access and understand your website." },
+  { title: "On-Page SEO", body: "We improve page content, titles, headings, internal links, and website architecture to better match relevant searches and help visitors find the right services." },
+  { title: "Content Strategy", body: "We develop service pages and supporting articles that answer real customer questions, demonstrate expertise, and strengthen your website\u2019s coverage of important topics." },
+  { title: "Local & National SEO", body: "Whether you\u2019re targeting customers in Calgary or businesses across Canada, we build strategies around your service areas, competition, and search demand." },
+  { title: "Website Improvements & Reporting", body: "We make ongoing website improvements and track search visibility, organic traffic, and enquiries to understand what\u2019s working and where to focus next." },
 ];
 
 const cases = [
   {
-    name: "Jensen CPA",
+    name: "Jensen CPA \u2014 Calgary, Canada",
     body: [
-      "During the first four months, Jensen CPA increased Google Search impressions by 125% and organic clicks by 92%.",
-      "The campaign focused on corporate tax services, website structure, and commercially relevant search opportunities.",
+      "Website redevelopment, technical SEO, and accounting service-page improvements helped Jensen CPA increase its organic search visibility during the first four months of the campaign.",
     ],
     stats: [
-      { from: 0, to: 125, prefix: "+", suffix: "%", label: "Search Impressions" },
       { from: 0, to: 92, prefix: "+", suffix: "%", label: "Organic Clicks" },
+      { from: 0, to: 125, prefix: "+", suffix: "%", label: "Search Impressions" },
     ],
     href: "/results/jensen-cpa",
     cta: "View Jensen CPA Case Study",
     img: "/images/jensen-cpa-cover.webp",
   },
   {
-    name: "Empire Accountants",
+    name: "Empire Accountants \u2014 Brisbane, Australia",
     body: [
-      "Ongoing SEO helped improve priority commercial keyword rankings and organic search performance.",
-      "The work included service-page optimization, technical SEO, content development, and internal linking.",
+      "A combination of technical improvements, accounting-focused content, and service-page optimization helped Empire Accountants move priority searches from page five to page one.",
     ],
     stats: [
-      { from: 5, to: 1, prefix: "Page ", suffix: "", label: "Up from page 5" },
-      { from: 0, to: 2, prefix: "", suffix: "\u00d7", label: "Search Visibility & Clicks" },
+      { from: 5, to: 1, prefix: "Page ", suffix: "", label: "Visibility for Priority Searches" },
     ],
     href: "/results/empire-accountants",
     cta: "View Empire Accountants Case Study",
@@ -61,52 +58,44 @@ const cases = [
   },
 ];
 
-const markets = [
+const markets: { title: string; body: string; href?: string; cta?: string }[] = [
   {
-    title: "Local SEO",
-    body: "For businesses targeting customers in Calgary or other specific service areas, SEO can include Google Business Profile improvements, local service pages, and geographic keyword targeting.",
-  },
-  {
-    title: "National SEO",
-    body: "For businesses serving customers across Canada, the focus shifts toward broader search competition, specialized service pages, website structure, and content relevant to a national audience.",
-    href: "/services/national-seo",
-    cta: "Explore National SEO Services",
-  },
-  {
-    title: "Professional Services & B2B SEO",
-    body: "For accounting firms, consultants, and B2B businesses, we prioritize commercially relevant searches rather than traffic volume alone.",
+    title: "Accounting & Financial Services",
+    body: "SEO for CPA firms, tax accountants, bookkeeping practices, and financial advisory businesses looking to attract more qualified clients.",
     href: "/industries/accounting-firms",
     cta: "Explore SEO for Accounting Firms",
+  },
+  {
+    title: "Professional Services & B2B",
+    body: "Search strategies for consultants and specialist businesses whose clients research and compare providers before making an enquiry.",
+  },
+  {
+    title: "Construction & Contracting",
+    body: "Local and service-based SEO for contractors looking to improve visibility for relevant residential and commercial projects.",
+    href: "/results",
+    cta: "View Our Client Work",
   },
 ];
 
 const process: PinnedItem[] = [
-  { title: "Review & Research", body: ["Assess your website\u2019s current search performance, technical issues, competitors, and opportunities."] },
-  { title: "Build a Strategy", body: ["Develop a prioritized SEO plan based on your most valuable services and the improvements your website needs."] },
-  { title: "Implement Improvements", body: ["Make technical changes, optimize important pages, improve website structure, and develop relevant content."] },
-  { title: "Monitor & Refine", body: ["Track search performance, review results, and adjust priorities as your website develops."] },
-];
-
-const fit = [
-  "Offers services people actively search for on Google.",
-  "Operates in a competitive local or national market.",
-  "Wants to improve its existing website and search visibility.",
-  "Values ongoing website improvements rather than one-off recommendations.",
+  { title: "Research", body: ["We review your website, search performance, competitors, and business priorities to identify where the best opportunities exist."] },
+  { title: "Implement", body: ["We improve technical foundations, service pages, content, and internal linking based on the agreed strategy."] },
+  { title: "Refine", body: ["We monitor performance, review changes in search demand, and adjust priorities as your website develops."] },
 ];
 
 const pricingPoints = [
-  "Month-to-month engagements",
+  "Flexible month-to-month engagements",
   "No long-term contract lock-ins",
-  "Direct access to the person doing the work",
-  "You retain ownership of your website, content, and accounts",
+  "Clear priorities and performance reporting",
+  "Full ownership of your website, content, and data",
 ];
 
 const faqs: FaqItem[] = [
-  { q: "How long does SEO take to work?", a: ["SEO generally takes several months to produce meaningful results. Timelines depend on your website\u2019s current condition, competition, existing visibility, and target searches."] },
-  { q: "How much do SEO services cost?", a: ["Ongoing SEO starts at $3,000 CAD per month, plus applicable taxes. Each campaign is scoped individually based on your business needs."] },
-  { q: "Do you provide SEO outside Calgary?", a: ["Yes. Scale SEO is based in Calgary and works remotely with businesses across Canada, including [Vancouver](/locations/vancouver) and [Edmonton](/locations/edmonton). I also work with international clients."] },
-  { q: "Can you make SEO changes directly to my website?", a: ["Yes. We implement technical, content, and structural improvements directly on client websites, including those built with Webflow, WordPress, and other supported platforms."] },
-  { q: "Do you guarantee Google rankings?", a: ["No. Google rankings cannot be guaranteed. We focus on practical improvements and measurable progress in relevant search visibility, traffic, and business enquiries."] },
+  { q: "How long does SEO take to work?", a: ["SEO typically takes several months to produce meaningful improvements. Timelines depend on your website\u2019s existing visibility, competition, and the work required."] },
+  { q: "How much do SEO services cost?", a: ["Ongoing SEO starts at $3,000 CAD per month, plus applicable GST. Final pricing reflects your website, target markets, and campaign requirements."] },
+  { q: "Do you provide SEO outside Calgary?", a: ["Yes. Scale SEO is based in Calgary and works with businesses across Canada and Australia, with particular experience in accounting and professional services."] },
+  { q: "Can you make SEO changes directly to our website?", a: ["Yes. Our services include hands-on implementation, from technical fixes and page optimization to content and website improvements. The exact scope depends on your website platform and engagement."] },
+  { q: "Do you guarantee Google rankings?", a: ["No. Search rankings are influenced by competition, Google\u2019s algorithms, and other factors outside any agency\u2019s control. We focus on measurable improvements, relevant visibility, and sustainable growth."] },
 ];
 
 const CONTACT_URL = "/contact";
@@ -128,8 +117,8 @@ const seoJsonLd = {
       "@type": "WebPage",
       "@id": "https://scaleseo.co/services/seo#webpage",
       "url": "https://scaleseo.co/services/seo",
-      "name": "Search Engine Optimization Services | Scale SEO",
-      "description": "Ongoing search engine optimization services for professional service and B2B businesses. Scale SEO combines technical SEO, on-page optimization, content, local SEO and website improvements to grow qualified organic traffic.",
+      "name": "SEO Services Calgary | Accounting & Business SEO | Scale SEO",
+      "description": "Calgary SEO services for accounting firms and established businesses. Technical SEO, content strategy, local SEO and ongoing optimization from Scale SEO.",
       "isPartOf": {
         "@id": "https://scaleseo.co/#website"
       },
@@ -305,17 +294,18 @@ export default function SeoServicePage() {
       <section className={t.statementSection}>
         <div className={t.statement}>
           <p>
-            Scale SEO provides hands-on search engine optimization for
-            professional service and B2B businesses in Calgary and across Canada.
+            Scale SEO provides search engine optimization for accounting firms,
+            professional services, and established businesses across Canada and
+            Australia.
           </p>
           <p>
-            Scale SEO manages every campaign directly, combining technical SEO, website improvements, and
-            content strategy to help your business reach the right customers.
+            We combine technical SEO, content strategy, and website improvements
+            to help businesses reach the people searching for their services.
           </p>
         </div>
         <div className={t.statementBottom}>
           <span className={t.statementNote}>
-            <strong>Ongoing SEO for businesses that want more qualified enquiries through Google.</strong>
+            <strong>Better search visibility. More qualified enquiries.</strong>
           </span>
           <div className={t.btnRow}>
             <Link href="/results" className={`${t.box} ${t.boxGrey}`}>
@@ -333,12 +323,12 @@ export default function SeoServicePage() {
       {/* === WHAT'S INCLUDED — About-page staggered boxes === */}
       <section className={ab.partners} style={{ borderTop: "1px solid var(--h-rule)" }}>
         <div className={ab.partnersHead}>
-          <h2 className={ab.partnersTitle}>What&rsquo;s Included in SEO Services?</h2>
+          <h2 className={ab.partnersTitle}>What Goes Into Our SEO Campaigns?</h2>
           <div className={ab.partnersText}>
             <p>
-              Every website has different priorities. We focus on the
-              improvements most likely to strengthen your search visibility and
-              generate relevant business opportunities.
+              Good SEO involves more than keywords and rankings. We identify
+              what&rsquo;s holding your website back, find opportunities in your
+              market, and make the improvements needed to compete.
             </p>
           </div>
         </div>
@@ -360,14 +350,9 @@ export default function SeoServicePage() {
       {/* === RESULTS — full-bleed navy with case study rows === */}
       <section className={t.expSection}>
         <div className={t.expTop}>
-          <h2 className={t.expTitle}>SEO Results From Real Client Campaigns</h2>
+          <h2 className={t.expTitle}>SEO Results From Real Businesses</h2>
           <div className={t.expBody}>
-            <p>SEO should contribute to meaningful business outcomes, not just higher traffic numbers.</p>
-            <p>
-              Scale SEO works directly with businesses to improve the pages,
-              content, and technical foundations that support their organic
-              search performance.
-            </p>
+            <p>Our work is measured through actual client campaigns, not hypothetical projections.</p>
           </div>
         </div>
         {cases.map((c) => (
@@ -400,15 +385,20 @@ export default function SeoServicePage() {
             </Link>
           </div>
         ))}
-        <p className={t.expStatLabel} style={{ display: "block", padding: "0 40px 48px" }}>
-          Results reflect individual client campaigns and are not guarantees of future performance.
-        </p>
+        <div className={t.expRow} style={{ alignItems: "center" }}>
+          <p className={t.expStatLabel}>Results vary by client, competition, and campaign scope.</p>
+          <div />
+          <Link href="/results" className={`${t.box} ${t.boxBlue}`} style={{ color: "var(--h-white)" }}>
+            <Corner />
+            <span>Explore All Client Results &rarr;</span>
+          </Link>
+        </div>
       </section>
 
       {/* === LOCAL / NATIONAL / B2B — homepage-style blue cards === */}
       <section className={g.section}>
         <h2 className={g.introTitle} style={{ maxWidth: "18ch" }}>
-          SEO for Local, National &amp; Professional Service Businesses
+          Specialized in Accounting. Experienced Across Industries.
         </h2>
         <div className={g.grid}>
           {markets.map((m, i) => {
@@ -432,18 +422,18 @@ export default function SeoServicePage() {
             );
           })}
           <div className={g.outro} style={{ marginTop: 48 }}>
-            <p>The right SEO strategy depends on your customers, competition, and geographic market.</p>
+            <p>Accounting and professional services are central to our work, but our experience extends across consulting, construction, and other established service businesses.</p>
           </div>
         </div>
       </section>
 
       {/* === PROCESS — pinned scroll section === */}
       <PinnedPoints
-        title="How Our SEO Process Works"
+        title="Our SEO Process"
         lead={
           <>
-            Every campaign begins with understanding your website, customers,
-            and business goals. You work directly with the Scale SEO team throughout the engagement, from strategy to implementation and reporting.
+            SEO is ongoing work. Each stage builds on the improvements made
+            before it.
           </>
         }
         items={process}
@@ -454,26 +444,20 @@ export default function SeoServicePage() {
         <h2 className={t.prioTitle}>Is Ongoing SEO Right for Your Business?</h2>
         <div className={t.prioRow}>
           <p className={t.prioLabel} style={{ maxWidth: "24ch" }}>
-            Ongoing SEO is generally best suited to businesses that want to build
-            a sustainable source of qualified enquiries through organic search.
+            Our campaigns are suited to established businesses looking to build
+            a long-term source of qualified enquiries through Google.
           </p>
           <div className={t.prioBody}>
-            <p>It&rsquo;s particularly relevant if your business:</p>
-            <ul className={t.checks}>
-              {fit.map((f) => (
-                <li key={f}>{f}</li>
-              ))}
-            </ul>
             <p>
-              We primarily work with accounting firms, professional service
-              businesses, consultants, and B2B companies.
+              We typically work with businesses that have clear services, defined
+              growth objectives, and a willingness to invest in ongoing website
+              improvements.
             </p>
             <p>
-              If your business needs a one-time technical assessment or more
-              immediate lead generation, an{" "}
-              <Link href="/services/seo-audits" className={t.inlineLink}>SEO audit</Link> or{" "}
-              <Link href="/services/google-ads-management" className={t.inlineLink}>Google Ads campaign</Link>{" "}
-              may be a better starting point.
+              For businesses needing a one-time assessment, we also provide{" "}
+              <Link href="/services/seo-audits" className={t.inlineLink}>SEO audits</Link>. Those looking for paid search
+              support can explore our{" "}
+              <Link href="/services/google-ads-management" className={t.inlineLink}>Google Ads management</Link>.
             </p>
           </div>
         </div>
@@ -483,16 +467,15 @@ export default function SeoServicePage() {
       <section className={t.prioSection} style={{ background: "var(--h-navy)", color: "var(--h-white)" }}>
         <h2 className={t.prioTitle}>Monthly SEO Pricing</h2>
         <div className={t.prioRow}>
-          <p className={t.prioLabel}>Ongoing SEO starts at $3,000 CAD per month, plus applicable taxes.</p>
+          <p className={t.prioLabel}>Starting at $3,000 CAD per month + applicable GST</p>
           <div className={t.prioBody}>
             <p>
-              Every engagement is scoped around your website, competition,
-              target markets, and business priorities.
+              Our monthly SEO campaigns are scoped around your website,
+              competitive market, and business objectives.
             </p>
             <p>
-              There are no fixed Bronze, Silver, or Gold packages. Instead, the
-              work is planned around the improvements most relevant to your
-              business.
+              Rather than fixed packages, we prioritize the work your website
+              needs.
             </p>
             <ul className={t.checks} style={{ borderTopColor: "rgba(254,254,254,0.2)" }}>
               {pricingPoints.map((f) => (
@@ -510,15 +493,9 @@ export default function SeoServicePage() {
       <ServicesFaq items={faqs} title={<>Frequently Asked Questions</>} />
 
       <ContactSection
-        heading="Let's Improve Your Organic Search Performance"
-        lead="If your website isn't attracting enough qualified enquiries, we can help identify what's limiting its performance and where the best opportunities may be. You'll work directly with us to understand your website, competition, and the SEO improvements worth prioritizing."
+        heading="Let's Improve Your Search Visibility"
+        lead="Tell us about your business, the services you want to grow, and what you're looking to achieve through Google. We'll review your requirements and discuss where SEO could make the greatest difference."
         cta={{ href: CONTACT_URL, label: "Book a Strategy Call →" }}
-        note={
-          <>
-            Looking for a one-time assessment?{" "}
-            <Link href="/services/seo-audits">Explore SEO Audits</Link>.
-          </>
-        }
       />
     </main>
   );
