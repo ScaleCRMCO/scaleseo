@@ -6,9 +6,9 @@ import t from "../services/svc.module.css";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: { absolute: "About Scale SEO | Independent Calgary SEO Consultancy" },
+  title: { absolute: "About Scale SEO | Accounting SEO Specialists" },
   description:
-    "Learn about Scale SEO, a founder-led SEO consultancy based in Calgary. Discover our approach, experience across Canada and Australia, and commitment to clients.",
+    "Learn about Scale SEO, a Calgary-based SEO consultancy specializing in accounting firms, CPA practices, and financial services across Canada and Australia.",
   alternates: { canonical: "/about" },
 };
 
@@ -16,20 +16,20 @@ const BOOKING_URL = "https://cal.com/corbinjensen-scaleseo/30min";
 
 const principles = [
   {
-    title: "Direct Collaboration",
-    body: "Clients work directly with the specialist managing their SEO, without unnecessary layers of account management.",
+    title: "Industry Understanding",
+    body: "We take the time to understand each firm\u2019s services, ideal clients, and competitive market before developing a strategy.",
   },
   {
-    title: "Practical Execution",
-    body: "SEO strategies are supported by hands-on website improvements, not just reports and recommendations.",
+    title: "Technical Expertise",
+    body: "From website architecture and technical SEO to content and Google Ads, our work goes beyond recommendations to implementation.",
   },
   {
-    title: "Transparent Communication",
-    body: "Clear priorities, straightforward reporting, and honest conversations about progress, challenges, and opportunities.",
+    title: "Clear Communication",
+    body: "Straightforward reporting, defined priorities, and open conversations about performance and opportunities.",
   },
   {
-    title: "Flexible Engagements",
-    body: "Ongoing SEO services are offered month-to-month, without long-term contracts or unnecessary commitments.",
+    title: "Long-Term Thinking",
+    body: "We focus on sustainable search visibility and lasting client relationships, with flexible month-to-month engagements.",
   },
 ];
 
@@ -48,7 +48,7 @@ const aboutJsonLd = {
       url: "https://scaleseo.co/about",
       name: "About Scale SEO",
       description:
-        "Learn about Scale SEO, an independent SEO practice based in Calgary, Alberta, helping professional service and B2B businesses improve their organic search visibility across Canada and internationally.",
+        "Learn about Scale SEO, a Calgary-based SEO consultancy specializing in accounting firms, CPA practices, and financial services across Canada and Australia.",
       isPartOf: { "@id": "https://scaleseo.co/#website" },
       about: { "@id": "https://scaleseo.co/#organization" },
       mainEntity: { "@id": "https://scaleseo.co/#organization" },
@@ -116,8 +116,8 @@ export default function AboutPage() {
           </div>
           <h1 className={styles.heroTitle}>About Scale SEO</h1>
           <p className={styles.heroLead}>
-            Independent SEO consultancy. Built around expertise, transparency,
-            and long-term client relationships.
+            Independent SEO consultancy. Specialized in accounting and
+            professional services.
           </p>
         </div>
         {/* Large logo mark: navy on white; its lower part continues in the
@@ -138,12 +138,19 @@ export default function AboutPage() {
             <path d="M205.6 157.9v104.2h37.9V120H101.4v37.9z" />
           </svg>
         </div>
-        <p className={styles.introText}>
-          Founded in 2025 by Corbin Jensen, Scale SEO provides hands-on search
-          engine optimization, web development, and digital growth services,
-          with a particular focus on professional service and B2B businesses
-          across Canada &amp; internationally.
-        </p>
+        <div className={styles.introText}>
+          <p>
+            Founded in 2025 in Calgary, Alberta, Scale SEO helps accounting firms
+            improve their visibility on Google and attract more qualified
+            business enquiries.
+          </p>
+          <p style={{ marginTop: "0.7em" }}>
+            We combine search engine optimization, Google Ads, and website
+            development to help CPA firms, tax accountants, bookkeeping
+            practices, and financial advisory businesses grow across Canada and
+            Australia.
+          </p>
+        </div>
       </section>
       <div className={styles.band}>
         <Image
@@ -156,33 +163,32 @@ export default function AboutPage() {
 
       {/* === AN INDEPENDENT APPROACH — heading, big stat, text bottom-right === */}
       <section className={styles.approach}>
-        <h2 className={`${t.h2} ${styles.approachTitle}`}>An Independent Approach to SEO</h2>
+        <h2 className={`${t.h2} ${styles.approachTitle}`}>A More Focused Approach to Search</h2>
         <div className={styles.statBlock}>
           <span className={t.stat}>2025</span>
           <p className={t.statLabel}>Founded in Calgary, Alberta</p>
         </div>
         <div className={styles.approachBody}>
           <p className={t.lead}>
-            Scale SEO was founded on a simple principle: businesses should have
-            direct access to the specialist responsible for their SEO strategy
-            and website improvements.
+            Scale SEO was established with a straightforward idea: effective SEO
+            starts with understanding the business behind the website.
           </p>
           <div className={t.body}>
             <p>
-              Rather than relying on layers of account management or
-              standardized monthly packages, Scale SEO takes a hands-on approach
-              to each engagement.
+              Today, our primary focus is the accounting industry. Through
+              ongoing work with firms in Canada and Australia, we&rsquo;ve
+              developed practical experience in how accounting services are
+              searched for, evaluated, and presented online.
             </p>
             <p>
-              Every strategy begins with understanding the client&rsquo;s
-              business, its customers, and the services that matter most. From
-              there, the focus is on practical improvements that strengthen
-              search visibility and support long-term growth.
+              From corporate tax and bookkeeping to fractional CFO and business
+              advisory services, we build strategies around the work our clients
+              want more of.
             </p>
           </div>
           <Link href="/services" className={`${t.box} ${t.boxNavy}`}>
             <Corner />
-            <span>Explore SEO Services →</span>
+            <span>Explore Our Services →</span>
           </Link>
         </div>
       </section>
@@ -190,42 +196,42 @@ export default function AboutPage() {
       {/* === EXPERIENCE — blue grid: heading | text, then markets/industries rows === */}
       <section className={styles.exp}>
         <div className={styles.expHead}>
-          <h2 className={styles.expTitle}>Experience Across Different Markets</h2>
-          <span className={styles.expNote}>Where the work happens</span>
+          <h2 className={styles.expTitle}>Experience Across Two Markets</h2>
+          <span className={styles.expNote}>Canada &amp; Australia</span>
         </div>
         <div className={styles.expText}>
           <p>
-            Search behaviour, competition, and customer expectations vary
-            between industries and countries. What works for an accounting firm
-            in Canada may look very different from what a plumbing company in
-            Australia needs to attract customers.
+            Accounting firms operate in competitive markets where expertise,
+            reputation, and trust influence how clients choose a provider.
           </p>
           <p>
-            Scale SEO takes these differences into account when developing each
-            strategy, from understanding local search trends and
-            industry-specific terminology to identifying how potential customers
-            research and choose a business.
+            Our experience with{" "}
+            <Link href="/results/jensen-cpa" className={styles.inlineLink}>Jensen CPA</Link> in Calgary and{" "}
+            <Link href="/results/empire-accountants" className={styles.inlineLink}>Empire Accountants</Link> in
+            Brisbane has shaped our understanding of the industry across two
+            distinct markets.
           </p>
           <p>
-            The result is an approach shaped around each client&rsquo;s market,
-            rather than applying the same strategy to every website.
+            While the terminology, regulations, and search behaviour differ, our
+            approach remains consistent: understand the firm&rsquo;s priorities,
+            improve its search presence, and measure the results.
           </p>
           <Link href="/results" className={styles.expLink}>
             <Corner />
-            <span>View Client Results →</span>
+            <span>View Our Client Results →</span>
           </Link>
         </div>
 
         <h3 className={styles.expGroup}>Markets</h3>
         <ul className={styles.expRows}>
-          {["Canada", "Australia", "United States"].map((m) => (
+          {["Canada", "Australia"].map((m) => (
             <li key={m}>{m}</li>
           ))}
         </ul>
 
-        <h3 className={styles.expGroup}>Industries</h3>
+        <h3 className={styles.expGroup}>Specialties</h3>
         <ul className={styles.expRows}>
-          {["Accounting & Finance", "Professional Services", "Consulting & B2B", "Construction & Contracting", "Home Services"].map((m) => (
+          {["CPA & Accounting Firms", "Corporate Tax & Advisory", "Bookkeeping & Cloud Accounting", "Fractional CFO Services"].map((m) => (
             <li key={m}>{m}</li>
           ))}
         </ul>
@@ -263,21 +269,20 @@ export default function AboutPage() {
         </div>
         <div className={styles.founderText}>
           <p className={styles.founderLead}>
-            I&rsquo;m Corbin, the founder and SEO specialist behind Scale SEO.
-            I manage every SEO campaign personally, from research and strategy
-            through to technical improvements, content, and ongoing
-            optimization.
+            Scale SEO was founded by Corbin Jensen, a Canadian SEO specialist
+            with experience developing search strategies and websites for
+            businesses in Canada and Australia.
           </p>
           <div className={styles.founderBody}>
             <p>
-              My approach is straightforward: clear communication, practical
-              recommendations, and work that contributes to real business
-              outcomes.
+              Corbin&rsquo;s work spans technical SEO, website development,
+              search strategy, and content optimization, with a growing
+              specialization in accounting and financial services.
             </p>
             <p>
-              I believe clients should know exactly who is working on their
-              website and have direct access to that person throughout the
-              engagement.
+              His work with accounting firms has helped shape Scale SEO&rsquo;s
+              focus on relevant search visibility, practical implementation, and
+              measurable business outcomes.
             </p>
           </div>
           <Link href="/corbin-jensen" className={`${t.box} ${t.boxGrey}`}>
@@ -291,15 +296,11 @@ export default function AboutPage() {
            (outer two boxes empty) === */}
       <section className={styles.partners}>
         <div className={styles.partnersHead}>
-          <h2 className={styles.partnersTitle}>Built for Long-Term Partnerships</h2>
+          <h2 className={styles.partnersTitle}>How We Work</h2>
           <div className={styles.partnersText}>
             <p>
-              Scale SEO is built around a focused, specialist-led approach rather
-              than the traditional high-volume agency model.
-            </p>
-            <p>
-              The emphasis is on building lasting client relationships through
-              consistent work, clear communication, and accountability.
+              We believe good SEO should be practical, transparent, and closely
+              connected to the business it supports.
             </p>
           </div>
         </div>
@@ -329,11 +330,17 @@ export default function AboutPage() {
           </svg>
           <h2 className={t.h2}>Work With Scale SEO</h2>
           <div className={styles.ctaBottom}>
-            <p className={styles.ctaNote}>
-              Whether you&rsquo;re based in Calgary, elsewhere in Canada, or
-              internationally, Scale SEO provides hands-on SEO services
-              tailored to your business, market, and goals.
-            </p>
+            <div className={styles.ctaNote}>
+              <p>
+                We work with accounting firms and professional service
+                businesses across Canada and Australia.
+              </p>
+              <p style={{ marginTop: "0.7em" }}>
+                Whether you&rsquo;re looking to strengthen your organic
+                visibility, reach new clients through Google Ads, or develop a
+                better website, we&rsquo;re here to help.
+              </p>
+            </div>
             <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className={styles.ctaBtn}>
               <Corner />
               <span>Book a Consultation →</span>

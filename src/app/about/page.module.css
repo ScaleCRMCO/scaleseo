@@ -313,3 +313,4 @@
   .pBox { min-height: 220px; }
 }
 @media (max-width: 600px) { .partnersGrid { grid-template-columns: 1fr; } }
+.inlineLink { color: inherit; text-decoration: underline; text-underline-offset: 3px; } .inlineLink:hover { opacity: 0.8; }
