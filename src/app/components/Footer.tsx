@@ -42,17 +42,19 @@ type Item = { href: string; label: string; external?: boolean };
 function Column({ title, items }: { title: string; items: Item[] }) {
   return (
     <div className={styles.col}>
-      <div className={styles.colLabel}>{title}</div>
+      <div className={styles.colLabel}>/ {title}</div>
       <ol className={styles.list}>
         {items.map((item) => (
           <li key={item.href}>
             {item.external ? (
               <a href={item.href} target="_blank" rel="noopener noreferrer" className={styles.row}>
                 <span>{item.label}</span>
+                <svg className={styles.corner} viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true"><path d="M1 1.5h7.5V9" /></svg>
               </a>
             ) : (
               <Link href={item.href} className={styles.row}>
                 <span>{item.label}</span>
+                <svg className={styles.corner} viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true"><path d="M1 1.5h7.5V9" /></svg>
               </Link>
             )}
           </li>
@@ -65,77 +67,74 @@ function Column({ title, items }: { title: string; items: Item[] }) {
 export default function Footer() {
   return (
     <footer className={styles.footer} data-nav="dark">
-      <div className={styles.top}>
-        {/* Left: CTA, contact details, trust badges */}
-        <div className={styles.lead}>
+      <div className={styles.wrap}>
+        {/* CTA band (Bilberrry): statement left, button + note right */}
+        <div className={styles.cta}>
           <p className={styles.ctaText}>Every great SEO campaign starts with a conversation</p>
-          <a
-            href="https://cal.com/corbinjensen-scaleseo/30min"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.ctaSlim}
-          >
-            <svg className={styles.ctaCorner} viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
-              <path d="M1 1.5h7.5V9" />
-            </svg>
-            <span>Speak to an Expert</span>
-          </a>
-          <div className={styles.contactLines}>
-            <a href="tel:+14038751110">(403) 875-1110</a>
-            <a href="mailto:team@scaleseo.co">team@scaleseo.co</a>
+          <div className={styles.ctaSide}>
+            <a href="https://cal.com/corbinjensen-scaleseo/30min" target="_blank" rel="noopener noreferrer" className={styles.btn}>
+              <span>Speak to an Expert</span>
+              <svg className={styles.corner} viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true"><path d="M1 1.5h7.5V9" /></svg>
+            </a>
           </div>
         </div>
 
-        {/* Right: categorized link columns */}
-        <div className={styles.cols}>
-          <Column title="Company" items={pages} />
-          <Column title="Services" items={services} />
-          <Column title="Locations" items={locations} />
-          <Column title="Connect" items={connect} />
-        </div>
-
-        {/* Trust row: badges left, office address right */}
-        <div className={styles.trust}>
-          <div className={styles.badges}>
+        {/* Main grid (Mamba): contact + office + badges left, link columns right */}
+        <div className={styles.main}>
+          <div className={styles.info}>
+            <div>
+              <div className={styles.colLabel}>/ Reach Out</div>
+              <div className={styles.contactLines}>
+                <a href="mailto:team@scaleseo.co">team@scaleseo.co</a>
+                <a href="tel:+14038751110">(403) 875-1110</a>
+              </div>
+            </div>
+            <div>
+              <div className={styles.colLabel}>/ Calgary Office</div>
+              <address className={styles.address}>
+                1122 3 St SE Ste 1906
+                <br />
+                Calgary, AB T2G 0E7, Canada
+              </address>
+            </div>
+            <div className={styles.badges}>
+              <a href="https://agencies.semrush.com/scale-seo/" target="_blank" rel="noopener noreferrer" className={styles.badgeLink} aria-label="Semrush Certified Agency Partner">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/images/semrush-agency-partner.svg" alt="Semrush Certified Agency Partner" width={52} height={52} />
+              </a>
+              <a href="https://clutch.co/profile/scale-seo" target="_blank" rel="noopener noreferrer" className={styles.badgeLink} aria-label="Scale SEO reviews on Clutch">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/images/clutch-reviewed.svg" alt="Reviewed on Clutch" width={140} height={27} />
+              </a>
+              <DesignRushWidget className={styles.designrush} />
+            </div>
             <TrustindexWidget id="17e0136848d8361029462bf7c16" className={styles.reviews} />
-            <a href="https://agencies.semrush.com/scale-seo/" target="_blank" rel="noopener noreferrer" className={styles.badgeLink} aria-label="Semrush Certified Agency Partner">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/semrush-agency-partner.svg" alt="Semrush Certified Agency Partner" width={56} height={56} />
-            </a>
-            <a href="https://clutch.co/profile/scale-seo" target="_blank" rel="noopener noreferrer" className={styles.badgeLink} aria-label="Scale SEO reviews on Clutch">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/clutch-reviewed.svg" alt="Reviewed on Clutch" width={158} height={30} className={styles.clutch} />
-            </a>
-            <DesignRushWidget className={styles.designrush} />
           </div>
-          <div className={styles.office}>
-            <span className={styles.officeLabel}>Calgary Office</span>
-            <address className={styles.address}>
-              1122 3 St SE Ste 1906
-              <br />
-              Calgary, AB T2G 0E7, Canada
-            </address>
+
+          <div className={styles.cols}>
+            <Column title="Company" items={pages} />
+            <Column title="Services" items={services} />
+            <Column title="Locations" items={locations} />
+            <Column title="Connect" items={connect} />
           </div>
         </div>
 
-        {/* Giant wordmark across the bottom */}
+        {/* Wordmark, contained to the column */}
         <Link href="/" className={styles.wordmark} aria-label="Scale SEO home">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/brand/scaleseo-wordmark-white.svg" alt="Scale SEO" className={styles.logo} />
         </Link>
-      </div>
 
-      {/* Bottom bar */}
-      <div className={styles.bottom}>
-        <div className={styles.copy}>
-          © 2026 Scale SEO ·{" "}
-          <Link href="/privacy-policy" className={styles.link}>Privacy Policy</Link>
-        </div>
-        <div className={styles.bottomRight}>
-          <Link href="/business-information" className={styles.link}>Business Information</Link>
-          <span>SEO for Calgary · Serving Canada</span>
-          {/* Google "Add to Preferred Sources" button */}
-          <div google-add-preferred-source-btn="" data-theme="dark" />
+        <div className={styles.bottom}>
+          <div className={styles.copy}>
+            © 2026 Scale SEO ·{" "}
+            <Link href="/privacy-policy" className={styles.link}>Privacy Policy</Link>
+          </div>
+          <div className={styles.bottomRight}>
+            <Link href="/business-information" className={styles.link}>Business Information</Link>
+            <span>SEO for Calgary · Serving Canada</span>
+            <div google-add-preferred-source-btn="" data-theme="dark" />
+          </div>
         </div>
       </div>
     </footer>
