@@ -1,5 +1,4 @@
 import Link from "next/link";
-import ServicesMark from "./ServicesMark";
 import styles from "./ServicesGrid.module.css";
 
 const services = [
@@ -55,54 +54,56 @@ const services = [
   },
 ];
 
-function Card({ s }: { s: (typeof services)[number] }) {
-  return (
-    <Link href={s.href} className={styles.cell}>
-      <span className={styles.cellIndex}>{s.num}</span>
-      <h3 className={styles.cellTitle}>{s.title}</h3>
-      <div className={styles.cellDesc}>{s.desc.map((d) => <p key={d} style={{ marginBottom: 10 }}>{d}</p>)}</div>
-      <span className={styles.cellLink}>
-        <span>{s.cta} &rarr;</span>
-        <span className={styles.plus} aria-hidden="true">+</span>
-      </span>
-    </Link>
-  );
-}
-
+// Bilberrry-style list: heading + subline top-left, closing note
+// bottom-left, numbered service rows on the right.
 export default function ServicesGrid() {
   return (
     <section className={styles.section} id="services">
-      <h2 className={styles.introTitle}>SEO &amp; Digital Marketing for Accounting Firms</h2>
-      <p className={styles.introSub}>
-        We bring together organic search, paid advertising, and website
-        development to help accounting firms attract new clients and grow their
-        businesses.
-      </p>
-
-      {/* 3-column grid: card | logo mark | card, then three cards, then the
-          intro paragraph in the bottom-right cell */}
-      <div className={styles.grid}>
-        <Card s={services[0]} />
-        <ServicesMark />
-        <Card s={services[1]} />
-        <Card s={services[2]} />
-        <Card s={services[3]} />
-        <Card s={services[4]} />
-        <div className={styles.outro}>
-          <h3 className={styles.outroTitle}>One Strategy. Focused on Your Firm&rsquo;s Growth.</h3>
-          <p>
-            SEO, Google Ads, and your website shouldn&rsquo;t operate as separate
-            marketing efforts.
-          </p>
-          <p className={styles.outroSmall}>
-            We bring them together around your firm&rsquo;s goals, whether
-            that&rsquo;s attracting more corporate tax clients, growing monthly
-            bookkeeping revenue, or expanding your advisory services.
-          </p>
-          <Link href="/services" className={styles.allLink}>
-            Explore All Services →
-          </Link>
+      <div className={styles.listLayout}>
+        <div className={styles.listAside}>
+          <div>
+            <h2 className={styles.listTitle}>SEO &amp; Digital Marketing for Accounting Firms</h2>
+            <p className={styles.listSub}>
+              We bring together organic search, paid advertising, and website
+              development to help accounting firms attract new clients and grow
+              their businesses.
+            </p>
+          </div>
+          <div className={styles.listNote}>
+            <p>
+              SEO, Google Ads, and your website shouldn&rsquo;t operate as
+              separate marketing efforts.
+            </p>
+            <p>
+              We bring them together around your firm&rsquo;s goals, whether
+              that&rsquo;s attracting more corporate tax clients, growing monthly
+              bookkeeping revenue, or expanding your advisory services.
+            </p>
+            <Link href="/services" className={styles.allLink}>
+              Explore All Services →
+            </Link>
+          </div>
         </div>
+        <ol className={styles.list}>
+          {services.map((s) => (
+            <li key={s.href}>
+              <Link href={s.href} className={styles.listRow}>
+                <span className={styles.listNum}>/ {s.num}</span>
+                <span className={styles.listName}>
+                  {s.title}
+                  <svg className={styles.listArrow} viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+                    <path d="M1 1.5h7.5V9" />
+                  </svg>
+                </span>
+                <span className={styles.listDesc}>
+                  {s.desc.map((d) => (
+                    <span key={d}>{d}</span>
+                  ))}
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ol>
       </div>
     </section>
   );

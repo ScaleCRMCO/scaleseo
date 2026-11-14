@@ -137,15 +137,6 @@ export default function Nav() {
                   ))}
                 </div>
               ))}
-              <Link href="/services/seo" className={styles.megaFeature} onClick={close}>
-                <span className={styles.megaLabel}>Featured</span>
-                <span className={styles.megaImg}>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/images/nav-seo-organic.webp" alt="SEO / Organic" />
-                </span>
-                <span className={styles.megaName}>Full-Service SEO</span>
-                <span className={styles.megaSub}>Strategy, content, and technical improvements to help you rank higher on Google.</span>
-              </Link>
             </div>
             <Link href="/services" className={styles.megaAll} onClick={close}>
               <span>Explore all services</span>

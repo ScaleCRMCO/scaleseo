@@ -102,3 +102,35 @@
 .outroTitle { font-size: clamp(24px, 2vw, 32px); line-height: 1.15; font-weight: 400; letter-spacing: -0.02em; }
 .outroSmall { font-size: 17px; line-height: 1.5; color: rgba(254, 254, 254, 0.85); }
 @media (max-width: 800px) { .introSub { margin: -24px 0 40px; } }
+
+/* ===== Bilberrry-style services list ===== */
+.listLayout { display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.6fr); gap: clamp(40px, 6vw, 120px); }
+.listAside { display: flex; flex-direction: column; justify-content: space-between; gap: 64px; }
+.listTitle { max-width: 14ch; font-size: clamp(30px, 2.8vw, 46px); line-height: 1.08; font-weight: 600; letter-spacing: -0.03em; }
+.listSub { max-width: 40ch; margin-top: 24px; font-size: 17px; line-height: 1.5; color: rgba(254, 254, 254, 0.85); }
+.listNote { display: flex; flex-direction: column; gap: 14px; max-width: 40ch; font-size: 16px; line-height: 1.5; color: rgba(254, 254, 254, 0.85); }
+.listNote .allLink { margin-top: 6px; }
+.list { list-style: none; margin: 0; padding: 0; border-top: 1px dashed rgba(254, 254, 254, 0.35); }
+.list li { border-bottom: 1px dashed rgba(254, 254, 254, 0.35); }
+.listRow { display: grid; grid-template-columns: 64px minmax(0, 1fr) minmax(0, 1.25fr); gap: 24px; padding: 30px 0; color: var(--h-white); text-decoration: none; }
+.listNum { font-size: 16px; color: rgba(254, 254, 254, 0.7); }
+.listName { display: inline-flex; align-items: flex-start; gap: 12px; font-size: clamp(18px, 1.5vw, 22px); line-height: 1.25; font-weight: 500; }
+.listArrow { flex: none; width: 10px; height: 10px; margin-top: 6px; transition: transform 0.3s ease; }
+.listRow:hover .listArrow { transform: translate(4px, -4px); }
+.listRow:hover .listName { text-decoration: underline; text-underline-offset: 4px; }
+.listDesc { display: flex; flex-direction: column; gap: 8px; font-size: 16px; line-height: 1.5; color: rgba(254, 254, 254, 0.8); }
+@media (max-width: 1000px) {
+  .listLayout { grid-template-columns: 1fr; gap: 48px; }
+  .listAside { gap: 32px; }
+  .listNote { order: 2; }
+  .listRow { grid-template-columns: 48px 1fr; }
+  .listDesc { grid-column: 2; }
+}
+@media (max-width: 1000px) {
+  .listAside { display: contents; }
+  .listAside > div:first-child { order: 1; }
+  .list { order: 2; }
+  .listNote { order: 3; }
+}
+.listName { display: block; }
+.listArrow { display: inline-block; margin: 0 0 0 10px; vertical-align: 0.45em; }
