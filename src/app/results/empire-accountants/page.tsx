@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Breadcrumbs from "../../components/Breadcrumbs";
-import ContactSection from "../../components/ContactSection";
+import v from "../../sections/v3/v3.module.css";
+import { Btn } from "../../sections/v3/ui";
 import styles from "../cs.module.css";
 
 export const metadata: Metadata = {
@@ -104,7 +105,7 @@ const caseStudyJsonLd = {
 
 export default function EmpireAccountantsCaseStudy() {
   return (
-    <main className="v2">
+    <main className={`v2 ${v.page}`}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(caseStudyJsonLd) }}
@@ -122,9 +123,10 @@ export default function EmpireAccountantsCaseStudy() {
               schema={false}
             />
           </div>
-          <h1 className={styles.title}>Empire Accountants SEO Case Study</h1>
+          <Link href="/results" className={styles.back}>&larr; Back to Results</Link>
         </div>
         <div className={styles.heroRight}>
+          <h1 className={styles.title}>Empire Accountants SEO Case Study</h1>
           <p className={styles.summary}>
             <strong>
               How ongoing SEO helped an established Brisbane accounting firm
@@ -152,7 +154,27 @@ export default function EmpireAccountantsCaseStudy() {
         />
       </div>
 
-      <div className={styles.stats}>
+      <div className={styles.layout}>
+        <aside className={styles.side}>
+          <span className={styles.sideLabel}>On this page</span>
+          <ol className={styles.toc}>
+          {toc.map(([id, label]) => (
+            <li key={id}>
+              <a href={`#${id}`}>{label}</a>
+            </li>
+          ))}
+        </ol>
+          <div className={styles.sideCta}>
+            <p>Want results like this for your firm?</p>
+            <Btn href="https://cal.com/corbinjensen-scaleseo/30min" external>Speak to an Expert</Btn>
+          </div>
+        </aside>
+
+        <article className={styles.body}>
+
+      <section className={styles.highlights} aria-label="Highlights">
+          <span className={styles.hlLabel}>Highlights</span>
+          <div className={styles.stats}>
         <div className={styles.stat}>
           <span className={styles.statValue}>Page 5 &rarr; 1</span>
           <span className={styles.statLabel}>Priority commercial keyword rankings</span>
@@ -166,17 +188,8 @@ export default function EmpireAccountantsCaseStudy() {
           <span className={styles.statLabel}>New client enquiries through the firm&rsquo;s online presence</span>
         </div>
       </div>
+          </section>
 
-      <div className={styles.layout}>
-        <ol className={styles.toc}>
-          {toc.map(([id, label]) => (
-            <li key={id}>
-              <a href={`#${id}`}>{label}</a>
-            </li>
-          ))}
-        </ol>
-
-        <article className={styles.body}>
           <h2 id="overview">Overview</h2>
           <p>
             Empire Accountants is an accounting and business advisory firm based
@@ -378,7 +391,15 @@ export default function EmpireAccountantsCaseStudy() {
         </div>
       </section>
 
-      <ContactSection />
+      <section className={`${v.white} ${v.ctaSec}`}>
+        <div className={v.wrap}>
+          <div className={v.ctaBox} data-nav="dark">
+            <h2 className={v.h2}>Ready to Grow Your Accounting Firm?</h2>
+            <p className={v.p}>Let&rsquo;s discuss your firm&rsquo;s goals, current marketing, and opportunities to attract more clients through Google. Tell us about your practice and the services you want to grow. You&rsquo;ll hear back directly, usually within 24 hours.</p>
+            <Btn href="https://cal.com/corbinjensen-scaleseo/30min" external>Speak to an Expert</Btn>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
