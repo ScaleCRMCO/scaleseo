@@ -10,7 +10,7 @@ import t from "../svc.module.css";
 export const metadata: Metadata = {
   title: { absolute: "Google Ads Management Calgary | Scale SEO" },
   description:
-    "Google Ads management for Calgary and Canadian businesses. Founder-led campaigns, conversion tracking and landing page improvements, with or without SEO.",
+    "Google Ads management in Calgary for accounting firms and professional services. Search campaigns, conversion tracking, and ongoing optimization.",
   alternates: { canonical: "/services/google-ads-management" },
 };
 
@@ -18,85 +18,47 @@ const PAGE = "https://scaleseo.co/services/google-ads-management";
 
 const included: { title: string; body: string[] }[] = [
   {
-    title: "Campaign Setup & Targeting",
+    title: "Campaign Strategy & Setup",
     body: [
-      "We build or improve Google Search campaigns around your services, target locations, and business goals.",
-      "This includes campaign structure, keyword research, location targeting, ad copy, and relevant ad assets.",
+      "We research relevant search terms, assess competition, and structure campaigns around your services, locations, and advertising budget.",
+      "This includes keyword targeting, ad copy, campaign settings, and negative keywords.",
     ],
   },
   {
     title: "Conversion Tracking",
     body: [
-      "Clicks alone don’t tell us whether advertising is working.",
-      "We review or configure appropriate conversion tracking, such as phone calls and enquiry forms, so we can better understand which campaigns are generating useful customer actions.",
+      "We track meaningful actions, including phone calls and website enquiries, to understand how campaigns contribute to your business.",
+      "The focus is on lead quality, not just clicks.",
     ],
   },
   {
-    title: "Landing Page Improvements",
+    title: "Landing Page Optimization",
     body: [
-      "The page someone visits after clicking an ad matters.",
-      "We review your landing pages to ensure they match the searcher’s intent, clearly explain your services, and make it easy to enquire.",
-      "Where needed, we can also make website improvements or develop dedicated landing pages as part of an agreed project scope.",
+      "A good advertisement needs a relevant landing page.",
+      "We review your service pages, messaging, and enquiry process to help visitors find the information they need and take the next step.",
     ],
   },
   {
-    title: "Ongoing Campaign Optimization",
+    title: "Ongoing Optimization",
     body: [
-      "Once campaigns are running, we monitor search terms, negative keywords, budgets, bidding, and conversion performance.",
-      "We use the available data to identify wasted spend, test improvements, and adjust the campaigns as performance develops.",
+      "We monitor search terms, budgets, bidding, and conversion performance.",
+      "Campaigns are refined using actual performance data, with a focus on reducing wasted spend and improving results over time.",
     ],
   },
 ];
 
 const steps: { title: string; body: string[] }[] = [
-  {
-    title: "01 — Review & Strategy",
-    body: [
-      "We review your business, website, advertising goals, and existing campaigns if you have them.",
-      "From there, we recommend a suitable approach, including the campaign focus, initial budget, and any website improvements needed before launch.",
-    ],
-  },
-  {
-    title: "02 — Setup & Launch",
-    body: [
-      "We develop the campaigns, configure targeting and relevant tracking, and review the landing pages before launching.",
-    ],
-  },
-  {
-    title: "03 — Monitor & Improve",
-    body: [
-      "After launch, we review performance and make adjustments based on search terms, enquiries, costs, and available conversion data.",
-      "You’ll receive clear updates on campaign performance and the changes being made.",
-    ],
-  },
+  { title: "01 \u2014 Review", body: ["We assess your website, target market, advertising goals, and existing campaign performance."] },
+  { title: "02 \u2014 Launch", body: ["We develop the campaign structure, configure targeting and tracking, and prepare the landing pages."] },
+  { title: "03 \u2014 Optimize", body: ["We monitor campaign performance, refine targeting, and report on enquiries, costs, and opportunities for improvement."] },
 ];
 
 const faqs: FaqItem[] = [
-  {
-    q: "Can I use Google Ads without monthly SEO?",
-    a: [
-      "Yes. Scale SEO also takes on standalone Google Ads projects.",
-      "Before recommending a campaign, we’ll review your website, goals, and available budget to determine whether paid search is likely to be a suitable investment.",
-    ],
-  },
-  {
-    q: "How quickly can Google Ads generate leads?",
-    a: [
-      "Google Ads can begin showing your business in sponsored search results shortly after an eligible campaign launches.",
-      "However, the time required to generate enquiries varies depending on competition, budget, search demand, landing pages, and campaign performance.",
-    ],
-  },
-  {
-    q: "Do I need a separate landing page?",
-    a: [
-      "Not always. If your existing service pages are relevant and make it easy for visitors to enquire, they may be suitable.",
-      "If the website needs improvement, we’ll explain what we recommend before additional development work begins.",
-    ],
-  },
-  {
-    q: "Do I own my Google Ads account?",
-    a: ["Yes. Your Google Ads account, campaign data, and advertising assets remain under your ownership."],
-  },
+  { q: "Can I use Google Ads without monthly SEO?", a: ["Yes. We offer standalone Google Ads management as well as integrated SEO and paid search campaigns."] },
+  { q: "How quickly can Google Ads generate leads?", a: ["Campaigns can begin showing eligible ads shortly after launch. Generating qualified enquiries depends on your budget, competition, targeting, and landing page performance."] },
+  { q: "Do I need a separate landing page?", a: ["Not always. Existing service pages may be suitable if they\u2019re relevant to the advertisement and make it easy for visitors to enquire."] },
+  { q: "Do you manage Google Ads outside Calgary?", a: ["Yes. We work with accounting firms and established service businesses across Canada and Australia, tailoring campaigns to their target markets."] },
+  { q: "Do I own my Google Ads account?", a: ["Yes. You retain ownership of your advertising account, campaign data, and assets."] },
 ];
 
 const adsJsonLd = {
@@ -108,7 +70,7 @@ const adsJsonLd = {
       url: PAGE,
       name: "Google Ads Management Calgary | Scale SEO",
       description:
-        "Google Ads management for Calgary and Canadian businesses. Founder-led campaigns, conversion tracking and landing page improvements, with or without SEO.",
+        "Google Ads management in Calgary for accounting firms and professional services. Search campaigns, conversion tracking, and ongoing optimization.",
       isPartOf: { "@id": "https://scaleseo.co/#website" },
       mainEntity: { "@id": `${PAGE}#service` },
       publisher: { "@id": "https://scaleseo.co/#organization" },
@@ -129,6 +91,7 @@ const adsJsonLd = {
       areaServed: [
         { "@type": "City", name: "Calgary" },
         { "@type": "Country", name: "Canada" },
+        { "@type": "Country", name: "Australia" },
       ],
       audience: { "@type": "BusinessAudience", audienceType: "Professional service and B2B businesses" },
     },
@@ -189,8 +152,8 @@ export default function GoogleAdsPage() {
         <div className={t.splitLeft}>
           <p className={t.lead}>
             <strong>
-              Google Ads campaigns focused on reaching potential customers when
-              they&rsquo;re actively searching for your services.
+              Reach potential clients when they&rsquo;re searching for your
+              services.
             </strong>
           </p>
           <div className={t.chips}>
@@ -202,16 +165,13 @@ export default function GoogleAdsPage() {
         <div className={t.splitRight}>
           <div className={t.body}>
             <p className={t.lead}>
-              Scale SEO provides Google Ads management for professional service and
-              B2B businesses in Calgary and across Canada.
+              Scale SEO provides Google Ads management for accounting firms,
+              professional services, and established businesses across Canada
+              and Australia.
             </p>
             <p>
-              Scale SEO manages search campaigns alongside SEO to help businesses generate
-              enquiries while building their longer-term organic visibility.
-            </p>
-            <p>
-              Standalone Google Ads management is also available when your website,
-              budget, and business goals make it a good fit.
+              We build and manage search campaigns around relevant keywords,
+              qualified enquiries, and measurable business outcomes.
             </p>
           </div>
           <div className={t.boxRow}>
@@ -230,21 +190,20 @@ export default function GoogleAdsPage() {
         </div>
         <div className={t.rowsList}>
           <div className={t.body} style={{ paddingTop: 32, paddingBottom: 32 }}>
-            <p className={t.lead}>
-              Google Ads can help your business appear in sponsored search results
-              while your organic visibility is still developing.
+            <p className={t.lead}>Paid visibility today. Organic growth over time.</p>
+            <p>
+              Google Ads helps businesses reach potential customers through
+              sponsored search results, while SEO builds long-term organic
+              visibility.
             </p>
             <p>
-              Rather than managing advertising separately from your website, we look at how your campaigns, landing pages, and SEO strategy work together.
+              We manage both channels with your wider website strategy in mind,
+              aligning keywords, landing pages, and conversion tracking.
             </p>
             <p>
-              Paid search can also reveal which search terms generate enquiries,
-              helping identify opportunities for new service pages and ongoing SEO
-              improvements.
-            </p>
-            <p>
-              For businesses investing in both services, this creates a more
-              coordinated approach to attracting customers through Google.
+              For accounting firms, this can mean targeting searches for
+              corporate tax, bookkeeping, and advisory services while developing
+              organic visibility for those same services.
             </p>
             <Link href="/services/seo" className={`${t.box} ${t.boxGrey}`} style={{ marginTop: 16 }}>
               <Corner />
@@ -283,18 +242,22 @@ export default function GoogleAdsPage() {
           <div className={t.featureSide}>
             <div className={t.body}>
               <p>
-                Our Google Ads work includes managing search campaigns for MSV
-                Plumbing Services, a Brisbane plumbing business.
+                <strong>MSV Plumbing Services &mdash; Brisbane, Australia</strong>
+                <br />
+                Google Ads, SEO &amp; Website Development
               </p>
               <p>
-                The campaigns focus on high-intent searches for services such as
-                blocked drain clearing, with geographic targeting, call conversion
-                tracking, and ongoing keyword and search-term optimization.
+                We manage Google Search campaigns for MSV Plumbing Services,
+                targeting high-intent plumbing searches across Brisbane.
               </p>
               <p>
-                Because Scale SEO also manages MSV&rsquo;s website and SEO, we can review the
-                advertising and landing pages together rather than treating them as
-                separate projects.
+                Our work includes keyword research, location targeting, negative
+                keywords, call conversion tracking, and ongoing optimization.
+              </p>
+              <p>
+                With SEO and website development managed alongside advertising,
+                we can make improvements across both the campaigns and the pages
+                receiving traffic.
               </p>
             </div>
             <div className={t.featureLinks}>
@@ -310,7 +273,7 @@ export default function GoogleAdsPage() {
       {/* === PROCESS === */}
       <section className={t.rowsSplit} style={{ padding: 0 }}>
         <div className={t.rowsAside}>
-          <h2 className={t.h2}>How Google Ads Management Works</h2>
+          <h2 className={t.h2}>Our Google Ads Process</h2>
         </div>
         <div className={t.rowsList}>
           {steps.map((s) => (
@@ -332,17 +295,18 @@ export default function GoogleAdsPage() {
           <h2 className={t.h2}>Google Ads Management Pricing</h2>
         </div>
         <div className={t.pricingBody}>
-          <p className={t.pricingLead}>
-            Google Ads management is quoted individually based on your campaign
-            requirements, advertising budget, and whether you&rsquo;re also working
-            with Scale SEO on monthly SEO.
-          </p>
+          <p className={t.pricingLead}>Custom Monthly Quote</p>
           <div className={t.body}>
             <p>
-              Your advertising spend is paid directly to Google and is separate
-              from Scale SEO&rsquo;s management fees.
+              Our management fees are based on your campaign scope, target
+              markets, and advertising requirements.
             </p>
-            <p>You retain ownership of your Google Ads account and its data.</p>
+            <p>Google Ads can be managed independently or alongside an ongoing SEO campaign.</p>
+            <p>
+              Advertising spend is paid directly to Google and is separate from
+              our management fees. You retain ownership of your account and
+              campaign data.
+            </p>
           </div>
           <Link href="/contact" className={`${t.box} ${t.boxNavy}`}>
             <Corner />
@@ -354,8 +318,13 @@ export default function GoogleAdsPage() {
       <ServicesFaq items={faqs} title={<>Frequently Asked Questions</>} />
 
       <ContactSection
-        heading="Work Directly With Your Google Ads Manager"
-        lead="If you're considering Google Ads, either independently or alongside monthly SEO, we can review your goals and recommend an appropriate starting point."
+        heading="Get More From Google Ads"
+        lead="Whether you're starting a new campaign or looking to improve an existing one, we'll review your goals and recommend a practical approach."
+        points={[
+          "Campaigns focused on qualified enquiries",
+          "Clear reporting and ongoing optimization",
+          "Full ownership of your advertising account and data",
+        ]}
         cta={{ href: "/contact", label: "Book a Strategy Call →" }}
       />
     </main>
