@@ -14,7 +14,7 @@ const ICONS = {
   chart: "M4 20V10M10 20V4M16 20v-7M22 20H2",
 };
 
-const defaultPoints: DiffPoint[] = [
+export const defaultPoints: DiffPoint[] = [
   {
     icon: ICONS.calc,
     title: "Built for Accounting Firms",

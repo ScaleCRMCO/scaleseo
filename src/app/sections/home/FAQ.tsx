@@ -1,7 +1,7 @@
 import styles from "./FAQ.module.css";
 
 // Each answer is a list of paragraphs; the FAQPage schema joins them.
-const faqs: { q: string; a: string[] }[] = [
+export const faqs: { q: string; a: string[] }[] = [
   {
     q: "What SEO services do you provide for accounting firms?",
     a: [

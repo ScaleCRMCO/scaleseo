@@ -1,17 +1,7 @@
 import type { Metadata } from "next";
-import Hero from "./sections/home/Hero";
-import About from "./sections/home/About";
-import Differently, { whyPoints } from "./sections/home/Differently";
-import ServicesGrid from "./sections/home/ServicesGrid";
-import CaseStudy from "./sections/home/CaseStudy";
-import CampaignAreas from "./sections/home/CampaignAreas";
-import IndustriesTeaser from "./sections/home/IndustriesTeaser";
-import Process from "./sections/home/Process";
-import BlogTeaser from "./sections/home/BlogTeaser";
-import FAQ from "./sections/home/FAQ";
-import HomeCta from "./sections/home/HomeCta";
-import RevealOnScroll from "./components/RevealOnScroll";
-import Testimonials from "./components/Testimonials";
+import { Hero, Intro, Services, Cases, Help, Founder, Industries, Process, Why, Reviews, Faq, Blog, Cta } from "./sections/v3/Sections";
+import { faqs } from "./sections/home/FAQ";
+import v3 from "./sections/v3/v3.module.css";
 
 export const metadata: Metadata = {
   title: { absolute: "Calgary SEO Company | Founder-Led SEO Services | Scale SEO" },
@@ -67,36 +57,24 @@ const accountingCases = [
 
 export default function Home() {
   return (
-    <main className="home">
+    <main className={`home ${v3.page}`}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }}
       />
       <Hero />
-      <Differently />
-      <ServicesGrid />
-      <About />
-      <CaseStudy
-        label="Scale SEO Client Work"
-        heading="SEO Results From Real Accounting Firms"
-        aside="We work with accounting firms to improve their search visibility, strengthen their websites, and attract more of the clients they want to serve. Here’s a look at some of our work."
-        cards={accountingCases}
-      />
-      <CampaignAreas />
-      <IndustriesTeaser />
+      <Intro />
+      <Services />
+      <Cases cases={accountingCases} />
+      <Help />
+      <Founder />
+      <Industries />
       <Process />
-      <Differently
-        id="why-label"
-        label="Why Accounting Firms Choose Scale SEO"
-        points={whyPoints}
-        more={false}
-        wide
-      />
-      <Testimonials />
-      <FAQ />
-      <BlogTeaser />
-      <HomeCta />
-      <RevealOnScroll />
+      <Why />
+      <Reviews />
+      <Faq faqs={faqs} />
+      <Blog />
+      <Cta />
     </main>
   );
 }
