@@ -294,3 +294,36 @@ a:hover [class*="orner"], button:hover [class*="orner"] { transform: translate(4
 
 /* Bold H2s site-wide */
 main h2, footer h2, section h2 { font-weight: 600 !important; }
+
+/* ===== Homepage: contained 1280px column, blue as accent only ===== */
+main.home { --gutter: max(40px, calc((100vw - 1280px) / 2)); }
+main.home > section,
+main.home [class*="Differently_section"],
+main.home [class*="About_section"],
+main.home [class*="IndustriesTeaser_section"],
+main.home [class*="CampaignAreas_section"],
+main.home [class*="FAQ_section"],
+main.home [class*="BlogTeaser_section"],
+main.home [class*="HomeCta_section"] { padding-left: var(--gutter) !important; padding-right: var(--gutter) !important; }
+main.home [class*="Hero_top"], main.home [class*="Hero_logos"], main.home [class*="Hero_introSection"] { padding-left: var(--gutter) !important; padding-right: var(--gutter) !important; }
+main.home [class*="Hero_topBottom"] { left: var(--gutter) !important; right: var(--gutter) !important; }
+main.home [class*="Process_rows"] { padding-left: 0 !important; padding-right: 0 !important; }
+/* carousel stays edge-to-edge on the right, aligned to the column on the left */
+main.home [class*="CaseStudy_case"] { padding-left: 0 !important; padding-right: 0 !important; }
+main.home [class*="CaseStudy_head"] { padding-left: var(--gutter) !important; padding-right: var(--gutter) !important; }
+main.home [class*="CaseStudy_foot"] { padding-left: var(--gutter) !important; padding-right: var(--gutter) !important; }
+main.home [class*="CaseStudy_track"]:not([class*="centered"]) { padding-left: var(--gutter) !important; scroll-padding-left: var(--gutter) !important; }
+/* Testimonials: right side bleeds like the carousel */
+main.home [class*="Testimonials_section"] { padding-left: var(--gutter) !important; padding-right: 0 !important; background: var(--h-grey, #F1F3F6) !important; color: var(--h-navy, #081423) !important; }
+main.home [class*="Testimonials_toneTint"] { background: #FEFEFE !important; }
+/* Services: solid blue -> navy */
+main.home [class*="ServicesGrid_section"] { background: var(--h-navy, #081423) !important; }
+/* calmer H2s */
+main.home section h2[class*="heading"], main.home section h2[class*="Title"], main.home section h2[class*="headline"], main.home section h2[class*="headingBig"] { font-size: clamp(34px, 3.6vw, 56px) !important; line-height: 1.06 !important; letter-spacing: -0.03em !important; }
+/* logo mark accent above key headings (Mamba-style) */
+main.home section h2[class*="heading"]::before, main.home section h2[class*="listTitle"]::before, main.home section h2[class*="headline"]::before, main.home section h2[class*="wideTitle"]::before {
+  content: ""; display: block; width: 26px; height: 26px; margin-bottom: 22px; background: #0099FF;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 366 366' fill='none' stroke='black'%3E%3Ccircle cx='183' cy='183' r='164' stroke-width='44'/%3E%3Cpath d='M101 139 H224.5 V262' stroke-width='46'/%3E%3C/svg%3E") center / contain no-repeat;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 366 366' fill='none' stroke='black'%3E%3Ccircle cx='183' cy='183' r='164' stroke-width='44'/%3E%3Cpath d='M101 139 H224.5 V262' stroke-width='46'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+@media (max-width: 760px) { main.home { --gutter: 20px; } }

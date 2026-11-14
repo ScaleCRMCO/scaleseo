@@ -58,7 +58,7 @@ const services = [
 // bottom-left, numbered service rows on the right.
 export default function ServicesGrid() {
   return (
-    <section className={styles.section} id="services">
+    <section className={styles.section} id="services" data-nav="dark">
       <div className={styles.listLayout}>
         <div className={styles.listAside}>
           <div>
