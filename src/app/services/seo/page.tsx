@@ -1,15 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Breadcrumbs from "../../components/Breadcrumbs";
-import ContactSection from "../../components/ContactSection";
-import ServicesMark from "../../sections/home/ServicesMark";
-import ServicesFaq, { type FaqItem } from "../ServicesFaq";
-// Shared service page template (new brand)
-import t from "../svc.module.css";
-import ab from "../../about/page.module.css";
-import g from "../../sections/home/ServicesGrid.module.css";
-import CountUp from "../../components/CountUp";
-import PinnedPoints, { type PinnedItem } from "../../components/PinnedPoints";
+import { type FaqItem } from "../ServicesFaq";
+import ServiceTemplate from "../ServiceTemplate";
+import v from "../../sections/v3/v3.module.css";
 
 export const metadata: Metadata = {
   title: { absolute: "SEO Services Calgary | Accounting & Business SEO | Scale SEO" },
@@ -22,12 +15,12 @@ export const metadata: Metadata = {
 /* === Content ============================================================ */
 
 const included = [
-  { title: "SEO Strategy & Research", body: "We research your market, competitors, and the searches most relevant to your business. Every campaign starts with clear priorities and an understanding of what your customers are looking for." },
-  { title: "Technical SEO", body: "We address crawling, indexing, site structure, website performance, and other technical issues that affect how search engines access and understand your website." },
-  { title: "On-Page SEO", body: "We improve page content, titles, headings, internal links, and website architecture to better match relevant searches and help visitors find the right services." },
-  { title: "Content Strategy", body: "We develop service pages and supporting articles that answer real customer questions, demonstrate expertise, and strengthen your website\u2019s coverage of important topics." },
-  { title: "Local & National SEO", body: "Whether you\u2019re targeting customers in Calgary or businesses across Canada, we build strategies around your service areas, competition, and search demand." },
-  { title: "Website Improvements & Reporting", body: "We make ongoing website improvements and track search visibility, organic traffic, and enquiries to understand what\u2019s working and where to focus next." },
+  { title: "SEO Strategy & Research", icon: "search", body: "We research your market, competitors, and the searches most relevant to your business. Every campaign starts with clear priorities and an understanding of what your customers are looking for." },
+  { title: "Technical SEO", icon: "gear", body: "We address crawling, indexing, site structure, website performance, and other technical issues that affect how search engines access and understand your website." },
+  { title: "On-Page SEO", icon: "page", body: "We improve page content, titles, headings, internal links, and website architecture to better match relevant searches and help visitors find the right services." },
+  { title: "Content Strategy", icon: "pen", body: "We develop service pages and supporting articles that answer real customer questions, demonstrate expertise, and strengthen your website\u2019s coverage of important topics." },
+  { title: "Local & National SEO", icon: "pin", body: "Whether you\u2019re targeting customers in Calgary or businesses across Canada, we build strategies around your service areas, competition, and search demand." },
+  { title: "Website Improvements & Reporting", icon: "chart", body: "We make ongoing website improvements and track search visibility, organic traffic, and enquiries to understand what\u2019s working and where to focus next." },
 ];
 
 const cases = [
@@ -58,29 +51,32 @@ const cases = [
   },
 ];
 
-const markets: { title: string; body: string; href?: string; cta?: string }[] = [
+const markets: { title: string; icon: string; body: string; href?: string; cta?: string }[] = [
   {
     title: "Accounting & Financial Services",
+    icon: "building",
     body: "SEO for CPA firms, tax accountants, bookkeeping practices, and financial advisory businesses looking to attract more qualified clients.",
     href: "/industries/accounting-firms",
     cta: "Explore SEO for Accounting Firms",
   },
   {
     title: "Professional Services & B2B",
+    icon: "briefcase",
     body: "Search strategies for consultants and specialist businesses whose clients research and compare providers before making an enquiry.",
   },
   {
     title: "Construction & Contracting",
+    icon: "hammer",
     body: "Local and service-based SEO for contractors looking to improve visibility for relevant residential and commercial projects.",
     href: "/results",
     cta: "View Our Client Work",
   },
 ];
 
-const process: PinnedItem[] = [
-  { title: "Research", body: ["We review your website, search performance, competitors, and business priorities to identify where the best opportunities exist."] },
-  { title: "Implement", body: ["We improve technical foundations, service pages, content, and internal linking based on the agreed strategy."] },
-  { title: "Refine", body: ["We monitor performance, review changes in search demand, and adjust priorities as your website develops."] },
+const process = [
+  { title: "Research", body: "We review your website, search performance, competitors, and business priorities to identify where the best opportunities exist." },
+  { title: "Implement", body: "We improve technical foundations, service pages, content, and internal linking based on the agreed strategy." },
+  { title: "Refine", body: "We monitor performance, review changes in search demand, and adjust priorities as your website develops." },
 ];
 
 const pricingPoints = [
@@ -98,13 +94,6 @@ const faqs: FaqItem[] = [
   { q: "Do you guarantee Google rankings?", a: ["No. Search rankings are influenced by competition, Google\u2019s algorithms, and other factors outside any agency\u2019s control. We focus on measurable improvements, relevant visibility, and sustainable growth."] },
 ];
 
-const CONTACT_URL = "/contact";
-
-const Corner = () => (
-  <svg className={t.corner} viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
-    <path d="M1 1.5h7.5V9" />
-  </svg>
-);
 
 /* === Schema — WebPage + Service + BreadcrumbList graph, linked to the
    global #website and #organization nodes in layout.tsx. Includes this
@@ -255,247 +244,58 @@ const seoJsonLd = {
   ]
 };
 
-/* === Page =============================================================== */
-
+/* === Page — shared service template ==================================== */
 export default function SeoServicePage() {
   return (
-    <main className="v2">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(seoJsonLd) }}
-      />
-
-      {/* === HERO — breadcrumbs + big title, then image band === */}
-      <header>
-        <div className={t.hero}>
-          <div className={t.crumbs}>
-            <Breadcrumbs
-              items={[
-                { name: "Home", href: "/" },
-                { name: "Services", href: "/services" },
-                { name: "SEO" },
-              ]}
-              schema={false}
-            />
-          </div>
-          <h1 className={t.title}>SEO Services in Calgary</h1>
-        </div>
-        <div className={t.heroBand}>
-          <ServicesMark className={t.heroMark} slow />
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/images/gsc-performance-mockup-3d.webp"
-            alt="Google Search Console performance data showing clicks and impressions growth"
-          />
-        </div>
-      </header>
-
-      {/* === INTRO — large statement === */}
-      <section className={t.statementSection}>
-        <div className={t.statement}>
-          <p>
-            Scale SEO provides search engine optimization for accounting firms,
-            professional services, and established businesses across Canada and
-            Australia.
-          </p>
-          <p>
-            We combine technical SEO, content strategy, and website improvements
-            to help businesses reach the people searching for their services.
-          </p>
-        </div>
-        <div className={t.statementBottom}>
-          <span className={t.statementNote}>
-            <strong>Better search visibility. More qualified enquiries.</strong>
-          </span>
-          <div className={t.btnRow}>
-            <Link href="/results" className={`${t.box} ${t.boxGrey}`}>
-              <Corner />
-              <span>View Client Results</span>
-            </Link>
-            <Link href={CONTACT_URL} className={`${t.box} ${t.boxNavy}`}>
-              <Corner />
-              <span>Book a Strategy Call</span>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* === WHAT'S INCLUDED — About-page staggered boxes === */}
-      <section className={ab.partners} style={{ borderTop: "1px solid var(--h-rule)" }}>
-        <div className={ab.partnersHead}>
-          <h2 className={ab.partnersTitle}>What Goes Into Our SEO Campaigns?</h2>
-          <div className={ab.partnersText}>
-            <p>
-              Good SEO involves more than keywords and rankings. We identify
-              what&rsquo;s holding your website back, find opportunities in your
-              market, and make the improvements needed to compete.
-            </p>
-          </div>
-        </div>
-        <div className={ab.partnersGrid}>
-          {included.map((item, i) => (
-            <article
-              key={item.title}
-              className={ab.pBox}
-              style={i < 3 ? { gridColumn: i + 2, gridRow: 1 } : { gridColumn: i - 2, gridRow: 2 }}
-            >
-              <span className={ab.pNum}>{String(i + 1).padStart(2, "0")}</span>
-              <h3 className={ab.pTitle}>{item.title}</h3>
-              <p className={ab.pBody}>{item.body}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      {/* === RESULTS — full-bleed navy with case study rows === */}
-      <section className={t.expSection}>
-        <div className={t.expTop}>
-          <h2 className={t.expTitle}>SEO Results From Real Businesses</h2>
-          <div className={t.expBody}>
-            <p>Our work is measured through actual client campaigns, not hypothetical projections.</p>
-          </div>
-        </div>
-        {cases.map((c) => (
-          <div key={c.href} className={t.expRow}>
-            <div className={t.expLeft}>
-              <h3 className={t.expName}>{c.name}</h3>
-              <Link href={c.href} className={`${t.box} ${t.boxBlue}`}>
-                <Corner />
-                <span>{c.cta}</span>
-              </Link>
-            </div>
-            <div className={t.expText}>
-              {c.body.map((p) => (
-                <p key={p}>{p}</p>
-              ))}
-              <div className={t.expStats}>
-                {c.stats.map((m) => (
-                  <div key={m.label}>
-                    <span className={t.expStat}>
-                      <CountUp from={m.from} to={m.to} prefix={m.prefix} suffix={m.suffix} />
-                    </span>
-                    <span className={t.expStatLabel}>{m.label}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <Link href={c.href} className={t.expImg} tabIndex={-1} aria-hidden="true">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={c.img} alt="" loading="lazy" />
-            </Link>
-          </div>
-        ))}
-        <div className={t.expRow} style={{ alignItems: "center" }}>
-          <p className={t.expStatLabel}>Results vary by client, competition, and campaign scope.</p>
-          <div />
-          <Link href="/results" className={`${t.box} ${t.boxBlue}`} style={{ color: "var(--h-white)" }}>
-            <Corner />
-            <span>Explore All Client Results</span>
-          </Link>
-        </div>
-      </section>
-
-      {/* === LOCAL / NATIONAL / B2B — homepage-style blue cards === */}
-      <section className={g.section}>
-        <h2 className={g.introTitle} style={{ maxWidth: "18ch" }}>
-          Specialized in Accounting. Experienced Across Industries.
-        </h2>
-        <div className={g.grid}>
-          {markets.map((m, i) => {
-            const inner = (
-              <>
-                <span className={g.cellIndex}>{String(i + 1).padStart(2, "0")}</span>
-                <h3 className={g.cellTitle}>{m.title}</h3>
-                <p className={g.cellDesc}>{m.body}</p>
-                {m.href && (
-                  <span className={g.cellLink}>
-                    <span>{m.cta} &rarr;</span>
-                    <span className={g.plus} aria-hidden="true">+</span>
-                  </span>
-                )}
-              </>
-            );
-            return m.href ? (
-              <Link key={m.title} href={m.href} className={g.cell}>{inner}</Link>
-            ) : (
-              <div key={m.title} className={g.cell}>{inner}</div>
-            );
-          })}
-          <div className={g.outro} style={{ marginTop: 48 }}>
-            <p>Accounting and professional services are central to our work, but our experience extends across consulting, construction, and other established service businesses.</p>
-          </div>
-        </div>
-      </section>
-
-      {/* === PROCESS — pinned scroll section === */}
-      <PinnedPoints
-        title="Our SEO Process"
-        lead={
-          <>
-            SEO is ongoing work. Each stage builds on the improvements made
-            before it.
-          </>
-        }
-        items={process}
-      />
-
-      {/* === GOOD FIT — big H2, label left, text right === */}
-      <section className={t.prioSection} style={{ borderTop: "1px solid var(--h-rule)" }}>
-        <h2 className={t.prioTitle}>Is Ongoing SEO Right for Your Business?</h2>
-        <div className={t.prioRow}>
-          <p className={t.prioLabel} style={{ maxWidth: "24ch" }}>
-            Our campaigns are suited to established businesses looking to build
-            a long-term source of qualified enquiries through Google.
-          </p>
-          <div className={t.prioBody}>
-            <p>
-              We typically work with businesses that have clear services, defined
-              growth objectives, and a willingness to invest in ongoing website
-              improvements.
-            </p>
-            <p>
-              For businesses needing a one-time assessment, we also provide{" "}
-              <Link href="/services/seo-audits" className={t.inlineLink}>SEO audits</Link>. Those looking for paid search
-              support can explore our{" "}
-              <Link href="/services/google-ads-management" className={t.inlineLink}>Google Ads management</Link>.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* === PRICING — navy, big H2, label left, text right === */}
-      <section className={t.prioSection} style={{ background: "var(--h-navy)", color: "var(--h-white)" }}>
-        <h2 className={t.prioTitle}>Monthly SEO Pricing</h2>
-        <div className={t.prioRow}>
-          <p className={t.prioLabel}>Starting at $3,000 CAD per month + applicable GST</p>
-          <div className={t.prioBody}>
-            <p>
-              Our monthly SEO campaigns are scoped around your website,
-              competitive market, and business objectives.
-            </p>
-            <p>
-              Rather than fixed packages, we prioritize the work your website
-              needs.
-            </p>
-            <ul className={t.checks} style={{ borderTopColor: "rgba(254,254,254,0.2)" }}>
-              {pricingPoints.map((f) => (
-                <li key={f} style={{ borderBottomColor: "rgba(254,254,254,0.2)" }}>{f}</li>
-              ))}
-            </ul>
-            <Link href="/pricing" className={`${t.box} ${t.boxBlue}`} style={{ alignSelf: "flex-start", marginTop: 16, color: "var(--h-white)" }}>
-              <Corner />
-              <span>View SEO Pricing</span>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <ServicesFaq items={faqs} title={<>Frequently Asked Questions</>} />
-
-      <ContactSection
-        heading="Let's Improve Your Search Visibility"
-        lead="Tell us about your business, the services you want to grow, and what you're looking to achieve through Google. We'll review your requirements and discuss where SEO could make the greatest difference."
-        cta={{ href: CONTACT_URL, label: "Book a Strategy Call →" }}
+    <main className={`v2 ${v.page}`}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(seoJsonLd) }} />
+      <ServiceTemplate
+        crumb="SEO"
+        title="SEO Services in Calgary"
+        heroLead="Scale SEO provides search engine optimization for accounting firms, professional services, and established businesses across Canada and Australia."
+        heroImage={{ src: "/images/gsc-performance-mockup-3d.webp", alt: "Google Search Console performance data showing clicks and impressions growth" }}
+        statementLabel="Monthly SEO"
+        statement="We combine technical SEO, content strategy, and website improvements to help businesses reach the people searching for their services."
+        statementNote="Better search visibility. More qualified enquiries."
+        included={{
+          title: "What Goes Into Our SEO Campaigns?",
+          lead: "Good SEO involves more than keywords and rankings. We identify what\u2019s holding your website back, find opportunities in your market, and make the improvements needed to compete.",
+          items: included,
+          image: { src: "/images/jensen-cpa-cover.webp", alt: "The Jensen CPA team, a Scale SEO client in Calgary" },
+        }}
+        cases={{
+          title: "SEO Results From Real Businesses",
+          lead: "Our work is measured through actual client campaigns, not hypothetical projections.",
+          items: cases.map((c) => ({ name: c.name, body: c.body[0], stats: c.stats, href: c.href, cta: c.cta, img: c.img })),
+          note: "Results vary by client, competition, and campaign scope.",
+        }}
+        markets={{
+          title: "Specialized in Accounting. Experienced Across Industries.",
+          items: markets,
+          outro: "Accounting and professional services are central to our work, but our experience extends across consulting, construction, and other established service businesses.",
+        }}
+        process={{ title: "Our SEO Process", lead: "SEO is ongoing work. Each stage builds on the improvements made before it.", items: process }}
+        fit={{
+          title: "Is Ongoing SEO Right for Your Business?",
+          label: "Our campaigns are suited to established businesses looking to build a long-term source of qualified enquiries through Google.",
+          body: (
+            <>
+              <p>We typically work with businesses that have clear services, defined growth objectives, and a willingness to invest in ongoing website improvements.</p>
+              <p>
+                For businesses needing a one-time assessment, we also provide <Link href="/services/seo-audits">SEO audits</Link>. Those looking for paid search support can explore our <Link href="/services/google-ads-management">Google Ads management</Link>.
+              </p>
+            </>
+          ),
+        }}
+        pricing={{
+          title: "Monthly SEO Pricing",
+          price: "$3,000 CAD",
+          unit: "per month + applicable GST",
+          body: ["Our monthly SEO campaigns are scoped around your website, competitive market, and business objectives.", "Rather than fixed packages, we prioritize the work your website needs."],
+          points: pricingPoints,
+        }}
+        faqs={faqs}
+        cta={{ title: "Let\u2019s Improve Your Search Visibility", lead: "Tell us about your business, the services you want to grow, and what you\u2019re looking to achieve through Google. We\u2019ll review your requirements and discuss where SEO could make the greatest difference." }}
       />
     </main>
   );
