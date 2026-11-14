@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import CaseStudy from "../sections/home/CaseStudy";
+import ResultsList from "./ResultsList";
+import ClientLogos from "../components/ClientLogos";
+import v from "../sections/v3/v3.module.css";
+import { Btn, Eyebrow } from "../sections/v3/ui";
 import CountUp from "../components/CountUp";
 import Breadcrumbs from "../components/Breadcrumbs";
-import ContactSection from "../components/ContactSection";
-import hub from "../services/hub.module.css";
 import styles from "./results.module.css";
 
 export const metadata: Metadata = {
@@ -35,11 +35,13 @@ type Study = {
   url?: string;
   featured?: boolean;
   tint: "blue" | "orange" | "neutral";
+  category: string;
 };
 
 const studies: Study[] = [
   {
     id: "empire-accountants",
+    category: "Accounting Firms",
     eyebrow: "Featured Case Study",
     client: "Empire Accountants",
     meta: "Accounting & Advisory · Brisbane, Australia",
@@ -61,6 +63,7 @@ const studies: Study[] = [
   },
   {
     id: "jensen-cpa",
+    category: "Accounting Firms",
     eyebrow: "Accounting Firms",
     client: "Jensen CPA",
     meta: "Accounting & Tax · Calgary, Alberta",
@@ -80,6 +83,7 @@ const studies: Study[] = [
   },
   {
     id: "kinsmen-consulting",
+    category: "Construction & Trades",
     eyebrow: "Calgary · B2B",
     client: "Kinsmen Consulting Ltd.",
     meta: "Concrete & Construction · Calgary, Alberta",
@@ -96,6 +100,7 @@ const studies: Study[] = [
   },
   {
     id: "msv-plumbing-services",
+    category: "Construction & Trades",
     eyebrow: "Local SEO",
     client: "MSV Plumbing Services",
     meta: "Plumbing Services · Brisbane, Australia",
@@ -184,94 +189,78 @@ const resultsJsonLd = {
   ]
 };
 
-/* === Page =============================================================== */
+/* === Page — Bilberrry work index: side label + intro, logos, filter tabs,
+   alternating case rows; then how-we-get-results and a closing CTA ===== */
+const points = [
+  { value: "$1M+", title: "In Client Revenue Generated", body: "Our SEO and website projects have contributed to more than $1 million in client revenue across multiple businesses." },
+  { value: "01", title: "Built Around Each Business", body: "Each campaign can involve technical SEO, service-page improvements, content strategy, local SEO, internal linking, structured data, website development, and ongoing analysis." },
+  { value: "02", title: "Managed by the Founder", body: "Identify the opportunities that matter, improve the website around them, implement the work, and measure what changes. Every campaign is managed directly by founder Corbin Jensen." },
+];
 
 export default function ResultsPage() {
   return (
-    <main className="v2">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(resultsJsonLd) }}
-      />
+    <main className={`v2 ${v.page}`}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(resultsJsonLd) }} />
 
-      {/* === HERO — big title left, intro right === */}
-      {/* === HERO — navy: H1 left, intro right === */}
-      <header className={styles.navyHero} data-nav="dark">
-        <div className={styles.navyCrumbs}>
-          <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Results" }]} schema={false} />
+      <header className={`${v.white} ${styles.hero}`}>
+        <div className={v.wrap}>
+          <div className={styles.crumbs}>
+            <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Results" }]} schema={false} />
+          </div>
+          <div className={styles.heroGrid}>
+            <span className={styles.sideLabel}>Our client work</span>
+            <div>
+              <h1 className={styles.h1}>SEO Results &amp; Case Studies</h1>
+              <p className={styles.lead}>
+                We work with businesses across Canada and internationally to improve their search visibility, strengthen their websites, and attract more customers. Explore our case studies to see how practical SEO strategies, thoughtful execution, and ongoing improvements deliver measurable results.
+              </p>
+            </div>
+          </div>
         </div>
-        <div className={styles.navyRow}>
-          <h1 className={styles.navyTitle}>SEO Results &amp; Case Studies</h1>
-          <p className={styles.navyLead}>
-            We work with businesses across Canada and internationally to improve
-            their search visibility, strengthen their websites, and attract more
-            customers. Explore our case studies to see how practical SEO
-            strategies, thoughtful execution, and ongoing improvements deliver
-            measurable results.
-          </p>
-        </div>
+        <div className={styles.logos}><ClientLogos /></div>
       </header>
 
-      {/* === CASE STUDIES — homepage carousel, centred on Jensen CPA === */}
-      <CaseStudy
-        id="case-studies"
-        label="Client Work"
-        heading=""
-        centered
-        startIndex={1}
-        order={[3, 0, 1, 2]}
-        hideAll
-      />
+      <section className={`${v.white} ${styles.listSec}`}>
+        <ResultsList studies={studies.map(({ id, client, meta, category, metrics, title, body, caseStudyHref, image, url }) => ({ id, client, meta, category, metrics, title, body, caseStudyHref, image, url }))} />
+      </section>
 
-      {/* === RESULTS BUILT THROUGH HANDS-ON SEO — three points === */}
-      <section className={styles.how}>
-        <div className={styles.howHead}>
-          <h2 className={styles.howTitle}>Results Built Through Hands-On SEO</h2>
-          <p className={styles.howLead}>There isn&rsquo;t one tactic behind these results.</p>
-        </div>
-        <div className={styles.howGrid}>
-          <div className={styles.howPoint}>
-            <span className={styles.howValue}>
-              <CountUp to={1000} prefix="$" suffix="K" final="$1M+" duration={2000} />
-            </span>
-            <h3 className={styles.howPointTitle}>In Client Revenue Generated</h3>
-            <p className={styles.howBody}>
-              Our SEO and website projects have contributed to more than $1
-              million in client revenue across multiple businesses.
-            </p>
+      <section className={`${v.grey} ${v.sec}`}>
+        <div className={v.wrap}>
+          <div className={v.head}>
+            <div>
+              <Eyebrow>How we get results</Eyebrow>
+              <h2 className={v.h2}>Results Built Through Hands-On SEO</h2>
+            </div>
+            <div className={v.headSide}>
+              <p className={v.p}>There isn&rsquo;t one tactic behind these results.</p>
+              <Btn href="/corbin-jensen" tone="navy">Meet Corbin Jensen</Btn>
+            </div>
           </div>
-          <div className={styles.howPoint}>
-            <span className={styles.howIcon} aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M12 3l9 5-9 5-9-5zM3 13l9 5 9-5M3 17l9 5 9-5" /></svg>
-            </span>
-            <h3 className={styles.howPointTitle}>Built Around Each Business</h3>
-            <p className={styles.howBody}>
-              Each campaign can involve technical SEO, service-page improvements,
-              content strategy, local SEO, internal linking, structured data,
-              website development, and ongoing analysis.
-            </p>
-          </div>
-          <div className={styles.howPoint}>
-            <span className={styles.howIcon} aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM4 21a8 8 0 0 1 16 0" /></svg>
-            </span>
-            <h3 className={styles.howPointTitle}>Managed by the Founder</h3>
-            <p className={styles.howBody}>
-              Identify the opportunities that matter, improve the website around
-              them, implement the work, and measure what changes. Every campaign
-              is managed directly by founder Corbin Jensen.
-            </p>
-          </div>
-        </div>
-        <div className={styles.howFoot}>
-          <Link href="/corbin-jensen" className={styles.howBtn}>
-            <svg className={styles.howCorner} viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true"><path d="M1 1.5h7.5V9" /></svg>
-            <span>Meet Corbin Jensen</span>
-          </Link>
+          <ol className={`${v.cards} ${v.cols3}`}>
+            {points.map((p, i) => (
+              <li key={p.title} className={v.card}>
+                {i === 0 ? (
+                  <span className={styles.bigStat}><CountUp to={1000} prefix="$" suffix="K" final="$1M+" duration={2000} /></span>
+                ) : (
+                  <span className={v.cardNum}>{p.value}</span>
+                )}
+                <h3 className={v.h3}>{p.title}</h3>
+                <p className={v.p}>{p.body}</p>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 
-      <ContactSection />
+      <section className={`${v.white} ${v.ctaSec}`} style={{ paddingTop: 40 }}>
+        <div className={v.wrap}>
+          <div className={v.ctaBox} data-nav="dark">
+            <h2 className={v.h2}>Ready to Grow Your Accounting Firm?</h2>
+            <p className={v.p}>Let&rsquo;s discuss your firm&rsquo;s goals, current marketing, and opportunities to attract more clients through Google. Tell us about your practice and the services you want to grow. You&rsquo;ll hear back directly, usually within 24 hours.</p>
+            <Btn href={BOOKING_URL} external>Speak to an Expert</Btn>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
