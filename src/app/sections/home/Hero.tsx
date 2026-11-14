@@ -56,7 +56,7 @@ export default function Hero() {
             className={`${styles.box} ${styles.boxBlue}`}
           >
             <Corner />
-            <span>Book A Strategy Call →</span>
+            <span>Book A Strategy Call</span>
           </a>
         </div>
       </div>

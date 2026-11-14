@@ -246,7 +246,7 @@ export default function SeoAuditsPage() {
           <div className={t.boxRow}>
             <Link href="/contact" className={`${t.box} ${t.boxNavy}`}>
               <Corner />
-              <span>Request an SEO Audit &rarr;</span>
+              <span>Request an SEO Audit</span>
             </Link>
           </div>
         </div>
@@ -332,7 +332,7 @@ export default function SeoAuditsPage() {
             <div className={t.featureLinks}>
               <Link href="/contact" className={`${t.box} ${t.boxGrey}`}>
                 <Corner />
-                <span>Request a Custom Audit Quote &rarr;</span>
+                <span>Request a Custom Audit Quote</span>
               </Link>
             </div>
           </div>

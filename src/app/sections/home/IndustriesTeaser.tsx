@@ -49,7 +49,10 @@ export default function IndustriesTeaser() {
           Who We Work With
         </h2>
         <Link href="/industries/accounting-firms" className={`${styles.introLink} reveal-up`}>
-          Explore SEO for Accounting Firms →
+          <svg className={styles.introCorner} viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+            <path d="M1 1.5h7.5V9" />
+          </svg>
+          <span>Explore SEO for Accounting Firms</span>
         </Link>
       </div>
 

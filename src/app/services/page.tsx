@@ -336,7 +336,7 @@ export default function ServicesPage() {
           </p>
           <Link href="/industries" className={`${styles.box} ${styles.boxNavy}`}>
             <Corner />
-            <span>Explore Our Specialties &rarr;</span>
+            <span>Explore Our Specialties</span>
           </Link>
         </div>
       </section>
@@ -360,7 +360,7 @@ export default function ServicesPage() {
         <div className={styles.resultsFoot}>
           <Link href="/results" className={`${styles.box} ${styles.boxBlue}`}>
             <Corner />
-            <span>View All Client Results &rarr;</span>
+            <span>View All Client Results</span>
           </Link>
         </div>
       </section>

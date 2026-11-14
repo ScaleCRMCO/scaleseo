@@ -201,11 +201,11 @@ export default function WebDevelopmentPage() {
           <div className={t.boxRow}>
             <Link href="/contact" className={`${t.box} ${t.boxNavy}`}>
               <Corner />
-              <span>Book a Strategy Call &rarr;</span>
+              <span>Book a Strategy Call</span>
             </Link>
             <Link href="/results" className={`${t.box} ${t.boxGrey}`}>
               <Corner />
-              <span>View Website Projects &rarr;</span>
+              <span>View Website Projects</span>
             </Link>
           </div>
         </div>
@@ -366,7 +366,7 @@ export default function WebDevelopmentPage() {
           <p className={t.pricingLead}>You retain ownership of your website, content, accounts, and data.</p>
           <Link href="/pricing" className={`${t.box} ${t.boxNavy}`}>
             <Corner />
-            <span>View Website &amp; SEO Pricing &rarr;</span>
+            <span>View Website &amp; SEO Pricing</span>
           </Link>
         </div>
       </section>

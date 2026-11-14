@@ -377,7 +377,7 @@ export default function NationalSeoPage() {
           </span>
           <Link href={CONTACT_URL} className={`${t.box} ${t.boxNavy}`}>
             <Corner />
-            <span>Discuss Your SEO Project &rarr;</span>
+            <span>Discuss Your SEO Project</span>
           </Link>
         </div>
       </section>
@@ -541,7 +541,7 @@ export default function NationalSeoPage() {
               <h3 className={t.expName}>{c.name}</h3>
               <Link href={c.href} className={`${t.box} ${t.boxBlue}`}>
                 <Corner />
-                <span>{c.cta} &rarr;</span>
+                <span>{c.cta}</span>
               </Link>
             </div>
             <div className={t.expText}>

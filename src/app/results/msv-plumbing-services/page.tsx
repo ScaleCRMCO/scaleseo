@@ -156,7 +156,7 @@ export default function MsvPlumbingCaseStudy() {
           </div>
           <a href={CLIENT_URL} target="_blank" rel="nofollow noopener noreferrer" className={styles.visit}>
             <svg className={styles.corner} viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true"><path d="M1 1.5h7.5V9" /></svg>
-            <span>Visit MSV Plumbing Services &rarr;</span>
+            <span>Visit MSV Plumbing Services</span>
           </a>
         </div>
       </header>
@@ -403,15 +403,15 @@ export default function MsvPlumbingCaseStudy() {
           <div className={styles.founderLinks}>
             <Link href="/services/seo" className={styles.linkBlue}>
               <svg className={styles.corner} viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true"><path d="M1 1.5h7.5V9" /></svg>
-              <span>Explore Monthly SEO Services &rarr;</span>
+              <span>Explore Monthly SEO Services</span>
             </Link>
             <Link href="/services/web-development" className={styles.linkGrey}>
               <svg className={styles.corner} viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true"><path d="M1 1.5h7.5V9" /></svg>
-              <span>Explore Web Development &rarr;</span>
+              <span>Explore Web Development</span>
             </Link>
             <Link href="/services/geo" className={styles.linkGrey}>
               <svg className={styles.corner} viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true"><path d="M1 1.5h7.5V9" /></svg>
-              <span>Explore AI Search Optimization &rarr;</span>
+              <span>Explore AI Search Optimization</span>
             </Link>
           </div>
         </div>

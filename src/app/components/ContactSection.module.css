@@ -121,3 +121,6 @@
 .ctaLink:hover { background: var(--cs-white); color: var(--cs-navy) !important; }
 .note { font-size: 16px; line-height: 1.5; }
 .note a { color: var(--cs-white) !important; text-decoration: underline; text-underline-offset: 3px; }
+
+.ctaLink { position: relative; padding-right: 52px !important; }
+.ctaCorner { position: absolute; top: 12px; right: 14px; width: 10px; height: 10px; }

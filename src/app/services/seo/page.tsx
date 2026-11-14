@@ -310,11 +310,11 @@ export default function SeoServicePage() {
           <div className={t.btnRow}>
             <Link href="/results" className={`${t.box} ${t.boxGrey}`}>
               <Corner />
-              <span>View Client Results &rarr;</span>
+              <span>View Client Results</span>
             </Link>
             <Link href={CONTACT_URL} className={`${t.box} ${t.boxNavy}`}>
               <Corner />
-              <span>Book a Strategy Call &rarr;</span>
+              <span>Book a Strategy Call</span>
             </Link>
           </div>
         </div>
@@ -361,7 +361,7 @@ export default function SeoServicePage() {
               <h3 className={t.expName}>{c.name}</h3>
               <Link href={c.href} className={`${t.box} ${t.boxBlue}`}>
                 <Corner />
-                <span>{c.cta} &rarr;</span>
+                <span>{c.cta}</span>
               </Link>
             </div>
             <div className={t.expText}>
@@ -390,7 +390,7 @@ export default function SeoServicePage() {
           <div />
           <Link href="/results" className={`${t.box} ${t.boxBlue}`} style={{ color: "var(--h-white)" }}>
             <Corner />
-            <span>Explore All Client Results &rarr;</span>
+            <span>Explore All Client Results</span>
           </Link>
         </div>
       </section>
@@ -484,7 +484,7 @@ export default function SeoServicePage() {
             </ul>
             <Link href="/pricing" className={`${t.box} ${t.boxBlue}`} style={{ alignSelf: "flex-start", marginTop: 16, color: "var(--h-white)" }}>
               <Corner />
-              <span>View SEO Pricing &rarr;</span>
+              <span>View SEO Pricing</span>
             </Link>
           </div>
         </div>

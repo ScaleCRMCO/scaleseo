@@ -75,8 +75,10 @@ export default function Footer() {
             rel="noopener noreferrer"
             className={styles.ctaSlim}
           >
-            <span>Book a call</span>
-            <span aria-hidden="true">&rarr;</span>
+            <svg className={styles.ctaCorner} viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+              <path d="M1 1.5h7.5V9" />
+            </svg>
+            <span>Speak to an Expert</span>
           </a>
           <div className={styles.contactLines}>
             <a href="tel:+14038751110">(403) 875-1110</a>

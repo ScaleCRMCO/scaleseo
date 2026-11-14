@@ -188,7 +188,7 @@ export default function AboutPage() {
           </div>
           <Link href="/services" className={`${t.box} ${t.boxNavy}`}>
             <Corner />
-            <span>Explore Our Services →</span>
+            <span>Explore Our Services</span>
           </Link>
         </div>
       </section>
@@ -218,7 +218,7 @@ export default function AboutPage() {
           </p>
           <Link href="/results" className={styles.expLink}>
             <Corner />
-            <span>View Our Client Results →</span>
+            <span>View Our Client Results</span>
           </Link>
         </div>
 
@@ -287,7 +287,7 @@ export default function AboutPage() {
           </div>
           <Link href="/corbin-jensen" className={`${t.box} ${t.boxGrey}`}>
             <Corner />
-            <span>Read Corbin&rsquo;s Bio →</span>
+            <span>Read Corbin&rsquo;s Bio</span>
           </Link>
         </div>
       </section>
@@ -343,7 +343,7 @@ export default function AboutPage() {
             </div>
             <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className={styles.ctaBtn}>
               <Corner />
-              <span>Book a Consultation →</span>
+              <span>Book a Consultation</span>
             </a>
           </div>
         </div>

@@ -68,7 +68,10 @@ export default function ContactSection({
         </ul>
         {cta && (
           <a href={cta.href} target="_blank" rel="noopener noreferrer" className={styles.ctaLink}>
-            {cta.label}
+            <svg className={styles.ctaCorner} viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+              <path d="M1 1.5h7.5V9" />
+            </svg>
+            <span>{cta.label.replace(/\s*(→|&rarr;)\s*$/, "")}</span>
           </a>
         )}
         {note && <p className={styles.note}>{note}</p>}

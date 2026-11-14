@@ -177,7 +177,7 @@ export default function GoogleAdsPage() {
           <div className={t.boxRow}>
             <Link href="/contact" className={`${t.box} ${t.boxNavy}`}>
               <Corner />
-              <span>Book a Strategy Call &rarr;</span>
+              <span>Book a Strategy Call</span>
             </Link>
           </div>
         </div>
@@ -207,7 +207,7 @@ export default function GoogleAdsPage() {
             </p>
             <Link href="/services/seo" className={`${t.box} ${t.boxGrey}`} style={{ marginTop: 16 }}>
               <Corner />
-              <span>Explore Monthly SEO Services &rarr;</span>
+              <span>Explore Monthly SEO Services</span>
             </Link>
           </div>
         </div>
@@ -263,7 +263,7 @@ export default function GoogleAdsPage() {
             <div className={t.featureLinks}>
               <Link href="/results/msv-plumbing-services" className={`${t.box} ${t.boxGrey}`}>
                 <Corner />
-                <span>View MSV Plumbing Services Case Study &rarr;</span>
+                <span>View MSV Plumbing Services Case Study</span>
               </Link>
             </div>
           </div>
@@ -310,7 +310,7 @@ export default function GoogleAdsPage() {
           </div>
           <Link href="/contact" className={`${t.box} ${t.boxNavy}`}>
             <Corner />
-            <span>Discuss Google Ads Management &rarr;</span>
+            <span>Discuss Google Ads Management</span>
           </Link>
         </div>
       </section>

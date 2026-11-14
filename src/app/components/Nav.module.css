@@ -296,3 +296,8 @@
 
 .mega { grid-template-columns: 1fr 1fr; }
 .panel { width: min(760px, calc(100vw - 80px)); }
+
+/* Bold text wordmark: "Scale SE" + the logo mark as the O */
+.logoText { display: inline-flex; align-items: center; font-size: 36px; font-weight: 700; letter-spacing: -0.035em; line-height: 1; white-space: nowrap; color: currentColor; }
+.logoMark { width: 0.78em; height: 0.78em; margin-left: 0.04em; overflow: visible; }
+@media (max-width: 900px) { .logoText { font-size: 26px; } }

@@ -270,7 +270,7 @@ export default function OnPageSeoPage() {
           </span>
           <Link href={CONTACT_URL} className={`${t.box} ${t.boxNavy}`}>
             <Corner />
-            <span>Discuss Your SEO Project &rarr;</span>
+            <span>Discuss Your SEO Project</span>
           </Link>
         </div>
       </section>
@@ -414,7 +414,7 @@ export default function OnPageSeoPage() {
             </p>
             <Link href="/about" className={`${t.box} ${t.boxBlue}`} style={{ alignSelf: "flex-start", marginTop: 16, color: "var(--h-white)" }}>
               <Corner />
-              <span>Learn More About Scale SEO &rarr;</span>
+              <span>Learn More About Scale SEO</span>
             </Link>
           </div>
         </div>

@@ -290,7 +290,7 @@ export default function GeoServicePage() {
             </p>
             <Link href="/contact" className={`${t.box} ${t.boxNavy}`}>
               <Corner />
-              <span>Book a Strategy Call &rarr;</span>
+              <span>Book a Strategy Call</span>
             </Link>
           </div>
         </div>

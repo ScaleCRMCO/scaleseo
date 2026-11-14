@@ -84,7 +84,7 @@ export default function Differently({
             <svg className={styles.corner} viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
               <path d="M1 1.5h7.5V9" />
             </svg>
-            <span>More About Scale SEO &rarr;</span>
+            <span>More About Scale SEO</span>
           </Link>
         </div>
       )}

@@ -86,9 +86,14 @@ export default function Nav() {
   return (
     <>
       <nav className={`${styles.nav} ${open ? styles.menuOpen : ""} ${dark && !open ? styles.dark : ""}`}>
-        <Link href="/" className={styles.brand} onClick={close}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={dark && !open ? "/brand/scaleseo-wordmark-white.svg" : "/brand/scaleseo-wordmark.svg"} alt="Scale SEO" className={styles.logo} />
+        <Link href="/" className={styles.brand} aria-label="Scale SEO home" onClick={close}>
+          <span className={styles.logoText}>
+            Scale SE
+            <svg className={styles.logoMark} viewBox="0 0 366 366" fill="none" stroke="#0099FF" aria-hidden="true">
+              <circle cx="183" cy="183" r="164" strokeWidth="44" />
+              <path d="M101 139 H224.5 V262" strokeWidth="46" />
+            </svg>
+          </span>
         </Link>
 
         <span className={styles.tagline}>

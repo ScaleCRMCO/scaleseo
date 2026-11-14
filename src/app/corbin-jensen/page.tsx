@@ -192,11 +192,11 @@ export default function CorbinJensenPage() {
           <div className={t.boxRow}>
             <a href="https://www.linkedin.com/in/corbin-jensen-seo/" target="_blank" rel="noopener noreferrer" className={`${t.box} ${t.boxNavy}`}>
               <Corner />
-              <span>LinkedIn &rarr;</span>
+              <span>LinkedIn</span>
             </a>
             <Link href="/contact" className={`${t.box} ${t.boxGrey}`}>
               <Corner />
-              <span>Contact Corbin &rarr;</span>
+              <span>Contact Corbin</span>
             </Link>
           </div>
         </div>
@@ -241,7 +241,7 @@ export default function CorbinJensenPage() {
             </p>
             <Link href="/about" className={`${t.box} ${t.boxGrey}`} style={{ marginTop: 16 }}>
               <Corner />
-              <span>Learn More About Scale SEO &rarr;</span>
+              <span>Learn More About Scale SEO</span>
             </Link>
           </div>
         </div>
@@ -282,7 +282,7 @@ export default function CorbinJensenPage() {
             </p>
             <Link href="/results" className={`${t.box} ${t.boxBlue}`}>
               <Corner />
-              <span>View All Client Projects &rarr;</span>
+              <span>View All Client Projects</span>
             </Link>
           </div>
           <div className={styles.workList}>
@@ -357,7 +357,7 @@ export default function CorbinJensenPage() {
           </div>
           <Link href="/blog" className={`${t.box} ${t.boxNavy}`}>
             <Corner />
-            <span>View All SEO Articles &rarr;</span>
+            <span>View All SEO Articles</span>
           </Link>
         </div>
         <div className={t.rowsList}>

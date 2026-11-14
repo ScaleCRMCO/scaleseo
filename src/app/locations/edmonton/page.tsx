@@ -340,7 +340,7 @@ export default function EdmontonPage() {
           </span>
           <Link href={CONTACT_URL} className={`${t.box} ${t.boxNavy}`}>
             <Corner />
-            <span>Book an SEO Consultation &rarr;</span>
+            <span>Book an SEO Consultation</span>
           </Link>
         </div>
       </section>
@@ -469,7 +469,7 @@ export default function EdmontonPage() {
               <h3 className={t.expName}>{c.name}</h3>
               <Link href={c.href} className={`${t.box} ${t.boxBlue}`}>
                 <Corner />
-                <span>{c.cta} &rarr;</span>
+                <span>{c.cta}</span>
               </Link>
             </div>
             <div className={t.expText}>

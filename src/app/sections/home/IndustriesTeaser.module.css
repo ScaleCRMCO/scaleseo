@@ -31,3 +31,6 @@
 .introLink { justify-self: end; align-self: start; padding: 14px 20px; background: var(--h-blue); color: var(--h-white); font-size: 16px; text-decoration: none; transition: background 0.2s ease, color 0.2s ease; }
 .introLink:hover { background: var(--h-white); color: var(--h-navy); }
 @media (max-width: 1000px) { .introLink { justify-self: start; } }
+
+.introLink { position: relative; padding: 22px 52px 14px 20px; }
+.introCorner { position: absolute; top: 12px; right: 14px; width: 10px; height: 10px; }

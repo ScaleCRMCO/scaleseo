@@ -140,7 +140,7 @@ export default function JensenCpaCaseStudy() {
           </div>
           <a href={CLIENT_URL} target="_blank" rel="nofollow noopener noreferrer" className={styles.visit}>
             <svg className={styles.corner} viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true"><path d="M1 1.5h7.5V9" /></svg>
-            <span>Visit Jensen CPA &rarr;</span>
+            <span>Visit Jensen CPA</span>
           </a>
         </div>
       </header>
@@ -384,11 +384,11 @@ export default function JensenCpaCaseStudy() {
           <div className={styles.founderLinks}>
             <Link href="/industries/accounting-firms" className={styles.linkGrey}>
               <svg className={styles.corner} viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true"><path d="M1 1.5h7.5V9" /></svg>
-              <span>Explore SEO for Accounting Firms &rarr;</span>
+              <span>Explore SEO for Accounting Firms</span>
             </Link>
             <Link href="/services/seo" className={styles.linkBlue}>
               <svg className={styles.corner} viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true"><path d="M1 1.5h7.5V9" /></svg>
-              <span>Explore Monthly SEO Services &rarr;</span>
+              <span>Explore Monthly SEO Services</span>
             </Link>
           </div>
         </div>

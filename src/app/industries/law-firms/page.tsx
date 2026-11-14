@@ -210,7 +210,7 @@ export default function LawFirmsPage() {
           </span>
           <Link href={CONTACT_URL} className={`${t.box} ${t.boxNavy}`}>
             <Corner />
-            <span>Discuss Your SEO Strategy &rarr;</span>
+            <span>Discuss Your SEO Strategy</span>
           </Link>
         </div>
       </section>
@@ -252,7 +252,7 @@ export default function LawFirmsPage() {
             </p>
             <Link href="/services/seo" className={`${t.box} ${t.boxNavy}`} style={{ alignSelf: "flex-start", marginTop: 8 }}>
               <Corner />
-              <span>Explore Our SEO Services &rarr;</span>
+              <span>Explore Our SEO Services</span>
             </Link>
           </div>
         </div>
@@ -389,7 +389,7 @@ export default function LawFirmsPage() {
             </p>
             <Link href="/about" className={`${t.box} ${t.boxGrey}`} style={{ alignSelf: "flex-start", marginTop: 16 }}>
               <Corner />
-              <span>Learn More About Scale SEO &rarr;</span>
+              <span>Learn More About Scale SEO</span>
             </Link>
           </div>
         </div>
@@ -408,7 +408,7 @@ export default function LawFirmsPage() {
             <p>We offer month-to-month engagements without long-term contract lock-ins.</p>
             <Link href="/pricing" className={`${t.box} ${t.boxBlue}`} style={{ alignSelf: "flex-start", marginTop: 16, color: "var(--h-white)" }}>
               <Corner />
-              <span>View Our Pricing &rarr;</span>
+              <span>View Our Pricing</span>
             </Link>
           </div>
         </div>

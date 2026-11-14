@@ -291,3 +291,6 @@ a:hover [class*="orner"], button:hover [class*="orner"] { transform: translate(4
 @media (prefers-reduced-motion: reduce) {
   a:hover [class*="orner"], button:hover [class*="orner"] { transform: none; }
 }
+
+/* Bold H2s site-wide */
+main h2, footer h2, section h2 { font-weight: 600 !important; }

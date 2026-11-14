@@ -306,7 +306,7 @@ export default function VancouverPage() {
           </span>
           <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className={`${t.box} ${t.boxNavy}`}>
             <Corner />
-            <span>Book an SEO Consultation &rarr;</span>
+            <span>Book an SEO Consultation</span>
           </a>
         </div>
       </section>
@@ -402,7 +402,7 @@ export default function VancouverPage() {
               <h3 className={t.expName}>{c.name}</h3>
               <Link href={c.href} className={`${t.box} ${t.boxBlue}`}>
                 <Corner />
-                <span>{c.cta} &rarr;</span>
+                <span>{c.cta}</span>
               </Link>
             </div>
             <div className={t.expText}>
