@@ -152,7 +152,7 @@ export default function Nav() {
 
         <Link href="/contact" className={styles.contactBox} onClick={close}>
           <Corner />
-          <span>Contact</span>
+          <span>Speak to an Expert</span>
         </Link>
 
 

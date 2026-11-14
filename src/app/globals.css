@@ -282,3 +282,12 @@ h1:has(.title-block) {
 html { background: #FEFEFE; }
 /* Push page content down by the status-bar inset the nav now covers */
 main { padding-top: env(safe-area-inset-top, 0px); }
+
+/* Corner arrows on every button: slide up-and-right on hover (matches the
+   homepage service-list arrows). Any element whose class name contains
+   "corner" inside a link/button animates. */
+a [class*="orner"], button [class*="orner"] { transition: transform 0.3s ease; }
+a:hover [class*="orner"], button:hover [class*="orner"] { transform: translate(4px, -4px); }
+@media (prefers-reduced-motion: reduce) {
+  a:hover [class*="orner"], button:hover [class*="orner"] { transform: none; }
+}
