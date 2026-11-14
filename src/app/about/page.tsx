@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import Breadcrumbs from "../components/Breadcrumbs";
-import t from "../services/svc.module.css";
+import v from "../sections/v3/v3.module.css";
+import { Btn, Eyebrow } from "../sections/v3/ui";
+import Signature from "../components/Signature";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
@@ -33,11 +35,6 @@ const principles = [
   },
 ];
 
-const Corner = () => (
-  <svg className={t.corner} viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
-    <path d="M1 1.5h7.5V9" />
-  </svg>
-);
 
 const aboutJsonLd = {
   "@context": "https://schema.org",
@@ -98,253 +95,175 @@ const aboutJsonLd = {
   ],
 };
 
-/* === Page =============================================================== */
+/* === Page — Mamba hero + statement, Bilberrry founder layout ========== */
 
 export default function AboutPage() {
   return (
-    <main className="v2">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutJsonLd) }}
-      />
+    <main className={`v2 ${v.page}`}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutJsonLd) }} />
 
-      {/* === HERO — big title left, B&W portrait with logo mark right === */}
-      <header className={styles.hero}>
-        <div className={styles.heroLeft}>
-          <div className={t.crumbs}>
+      {/* Hero — centred title, lead, button, badges */}
+      <header className={`${v.white} ${styles.hero}`}>
+        <div className={v.wrap}>
+          <div className={styles.crumbs}>
             <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "About" }]} schema={false} />
           </div>
-          <h1 className={styles.heroTitle}>About Scale SEO</h1>
-          <p className={styles.heroLead}>
-            Independent SEO consultancy. Specialized in accounting and
-            professional services.
-          </p>
-        </div>
-        {/* Large logo mark: navy on white; its lower part continues in the
-            navy band below in light blue (matching copy, same position) */}
-        <div className={`${styles.bigMark} ${styles.bigMarkTop}`} aria-hidden="true">
-          <svg viewBox="0 0 366 366" fill="currentColor" aria-hidden="true">
-            <path d="M182.5 0C81.7 0 0 81.7 0 182.5S81.7 365 182.5 365 365 283.3 365 182.5 283.3 0 182.5 0zm0 328.4c-80.5 0-146-65.5-146-145.9s65.5-146 146-146 145.9 65.5 145.9 146-65.4 145.9-145.9 145.9z" />
-            <path d="M205.6 157.9v104.2h37.9V120H101.4v37.9z" />
-          </svg>
+          <h1 className={styles.h1}>About Scale SEO</h1>
+          <p className={styles.heroLead}>Independent SEO consultancy. Specialized in accounting and professional services.</p>
+          <div className={styles.heroCta}>
+            <Btn href="/results">View Our Client Results</Btn>
+          </div>
+          <div className={styles.badges}>
+            <a href="https://agencies.semrush.com/scale-seo/" target="_blank" rel="noopener noreferrer" aria-label="Semrush Certified Agency Partner">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/images/semrush-agency-partner.svg" alt="Semrush Certified Agency Partner" width={60} height={60} />
+            </a>
+            <a href="https://clutch.co/profile/scale-seo" target="_blank" rel="noopener noreferrer" aria-label="Scale SEO reviews on Clutch" className={styles.clutch}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/images/clutch-reviewed.svg" alt="Reviewed on Clutch" width={150} height={29} />
+            </a>
+          </div>
+          <div className={styles.photo}>
+            <Image src="/images/calgary-skyline-bw.webp" alt="Black and white panorama of the downtown Calgary skyline above the Bow River valley, home of Scale SEO" fill sizes="(max-width: 1360px) 100vw, 1280px" priority />
+          </div>
         </div>
       </header>
 
-      {/* === INTRO + CALGARY BAND === */}
-      <section className={styles.introRow}>
-        <div className={`${styles.bigMark} ${styles.bigMarkBottom}`} aria-hidden="true">
-          <svg viewBox="0 0 366 366" fill="currentColor" aria-hidden="true">
-            <path d="M182.5 0C81.7 0 0 81.7 0 182.5S81.7 365 182.5 365 365 283.3 365 182.5 283.3 0 182.5 0zm0 328.4c-80.5 0-146-65.5-146-145.9s65.5-146 146-146 145.9 65.5 145.9 146-65.4 145.9-145.9 145.9z" />
-            <path d="M205.6 157.9v104.2h37.9V120H101.4v37.9z" />
-          </svg>
-        </div>
-        <div className={styles.introText}>
-          <p>
-            Founded in 2025 in Calgary, Alberta, Scale SEO helps accounting firms
-            improve their visibility on Google and attract more qualified
-            business enquiries.
+      {/* Statement — narrow centred column, rule, two paragraphs */}
+      <section className={`${v.white} ${styles.statementSec}`}>
+        <div className={`${v.wrap} ${styles.narrow}`}>
+          <h2 className={styles.big}>A More Focused Approach to Search</h2>
+          <p className={`${v.lead} ${styles.statementLead}`}>
+            Scale SEO was established with a straightforward idea: effective SEO starts with understanding the business behind the website.
           </p>
-          <p style={{ marginTop: "0.7em" }}>
-            We combine search engine optimization, Google Ads, and website
-            development to help CPA firms, tax accountants, bookkeeping
-            practices, and financial advisory businesses grow across Canada and
-            Australia.
-          </p>
-        </div>
-      </section>
-      <div className={styles.band}>
-        <Image
-          src="/images/calgary-skyline-bw.webp"
-          alt="Black and white panorama of the downtown Calgary skyline above the Bow River valley, home of Scale SEO"
-          fill
-          sizes="100vw"
-        />
-      </div>
-
-      {/* === AN INDEPENDENT APPROACH — heading, big stat, text bottom-right === */}
-      <section className={styles.approach}>
-        <h2 className={`${t.h2} ${styles.approachTitle}`}>A More Focused Approach to Search</h2>
-        <div className={styles.statBlock}>
-          <span className={t.stat}>2025</span>
-          <p className={t.statLabel}>Founded in Calgary, Alberta</p>
-        </div>
-        <div className={styles.approachBody}>
-          <p className={t.lead}>
-            Scale SEO was established with a straightforward idea: effective SEO
-            starts with understanding the business behind the website.
-          </p>
-          <div className={t.body}>
-            <p>
-              Today, our primary focus is the accounting industry. Through
-              ongoing work with firms in Canada and Australia, we&rsquo;ve
-              developed practical experience in how accounting services are
-              searched for, evaluated, and presented online.
+          <div className={styles.cols2}>
+            <p className={v.p}>
+              Today, our primary focus is the accounting industry. Through ongoing work with firms in Canada and Australia, we&rsquo;ve developed practical experience in how accounting services are searched for, evaluated, and presented online.
             </p>
-            <p>
-              From corporate tax and bookkeeping to fractional CFO and business
-              advisory services, we build strategies around the work our clients
-              want more of.
+            <p className={v.p}>
+              From corporate tax and bookkeeping to fractional CFO and business advisory services, we build strategies around the work our clients want more of.
             </p>
           </div>
-          <Link href="/services" className={`${t.box} ${t.boxNavy}`}>
-            <Corner />
-            <span>Explore Our Services</span>
-          </Link>
+          <Btn href="/services" tone="navy">Explore Our Services</Btn>
         </div>
       </section>
 
-      {/* === EXPERIENCE — blue grid: heading | text, then markets/industries rows === */}
-      <section className={styles.exp}>
-        <div className={styles.expHead}>
-          <h2 className={styles.expTitle}>Experience Across Two Markets</h2>
-          <span className={styles.expNote}>Canada &amp; Australia</span>
-        </div>
-        <div className={styles.expText}>
-          <p>
-            Accounting firms operate in competitive markets where expertise,
-            reputation, and trust influence how clients choose a provider.
-          </p>
-          <p>
-            Our experience with{" "}
-            <Link href="/results/jensen-cpa" className={styles.inlineLink}>Jensen CPA</Link> in Calgary and{" "}
-            <Link href="/results/empire-accountants" className={styles.inlineLink}>Empire Accountants</Link> in
-            Brisbane has shaped our understanding of the industry across two
-            distinct markets.
-          </p>
-          <p>
-            While the terminology, regulations, and search behaviour differ, our
-            approach remains consistent: understand the firm&rsquo;s priorities,
-            improve its search presence, and measure the results.
-          </p>
-          <Link href="/results" className={styles.expLink}>
-            <Corner />
-            <span>View Our Client Results</span>
-          </Link>
-        </div>
-
-        <h3 className={styles.expGroup}>Markets</h3>
-        <ul className={styles.expRows}>
-          {["Canada", "Australia"].map((m) => (
-            <li key={m}>{m}</li>
-          ))}
-        </ul>
-
-        <h3 className={styles.expGroup}>Specialties</h3>
-        <ul className={styles.expRows}>
-          {["CPA & Accounting Firms", "Corporate Tax & Advisory", "Bookkeeping & Cloud Accounting", "Fractional CFO Services"].map((m) => (
-            <li key={m}>{m}</li>
-          ))}
-        </ul>
-      </section>
-
-      {/* === MEET THE FOUNDER — full navy section, profile left, text right === */}
-      <section className={styles.founder}>
-        <div className={styles.founderProfile}>
-          <h2 className={t.h2}>Meet the Founder</h2>
-          <div className={styles.founderPhoto}>
-            <Image
-              src="/images/corbin-portrait.webp"
-              alt="Corbin Jensen, founder and SEO specialist at Scale SEO"
-              fill
-              sizes="240px"
-              loading="eager"
-            />
-          </div>
-          <p className={styles.founderName}>
-            Corbin Jensen
-            <br />
-            <span>Founder &amp; SEO Specialist</span>
-          </p>
-          <a
-            href="https://www.linkedin.com/in/corbin-jensen-seo/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.linkedin}
-          >
-            Connect in
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
-              <path d="M20.4 2H3.6C2.7 2 2 2.7 2 3.6v16.8c0 .9.7 1.6 1.6 1.6h16.8c.9 0 1.6-.7 1.6-1.6V3.6c0-.9-.7-1.6-1.6-1.6zM8 19H5V9.5h3V19zM6.5 8.2a1.7 1.7 0 1 1 0-3.5 1.7 1.7 0 0 1 0 3.5zM19 19h-3v-4.6c0-1.1 0-2.5-1.5-2.5S12.8 13 12.8 14.3V19h-3V9.5h2.9v1.3h.1c.4-.8 1.4-1.6 2.9-1.6 3.1 0 3.7 2 3.7 4.7V19z" />
-            </svg>
-          </a>
-        </div>
-        <div className={styles.founderText}>
-          <p className={styles.founderLead}>
-            Scale SEO was founded by Corbin Jensen, a Canadian SEO specialist
-            with experience developing search strategies and websites for
-            businesses in Canada and Australia.
-          </p>
-          <div className={styles.founderBody}>
-            <p>
-              Corbin&rsquo;s work spans technical SEO, website development,
-              search strategy, and content optimization, with a growing
-              specialization in accounting and financial services.
-            </p>
-            <p>
-              His work with accounting firms has helped shape Scale SEO&rsquo;s
-              focus on relevant search visibility, practical implementation, and
-              measurable business outcomes.
-            </p>
-          </div>
-          <Link href="/corbin-jensen" className={`${t.box} ${t.boxGrey}`}>
-            <Corner />
-            <span>Read Corbin&rsquo;s Bio</span>
-          </Link>
-        </div>
-      </section>
-
-      {/* === PRINCIPLES — heading + text, then staggered 4-col box grid
-           (outer two boxes empty) === */}
-      <section className={styles.partners}>
-        <div className={styles.partnersHead}>
-          <h2 className={styles.partnersTitle}>How We Work</h2>
-          <div className={styles.partnersText}>
-            <p>
-              We believe good SEO should be practical, transparent, and closely
-              connected to the business it supports.
-            </p>
-          </div>
-        </div>
-        <div className={styles.partnersGrid}>
-          <div className={`${styles.pBox} ${styles.pEmpty}`} style={{ gridColumn: 4, gridRow: 1 }} aria-hidden="true" />
-          {principles.map((p, i) => (
-            <article
-              key={p.title}
-              className={styles.pBox}
-              style={{ gridColumn: (i % 2) + 2, gridRow: i < 2 ? 1 : 2 }}
-            >
-              <span className={styles.pNum}>{String(i + 1).padStart(2, "0")}</span>
-              <h3 className={styles.pTitle}>{p.title}</h3>
-              <p className={styles.pBody}>{p.body}</p>
-            </article>
-          ))}
-          <div className={`${styles.pBox} ${styles.pEmpty}`} style={{ gridColumn: 1, gridRow: 2 }} aria-hidden="true" />
-        </div>
-      </section>
-
-      {/* === WORK WITH SCALE SEO — closing navy box === */}
-      <section className={styles.ctaWrap}>
-        <div className={styles.ctaBox}>
-          <svg className={styles.ctaMark} viewBox="0 0 366 366" fill="none" stroke="currentColor" aria-hidden="true">
-            <circle cx="183" cy="183" r="164" strokeWidth="36" />
-            <path d="M101 139 H224.5 V262" strokeWidth="38" />
-          </svg>
-          <h2 className={t.h2}>Work With Scale SEO</h2>
-          <div className={styles.ctaBottom}>
-            <div className={styles.ctaNote}>
-              <p>
-                We work with accounting firms and professional service
-                businesses across Canada and Australia.
+      {/* Who we are — navy: label left, statement right, stats, labelled rows */}
+      <section className={`${v.navy} ${v.sec}`} data-nav="dark">
+        <div className={v.wrap}>
+          <div className={styles.labelled}>
+            <span className={styles.sideLabel}>About who we are</span>
+            <div>
+              <p className={styles.navyStatement}>
+                Founded in 2025 in Calgary, Alberta, Scale SEO helps accounting firms improve their visibility on Google and attract more qualified business enquiries.
               </p>
-              <p style={{ marginTop: "0.7em" }}>
-                Whether you&rsquo;re looking to strengthen your organic
-                visibility, reach new clients through Google Ads, or develop a
-                better website, we&rsquo;re here to help.
+              <p className={`${v.lead} ${styles.navyLead}`}>
+                We combine search engine optimization, Google Ads, and website development to help CPA firms, tax accountants, bookkeeping practices, and financial advisory businesses grow across Canada and Australia.
               </p>
             </div>
-            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className={styles.ctaBtn}>
-              <Corner />
-              <span>Book a Consultation</span>
-            </a>
+          </div>
+
+          <div className={styles.stats}>
+            <div><span className={styles.statNum}>2025</span><span className={v.small}>Founded in Calgary, Alberta</span></div>
+            <div><span className={styles.statNum}>2</span><span className={v.small}>Markets: Canada &amp; Australia</span></div>
+            <div><span className={styles.statNum}>100%</span><span className={v.small}>Client Retention</span></div>
+          </div>
+
+          <div className={styles.rows}>
+            <div className={styles.row}>
+              <h3 className={v.h3}>Experience Across Two Markets</h3>
+              <div className={styles.rowBody}>
+                <p className={v.p}>Accounting firms operate in competitive markets where expertise, reputation, and trust influence how clients choose a provider.</p>
+                <p className={v.p}>
+                  Our experience with <Link href="/results/jensen-cpa" className={styles.inline}>Jensen CPA</Link> in Calgary and{" "}
+                  <Link href="/results/empire-accountants" className={styles.inline}>Empire Accountants</Link> in Brisbane has shaped our understanding of the industry across two distinct markets.
+                </p>
+                <p className={v.p}>While the terminology, regulations, and search behaviour differ, our approach remains consistent: understand the firm&rsquo;s priorities, improve its search presence, and measure the results.</p>
+              </div>
+            </div>
+            <div className={styles.row}>
+              <h3 className={v.h3}>Markets</h3>
+              <ul className={styles.tagList}>{["Canada", "Australia"].map((m) => <li key={m}>/ {m}</li>)}</ul>
+            </div>
+            <div className={styles.row}>
+              <h3 className={v.h3}>Specialties</h3>
+              <ul className={styles.tagList}>
+                {["CPA & Accounting Firms", "Corporate Tax & Advisory", "Bookkeeping & Cloud Accounting", "Fractional CFO Services"].map((m) => <li key={m}>/ {m}</li>)}
+              </ul>
+            </div>
+          </div>
+          <div className={v.endRow}>
+            <Btn href="/results" tone="light">View Our Client Results</Btn>
+          </div>
+        </div>
+      </section>
+
+      {/* Founder — Bilberrry: side label, title, two-column text, signature, profile card */}
+      <section className={`${v.white} ${v.sec}`}>
+        <div className={v.wrap}>
+          <div className={styles.labelled}>
+            <span className={styles.sideLabel}>Meet the founder</span>
+            <div>
+              <h2 className={v.h2}>Corbin Jensen, Founder of Scale SEO</h2>
+              <div className={styles.founderGrid}>
+                <div className={styles.founderText}>
+                  <p className={v.p}>Scale SEO was founded by Corbin Jensen, a Canadian SEO specialist with experience developing search strategies and websites for businesses in Canada and Australia.</p>
+                  <p className={v.p}>Corbin&rsquo;s work spans technical SEO, website development, search strategy, and content optimization, with a growing specialization in accounting and financial services.</p>
+                  <p className={v.p}>His work with accounting firms has helped shape Scale SEO&rsquo;s focus on relevant search visibility, practical implementation, and measurable business outcomes.</p>
+                  <div className={styles.sign}>
+                    <Signature className={styles.signature} />
+                    <span className={v.small}><strong>Corbin Jensen</strong><br />Founder &amp; SEO Specialist</span>
+                  </div>
+                </div>
+                <figure className={styles.card}>
+                  <div className={styles.cardImg}>
+                    <Image src="/images/corbin-portrait.webp" alt="Corbin Jensen, founder and SEO specialist at Scale SEO" fill sizes="(max-width: 900px) 90vw, 360px" />
+                  </div>
+                  <figcaption>
+                    <span className={v.small}>Founder &amp; SEO Specialist</span>
+                    <strong>Corbin Jensen</strong>
+                  </figcaption>
+                  <div className={styles.cardBtns}>
+                    <Btn href="/corbin-jensen" tone="navy">Read Corbin&rsquo;s Bio</Btn>
+                    <a href="https://www.linkedin.com/in/corbin-jensen-seo/" target="_blank" rel="noopener noreferrer" className={styles.linkedin}>LinkedIn</a>
+                  </div>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How we work — Mamba mark above heading, four cards on grey */}
+      <section className={`${v.grey} ${v.sec}`}>
+        <div className={v.wrap}>
+          <div className={v.head}>
+            <div>
+              <Eyebrow>Our principles</Eyebrow>
+              <h2 className={v.h2}>How We Work</h2>
+            </div>
+            <p className={v.p}>We believe good SEO should be practical, transparent, and closely connected to the business it supports.</p>
+          </div>
+          <ol className={`${v.cards} ${v.cols4}`}>
+            {principles.map((p, i) => (
+              <li key={p.title} className={v.card}>
+                <span className={v.cardNum}>0{i + 1}</span>
+                <h3 className={v.h3}>{p.title}</h3>
+                <p className={v.p}>{p.body}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      {/* Closing CTA */}
+      <section className={`${v.white} ${v.ctaSec}`} style={{ paddingTop: 40 }}>
+        <div className={v.wrap}>
+          <div className={v.ctaBox} data-nav="dark">
+            <h2 className={v.h2}>Work With Scale SEO</h2>
+            <p className={v.p}>We work with accounting firms and professional service businesses across Canada and Australia.</p>
+            <p className={v.p}>Whether you&rsquo;re looking to strengthen your organic visibility, reach new clients through Google Ads, or develop a better website, we&rsquo;re here to help.</p>
+            <Btn href={BOOKING_URL} external>Book a Consultation</Btn>
           </div>
         </div>
       </section>
