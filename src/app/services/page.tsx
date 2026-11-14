@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import Breadcrumbs from "../components/Breadcrumbs";
-import ServicesFaq, { type FaqItem } from "./ServicesFaq";
-import ServicesMark from "../sections/home/ServicesMark";
-import ContactSection from "../components/ContactSection";
+import { type FaqItem } from "./ServicesFaq";
+import v from "../sections/v3/v3.module.css";
+import { Btn } from "../sections/v3/ui";
 import styles from "./hub.module.css";
 
 export const metadata: Metadata = {
@@ -27,6 +26,7 @@ const services = [
       "Our [SEO campaigns](/services/seo) combine technical improvements, content strategy, service-page optimization, and local search to help businesses reach more relevant customers through Google.",
       "Each campaign is shaped around your market, competition, and business priorities.",
     ],
+    tags: ["Technical SEO", "Content Strategy", "Service Pages", "Local Search"],
     href: "/services/seo",
     cta: "Explore SEO Services",
   },
@@ -38,6 +38,7 @@ const services = [
       "Our [SEO audits](/services/seo-audits) examine crawling, indexing, website structure, content, and technical performance to identify issues and opportunities.",
       "We provide clear findings and prioritized recommendations, without unnecessary complexity.",
     ],
+    tags: ["Crawling & Indexing", "Website Structure", "Content Review", "Technical Performance"],
     href: "/services/seo-audits",
     cta: "Explore SEO Audits",
   },
@@ -49,6 +50,7 @@ const services = [
       "We build and improve [business websites](/services/web-development) with clear navigation, strong technical foundations, and dedicated pages for important services.",
       "Every project considers search visibility, user experience, and long-term scalability.",
     ],
+    tags: ["Clear Navigation", "Technical Foundations", "Service Pages", "User Experience"],
     href: "/services/web-development",
     cta: "Explore Website Development",
   },
@@ -60,6 +62,7 @@ const services = [
       "Our [Google Ads management](/services/google-ads-management) focuses on relevant searches, efficient campaign structure, conversion tracking, and ongoing optimization.",
       "We prioritize qualified enquiries over traffic volume, with campaigns built around your business objectives.",
     ],
+    tags: ["Relevant Searches", "Campaign Structure", "Conversion Tracking", "Ongoing Optimization"],
     href: "/services/google-ads-management",
     cta: "Explore Google Ads",
   },
@@ -71,6 +74,7 @@ const services = [
       "Our [AI search optimization](/services/geo) services strengthen website content, structured data, and business information to support visibility across traditional and AI-assisted search experiences.",
       "We focus on accurate, useful information and measurable improvements where reliable data is available.",
     ],
+    tags: ["Website Content", "Structured Data", "Business Information"],
     href: "/services/geo",
     cta: "Explore AI Search Optimization",
   },
@@ -137,29 +141,9 @@ function rich(t: string) {
 }
 
 const Corner = () => (
-  <svg className={styles.corner} viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
-    <path d="M1 1.5h7.5V9" />
-  </svg>
+  <svg className={v.corner} viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true"><path d="M1 1.5h7.5V9" /></svg>
 );
-
-function ServiceCard({ s }: { s: (typeof services)[number] }) {
-  return (
-    <div className={styles.card}>
-      <span className={styles.cardNum}>{s.num}</span>
-      <h3 className={styles.cardTitle}>{s.title}</h3>
-      <p className={styles.cardLead}>{s.lead}</p>
-      <div className={styles.cardBody}>
-        {s.body.map((p) => (
-          <p key={p}>{rich(p)}</p>
-        ))}
-      </div>
-      <Link href={s.href} className={styles.cardLink}>
-        <span>{s.cta} &rarr;</span>
-        <span className={styles.plus} aria-hidden="true">+</span>
-      </Link>
-    </div>
-  );
-}
+const strip = (t: string) => t.replace(LINK, "$1");
 
 /* === Schema — /services only. Links to the global #website and
    #organization nodes in layout.tsx; includes this page's BreadcrumbList
@@ -242,141 +226,134 @@ const servicesJsonLd = {
   ],
 };
 
-/* === Page =============================================================== */
-
+/* === Page — Bilberrry hub: side-label hero with quick links, numbered
+   service list, statement split, results, FAQ, CTA ===================== */
 export default function ServicesPage() {
+  const faqJsonLd = { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a.map(strip).join(" ") } })) };
   return (
-    <main className="v2">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesJsonLd) }}
-      />
+    <main className={`v2 ${v.page}`}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
 
-      {/* === HERO — big title left, B&W image + intro right === */}
-      <header className={styles.hero}>
-        <div className={styles.heroLeft}>
+      <header className={`${v.white} ${styles.hero}`}>
+        <div className={v.wrap}>
           <div className={styles.crumbs}>
             <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Services" }]} schema={false} />
           </div>
-          <h1 className={styles.heroTitle}>SEO &amp; Digital Marketing Services in Calgary</h1>
-          <a href="#services" className={styles.jump}>Explore Our Services &darr;</a>
-        </div>
-        <div className={styles.heroRight}>
-          <div className={styles.heroImage}>
-            <Image
-              src="/images/calgary-skyline.webp"
-              alt="Calgary skyline"
-              fill
-              priority
-              sizes="(max-width: 900px) 90vw, 33vw"
-            />
-          </div>
-          <div className={styles.heroIntro}>
-            <p className={styles.heroLead}>
-              Search strategies built around the services your customers are
-              looking for.
-            </p>
-            <p>
-              Scale SEO provides search engine optimization, Google Ads, and
-              website development for accounting firms and established service
-              businesses across Canada and Australia.
-            </p>
-            <p>
-              Based in Calgary, we specialize in accounting and professional
-              services, combining technical expertise with practical strategies
-              designed to improve search visibility and attract qualified
-              enquiries.
-            </p>
+          <div className={styles.labelled}>
+            <span className={styles.sideLabel}>Our services</span>
+            <div>
+              <h1 className={styles.h1}>SEO &amp; Digital Marketing Services in Calgary</h1>
+              <p className={styles.lead}>Search strategies built around the services your customers are looking for.</p>
+              <div className={styles.cols2}>
+                <p className={v.p}>Scale SEO provides search engine optimization, Google Ads, and website development for accounting firms and established service businesses across Canada and Australia.</p>
+                <p className={v.p}>Based in Calgary, we specialize in accounting and professional services, combining technical expertise with practical strategies designed to improve search visibility and attract qualified enquiries.</p>
+              </div>
+              <ul className={styles.quick}>
+                {services.map((x) => <li key={x.href}><Link href={x.href}>/ {x.title}</Link></li>)}
+                <li><Link href="/services/national-seo">/ National SEO</Link></li>
+              </ul>
+            </div>
           </div>
         </div>
       </header>
 
-      {/* === SERVICES — heading, card | animated mark | card, then three cards === */}
-      <section className={styles.services} id="services">
-        <h2 className={styles.h2}>Our Services</h2>
-        <div className={styles.grid}>
-          <ServiceCard s={services[0]} />
-          <ServicesMark className={styles.markCell} />
-          <ServiceCard s={services[1]} />
-          <ServiceCard s={services[2]} />
-          <ServiceCard s={services[3]} />
-          <ServiceCard s={services[4]} />
-          <div className={styles.outro}>
-            <p>
-              Serving customers beyond one city? National SEO helps businesses
-              build visibility for their specialized services across Canada.
-            </p>
-            <Link href="/services/national-seo" className={styles.outroLink}>
-              Explore National SEO Services &rarr;
-            </Link>
+      <section className={`${v.white} ${styles.listSec}`} id="services">
+        <div className={v.wrap}>
+          <div className={styles.listHead}>
+            <h2 className={v.h2}>Our Services</h2>
+          </div>
+          <ol className={styles.list}>
+            {services.map((x) => (
+              <li key={x.href} className={styles.row}>
+                <span className={styles.num}>/ {x.num}</span>
+                <div>
+                  <Link href={x.href} className={styles.name}>{x.title} <Corner /></Link>
+                  <p className={styles.rowLead}>{x.lead}</p>
+                </div>
+                <div className={styles.rowBody}>
+                  {x.body.map((p) => <p key={p} className={v.p}>{rich(p)}</p>)}
+                  <ul className={styles.tags}>{x.tags.map((t) => <li key={t}>/ {t}</li>)}</ul>
+                  <Link href={x.href} className={v.textLink}>{x.cta} <Corner /></Link>
+                </div>
+              </li>
+            ))}
+          </ol>
+          <div className={styles.national}>
+            <p>Serving customers beyond one city? National SEO helps businesses build visibility for their specialized services across Canada.</p>
+            <Btn href="/services/national-seo" tone="navy">Explore National SEO Services</Btn>
           </div>
         </div>
       </section>
 
-      {/* === EXPERIENCE — heading left of a rule, text + link right === */}
-      <section className={styles.split}>
-        <div className={styles.splitAside}>
-          <h2 className={styles.h2}>Specialized in Accounting. Experienced Across Industries.</h2>
-        </div>
-        <div className={styles.splitBody}>
-          <p className={styles.lead}>
-            Accounting firms and professional services are central to our work,
-            but our experience extends to consulting, construction, and other
-            established service businesses.
-          </p>
-          <p>
-            We&rsquo;ve worked with companies in Canada and Australia to improve
-            website structure, strengthen technical SEO, and develop content
-            that supports their commercial goals.
-          </p>
-          <p>
-            Our approach starts with understanding the services you want to
-            grow, the customers you want to reach, and the competition in your
-            market.
-          </p>
-          <Link href="/industries" className={`${styles.box} ${styles.boxNavy}`}>
-            <Corner />
-            <span>Explore Our Specialties</span>
-          </Link>
+      <section className={`${v.navy} ${v.sec}`} data-nav="dark">
+        <div className={`${v.wrap} ${styles.labelled}`}>
+          <span className={styles.sideLabel}>Who we work with</span>
+          <div>
+            <h2 className={styles.statement}>Specialized in Accounting. Experienced Across Industries.</h2>
+            <p className={`${v.lead} ${styles.navyLead}`}>Accounting firms and professional services are central to our work, but our experience extends to consulting, construction, and other established service businesses.</p>
+            <div className={styles.cols2Dark}>
+              <p className={v.p}>We&rsquo;ve worked with companies in Canada and Australia to improve website structure, strengthen technical SEO, and develop content that supports their commercial goals.</p>
+              <p className={v.p}>Our approach starts with understanding the services you want to grow, the customers you want to reach, and the competition in your market.</p>
+            </div>
+            <Btn href="/industries" tone="light">Explore Our Specialties</Btn>
+          </div>
         </div>
       </section>
 
-      {/* === RESULTS — grey section, navy case boxes === */}
-      <section className={styles.results}>
-        <h2 className={styles.h2}>Results From Client Campaigns</h2>
-        <div className={styles.resultGrid}>
-          {results.map((r) => (
-            <Link key={r.href} href={r.href} className={styles.result}>
-              <span className={styles.resultType}>{r.client}</span>
-              <h3 className={styles.resultMetric}>{r.metric}</h3>
-              <p className={styles.resultBody}>{r.body}</p>
-              <span className={styles.cardLink}>
-                <span>{r.cta} &rarr;</span>
-                <span className={styles.plus} aria-hidden="true">+</span>
-              </span>
-            </Link>
-          ))}
-        </div>
-        <div className={styles.resultsFoot}>
-          <Link href="/results" className={`${styles.box} ${styles.boxBlue}`}>
-            <Corner />
-            <span>View All Client Results</span>
-          </Link>
+      <section className={`${v.white} ${v.sec}`}>
+        <div className={v.wrap}>
+          <div className={v.head}>
+            <div><h2 className={v.h2}>Results From Client Campaigns</h2></div>
+            <div className={v.headSide}><Btn href="/results" tone="navy">View All Client Results</Btn></div>
+          </div>
+          <div className={styles.results}>
+            {results.map((r) => (
+              <Link key={r.href} href={r.href} className={styles.result}>
+                <span className={v.small}>{r.client}</span>
+                <span className={styles.metric}>{r.metric}</span>
+                <span className={v.p}>{r.body}</span>
+                <span className={v.textLink}>{r.cta} <Corner /></span>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
-      <ServicesFaq items={faqs} title={<>Frequently Asked Questions</>} />
+      <section className={`${v.grey} ${v.sec}`} id="faq">
+        <div className={`${v.wrap} ${v.faq}`}>
+          <div>
+            <h2 className={v.h2}>Frequently Asked Questions</h2>
+            <Btn href={BOOKING_URL} external tone="navy">Speak to an Expert</Btn>
+          </div>
+          <div className={v.acc}>
+            {faqs.map((f, i) => (
+              <details key={f.q} className={v.accItem} name="services-faq" open={i === 0}>
+                <summary className={v.accSum}>
+                  <h3 className={v.accQ}>{f.q}</h3>
+                  <span className={v.plus} aria-hidden="true" />
+                </summary>
+                <div className={v.stack}>{f.a.map((p) => <p key={p} className={v.p}>{rich(p)}</p>)}</div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
 
-      <ContactSection
-        heading="Let's Improve Your Search Visibility"
-        lead="Tell us about your business, website, and growth goals. We'll help you identify where SEO, Google Ads, or website improvements could make the greatest difference."
-        points={[
-          "Experience across accounting and professional services",
-          "Flexible month-to-month SEO engagements",
-          "Full ownership of your website, content, and data",
-        ]}
-        cta={{ href: BOOKING_URL, label: "Book a Consultation →" }}
-      />
+      <section className={`${v.white} ${v.ctaSec}`} style={{ paddingTop: 40 }}>
+        <div className={v.wrap}>
+          <div className={`${v.ctaBox} ${styles.cta}`} data-nav="dark">
+            <div>
+              <h2 className={v.h2}>Let&rsquo;s Improve Your Search Visibility</h2>
+              <p className={v.p}>Tell us about your business, website, and growth goals. We&rsquo;ll help you identify where SEO, Google Ads, or website improvements could make the greatest difference.</p>
+              <Btn href={BOOKING_URL} external>Book a Consultation</Btn>
+            </div>
+            <ul className={styles.points}>
+              {["Experience across accounting and professional services", "Flexible month-to-month SEO engagements", "Full ownership of your website, content, and data"].map((x) => <li key={x}>{x}</li>)}
+            </ul>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
