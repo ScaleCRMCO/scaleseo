@@ -18,6 +18,8 @@ export type Post = {
   readTime: string;
   category: string;
   excerpt: string;
+  // Short bullet summary shown in the "Key takeaways" box at the top
+  takeaways?: string[];
   // Optional hand-written JSON-LD; replaces the generated BlogPosting and
   // breadcrumb schema for this post when present.
   schema?: Record<string, unknown>;
@@ -34,6 +36,7 @@ export const posts: Post[] = [
     "readTime": "10 min read",
     "category": "National SEO",
     "excerpt": "Your business doesn't need an office in every Canadian city to reach customers through Google. Here's how national SEO, service pages and location pages work together.",
+    "takeaways": ["A business can appear in Google’s regular search results for people in other cities, even without an office there.", "Build strong service pages before creating city pages — you don’t need a separate landing page for every city you serve.", "Target the specific services and industries your customers search for, and make sure Google can find your important pages.", "Google Business Profile is useful for eligible businesses that meet customers in person or travel to them.", "Measure whether SEO is bringing the right customers, not just more traffic."],
     "schema": {
       "@context": "https://schema.org",
       "@graph": [
@@ -954,6 +957,7 @@ export const posts: Post[] = [
     "readTime": "9 min read",
     "category": "Local SEO",
     "excerpt": "Having a website and a Google Business Profile doesn't guarantee your Calgary business will appear in search results. This guide covers the most common causes, from indexing and Business Profiles to service pages and technical SEO, and how to diagnose them.",
+    "takeaways": ["Google needs to discover, crawl, and index your pages before they can appear in organic search results.", "An incomplete or incorrect Google Business Profile can limit your local visibility in Calgary.", "Many websites target different wording than customers actually search for, or rely too heavily on the homepage instead of specific service pages.", "Stronger competitor signals and technical SEO problems can also hold your visibility back.", "Diagnose where the problem exists before making major changes, and judge SEO by more than one or two keywords."],
     "body": [
       {
         "type": "p",
@@ -1643,6 +1647,7 @@ export const posts: Post[] = [
     "readTime": "11 min read",
     "category": "SEO Timelines",
     "excerpt": "There isn't a universal SEO timeline. This guide explains what a realistic 6–12 month campaign looks like, what happens in the first several months, what affects how long SEO takes, and how to tell if it's working before rankings improve.",
+    "takeaways": ["For planning purposes, many businesses should approach SEO as a 6–12 month investment.", "Improvements can appear much earlier, while competitive campaigns may take longer.", "Competition, your website’s starting point, and the work required all affect how long SEO takes.", "You can tell whether SEO is working before rankings improve by looking beyond a handful of keyword positions.", "SEO takes time, but that shouldn’t become an excuse for a lack of accountability."],
     "body": [
       {
         "type": "p",
@@ -2379,6 +2384,7 @@ export const posts: Post[] = [
     readTime: "15 min read",
     category: "SEO Pricing",
     excerpt: "Canadian businesses can find SEO services ranging from a few hundred dollars per month to several thousand. This guide breaks down what to realistically expect to pay in 2026, what should be included at each level, and what to check before hiring an SEO provider.",
+    takeaways: ["Ongoing professional SEO for many small and mid-sized Canadian businesses commonly falls between $1,000 and $5,000+ CAD per month.", "Pricing varies because SEO isn’t a single task — scope, competition, and who you hire all affect the cost.", "Not every business needs to begin with a monthly campaign; an SEO audit can be a practical starting point.", "Be careful with SEO guarantees, and don’t choose a provider on price alone."],
     schema: {
       "@context": "https://schema.org",
       "@graph": [
@@ -3268,6 +3274,7 @@ export const posts: Post[] = [
     category: "Accounting Firms",
     excerpt:
       "Most SEO advice is written for volume-based businesses chasing rapid clicks. An accounting firm's search strategy requires a different approach to service pages, local visibility, expertise, and commercial search intent.",
+    takeaways: ["High-value accounting clients do deep due diligence, so your website and search presence act as a trust-building surface.", "Target high-intent advisory services rather than generic seasonal searches like “tax preparation near me”.", "A firm’s search strategy should prioritize intent optimization, technical trust signals, and local market scaling."],
     body: [
       {
         type: "p",
