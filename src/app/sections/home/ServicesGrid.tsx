@@ -63,11 +63,6 @@ export default function ServicesGrid() {
         <div className={styles.listAside}>
           <div>
             <h2 className={styles.listTitle}>SEO &amp; Digital Marketing for Accounting Firms</h2>
-            <p className={styles.listSub}>
-              We bring together organic search, paid advertising, and website
-              development to help accounting firms attract new clients and grow
-              their businesses.
-            </p>
           </div>
           <div className={styles.listNote}>
             <p>
