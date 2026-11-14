@@ -111,3 +111,5 @@
   .authorBox { flex-direction: column; }
   .takeaways { padding: 22px 20px; }
 }
+.prefBtn { display: inline-flex; align-items: center; gap: 10px; margin-top: 28px; padding: 10px 18px 10px 14px; border: 1px solid rgba(8, 20, 35, 0.18); border-radius: 999px; color: #081423; font-size: 15px; font-weight: 500; text-decoration: none; transition: border-color 0.2s ease, background-color 0.2s ease; }
+.prefBtn:hover { border-color: #081423; background: #F1F3F6; }
