@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import ResultsList from "./ResultsList";
-import ClientLogos from "../components/ClientLogos";
 import v from "../sections/v3/v3.module.css";
 import { Btn, Eyebrow } from "../sections/v3/ui";
 import CountUp from "../components/CountUp";
@@ -193,8 +192,8 @@ const resultsJsonLd = {
    alternating case rows; then how-we-get-results and a closing CTA ===== */
 const points = [
   { value: "$1M+", title: "In Client Revenue Generated", body: "Our SEO and website projects have contributed to more than $1 million in client revenue across multiple businesses." },
-  { value: "01", title: "Built Around Each Business", body: "Each campaign can involve technical SEO, service-page improvements, content strategy, local SEO, internal linking, structured data, website development, and ongoing analysis." },
-  { value: "02", title: "Managed by the Founder", body: "Identify the opportunities that matter, improve the website around them, implement the work, and measure what changes. Every campaign is managed directly by founder Corbin Jensen." },
+  { value: "M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6M9 11h.01M15 11h.01", title: "Built Around Each Business", body: "Each campaign can involve technical SEO, service-page improvements, content strategy, local SEO, internal linking, structured data, website development, and ongoing analysis." },
+  { value: "M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM4 21a8 8 0 0 1 16 0", title: "Managed by the Founder", body: "Identify the opportunities that matter, improve the website around them, implement the work, and measure what changes. Every campaign is managed directly by founder Corbin Jensen." },
 ];
 
 export default function ResultsPage() {
@@ -214,10 +213,20 @@ export default function ResultsPage() {
               <p className={styles.lead}>
                 We work with businesses across Canada and internationally to improve their search visibility, strengthen their websites, and attract more customers. Explore our case studies to see how practical SEO strategies, thoughtful execution, and ongoing improvements deliver measurable results.
               </p>
+              <div className={styles.logoRow} aria-label="Selected clients">
+                {[
+                  { src: "/images/client-logo-jensen-cpa.png", alt: "Jensen CPA", h: 22 },
+                  { src: "/images/client-logo-kinsmen-consulting.png", alt: "Kinsmen Consulting Limited", h: 24 },
+                  { src: "/images/client-logo-empire-accountants.png", alt: "Empire Accountants", h: 34 },
+                  { src: "/images/client-logo-msv-plumbing.png", alt: "MSV Plumbing Services", h: 24 },
+                ].map((l) => (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img key={l.src} src={l.src} alt={l.alt} style={{ height: l.h }} />
+                ))}
+              </div>
             </div>
           </div>
         </div>
-        <div className={styles.logos}><ClientLogos /></div>
       </header>
 
       <section className={`${v.white} ${styles.listSec}`}>
@@ -242,7 +251,7 @@ export default function ResultsPage() {
                 {i === 0 ? (
                   <span className={styles.bigStat}><CountUp to={1000} prefix="$" suffix="K" final="$1M+" duration={2000} /></span>
                 ) : (
-                  <span className={v.cardNum}>{p.value}</span>
+                  <span className={v.icon} aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d={p.value} /></svg></span>
                 )}
                 <h3 className={v.h3}>{p.title}</h3>
                 <p className={v.p}>{p.body}</p>
