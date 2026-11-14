@@ -36,22 +36,20 @@ export default function ContactForm() {
 
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
-      <p className={styles.required}>Fields marked with * are required.</p>
-
       <label className={styles.field}>
-        <span>Name*</span>
-        <input type="text" name="name" placeholder="Your name" required />
+        <span>Full name <em>(required)</em></span>
+        <input type="text" name="name" required />
       </label>
       <label className={styles.field}>
-        <span>Email*</span>
-        <input type="email" name="email" placeholder="Your email" required />
+        <span>Email address <em>(required)</em></span>
+        <input type="email" name="email" required />
       </label>
       <label className={styles.field}>
-        <span>Business Name*</span>
-        <input type="text" name="business" placeholder="Your business" required />
+        <span>Business name <em>(required)</em></span>
+        <input type="text" name="business" required />
       </label>
       <label className={styles.field}>
-        <span>Current Website</span>
+        <span>Current website <em>(optional)</em></span>
         <input type="url" name="website" placeholder="https://" />
       </label>
 
@@ -73,7 +71,7 @@ export default function ContactForm() {
       </fieldset>
 
       <label className={`${styles.field} ${styles.fieldTall}`}>
-        <span>Tell me a bit more*</span>
+        <span>Tell us a bit more <em>(required)</em></span>
         <textarea
           name="message"
           required
@@ -90,10 +88,10 @@ export default function ContactForm() {
           </span>
         </label>
         <button type="submit" className={styles.send} disabled={status === "sending"}>
+          <span>{status === "sending" ? "Sending…" : "Send message"}</span>
           <svg className={styles.corner} viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
             <path d="M1 1.5h7.5V9" />
           </svg>
-          <span>{status === "sending" ? "Sending…" : "Send"}</span>
         </button>
       </div>
       {status === "error" && (
