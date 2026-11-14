@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Breadcrumbs from "../components/Breadcrumbs";
-import ContactSection from "../components/ContactSection";
+import v from "../sections/v3/v3.module.css";
+import { Btn } from "../sections/v3/ui";
 import { posts } from "./posts";
 import BlogBrowser, { type PostSummary } from "./BlogBrowser";
 import styles from "./page.module.css";
@@ -25,35 +25,35 @@ export default function BlogPage() {
   }));
 
   return (
-    <main className="v2">
+    <main className={`v2 ${v.page}`}>
       <header className={styles.hero}>
-        <div className={styles.heroLeft}>
+        <div className={styles.wrap}>
           <div className={styles.crumbs}>
             <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Blog" }]} />
           </div>
-          <h1 className={styles.heroTitle}>Blog</h1>
-        </div>
-        <div className={styles.heroRight}>
-          <div className={styles.heroImage}>
-            <Image
-              src="/images/gsc-performance-mockup-3d.webp"
-              alt="Google Search Console performance report"
-              fill
-              sizes="(max-width: 900px) 90vw, 30vw"
-              priority
-            />
+          <div className={styles.heroGrid}>
+            <span className={styles.sideLabel}>Insights by Scale SEO</span>
+            <div>
+              <h1 className={styles.h1}>Blog</h1>
+              <p className={styles.lead}>
+                Explore practical SEO insights, strategies, and research from Scale SEO. Each article is written to help Canadian businesses better understand search, improve their organic visibility, and make smarter decisions about SEO.
+              </p>
+            </div>
           </div>
-          <p className={styles.heroIntro}>
-            Explore practical SEO insights, strategies, and research from Scale
-            SEO. Each article is written to help Canadian businesses better
-            understand search, improve their organic visibility, and make
-            smarter decisions about SEO.
-          </p>
         </div>
       </header>
 
       <BlogBrowser posts={summaries} />
-      <ContactSection />
+
+      <section className={`${v.white} ${v.ctaSec}`}>
+        <div className={v.wrap}>
+          <div className={v.ctaBox} data-nav="dark">
+            <h2 className={v.h2}>Ready to Grow Your Accounting Firm?</h2>
+            <p className={v.p}>Let&rsquo;s discuss your firm&rsquo;s goals, current marketing, and opportunities to attract more clients through Google. Tell us about your practice and the services you want to grow. You&rsquo;ll hear back directly, usually within 24 hours.</p>
+            <Btn href="https://cal.com/corbinjensen-scaleseo/30min" external>Speak to an Expert</Btn>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }

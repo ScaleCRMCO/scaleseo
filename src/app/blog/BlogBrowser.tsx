@@ -1,75 +1,64 @@
 "use client";
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import PostCard from "./PostCard";
+import { covers } from "./covers";
 import styles from "./page.module.css";
 
-export type PostSummary = {
-  slug: string;
-  title: string;
-  description: string;
-  category: string;
-  date: string;
-  readTime: string;
-};
+export type PostSummary = { slug: string; title: string; description: string; category: string; date: string; readTime: string };
 
-const formatDate = (iso: string) =>
-  new Date(iso).toLocaleDateString("en-CA", {
-    day: "2-digit",
-    month: "2-digit",
-    year: "numeric",
-    timeZone: "America/Edmonton",
-  });
-
+// Category tabs with counts, a featured latest article, then the card grid
 export default function BlogBrowser({ posts }: { posts: PostSummary[] }) {
-  // Filters
-  const categories = useMemo(
-    () => Array.from(new Set(posts.map((p) => p.category))),
-    [posts]
-  );
-  const [selected, setSelected] = useState<string[]>([]);
-  const toggle = (c: string) =>
-    setSelected((s) => (s.includes(c) ? s.filter((x) => x !== c) : [...s, c]));
-  const visible = posts.filter(
-    (p) => selected.length === 0 || selected.includes(p.category)
-  );
+  const cats = Array.from(new Set(posts.map((p) => p.category)));
+  const [cat, setCat] = useState<string | null>(null);
+  const visible = cat ? posts.filter((p) => p.category === cat) : posts;
+  const [featured, ...rest] = visible;
+  const cover = featured ? covers[featured.slug] : undefined;
 
   return (
-    <>
-      <section className={styles.browse} aria-label="All articles">
-        <div className={styles.browseHead}>
-          <h2 className={styles.browseTitle}>All articles</h2>
+    <section className={styles.browse} aria-label="All articles">
+      <div className={styles.wrap}>
+        <div className={styles.tabs} role="tablist" aria-label="Filter articles by category">
+          {[null, ...cats].map((c) => {
+            const n = c ? posts.filter((p) => p.category === c).length : posts.length;
+            return (
+              <button key={c ?? "all"} type="button" role="tab" aria-selected={cat === c} className={`${styles.tab} ${cat === c ? styles.tabOn : ""}`} onClick={() => setCat(c)}>
+                {c ?? "All articles"} <span className={styles.count}>{n}</span>
+              </button>
+            );
+          })}
         </div>
 
-        <div className={styles.browseBody}>
-          <fieldset className={styles.filters}>
-            <legend className={styles.filtersTitle}>Filters</legend>
-            <label className={styles.check}>
-              <input
-                type="checkbox"
-                checked={selected.length === 0}
-                onChange={() => setSelected([])}
-              />
-              <span>All</span>
-            </label>
-            {categories.map((c) => (
-              <label key={c} className={styles.check}>
-                <input type="checkbox" checked={selected.includes(c)} onChange={() => toggle(c)} />
-                <span>{c}</span>
-              </label>
-            ))}
-          </fieldset>
+        {featured && (
+          <Link href={`/blog/${featured.slug}`} className={styles.featured}>
+            <div className={styles.featText}>
+              <span className={styles.featCat}>/ {featured.category}</span>
+              <h2 className={styles.featTitle}>{featured.title}</h2>
+              <p className={styles.featDesc}>{featured.description}</p>
+              <div className={styles.featFoot}>
+                <span className={styles.featBtn}>
+                  Read the article
+                  <svg className={styles.corner} viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true"><path d="M1 1.5h7.5V9" /></svg>
+                </span>
+                <span className={styles.featMeta}>{featured.readTime}</span>
+              </div>
+            </div>
+            <div className={`${styles.featImg} ${cover?.fill ? styles.featFill : ""}`}>
+              {cover && (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img src={cover.src} alt={cover.alt} />
+              )}
+            </div>
+          </Link>
+        )}
 
+        {rest.length > 0 && (
           <div className={styles.cards}>
-            {visible.map((p) => (
-              <PostCard key={p.slug} post={p} />
-            ))}
-            {visible.length === 0 && (
-              <p className={styles.empty}>No articles match those filters.</p>
-            )}
+            {rest.map((p) => <PostCard key={p.slug} post={p} />)}
           </div>
-        </div>
-      </section>
-    </>
+        )}
+        {!featured && <p className={styles.empty}>No articles in this category yet.</p>}
+      </div>
+    </section>
   );
 }
