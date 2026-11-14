@@ -375,3 +375,4 @@
 }
 .btnRow { display: flex; gap: 16px; }
 @media (max-width: 900px) { .btnRow { flex-direction: column; } }
+.coverDesc { max-width: 52ch; margin-top: 10px; font-size: clamp(15px, 1.2vw, 18px); line-height: 1.45; color: rgba(254, 254, 254, 0.85); }
