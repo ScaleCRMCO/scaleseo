@@ -6,6 +6,7 @@ import CountUp from "../components/CountUp";
 import v from "../sections/v3/v3.module.css";
 import { Btn } from "../sections/v3/ui";
 import { Faq } from "../sections/v3/Sections";
+import HeroMark from "../sections/home/HeroMark";
 import s from "./template.module.css";
 
 /* Shared service-page template: Mamba split hero, Bilberrry statement with
@@ -39,15 +40,17 @@ export type ServiceTemplateProps = {
   title: string;
   heroLead: string;
   heroImage: { src: string; alt: string };
+  heroSecondary?: { href: string; label: string };
+  panels?: { title: string; lead: string; items: { title: string; strong: string; body: ReactNode }[] };
   statementLabel: string;
   statement: string;
   statementNote?: string;
   included?: { title: string; lead: string; items: { title: string; body: string; icon: string }[]; image: { src: string; alt: string } };
-  cases?: { title: string; lead: string; items: { name: string; body: string; stats: { from: number; to: number; prefix?: string; suffix?: string; label: string }[]; href: string; cta: string; img: string }[]; note?: string };
+  cases?: { title: string; lead: string; items: { name: string; body: string; tag?: string; stats: { from: number; to: number; prefix?: string; suffix?: string; label: string }[]; href: string; cta: string; img: string }[]; note?: string };
   markets?: { title: string; items: { title: string; body: string; icon: string; href?: string; cta?: string }[]; outro?: string };
   process?: { title: string; lead: string; items: { title: string; body: string }[] };
   fit?: { title: string; label: string; body: ReactNode };
-  pricing?: { title: string; price: string; unit: string; body: string[]; points: string[] };
+  pricing?: { title: string; price: string; unit: string; body: string[]; points: string[]; cta?: string };
   faqs?: { q: string; a: string[] }[];
   cta: { title: string; lead: string };
 };
@@ -66,7 +69,7 @@ export default function ServiceTemplate(p: ServiceTemplateProps) {
             <p className={v.lead}>{p.heroLead}</p>
             <div className={s.btns}>
               <Btn href={CAL} external>Book a Strategy Call</Btn>
-              <Btn href="/results" tone="line">View Client Results</Btn>
+              <Btn href={p.heroSecondary?.href ?? "/results"} tone="line">{p.heroSecondary?.label ?? "View Client Results"}</Btn>
             </div>
             <div className={s.badges}>
               <a href="https://agencies.semrush.com/scale-seo/" target="_blank" rel="noopener noreferrer" aria-label="Semrush Certified Agency Partner">
@@ -79,9 +82,12 @@ export default function ServiceTemplate(p: ServiceTemplateProps) {
               </a>
             </div>
           </div>
-          <div className={s.heroImg}>
+          <div className={s.heroMedia}>
+            <HeroMark className={s.heroMark} />
+            <div className={s.heroImg}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={p.heroImage.src} alt={p.heroImage.alt} />
+            </div>
           </div>
         </div>
       </header>
@@ -99,6 +105,27 @@ export default function ServiceTemplate(p: ServiceTemplateProps) {
           </div>
         </div>
       </section>
+
+      {/* Two panels (optional) */}
+      {p.panels && (
+        <section className={`${v.white} ${s.panelsSec}`}>
+          <div className={v.wrap}>
+            <div className={v.head}>
+              <div><h2 className={v.h2}>{p.panels.title}</h2></div>
+              <p className={v.p}>{p.panels.lead}</p>
+            </div>
+            <div className={s.panels}>
+              {p.panels.items.map((x, i) => (
+                <div key={x.title} className={`${s.panel} ${i % 2 ? s.panelNavy : ""}`} data-nav={i % 2 ? "dark" : undefined}>
+                  <h3 className={v.h3}>{x.title}</h3>
+                  <p className={s.panelStrong}>{x.strong}</p>
+                  <div className={s.panelBody}>{x.body}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* What's included — icon accordion + sticky image */}
       {p.included && (
@@ -144,6 +171,7 @@ export default function ServiceTemplate(p: ServiceTemplateProps) {
                     <Image src={c.img} alt={c.name} fill sizes="(max-width: 900px) 100vw, 640px" className={v.cover} />
                   </Link>
                   <div className={v.caseText}>
+                    {c.tag && <span className={s.caseTag}>{c.tag}</span>}
                     <p className={v.small}>{c.name}</p>
                     <div className={s.stats}>
                       {c.stats.map((m) => (
@@ -211,6 +239,12 @@ export default function ServiceTemplate(p: ServiceTemplateProps) {
       {(p.fit || p.pricing) && (
         <section className={`${v.white} ${v.sec}`}>
           <div className={`${v.wrap} ${s.fitGrid}`}>
+            {!p.fit && p.pricing && (
+              <div className={s.fit}>
+                <h2 className={v.h2}>{p.pricing.title}</h2>
+                {p.pricing.body.map((b) => <p key={b} className={s.fitBody}>{b}</p>)}
+              </div>
+            )}
             {p.fit && (
               <div className={s.fit}>
                 <h2 className={v.h2}>{p.fit.title}</h2>
@@ -220,13 +254,13 @@ export default function ServiceTemplate(p: ServiceTemplateProps) {
             )}
             {p.pricing && (
               <div className={s.price} data-nav="dark">
-                <h2 className={s.priceTitle}>{p.pricing.title}</h2>
+                {p.fit && <h2 className={s.priceTitle}>{p.pricing.title}</h2>}
                 <span className={s.from}>Starting at</span>
                 <span className={s.amount}>{p.pricing.price}</span>
                 <span className={s.unit}>{p.pricing.unit}</span>
-                {p.pricing.body.map((b) => <p key={b} className={s.priceP}>{b}</p>)}
+                {p.fit && p.pricing.body.map((b) => <p key={b} className={s.priceP}>{b}</p>)}
                 <ul className={s.points}>{p.pricing.points.map((x) => <li key={x}>{x}</li>)}</ul>
-                <Btn href="/pricing">View Pricing</Btn>
+                <Btn href="/pricing">{p.pricing.cta ?? "View Pricing"}</Btn>
               </div>
             )}
           </div>

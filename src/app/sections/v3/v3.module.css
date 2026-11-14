@@ -185,3 +185,6 @@
   .box { min-height: 0; }
   .box .h3 { margin-top: 24px; }
 }
+
+.inlineLink { color: #081423; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.inlineLink:hover { color: #0099FF; }

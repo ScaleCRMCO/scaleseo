@@ -374,8 +374,21 @@ export function Reviews() {
 }
 
 /* 11. FAQ — heading left, accordion right */
+const FAQ_LINK = /\[([^\]]+)\]\(([^)]+)\)/g;
+function faqRich(t: string) {
+  const out: React.ReactNode[] = [];
+  let last = 0;
+  for (const m of t.matchAll(FAQ_LINK)) {
+    if (m.index! > last) out.push(t.slice(last, m.index));
+    out.push(<Link key={m.index} href={m[2]} className={s.inlineLink}>{m[1]}</Link>);
+    last = m.index! + m[0].length;
+  }
+  if (last < t.length) out.push(t.slice(last));
+  return out;
+}
+
 export function Faq({ faqs }: { faqs: { q: string; a: string[] }[] }) {
-  const jsonLd = { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a.join(" ") } })) };
+  const jsonLd = { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a.map((x) => x.replace(FAQ_LINK, "$1")).join(" ") } })) };
   return (
     <section className={`${s.grey} ${s.sec}`} id="faq" aria-labelledby="faq-h">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
@@ -392,7 +405,7 @@ export function Faq({ faqs }: { faqs: { q: string; a: string[] }[] }) {
                 <h3 className={s.accQ}>{f.q}</h3>
                 <span className={s.plus} aria-hidden="true" />
               </summary>
-              <div className={s.stack}>{f.a.map((p) => <p key={p} className={s.p}>{p}</p>)}</div>
+              <div className={s.stack}>{f.a.map((p) => <p key={p} className={s.p}>{faqRich(p)}</p>)}</div>
             </details>
           ))}
         </div>

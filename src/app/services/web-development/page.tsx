@@ -1,11 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Breadcrumbs from "../../components/Breadcrumbs";
-import ContactSection from "../../components/ContactSection";
-import ServicesFaq, { type FaqItem } from "../ServicesFaq";
-// Shared service page template (new brand)
-import t from "../svc.module.css";
-import ServicesMark from "../../sections/home/ServicesMark";
+import { type FaqItem } from "../ServicesFaq";
+import ServiceTemplate from "../ServiceTemplate";
+import v from "../../sections/v3/v3.module.css";
 
 export const metadata: Metadata = {
   title: { absolute: "Website Design & Development Calgary | Scale SEO" },
@@ -14,19 +11,19 @@ export const metadata: Metadata = {
   alternates: { canonical: "/services/web-development" },
 };
 
-const included: { title: string; body: string }[] = [
-  { title: "Website Design & User Experience", body: "Clean, responsive websites that communicate your services clearly and work across desktop, tablet, and mobile devices." },
-  { title: "Service Pages & Site Architecture", body: "Dedicated pages for important services, organized into a logical structure that helps visitors and search engines navigate your website." },
-  { title: "Technical SEO Foundations", body: "Search-friendly navigation, metadata, canonical URLs, redirects, structured data, and other technical elements needed for a well-structured website." },
-  { title: "Content Management & Development", body: "Flexible website structures that support new services, content updates, and ongoing development without unnecessary redevelopment." },
-  { title: "Conversion-Focused Design", body: "Clear service information, enquiry forms, calls to action, and relevant trust signals that help visitors take the next step." },
+const included: { title: string; body: string; icon: string }[] = [
+  { title: "Website Design & User Experience", icon: "page", body: "Clean, responsive websites that communicate your services clearly and work across desktop, tablet, and mobile devices." },
+  { title: "Service Pages & Site Architecture", icon: "building", body: "Dedicated pages for important services, organized into a logical structure that helps visitors and search engines navigate your website." },
+  { title: "Technical SEO Foundations", icon: "gear", body: "Search-friendly navigation, metadata, canonical URLs, redirects, structured data, and other technical elements needed for a well-structured website." },
+  { title: "Content Management & Development", icon: "pen", body: "Flexible website structures that support new services, content updates, and ongoing development without unnecessary redevelopment." },
+  { title: "Conversion-Focused Design", icon: "chart", body: "Clear service information, enquiry forms, calls to action, and relevant trust signals that help visitors take the next step." },
 ];
 
-const steps: { title: string; body: string[] }[] = [
-  { title: "Plan", body: ["We review your business, customers, services, and website requirements to establish a clear structure and project scope."] },
-  { title: "Design & Build", body: ["We develop responsive layouts, service pages, and technical foundations with usability and search visibility in mind."] },
-  { title: "Test & Launch", body: ["We review functionality, mobile usability, analytics, and essential technical SEO settings before launch."] },
-  { title: "Improve", body: ["Websites can continue evolving through ongoing development, new content, and improvements informed by search performance."] },
+const steps: { title: string; body: string }[] = [
+  { title: "Plan", body: "We review your business, customers, services, and website requirements to establish a clear structure and project scope." },
+  { title: "Design & Build", body: "We develop responsive layouts, service pages, and technical foundations with usability and search visibility in mind." },
+  { title: "Test & Launch", body: "We review functionality, mobile usability, analytics, and essential technical SEO settings before launch." },
+  { title: "Improve", body: "Websites can continue evolving through ongoing development, new content, and improvements informed by search performance." },
 ];
 
 const faqs: FaqItem[] = [
@@ -42,12 +39,6 @@ const faqs: FaqItem[] = [
   { q: "Will I own my website?", a: ["Yes. You retain ownership of your website, content, accounts, and digital assets."] },
   { q: "Do you work with businesses outside Calgary?", a: ["Yes. Scale SEO is based in Calgary and works with accounting firms and established businesses across Canada and Australia."] },
 ];
-
-const Corner = () => (
-  <svg className={t.corner} viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
-    <path d="M1 1.5h7.5V9" />
-  </svg>
-);
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -139,244 +130,72 @@ const jsonLd = {
 
 export default function WebDevelopmentPage() {
   return (
-    <main className="v2">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-
-      {/* === HERO === */}
-      <header>
-        <div className={t.hero}>
-          <div className={t.crumbs}>
-            <Breadcrumbs
-              items={[
-                { name: "Home", href: "/" },
-                { name: "Services", href: "/services" },
-                { name: "Web Development" },
-              ]}
-              schema={false}
-            />
-          </div>
-          <h1 className={t.title}>Website Design &amp; Development in Calgary</h1>
-        </div>
-        <div className={t.heroBand}>
-          {/* Translucent animated logo mark behind the laptop */}
-          <ServicesMark className={t.heroMark} slow />
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/images/web-development-tablets.webp"
-            alt="Two tablets showing a business website being designed and coded in a website builder"
-          />
-        </div>
-      </header>
-
-      {/* === INTRO === */}
-      <section className={t.split} style={{ padding: 0 }}>
-        <div className={t.splitLeft}>
-          <p className={t.lead}>
-            <strong>
-              Professional websites built for visibility, usability, and growth.
-            </strong>
-          </p>
-          <div>
-            <div className={t.stat}>~100</div>
-            <p className={t.statLabel}>Pages built for MSV Plumbing Services</p>
-          </div>
-        </div>
-        <div className={t.splitRight}>
-          <div className={t.body}>
-            <p className={t.lead}>
-              Scale SEO designs, builds, and improves websites for accounting
-              firms, professional services, and established businesses across
-              Canada and Australia.
-            </p>
-            <p>
-              We combine website development with SEO expertise, creating
-              websites that clearly communicate your services, make it easy for
-              customers to enquire, and provide a strong foundation for organic
-              search.
-            </p>
-          </div>
-          <div className={t.boxRow}>
-            <Link href="/contact" className={`${t.box} ${t.boxNavy}`}>
-              <Corner />
-              <span>Book a Strategy Call</span>
-            </Link>
-            <Link href="/results" className={`${t.box} ${t.boxGrey}`}>
-              <Corner />
-              <span>View Website Projects</span>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* === BEYOND THE BUILD — two boxes === */}
-      <section className={t.twoWrap}>
-        <div className={t.twoHead}>
-          <h2 className={t.h2}>New Websites &amp; Ongoing Development</h2>
-          <p className={t.lead}>Whether you&rsquo;re launching a new website or improving an existing one, we focus on practical design, clear structure, and long-term usability.</p>
-        </div>
-        <div className={t.two}>
-          <div className={`${t.panel} ${t.panelGrey}`}>
-            <h3 className={t.h3}>New Website Design &amp; Development</h3>
-            <div className={t.body}>
-              <p><strong>Built around your business, not a template.</strong></p>
-              <p>
-                We develop custom websites with responsive layouts, clear
-                navigation, and dedicated pages for your most important services.
-              </p>
-              <p>
-                From the initial structure to technical SEO foundations, every
-                element is planned to support your business and make future
-                growth easier.
-              </p>
-            </div>
-          </div>
-          <div className={`${t.panel} ${t.panelNavy}`}>
-            <h3 className={t.h3}>Existing Website Development</h3>
-            <div className={t.body}>
-              <p><strong>Improve what you already have.</strong></p>
-              <p>
-                Not every business needs a new website. We regularly improve
-                established websites through new service pages, updated layouts,
-                technical fixes, and structural improvements.
-              </p>
-              <p>
-                Development can also be included in an ongoing{" "}
-                <Link href="/services/seo" className={t.inlineLink}>SEO campaign</Link>, allowing your website to evolve
-                alongside your search strategy.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* === WHAT'S INCLUDED — ruled rows === */}
-      <section className={t.listSection} style={{ padding: 0, borderTop: "1px solid var(--h-rule)", marginTop: 56 }}>
-        <div className={t.listHead}>
-          <h2 className={t.h2}>What&rsquo;s Included in Website Development?</h2>
-          <p className={`${t.lead} ${t.listIntro}`}>
-            Every project is scoped around your business, your services, and
-            the website you already have.
-          </p>
-        </div>
-        <div className={t.rows}>
-          {included.map((item, i) => (
-            <div key={item.title} className={t.row}>
-              <div>
-                <span className={t.rowNum}>{String(i + 1).padStart(2, "0")}</span>
-                <h3 className={t.h3}>{item.title}</h3>
-              </div>
-              <p className={`${t.body} ${t.dim}`}>{item.body}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* === COVER CARDS — full-width client project images === */}
-      <section className={t.covers} aria-label="Selected website projects">
-        <div className={t.coversHead}>
-          <h2 className={t.h2}>Selected Website Projects</h2>
-          <p className={t.lead}>
-            Real websites developed and improved for businesses in Canada and
-            Australia.
-          </p>
-        </div>
-        {[
-          {
-            href: "/results/jensen-cpa",
-            img: "/images/jensen-cpa-cover.webp",
-            alt: "Jensen CPA team in Calgary, website redevelopment client of Scale SEO",
-            tags: ["Website Redesign & SEO"],
-            title: "Jensen CPA \u2014 Calgary, Canada",
-            desc: "Redeveloped the website for a Calgary accounting firm, improving its service-page structure, navigation, and technical SEO foundations.",
-          },
-          {
-            href: "/results/empire-accountants",
-            img: "/images/empire-accountants-cover.webp",
-            alt: "Empire Accountants team in their Brisbane office, ongoing SEO and website development client of Scale SEO",
-            tags: ["Ongoing Website Development & SEO"],
-            title: "Empire Accountants \u2014 Brisbane, Australia",
-            desc: "Improved website structure, service pages, internal linking, and technical SEO to support greater visibility for accounting and advisory services.",
-          },
-          {
-            href: "/results/msv-plumbing-services",
-            img: "/images/msv-plumbing-cover.webp",
-            alt: "Matthew Main of MSV Plumbing Services with his work ute in Brisbane, website and SEO client of Scale SEO",
-            tags: ["100-Page Website Development & Local SEO"],
-            title: "MSV Plumbing Services \u2014 Brisbane, Australia",
-            desc: "Built and expanded a large service-based website for a Brisbane plumbing company, including dedicated service and location pages.",
-          },
-        ].map((c) => (
-          <Link key={c.href} href={c.href} className={t.cover}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={c.img} alt={c.alt} loading="lazy" />
-            <div className={t.coverText}>
-              <div className={t.coverTags}>
-                {c.tags.map((x) => (
-                  <span key={x}>{x}</span>
-                ))}
-              </div>
-              <h3 className={t.coverTitle}>{c.title}</h3>
-              <p className={t.coverDesc}>{c.desc}</p>
-              <span className={t.coverLink}>View Project</span>
-            </div>
-          </Link>
-        ))}
-      </section>
-
-      {/* === PROCESS — heading, then 2-column grid of numbered steps === */}
-      <section className={t.steps}>
-        <h2 className={t.h2}>Our Website Development Process</h2>
-        <div className={t.stepGrid}>
-          {steps.map((step, i) => (
-            <div key={step.title} className={t.step}>
-              <h3 className={t.stepTitle}>
-                <span>{String(i + 1).padStart(2, "0")}</span> {step.title}
-              </h3>
-              <div className={`${t.body} ${t.dim}`}>
-                {step.body.map((p) => (
-                  <p key={p}>{p}</p>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* === PRICING — split === */}
-      <section className={t.pricing} style={{ padding: 0, borderTop: 0 }}>
-        <div className={t.pricingAside}>
-          <h2 className={t.h2}>Website Development Pricing</h2>
-          <p className={t.lead}><strong>Starting at $6,000 CAD + applicable GST</strong></p>
-        </div>
-        <div className={t.pricingBody}>
-          <div className={t.body}>
-            <p>
-              Website projects are quoted individually based on design
-              requirements, page count, functionality, and technical complexity.
-            </p>
-            <p>
-              We provide a clear scope before development begins. Hosting,
-              ongoing maintenance, and monthly SEO services are available
-              separately.
-            </p>
-          </div>
-          <p className={t.pricingLead}>You retain ownership of your website, content, accounts, and data.</p>
-          <Link href="/pricing" className={`${t.box} ${t.boxNavy}`}>
-            <Corner />
-            <span>View Website &amp; SEO Pricing</span>
-          </Link>
-        </div>
-      </section>
-
-      <ServicesFaq items={faqs} title={<>Frequently Asked Questions</>} />
-
-      <ContactSection
-        heading="Build a Better Website"
-        lead="Whether you're planning a new website or looking to improve an existing one, we'll help you identify the right approach for your business. Tell us about your project, and we'll discuss the next steps."
-        cta={{ href: "/contact", label: "Book a Strategy Call →" }}
+    <main className={`v2 ${v.page}`}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <ServiceTemplate
+        crumb="Web Development"
+        title="Website Design & Development in Calgary"
+        heroLead="Scale SEO designs, builds, and improves websites for accounting firms, professional services, and established businesses across Canada and Australia."
+        heroImage={{ src: "/images/web-development-tablets.webp", alt: "Two tablets showing a business website being designed and coded in a website builder" }}
+        heroSecondary={{ href: "/results", label: "View Website Projects" }}
+        statementLabel="Website development"
+        statement="We combine website development with SEO expertise, creating websites that clearly communicate your services, make it easy for customers to enquire, and provide a strong foundation for organic search."
+        statementNote="Professional websites built for visibility, usability, and growth."
+        panels={{
+          title: "New Websites & Ongoing Development",
+          lead: "Whether you\u2019re launching a new website or improving an existing one, we focus on practical design, clear structure, and long-term usability.",
+          items: [
+            {
+              title: "New Website Design & Development",
+              strong: "Built around your business, not a template.",
+              body: (
+                <>
+                  <p>We develop custom websites with responsive layouts, clear navigation, and dedicated pages for your most important services.</p>
+                  <p>From the initial structure to technical SEO foundations, every element is planned to support your business and make future growth easier.</p>
+                </>
+              ),
+            },
+            {
+              title: "Existing Website Development",
+              strong: "Improve what you already have.",
+              body: (
+                <>
+                  <p>Not every business needs a new website. We regularly improve established websites through new service pages, updated layouts, technical fixes, and structural improvements.</p>
+                  <p>Development can also be included in an ongoing <Link href="/services/seo">SEO campaign</Link>, allowing your website to evolve alongside your search strategy.</p>
+                </>
+              ),
+            },
+          ],
+        }}
+        included={{
+          title: "What\u2019s Included in Website Development?",
+          lead: "Every project is scoped around your business, your services, and the website you already have.",
+          items: included,
+          image: { src: "/images/msv-plumbing-cover.webp", alt: "Matthew Main of MSV Plumbing Services, a Scale SEO website client in Brisbane" },
+        }}
+        cases={{
+          title: "Selected Website Projects",
+          lead: "Real websites developed and improved for businesses in Canada and Australia.",
+          items: [
+            { name: "Jensen CPA \u2014 Calgary, Canada", tag: "Website Redesign & SEO", stats: [], body: "Redeveloped the website for a Calgary accounting firm, improving its service-page structure, navigation, and technical SEO foundations.", href: "/results/jensen-cpa", cta: "View Project", img: "/images/jensen-cpa-cover.webp" },
+            { name: "Empire Accountants \u2014 Brisbane, Australia", tag: "Ongoing Website Development & SEO", stats: [], body: "Improved website structure, service pages, internal linking, and technical SEO to support greater visibility for accounting and advisory services.", href: "/results/empire-accountants", cta: "View Project", img: "/images/empire-accountants-cover.webp" },
+            { name: "MSV Plumbing Services \u2014 Brisbane, Australia", tag: "100-Page Website Development & Local SEO", stats: [{ from: 0, to: 100, prefix: "~", label: "Pages built for MSV Plumbing Services" }], body: "Built and expanded a large service-based website for a Brisbane plumbing company, including dedicated service and location pages.", href: "/results/msv-plumbing-services", cta: "View Project", img: "/images/msv-plumbing-cover.webp" },
+          ],
+        }}
+        process={{ title: "Our Website Development Process", lead: "From planning to launch and beyond, each stage builds on the one before it.", items: steps }}
+        pricing={{
+          title: "Website Development Pricing",
+          price: "$6,000 CAD",
+          unit: "+ applicable GST",
+          body: [
+            "Website projects are quoted individually based on design requirements, page count, functionality, and technical complexity.",
+            "We provide a clear scope before development begins. Hosting, ongoing maintenance, and monthly SEO services are available separately.",
+          ],
+          points: ["You retain ownership of your website, content, accounts, and data."],
+          cta: "View Website & SEO Pricing",
+        }}
+        faqs={faqs}
+        cta={{ title: "Build a Better Website", lead: "Whether you\u2019re planning a new website or looking to improve an existing one, we\u2019ll help you identify the right approach for your business. Tell us about your project, and we\u2019ll discuss the next steps." }}
       />
     </main>
   );

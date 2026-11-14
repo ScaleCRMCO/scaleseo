@@ -7,7 +7,10 @@
 .btns { display: flex; flex-wrap: wrap; gap: 12px; }
 .badges { display: flex; align-items: center; gap: 24px; margin-top: 8px; }
 .badges img { display: block; height: auto; }
-.heroImg { position: relative; overflow: hidden; background: #0d1d31; aspect-ratio: 5 / 4; display: grid; place-items: center; }
+.heroMedia { position: relative; }
+.heroMark { position: absolute; left: -22%; top: 50%; width: min(34vw, 440px); height: auto; transform: translateY(-50%); color: rgba(254, 254, 254, 0.07); pointer-events: none; }
+.heroMark svg { display: block; width: 100%; height: auto; }
+.heroImg { position: relative; z-index: 1; overflow: hidden; background: transparent; aspect-ratio: 5 / 4; display: grid; place-items: center; }
 .heroImg img { width: 100%; height: 100%; object-fit: contain; }
 
 .labelled { display: grid; grid-template-columns: 1fr 2.2fr; gap: 64px; }
@@ -69,3 +72,15 @@
   .itemBody { padding: 0 16px 24px; }
   .price { padding: 28px 24px; }
 }
+
+.caseTag { align-self: flex-start; padding: 4px 10px; background: rgba(0, 153, 255, 0.1); color: #0077CC; font-size: 12px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; }
+.panelsSec { padding: 0 0 120px; }
+.panels { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.panel { display: flex; flex-direction: column; gap: 14px; padding: 40px; background: #F1F3F6; }
+.panelNavy { background: #081423; color: #FEFEFE; }
+.panelStrong { margin: 0; font-size: 17px; font-weight: 600; }
+.panelBody { display: flex; flex-direction: column; gap: 12px; font-size: 16px; line-height: 1.6; color: rgba(8, 20, 35, 0.72); }
+.panelNavy .panelBody { color: rgba(254, 254, 254, 0.72); }
+.panelBody p { margin: 0; }
+.panelBody a { color: inherit; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 900px) { .panels { grid-template-columns: 1fr; } .panel { padding: 28px 24px; } .heroMark { left: auto; right: -10%; width: 70vw; } }
