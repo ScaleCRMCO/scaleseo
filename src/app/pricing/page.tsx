@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import Breadcrumbs from "../components/Breadcrumbs";
-import ContactSection from "../components/ContactSection";
-import ServicesFaq, { type FaqItem } from "../services/ServicesFaq";
+import { type FaqItem } from "../services/ServicesFaq";
+import v from "../sections/v3/v3.module.css";
+import { Btn } from "../sections/v3/ui";
+import { Faq } from "../sections/v3/Sections";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
@@ -17,6 +18,8 @@ const BOOKING_URL = "https://cal.com/corbinjensen-scaleseo/30min";
 
 const plans = [
   {
+    id: "monthly-seo",
+    tab: "Monthly SEO",
     name: "Monthly SEO for Accounting Firms",
     price: "$3,000",
     unit: "/month + GST",
@@ -38,6 +41,8 @@ const plans = [
     featured: true,
   },
   {
+    id: "seo-google-ads",
+    tab: "SEO & Google Ads",
     name: "SEO & Google Ads Management",
     price: "Custom Quote",
     unit: "",
@@ -58,6 +63,8 @@ const plans = [
     featured: false,
   },
   {
+    id: "website",
+    tab: "Website Development",
     name: "Website Design & Development",
     price: "$6,000",
     unit: "one-time + GST",
@@ -79,6 +86,8 @@ const plans = [
     featured: false,
   },
   {
+    id: "enterprise",
+    tab: "Enterprise & Multi-Location",
     name: "Enterprise & Multi-Location SEO",
     price: "Custom Quote",
     unit: "",
@@ -115,6 +124,7 @@ const factors = [
   },
 ];
 
+const termIcons = ["M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6", "M4 6h16v15H4zM4 10h16M9 3v4M15 3v4", "M7 11V7a5 5 0 0 1 10 0v4M5 11h14v10H5z"];
 const terms = [
   {
     title: "Accounting Industry Experience",
@@ -266,146 +276,117 @@ const jsonLd = {
 };
 
 const Corner = () => (
-  <svg className={styles.corner} viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
-    <path d="M1 1.5h7.5V9" />
-  </svg>
+  <svg className={v.corner} viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true"><path d="M1 1.5h7.5V9" /></svg>
 );
 
+// Bilberrry work-index layout: side-label hero, sticky plan tabs, then
+// alternating rows (plan details | price panel), factors, terms, FAQ, CTA
 export default function PricingPage() {
   return (
-    <main className="v2">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+    <main className={`v2 ${v.page}`}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
-      {/* === Hero — big title + small note left; B&W image, subheading and text right === */}
-      <header className={styles.hero}>
-        <div className={styles.heroLeft}>
+      <header className={`${v.white} ${styles.hero}`}>
+        <div className={v.wrap}>
           <div className={styles.crumbs}>
             <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Pricing" }]} schema={false} />
           </div>
-          <h1 className={styles.heroTitle}>SEO &amp; Website Pricing for Accounting Firms</h1>
-          <a href="#plans" className={styles.heroNote}>See Starting Prices &darr;</a>
-        </div>
-        <div className={styles.heroRight}>
-          <div className={styles.heroImage}>
-            <Image
-              src="/images/calgary-skyline.webp"
-              alt="Calgary skyline"
-              fill
-              priority
-              sizes="(max-width: 900px) 90vw, 33vw"
-            />
+          <div className={styles.labelled}>
+            <span className={styles.sideLabel}>Pricing</span>
+            <div>
+              <h1 className={styles.h1}>SEO &amp; Website Pricing for Accounting Firms</h1>
+              <p className={styles.lead}>Transparent starting prices for accounting firms investing in long-term search visibility and client acquisition.</p>
+              <div className={styles.cols2}>
+                <p className={v.p}>Scale SEO provides SEO, Google Ads management, and website development for CPA firms, tax accountants, bookkeeping practices, and financial advisory businesses across Canada and Australia.</p>
+                <p className={v.p}>Our campaigns are tailored to your firm&rsquo;s services, target clients, and competitive market.</p>
+              </div>
+            </div>
           </div>
-          <p className={styles.heroSub}>
-            Transparent starting prices for accounting firms investing in
-            long-term search visibility and client acquisition.
-          </p>
-          <p className={styles.heroBody}>
-            Scale SEO provides SEO, Google Ads management, and website
-            development for CPA firms, tax accountants, bookkeeping practices,
-            and financial advisory businesses across Canada and Australia.
-          </p>
-          <p className={styles.heroBody}>
-            Our campaigns are tailored to your firm&rsquo;s services, target
-            clients, and competitive market.
-          </p>
         </div>
       </header>
 
-      {/* === Starting prices — three plan columns === */}
-      <section className={styles.plansSection} id="plans">
-        <div className={styles.head}>
-          <h2 className={styles.bigH2}>Starting Prices</h2>
-          <p className={styles.headBody}>
-            All prices listed in Canadian dollars (CAD), plus applicable GST.
-            Final pricing is confirmed after reviewing your website, target
-            market, and campaign requirements. Australian engagements are
-            quoted separately in AUD.
-          </p>
+      <section className={`${v.white} ${styles.plansSec}`} id="plans">
+        <div className={styles.tabsBar}>
+          <nav className={`${v.wrap} ${styles.tabs}`} aria-label="Jump to a service">
+            {plans.map((p) => <a key={p.id} href={`#${p.id}`} className={styles.tab}>{p.tab}</a>)}
+          </nav>
         </div>
-
-        <div className={styles.plans}>
-          {plans.map((p) => (
-            <article key={p.name} className={`${styles.plan} ${p.featured ? styles.featured : ""}`}>
-              <h3 className={styles.planName}>{p.name}</h3>
-              <div className={styles.priceRow}>
+        <div className={v.wrap}>
+          <p className={styles.plansNote}>All prices listed in Canadian dollars (CAD), plus applicable GST. Final pricing is confirmed after reviewing your website, target market, and campaign requirements. Australian engagements are quoted separately in AUD.</p>
+          {plans.map((p, i) => (
+            <article key={p.id} id={p.id} className={`${styles.row} ${i % 2 ? styles.flip : ""}`}>
+              <div className={styles.text}>
+                <h2 className={styles.planName}>{p.name}</h2>
+                <p className={styles.summary}>{p.summary}</p>
+                <div>
+                  <p className={styles.listLabel}>{p.listLabel}</p>
+                  <ul className={styles.tags}>{p.includes.map((x) => <li key={x}>/ {x}</li>)}</ul>
+                </div>
+                <p className={v.small}>{p.note}</p>
+                <Link href={p.href} className={`${v.btn} ${v.btn_navy}`}><span>{p.cta}</span><Corner /></Link>
+              </div>
+              <div className={`${styles.pricePanel} ${p.featured ? styles.panelBlue : ""}`}>
                 <span className={styles.from}>{p.unit ? "Starting at" : "Pricing"}</span>
                 <span className={styles.price}>{p.price}</span>
                 {p.unit && <span className={styles.unit}>{p.unit}</span>}
               </div>
-              <p className={styles.planSummary}>{p.summary}</p>
-              <div>
-                <p className={styles.listLabel}>{p.listLabel}</p>
-                <ul className={styles.planList}>
-                  {p.includes.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </div>
-              <p className={styles.planNote}>{p.note}</p>
-              <Link href={p.href} className={styles.planLink}>
-                <span>{p.cta} &rarr;</span>
-                <span className={styles.plus} aria-hidden="true">+</span>
-              </Link>
             </article>
           ))}
-        </div>
-
-        <p className={styles.plansNote}>
-          Need an independent website assessment?{" "}
-          <Link href="/services/seo-audits">Explore SEO Audit Services</Link> for
-          a standalone technical SEO audit and tailored quote.
-        </p>
-      </section>
-
-      {/* === What affects pricing — heading left, ruled rows right === */}
-      <section className={styles.split}>
-        <div className={styles.splitAside}>
-          <h2 className={styles.bigH2}>What Affects SEO Pricing for Accounting Firms?</h2>
-          <p className={styles.asideBody}>
-            Every accounting practice has different competitors, services, and
-            growth objectives. These factors help determine the work required.
+          <p className={styles.audit}>
+            Need an independent website assessment? <Link href="/services/seo-audits">Explore SEO Audit Services</Link> for a standalone technical SEO audit and tailored quote.
           </p>
         </div>
-        <div className={styles.rows}>
-          {factors.map((f, i) => (
-            <div key={f.title} className={styles.row}>
-              <span className={styles.rowNum}>{String(i + 1).padStart(2, "0")}</span>
-              <h3 className={styles.rowTitle}>{f.title}</h3>
-              <p className={styles.rowBody}>{f.body}</p>
-            </div>
-          ))}
+      </section>
+
+      <section className={`${v.grey} ${v.sec}`}>
+        <div className={`${v.wrap} ${styles.labelled}`}>
+          <div>
+            <h2 className={v.h2}>What Affects SEO Pricing for Accounting Firms?</h2>
+            <p className={`${v.p} ${styles.asideP}`}>Every accounting practice has different competitors, services, and growth objectives. These factors help determine the work required.</p>
+          </div>
+          <ol className={styles.factors}>
+            {factors.map((f, i) => (
+              <li key={f.title}>
+                <span className={styles.num}>/ 0{i + 1}</span>
+                <h3 className={v.h3}>{f.title}</h3>
+                <p className={v.p}>{f.body}</p>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 
-      {/* === Working with Scale SEO — blue, three boxes === */}
-      <section className={styles.termsSection}>
-        <h2 className={styles.bigH2}>Working With Scale SEO</h2>
-        <div className={styles.terms}>
-          {terms.map((t, i) => (
-            <div key={t.title} className={styles.term}>
-              <span className={styles.rowNum}>{String(i + 1).padStart(2, "0")}</span>
-              <h3 className={styles.termTitle}>{t.title}</h3>
-              <p className={styles.termBody}>{t.body}</p>
-            </div>
-          ))}
+      <section className={`${v.white} ${v.sec}`}>
+        <div className={v.wrap}>
+          <div className={v.head}><div><h2 className={v.h2}>Working With Scale SEO</h2></div></div>
+          <div className={`${v.points} ${v.cols3}`}>
+            {terms.map((t, i) => (
+              <div key={t.title} className={v.point}>
+                <span className={v.icon} aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d={termIcons[i]} /></svg></span>
+                <h3 className={v.h3}>{t.title}</h3>
+                <p className={v.p}>{t.body}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      <ServicesFaq items={faqs} title={<>Frequently Asked Questions</>} />
+      <Faq faqs={faqs} />
 
-      <ContactSection
-        heading="Get a Quote for Your Accounting Firm"
-        lead="Whether you're looking to improve organic visibility, launch Google Ads, or develop a new website, we'll review your firm's requirements and recommend a practical starting point."
-        points={[
-          "Experience with accounting firms in Canada and Australia",
-          "Flexible month-to-month SEO campaigns",
-          "Full ownership of your website, content, and data",
-        ]}
-        cta={{ href: BOOKING_URL, label: "Book a Consultation \u2192" }}
-      />
+      <section className={`${v.white} ${v.ctaSec}`} style={{ paddingTop: 40 }}>
+        <div className={v.wrap}>
+          <div className={`${v.ctaBox} ${styles.cta}`} data-nav="dark">
+            <div>
+              <h2 className={v.h2}>Get a Quote for Your Accounting Firm</h2>
+              <p className={v.p}>Whether you&rsquo;re looking to improve organic visibility, launch Google Ads, or develop a new website, we&rsquo;ll review your firm&rsquo;s requirements and recommend a practical starting point.</p>
+              <Btn href={BOOKING_URL} external>Book a Consultation</Btn>
+            </div>
+            <ul className={styles.points}>
+              {["Experience with accounting firms in Canada and Australia", "Flexible month-to-month SEO campaigns", "Full ownership of your website, content, and data"].map((x) => <li key={x}>{x}</li>)}
+            </ul>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
