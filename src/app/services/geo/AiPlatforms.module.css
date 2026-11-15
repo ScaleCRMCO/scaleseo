@@ -1,4 +1,4 @@
-.section { padding: 120px 40px 128px !important; background: var(--h-navy); color: var(--h-white); overflow: hidden; }
+.section { padding: 120px max(40px, calc((100vw - 1280px) / 2)) 128px !important; background: var(--h-navy); color: var(--h-white); overflow: hidden; }
 .head { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
 .title { max-width: 15ch; font-size: clamp(36px, 4vw, 64px); line-height: 1.05; font-weight: 400; letter-spacing: -0.03em; }
 .intro { display: flex; flex-direction: column; gap: 0.8em; max-width: 600px; justify-self: end; font-size: clamp(17px, 1.4vw, 21px); line-height: 1.45; color: rgba(254, 254, 254, 0.78); }

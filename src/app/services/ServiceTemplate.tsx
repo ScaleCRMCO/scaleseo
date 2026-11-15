@@ -45,7 +45,10 @@ export type ServiceTemplateProps = {
   statementLabel: string;
   statement: string;
   statementNote?: string;
-  included?: { title: string; lead: string; items: { title: string; body: string; icon: string }[]; image: { src: string; alt: string } };
+  statementBody?: string[];
+  explainer?: { title: string; lead: string; body: ReactNode };
+  feature?: ReactNode;
+  included?: { title: string; lead: string; items: { title: string; body: string | string[]; icon: string }[]; image: { src: string; alt: string } };
   cases?: { title: string; lead: string; items: { name: string; body: string; tag?: string; stats: { from: number; to: number; prefix?: string; suffix?: string; label: string }[]; href: string; cta: string; img: string }[]; note?: string };
   markets?: { title: string; items: { title: string; body: string; icon: string; href?: string; cta?: string }[]; outro?: string };
   process?: { title: string; lead: string; items: { title: string; body: string }[] };
@@ -99,12 +102,28 @@ export default function ServiceTemplate(p: ServiceTemplateProps) {
           <div>
             <p className={s.statement}>{p.statement}</p>
             {p.statementNote && <p className={s.note}>{p.statementNote}</p>}
+            {p.statementBody && (
+              <div className={s.stBody}>{p.statementBody.map((b) => <p key={b} className={v.p}>{b}</p>)}</div>
+            )}
             {p.included && (
               <ul className={s.tags}>{p.included.items.map((x) => <li key={x.title}>/ {x.title}</li>)}</ul>
             )}
           </div>
         </div>
       </section>
+
+      {/* Explainer (optional) */}
+      {p.explainer && (
+        <section className={`${v.white} ${s.panelsSec}`}>
+          <div className={`${v.wrap} ${s.explainer}`}>
+            <h2 className={v.h2}>{p.explainer.title}</h2>
+            <div>
+              <p className={s.fitLabel}>{p.explainer.lead}</p>
+              <div className={s.fitBody}>{p.explainer.body}</div>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Two panels (optional) */}
       {p.panels && (
@@ -144,7 +163,7 @@ export default function ServiceTemplate(p: ServiceTemplateProps) {
                       <h3 className={s.itemTitle}>{x.title}</h3>
                       <span className={s.plus} aria-hidden="true" />
                     </summary>
-                    <div className={s.itemBody}><p className={v.p}>{x.body}</p></div>
+                    <div className={s.itemBody}>{(Array.isArray(x.body) ? x.body : [x.body]).map((b) => <p key={b} className={v.p}>{b}</p>)}</div>
                   </details>
                 ))}
               </div>
@@ -155,6 +174,8 @@ export default function ServiceTemplate(p: ServiceTemplateProps) {
           </div>
         </section>
       )}
+
+      {p.feature}
 
       {/* Case rows */}
       {p.cases && (
@@ -238,7 +259,7 @@ export default function ServiceTemplate(p: ServiceTemplateProps) {
       {/* Fit + pricing */}
       {(p.fit || p.pricing) && (
         <section className={`${v.white} ${v.sec}`}>
-          <div className={`${v.wrap} ${s.fitGrid}`}>
+          <div className={`${v.wrap} ${s.fitGrid} ${!p.pricing ? s.fitSolo : ""}`}>
             {!p.fit && p.pricing && (
               <div className={s.fit}>
                 <h2 className={v.h2}>{p.pricing.title}</h2>

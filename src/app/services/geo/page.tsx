@@ -1,19 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Breadcrumbs from "../../components/Breadcrumbs";
-import ContactSection from "../../components/ContactSection";
-import ServicesFaq, { type FaqItem } from "../ServicesFaq";
-import ServicesMark from "../../sections/home/ServicesMark";
-// Shared service page template (new brand)
-import t from "../svc.module.css";
+import { type FaqItem } from "../ServicesFaq";
+import ServiceTemplate from "../ServiceTemplate";
+import tpl from "../template.module.css";
+import v from "../../sections/v3/v3.module.css";
 import AiPlatforms from "./AiPlatforms";
-import gi from "./GeoIntro.module.css";
-import hero from "../../sections/home/Hero.module.css";
-import ClientLogos from "../../components/ClientLogos";
-import TrustindexWidget from "../../components/TrustindexWidget";
-import CaseStudy, { type CaseCard } from "../../sections/home/CaseStudy";
 
-const geoCases: CaseCard[] = [
+const geoCases = [
   {
     href: "/results/empire-accountants",
     client: "Empire Accountants",
@@ -55,9 +48,10 @@ export const metadata: Metadata = {
   alternates: { canonical: "/services/geo" },
 };
 
-const included: { title: string; body: string[] }[] = [
+const included: { title: string; icon: string; body: string[] }[] = [
   {
     title: "AI Search Visibility & Research",
+    icon: "search",
     body: [
       "We review how your business and its services appear across relevant AI-powered search experiences.",
       "This helps identify opportunities to improve your website’s content, strengthen business information, and address topics potential customers are researching.",
@@ -65,6 +59,7 @@ const included: { title: string; body: string[] }[] = [
   },
   {
     title: "Website Content & Structure",
+    icon: "page",
     body: [
       "AI search optimization starts with useful information.",
       "We improve important service pages, supporting content, headings, and internal links so your website clearly explains what your business does and who it helps.",
@@ -73,6 +68,7 @@ const included: { title: string; body: string[] }[] = [
   },
   {
     title: "Technical SEO & Structured Data",
+    icon: "gear",
     body: [
       "Your website needs to be accessible to search engines before its information can be discovered.",
       "We review crawling and indexing issues, website architecture, and relevant structured data. This can include information about your organization, services, people, and published content.",
@@ -81,6 +77,7 @@ const included: { title: string; body: string[] }[] = [
   },
   {
     title: "Business Expertise & Trust",
+    icon: "building",
     body: [
       "For professional service businesses, knowing who provides a service is often as important as understanding the service itself.",
       "We strengthen company information, author profiles, service descriptions, and relevant supporting evidence to make your business’s experience and expertise clearer.",
@@ -125,12 +122,6 @@ const faqs: FaqItem[] = [
     ],
   },
 ];
-
-const Corner = () => (
-  <svg className={t.corner} viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
-    <path d="M1 1.5h7.5V9" />
-  </svg>
-);
 
 const geoJsonLd = {
   "@context": "https://schema.org",
@@ -246,175 +237,68 @@ const geoJsonLd = {
 
 export default function GeoServicePage() {
   return (
-    <main className="v2">
+    <main className={`v2 ${v.page}`}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(geoJsonLd) }}
       />
 
-      {/* === HERO — title, then navy band with the animated logo === */}
-      <header>
-        <div className={t.hero}>
-          <div className={t.crumbs}>
-            <Breadcrumbs
-              items={[
-                { name: "Home", href: "/" },
-                { name: "Services", href: "/services" },
-                { name: "GEO (AI Search)" },
-              ]}
-              schema={false}
-            />
-          </div>
-          <h1 className={t.title}>AI Search Optimization &amp; GEO Services</h1>
-        </div>
-        <div className={t.heroBand} style={{ alignItems: "flex-end", paddingBottom: 0, paddingTop: 88 }}>
-          <ServicesMark className={t.heroMark} slow />
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/images/geo-ai-search-phone.webp"
-            alt="Hand holding a phone showing an AI assistant with ChatGPT, Gemini, Claude and Perplexity icons"
-          />
-        </div>
-      </header>
-
-      <ClientLogos />
-
-      {/* === INTRO — statement + lead/CTA, proof row, two-column copy === */}
-      <section className={gi.intro}>
-        <div className={gi.top}>
-          <h2 className={gi.statement}>Be the brand AI models name when your buyers ask.</h2>
-          <div className={gi.leadCol}>
-            <p className={gi.lead}>
-              Help potential customers discover your business through ChatGPT,
-              Google AI search, and other AI-powered platforms.
-            </p>
-            <Link href="/contact" className={`${t.box} ${t.boxNavy}`}>
-              <Corner />
-              <span>Book a Strategy Call</span>
-            </Link>
-          </div>
-        </div>
-
-        <div className={gi.proofRow}>
-          <div className={hero.leftGroup}>
-            <TrustindexWidget id="cebaa07845048474c13615cd1b2" className={hero.reviews} />
-            <div className={hero.metric}>
-              <span className={hero.metricValue}>$1M+</span>
-              <span className={hero.metricLabel}>in Client Revenue Generated</span>
-            </div>
-          </div>
-        </div>
-
-        <div className={gi.cols}>
-          <p className={gi.colLead}>
-            Scale SEO provides AI search optimization and Generative Engine
-            Optimization (GEO) for professional service and B2B businesses
-            across Canada.
-          </p>
-          <p className={gi.colBody}>
-            We help businesses build a stronger presence in AI-powered search
-            by improving their website content, technical foundations, and the
-            information available about their services.
-          </p>
-        </div>
-      </section>
-
-      {/* === WHAT IS — heading left, text right === */}
-      <section className={t.rowsSplit} style={{ padding: 0, borderTop: 0 }}>
-        <div className={t.rowsAside}>
-          <h2 className={t.h2}>What Is AI Search Optimization?</h2>
-        </div>
-        <div className={t.rowsList}>
-          <div className={t.body} style={{ paddingTop: 32, paddingBottom: 32 }}>
-            <p className={t.lead}>
-              AI search optimization, also known as Generative Engine
-              Optimization (GEO), focuses on improving how businesses are
-              discovered, understood, and referenced in AI-generated search
-              results.
-            </p>
-            <p>
-              Unlike traditional search, where users typically browse a list of
-              websites, AI platforms can provide direct answers, summaries, and
-              business recommendations.
-            </p>
-            <p>
-              For example, a business owner might ask ChatGPT to recommend an
-              accounting firm specializing in corporate tax or compare consulting
-              companies that serve Canadian businesses.
-            </p>
-            <p>
-              GEO builds on traditional{" "}
-              <Link href="/services/seo" className={t.inlineLink}>SEO</Link>,
-              helping businesses adapt their online presence to how customers
-              increasingly research and compare service providers.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* === AI PLATFORMS — hub diagram + four points === */}
-      <AiPlatforms />
-
-      {/* === WHAT'S INCLUDED — 2-column numbered steps === */}
-      <section className={t.steps}>
-        <h2 className={t.h2}>What&rsquo;s Included in AI Search Optimization?</h2>
-        <div className={t.stepGrid}>
-          {included.map((item, i) => (
-            <div key={item.title} className={t.step}>
-              <h3 className={t.stepTitle}>
-                <span>{String(i + 1).padStart(2, "0")}</span> {item.title}
-              </h3>
-              <div className={`${t.body} ${t.dim}`}>
-                {item.body.map((p) => (
-                  <p key={p}>{p}</p>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* === IN PRACTICE — homepage-style case study row === */}
-      <CaseStudy
-        id="client-work"
-        label="Client Work"
-        heading="AI Search Optimization in Practice"
-        aside="Begin seeing results in as soon as 30 days."
-        cards={geoCases}
-      />
-
-      {/* === MEASUREMENT — heading left, ruled rows right === */}
-      <section className={t.rowsSplit} style={{ padding: 0 }}>
-        <div className={t.rowsAside}>
-          <h2 className={t.h2}>How Do You Measure AI Search Visibility?</h2>
-          <p className={t.body}>
-            AI search doesn&rsquo;t work exactly like traditional Google rankings,
-            so we look at several indicators.
-          </p>
-        </div>
-        <div className={t.rowsList}>
-          {measures.map(([k, v]) => (
-            <div key={k} className={t.rowsItem}>
-              <h3 className={t.h3}>{k}</h3>
-              <p className={t.body}>{v}</p>
-            </div>
-          ))}
-          <div className={t.rowsItem}>
-            <p className={t.lead}>
-              The goal isn&rsquo;t simply to increase mentions of your business.
-              It&rsquo;s to improve relevant visibility and understand whether that
-              visibility contributes to customer enquiries.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <ServicesFaq items={faqs} title={<>Frequently Asked Questions</>} />
-
-      <ContactSection
-        heading="Work Directly With an SEO Specialist"
-        lead="If you're interested in improving how your business is discovered online, we can review your current website and recommend where AI search optimization fits into your broader strategy."
-        cta={{ href: "/contact", label: "Book a Strategy Call →" }}
+      <ServiceTemplate
+        crumb="GEO (AI Search)"
+        title="AI Search Optimization & GEO Services"
+        heroLead="Help potential customers discover your business through ChatGPT, Google AI search, and other AI-powered platforms."
+        heroImage={{ src: "/images/geo-ai-search-phone.webp", alt: "Hand holding a phone showing an AI assistant with ChatGPT, Gemini, Claude and Perplexity icons" }}
+        statementLabel="AI search optimization"
+        statement="Be the brand AI models name when your buyers ask."
+        statementBody={[
+          "Scale SEO provides AI search optimization and Generative Engine Optimization (GEO) for professional service and B2B businesses across Canada.",
+          "We help businesses build a stronger presence in AI-powered search by improving their website content, technical foundations, and the information available about their services.",
+        ]}
+        explainer={{
+          title: "What Is AI Search Optimization?",
+          lead: "AI search optimization, also known as Generative Engine Optimization (GEO), focuses on improving how businesses are discovered, understood, and referenced in AI-generated search results.",
+          body: (
+            <>
+              <p>Unlike traditional search, where users typically browse a list of websites, AI platforms can provide direct answers, summaries, and business recommendations.</p>
+              <p>For example, a business owner might ask ChatGPT to recommend an accounting firm specializing in corporate tax or compare consulting companies that serve Canadian businesses.</p>
+              <p>GEO builds on traditional <Link href="/services/seo">SEO</Link>, helping businesses adapt their online presence to how customers increasingly research and compare service providers.</p>
+            </>
+          ),
+        }}
+        included={{
+          title: "What\u2019s Included in AI Search Optimization?",
+          lead: "We improve the website and business information you control, so AI-powered search can better understand what your business does and who it helps.",
+          items: included,
+          image: { src: "/images/empire-accountants-cover.webp", alt: "The Empire Accountants team in Brisbane, a Scale SEO client" },
+        }}
+        feature={<AiPlatforms />}
+        cases={{
+          title: "AI Search Optimization in Practice",
+          lead: "Begin seeing results in as soon as 30 days.",
+          items: geoCases.map((c) => ({
+            name: c.client,
+            tag: c.services,
+            stats: "to" in c.metric ? [{ from: (c.metric as { from?: number }).from ?? 0, to: (c.metric as { to: number }).to, prefix: (c.metric as { prefix?: string }).prefix, suffix: (c.metric as { suffix?: string }).suffix, label: c.metricLabel }] : [],
+            body: "text" in c.metric ? `${(c.metric as { text: string }).text}: ${c.metricLabel}` : "",
+            href: c.href,
+            cta: `View ${c.client} Case Study`,
+            img: c.image,
+          })),
+        }}
+        fit={{
+          title: "How Do You Measure AI Search Visibility?",
+          label: "AI search doesn\u2019t work exactly like traditional Google rankings, so we look at several indicators.",
+          body: (
+            <>
+              <ul className={tpl.measures}>
+                {measures.map(([k, d]) => <li key={k}><strong>{k}</strong><span>{d}</span></li>)}
+              </ul>
+              <p>The goal isn&rsquo;t simply to increase mentions of your business. It&rsquo;s to improve relevant visibility and understand whether that visibility contributes to customer enquiries.</p>
+            </>
+          ),
+        }}
+        faqs={faqs}
+        cta={{ title: "Work Directly With an SEO Specialist", lead: "If you\u2019re interested in improving how your business is discovered online, we can review your current website and recommend where AI search optimization fits into your broader strategy." }}
       />
     </main>
   );
