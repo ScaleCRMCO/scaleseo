@@ -136,6 +136,7 @@ export default function WebDevelopmentPage() {
         crumb="Web Development"
         title="Website Design & Development in Calgary"
         heroLead="Scale SEO designs, builds, and improves websites for accounting firms, professional services, and established businesses across Canada and Australia."
+        heroBleed
         heroImage={{ src: "/images/web-development-tablets.webp", alt: "Two tablets showing a business website being designed and coded in a website builder" }}
         heroSecondary={{ href: "/results", label: "View Website Projects" }}
         statementLabel="Website development"
