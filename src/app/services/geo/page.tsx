@@ -247,6 +247,7 @@ export default function GeoServicePage() {
         crumb="GEO (AI Search)"
         title="AI Search Optimization & GEO Services"
         heroLead="Help potential customers discover your business through ChatGPT, Google AI search, and other AI-powered platforms."
+        heroBleed
         heroImage={{ src: "/images/geo-ai-search-phone.webp", alt: "Hand holding a phone showing an AI assistant with ChatGPT, Gemini, Claude and Perplexity icons" }}
         statementLabel="AI search optimization"
         statement="Be the brand AI models name when your buyers ask."

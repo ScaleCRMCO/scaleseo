@@ -96,3 +96,12 @@
 .fitSolo > .fit > h2 { grid-row: span 2; }
 .fitSolo > .fit > :not(h2) { grid-column: 2; }
 @media (max-width: 900px) { .fitSolo > .fit { grid-template-columns: 1fr; } .fitSolo > .fit > :not(h2) { grid-column: 1; } }
+
+/* Bleed hero: image sits on the bottom edge of the navy band */
+.bleed { padding-bottom: 0; }
+.bleed .heroGrid { align-items: end; }
+.bleed .heroText { padding-bottom: 96px; }
+.bleed .heroMedia { display: flex; justify-content: center; align-items: flex-end; }
+.bleed .heroImg { aspect-ratio: auto; display: block; }
+.bleed .heroImg img { display: block; width: auto; height: auto; max-height: 460px; max-width: 100%; }
+@media (max-width: 900px) { .bleed .heroText { padding-bottom: 32px; } .bleed .heroImg img { max-height: 320px; } }

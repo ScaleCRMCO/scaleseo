@@ -40,6 +40,7 @@ export type ServiceTemplateProps = {
   title: string;
   heroLead: string;
   heroImage: { src: string; alt: string };
+  heroBleed?: boolean;
   heroSecondary?: { href: string; label: string };
   panels?: { title: string; lead: string; items: { title: string; strong: string; body: ReactNode }[] };
   statementLabel: string;
@@ -62,7 +63,7 @@ export default function ServiceTemplate(p: ServiceTemplateProps) {
   return (
     <>
       {/* Hero */}
-      <header className={`${v.navy} ${s.hero}`} data-nav="dark">
+      <header className={`${v.navy} ${s.hero} ${p.heroBleed ? s.bleed : ""}`} data-nav="dark">
         <div className={`${v.wrap} ${s.heroGrid}`}>
           <div className={s.heroText}>
             <div className={s.crumbs}>
