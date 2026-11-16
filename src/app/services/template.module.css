@@ -105,3 +105,12 @@
 .bleed .heroImg { aspect-ratio: auto; display: block; }
 .bleed .heroImg img { display: block; width: auto; height: auto; max-height: 460px; max-width: 100%; }
 @media (max-width: 900px) { .bleed .heroText { padding-bottom: 32px; } .bleed .heroImg img { max-height: 320px; } }
+
+.mkTitle { max-width: 22ch; margin-bottom: 56px !important; }
+.mkRow { display: grid; grid-template-columns: 0.9fr 1fr 1fr 1fr; }
+.mkLabel { margin: 0; padding-right: 32px; font-size: 16px; line-height: 1.5; font-weight: 600; color: #081423; }
+.mkCol { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; padding: 0 32px; border-left: 1px solid rgba(8, 20, 35, 0.12); }
+.mkImg { position: relative; aspect-ratio: 16 / 5; margin-top: 72px; overflow: hidden; background: #F1F3F6; }
+.mkImg img { object-fit: cover; object-position: center 40%; }
+@media (max-width: 900px) { .mkRow { grid-template-columns: 1fr; gap: 28px; } .mkCol { padding: 20px 0 0; border-left: 0; border-top: 1px solid rgba(8, 20, 35, 0.12); } .mkImg { aspect-ratio: 16 / 8; margin-top: 48px; } }
+.mkSec { padding-top: 0 !important; }

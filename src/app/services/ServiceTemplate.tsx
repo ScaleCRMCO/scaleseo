@@ -214,23 +214,23 @@ export default function ServiceTemplate(p: ServiceTemplateProps) {
         </section>
       )}
 
-      {/* Markets */}
+      {/* Markets — Mamba: side label + ruled columns, wide skyline below */}
       {p.markets && (
-        <section className={`${v.navy} ${v.sec}`} data-nav="dark">
+        <section className={`${v.white} ${v.sec} ${s.mkSec}`}>
           <div className={v.wrap}>
-            <div className={v.head}>
-              <div><h2 className={v.h2}>{p.markets.title}</h2></div>
-              {p.markets.outro && <p className={v.p}>{p.markets.outro}</p>}
-            </div>
-            <div className={`${v.points} ${v.cols3}`}>
+            <h2 className={`${v.h2} ${s.mkTitle}`}>{p.markets.title}</h2>
+            <div className={s.mkRow}>
+              <p className={s.mkLabel}>{p.markets.outro}</p>
               {p.markets.items.map((m) => (
-                <div key={m.title} className={v.point}>
-                  <span className={s.iconLight}><Icon d={(ICONS as Record<string, string>)[m.icon] ?? ICONS.building} /></span>
+                <div key={m.title} className={s.mkCol}>
                   <h3 className={v.h3}>{m.title}</h3>
                   <p className={v.p}>{m.body}</p>
-                  {m.href && <Link href={m.href} className={`${v.textLink} ${s.lightLink}`}>{m.cta} <Corner /></Link>}
+                  {m.href && <Link href={m.href} className={v.textLink}>{m.cta} <Corner /></Link>}
                 </div>
               ))}
+            </div>
+            <div className={s.mkImg}>
+              <Image src="/images/toronto-skyline-bw.webp" alt="Black and white downtown Toronto skyline" fill sizes="(max-width: 1360px) 100vw, 1280px" />
             </div>
           </div>
         </section>
