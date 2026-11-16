@@ -201,7 +201,7 @@ export default function IndustriesPage() {
       </header>
 
       {/* Labelled statement */}
-      <section className={`${v.white} ${v.sec}`}>
+      <section className={`${v.grey} ${v.sec}`}>
         <div className={`${v.wrap} ${styles.labelled}`}>
           <span className={styles.sideLabel}>Built for accounting and financial firms</span>
           <p className={styles.statement}>
@@ -211,36 +211,27 @@ export default function IndustriesPage() {
       </section>
 
       {/* Specialties accordion */}
-      <section className={`${v.grey} ${v.sec}`} id="industries">
+      <section className={`${v.white} ${v.sec}`} id="industries">
         <div className={v.wrap}>
           <div className={styles.accHead}>
             <h2 className={v.h2}>Accounting Specialties We Work With</h2>
             <Btn href="/industries/accounting-firms" tone="navy">Explore SEO for Accounting Firms</Btn>
           </div>
-          <div className={styles.accGrid}>
-            <div className={styles.acc}>
-              {industries.map((item, i) => (
-                <details key={item.num} className={styles.item} name="specialties" open={i === 0}>
-                  <summary className={styles.sum}>
-                    <span className={v.icon} aria-hidden="true">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d={item.icon} /></svg>
-                    </span>
-                    <h3 className={styles.itemTitle}>{item.title}</h3>
-                    <span className={styles.plus} aria-hidden="true" />
-                  </summary>
-                  <div className={styles.itemBody}>
-                    <p className={styles.itemSub}>{item.sub}</p>
-                    {item.body.map((p) => <p key={p} className={v.p}>{p}</p>)}
-                    {item.href && (
-                      <Link href={item.href} className={`${v.btn} ${v.btn_navy}`}><span>{item.cta}</span><Corner /></Link>
-                    )}
-                  </div>
-                </details>
-              ))}
-            </div>
-            <div className={styles.accImg}>
-              <Image src="/images/jensen-cpa-cover.webp" alt="The Jensen CPA team, a Scale SEO accounting client in Calgary" fill sizes="(max-width: 900px) 100vw, 600px" />
-            </div>
+          <div className={styles.grid}>
+            {industries.map((item) => (
+              <div key={item.num} className={styles.cell}>
+                <span className={v.icon} aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d={item.icon} /></svg>
+                </span>
+                <h3 className={styles.cellTitle}>{item.title}</h3>
+                <p className={styles.itemSub}>{item.sub}</p>
+                {item.body.map((p) => <p key={p} className={v.p}>{p}</p>)}
+                {item.href && <Link href={item.href} className={v.textLink}>{item.cta} <Corner /></Link>}
+              </div>
+            ))}
+          </div>
+          <div className={styles.skyline}>
+            <Image src="/images/toronto-skyline-bw.webp" alt="Black and white downtown Toronto skyline" fill sizes="(max-width: 1360px) 100vw, 1280px" />
           </div>
         </div>
       </section>

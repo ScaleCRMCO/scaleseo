@@ -261,7 +261,7 @@ export default function SeoServicePage() {
           title: "What Goes Into Our SEO Campaigns?",
           lead: "Good SEO involves more than keywords and rankings. We identify what\u2019s holding your website back, find opportunities in your market, and make the improvements needed to compete.",
           items: included,
-          image: { src: "/images/jensen-cpa-cover.webp", alt: "The Jensen CPA team, a Scale SEO client in Calgary" },
+          image: { src: "/images/vancouver-aerial-bw.webp", alt: "Black and white aerial view of downtown Vancouver" },
         }}
         cases={{
           title: "SEO Results From Real Businesses",

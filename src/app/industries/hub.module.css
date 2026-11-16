@@ -63,3 +63,11 @@
   .itemBody { padding: 0 16px 24px; }
   .sideLabel { padding-top: 0; }
 }
+
+.grid { display: grid; grid-template-columns: 1fr 1fr; row-gap: 24px; }
+.cell { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; padding: 20px 40px 24px; border-left: 1px solid rgba(8, 20, 35, 0.12); }
+.cell > span:first-child { margin-bottom: 28px; }
+.cellTitle { margin: 0; font-size: 24px; line-height: 1.2; font-weight: 600; letter-spacing: -0.02em; }
+.skyline { position: relative; aspect-ratio: 16 / 5; margin-top: 72px; overflow: hidden; background: #F1F3F6; }
+.skyline img { object-fit: cover; object-position: center 40%; }
+@media (max-width: 900px) { .grid { grid-template-columns: 1fr; } .cell { padding: 16px 0 16px 20px; } .skyline { aspect-ratio: 16 / 8; margin-top: 48px; } }
