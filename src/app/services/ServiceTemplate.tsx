@@ -49,12 +49,13 @@ export type ServiceTemplateProps = {
   statementBody?: string[];
   explainer?: { title: string; lead: string; body: ReactNode };
   feature?: ReactNode;
+  splits?: { title: string; lead?: string; body: ReactNode; image: { src: string; alt: string }; cta?: { href: string; label: string } }[];
   included?: { title: string; lead: string; items: { title: string; body: string | string[]; icon: string }[]; image: { src: string; alt: string } };
   cases?: { title: string; lead: string; items: { name: string; body: string; tag?: string; stats: { from: number; to: number; prefix?: string; suffix?: string; label: string }[]; href: string; cta: string; img: string }[]; note?: string };
   markets?: { title: string; items: { title: string; body: string; icon: string; href?: string; cta?: string }[]; outro?: string };
   process?: { title: string; lead: string; items: { title: string; body: string }[] };
   fit?: { title: string; label: string; body: ReactNode };
-  pricing?: { title: string; price: string; unit: string; body: string[]; points: string[]; cta?: string };
+  pricing?: { title: string; price: string; unit: string; from?: string; body: string[]; points: string[]; cta?: string };
   faqs?: { q: string; a: string[] }[];
   cta: { title: string; lead: string };
 };
@@ -178,6 +179,27 @@ export default function ServiceTemplate(p: ServiceTemplateProps) {
 
       {p.feature}
 
+      {/* Alternating image / text splits (Mamba) */}
+      {p.splits && (
+        <section className={`${v.navy} ${v.sec}`} data-nav="dark">
+          <div className={`${v.wrap} ${s.splits}`}>
+            {p.splits.map((x, i) => (
+              <div key={x.title} className={`${s.split} ${i % 2 ? s.splitFlip : ""}`}>
+                <div className={s.splitText}>
+                  <h2 className={v.h2}>{x.title}</h2>
+                  {x.lead && <p className={s.splitLead}>{x.lead}</p>}
+                  <div className={s.splitBody}>{x.body}</div>
+                  {x.cta && <Btn href={x.cta.href} tone="light">{x.cta.label}</Btn>}
+                </div>
+                <div className={s.splitImg}>
+                  <Image src={x.image.src} alt={x.image.alt} fill sizes="(max-width: 900px) 100vw, 620px" />
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
       {/* Case rows */}
       {p.cases && (
         <section className={`${v.white} ${v.sec}`}>
@@ -277,8 +299,8 @@ export default function ServiceTemplate(p: ServiceTemplateProps) {
             {p.pricing && (
               <div className={s.price} data-nav="dark">
                 {p.fit && <h2 className={s.priceTitle}>{p.pricing.title}</h2>}
-                <span className={s.from}>Starting at</span>
-                <span className={s.amount}>{p.pricing.price}</span>
+                <span className={s.from}>{p.pricing.from ?? "Starting at"}</span>
+                <span className={`${s.amount} ${p.pricing.price.length > 12 ? s.amountSm : ""}`}>{p.pricing.price}</span>
                 <span className={s.unit}>{p.pricing.unit}</span>
                 {p.fit && p.pricing.body.map((b) => <p key={b} className={s.priceP}>{b}</p>)}
                 <ul className={s.points}>{p.pricing.points.map((x) => <li key={x}>{x}</li>)}</ul>

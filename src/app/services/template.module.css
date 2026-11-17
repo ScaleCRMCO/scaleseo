@@ -114,3 +114,16 @@
 .mkImg img { object-fit: cover; object-position: center 40%; }
 @media (max-width: 900px) { .mkRow { grid-template-columns: 1fr; gap: 28px; } .mkCol { padding: 20px 0 0; border-left: 0; border-top: 1px solid rgba(8, 20, 35, 0.12); } .mkImg { aspect-ratio: 16 / 8; margin-top: 48px; } }
 .mkSec { padding-top: 0 !important; }
+
+.splits { display: flex; flex-direction: column; gap: 112px; }
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+.splitFlip .splitImg { order: -1; }
+.splitText { display: flex; flex-direction: column; align-items: flex-start; gap: 22px; }
+.splitLead { margin: 0; font-size: 20px; line-height: 1.45; font-weight: 500; color: #FEFEFE; }
+.splitBody { display: flex; flex-direction: column; gap: 14px; font-size: 17px; line-height: 1.6; color: rgba(254, 254, 254, 0.72); }
+.splitBody p { margin: 0; }
+.splitBody strong { color: #FEFEFE; }
+.splitImg { position: relative; aspect-ratio: 1 / 1; overflow: hidden; background: #0d1d31; }
+.splitImg img { object-fit: cover; }
+@media (max-width: 900px) { .split { grid-template-columns: 1fr; gap: 32px; } .splitFlip .splitImg { order: 0; } .splitImg { aspect-ratio: 4 / 3; } .splits { gap: 72px; } }
+.amountSm { font-size: clamp(32px, 3vw, 44px); }
