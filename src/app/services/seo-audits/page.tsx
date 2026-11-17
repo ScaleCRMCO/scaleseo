@@ -183,6 +183,7 @@ export default function SeoAuditsPage() {
         crumb="SEO Audits"
         title="SEO Audit Services in Calgary"
         heroLead={"Find out what\u2019s holding your website back in Google Search and what you should improve first."}
+        heroImgScale={0.62}
         heroImage={{ src: "/images/web-development-hero.webp", alt: "Laptop showing an SEO audit dashboard with site health scores and issue reports" }}
         heroSecondary={{ href: "/contact", label: "Request an SEO Audit" }}
         statementLabel="SEO audits"

@@ -41,6 +41,7 @@ export type ServiceTemplateProps = {
   heroLead: string;
   heroImage: { src: string; alt: string };
   heroBleed?: boolean;
+  heroImgScale?: number;
   heroSecondary?: { href: string; label: string };
   panels?: { title: string; lead: string; items: { title: string; strong: string; body: ReactNode }[] };
   statementLabel: string;
@@ -89,9 +90,9 @@ export default function ServiceTemplate(p: ServiceTemplateProps) {
           </div>
           <div className={s.heroMedia}>
             <HeroMark className={s.heroMark} />
-            <div className={s.heroImg}>
+            <div className={s.heroImg} style={p.heroImgScale ? { aspectRatio: "auto", overflow: "visible" } : undefined}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={p.heroImage.src} alt={p.heroImage.alt} />
+            <img src={p.heroImage.src} alt={p.heroImage.alt} style={p.heroImgScale ? { width: `${p.heroImgScale * 100}%`, height: "auto", margin: "0 auto", display: "block" } : undefined} />
             </div>
           </div>
         </div>
