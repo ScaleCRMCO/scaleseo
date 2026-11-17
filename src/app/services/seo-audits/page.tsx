@@ -1,11 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Breadcrumbs from "../../components/Breadcrumbs";
-import ContactSection from "../../components/ContactSection";
-import ServicesFaq, { type FaqItem } from "../ServicesFaq";
-import ServicesMark from "../../sections/home/ServicesMark";
-// Shared service page template (new brand)
-import t from "../svc.module.css";
+import { type FaqItem } from "../ServicesFaq";
+import ServiceTemplate from "../ServiceTemplate";
+import v from "../../sections/v3/v3.module.css";
 
 export const metadata: Metadata = {
   title: { absolute: "SEO Audit Services Calgary | Scale SEO" },
@@ -14,21 +11,25 @@ export const metadata: Metadata = {
   alternates: { canonical: "/services/seo-audits" },
 };
 
-const included: { title: string; body: string }[] = [
+const included: { title: string; icon: string; body: string }[] = [
   {
     title: "Technical SEO & Indexing",
+    icon: "gear",
     body: "We review how Google can discover and access your website, including indexing issues, redirects, canonical URLs, broken links, and other technical problems affecting important pages.",
   },
   {
     title: "Website Content & Structure",
+    icon: "page",
     body: "We assess your main pages, headings, metadata, internal links, and website organization to identify weaknesses, overlapping content, and opportunities for improvement.",
   },
   {
     title: "Keywords & Search Performance",
+    icon: "search",
     body: "Where search data is available, we review the queries bringing visitors to your website, the pages gaining visibility, and potential opportunities you’re currently missing.",
   },
   {
     title: "Competitors & Local SEO",
+    icon: "pin",
     body: "For audits requiring a broader strategy review, we examine relevant search competitors and local visibility to identify where your website could better compete for valuable searches.",
   },
 ];
@@ -60,11 +61,6 @@ const faqs: FaqItem[] = [
   },
 ];
 
-const Corner = () => (
-  <svg className={t.corner} viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
-    <path d="M1 1.5h7.5V9" />
-  </svg>
-);
 
 const auditsJsonLd = {
   "@context": "https://schema.org",
@@ -181,215 +177,77 @@ const auditsJsonLd = {
 
 export default function SeoAuditsPage() {
   return (
-    <main className="v2">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(auditsJsonLd) }}
-      />
-
-      {/* === HERO === */}
-      <header>
-        <div className={t.hero}>
-          <div className={t.crumbs}>
-            <Breadcrumbs
-              items={[
-                { name: "Home", href: "/" },
-                { name: "Services", href: "/services" },
-                { name: "SEO Audits" },
-              ]}
-              schema={false}
-            />
-          </div>
-          <h1 className={t.title}>SEO Audit Services in Calgary</h1>
-        </div>
-        <div className={t.heroBand}>
-          <ServicesMark className={t.heroMark} slow />
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/images/web-development-hero.webp"
-            alt="Laptop showing an SEO audit dashboard with site health scores and issue reports"
-          />
-        </div>
-      </header>
-
-      {/* === INTRO === */}
-      <section className={t.split} style={{ padding: 0 }}>
-        <div className={t.splitLeft}>
-          <p className={t.lead}>
-            <strong>
-              Find out what&rsquo;s holding your website back in Google Search and
-              what you should improve first.
-            </strong>
-          </p>
-          <div className={t.chips}>
-            {["Technical SEO", "Indexing", "Content", "Site Structure", "Keywords", "Competitors", "Local SEO"].map((c) => (
-              <span key={c} className={t.chip}>{c}</span>
-            ))}
-          </div>
-        </div>
-        <div className={t.splitRight}>
-          <div className={t.body}>
-            <p className={t.lead}>
-              Scale SEO provides independent SEO audits for businesses in Calgary
-              and across Canada.
-            </p>
-            <p>
-              Scale SEO reviews your website&rsquo;s technical health, search visibility,
-              content, and structure to identify problems and opportunities worth
-              addressing.
-            </p>
-            <p>
-              You&rsquo;ll receive clear findings and practical recommendations,
-              without committing to ongoing monthly SEO.
-            </p>
-          </div>
-          <div className={t.boxRow}>
-            <Link href="/contact" className={`${t.box} ${t.boxNavy}`}>
-              <Corner />
-              <span>Request an SEO Audit</span>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* === WHAT IS === */}
-      <section className={t.rowsSplit} style={{ padding: 0, borderTop: 0 }}>
-        <div className={t.rowsAside}>
-          <h2 className={t.h2}>What Is an SEO Audit?</h2>
-        </div>
-        <div className={t.rowsList}>
-          <div className={t.body} style={{ paddingTop: 32, paddingBottom: 32 }}>
-            <p className={t.lead}>
-              An SEO audit is an assessment of how well your website is set up to
-              appear in Google Search.
-            </p>
-            <p>
-              Sometimes the problem is technical, such as important pages not being
-              indexed. Other times, the website simply isn&rsquo;t targeting the
-              right searches, or competitors have more useful service pages.
-            </p>
-            <p>
-              We use website crawling tools, Google Search Console data where
-              available, and manual analysis to understand what&rsquo;s happening.
-            </p>
-            <p>
-              The goal isn&rsquo;t to produce a long list of technical warnings.
-              It&rsquo;s to identify what actually matters for your business and
-              where improvements should begin.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* === INCLUDED === */}
-      <section className={t.steps}>
-        <h2 className={t.h2}>What&rsquo;s Included in an SEO Audit?</h2>
-        <p className={t.lead} style={{ marginTop: 20, maxWidth: 720 }}>
-          Each audit is scoped to your website, business goals, and the questions
-          you need answered.
-        </p>
-        <div className={t.stepGrid}>
-          {included.map((item, i) => (
-            <div key={item.title} className={t.step}>
-              <h3 className={t.stepTitle}>
-                <span>{String(i + 1).padStart(2, "0")}</span> {item.title}
-              </h3>
-              <p className={`${t.body} ${t.dim}`}>{item.body}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* === WHAT YOU'LL RECEIVE — navy feature box === */}
-      <section className={t.featureWrap}>
-        <div className={t.feature}>
-          <div className={t.featureText}>
-            <span className={t.eyebrow}>Deliverables</span>
-            <h2 className={t.h2}>What You&rsquo;ll Receive</h2>
-          </div>
-          <div className={t.featureSide}>
-            <div className={t.body}>
-              <p>
-                A completed standalone SEO audit includes a written assessment of
-                your website, with findings explained in plain English and
-                recommendations prioritized by importance.
-              </p>
-              <p>
-                Rather than recommending every possible improvement, we focus on the
-                issues and opportunities most relevant to your business.
-              </p>
-              <p>
-                You can implement the recommendations yourself, share them with your
-                developer or marketing team, or discuss having Scale SEO handle the
-                work separately.
-              </p>
-              <p style={{ color: "var(--h-white)" }}>
-                <strong>Standalone audits are quoted individually</strong> based on
-                your website&rsquo;s size, complexity, and the depth of analysis
-                required.
-              </p>
-            </div>
-            <div className={t.featureLinks}>
-              <Link href="/contact" className={`${t.box} ${t.boxGrey}`}>
-                <Corner />
-                <span>Request a Custom Audit Quote</span>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* === AUDITS VS MONTHLY — two boxes === */}
-      <section className={t.twoWrap}>
-        <div className={t.twoHead}>
-          <h2 className={t.h2}>SEO Audits vs. Monthly SEO</h2>
-          <p className={t.lead}>Not every business needs ongoing SEO management.</p>
-        </div>
-        <div className={t.two}>
-          <div className={`${t.panel} ${t.panelGrey}`}>
-            <h3 className={t.h3}>Standalone SEO Audit</h3>
-            <div className={t.body}>
-              <p>
-                A standalone audit is useful when you want an independent
-                assessment, a second opinion, or a practical roadmap for your
-                existing team to implement.
-              </p>
-            </div>
-          </div>
-          <div className={`${t.panel} ${t.panelNavy}`}>
-            <h3 className={t.h3}>Monthly SEO</h3>
-            <div className={t.body}>
-              <p>
-                If you&rsquo;re considering{" "}
-                <Link href="/services/seo" className={t.inlineLink}>monthly SEO services</Link>,
-                we provide a complimentary initial SEO assessment as part of
-                evaluating a potential engagement.
-              </p>
-              <p>
-                This covers your website&rsquo;s main SEO issues, relevant
-                competitors, and initial search opportunities, including local SEO
-                considerations where applicable.
-              </p>
-              <p>
-                Monthly SEO goes further by implementing improvements, developing
-                content, monitoring performance, and adjusting the strategy over
-                time.
-              </p>
-              <p style={{ fontSize: 15, opacity: 0.75 }}>
-                The initial assessment is not a substitute for a detailed standalone
-                audit.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <ServicesFaq items={faqs} title={<>Frequently Asked Questions</>} />
-
-      <ContactSection
-        heading="Get an Independent Review of Your Website"
-        lead="If you're unsure why your website isn't performing as expected, we can review your requirements and recommend an appropriate audit scope."
-        cta={{ href: "/contact", label: "Request an SEO Audit →" }}
+    <main className={`v2 ${v.page}`}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(auditsJsonLd) }} />
+      <ServiceTemplate
+        crumb="SEO Audits"
+        title="SEO Audit Services in Calgary"
+        heroLead={"Find out what\u2019s holding your website back in Google Search and what you should improve first."}
+        heroImage={{ src: "/images/web-development-hero.webp", alt: "Laptop showing an SEO audit dashboard with site health scores and issue reports" }}
+        heroSecondary={{ href: "/contact", label: "Request an SEO Audit" }}
+        statementLabel="SEO audits"
+        statement="Scale SEO provides independent SEO audits for businesses in Calgary and across Canada."
+        statementBody={[
+          "Scale SEO reviews your website\u2019s technical health, search visibility, content, and structure to identify problems and opportunities worth addressing.",
+          "You\u2019ll receive clear findings and practical recommendations, without committing to ongoing monthly SEO.",
+        ]}
+        explainer={{
+          title: "What Is an SEO Audit?",
+          lead: "An SEO audit is an assessment of how well your website is set up to appear in Google Search.",
+          body: (
+            <>
+              <p>Sometimes the problem is technical, such as important pages not being indexed. Other times, the website simply isn&rsquo;t targeting the right searches, or competitors have more useful service pages.</p>
+              <p>We use website crawling tools, Google Search Console data where available, and manual analysis to understand what&rsquo;s happening.</p>
+              <p>The goal isn&rsquo;t to produce a long list of technical warnings. It&rsquo;s to identify what actually matters for your business and where improvements should begin.</p>
+            </>
+          ),
+        }}
+        included={{
+          title: "What\u2019s Included in an SEO Audit?",
+          lead: "Each audit is scoped to your website, business goals, and the questions you need answered.",
+          items: included,
+          image: { src: "/images/vancouver-aerial-bw.webp", alt: "Black and white aerial view of downtown Vancouver" },
+        }}
+        splits={[
+          {
+            title: "What You\u2019ll Receive",
+            body: (
+              <>
+                <p>A completed standalone SEO audit includes a written assessment of your website, with findings explained in plain English and recommendations prioritized by importance.</p>
+                <p>Rather than recommending every possible improvement, we focus on the issues and opportunities most relevant to your business.</p>
+                <p>You can implement the recommendations yourself, share them with your developer or marketing team, or discuss having Scale SEO handle the work separately.</p>
+                <p><strong>Standalone audits are quoted individually</strong> based on your website&rsquo;s size, complexity, and the depth of analysis required.</p>
+              </>
+            ),
+            image: { src: "/images/toronto-skyline-bw.webp", alt: "Black and white downtown Toronto skyline" },
+            cta: { href: "/contact", label: "Request a Custom Audit Quote" },
+          },
+        ]}
+        panels={{
+          title: "SEO Audits vs. Monthly SEO",
+          lead: "Not every business needs ongoing SEO management.",
+          items: [
+            {
+              title: "Standalone SEO Audit",
+              strong: "An independent assessment and practical roadmap.",
+              body: <p>A standalone audit is useful when you want an independent assessment, a second opinion, or a practical roadmap for your existing team to implement.</p>,
+            },
+            {
+              title: "Monthly SEO",
+              strong: "Implementation, content, and ongoing improvement.",
+              body: (
+                <>
+                  <p>If you&rsquo;re considering <Link href="/services/seo">monthly SEO services</Link>, we provide a complimentary initial SEO assessment as part of evaluating a potential engagement.</p>
+                  <p>This covers your website&rsquo;s main SEO issues, relevant competitors, and initial search opportunities, including local SEO considerations where applicable.</p>
+                  <p>Monthly SEO goes further by implementing improvements, developing content, monitoring performance, and adjusting the strategy over time.</p>
+                  <p>The initial assessment is not a substitute for a detailed standalone audit.</p>
+                </>
+              ),
+            },
+          ],
+        }}
+        faqs={faqs}
+        cta={{ title: "Get an Independent Review of Your Website", lead: "If you\u2019re unsure why your website isn\u2019t performing as expected, we can review your requirements and recommend an appropriate audit scope." }}
       />
     </main>
   );
