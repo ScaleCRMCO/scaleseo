@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Breadcrumbs from "../components/Breadcrumbs";
 import { posts } from "../blog/posts";
-import styles from "../legal.module.css";
+import styles from "./page.module.css";
+import v from "../sections/v3/v3.module.css";
+import { Btn } from "../sections/v3/ui";
 
 // Plain, factual reference page about the business. Kept as simple semantic
 // HTML (headings, lists, definition lists) so people, search engines and AI
@@ -180,15 +182,19 @@ const jsonLd = {
 
 export default function BusinessInformationPage() {
   return (
-    <main className="v2">
+    <main className={`v2 ${v.page}`}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <header className={styles.hero}>
+        <div className={styles.heroLeft}>
         <div className={styles.crumbs}>
           <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Business Information" }]} schema={false} />
         </div>
+        <span className={styles.sideLabel}>Company facts</span>
+        </div>
+        <div className={styles.heroRight}>
         <h1 className={styles.title}>Business Information</h1>
         <div className={styles.meta}>
           <p>
@@ -199,9 +205,12 @@ export default function BusinessInformationPage() {
             Last updated: <time dateTime={LAST_UPDATED}>{LAST_UPDATED_LABEL}</time>
           </p>
         </div>
+        </div>
       </header>
 
       <div className={styles.layout}>
+        <aside className={styles.side}>
+        <span className={styles.tocLabel}>On this page</span>
         <ol className={styles.toc}>
           <li>
             <a href="#summary">Summary</a>
@@ -240,6 +249,11 @@ export default function BusinessInformationPage() {
             <a href="#contact">Contact</a>
           </li>
         </ol>
+        <div className={styles.sideCta}>
+          <p>Have a question about working with us?</p>
+          <Btn href={BOOKING_URL} external>Speak to an Expert</Btn>
+        </div>
+        </aside>
         <article className={styles.body}>
           <h2 id="summary">Summary</h2>
           <p>

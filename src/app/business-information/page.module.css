@@ -1,0 +1,56 @@
+/* Business information — Bilberrry side-label hero, sticky contents sidebar,
+   clean fact sheet body */
+.hero { display: grid; grid-template-columns: 1fr 2fr; gap: 64px; max-width: 1360px; margin: 0 auto; padding: 140px 40px 72px; color: #081423; }
+.heroLeft { display: flex; flex-direction: column; gap: 40px; }
+.sideLabel { font-size: 15px; font-weight: 600; }
+.crumbs a, .crumbs span, .crumbs li { color: rgba(8, 20, 35, 0.55) !important; }
+.title { margin: 0; font-size: clamp(40px, 4.4vw, 60px); line-height: 1.04; font-weight: 600; letter-spacing: -0.035em; }
+.meta { display: flex; flex-direction: column; gap: 8px; margin-top: 24px; padding-top: 24px; border-top: 1px solid rgba(8, 20, 35, 0.12); font-size: 18px; line-height: 1.55; color: rgba(8, 20, 35, 0.7); }
+.meta p { margin: 0; }
+.meta p:last-child { font-size: 14px; color: rgba(8, 20, 35, 0.55); }
+
+.layout { display: grid; grid-template-columns: 280px minmax(0, 820px); justify-content: space-between; gap: 64px; max-width: 1360px; margin: 0 auto; padding: 0 40px 120px; color: #081423; }
+.side { position: sticky; top: 104px; align-self: start; display: flex; flex-direction: column; gap: 12px; }
+.tocLabel { font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(8, 20, 35, 0.5); }
+.toc { list-style: none; margin: 0 0 24px; padding: 0; border-left: 1px solid rgba(8, 20, 35, 0.12); }
+.toc a { display: block; padding: 6px 0 6px 16px; margin-left: -1px; border-left: 2px solid transparent; font-size: 14px; color: rgba(8, 20, 35, 0.7); text-decoration: none; }
+.toc a:hover { color: #081423; border-left-color: #0099FF; }
+.sideCta { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; padding: 24px; background: #081423; color: #FEFEFE; }
+.sideCta p { margin: 0; font-size: 17px; line-height: 1.35; font-weight: 600; }
+
+.body { font-size: 17px; line-height: 1.7; color: rgba(8, 20, 35, 0.78); }
+.body h2 { margin: 2.4em 0 0.7em; padding-top: 28px; border-top: 1px solid rgba(8, 20, 35, 0.12); scroll-margin-top: 100px; font-size: clamp(26px, 2.4vw, 32px) !important; line-height: 1.15; font-weight: 600 !important; letter-spacing: -0.025em; color: #081423; }
+.body h2:first-child { margin-top: 0; padding-top: 0; border-top: 0; }
+.body p { margin: 0 0 1em; }
+.body a { color: #081423; font-weight: 500; text-decoration: underline; text-underline-offset: 3px; }
+.body a:hover { color: #0099FF; }
+.body ul { list-style: none; margin: 0 0 1.2em; padding: 0; }
+.body li { position: relative; padding: 5px 0 5px 22px; }
+.body li::before { content: ""; position: absolute; left: 2px; top: 1em; width: 6px; height: 6px; background: #0099FF; }
+
+.facts { margin: 0; border-top: 1px solid rgba(8, 20, 35, 0.12); }
+.fact { display: grid; grid-template-columns: 200px 1fr; gap: 24px; padding: 14px 0; border-bottom: 1px solid rgba(8, 20, 35, 0.12); }
+.fact dt { font-size: 15px; font-weight: 600; color: #081423; }
+.fact dd { margin: 0; }
+
+.body .services { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.body .services li { padding: 24px; background: #F1F3F6; }
+.body .services li::before { display: none; }
+.services h3 { margin: 0 0 6px; font-size: 19px; font-weight: 600; }
+.services h3 a { text-decoration: none; }
+.price { margin: 0 0 10px !important; font-size: 15px; font-weight: 600; color: #0077CC; }
+.services li p:last-child { margin: 0; font-size: 15px; line-height: 1.55; }
+.body .columns { columns: 2; column-gap: 40px; }
+
+@media (max-width: 1000px) {
+  .hero, .layout { grid-template-columns: 1fr; gap: 24px; }
+  .side { position: static; order: 2; }
+  .heroLeft { gap: 16px; }
+}
+@media (max-width: 700px) {
+  .hero { padding: 108px 20px 40px; }
+  .layout { padding: 0 20px 80px; }
+  .fact { grid-template-columns: 1fr; gap: 2px; }
+  .body .services { grid-template-columns: 1fr; }
+  .body .columns { columns: 1; }
+}
