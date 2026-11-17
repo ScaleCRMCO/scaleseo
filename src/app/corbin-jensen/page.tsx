@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import Breadcrumbs from "../components/Breadcrumbs";
-import ContactSection from "../components/ContactSection";
-import t from "../services/svc.module.css";
+import Signature from "../components/Signature";
+import v from "../sections/v3/v3.module.css";
+import { Btn, Corner as VCorner } from "../sections/v3/ui";
 import styles from "./bio.module.css";
 
 export const metadata: Metadata = {
@@ -69,11 +70,6 @@ const articles = [
   },
 ];
 
-const Corner = () => (
-  <svg className={t.corner} viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
-    <path d="M1 1.5h7.5V9" />
-  </svg>
-);
 
 const profileJsonLd = {
   "@context": "https://schema.org",
@@ -157,227 +153,160 @@ const profileJsonLd = {
 
 export default function CorbinJensenPage() {
   return (
-    <main className="v2">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(profileJsonLd) }}
-      />
+    <main className={`v2 ${v.page}`}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(profileJsonLd) }} />
 
-      {/* === HERO — name + intro left, B&W portrait right === */}
+      {/* Hero — Bilberrry: side label, name, two-column intro, signature */}
       <header className={styles.hero}>
-        <div className={styles.heroLeft}>
-          <div className={t.crumbs}>
+        <div className={styles.side}>
+          <div className={styles.crumbs}>
             <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Corbin Jensen" }]} schema={false} />
           </div>
+          <span className={styles.sideLabel}>Founder bio</span>
+        </div>
+        <div>
           <h1 className={styles.name}>Corbin Jensen</h1>
           <p className={styles.role}>Founder &amp; SEO Specialist at Scale SEO</p>
-          <div className={`${t.body} ${styles.intro}`}>
-            <p className={t.lead}>
-              Corbin Jensen is the founder of Scale SEO, an independent SEO
-              consultancy based in Calgary, Alberta.
-            </p>
-            <p>
-              He works directly with professional service and B2B businesses across
-              Canada and internationally, helping them improve their Google Search
-              visibility through technical SEO, content strategy, website
-              development, and ongoing optimization.
-            </p>
-            <p>
-              His experience includes working with accounting firms, consultants,
-              contractors, and local service businesses in Canadian and Australian
-              markets.
-            </p>
+          <div className={styles.cols}>
+            <div className={styles.col}>
+              <p className={styles.lead}>Corbin Jensen is the founder of Scale SEO, an independent SEO consultancy based in Calgary, Alberta.</p>
+              <p>He works directly with professional service and B2B businesses across Canada and internationally, helping them improve their Google Search visibility through technical SEO, content strategy, website development, and ongoing optimization.</p>
+            </div>
+            <div className={styles.col}>
+              <p>His experience includes working with accounting firms, consultants, contractors, and local service businesses in Canadian and Australian markets.</p>
+              <p className={styles.location}>Calgary, Alberta &middot; Serving Canada &amp; International Clients</p>
+              <div className={styles.sign}>
+                <Signature className={styles.signature} />
+                <span className={styles.signName}>Corbin Jensen</span>
+                <span className={styles.signRole}>Founder, Scale SEO</span>
+              </div>
+            </div>
           </div>
-          <p className={styles.location}>Calgary, Alberta &middot; Serving Canada &amp; International Clients</p>
-          <div className={t.boxRow}>
-            <a href="https://www.linkedin.com/in/corbin-jensen-seo/" target="_blank" rel="noopener noreferrer" className={`${t.box} ${t.boxNavy}`}>
-              <Corner />
-              <span>LinkedIn</span>
-            </a>
-            <Link href="/contact" className={`${t.box} ${t.boxGrey}`}>
-              <Corner />
-              <span>Contact Corbin</span>
-            </Link>
-          </div>
-        </div>
-        <div className={styles.heroRight}>
-          <div className={styles.portrait}>
-            <Image
-              src="/images/corbin-portrait.webp"
-              alt="Corbin Jensen, founder and SEO specialist at Scale SEO"
-              fill
-              priority
-              sizes="(max-width: 900px) 90vw, 40vw"
-            />
+          <div className={styles.btns}>
+            <Btn href="/contact" tone="navy">Contact Corbin</Btn>
+            <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className={v.textLink}>LinkedIn <VCorner /></a>
           </div>
         </div>
       </header>
 
-      {/* === BACKGROUND === */}
-      <section className={t.rowsSplit} style={{ padding: 0, borderTop: 0 }}>
-        <div className={t.rowsAside}>
-          <h2 className={t.h2}>Background &amp; SEO Experience</h2>
-        </div>
-        <div className={t.rowsList}>
-          <div className={t.body} style={{ paddingTop: 32, paddingBottom: 32 }}>
-            <p className={t.lead}>
-              Corbin developed his SEO experience through hands-on work improving
-              business websites, researching search opportunities, and
-              implementing changes directly.
-            </p>
-            <p>
-              Before establishing Scale SEO in Calgary in 2025, he worked with
-              businesses in Australia on local SEO, website development, and
-              organic search strategy.
-            </p>
-            <p>
-              Today, his work focuses primarily on professional service and B2B
-              businesses, particularly accounting and advisory firms.
-            </p>
-            <p>
-              Unlike a traditional agency account manager, Corbin remains directly
-              involved in each client&rsquo;s SEO strategy, website improvements, and
-              performance analysis.
-            </p>
-            <Link href="/about" className={`${t.box} ${t.boxGrey}`} style={{ marginTop: 16 }}>
-              <Corner />
-              <span>Learn More About Scale SEO</span>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* === EXPERTISE — 2-column numbered === */}
-      <section className={t.steps}>
-        <h2 className={t.h2}>Areas of Expertise</h2>
-        <p className={t.lead} style={{ marginTop: 20, maxWidth: 720 }}>
-          Corbin&rsquo;s work covers the technical, content, and website development
-          elements of SEO.
-        </p>
-        <div className={t.stepGrid}>
-          {expertise.map(([title, body], i) => (
-            <div key={title} className={t.step}>
-              <h3 className={t.stepTitle}>
-                <span>{String(i + 1).padStart(2, "0")}</span> {title}
-              </h3>
-              <p className={`${t.body} ${t.dim}`}>{body}</p>
+      {/* Portrait card + background — Bilberrry leadership card */}
+      <section className={styles.sec}>
+        <div className={styles.side}><span className={styles.sideLabel}>Background</span></div>
+        <div className={styles.bgGrid}>
+          <figure className={styles.card}>
+            <div className={styles.cardImg}>
+              <Image src="/images/corbin-portrait.webp" alt="Corbin Jensen, founder and SEO specialist at Scale SEO" fill priority sizes="(max-width: 900px) 90vw, 360px" />
             </div>
-          ))}
+            <figcaption>
+              <span>Founder &amp; SEO Specialist</span>
+              <strong>Corbin Jensen</strong>
+            </figcaption>
+          </figure>
+          <div className={styles.col}>
+            <h2 className={styles.h2}>Background &amp; SEO Experience</h2>
+            <p className={styles.lead}>Corbin developed his SEO experience through hands-on work improving business websites, researching search opportunities, and implementing changes directly.</p>
+            <p>Before establishing Scale SEO in Calgary in 2025, he worked with businesses in Australia on local SEO, website development, and organic search strategy.</p>
+            <p>Today, his work focuses primarily on professional service and B2B businesses, particularly accounting and advisory firms.</p>
+            <p>Unlike a traditional agency account manager, Corbin remains directly involved in each client&rsquo;s SEO strategy, website improvements, and performance analysis.</p>
+            <Link href="/about" className={v.textLink}>Learn More About Scale SEO <VCorner /></Link>
+          </div>
         </div>
-        <p className={t.body} style={{ marginTop: 48, maxWidth: 760 }}>
-          His approach combines SEO research with direct implementation, helping
-          businesses move beyond recommendations and make practical improvements to
-          their websites.
-        </p>
       </section>
 
-      {/* === CLIENT WORK — grey, aside + boxes === */}
-      <section className={t.grey}>
-        <div className={t.asideGrid}>
-          <div className={t.aside}>
-            <h2 className={t.h2}>Selected Client Work</h2>
-            <p className={t.body}>
-              Corbin has worked on SEO and website development projects for
-              businesses across Canada and Australia.
-            </p>
-            <Link href="/results" className={`${t.box} ${t.boxBlue}`}>
-              <Corner />
-              <span>View All Client Projects</span>
-            </Link>
-          </div>
-          <div className={styles.workList}>
-            {work.map((w) => (
-              <article key={w.href} className={t.card} style={{ minHeight: 0 }}>
-                <h3 className={t.h3}>{w.name}</h3>
-                <div className={`${t.body} ${t.dim}`} style={{ fontSize: 16 }}>
-                  {w.body.map((p) => (
-                    <p key={p}>{p}</p>
-                  ))}
+      {/* Expertise — ruled numbered rows */}
+      <section className={styles.sec}>
+        <div className={styles.side}><span className={styles.sideLabel}>Areas of expertise</span></div>
+        <div>
+          <h2 className={styles.h2}>Areas of Expertise</h2>
+          <p className={styles.lead}>Corbin&rsquo;s work covers the technical, content, and website development elements of SEO.</p>
+          <ol className={styles.rows}>
+            {expertise.map(([title, body], i) => (
+              <li key={title}>
+                <span className={styles.num}>/ 0{i + 1}</span>
+                <h3>{title}</h3>
+                <p>{body}</p>
+              </li>
+            ))}
+          </ol>
+          <p className={styles.note}>His approach combines SEO research with direct implementation, helping businesses move beyond recommendations and make practical improvements to their websites.</p>
+        </div>
+      </section>
+
+      {/* Approach — navy, in Corbin's words, signed */}
+      <section className={`${v.navy} ${styles.navy}`} data-nav="dark">
+        <div className={styles.inner}>
+          <div className={styles.side}><span className={styles.sideLabel}>In Corbin&rsquo;s words</span></div>
+          <div>
+            <h2 className={styles.h2}>My Approach to SEO</h2>
+            <div className={styles.cols}>
+              <div className={styles.col}>
+                <p className={styles.lead}>I believe good SEO starts with understanding the business, not simply creating a list of keywords.</p>
+                <p>Before making changes, I look at which services matter most, how potential customers search for them, and where the website has opportunities to improve.</p>
+              </div>
+              <div className={styles.col}>
+                <p>Sometimes that means developing new service pages or content. Other times, it means improving existing pages, fixing technical problems, or making the website easier to navigate.</p>
+                <p>I prefer working directly on client websites rather than producing recommendations that never get implemented.</p>
+                <p>The goal is to improve visibility for searches that are relevant to the business and create more opportunities for qualified enquiries.</p>
+                <div className={styles.sign}>
+                  <Signature className={`${styles.signature} ${styles.signLight}`} />
+                  <span className={styles.signName}>Corbin Jensen</span>
+                  <span className={styles.signRole}>Founder, Scale SEO</span>
                 </div>
-                <Link href={w.href} className={t.inlineLink} style={{ fontSize: 16 }}>
-                  {w.cta} &rarr;
-                </Link>
-              </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Client work */}
+      <section className={styles.sec}>
+        <div className={styles.side}><span className={styles.sideLabel}>Selected client work</span></div>
+        <div>
+          <h2 className={styles.h2}>Selected Client Work</h2>
+          <p className={styles.lead}>Corbin has worked on SEO and website development projects for businesses across Canada and Australia.</p>
+          <div className={styles.work}>
+            {work.map((w) => (
+              <Link key={w.href} href={w.href} className={styles.workCard}>
+                <h3>{w.name}</h3>
+                {w.body.map((p) => <p key={p}>{p}</p>)}
+                <span className={v.textLink}>{w.cta} <VCorner /></span>
+              </Link>
             ))}
           </div>
+          <div className={styles.btns}><Btn href="/results" tone="navy">View All Client Projects</Btn></div>
         </div>
       </section>
 
-      {/* === APPROACH — navy feature === */}
-      <section className={t.featureWrap}>
-        <div className={t.feature} style={{ minHeight: 0 }}>
-          <div className={t.featureText}>
-            <span className={t.eyebrow}>In Corbin&rsquo;s words</span>
-            <h2 className={t.h2}>My Approach to SEO</h2>
-            <p className={t.lead}>
-              I believe good SEO starts with understanding the business, not simply
-              creating a list of keywords.
-            </p>
-          </div>
-          <div className={t.featureSide}>
-            <div className={t.body}>
-              <p>
-                Before making changes, I look at which services matter most, how
-                potential customers search for them, and where the website has
-                opportunities to improve.
-              </p>
-              <p>
-                Sometimes that means developing new service pages or content. Other
-                times, it means improving existing pages, fixing technical problems,
-                or making the website easier to navigate.
-              </p>
-              <p>
-                I prefer working directly on client websites rather than producing
-                recommendations that never get implemented.
-              </p>
-              <p>
-                The goal is to improve visibility for searches that are relevant to
-                the business and create more opportunities for qualified enquiries.
-              </p>
-            </div>
-          </div>
+      {/* Articles — Bilberrry related list */}
+      <section className={styles.sec}>
+        <div className={styles.side}><span className={styles.sideLabel}>Articles</span></div>
+        <div>
+          <h2 className={styles.h2}>Articles by Corbin Jensen</h2>
+          <p className={styles.lead}>Corbin writes about SEO strategy, technical SEO, search visibility, and the practical application of organic search for Canadian businesses.</p>
+          <p className={styles.muted}>His articles draw on industry research, Google documentation, search performance data, and firsthand experience working on client websites.</p>
+          <ul className={styles.articles}>
+            {articles.map((a) => (
+              <li key={a.href}>
+                <Link href={a.href}>
+                  <strong>{a.title} <VCorner /></strong>
+                  <span>{a.body}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <div className={styles.btns}><Btn href="/blog" tone="navy">View All SEO Articles</Btn></div>
         </div>
       </section>
 
-      {/* === ARTICLES — heading left, ruled rows right === */}
-      <section className={t.rowsSplit} style={{ padding: 0 }}>
-        <div className={t.rowsAside}>
-          <h2 className={t.h2}>Articles by Corbin Jensen</h2>
-          <div className={t.body}>
-            <p>
-              Corbin writes about SEO strategy, technical SEO, search visibility,
-              and the practical application of organic search for Canadian
-              businesses.
-            </p>
-            <p>
-              His articles draw on industry research, Google documentation, search
-              performance data, and firsthand experience working on client
-              websites.
-            </p>
+      <section className={`${v.white} ${v.ctaSec}`}>
+        <div className={v.wrap}>
+          <div className={v.ctaBox} data-nav="dark">
+            <h2 className={v.h2}>Work Directly With Corbin</h2>
+            <p className={v.p}>As the founder of Scale SEO, Corbin works directly with clients on SEO strategy, technical improvements, website development, and ongoing search performance. If you&rsquo;re considering SEO for your business, you can discuss your website, goals, and opportunities directly with him.</p>
+            <Btn href={BOOKING_URL} external>Book an SEO Consultation</Btn>
           </div>
-          <Link href="/blog" className={`${t.box} ${t.boxNavy}`}>
-            <Corner />
-            <span>View All SEO Articles</span>
-          </Link>
-        </div>
-        <div className={t.rowsList}>
-          {articles.map((a) => (
-            <div key={a.href} className={t.rowsItem}>
-              <h3 className={t.h3}>{a.title}</h3>
-              <p className={`${t.body} ${t.dim}`}>{a.body}</p>
-              <Link href={a.href} className={t.inlineLink} style={{ display: "inline-block", marginTop: 12 }}>
-                Read Article &rarr;
-              </Link>
-            </div>
-          ))}
         </div>
       </section>
-
-      <ContactSection
-        heading="Work Directly With Corbin"
-        lead="As the founder of Scale SEO, Corbin works directly with clients on SEO strategy, technical improvements, website development, and ongoing search performance. If you're considering SEO for your business, you can discuss your website, goals, and opportunities directly with him."
-        cta={{ href: BOOKING_URL, label: "Book an SEO Consultation →" }}
-      />
     </main>
   );
 }
