@@ -251,7 +251,7 @@ export default function SeoServicePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(seoJsonLd) }} />
       <ServiceTemplate
         crumb="SEO"
-        title="SEO Services in Calgary"
+        title="SEO Services for Accounting Firms & Professional Services"
         heroLead="Scale SEO provides search engine optimization for accounting firms, professional services, and established businesses across Canada and Australia."
         heroImage={{ src: "/images/gsc-performance-mockup-3d.webp", alt: "Google Search Console performance data showing clicks and impressions growth" }}
         statementLabel="Monthly SEO"

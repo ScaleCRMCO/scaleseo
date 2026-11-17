@@ -225,7 +225,7 @@ export const posts: Post[] = [
       },
       {
         "type": "p",
-        "text": "If you want to learn more about the work involved, explore our [SEO services](/services/seo)."
+        "text": "If you want to learn more about the work involved, explore our [SEO services for accounting firms](/services/seo)."
       },
       {
         "type": "h2",
