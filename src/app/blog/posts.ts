@@ -28,6 +28,522 @@ export type Post = {
 
 export const posts: Post[] = [
   {
+    "slug": "accounting-firm-marketing",
+    "title": "Accounting Firm Marketing: How to Attract Better-Fit Clients",
+    "metaTitle": "Accounting Firm Marketing: How to Attract Better Clients",
+    "description": "Learn how to market your accounting firm, attract better-fit clients, and grow your tax, bookkeeping, and advisory services through Google.",
+    "date": "2026-11-17T09:00:00-07:00",
+    "readTime": "9 min read",
+    "category": "Accounting Firm Marketing",
+    "excerpt": "A practical guide to attracting the right accounting clients through Google, your website, and a clearer marketing strategy.",
+    "takeaways": [
+      "Start by deciding which accounting clients and services you want to grow.",
+      "Build dedicated website pages for your core services, such as corporate tax, bookkeeping, and advisory.",
+      "Use SEO and local search to reach people already looking for an accountant, and consider Google Ads for priority services.",
+      "Publish content that answers real client questions, and measure enquiries and client quality, not just traffic."
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "If you run an accounting firm, getting more clients may not be your biggest challenge. Getting the right clients often is."
+      },
+      {
+        "type": "p",
+        "text": "You may want fewer one-off tax returns and more businesses that need ongoing bookkeeping, corporate tax, or advisory support."
+      },
+      {
+        "type": "p",
+        "text": "Yet your website might still promote every service equally. Or it may rely on referrals without giving new clients a clear way to find you online."
+      },
+      {
+        "type": "p",
+        "text": "Good accounting firm marketing starts with understanding who you want to work with."
+      },
+      {
+        "type": "p",
+        "text": "From there, you can build a strategy that helps those people find your firm, understand your services, and feel confident getting in touch."
+      },
+      {
+        "type": "p",
+        "text": "Here is where I would start."
+      },
+      {
+        "type": "h2",
+        "text": "1. Decide Which Accounting Clients You Want"
+      },
+      {
+        "type": "p",
+        "text": "Before spending money on marketing, look at the services you want to grow."
+      },
+      {
+        "type": "p",
+        "text": "Not every enquiry has the same value to your firm."
+      },
+      {
+        "type": "p",
+        "text": "For example, a personal tax return may be a one-time job. A business that needs bookkeeping, corporate tax, and ongoing advice could become a long-term client."
+      },
+      {
+        "type": "p",
+        "text": "That does not mean one service is always better than another. It means your marketing should reflect your firm's goals."
+      },
+      {
+        "type": "p",
+        "text": "Start by asking:"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Which services do we want more enquiries for?",
+          "What types of businesses are the best fit for our firm?",
+          "Which clients are most likely to need ongoing support?",
+          "Do we have the capacity to take on more of this work?"
+        ]
+      },
+      {
+        "type": "p",
+        "text": "A Calgary CPA firm looking to grow corporate tax services should not use the same marketing plan as a Brisbane accounting practice focused on small business bookkeeping."
+      },
+      {
+        "type": "p",
+        "text": "The goal is to attract clients who need the work your firm is best placed to provide."
+      },
+      {
+        "type": "h2",
+        "text": "2. Build Your Website Around Those Services"
+      },
+      {
+        "type": "p",
+        "text": "Your website should make it easy for someone to understand what your firm does."
+      },
+      {
+        "type": "p",
+        "text": "One common problem I see with accounting websites is that several important services are grouped onto a single page."
+      },
+      {
+        "type": "p",
+        "text": "A visitor might find a short paragraph about corporate tax, followed by a few lines about bookkeeping and business advice."
+      },
+      {
+        "type": "p",
+        "text": "That may be enough to introduce your services, but it often leaves important questions unanswered."
+      },
+      {
+        "type": "p",
+        "text": "I recommend creating dedicated pages for your core services."
+      },
+      {
+        "type": "p",
+        "text": "For example, an accounting firm might have separate pages for:"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Corporate tax returns and planning",
+          "Monthly bookkeeping",
+          "Fractional CFO services",
+          "Business advisory",
+          "Personal tax services"
+        ]
+      },
+      {
+        "type": "p",
+        "text": "Each page should clearly explain who the service is for, what support the firm provides, and how someone can get started."
+      },
+      {
+        "type": "p",
+        "text": "You do not need a large website filled with hundreds of pages. You need useful pages that match the services people are looking for."
+      },
+      {
+        "type": "p",
+        "text": "When we redeveloped the website for [Jensen CPA](/results/jensen-cpa), a Calgary accounting firm, improving the structure and content of its service pages was an important part of the work."
+      },
+      {
+        "type": "p",
+        "text": "The aim was to make the firm's services easier to find and better explain the support it provides to businesses."
+      },
+      {
+        "type": "p",
+        "text": "If your existing website has similar gaps, improving its structure may be a better starting point than paying for a complete redesign."
+      },
+      {
+        "type": "p",
+        "text": "For more on this process, see our [website design and development services](/services/web-development)."
+      },
+      {
+        "type": "h2",
+        "text": "3. Use SEO to Reach People Searching for an Accountant"
+      },
+      {
+        "type": "p",
+        "text": "Search engine optimization, or SEO, helps your website become easier to find through search engines such as Google."
+      },
+      {
+        "type": "p",
+        "text": "For accounting firms, this means reaching people who are already looking for the services you provide."
+      },
+      {
+        "type": "p",
+        "text": "Consider the difference between these searches:"
+      },
+      {
+        "type": "p",
+        "text": "**\"What does a CPA do?\"**"
+      },
+      {
+        "type": "p",
+        "text": "Someone making this search may only want general information."
+      },
+      {
+        "type": "p",
+        "text": "**\"Corporate tax accountant Calgary\"**"
+      },
+      {
+        "type": "p",
+        "text": "This person may be looking for an accounting firm to help with a specific need."
+      },
+      {
+        "type": "p",
+        "text": "Both searches have value, but they serve different purposes."
+      },
+      {
+        "type": "p",
+        "text": "I recommend focusing first on the services most closely tied to your business goals."
+      },
+      {
+        "type": "p",
+        "text": "For many accounting firms, that means improving the pages for corporate tax, bookkeeping, and advisory services before publishing large amounts of general content."
+      },
+      {
+        "type": "p",
+        "text": "A strong SEO strategy should also consider your website's technical health, internal links, and the quality of the information you publish."
+      },
+      {
+        "type": "p",
+        "text": "Google's own [SEO Starter Guide](https://developers.google.com/search/docs/fundamentals/seo-starter-guide) recommends creating useful, well-organized content that helps visitors understand what your website offers."
+      },
+      {
+        "type": "p",
+        "text": "If you want to learn more about the work involved, explore our [SEO services](/services/seo)."
+      },
+      {
+        "type": "h2",
+        "text": "4. Make Sure Your Accounting Firm Can Be Found Locally"
+      },
+      {
+        "type": "p",
+        "text": "Even when an accounting firm works with clients online, local search can still be an important source of enquiries."
+      },
+      {
+        "type": "p",
+        "text": "Someone looking for a tax accountant in Calgary or a bookkeeping firm in Brisbane may search Google Maps before visiting a website."
+      },
+      {
+        "type": "p",
+        "text": "Your Google Business Profile helps people find important details about your practice."
+      },
+      {
+        "type": "p",
+        "text": "Make sure it includes your correct business name, address where applicable, contact details, website, and business hours."
+      },
+      {
+        "type": "p",
+        "text": "Client reviews also help people understand what it is like to work with your firm."
+      },
+      {
+        "type": "p",
+        "text": "Google explains that local search results are mainly influenced by relevance, distance, and prominence. Complete business information and genuine reviews can help support your local presence."
+      },
+      {
+        "type": "p",
+        "text": "Source: [Google Business Profile — Improve Your Local Ranking](https://support.google.com/business/answer/7091)."
+      },
+      {
+        "type": "p",
+        "text": "I would start by making sure your profile is accurate before looking for more advanced ways to improve local visibility."
+      },
+      {
+        "type": "h2",
+        "text": "5. Consider Google Ads for Services You Want to Grow"
+      },
+      {
+        "type": "p",
+        "text": "SEO takes time. If your firm wants to reach potential clients sooner, Google Ads may be worth considering."
+      },
+      {
+        "type": "p",
+        "text": "Google Ads allows your business to appear in sponsored search results for selected searches."
+      },
+      {
+        "type": "p",
+        "text": "For example, a firm looking to grow its corporate tax work could run ads targeting people searching for corporate tax accountants in its service area."
+      },
+      {
+        "type": "p",
+        "text": "However, advertising only works well when the campaign matches your business goals."
+      },
+      {
+        "type": "p",
+        "text": "Before launching, consider three things."
+      },
+      {
+        "type": "ul",
+        "items": [
+          "**The service:** Is this a service your firm wants more clients for?",
+          "**The budget:** Can you afford to test the campaign while results develop?",
+          "**The website:** Does the landing page clearly explain the service and make it easy to enquire?"
+        ]
+      },
+      {
+        "type": "p",
+        "text": "I would avoid advertising every accounting service at once if the budget is limited."
+      },
+      {
+        "type": "p",
+        "text": "Start with a clear priority. Track the enquiries coming in, review their quality, and use that information to improve the campaign."
+      },
+      {
+        "type": "p",
+        "text": "SEO and Google Ads can also support each other. Paid search can provide useful data about which searches lead to enquiries, while SEO works toward longer-term organic visibility."
+      },
+      {
+        "type": "p",
+        "text": "The right mix depends on your firm's goals, budget, and current search presence."
+      },
+      {
+        "type": "h2",
+        "text": "6. Publish Content That Answers Real Client Questions"
+      },
+      {
+        "type": "p",
+        "text": "You do not need to publish a blog every week to build a useful accounting website."
+      },
+      {
+        "type": "p",
+        "text": "Instead, think about the questions your team answers during client meetings."
+      },
+      {
+        "type": "p",
+        "text": "A business owner might ask:"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "When is my corporate tax return due?",
+          "Should I pay myself a salary or dividends?",
+          "What does a fractional CFO do?",
+          "When should I register for GST?",
+          "What bookkeeping records should my company keep?"
+        ]
+      },
+      {
+        "type": "p",
+        "text": "These are useful starting points for articles."
+      },
+      {
+        "type": "p",
+        "text": "Good content gives people a clear answer and helps them understand when professional advice may be needed."
+      },
+      {
+        "type": "p",
+        "text": "At Jensen CPA, for example, our content work has covered corporate tax filing, tax planning, and other questions relevant to Canadian business owners."
+      },
+      {
+        "type": "p",
+        "text": "The aim is to make useful accounting information available while supporting the firm's core services."
+      },
+      {
+        "type": "p",
+        "text": "It is also important that technical accounting content is accurate and kept up to date. Tax rules can change, and articles should be reviewed by someone qualified to advise on the subject."
+      },
+      {
+        "type": "p",
+        "text": "Google recommends content that demonstrates firsthand knowledge, uses reliable information, and genuinely helps readers."
+      },
+      {
+        "type": "p",
+        "text": "Source: [Google Search Central — Creating Helpful, Reliable Content](https://developers.google.com/search/docs/fundamentals/creating-helpful-content)."
+      },
+      {
+        "type": "h2",
+        "text": "7. Measure Better Clients, Not Just More Traffic"
+      },
+      {
+        "type": "p",
+        "text": "A website getting more traffic is encouraging, but traffic alone does not tell you whether your marketing is working."
+      },
+      {
+        "type": "p",
+        "text": "Imagine two campaigns."
+      },
+      {
+        "type": "p",
+        "text": "The first brings 100 visitors to your website, mostly people looking for general tax information."
+      },
+      {
+        "type": "p",
+        "text": "The second brings 20 visitors, including business owners looking for ongoing accounting support."
+      },
+      {
+        "type": "p",
+        "text": "The second campaign may be more valuable if those visitors become suitable clients."
+      },
+      {
+        "type": "p",
+        "text": "This is why I recommend looking beyond website visits."
+      },
+      {
+        "type": "p",
+        "text": "Track the number of enquiries, the services people ask about, and how many enquiries become clients."
+      },
+      {
+        "type": "p",
+        "text": "You can also use Google Search Console to see which pages receive clicks and which searches bring people to your website."
+      },
+      {
+        "type": "p",
+        "text": "But Search Console cannot tell you whether an enquiry becomes a paying client. That information needs to come from your own enquiry and client records."
+      },
+      {
+        "type": "h3",
+        "text": "A Simple Way to Track Lead Quality"
+      },
+      {
+        "type": "p",
+        "text": "When a new enquiry comes in, record:"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "The service the person needs",
+          "Where they found your firm",
+          "Whether they are a good fit",
+          "Whether they become a client"
+        ]
+      },
+      {
+        "type": "p",
+        "text": "Over time, this can help you see which marketing activities lead to the types of clients you want."
+      },
+      {
+        "type": "p",
+        "text": "You don't need complex reporting to start. A simple spreadsheet or client management system can be enough."
+      },
+      {
+        "type": "h2",
+        "text": "8. What We've Learned From Marketing Accounting Firms"
+      },
+      {
+        "type": "p",
+        "text": "At Scale SEO, our work with accounting firms in Canada and Australia has reinforced one important lesson:"
+      },
+      {
+        "type": "p",
+        "text": "**A good accounting website should reflect the work the firm actually wants to win.**"
+      },
+      {
+        "type": "p",
+        "text": "For [Jensen CPA in Calgary](/results/jensen-cpa), our work has included website redevelopment, technical SEO, and dedicated content for accounting services."
+      },
+      {
+        "type": "p",
+        "text": "During the initial four-month campaign, average daily organic clicks increased by 92% between the comparison periods reported in our case study."
+      },
+      {
+        "type": "p",
+        "text": "With [Empire Accountants in Brisbane](/results/empire-accountants), our work has focused on improving visibility for business accounting, tax, and advisory services through technical improvements, service pages, and content strategy."
+      },
+      {
+        "type": "p",
+        "text": "Priority searches have moved from page five to page one of Google."
+      },
+      {
+        "type": "p",
+        "text": "These results show improvements in search visibility. They do not, on their own, prove how many new clients were acquired."
+      },
+      {
+        "type": "p",
+        "text": "Each firm has different goals, and the marketing strategy needs to reflect them."
+      },
+      {
+        "type": "p",
+        "text": "That's why I believe understanding the accounting practice should come before choosing keywords or planning new pages."
+      },
+      {
+        "type": "h2",
+        "text": "Where Should Your Accounting Firm Start?"
+      },
+      {
+        "type": "p",
+        "text": "If your firm relies heavily on referrals or your website isn't attracting the clients you want, you don't need to change everything at once."
+      },
+      {
+        "type": "p",
+        "text": "Start with three priorities."
+      },
+      {
+        "type": "p",
+        "text": "First, decide which services you want to grow."
+      },
+      {
+        "type": "p",
+        "text": "Next, review whether your website explains those services clearly."
+      },
+      {
+        "type": "p",
+        "text": "Finally, check whether people can find those pages when searching on Google."
+      },
+      {
+        "type": "p",
+        "text": "From there, you can decide whether SEO, paid advertising, website improvements, or a combination makes the most sense."
+      },
+      {
+        "type": "p",
+        "text": "Good accounting firm marketing is not about reaching everyone. It's about making it easier for the right clients to find and choose your practice."
+      },
+      {
+        "type": "p",
+        "text": "At Scale SEO, we specialize in SEO and digital marketing for accounting firms, with experience across Canada and Australia."
+      },
+      {
+        "type": "p",
+        "text": "You can [explore our services](/services) or [get in touch](/contact) to discuss your firm's current search visibility and growth goals."
+      },
+      {
+        "type": "h2",
+        "text": "Sources & Further Reading"
+      },
+      {
+        "type": "p",
+        "text": "The following official resources support the guidance in this article."
+      },
+      {
+        "type": "references",
+        "items": [
+          {
+            "title": "Google Search Central — SEO Starter Guide",
+            "href": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide",
+            "desc": "Google's guidance on website structure, useful content, links, and helping search engines understand a website."
+          },
+          {
+            "title": "Google Business Profile — Tips to Improve Your Local Ranking",
+            "href": "https://support.google.com/business/answer/7091",
+            "desc": "Explains how Google uses relevance, distance, and prominence when showing local business results."
+          },
+          {
+            "title": "Google Search Central — Creating Helpful, Reliable, People-First Content",
+            "href": "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+            "desc": "Guidance on publishing original, accurate, trustworthy content that serves readers."
+          }
+        ]
+      },
+      {
+        "type": "p",
+        "text": "Article by [Corbin Jensen](/corbin-jensen), Founder of Scale SEO. Based on practical SEO and website development experience with accounting firms in Canada and Australia."
+      }
+    ]
+  },
+  {
     "slug": "how-to-rank-business-across-canada",
     "title": "How to Rank Your Business Across Canada (Without Offices in Every City)",
     "metaTitle": "How to Rank Your Business Across Canada | Scale SEO",
