@@ -188,3 +188,13 @@
 
 .inlineLink { color: #081423; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
 .inlineLink:hover { color: #0099FF; }
+
+.whyHead { padding-bottom: 48px; margin-bottom: 64px; border-bottom: 1px solid var(--rule); }
+.whyGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+.whyImg { position: sticky; top: 104px; aspect-ratio: 4 / 5; overflow: hidden; background: #0d1d31; }
+.whyImg img { object-fit: cover; object-position: 55% center; }
+.whyLabel { margin: 0 0 24px; font-size: 16px; font-weight: 600; }
+.whyPoints { display: grid; grid-template-columns: 1fr 1fr; row-gap: 40px; }
+.whyPoint { display: flex; flex-direction: column; gap: 12px; padding: 4px 28px 8px; border-left: 1px solid var(--rule); }
+.whyIcon > span { background: #FEFEFE; color: #081423; margin-bottom: 28px; }
+@media (max-width: 900px) { .whyGrid, .whyPoints { grid-template-columns: 1fr; gap: 32px; } .whyImg { position: relative; top: 0; aspect-ratio: 4 / 3; } }

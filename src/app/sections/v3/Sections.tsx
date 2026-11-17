@@ -328,18 +328,31 @@ export function Process() {
   );
 }
 
-/* 9. Why choose — four points on grey */
+/* 9. Why choose — Mamba: heading top, image left, label + 2x2 ruled points right */
 export function Why() {
   return (
-    <section className={`${s.grey} ${s.sec}`} aria-labelledby="why-h">
+    <section className={`${s.navy} ${s.sec}`} data-nav="dark" aria-labelledby="why-h">
       <div className={s.wrap}>
-        <div className={s.head}>
+        <div className={s.whyHead}>
+          <h2 id="why-h" className={s.h2}>Why Accounting Firms Choose Scale SEO</h2>
+        </div>
+        <div className={s.whyGrid}>
+          <div className={s.whyImg}>
+            <Image src="/images/calgary-skyline-bw.webp" alt="Black and white panorama of the downtown Calgary skyline" fill sizes="(max-width: 900px) 100vw, 620px" />
+          </div>
           <div>
-            <Eyebrow>Why Scale SEO</Eyebrow>
-            <h2 id="why-h" className={s.h2}>Why Accounting Firms Choose Scale SEO</h2>
+            <p className={s.whyLabel}>Here&rsquo;s what sets us apart.</p>
+            <div className={s.whyPoints}>
+              {whyPoints.map((p) => (
+                <div key={p.title} className={s.whyPoint}>
+                  <span className={s.whyIcon}><Icon d={p.icon} /></span>
+                  <h3 className={s.h3}>{p.title}</h3>
+                  <p className={s.p}>{p.body}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-        <Points points={whyPoints} cols={4} />
       </div>
     </section>
   );
