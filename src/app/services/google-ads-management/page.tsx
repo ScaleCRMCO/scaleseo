@@ -117,7 +117,7 @@ export default function GoogleAdsPage() {
         crumb="Google Ads Management"
         title="Google Ads Management in Calgary"
         heroLead="Scale SEO provides Google Ads management for accounting firms, professional services, and established businesses across Canada and Australia."
-        heroBleed
+        heroImgScale={0.85}
         heroImage={{ src: "/images/google-ads-search-results.webp", alt: "Monitor showing sponsored Google Ads results for a corporate tax search" }}
         statementLabel="Google Ads management"
         statement="We build and manage search campaigns around relevant keywords, qualified enquiries, and measurable business outcomes."
