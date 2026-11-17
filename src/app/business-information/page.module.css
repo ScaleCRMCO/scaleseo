@@ -54,3 +54,6 @@
   .body .services { grid-template-columns: 1fr; }
   .body .columns { columns: 1; }
 }
+.body h3 { margin: 1.6em 0 0.5em; font-size: 20px; font-weight: 600; color: #081423; }
+.contactBox { display: flex; flex-direction: column; gap: 4px; margin: 2em 0 1.2em; padding: 24px 28px; background: #F1F3F6; border-left: 3px solid #0099FF; font-style: normal; }
+.contactBox strong { color: #081423; }

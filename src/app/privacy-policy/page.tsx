@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Breadcrumbs from "../components/Breadcrumbs";
 import { blocks } from "./content";
-import styles from "../legal.module.css";
+import styles from "../business-information/page.module.css";
+import v from "../sections/v3/v3.module.css";
+import { Btn } from "../sections/v3/ui";
 
 const slug = (t: string) =>
   t.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
@@ -18,18 +20,25 @@ export const metadata: Metadata = {
 
 export default function PrivacyPolicyPage() {
   return (
-    <main className="v2">
+    <main className={`v2 ${v.page}`}>
       <header className={styles.hero}>
-        <div className={styles.crumbs}>
-          <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Privacy Policy" }]} />
+        <div className={styles.heroLeft}>
+          <div className={styles.crumbs}>
+            <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Privacy Policy" }]} />
+          </div>
+          <span className={styles.sideLabel}>Legal</span>
         </div>
-        <h1 className={styles.title}>Privacy Policy</h1>
-        <div className={styles.meta}>
-          <p>Last Updated: October 7, 2026</p>
+        <div className={styles.heroRight}>
+          <h1 className={styles.title}>Privacy Policy</h1>
+          <div className={styles.meta}>
+            <p>Last Updated: October 7, 2026</p>
+          </div>
         </div>
       </header>
 
       <div className={styles.layout}>
+        <aside className={styles.side}>
+        <span className={styles.tocLabel}>On this page</span>
         <ol className={styles.toc}>
           {toc.map((h) => (
             <li key={h}>
@@ -40,6 +49,11 @@ export default function PrivacyPolicyPage() {
             <a href="#privacy-contact">Privacy Contact</a>
           </li>
         </ol>
+        <div className={styles.sideCta}>
+          <p>Questions about your privacy?</p>
+          <Btn href="/contact">Contact Us</Btn>
+        </div>
+        </aside>
         <article className={styles.body}>
           {blocks.map((b, i) => {
             if (b[0] === "ul")
