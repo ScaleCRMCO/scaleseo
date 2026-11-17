@@ -1,18 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Breadcrumbs from "../../components/Breadcrumbs";
-import ContactSection from "../../components/ContactSection";
-import CountUp from "../../components/CountUp";
-import PinnedPoints, { type PinnedItem } from "../../components/PinnedPoints";
-import ServicesFaq, { type FaqItem } from "../ServicesFaq";
-import t from "../svc.module.css";
-import ab from "../../about/page.module.css";
+import { type FaqItem } from "../ServicesFaq";
+import ServiceTemplate, { ICONS } from "../ServiceTemplate";
+import v from "../../sections/v3/v3.module.css";
 
 const TITLE = "National SEO Services Canada | Scale SEO";
 const DESCRIPTION =
   "National SEO services for Canadian businesses. Improve search visibility across Canada with founder-led SEO, technical improvements and content strategy.";
 const URL = "https://scaleseo.co/services/national-seo";
-const CONTACT_URL = "/contact";
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
@@ -26,6 +21,7 @@ export const metadata: Metadata = {
 const audiences = [
   {
     title: "Accounting & Financial Services",
+    icon: "building",
     body: [
       "Accounting firms offering specialized services, such as corporate tax, business advisory, and fractional CFO support, may work with clients across multiple provinces.",
       "A national SEO strategy can help these firms reach businesses searching for their expertise rather than focusing exclusively on local accounting searches.",
@@ -33,6 +29,7 @@ const audiences = [
   },
   {
     title: "Professional Services & Consulting",
+    icon: "briefcase",
     body: [
       "Consultancies, advisory firms, and other professional service businesses often work with clients remotely.",
       "Their SEO strategy should reflect the industries, business problems, and specialized services they support, not necessarily the city where their office is located.",
@@ -40,6 +37,7 @@ const audiences = [
   },
   {
     title: "B2B & Specialized Service Providers",
+    icon: "chart",
     body: [
       "B2B companies may serve a smaller group of potential customers spread across a much larger geographic market.",
       "National SEO helps these businesses develop visibility for relevant industry searches, specialized solutions, and the questions prospective customers ask before choosing a provider.",
@@ -50,6 +48,7 @@ const audiences = [
 const included = [
   {
     title: "National Keyword & Competitor Research",
+    icon: "search",
     body: [
       "Research the terms potential customers use across your target country and examine the websites already competing for those searches.",
       "This helps identify relevant opportunities, content gaps, and the level of competition your business faces.",
@@ -57,6 +56,7 @@ const included = [
   },
   {
     title: "Technical SEO Improvements",
+    icon: "gear",
     body: [
       "Review the technical foundations of your website, including crawling, indexing, internal linking, redirects, canonical tags, structured data, and site architecture.",
       "The priority is fixing issues that affect search accessibility, usability, and the performance of important pages.",
@@ -64,6 +64,7 @@ const included = [
   },
   {
     title: "Service Page Optimization",
+    icon: "page",
     body: [
       "Improve existing service pages and develop new pages where they address distinct customer needs.",
       "Each page should clearly explain the service, demonstrate relevant experience, and help visitors understand whether your business is the right fit.",
@@ -71,6 +72,7 @@ const included = [
   },
   {
     title: "Content Strategy & Development",
+    icon: "pen",
     body: [
       "Create and improve useful content around the questions, challenges, and services relevant to your target audience.",
       "For professional service businesses, this may include educational articles, industry resources, and detailed explanations of specialized services.",
@@ -78,6 +80,7 @@ const included = [
   },
   {
     title: "Website Structure & Internal Linking",
+    icon: "building",
     body: [
       "Organize your website so customers and search engines can navigate your services, industries, and supporting resources.",
       "A clear structure helps important pages connect with relevant information without relying on unnecessary or repetitive landing pages.",
@@ -85,6 +88,7 @@ const included = [
   },
   {
     title: "Performance Monitoring & Reporting",
+    icon: "chart",
     body: [
       "Monitor organic visibility, relevant keyword rankings, search traffic, and available conversion data.",
       "Regular reporting helps identify what’s improving, where opportunities remain, and which changes should be prioritized next.",
@@ -92,7 +96,7 @@ const included = [
   },
 ];
 
-const strategy: PinnedItem[] = [
+const strategy = [
   {
     title: "Start With Your Most Valuable Services",
     body: [
@@ -174,8 +178,8 @@ const faqs: FaqItem[] = [
     a: [
       "Ongoing SEO services at Scale SEO start from $3,000 CAD per month, plus applicable taxes.",
       "The cost of a national campaign depends on your website, target market, competition, and the work required.",
+      "[View SEO Pricing](/pricing)",
     ],
-    link: { href: "/pricing", label: "View SEO Pricing →" },
   },
   {
     q: "How long does national SEO take?",
@@ -215,11 +219,6 @@ const faqs: FaqItem[] = [
   },
 ];
 
-const Corner = () => (
-  <svg className={t.corner} viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
-    <path d="M1 1.5h7.5V9" />
-  </svg>
-);
 
 /* === Schema — WebPage + Service (areaServed Canada) + BreadcrumbList.
    FAQPage comes from <ServicesFaq>. === */
@@ -325,302 +324,117 @@ const jsonLd = {
   ]
 };
 
-/* === Page =============================================================== */
+const CTA_LEAD = "Whether you\u2019re an accounting firm serving clients across Canada, a B2B company reaching customers nationwide, or a professional service business expanding beyond its local market, Scale SEO can help develop a search strategy around your goals.";
 
+const Icon = ({ d }: { d: string }) => (
+  <span className={v.icon} aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d={d} /></svg>
+  </span>
+);
+
+/* === Page — shared service template ==================================== */
 export default function NationalSeoPage() {
   return (
-    <main className="v2">
+    <main className={`v2 ${v.page}`}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-
-      {/* === HERO === */}
-      <header>
-        <div className={t.hero}>
-          <div className={t.crumbs}>
-            <Breadcrumbs
-              items={[{ name: "Home", href: "/" }, { name: "Services", href: "/services" }, { name: "National SEO Services" }]}
-              schema={false}
-            />
-          </div>
-          <h1 className={t.title}>National SEO Services in Canada</h1>
-        </div>
-        <div className={t.band}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/images/toronto-cn-tower.webp"
-            alt="Black and white street view of downtown Toronto from Front Street, with the CN Tower rising above Union Station and a glass office tower"
-            style={{ objectPosition: "center 30%" }}
-          />
-        </div>
-      </header>
-
-      {/* === INTRO — large statement === */}
-      <section className={t.statementSection}>
-        <div className={t.statement}>
-          <p>
-            Scale SEO provides national SEO services for businesses looking to
-            improve their visibility on Google and reach customers across Canada.
-          </p>
-          <p>
-            Based in Calgary, Scale SEO works with accounting firms, professional
-            service businesses, and B2B companies that serve customers beyond a
-            single city or region.
-          </p>
-          <p>
-            From technical SEO and website improvements to content strategy and
-            competitor research, every campaign is managed directly by founder
-            Corbin Jensen and built around your business goals.
-          </p>
-        </div>
-        <div className={t.statementBottom}>
-          <span className={t.statementNote}>
-            <strong>Reach customers beyond your local market.</strong>
-          </span>
-          <Link href={CONTACT_URL} className={`${t.box} ${t.boxNavy}`}>
-            <Corner />
-            <span>Discuss Your SEO Project</span>
-          </Link>
-        </div>
-      </section>
-
-      {/* === WHAT IS NATIONAL SEO — big H2, label left, text right === */}
-      <section className={t.prioSection} style={{ background: "var(--h-navy)", color: "var(--h-white)" }}>
-        <h2 className={t.prioTitle}>What Is National SEO?</h2>
-        <div className={t.prioRow}>
-          <p className={t.prioLabel} style={{ maxWidth: "26ch" }}>
-            National SEO is the process of improving a website&rsquo;s
-            visibility for searches across an entire country, rather than
-            focusing primarily on one city or local service area.
-          </p>
-          <div className={t.prioBody}>
-            <p>
-              For example, an accounting firm serving businesses throughout
-              Canada may want to appear for searches related to corporate tax
-              planning or fractional CFO services, regardless of where the
-              potential client is located.
-            </p>
-            <p>
-              Unlike local SEO, which often focuses on location-specific searches
-              and Google Business Profiles, national SEO places greater emphasis
-              on broader search terms, specialized service pages, website
-              authority, and competition across larger markets.
-            </p>
-            <p>
-              The goal isn&rsquo;t simply to attract more visitors. It&rsquo;s to
-              reach people across your target country who are actively looking
-              for the services you provide.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* === WHO BENEFITS — heading + ruled rows === */}
-      <section className={t.listSection} style={{ padding: 0 }}>
-        <div className={t.listHead}>
-          <h2 className={t.h2}>Who Benefits From National SEO?</h2>
-          <p className={`${t.lead} ${t.listIntro}`}>
-            National SEO is particularly relevant for businesses that
-            aren&rsquo;t limited by their physical location.
-          </p>
-        </div>
-        <div className={t.rows}>
-          {audiences.map((item) => (
-            <div key={item.title} className={t.row}>
-              <h3 className={t.h3}>{item.title}</h3>
-              <div className={`${t.body} ${t.dim}`}>
-                {item.body.map((p) => (
-                  <p key={p}>{p}</p>
-                ))}
+      <ServiceTemplate
+        crumb="National SEO Services"
+        title="National SEO Services in Canada"
+        heroLead="Scale SEO provides national SEO services for businesses looking to improve their visibility on Google and reach customers across Canada."
+        heroImage={{ src: "/images/gsc-performance-mockup-3d.webp", alt: "Google Search Console performance data showing clicks and impressions growth" }}
+        heroSecondary={{ href: "/contact", label: "Discuss Your SEO Project" }}
+        statementLabel="National SEO"
+        statement="Based in Calgary, Scale SEO works with accounting firms, professional service businesses, and B2B companies that serve customers beyond a single city or region."
+        statementNote="Reach customers beyond your local market."
+        statementBody={["From technical SEO and website improvements to content strategy and competitor research, every campaign is managed directly by founder Corbin Jensen and built around your business goals."]}
+        explainer={{
+          title: "What Is National SEO?",
+          lead: "National SEO is the process of improving a website\u2019s visibility for searches across an entire country, rather than focusing primarily on one city or local service area.",
+          body: (
+            <>
+              <p>For example, an accounting firm serving businesses throughout Canada may want to appear for searches related to corporate tax planning or fractional CFO services, regardless of where the potential client is located.</p>
+              <p>Unlike local SEO, which often focuses on location-specific searches and Google Business Profiles, national SEO places greater emphasis on broader search terms, specialized service pages, website authority, and competition across larger markets.</p>
+              <p>The goal isn&rsquo;t simply to attract more visitors. It&rsquo;s to reach people across your target country who are actively looking for the services you provide.</p>
+            </>
+          ),
+        }}
+        panels={{
+          title: "How National SEO Differs From Local SEO",
+          lead: "National and local SEO share many of the same foundations, but the audience and competitive environment can be different.",
+          items: [
+            { title: "Local SEO", strong: "Customers in a particular city or service area.", body: <p>Local SEO focuses on reaching customers in a particular city or service area. It may involve Google Business Profile optimization, local service pages, and location-specific search terms.</p> },
+            { title: "National SEO", strong: "Customers across a country.", body: <p>National SEO focuses on reaching customers across a country. The strategy generally places greater emphasis on broader search demand, specialized content, competitive research, and the strength of your website as a whole.</p> },
+          ],
+          note: (
+            <>
+              <p>Some businesses benefit from both approaches.</p>
+              <div>
+                <p>For example, an accounting firm may want to attract local bookkeeping clients while also reaching businesses across Canada for specialized tax advisory services.</p>
+                <p>The right strategy depends on where your customers are located and which services you want to grow.</p>
               </div>
+            </>
+          ),
+        }}
+        included={{
+          title: "What\u2019s Included in National SEO Services?",
+          lead: "Every national SEO campaign begins with an assessment of your website, competition, and target customers. The work is then prioritized around the opportunities most relevant to your business.",
+          items: included,
+          image: { src: "/images/vancouver-aerial-bw.webp", alt: "Black and white aerial view of downtown Vancouver" },
+        }}
+        feature={
+          <section className={`${v.grey} ${v.sec}`} style={{ paddingTop: 0 }}>
+            <div className={v.wrap}>
+              <div className={v.head}>
+                <div><h2 className={v.h2}>Building a National SEO Strategy</h2></div>
+                <p className={v.p}>Competing nationally requires more than adding the word &ldquo;Canada&rdquo; to your website.</p>
+              </div>
+              <ol className={`${v.cards} ${v.cols4}`}>
+                {strategy.map((x, i) => (
+                  <li key={x.title} className={v.card}>
+                    <span className={v.cardNum}>0{i + 1}</span>
+                    <h3 className={v.h3}>{x.title}</h3>
+                    {x.body.map((b) => <p key={b} className={v.p}>{b}</p>)}
+                  </li>
+                ))}
+              </ol>
             </div>
-          ))}
-        </div>
-      </section>
-
-      {/* === WHAT'S INCLUDED — About-page staggered boxes: three on the right,
-          three on the left === */}
-      <section className={ab.partners} style={{ borderTop: "1px solid var(--h-rule)" }}>
-        <div className={ab.partnersHead}>
-          <h2 className={ab.partnersTitle}>What&rsquo;s Included in National SEO Services?</h2>
-          <div className={ab.partnersText}>
-            <p>
-              Every national SEO campaign begins with an assessment of your
-              website, competition, and target customers. The work is then
-              prioritized around the opportunities most relevant to your
-              business.
-            </p>
-          </div>
-        </div>
-        <div className={ab.partnersGrid}>
-          {included.map((item, i) => (
-            <article
-              key={item.title}
-              className={ab.pBox}
-              style={i < 3 ? { gridColumn: i + 2, gridRow: 1 } : { gridColumn: i - 2, gridRow: 2 }}
-            >
-              <span className={ab.pNum}>{String(i + 1).padStart(2, "0")}</span>
-              <h3 className={ab.pTitle}>{item.title}</h3>
-              {item.body.map((p) => (
-                <p key={p} className={ab.pBody}>{p}</p>
-              ))}
-            </article>
-          ))}
-        </div>
-      </section>
-
-      {/* === NATIONAL VS LOCAL — big H2, then two columns === */}
-      <section className={t.prioSection} style={{ borderTop: "1px solid var(--h-rule)" }}>
-        <h2 className={t.prioTitle} style={{ maxWidth: "18ch" }}>How National SEO Differs From Local SEO</h2>
-        <p className={t.prioBody} style={{ maxWidth: 720, marginTop: 32 }}>
-          National and local SEO share many of the same foundations, but the
-          audience and competitive environment can be different.
-        </p>
-        <div className={t.stepGrid}>
-          <div className={t.step}>
-            <h3 className={t.stepTitle}>Local SEO</h3>
-            <p className={`${t.body} ${t.dim}`}>
-              Local SEO focuses on reaching customers in a particular city or
-              service area. It may involve Google Business Profile optimization,
-              local service pages, and location-specific search terms.
-            </p>
-          </div>
-          <div className={t.step}>
-            <h3 className={t.stepTitle}>
-              <span>National SEO</span>
-            </h3>
-            <p className={`${t.body} ${t.dim}`}>
-              National SEO focuses on reaching customers across a country. The
-              strategy generally places greater emphasis on broader search
-              demand, specialized content, competitive research, and the
-              strength of your website as a whole.
-            </p>
-          </div>
-        </div>
-        <div className={t.prioRow}>
-          <p className={t.prioLabel}>Some businesses benefit from both approaches.</p>
-          <div className={t.prioBody}>
-            <p>
-              For example, an accounting firm may want to attract local
-              bookkeeping clients while also reaching businesses across Canada
-              for specialized tax advisory services.
-            </p>
-            <p>
-              The right strategy depends on where your customers are located and
-              which services you want to grow.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* === BUILDING A STRATEGY — pinned scroll section === */}
-      <PinnedPoints
-        title="Building a National SEO Strategy"
-        lead="Competing nationally requires more than adding the word “Canada” to your website."
-        items={strategy}
-      />
-
-      {/* === EXPERIENCE — full-bleed navy with case study rows === */}
-      <section className={t.expSection}>
-        <div className={t.expTop}>
-          <h2 className={t.expTitle}>Experience With Professional Service SEO</h2>
-          <div className={t.expBody}>
-            <p>
-              Scale SEO has worked with professional service and B2B businesses
-              in Canada and Australia, providing technical SEO, website
-              development, content strategy, and ongoing search optimization.
-            </p>
-            <p>
-              These projects demonstrate relevant SEO experience, although their
-              results should not be interpreted as evidence of nationwide
-              rankings.
-            </p>
-          </div>
-        </div>
-        {cases.map((c) => (
-          <div key={c.href} className={t.expRow}>
-            <div className={t.expLeft}>
-              <h3 className={t.expName}>{c.name}</h3>
-              <Link href={c.href} className={`${t.box} ${t.boxBlue}`}>
-                <Corner />
-                <span>{c.cta}</span>
-              </Link>
-            </div>
-            <div className={t.expText}>
-              {c.body.map((p) => (
-                <p key={p}>{p}</p>
-              ))}
-              <div className={t.expStats}>
-                {c.stats.map((m) => (
-                  <div key={m.label}>
-                    <span className={t.expStat}>
-                      <CountUp from={m.from} to={m.to} prefix={m.prefix} suffix={m.suffix} />
-                    </span>
-                    <span className={t.expStatLabel}>{m.label}</span>
+          </section>
+        }
+        markets={{
+          title: "Who Benefits From National SEO?",
+          outro: "National SEO is particularly relevant for businesses that aren\u2019t limited by their physical location.",
+          items: audiences.map((a) => ({ title: a.title, icon: a.icon, body: a.body.join(" ") })),
+        }}
+        cases={{
+          title: "Experience With Professional Service SEO",
+          lead: "Scale SEO has worked with professional service and B2B businesses in Canada and Australia, providing technical SEO, website development, content strategy, and ongoing search optimization.",
+          items: cases.map((c) => ({ name: c.name, body: c.body.join(" "), stats: c.stats, href: c.href, cta: c.cta, img: c.img })),
+          note: "These projects demonstrate relevant SEO experience, although their results should not be interpreted as evidence of nationwide rankings.",
+        }}
+        process={{
+          title: "How National SEO Engagements Work",
+          lead: "Scale SEO takes a hands-on approach, with each engagement managed directly by founder Corbin Jensen.",
+          items: steps,
+          note: "The focus is on practical implementation, clear communication, and steady improvements rather than unnecessary deliverables.",
+        }}
+        feature2={
+          <section className={`${v.grey} ${v.sec}`}>
+            <div className={v.wrap}>
+              <div className={v.head}><div><h2 className={v.h2}>Why Work With Scale SEO?</h2></div></div>
+              <div className={`${v.points} ${v.cols4}`}>
+                {reasons.map((r, i) => (
+                  <div key={r.title} className={v.point}>
+                    <Icon d={[ICONS.briefcase, ICONS.building, ICONS.gear, ICONS.chart][i]} />
+                    <h3 className={v.h3}>{r.title}</h3>
+                    <p className={v.p}>{r.body}</p>
                   </div>
                 ))}
               </div>
             </div>
-            <Link href={c.href} className={t.expImg} tabIndex={-1} aria-hidden="true">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={c.img} alt="" loading="lazy" />
-            </Link>
-          </div>
-        ))}
-      </section>
-
-      {/* === HOW ENGAGEMENTS WORK — steps === */}
-      <section className={t.steps}>
-        <h2 className={t.h2}>How National SEO Engagements Work</h2>
-        <p className={t.body} style={{ maxWidth: 720, marginTop: 24 }}>
-          Scale SEO takes a hands-on approach, with each engagement managed
-          directly by founder Corbin Jensen.
-        </p>
-        <div className={t.stepGrid}>
-          {steps.map((s, i) => (
-            <div key={s.title} className={t.step}>
-              <h3 className={t.stepTitle}>
-                <span>{String(i + 1).padStart(2, "0")}</span> &mdash; {s.title}
-              </h3>
-              <p className={`${t.body} ${t.dim}`}>{s.body}</p>
-            </div>
-          ))}
-        </div>
-        <p className={t.body} style={{ maxWidth: 720, marginTop: 56 }}>
-          The focus is on practical implementation, clear communication, and
-          steady improvements rather than unnecessary deliverables.
-        </p>
-      </section>
-
-      {/* === WHY WORK WITH SCALE SEO — marquee heading + points === */}
-      <section className={t.whySection}>
-        <div className={t.whyMarquee}>
-          <div className={t.whyTrack}>
-            {[0, 1, 2, 3].map((n) => (
-              <span key={n} className={t.whyItem} aria-hidden={n > 0}>
-                {n === 0 ? <h2 className={t.whyTitle}>Why Work With Scale SEO?</h2> : <span className={t.whyTitle}>Why Work With Scale SEO?</span>}
-                <svg className={t.whyMark} viewBox="0 0 366 366" fill="none" stroke="currentColor" aria-hidden="true">
-                  <circle cx="183" cy="183" r="164" strokeWidth="36" />
-                  <path d="M101 139 H224.5 V262" strokeWidth="38" />
-                </svg>
-              </span>
-            ))}
-          </div>
-        </div>
-        <div className={t.whyList}>
-          {reasons.map((r) => (
-            <article key={r.title} className={t.whyPoint}>
-              <h3 className={t.whyPointTitle}>{r.title}</h3>
-              <p className={t.whyPointBody}>{r.body}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <ServicesFaq items={faqs} title={<>Frequently Asked Questions</>} />
-
-      <ContactSection
-        heading="National SEO Built Around Your Business"
-        lead="Whether you're an accounting firm serving clients across Canada, a B2B company reaching customers nationwide, or a professional service business expanding beyond its local market, Scale SEO can help develop a search strategy around your goals."
-        cta={{ href: CONTACT_URL, label: "Get in Touch With Scale SEO →" }}
+          </section>
+        }
+        faqs={faqs}
+        cta={{ title: "National SEO Built Around Your Business", lead: CTA_LEAD }}
       />
     </main>
   );

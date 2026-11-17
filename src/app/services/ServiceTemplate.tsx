@@ -43,18 +43,19 @@ export type ServiceTemplateProps = {
   heroBleed?: boolean;
   heroImgScale?: number;
   heroSecondary?: { href: string; label: string };
-  panels?: { title: string; lead: string; items: { title: string; strong: string; body: ReactNode }[] };
+  panels?: { title: string; lead: string; note?: ReactNode; items: { title: string; strong: string; body: ReactNode }[] };
   statementLabel: string;
   statement: string;
   statementNote?: string;
   statementBody?: string[];
   explainer?: { title: string; lead: string; body: ReactNode };
   feature?: ReactNode;
+  feature2?: ReactNode;
   splits?: { title: string; lead?: string; body: ReactNode; image: { src: string; alt: string }; cta?: { href: string; label: string } }[];
   included?: { title: string; lead: string; items: { title: string; body: string | string[]; icon: string }[]; image: { src: string; alt: string } };
   cases?: { title: string; lead: string; items: { name: string; body: string; tag?: string; stats: { from: number; to: number; prefix?: string; suffix?: string; label: string }[]; href: string; cta: string; img: string }[]; note?: string };
   markets?: { title: string; items: { title: string; body: string; icon: string; href?: string; cta?: string }[]; outro?: string };
-  process?: { title: string; lead: string; items: { title: string; body: string }[] };
+  process?: { title: string; lead: string; note?: string; items: { title: string; body: string }[] };
   fit?: { title: string; label: string; body: ReactNode };
   pricing?: { title: string; price: string; unit: string; from?: string; body: string[]; points: string[]; cta?: string };
   faqs?: { q: string; a: string[] }[];
@@ -145,6 +146,7 @@ export default function ServiceTemplate(p: ServiceTemplateProps) {
                 </div>
               ))}
             </div>
+            {p.panels.note && <div className={s.panelNote}>{p.panels.note}</div>}
           </div>
         </section>
       )}
@@ -276,9 +278,12 @@ export default function ServiceTemplate(p: ServiceTemplateProps) {
                 </li>
               ))}
             </ol>
+            {p.process.note && <p className={s.caseNote}>{p.process.note}</p>}
           </div>
         </section>
       )}
+
+      {p.feature2}
 
       {/* Fit + pricing */}
       {(p.fit || p.pricing) && (

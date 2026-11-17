@@ -127,3 +127,7 @@
 .splitImg img { object-fit: cover; }
 @media (max-width: 900px) { .split { grid-template-columns: 1fr; gap: 32px; } .splitFlip .splitImg { order: 0; } .splitImg { aspect-ratio: 4 / 3; } .splits { gap: 72px; } }
 .amountSm { font-size: clamp(32px, 3vw, 44px); }
+.panelNote { display: grid; grid-template-columns: 1fr 1.6fr; gap: 64px; margin-top: 48px; padding-top: 32px; border-top: 1px solid rgba(8, 20, 35, 0.12); }
+.panelNote p { margin: 0 0 12px; font-size: 17px; line-height: 1.6; color: rgba(8, 20, 35, 0.72); }
+.panelNote > p:first-child { font-size: 20px; font-weight: 500; color: #081423; }
+@media (max-width: 900px) { .panelNote { grid-template-columns: 1fr; gap: 12px; } }
