@@ -175,11 +175,6 @@ export default function CorbinJensenPage() {
             <div className={styles.col}>
               <p>His experience includes working with accounting firms, consultants, contractors, and local service businesses in Canadian and Australian markets.</p>
               <p className={styles.location}>Calgary, Alberta &middot; Serving Canada &amp; International Clients</p>
-              <div className={styles.sign}>
-                <Signature className={styles.signature} />
-                <span className={styles.signName}>Corbin Jensen</span>
-                <span className={styles.signRole}>Founder, Scale SEO</span>
-              </div>
             </div>
           </div>
           <div className={styles.btns}>
