@@ -171,9 +171,34 @@ export const posts: Post[] = [
         "type": "p",
         "text": "For more on this process, see our [website design and development services](/services/web-development)."
       },
+      {"type": "h2", "text": "3. Give Potential Clients a Reason to Trust Your Firm"},
+      {"type": "p", "text": "Choosing a new accountant is a big decision. Business owners want to know who they're working with, what experience they have, and whether they understand their business."},
+      {"type": "p", "text": "Your website should help answer those questions before someone gets in touch."},
+      {"type": "p", "text": "Start with a strong About page. Introduce your partners and team, include real photos, and explain their qualifications and areas of expertise."},
+      {"type": "p", "text": "It also helps to show which industries your firm works with."},
+      {"type": "p", "text": "For example, an accounting firm that regularly supports construction companies could create a page explaining its experience with contractor bookkeeping, tax planning, and cash flow management."},
+      {"type": "p", "text": "This gives business owners a clearer picture of whether your firm understands their needs."},
+      {"type": "p", "text": "Client reviews and case studies can also build confidence. Where appropriate, share genuine feedback or examples of how your firm has helped businesses solve financial challenges."},
+      {"type": "p", "text": "Just remember that accounting firms have strict professional and privacy obligations. Obtain appropriate client consent before publishing identifiable client information, and ensure testimonials and marketing claims are accurate."},
+      {"type": "h2", "text": "4. Make It Easy for Visitors to Become Clients"},
+      {"type": "p", "text": "Getting someone to your website is only part of the job. The next step is making it easy for them to contact your firm."},
+      {"type": "p", "text": "A business owner looking for an accountant may be comparing several practices. If they cannot find a clear next step, they may leave without enquiring."},
+      {"type": "p", "text": "I recommend reviewing three things."},
+      {"type": "h3", "text": "Make Booking Simple"},
+      {"type": "p", "text": "Give visitors an easy way to arrange an introductory call."},
+      {"type": "p", "text": "A clear \"Book a Consultation\" button linked to your calendar can remove the need for several emails."},
+      {"type": "p", "text": "Keep your contact form short and explain what happens after someone submits an enquiry."},
+      {"type": "h3", "text": "Explain How Your Fees Work"},
+      {"type": "p", "text": "You do not need to publish an exact price for every accounting service."},
+      {"type": "p", "text": "However, explaining whether you offer fixed-fee packages, monthly retainers, or hourly billing helps prospective clients understand what to expect."},
+      {"type": "p", "text": "This can also help filter enquiries that are not a good fit for your firm."},
+      {"type": "h3", "text": "Help People Who Aren't Ready Yet"},
+      {"type": "p", "text": "Not everyone visiting your website is ready to hire an accountant."},
+      {"type": "p", "text": "Useful resources, such as a year-end tax preparation checklist or a guide to business bookkeeping, can help those visitors while introducing your expertise."},
+      {"type": "p", "text": "You could also offer an optional email subscription for future updates, provided you obtain the appropriate consent."},
       {
         "type": "h2",
-        "text": "3. Use SEO to Reach People Searching for an Accountant"
+        "text": "5. Use SEO to Reach People Searching for an Accountant"
       },
       {
         "type": "p",
@@ -229,7 +254,7 @@ export const posts: Post[] = [
       },
       {
         "type": "h2",
-        "text": "4. Make Sure Your Accounting Firm Can Be Found Locally"
+        "text": "6. Make Sure Your Accounting Firm Can Be Found Locally"
       },
       {
         "type": "p",
@@ -265,7 +290,7 @@ export const posts: Post[] = [
       },
       {
         "type": "h2",
-        "text": "5. Consider Google Ads for Services You Want to Grow"
+        "text": "7. Consider Google Ads for Services You Want to Grow"
       },
       {
         "type": "p",
@@ -313,7 +338,7 @@ export const posts: Post[] = [
       },
       {
         "type": "h2",
-        "text": "6. Publish Content That Answers Real Client Questions"
+        "text": "8. Publish Content That Answers Real Client Questions"
       },
       {
         "type": "p",
@@ -367,7 +392,7 @@ export const posts: Post[] = [
       },
       {
         "type": "h2",
-        "text": "7. Measure Better Clients, Not Just More Traffic"
+        "text": "9. Measure Better Clients, Not Just More Traffic"
       },
       {
         "type": "p",
@@ -432,7 +457,7 @@ export const posts: Post[] = [
       },
       {
         "type": "h2",
-        "text": "8. What We've Learned From Marketing Accounting Firms"
+        "text": "10. What We've Learned From Marketing Accounting Firms"
       },
       {
         "type": "p",
