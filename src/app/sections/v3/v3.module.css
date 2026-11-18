@@ -198,3 +198,5 @@
 .whyPoint { display: flex; flex-direction: column; gap: 12px; padding: 4px 28px 8px; border-left: 1px solid var(--rule); }
 .whyIcon > span { background: #FEFEFE; color: #081423; margin-bottom: 28px; }
 @media (max-width: 900px) { .whyGrid, .whyPoints { grid-template-columns: 1fr; gap: 32px; } .whyImg { position: relative; top: 0; aspect-ratio: 4 / 3; } }
+.logoStrip > div { max-width: 1360px; margin: 0 auto; padding-left: 40px; padding-right: 40px; }
+@media (max-width: 760px) { .logoStrip > div { padding-left: 20px; padding-right: 20px; } }
