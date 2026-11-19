@@ -131,3 +131,4 @@
 .panelNote p { margin: 0 0 12px; font-size: 17px; line-height: 1.6; color: rgba(8, 20, 35, 0.72); }
 .panelNote > p:first-child { font-size: 20px; font-weight: 500; color: #081423; }
 @media (max-width: 900px) { .panelNote { grid-template-columns: 1fr; gap: 12px; } }
+.splitBody a { color: #FEFEFE; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }

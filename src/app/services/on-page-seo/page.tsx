@@ -1,17 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Breadcrumbs from "../../components/Breadcrumbs";
-import ContactSection from "../../components/ContactSection";
-import PinnedPoints, { type PinnedItem } from "../../components/PinnedPoints";
-import CaseStudy, { type CaseCard } from "../../sections/home/CaseStudy";
-import ServicesFaq, { type FaqItem } from "../ServicesFaq";
-import t from "../svc.module.css";
+import { type FaqItem } from "../ServicesFaq";
+import ServiceTemplate from "../ServiceTemplate";
+import v from "../../sections/v3/v3.module.css";
 
 const TITLE = "On-Page SEO Services in Canada | Scale SEO";
 const DESCRIPTION =
   "Improve your website's content, keyword targeting, and internal linking with founder-led on-page SEO services from Scale SEO. Serving businesses across Canada.";
 const URL = "https://scaleseo.co/services/on-page-seo";
-const CONTACT_URL = "/contact";
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
@@ -22,9 +18,10 @@ export const metadata: Metadata = {
 
 /* === Content ============================================================ */
 
-const services: { title: string; body: string[] }[] = [
+const services: { title: string; icon: string; body: string[] }[] = [
   {
     title: "Keyword Research & Search Intent",
+    icon: "search",
     body: [
       "Before changing a page, we look at what your potential customers are searching for and what they expect to find.",
       "A person searching for “corporate tax accountant Calgary” has different needs than someone searching for “how to file corporate taxes.”",
@@ -34,6 +31,7 @@ const services: { title: string; body: string[] }[] = [
   },
   {
     title: "Website Content Optimization",
+    icon: "pen",
     body: [
       "Your website should explain what your business offers without making visitors work to find the answer.",
       "We review existing content for clarity, accuracy, relevance, and usefulness.",
@@ -44,6 +42,7 @@ const services: { title: string; body: string[] }[] = [
   },
   {
     title: "Page Titles, Headings & Metadata",
+    icon: "page",
     body: [
       "Page titles and headings help visitors and search engines understand your content.",
       "We improve title tags, meta descriptions, H1 headings, and supporting headings to make each page’s purpose clear.",
@@ -53,6 +52,7 @@ const services: { title: string; body: string[] }[] = [
   },
   {
     title: "Internal Linking & Website Structure",
+    icon: "building",
     body: [
       "Internal links connect related pages and help visitors find more information.",
       "For example, a plumbing company’s article about recurring drain blockages can link to its main blocked drains service page.",
@@ -62,6 +62,7 @@ const services: { title: string; body: string[] }[] = [
   },
   {
     title: "Service Page & Landing Page Optimization",
+    icon: "chart",
     body: [
       "Your most important service pages should do more than describe what you offer.",
       "They should answer the questions potential customers have before contacting your business.",
@@ -72,6 +73,7 @@ const services: { title: string; body: string[] }[] = [
   },
   {
     title: "Images & Supporting Page Elements",
+    icon: "gear",
     body: [
       "Images can make a service page easier to understand and provide useful context about the business.",
       "We improve descriptive image alt text, file naming, and image placement where appropriate.",
@@ -81,7 +83,7 @@ const services: { title: string; body: string[] }[] = [
   },
 ];
 
-const cases: CaseCard[] = [
+const cases = [
   {
     href: "/results/jensen-cpa",
     client: "Jensen CPA",
@@ -100,7 +102,7 @@ const cases: CaseCard[] = [
   },
 ];
 
-const process: PinnedItem[] = [
+const process = [
   {
     title: "Review Your Website",
     body: [
@@ -138,8 +140,8 @@ const faqs: FaqItem[] = [
     a: [
       "Yes. On-page optimization is a core part of our ongoing SEO services.",
       "Depending on your website, this may include improving existing pages, developing new service content, updating metadata, and strengthening internal links.",
+      "[Explore SEO Services](/services/seo)",
     ],
-    link: { href: "/services/seo", label: "Explore SEO Services →" },
   },
   {
     q: "What’s the difference between on-page SEO and technical SEO?",
@@ -171,24 +173,19 @@ const faqs: FaqItem[] = [
       "Clear, useful, well-organized content can make it easier for search engines and AI-powered systems to understand your website.",
       "However, no on-page SEO technique can guarantee that platforms such as ChatGPT, Gemini, or Google AI Overviews will mention or recommend your business.",
       "Our approach focuses on accurate information, clear page structure, and helpful content.",
+      "[Explore AI Search Optimization](/services/geo)",
     ],
-    link: { href: "/services/geo", label: "Explore AI Search Optimization →" },
   },
   {
     q: "How much do on-page SEO services cost?",
     a: [
       "On-page optimization is included in our ongoing SEO services, which start at $3,000 CAD per month plus applicable taxes.",
       "For businesses that need a specific set of improvements, we can also discuss a one-time project based on the work required.",
+      "[View SEO Pricing](/pricing)",
     ],
-    link: { href: "/pricing", label: "View SEO Pricing →" },
   },
 ];
 
-const Corner = () => (
-  <svg className={t.corner} viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
-    <path d="M1 1.5h7.5V9" />
-  </svg>
-);
 
 /* === Schema — WebPage + Service + BreadcrumbList. FAQPage comes from
    <ServicesFaq>. === */
@@ -232,200 +229,72 @@ const jsonLd = {
   ],
 };
 
-/* === Page =============================================================== */
+const CTA_LEAD = "Your website should make it easy for potential customers to understand your services and find the information they\u2019re looking for. Whether you need to improve existing service pages, strengthen internal linking, or develop a clearer keyword strategy, Scale SEO can help.";
 
+/* === Page — shared service template ==================================== */
 export default function OnPageSeoPage() {
   return (
-    <main className="v2">
+    <main className={`v2 ${v.page}`}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-
-      {/* === HERO === */}
-      <header className={t.hero}>
-        <div className={t.crumbs}>
-          <Breadcrumbs
-            items={[{ name: "Home", href: "/" }, { name: "Services", href: "/services" }, { name: "On-Page SEO" }]}
-            schema={false}
-          />
-        </div>
-        <h1 className={t.title}>On-Page SEO Services in Canada</h1>
-      </header>
-
-      {/* === INTRO — large statement === */}
-      <section className={t.statementSection}>
-        <div className={t.statement}>
-          <p>
-            Improve your website&rsquo;s content, structure, and keyword
-            targeting so the right customers can find your business on Google.
-          </p>
-          <p>
-            Scale SEO provides hands-on on-page SEO services for professional
-            service firms, B2B companies, and other businesses across Canada.
-          </p>
-        </div>
-        <div className={t.statementBottom}>
-          <span className={t.statementNote}>
-            <strong>Founder-led on-page SEO</strong>
-            <br />
-            Serving businesses across Canada
-          </span>
-          <Link href={CONTACT_URL} className={`${t.box} ${t.boxNavy}`}>
-            <Corner />
-            <span>Discuss Your SEO Project</span>
-          </Link>
-        </div>
-      </section>
-
-      {/* === WHAT IS — big H2, label left, text right === */}
-      <section className={t.prioSection}>
-        <h2 className={t.prioTitle}>What Is On-Page SEO?</h2>
-        <div className={t.prioRow}>
-          <p className={t.prioLabel} style={{ maxWidth: "26ch" }}>
-            On-page SEO is the process of improving individual website pages so
-            search engines can better understand their content and visitors can
-            find the information they need.
-          </p>
-          <div className={t.prioBody}>
-            <p>
-              It includes keyword research, page titles, headings, written
-              content, internal links, and other elements that help explain what
-              a page is about.
-            </p>
-            <p>
-              For example, an accounting firm may offer corporate tax,
-              bookkeeping, and fractional CFO services. Each service has a
-              different audience and search intent.
-            </p>
-            <p>
-              Rather than placing everything on one general accounting page, we
-              can create or improve dedicated service pages that clearly explain
-              each offering.
-            </p>
-            <p>
-              This helps search engines understand the website while making it
-              easier for potential clients to find the right service.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* === SERVICES — big heading + numbered ruled rows === */}
-      <section className={t.listSection} style={{ padding: 0, borderTop: "1px solid var(--h-rule)" }}>
-        <div className={t.listHead}>
-          <h2 className={t.h2}>Our On-Page SEO Services</h2>
-          <p className={`${t.lead} ${t.listIntro}`}>
-            We focus on the pages that matter most to your business, improving
-            how they target relevant searches, answer customer questions, and
-            support enquiries.
-          </p>
-        </div>
-        <div className={t.rows}>
-          {services.map((item, i) => (
-            <div key={item.title} className={t.row}>
-              <div>
-                <span className={t.rowNum}>{String(i + 1).padStart(2, "0")}</span>
-                <h3 className={t.h3}>{item.title}</h3>
-              </div>
-              <div className={`${t.body} ${t.dim}`}>
-                {item.body.map((p) => (
-                  <p key={p}>{p}</p>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* === CLIENT PROJECTS — homepage case study row === */}
-      <CaseStudy
-        id="client-projects"
-        label="Client Work"
-        heading="On-Page SEO From Real Client Projects"
-        aside="Our approach is based on work carried out for businesses across Canada and Australia."
-        cards={cases}
-      />
-      <section className={t.prioSection} style={{ paddingTop: 0 }}>
-        <div className={t.prioRow} style={{ marginTop: 0 }}>
-          <p className={t.prioLabel} style={{ maxWidth: "24ch" }}>
-            Rather than applying the same checklist to every website, we look at
-            how each business operates.
-          </p>
-          <div className={t.prioBody}>
-            <p>
-              We look at what customers are searching for and which pages offer
-              the greatest opportunity.
-            </p>
-            <p>
-              <strong>Jensen CPA</strong> is a Calgary accounting firm providing
-              corporate tax, bookkeeping, and fractional CFO services. Our SEO
-              work included improving service-page content, keyword targeting,
-              internal linking, and supporting articles focused on business
-              accounting topics. Within the first four months of the campaign,
-              Google Search impressions increased by 125%, while organic clicks
-              grew by 92%. These results reflect the broader SEO campaign,
-              including on-page and technical improvements.
-            </p>
-            <p>
-              <strong>Empire Accountants</strong> wanted to strengthen its
-              visibility for business accounting services. We improved important
-              service pages covering business tax, bookkeeping, and
-              advisory-related services, with clearer service descriptions,
-              relevant search terms, improved page structure, and stronger
-              internal links between related accounting services. This formed
-              part of an ongoing SEO strategy to help the firm reach more
-              business owners through organic search.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* === PROCESS — pinned scroll section === */}
-      <PinnedPoints
-        title="Our On-Page SEO Process"
-        lead="We take a practical approach to improving your website, starting with the pages that have the greatest potential to support your business."
-        items={process}
-      />
-
-      {/* === WHY — navy, label left, text right === */}
-      <section className={t.prioSection} style={{ background: "var(--h-navy)", color: "var(--h-white)" }}>
-        <h2 className={t.prioTitle}>Why Work With Scale SEO?</h2>
-        <div className={t.prioRow}>
-          <p className={t.prioLabel} style={{ maxWidth: "24ch" }}>
-            Scale SEO is an independent SEO consultancy founded by Corbin Jensen
-            in Calgary, Alberta.
-          </p>
-          <div className={t.prioBody}>
-            <p>
-              We work directly with businesses to improve their websites and
-              build long-term organic search visibility.
-            </p>
-            <p>
-              Every project is managed by{" "}
-              <Link href="/corbin-jensen" className={t.inlineLink}>Corbin</Link>, from reviewing existing pages and
-              researching keywords to implementing content and technical
-              improvements.
-            </p>
-            <p>
-              Our work is shaped by real client projects across professional
-              services, accounting, construction, and local service industries.
-            </p>
-            <p>
-              We focus on clear communication, practical recommendations, and
-              improvements that support your business goals.
-            </p>
-            <Link href="/about" className={`${t.box} ${t.boxBlue}`} style={{ alignSelf: "flex-start", marginTop: 16, color: "var(--h-white)" }}>
-              <Corner />
-              <span>Learn More About Scale SEO</span>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <ServicesFaq items={faqs} title={<>Frequently Asked Questions</>} />
-
-      <ContactSection
-        heading="Improve Your Website's Search Visibility"
-        lead="Your website should make it easy for potential customers to understand your services and find the information they're looking for. Whether you need to improve existing service pages, strengthen internal linking, or develop a clearer keyword strategy, Scale SEO can help."
-        cta={{ href: CONTACT_URL, label: "Discuss Your SEO Project →" }}
+      <ServiceTemplate
+        crumb="On-Page SEO"
+        title="On-Page SEO Services in Canada"
+        heroLead={"Improve your website\u2019s content, structure, and keyword targeting so the right customers can find your business on Google."}
+        heroImgScale={0.62}
+        heroImage={{ src: "/images/web-development-tablets.webp", alt: "Two tablets showing a business website being edited" }}
+        heroSecondary={{ href: "/contact", label: "Discuss Your SEO Project" }}
+        statementLabel="On-page SEO"
+        statement="Scale SEO provides hands-on on-page SEO services for professional service firms, B2B companies, and other businesses across Canada."
+        statementNote="Founder-led on-page SEO · Serving businesses across Canada"
+        explainer={{
+          title: "What Is On-Page SEO?",
+          lead: "On-page SEO is the process of improving individual website pages so search engines can better understand their content and visitors can find the information they need.",
+          body: (
+            <>
+              <p>It includes keyword research, page titles, headings, written content, internal links, and other elements that help explain what a page is about.</p>
+              <p>For example, an accounting firm may offer corporate tax, bookkeeping, and fractional CFO services. Each service has a different audience and search intent.</p>
+              <p>Rather than placing everything on one general accounting page, we can create or improve dedicated service pages that clearly explain each offering.</p>
+              <p>This helps search engines understand the website while making it easier for potential clients to find the right service.</p>
+            </>
+          ),
+        }}
+        included={{
+          title: "Our On-Page SEO Services",
+          lead: "We focus on the pages that matter most to your business, improving how they target relevant searches, answer customer questions, and support enquiries.",
+          items: services,
+          image: { src: "/images/toronto-skyline-bw.webp", alt: "Black and white downtown Toronto skyline" },
+        }}
+        cases={{
+          title: "On-Page SEO From Real Client Projects",
+          lead: "Our approach is based on work carried out for businesses across Canada and Australia. Rather than applying the same checklist to every website, we look at how each business operates, what customers are searching for, and which pages offer the greatest opportunity.",
+          items: [
+            { name: "Jensen CPA", tag: cases[0].services, stats: [{ from: 0, to: 125, prefix: "+", suffix: "%", label: "Search impressions in four months" }], body: "Jensen CPA is a Calgary accounting firm providing corporate tax, bookkeeping, and fractional CFO services. Our SEO work included improving service-page content, keyword targeting, internal linking, and supporting articles focused on business accounting topics. Within the first four months of the campaign, Google Search impressions increased by 125%, while organic clicks grew by 92%. These results reflect the broader SEO campaign, including on-page and technical improvements.", href: "/results/jensen-cpa", cta: "View Jensen CPA Case Study", img: "/images/jensen-cpa-cover.webp" },
+            { name: "Empire Accountants", tag: cases[1].services, stats: [{ from: 5, to: 1, prefix: "Page ", label: "Target rankings, up from page 5" }], body: "Empire Accountants wanted to strengthen its visibility for business accounting services. We improved important service pages covering business tax, bookkeeping, and advisory-related services, with clearer service descriptions, relevant search terms, improved page structure, and stronger internal links between related accounting services. This formed part of an ongoing SEO strategy to help the firm reach more business owners through organic search.", href: "/results/empire-accountants", cta: "View Empire Accountants Case Study", img: "/images/empire-accountants-cover.webp" },
+          ],
+        }}
+        process={{
+          title: "Our On-Page SEO Process",
+          lead: "We take a practical approach to improving your website, starting with the pages that have the greatest potential to support your business.",
+          items: process.map((x) => ({ title: x.title, body: x.body.join(" ") })),
+        }}
+        splits={[
+          {
+            title: "Why Work With Scale SEO?",
+            lead: "Scale SEO is an independent SEO consultancy founded by Corbin Jensen in Calgary, Alberta.",
+            body: (
+              <>
+                <p>We work directly with businesses to improve their websites and build long-term organic search visibility.</p>
+                <p>Every project is managed by <Link href="/corbin-jensen">Corbin</Link>, from reviewing existing pages and researching keywords to implementing content and technical improvements.</p>
+                <p>Our work is shaped by real client projects across professional services, accounting, construction, and local service industries.</p>
+                <p>We focus on clear communication, practical recommendations, and improvements that support your business goals.</p>
+              </>
+            ),
+            image: { src: "/images/corbin-portrait.webp", alt: "Corbin Jensen, founder of Scale SEO" },
+            cta: { href: "/about", label: "Learn More About Scale SEO" },
+          },
+        ]}
+        faqs={faqs}
+        cta={{ title: "Improve Your Website\u2019s Search Visibility", lead: CTA_LEAD }}
       />
     </main>
   );
