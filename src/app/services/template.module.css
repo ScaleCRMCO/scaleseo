@@ -155,3 +155,5 @@
 .expStats strong { font-size: 20px; white-space: nowrap; line-height: 1.1; font-weight: 600; letter-spacing: -0.02em; color: #0099FF; }
 .expStats span { font-size: 13px; line-height: 1.4; color: rgba(8, 20, 35, 0.65); }
 @media (max-width: 900px) { .expBox { grid-template-columns: 1fr; gap: 28px; padding: 24px; } .expStats { grid-template-columns: 1fr; } }
+.auNote { max-width: 1360px; margin: 0 auto; padding: 0 40px 40px; font-size: 16px; color: rgba(8,20,35,0.7); } .auNote a { color: #081423; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.ctaLink { color: #FEFEFE; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }

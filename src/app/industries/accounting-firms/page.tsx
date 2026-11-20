@@ -1,14 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Breadcrumbs from "../../components/Breadcrumbs";
-import ContactSection from "../../components/ContactSection";
-import ServicesFaq, { type FaqItem } from "../../services/ServicesFaq";
-// Shared service-page template (new brand)
-import t from "../../services/svc.module.css";
-import g from "../../sections/home/ServicesGrid.module.css";
-import PinnedPoints, { type PinnedItem } from "../../components/PinnedPoints";
-import CountUp from "../../components/CountUp";
-import ServicesMark from "../../sections/home/ServicesMark";
+import Image from "next/image";
+import ServiceTemplate, { ICONS } from "../../services/ServiceTemplate";
+import tpl from "../../services/template.module.css";
+import v from "../../sections/v3/v3.module.css";
+import { Btn } from "../../sections/v3/ui";
 
 export const metadata: Metadata = {
   title: { absolute: "SEO for Accounting Firms in Canada | Scale SEO" },
@@ -17,165 +13,6 @@ export const metadata: Metadata = {
   alternates: { canonical: "/industries/accounting-firms" },
 };
 
-const BOOKING_URL = "https://cal.com/corbinjensen-scaleseo/30min";
-
-/* === Content ============================================================ */
-
-const chips = ["Founder-led SEO", "Month-to-month engagements", "Market conflict checks"];
-
-const digital: { href: string; title: string; body: string[]; cta: string }[] = [
-  {
-    href: "/services/seo",
-    title: "Search Engine Optimization (SEO)",
-    body: [
-      "Improve your firm\u2019s visibility for the accounting services you want to grow. This includes service-page improvements, local search optimization, technical SEO, and helpful content that answers prospective clients\u2019 questions.",
-    ],
-    cta: "Explore SEO Services",
-  },
-  {
-    href: "/services/web-development",
-    title: "Website Development",
-    body: [
-      "Your website should make it easy for prospective clients to understand your services, learn about your team, and get in touch.",
-      "Scale SEO builds and improves accounting websites with clear navigation, useful service information, and a strong foundation for organic search.",
-    ],
-    cta: "Explore Website Development",
-  },
-  {
-    href: "/services/google-ads-management",
-    title: "Google Ads Management",
-    body: [
-      "Google Ads can help your firm reach prospective clients searching for specific accounting services while your organic visibility develops.",
-      "Scale SEO manages search campaigns with a focus on relevant enquiries, practical budgets, and clear performance tracking.",
-    ],
-    cta: "Explore Google Ads",
-  },
-  {
-    href: "/services/geo",
-    title: "AI Search Optimization (GEO)",
-    body: [
-      "Prospective clients are also using AI-powered search tools to research accounting services and compare firms.",
-      "Scale SEO helps improve how your firm\u2019s services, expertise, and business information are presented and understood across traditional and AI-powered search platforms.",
-    ],
-    cta: "Explore AI Search Optimization",
-  },
-];
-
-const attract: PinnedItem[] = [
-  {
-    title: "Get Found for the Right Services",
-    body: ["Your firm should appear when potential clients search for the accounting services you want to grow, whether that’s corporate tax, bookkeeping, or business advisory."],
-  },
-  {
-    title: "Make a Strong First Impression",
-    body: ["Your website should clearly explain what your firm does, who it works with, and why clients choose you. Simple navigation, helpful information, and clear contact options make a difference."],
-  },
-  {
-    title: "Demonstrate Your Expertise",
-    body: ["Useful articles, detailed service pages, and genuine team profiles help potential clients understand your experience before they make an enquiry."],
-  },
-  {
-    title: "Build Trust Before the First Conversation",
-    body: ["Consistent business information, client reviews, professional credentials, and clear service descriptions help prospective clients feel confident choosing your firm."],
-  },
-  {
-    title: "Connect Your Marketing Efforts",
-    body: ["SEO, website development, Google Ads, and AI search optimization should support the same business goals, helping your firm reach the right audience across different search platforms."],
-  },
-];
-
-const cases = [
-  {
-    name: "Jensen CPA",
-    body: "SEO and content improvements for a Calgary CPA firm, including technical optimization, service-page development, and accounting resources.",
-    href: "/results/jensen-cpa",
-    cta: "View Jensen CPA Case Study",
-    img: "/images/jensen-cpa-cover.webp",
-    stats: [
-      { to: 395, prefix: "+", suffix: "%", label: "Google Search impressions" },
-      { to: 205, prefix: "+", suffix: "%", label: "Organic clicks" },
-    ],
-  },
-  {
-    name: "Empire Accountants",
-    body: "An ongoing SEO campaign involving accounting service pages, technical improvements, structured data, and content development.",
-    href: "/results/empire-accountants",
-    cta: "View Empire Accountants Case Study",
-    img: "/images/empire-accountants-cover.webp",
-    stats: [
-      { from: 5, to: 1, prefix: "Page ", suffix: "", label: "Target keyword rankings, up from page 5" },
-      { to: 100, prefix: "+", suffix: "%+", label: "Organic search visibility" },
-    ],
-  },
-];
-
-const reasons = [
-  {
-    title: "Direct Access to Your SEO Specialist",
-    body: "I manage the research, strategy, implementation, and reporting personally. You\u2019ll work directly with the person responsible for your campaign.",
-  },
-  {
-    title: "SEO & Website Improvements Together",
-    body: "I can implement many technical, structural, and content improvements directly rather than simply providing recommendations for another team to complete.",
-  },
-  {
-    title: "Accounting Industry Experience",
-    body: "I\u2019m familiar with the services, terminology, and website structures used by accounting practices, allowing us to focus on your firm\u2019s particular goals.",
-  },
-  {
-    title: "Month-to-Month Engagements",
-    body: "Ongoing campaigns operate month-to-month, without long-term lock-in contracts.",
-  },
-  {
-    title: "Market Exclusivity",
-    body: "I avoid working with directly competing accounting firms in the same market and review potential conflicts before every new engagement. Based in Calgary, I work with firms across Canada and internationally, with each campaign focused on the markets your firm serves.",
-  },
-];
-
-const faqs: FaqItem[] = [
-  {
-    q: "How much does SEO for an accounting firm cost?",
-    a: [
-      "Ongoing SEO campaigns at Scale SEO start from $3,000 CAD per month, plus applicable GST. Pricing depends on your firm\u2019s website, competition, services, and campaign requirements.",
-    ],
-  },
-  {
-    q: "How long does accounting firm SEO take?",
-    a: [
-      "SEO generally develops over several months. Timelines depend on your current visibility, website condition, competition, and target searches.",
-      "I review your starting position before establishing campaign priorities and expectations.",
-    ],
-  },
-  {
-    q: "Can you work with accounting firms outside Calgary?",
-    a: [
-      "Yes. Scale SEO works remotely with accounting firms across Canada and internationally. Strategies are tailored to the locations and clients your firm serves.",
-    ],
-  },
-  {
-    q: "Do you create accounting content?",
-    a: [
-      "Yes. I develop and optimize service pages, articles, and supporting resources. Technical accounting and tax content should be reviewed by qualified professionals at your firm before publication.",
-    ],
-  },
-  {
-    q: "Do you work with competing accounting firms?",
-    a: [
-      "I avoid engagements that create a meaningful conflict between accounting clients targeting the same services and customers in the same market.",
-    ],
-  },
-];
-
-const Corner = () => (
-  <svg className={t.corner} viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
-    <path d="M1 1.5h7.5V9" />
-  </svg>
-);
-
-/* === Schema — WebPage + Service + BreadcrumbList graph, linked to the
-   global #website and #organization nodes in layout.tsx. Includes this
-   page's BreadcrumbList, so <Breadcrumbs> is rendered with schema={false}.
-   The FAQPage schema comes from <ServicesFaq>. === */
 const accountingJsonLd = {
   "@context": "https://schema.org",
   "@graph": [
@@ -256,225 +93,175 @@ const accountingJsonLd = {
   ]
 };
 
-/* === Page =============================================================== */
+const services = [
+  { title: "Corporate Tax & Compliance", body: "Reach businesses looking for T2 corporate tax returns, year-end filing, tax planning and ongoing compliance support." },
+  { title: "Bookkeeping & Payroll", body: "Improve visibility among businesses searching for monthly bookkeeping, payroll and cloud accounting services." },
+  { title: "Fractional CFO & Advisory", body: "Connect with companies seeking outsourced financial leadership, financial reporting, budgeting and strategic advice." },
+  { title: "Personal & Specialized Tax", body: "Reach clients searching for personal tax preparation, complex returns and specialized accounting services where relevant to your practice." },
+];
+
+const included = [
+  { title: "Keyword & Competitor Research", icon: "search", body: "We identify how prospective clients search for your accounting services, review competing firms, and prioritize the opportunities worth pursuing." },
+  { title: "Service-Page SEO", icon: "page", body: ["We develop and improve pages for corporate tax, bookkeeping, fractional CFO, personal tax and advisory services.", "Each page is written to answer relevant questions and help potential clients take the next step."] },
+  { title: "Technical SEO", icon: "gear", body: "We improve website structure, indexing, metadata, internal linking and structured data to build a stronger technical foundation." },
+  { title: "Accounting Content", icon: "pen", body: "We develop useful articles around Canadian business and tax questions, including corporate tax deadlines, shareholder loans, capital cost allowance and other relevant topics." },
+  { title: "Local SEO", icon: "pin", body: "We improve your firm’s visibility in relevant local searches through Google Business Profile optimization, location targeting and website improvements." },
+  { title: "Ongoing Optimization", icon: "chart", body: "We review search performance, identify new opportunities, and continue improving your website as your firm’s priorities develop." },
+];
+
+const faqs = [
+  { q: "How much does SEO cost for an accounting firm?", a: ["Our monthly SEO campaigns start at $3,000 CAD plus applicable GST. Pricing depends on your website, competition, target services and campaign requirements."] },
+  { q: "How long does accounting SEO take?", a: ["SEO generally takes several months to develop. We review your website’s current visibility and competitive market before recommending priorities and discussing realistic expectations."] },
+  { q: "Can you help us attract more corporate tax and business clients?", a: ["Yes. We can focus your campaign on corporate tax, bookkeeping, fractional CFO and advisory searches rather than broad accounting keywords alone."] },
+  { q: "Can you develop content for our accounting website?", a: ["Yes. We develop and optimize service pages, articles and supporting resources. Technical tax and accounting content should be reviewed by a qualified professional at your firm before publication."] },
+  { q: "Do you manage Google Ads alongside SEO?", a: ["Yes. We provide Google Ads management alongside SEO, helping your firm reach prospective clients through paid search while organic visibility develops."] },
+  { q: "Do you work with competing accounting firms?", a: ["We review potential conflicts before accepting new engagements and avoid working with directly competing accounting firms targeting the same services and customers in the same market."] },
+];
+
+const Icon = ({ d }: { d: string }) => (
+  <span className={v.icon} aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d={d} /></svg>
+  </span>
+);
+
+const ExpBox = ({ title, client, img, alt, stats, body, href, cta, note }: { title: string; client: string; img: string; alt: string; stats: [string, string][]; body: React.ReactNode; href: string; cta: string; note: string }) => (
+  <div className={tpl.expBox} style={{ marginTop: 32 }}>
+    <div className={tpl.expImg}><Image src={img} alt={alt} fill sizes="(max-width: 900px) 100vw, 560px" /></div>
+    <div className={tpl.expText}>
+      <h3 className={v.h3}>{title}</h3>
+      <p className={tpl.expClient}>{client}</p>
+      <div className={tpl.expStats}>{stats.map(([k, d]) => <div key={k}><strong>{k}</strong><span>{d}</span></div>)}</div>
+      {body}
+      <Btn href={href} tone="navy">{cta}</Btn>
+      <p className={tpl.splitSmall}><em>{note}</em></p>
+    </div>
+  </div>
+);
 
 export default function AccountingFirmsPage() {
   return (
-    <main className="v2">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(accountingJsonLd) }}
-      />
-
-      {/* === HERO — breadcrumbs + big title, then image band === */}
-      <header>
-        <div className={t.hero}>
-          <div className={t.crumbs}>
-            <Breadcrumbs
-              items={[
-                { name: "Home", href: "/" },
-                { name: "Industries", href: "/industries" },
-                { name: "Accounting Firms" },
-              ]}
-              schema={false}
-            />
-          </div>
-          <h1 className={t.title}>SEO for Accounting Firms &amp; CPA Practices</h1>
-        </div>
-        <div className={t.band}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/images/calgary-skyline.webp" alt="Calgary skyline" style={{ objectPosition: "center 60%" }} />
-        </div>
-      </header>
-
-      {/* === INTRO — large statement, label bottom-left, button bottom-right === */}
-      <section className={t.statementSection}>
-        <div className={t.statement}>
-          <p>
-            Running an accounting firm means balancing client work, deadlines,
-            and the day-to-day demands of the business. Finding time to improve
-            your website and attract new clients through Google isn&rsquo;t
-            always a priority.
-          </p>
-          <p>
-            But when business owners search for help with corporate tax,
-            bookkeeping, or financial advisory services, your firm needs to be
-            visible.
-          </p>
-          <p>
-            Scale SEO helps accounting and CPA firms across Canada improve their
-            online presence through search engine optimization, website
-            development, Google Ads, and AI search optimization.
-          </p>
-          <p>
-            The focus is on helping your firm reach the right clients, promote
-            its most valuable services, and build a stronger source of enquiries
-            over time.
-          </p>
-        </div>
-        <div className={t.statementBottom}>
-          <span className={t.statementNote}>
-            {chips.map((c) => (
-              <span key={c}>
-                {c}
-                <br />
-              </span>
-            ))}
-          </span>
-          <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className={`${t.box} ${t.boxNavy}`}>
-            <Corner />
-            <span>Book a Consultation</span>
-          </a>
-        </div>
-      </section>
-
-      {/* === PRIORITIES — big H2 top-left, then label left / text far right === */}
-      <section className={t.prioSection}>
-        <h2 className={t.prioTitle}>SEO Built Around Your Firm&rsquo;s Priorities</h2>
-        <div className={t.prioRow}>
-          <p className={t.prioLabel}>Not every accounting firm wants more of the same clients.</p>
-          <div className={t.prioBody}>
-            <p>
-              Some firms want to grow their corporate tax and business advisory
-              work. Others want more recurring bookkeeping clients, fractional
-              CFO engagements, or enquiries from specific industries.
-            </p>
-            <p>
-              Scale SEO starts by understanding which services your firm wants
-              to grow and who you&rsquo;re trying to reach.
-            </p>
-            <p>
-              From there, the strategy focuses on making those services easier
-              to find, helping prospective clients understand your expertise,
-              and improving how your website turns visits into enquiries.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* === SERVICES — homepage-style blue grid: card | mark | card,
-          then card | card | intro === */}
-      <section className={g.section} id="services">
-        <h2 className={g.introTitle} style={{ maxWidth: "16ch" }}>
-          SEO &amp; Digital Services for Accounting Firms
-        </h2>
-        <div className={g.grid}>
-          {[digital[0], null, digital[1], digital[2], digital[3]].map((s, i) =>
-            s ? (
-              <Link key={s.href} href={s.href} className={g.cell}>
-                <span className={g.cellIndex}>{String(digital.indexOf(s) + 1).padStart(2, "0")}</span>
-                <h3 className={g.cellTitle}>{s.title}</h3>
-                <div className={g.cellDesc}>
-                  {s.body.map((p) => (
-                    <p key={p} style={{ marginBottom: 12 }}>{p}</p>
-                  ))}
+    <main className={`v2 ${v.page}`}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(accountingJsonLd) }} />
+      <ServiceTemplate
+        crumb="Accounting Firms"
+        parent={{ name: "Industries", href: "/industries" }}
+        primaryLabel="Book a Consultation"
+        title="SEO for Accounting Firms & CPA Practices in Canada"
+        heroLead="Get your accounting firm in front of more businesses searching for corporate tax, bookkeeping, fractional CFO and advisory services."
+        heroImage={{ src: "/images/gsc-performance-mockup-3d.webp", alt: "Google Search Console performance data showing clicks and impressions growth" }}
+        heroSecondary={{ href: "/results/jensen-cpa", label: "Jensen CPA Case Study" }}
+        statementLabel="Canadian accounting firms"
+        statement="We help Canadian accounting firms improve their Google rankings, build better websites, and attract enquiries for the services they want to grow."
+        statementNote="Founder-led SEO · Month-to-month engagements · Market conflict checks"
+        top={
+          <section className={`${v.white} ${v.sec}`} style={{ paddingTop: 0 }}>
+            <div className={v.wrap}>
+              <div className={tpl.svcIntro}>
+                <h2 className={v.h2}>We Know the Accounting Industry.</h2>
+                <div>
+                  <p className={tpl.fitLabel}>Getting found on Google is competitive, especially when you&rsquo;re trying to attract established businesses rather than individual tax returns.</p>
+                  <p className={v.p}>We&rsquo;ve worked directly with accounting and advisory firms, building websites and SEO campaigns around corporate tax, bookkeeping, fractional CFO, and other specialized services.</p>
+                  <p className={v.p}>That experience helps us focus on the searches that matter to your firm, rather than simply increasing website traffic.</p>
                 </div>
-                <span className={g.cellLink}>
-                  <span>{s.cta} &rarr;</span>
-                  <span className={g.plus} aria-hidden="true">+</span>
-                </span>
-              </Link>
-            ) : (
-              <ServicesMark key={i} />
-            ),
-          )}
-          <div className={g.outro} style={{ marginTop: 0, justifyContent: "flex-end" }}>
-            <p>
-              SEO is the main focus, supported by website development, paid
-              search, and AI search optimization where they make sense for your
-              firm.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* === EXPERIENCE — full-bleed navy: H2 top-left, body right and lower,
-          then one ruled row per case study (name | text + button | image) === */}
-      <section className={t.expSection}>
-        <div className={t.expTop}>
-          <h2 className={t.expTitle}>Experience Working With Accounting Firms</h2>
-          <div className={t.expBody}>
-            <p>Accounting is an industry where I already have direct SEO experience.</p>
-            <p>
-              I&rsquo;ve worked on websites for accounting and advisory firms in
-              Canada and Australia, improving technical SEO, service-page
-              architecture, local search visibility, and content strategies.
-            </p>
-            <p>
-              That experience includes projects involving corporate tax,
-              bookkeeping, SMSF administration, business advisory, and
-              fractional CFO services.
-            </p>
-          </div>
-        </div>
-        {cases.map((c) => (
-          <div key={c.href} className={t.expRow}>
-            <div className={t.expLeft}>
-              <h3 className={t.expName}>{c.name}</h3>
-              <Link href={c.href} className={`${t.box} ${t.boxBlue}`}>
-                <Corner />
-                <span>{c.cta}</span>
-              </Link>
+              </div>
+              <ExpBox
+                title="Experience You Can See."
+                client="Jensen CPA — Calgary, Alberta"
+                img="/images/jensen-cpa-cover.webp"
+                alt="The Jensen CPA team in Calgary, a Scale SEO client"
+                stats={[["+395%", "Google Search impressions"], ["+205%", "Organic search clicks"], ["~25 pages", "Added through website redevelopment and ongoing SEO"]]}
+                body={<><p className={v.p}>We redeveloped Jensen CPA&rsquo;s website from a small template site into a more complete accounting website, expanding its service pages, educational content, and technical SEO foundations.</p><p className={v.p}>The campaign has also included ongoing search optimization and Google Ads management.</p></>}
+                href="/results/jensen-cpa"
+                cta="Explore the Jensen CPA Case Study"
+                note="Search results compare the first and latest 30-day reporting periods in Google Search Console, June–November 2026."
+              />
+              <ExpBox
+                title="Also Trusted by Australian Accounting Firms"
+                client="Empire Accountants — Brisbane, Australia"
+                img="/images/empire-accountants-cover.webp"
+                alt="Empire Accountants, a Brisbane accounting firm and Scale SEO client"
+                stats={[["Page 5 → Page 1", "Priority Google keyword rankings"], ["2×", "Organic search impressions and clicks"]]}
+                body={<p className={v.p}>Our ongoing work with Empire Accountants includes accounting service-page development, local SEO, structured data, and content covering business tax, SMSF and advisory services.</p>}
+                href="/results/empire-accountants"
+                cta="Explore the Empire Accountants Case Study"
+                note="Client results are not a guarantee of equivalent performance."
+              />
             </div>
-            <div className={t.expText}>
-              <p>{c.body}</p>
-              <div className={t.expStats}>
-                {c.stats.map((m) => (
-                  <div key={m.label}>
-                    <span className={t.expStat}>
-                      <CountUp from={"from" in m ? m.from : 0} to={m.to} prefix={m.prefix} suffix={m.suffix} />
-                    </span>
-                    <span className={t.expStatLabel}>{m.label}</span>
+          </section>
+        }
+        included={{
+          title: "Your Website and SEO, Taken Care Of.",
+          lead: "From keyword research to technical improvements and content development, we handle the work needed to strengthen your firm’s presence on Google. No standard monthly checklist. We focus on the opportunities that make sense for your firm.",
+          items: included,
+          cta: { href: "/services/seo", label: "Explore Our SEO Services" },
+          image: { src: "/images/toronto-skyline-bw.webp", alt: "Black and white downtown Toronto skyline" },
+        }}
+        feature={
+          <section className={`${v.white} ${v.sec}`}>
+            <div className={v.wrap}>
+              <div className={tpl.svcIntro}>
+                <h2 className={v.h2}>Built Around the Clients You Want.</h2>
+                <div>
+                  <p className={tpl.fitLabel}>Not every accounting firm wants more personal tax returns.</p>
+                  <p className={v.p}>You might be looking to attract larger companies, increase recurring bookkeeping engagements, or grow your corporate tax and fractional CFO services.</p>
+                  <p className={v.p}>We build your SEO strategy around those priorities, targeting the services and searches most relevant to your business.</p>
+                </div>
+              </div>
+              <div className={tpl.svcGrid}>
+                {services.map((x) => (
+                  <div key={x.title}>
+                    <h3 className={v.h3}>{x.title}</h3>
+                    <p className={v.p}>{x.body}</p>
                   </div>
                 ))}
               </div>
             </div>
-            <Link href={c.href} className={t.expImg} tabIndex={-1} aria-hidden="true">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={c.img} alt="" loading="lazy" />
-            </Link>
-          </div>
-        ))}
-      </section>
-
-      {/* === WHAT HELPS — pinned scroll section with changing logo shapes === */}
-      <PinnedPoints
-        title="What Helps Accounting Firms Attract Clients Online?"
-        lead="A strong online presence isn’t just about ranking higher on Google. It’s about helping the right people find your firm, understand your expertise, and feel confident getting in touch."
-        items={attract}
-      />
-
-      {/* === WHY CHOOSE SCALE SEO — slow marquee heading, then simple points === */}
-      <section className={t.whySection}>
-        <div className={t.whyMarquee}>
-          <div className={t.whyTrack}>
-            {[0, 1, 2, 3].map((n) => (
-              <span key={n} className={t.whyItem} aria-hidden={n > 0}>
-                {n === 0 ? <h2 className={t.whyTitle}>Why Choose Scale SEO</h2> : <span className={t.whyTitle}>Why Choose Scale SEO</span>}
-                <svg className={t.whyMark} viewBox="0 0 366 366" fill="none" stroke="currentColor" aria-hidden="true">
-                <circle cx="183" cy="183" r="164" strokeWidth="36" />
-                <path d="M101 139 H224.5 V262" strokeWidth="38" />
-              </svg>
-              </span>
-            ))}
-          </div>
-        </div>
-        <div className={t.whyList}>
-          {reasons.map((r) => (
-            <article key={r.title} className={t.whyPoint}>
-              <h3 className={t.whyPointTitle}>{r.title}</h3>
-              <p className={t.whyPointBody}>{r.body}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <ServicesFaq items={faqs} title={<>Frequently Asked Questions</>} />
-
-      <ContactSection
-        heading="Grow Your Accounting Firm's Organic Visibility"
-        lead="Looking to attract more clients for your firm's most valuable accounting services? Let's discuss your website, current search visibility, and where SEO could support your growth."
-        cta={{ href: BOOKING_URL, label: "Book a Consultation →" }}
+          </section>
+        }
+        feature2={
+          <section className={`${v.grey} ${v.sec}`}>
+            <div className={v.wrap}>
+              <div className={v.head}><div><h2 className={v.h2}>Why Work With Scale SEO?</h2></div></div>
+              <div className={`${v.points} ${v.cols3}`} style={{ rowGap: 40 }}>
+                {[
+                  { title: "We’ve Done the Work Before.", icon: ICONS.building, body: <>Our experience with Jensen CPA and Empire Accountants means we&rsquo;re familiar with accounting services, industry terminology, and the website structure these firms need.</> },
+                  { title: "We Handle the Implementation.", icon: ICONS.gear, body: <>We don&rsquo;t just provide a list of recommendations. We can develop service pages, improve technical SEO, update website content, and implement the changes directly.</> },
+                  { title: "You’ll Know Who’s Doing the Work.", icon: ICONS.briefcase, body: <>Your campaign is led by Scale SEO founder <Link href="/corbin-jensen" className={v.inlineLink}>Corbin Jensen</Link>, with direct communication and clear reporting throughout the engagement.</> },
+                  { title: "No Long-Term Lock-In Contracts.", icon: ICONS.chart, body: <>Our monthly SEO campaigns operate month-to-month, with work tailored to your firm&rsquo;s website, market and growth objectives.</> },
+                  { title: "Market Conflict Checks.", icon: ICONS.pin, body: <>We review potential conflicts before accepting new accounting clients and avoid directly competing engagements targeting the same services and customers within the same market.</> },
+                ].map((r) => (
+                  <div key={r.title} className={v.point}>
+                    <Icon d={r.icon} />
+                    <h3 className={v.h3}>{r.title}</h3>
+                    <p className={v.p}>{r.body}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        }
+        fit={{
+          title: "Working With Canadian Accounting Firms.",
+          label: "Scale SEO is based in Calgary, Alberta, and works with accounting practices throughout Canada.",
+          body: (
+            <>
+              <p>Whether your firm serves clients in one city or operates across several markets, we tailor the strategy to your services, competitive landscape and target clients.</p>
+              <p>Monthly SEO campaigns start at <strong>$3,000 CAD</strong>, plus applicable GST. Final pricing depends on your website and campaign requirements.</p>
+              <p><Link href="/pricing">View Our Pricing</Link></p>
+            </>
+          ),
+        }}
+        faqs={faqs}
+        cta={{
+          title: "Let’s See What Your Firm Could Be Missing.",
+          lead: (
+            <>
+              <p>Tell us about your website, the accounting services you&rsquo;re looking to grow, and the clients you want to reach.</p>
+              <p>We&rsquo;ll review your current search presence, discuss the opportunities in your market, and see whether we&rsquo;re the right fit.</p>
+              <p>Looking for accounting SEO in Australia? <Link href="/industries/accounting-firms-australia" className={tpl.ctaLink}>Explore our Australian accounting SEO services</Link>.</p>
+            </>
+          ),
+        }}
       />
     </main>
   );
