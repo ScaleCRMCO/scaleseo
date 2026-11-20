@@ -52,40 +52,103 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "WebPage",
-      "@id": `${URL}#webpage`,
-      url: URL,
-      name: TITLE,
-      description: DESCRIPTION,
-      isPartOf: { "@id": "https://scaleseo.co/#website" },
-      about: { "@id": `${URL}#service` },
-      mainEntity: { "@id": `${URL}#service` },
-      publisher: { "@id": "https://scaleseo.co/#organization" },
-      breadcrumb: { "@id": `${URL}#breadcrumb` },
-      primaryImageOfPage: { "@type": "ImageObject", url: "https://scaleseo.co/images/melbourne-skyline-bw.webp" },
-      inLanguage: "en-CA",
+      "@id": "https://scaleseo.co/industries/accounting-firms-australia#webpage",
+      "url": "https://scaleseo.co/industries/accounting-firms-australia",
+      "name": "SEO for Accounting Firms Australia | Scale SEO",
+      "description": "SEO for Australian accounting firms, backed by real experience in Brisbane. Grow visibility for business tax, BAS, SMSF and advisory services.",
+      "isPartOf": {
+        "@id": "https://scaleseo.co/#website"
+      },
+      "about": {
+        "@id": "https://scaleseo.co/industries/accounting-firms-australia#service"
+      },
+      "mainEntity": {
+        "@id": "https://scaleseo.co/industries/accounting-firms-australia#service"
+      },
+      "publisher": {
+        "@id": "https://scaleseo.co/#organization"
+      },
+      "breadcrumb": {
+        "@id": "https://scaleseo.co/industries/accounting-firms-australia#breadcrumb"
+      },
+      "inLanguage": "en-AU"
     },
     {
       "@type": "Service",
-      "@id": `${URL}#service`,
-      name: "SEO for Accounting Firms in Australia",
-      serviceType: "Search Engine Optimization",
-      url: URL,
-      description: "SEO for Australian accounting firms covering business tax, BAS, SMSF accounting, bookkeeping, and business advisory services, including technical SEO, service-page optimization, content strategy, and local SEO.",
-      provider: { "@id": "https://scaleseo.co/#organization" },
-      areaServed: { "@type": "Country", name: "Australia" },
-      audience: { "@type": "BusinessAudience", audienceType: "Accounting firms" },
-      subjectOf: { "@id": "https://scaleseo.co/results/empire-accountants#webpage" },
+      "@id": "https://scaleseo.co/industries/accounting-firms-australia#service",
+      "name": "SEO for Accounting Firms in Australia",
+      "serviceType": "Search Engine Optimization for Accounting Firms",
+      "url": "https://scaleseo.co/industries/accounting-firms-australia",
+      "description": "Search engine optimization services for Australian accounting and advisory firms, including technical SEO, service-page optimization, local SEO, accounting content strategy, website improvements and performance reporting.",
+      "provider": {
+        "@id": "https://scaleseo.co/#organization"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Australia",
+        "identifier": "AU"
+      },
+      "audience": {
+        "@type": "BusinessAudience",
+        "name": "Australian accounting and advisory firms"
+      },
+      "serviceOutput": "Improved organic search visibility and website content for relevant accounting services.",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Accounting SEO Services",
+        "itemListElement": [
+          {
+            "@type": "OfferCatalog",
+            "name": "SEO Strategy and Research"
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "Technical SEO"
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "Accounting Service-Page Optimization"
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "Accounting Content Strategy"
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "Local SEO"
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "Website Improvements and Reporting"
+          }
+        ]
+      }
     },
     {
       "@type": "BreadcrumbList",
-      "@id": `${URL}#breadcrumb`,
-      itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Home", item: "https://scaleseo.co/" },
-        { "@type": "ListItem", position: 2, name: "Industries", item: "https://scaleseo.co/industries" },
-        { "@type": "ListItem", position: 3, name: "Accounting Firms Australia", item: URL },
-      ],
-    },
-  ],
+      "@id": "https://scaleseo.co/industries/accounting-firms-australia#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://scaleseo.co/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Industries",
+          "item": "https://scaleseo.co/industries"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Accounting Firms Australia",
+          "item": "https://scaleseo.co/industries/accounting-firms-australia"
+        }
+      ]
+    }
+  ]
 };
 
 const Icon = ({ d }: { d: string }) => (
