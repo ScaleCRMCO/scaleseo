@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import s from "./v3.module.css";
-import { Btn, Corner, Eyebrow } from "./ui";
+import { Btn, Corner, Eyebrow, Mark } from "./ui";
 import ClientLogos from "../../components/ClientLogos";
 import CountUp from "../../components/CountUp";
 import Signature from "../../components/Signature";
@@ -62,19 +62,22 @@ export function Intro() {
     <section className={`${s.white} ${s.sec}`} aria-labelledby="intro-h">
       <div className={s.wrap}>
         <div className={s.split}>
-          <Eyebrow>About Scale SEO</Eyebrow>
+          <h2 id="intro-h" className={s.eyebrow}><Mark /><span>About Scale SEO</span></h2>
           <div>
-            <p id="intro-h" className={s.statement}>
-              Scale SEO is a Calgary-based SEO and digital marketing company specializing in accounting firms. We help practices improve their visibility on Google, attract qualified enquiries, and grow their most valuable services.
+            <p className={s.statement}>
+              Scale SEO is an independent search consultancy based in Calgary, Alberta, founded in 2025 by Corbin Jensen.
             </p>
             <div className={s.twoCol}>
               <p className={s.p}>
-                Founded in 2025 by Corbin Jensen, Scale SEO combines SEO, Google Ads, and website development for CPA firms, tax accountants, and advisory practices across Canada and Australia, helping them reach clients actively searching for their services.
+                Our focus is accounting and professional services. Through our work with firms in Canada and Australia, we&rsquo;ve developed experience across corporate tax, bookkeeping, fractional CFO, and business advisory marketing.
               </p>
               <p className={s.p}>
-                From corporate tax and bookkeeping to fractional CFO and business advisory, we build strategies around the clients your firm wants to attract.
+                We combine technical SEO, website development, and Google Ads to help businesses improve how they&rsquo;re found online and reach the clients they want to work with.
               </p>
             </div>
+            <p className={`${s.p} ${s.introNote}`}>
+              While accounting is our specialty, we also work with established businesses across consulting, construction, and other service industries.
+            </p>
           </div>
         </div>
         <h3 className={s.subhead}>Here&rsquo;s What We Do Differently.</h3>

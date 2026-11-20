@@ -200,3 +200,5 @@
 @media (max-width: 900px) { .whyGrid, .whyPoints { grid-template-columns: 1fr; gap: 32px; } .whyImg { position: relative; top: 0; aspect-ratio: 4 / 3; } }
 .logoStrip > div { max-width: 1360px; margin: 0 auto; padding-left: 40px; padding-right: 40px; }
 @media (max-width: 760px) { .logoStrip > div { padding-left: 20px; padding-right: 20px; } }
+.introNote { margin-top: 24px; }
+h2.eyebrow { font-size: 14px !important; font-weight: 500 !important; line-height: 1.4; letter-spacing: 0.01em; align-self: start; }
