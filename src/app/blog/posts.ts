@@ -473,7 +473,7 @@ export const posts: Post[] = [
       },
       {
         "type": "p",
-        "text": "During the initial four-month campaign, average daily organic clicks increased by 92% between the comparison periods reported in our case study."
+        "text": "Comparing the first and latest 30-day periods (June–November 2026), Google Search impressions increased by 395% and organic clicks by 205%, as reported in our case study."
       },
       {
         "type": "p",

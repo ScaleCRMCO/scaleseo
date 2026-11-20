@@ -333,9 +333,7 @@ export default function BusinessInformationPage() {
 
           <h2 id="selected-results">Selected Results</h2>
           <p>
-            In a six-month engagement for an accounting and advisory firm, target
-            keyword rankings improved from page 5 to page 1 of Google, alongside
-            a 125% increase in Google Search impressions.
+            In an ongoing engagement for an accounting and advisory firm in Brisbane, target keyword rankings improved from page 5 to page 1 of Google. For a Calgary CPA firm, Google Search impressions increased by 395% and organic clicks by 205%, comparing the first and latest 30-day periods (June&ndash;November 2026).
           </p>
           <p>Published case studies:</p>
           <ul>
