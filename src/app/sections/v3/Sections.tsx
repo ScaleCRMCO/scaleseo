@@ -236,13 +236,12 @@ export function Founder() {
           <Image src="/images/corbin-portrait.webp" alt="Corbin Jensen, founder of Scale SEO" fill sizes="(max-width: 900px) 90vw, 480px" className={s.cover} />
         </figure>
         <div>
-          <Eyebrow>Our Founder</Eyebrow>
-          <h2 id="founder-h" className={s.h2}>Meet Corbin Jensen, Founder of Scale SEO</h2>
+          <h2 id="founder-h" className={s.h2}>Meet the Founder</h2>
+          <h3 className={s.founderName}>Corbin Jensen</h3>
           <div className={s.stack}>
-            <p className={s.p}>Scale SEO was founded in 2025 by Corbin Jensen to provide businesses with a more direct, hands-on approach to search engine optimization.</p>
-            <p className={s.p}>Through his work with accounting firms in Canada and Australia, Corbin has developed an understanding of how accounting practices compete online and attract different types of clients.</p>
-            <p className={s.p}>From corporate tax and bookkeeping to business advisory and fractional CFO services, he works closely with firms to improve their websites, strengthen their search visibility, and reach the customers they want to work with.</p>
-            <p className={s.p}>Every campaign is managed directly by Corbin, from strategy and technical SEO to content development and ongoing optimization.</p>
+            <p className={s.p}>Corbin Jensen founded Scale SEO in Calgary in 2025.</p>
+            <p className={s.p}>His work spans technical SEO, website development, content strategy, and Google Ads, with a particular focus on accounting and professional services.</p>
+            <p className={s.p}>Through his work with firms in Canada and Australia, Corbin has developed practical experience in how accounting practices present their services, compete in search, and attract new business.</p>
           </div>
           <blockquote className={s.quote}>
             <p>&ldquo;I started Scale SEO because I believe good marketing should create real opportunities for the businesses investing in it. For accounting firms, that means more than appearing on Google. It means reaching the right clients, building a stronger reputation, and developing a reliable source of new business. Our focus is on doing the work properly, communicating clearly, and building relationships that last.&rdquo;</p>
@@ -252,7 +251,7 @@ export function Founder() {
               <Signature className={s.signature} />
               <span className={s.small}><strong>Corbin Jensen</strong> &middot; Founder, Scale SEO</span>
             </div>
-            <Btn href="/corbin-jensen" tone="navy">More About Corbin</Btn>
+            <Btn href="/corbin-jensen" tone="navy">Read Corbin&rsquo;s Bio</Btn>
           </div>
         </div>
       </div>
