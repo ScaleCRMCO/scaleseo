@@ -144,3 +144,14 @@
 .splitList li::before { content: ""; position: absolute; left: 0; top: 0.65em; width: 6px; height: 6px; background: #0099FF; }
 .splitSmall { font-size: 13px; opacity: 0.7; }
 .incCta { margin-top: 32px; }
+.expBox { display: grid; grid-template-columns: 1fr 1.1fr; gap: 64px; align-items: center; padding: 48px; background: #F1F3F6; }
+.expImg { position: relative; aspect-ratio: 4 / 3; overflow: hidden; }
+.expImg img { object-fit: cover; }
+.expText { display: flex; flex-direction: column; align-items: flex-start; gap: 18px; }
+.expText h3 { margin: 0; }
+.expClient { margin: 0; font-size: 15px; font-weight: 600; color: #0077CC; }
+.expStats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; width: 100%; }
+.expStats > div { display: flex; flex-direction: column; gap: 6px; padding-left: 16px; border-left: 1px solid rgba(8, 20, 35, 0.15); }
+.expStats strong { font-size: 20px; white-space: nowrap; line-height: 1.1; font-weight: 600; letter-spacing: -0.02em; color: #0099FF; }
+.expStats span { font-size: 13px; line-height: 1.4; color: rgba(8, 20, 35, 0.65); }
+@media (max-width: 900px) { .expBox { grid-template-columns: 1fr; gap: 28px; padding: 24px; } .expStats { grid-template-columns: 1fr; } }
