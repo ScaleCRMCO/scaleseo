@@ -25,8 +25,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/industries/law-firms`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/services/on-page-seo`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/services/national-seo`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/locations/edmonton`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/locations/vancouver`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/results`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/results/empire-accountants`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/results/kinsmen-consulting`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },

@@ -24,12 +24,6 @@ const services = [
   { href: "/services/geo", label: "GEO (AI Search)" },
 ];
 
-const locations = [
-  { href: "/", label: "Calgary" },
-  { href: "/locations/edmonton", label: "Edmonton" },
-  { href: "/locations/vancouver", label: "Vancouver" },
-];
-
 const connect = [
   { href: "/corbin-jensen", label: "Corbin Jensen" },
   { href: "https://www.linkedin.com/company/scale-seo/", label: "LinkedIn", external: true },
@@ -114,7 +108,6 @@ export default function Footer() {
           <div className={styles.cols}>
             <Column title="Company" items={pages} />
             <Column title="Services" items={services} />
-            <Column title="Locations" items={locations} />
             <Column title="Connect" items={connect} />
           </div>
         </div>

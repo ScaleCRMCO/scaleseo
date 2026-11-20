@@ -22,7 +22,7 @@
 .badgeLink img { height: auto; }
 .designrush, .reviews { max-width: 100%; }
 
-.cols { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
+.cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
 .col { min-width: 0; }
 .list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
 .row { display: inline-flex; align-items: center; gap: 8px; color: #FEFEFE; font-size: 16px; text-decoration: none; transition: color 0.2s ease; }

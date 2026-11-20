@@ -75,12 +75,6 @@ const services = [
   },
 ];
 
-const locations = [
-  { name: "Calgary, Alberta (head office)", href: "/" },
-  { name: "Edmonton, Alberta", href: "/locations/edmonton" },
-  { name: "Vancouver, British Columbia", href: "/locations/vancouver" },
-];
-
 const howItWorks = [
   "Every engagement is managed directly by Corbin Jensen. There are no account managers or outsourced teams.",
   "Monthly SEO is month-to-month, with no long-term contract.",
@@ -110,8 +104,6 @@ const keyPages = [
   { name: "Industries", href: "/industries" },
   { name: "SEO for Accounting Firms", href: "/industries/accounting-firms" },
   { name: "National SEO Services", href: "/services/national-seo" },
-  { name: "SEO in Edmonton", href: "/locations/edmonton" },
-  { name: "SEO in Vancouver", href: "/locations/vancouver" },
   { name: "Case Studies", href: "/results" },
   { name: "About Scale SEO", href: "/about" },
   { name: "Corbin Jensen", href: "/corbin-jensen" },
@@ -151,8 +143,6 @@ const jsonLd = {
         "https://scaleseo.co/services/google-ads-management",
         "https://scaleseo.co/services/geo",
         "https://scaleseo.co/services/national-seo",
-        "https://scaleseo.co/locations/edmonton",
-        "https://scaleseo.co/locations/vancouver",
         "https://scaleseo.co/pricing",
         "https://scaleseo.co/about",
         "https://scaleseo.co/corbin-jensen",
@@ -307,21 +297,10 @@ export default function BusinessInformationPage() {
             Scale SEO is based in Calgary, Alberta and works remotely, so it can
             take on clients in any city or province in Canada, as well as
             businesses outside Canada, including the United States and Australia.
-            A client does not need to be located in a city with its own location
-            page.
           </p>
-          <p>Location pages currently published:</p>
-          <ul>
-            {locations.map((l) => (
-              <li key={l.href}>
-                <Link href={l.href}>{l.name}</Link>
-              </li>
-            ))}
-          </ul>
           <p>
             For businesses serving customers across the whole country rather than
             one city, see <Link href="/services/national-seo">National SEO services</Link>.
-            More location pages will be added over time.
           </p>
 
           <h2 id="how-scale-seo-works">How Scale SEO Works</h2>

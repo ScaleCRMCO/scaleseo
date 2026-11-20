@@ -9,6 +9,16 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: "/locations/edmonton",
+        destination: "/",
+        statusCode: 301,
+      },
+      {
+        source: "/locations/vancouver",
+        destination: "/",
+        statusCode: 301,
+      },
+      {
         source: "/brisbane",
         destination: "/",
         permanent: true,
