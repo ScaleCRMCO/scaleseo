@@ -57,3 +57,5 @@
   .factors li { grid-template-columns: 1fr; gap: 8px; }
   .tags { grid-template-columns: 1fr; }
 }
+.summaryWrap { display: flex; flex-direction: column; gap: 12px; }
+.heroBtn { margin-top: 32px; }

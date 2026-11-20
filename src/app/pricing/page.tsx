@@ -18,170 +18,180 @@ const BOOKING_URL = "https://cal.com/corbinjensen-scaleseo/30min";
 
 const plans = [
   {
-    id: "monthly-seo",
-    tab: "Monthly SEO",
-    name: "Monthly SEO for Accounting Firms",
-    price: "$3,000",
-    unit: "/month + GST",
-    summary:
-      "Ongoing SEO campaigns designed to help accounting firms improve their visibility on Google and generate qualified enquiries for corporate tax, bookkeeping, fractional CFO, and advisory services.",
-    listLabel: "Campaigns can include:",
-    includes: [
+    "id": "monthly-seo",
+    "tab": "Monthly SEO",
+    "name": "Monthly SEO Management",
+    "price": "$3,000",
+    "unit": "/month + applicable GST",
+    "summary": [
+      "Ongoing SEO campaigns designed to improve your visibility on Google and attract more qualified enquiries.",
+      "We combine technical improvements, content strategy, and website development to help your business compete for the searches that matter."
+    ],
+    "listLabel": "Campaigns can include:",
+    "includes": [
       "Technical SEO and website optimization",
-      "Accounting keyword research and competitor analysis",
+      "Keyword research and competitor analysis",
       "Service-page development and on-page SEO",
       "Local SEO and Google Business Profile optimization",
       "Content strategy and internal linking",
       "AI search visibility optimization",
-      "Monthly performance reporting",
+      "Monthly performance reporting"
     ],
-    note: "We prioritize the accounting services and search opportunities that align with your firm\u2019s growth objectives.",
-    href: "/services/seo",
-    cta: "Explore SEO Services",
-    featured: true,
+    "note": "We prioritize the work based on your website’s needs, competitive market, and business goals.",
+    "href": "/services/seo",
+    "cta": "Explore SEO Services",
+    "featured": true
   },
   {
-    id: "seo-google-ads",
-    tab: "SEO & Google Ads",
-    name: "SEO & Google Ads Management",
-    price: "Custom Quote",
-    unit: "",
-    summary:
-      "An integrated search strategy combining long-term organic visibility with targeted Google Ads campaigns. This approach helps accounting firms reach prospective clients through both organic and paid search, with campaign priorities built around the services they want to grow.",
-    listLabel: "Campaigns can include:",
-    includes: [
+    "id": "seo-google-ads",
+    "tab": "SEO & Google Ads",
+    "name": "SEO & Google Ads Management",
+    "price": "Custom Quote",
+    "unit": "",
+    "summary": [
+      "A combined approach to organic search and paid advertising, designed to reach potential customers while building long-term search visibility.",
+      "We manage SEO and Google Ads together, aligning campaign targeting, landing pages, and conversion tracking around your business objectives."
+    ],
+    "listLabel": "Campaigns can include:",
+    "includes": [
       "Ongoing SEO management",
-      "Google Ads campaign strategy and management",
-      "Accounting-specific keyword targeting",
+      "Google Ads strategy and campaign management",
+      "Keyword research and search targeting",
       "Landing page optimization",
       "Conversion and enquiry tracking",
-      "Combined performance analysis",
+      "Combined performance reporting"
     ],
-    note: "Google Ads management fees and advertising spend are quoted separately.",
-    href: "/services/google-ads-management",
-    cta: "Explore Google Ads Services",
-    featured: false,
+    "note": "Google Ads management fees and advertising spend are quoted separately.",
+    "href": "/services/google-ads-management",
+    "cta": "Explore Google Ads Management",
+    "featured": false
   },
   {
-    id: "website",
-    tab: "Website Development",
-    name: "Website Design & Development",
-    price: "$6,000",
-    unit: "one-time + GST",
-    summary:
-      "Custom websites for accounting firms that need a professional online presence, clear service positioning, and a strong technical SEO foundation.",
-    listLabel: "Projects can include:",
-    includes: [
+    "id": "website",
+    "tab": "Website Development",
+    "name": "Website Design & Development",
+    "price": "$6,000",
+    "unit": "one-time + applicable GST",
+    "summary": [
+      "Custom websites built around your services, customers, and business goals.",
+      "Whether you’re replacing an outdated website or building something new, we focus on clear design, usability, and strong technical foundations for search."
+    ],
+    "listLabel": "Projects can include:",
+    "includes": [
       "Custom website design and development",
-      "Dedicated accounting and advisory service pages",
-      "SEO-friendly website architecture",
-      "Mobile-responsive layouts",
-      "Conversion-focused enquiry forms",
-      "Technical SEO and structured data foundations",
-      "Analytics and search tracking setup",
+      "Dedicated service and industry pages",
+      "SEO-friendly website structure",
+      "Responsive design for mobile and desktop",
+      "Contact forms and conversion-focused layouts",
+      "Technical SEO and structured data",
+      "Analytics and search tracking setup"
     ],
-    note: "Website projects are scoped individually, with optional hosting, maintenance, and ongoing SEO services available.",
-    href: "/services/web-development",
-    cta: "Explore Website Development",
-    featured: false,
+    "note": "Website projects are scoped individually. Hosting, maintenance, and ongoing SEO services are available separately.",
+    "href": "/services/web-development",
+    "cta": "Explore Website Development",
+    "featured": false
   },
   {
-    id: "enterprise",
-    tab: "Enterprise & Multi-Location",
-    name: "Enterprise & Multi-Location SEO",
-    price: "Custom Quote",
-    unit: "",
-    summary:
-      "Advanced SEO campaigns for larger accounting practices, established professional service firms, and businesses targeting multiple geographic markets.",
-    listLabel: "Campaigns can include:",
-    includes: [
-      "National and multi-location SEO strategies",
-      "Advanced technical SEO and website architecture",
-      "Location-specific accounting service pages",
-      "Large-scale content development",
-      "Website improvements and ongoing optimization",
-      "Custom performance reporting",
+    "id": "enterprise",
+    "tab": "Enterprise & Multi-Location",
+    "name": "Enterprise & Multi-Location SEO",
+    "price": "Custom Quote",
+    "unit": "",
+    "summary": [
+      "Advanced SEO campaigns for established businesses with larger websites, multiple locations, or more competitive search markets.",
+      "These engagements may involve broader technical work, ongoing website development, and search strategies across several geographic areas."
     ],
-    note: "Every engagement is scoped around your firm\u2019s size, services, locations, and growth objectives.",
-    href: "/contact",
-    cta: "Request a Custom Quote",
-    featured: false,
-  },
+    "listLabel": "Campaigns can include:",
+    "includes": [
+      "National and multi-location SEO",
+      "Advanced technical SEO and site architecture",
+      "Location and service-page development",
+      "Larger-scale content strategies",
+      "Ongoing website improvements",
+      "Custom reporting and performance analysis"
+    ],
+    "note": "Every engagement is scoped around your website, target markets, and business requirements.",
+    "href": "/contact",
+    "cta": "Request a Custom Quote",
+    "featured": false
+  }
 ];
 
 const factors = [
   {
-    title: "Competition & Target Market",
-    body: "Ranking for corporate tax services in a competitive city may require a more extensive campaign than targeting a specialized accounting service in a smaller market.",
+    "title": "Competition & Target Market",
+    "body": "Your industry, location, and competitors influence the work required. A business competing across Canada will often need a different strategy from one serving a smaller local market."
   },
   {
-    title: "Website Condition",
-    body: "Older accounting websites may need technical improvements, clearer navigation, updated service pages, or indexing fixes before ongoing SEO can reach its potential.",
+    "title": "Website Condition",
+    "body": "Some websites have strong foundations. Others need technical fixes, better navigation, new service pages, or improvements to existing content."
   },
   {
-    title: "Services & Campaign Scope",
-    body: "The number of accounting services, geographic markets, and content opportunities influences the amount of ongoing optimization needed.",
-  },
+    "title": "Campaign Scope",
+    "body": "The number of services, locations, and search opportunities you want to target determines the amount of ongoing work."
+  }
 ];
 
 const termIcons = ["M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6", "M4 6h16v15H4zM4 10h16M9 3v4M15 3v4", "M7 11V7a5 5 0 0 1 10 0v4M5 11h14v10H5z"];
 const terms = [
   {
-    title: "Accounting Industry Experience",
-    body: "We have hands-on experience improving search visibility for accounting firms in Canada and Australia, including corporate tax, bookkeeping, and business advisory services.",
+    "title": "Experience Across Industries",
+    "body": "We specialize in accounting and professional services, with additional experience across consulting, construction, and other established service businesses in Canada and Australia."
   },
   {
-    title: "Flexible Monthly Engagements",
-    body: "Our ongoing SEO campaigns operate month-to-month without long-term lock-in contracts.",
+    "title": "Flexible Monthly Engagements",
+    "body": "Our ongoing SEO campaigns operate month-to-month, without long-term contracts."
   },
   {
-    title: "Ownership & Transparency",
-    body: "You retain ownership of your website, content, advertising accounts, and data, with clear reporting on campaign progress.",
-  },
+    "title": "Ownership & Transparency",
+    "body": "You retain ownership of your website, content, and accounts. We provide clear reporting on the work completed and how your search performance is developing."
+  }
 ];
 
 const faqs: FaqItem[] = [
   {
-    q: "How much does SEO cost for an accounting firm?",
-    a: [
-      "Monthly SEO campaigns with Scale SEO start at $3,000 CAD plus applicable GST.",
-      "Final pricing depends on your website\u2019s condition, competition, target services, geographic markets, and required optimization work.",
-    ],
+    "q": "How much does monthly SEO cost?",
+    "a": [
+      "Our ongoing SEO campaigns start at $3,000 CAD per month, plus applicable GST.",
+      "Final pricing depends on your website, competition, target markets, and campaign requirements."
+    ]
   },
   {
-    q: "What\u2019s included in monthly SEO management?",
-    a: [
-      "Campaigns can include technical SEO, accounting keyword research, service-page optimization, local SEO, content strategy, internal linking, AI search optimization, and monthly reporting.",
-      "We tailor priorities to your firm\u2019s services and business objectives.",
-    ],
+    "q": "What’s included in monthly SEO management?",
+    "a": [
+      "Campaigns can include technical SEO, keyword research, service-page improvements, content development, local SEO, internal linking, and performance reporting.",
+      "The scope is tailored to your business rather than a fixed monthly package."
+    ]
   },
   {
-    q: "How much does a new accounting firm website cost?",
-    a: [
-      "Custom website development starts at $6,000 CAD plus applicable GST.",
-      "Final pricing depends on the number of service pages, design requirements, functionality, and website complexity.",
-    ],
+    "q": "How much does a new website cost?",
+    "a": [
+      "Custom website design and development starts at $6,000 CAD, plus applicable GST.",
+      "Pricing depends on the number of pages, design requirements, functionality, and technical complexity."
+    ]
   },
   {
-    q: "Can you manage both SEO and Google Ads?",
-    a: [
-      "Yes. We offer integrated SEO and Google Ads management for accounting firms looking to improve organic visibility while reaching prospective clients through paid search.",
-      "Management fees and advertising budgets are quoted separately based on campaign requirements.",
-    ],
+    "q": "Can you manage both SEO and Google Ads?",
+    "a": [
+      "Yes. We provide Google Ads management independently or alongside monthly SEO.",
+      "Advertising spend is separate from our management fees, and you retain ownership of your Google Ads account."
+    ]
   },
   {
-    q: "Do you require long-term contracts?",
-    a: ["No. Our ongoing SEO campaigns operate on a month-to-month basis without long-term lock-in contracts."],
+    "q": "Do you require long-term contracts?",
+    "a": [
+      "No. Our ongoing SEO campaigns operate month-to-month, without long-term lock-in contracts.",
+      "Website development and other standalone projects are quoted separately."
+    ]
   },
   {
-    q: "Do you work with accounting firms outside Calgary?",
-    a: [
-      "Yes. Scale SEO is based in Calgary, Alberta, and works with accounting firms across Canada and Australia.",
-      "We develop strategies based on each firm\u2019s location, accounting services, and target clients.",
-    ],
-  },
+    "q": "Do you work with businesses outside Calgary?",
+    "a": [
+      "Yes. Scale SEO is based in Calgary, Alberta, and works with businesses across Canada and Australia.",
+      "While accounting and professional services are our primary focus, we also work with established businesses in other industries."
+    ]
+  }
 ];
-
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -294,12 +304,13 @@ export default function PricingPage() {
           <div className={styles.labelled}>
             <span className={styles.sideLabel}>Pricing</span>
             <div>
-              <h1 className={styles.h1}>SEO &amp; Website Pricing for Accounting Firms</h1>
-              <p className={styles.lead}>Transparent starting prices for accounting firms investing in long-term search visibility and client acquisition.</p>
+              <h1 className={styles.h1}>SEO &amp; Website Development Pricing</h1>
+              <p className={styles.lead}>Clear starting prices. Strategies built around your business.</p>
               <div className={styles.cols2}>
-                <p className={v.p}>Scale SEO provides SEO, Google Ads management, and website development for CPA firms, tax accountants, bookkeeping practices, and financial advisory businesses across Canada and Australia.</p>
-                <p className={v.p}>Our campaigns are tailored to your firm&rsquo;s services, target clients, and competitive market.</p>
+                <p className={v.p}>Scale SEO provides SEO, Google Ads management, and website development for accounting firms, professional services, and established businesses across Canada and Australia.</p>
+                <p className={v.p}>Every engagement is tailored to your website, competitive market, and growth objectives. We don&rsquo;t apply the same strategy or monthly checklist to every business.</p>
               </div>
+              <div className={styles.heroBtn}><Btn href="/services" tone="navy">Explore Our Services</Btn></div>
             </div>
           </div>
         </div>
@@ -312,12 +323,12 @@ export default function PricingPage() {
           </nav>
         </div>
         <div className={v.wrap}>
-          <p className={styles.plansNote}>All prices listed in Canadian dollars (CAD), plus applicable GST. Final pricing is confirmed after reviewing your website, target market, and campaign requirements. Australian engagements are quoted separately in AUD.</p>
+          <p className={styles.plansNote}>All prices are in Canadian dollars (CAD), plus applicable GST. Final pricing is confirmed after reviewing your website, market, and project requirements. Australian engagements are quoted separately in AUD.</p>
           {plans.map((p, i) => (
             <article key={p.id} id={p.id} className={`${styles.row} ${i % 2 ? styles.flip : ""}`}>
               <div className={styles.text}>
                 <h2 className={styles.planName}>{p.name}</h2>
-                <p className={styles.summary}>{p.summary}</p>
+                <div className={styles.summaryWrap}><p className={styles.summary}>{p.summary[0]}</p><p className={v.p}>{p.summary[1]}</p></div>
                 <div>
                   <p className={styles.listLabel}>{p.listLabel}</p>
                   <ul className={styles.tags}>{p.includes.map((x) => <li key={x}>/ {x}</li>)}</ul>
@@ -333,7 +344,7 @@ export default function PricingPage() {
             </article>
           ))}
           <p className={styles.audit}>
-            Need an independent website assessment? <Link href="/services/seo-audits">Explore SEO Audit Services</Link> for a standalone technical SEO audit and tailored quote.
+            Need a one-time website assessment? <Link href="/services/seo-audits">Explore SEO Audit Services</Link> for a standalone technical audit and tailored quote.
           </p>
         </div>
       </section>
@@ -341,8 +352,8 @@ export default function PricingPage() {
       <section className={`${v.grey} ${v.sec}`}>
         <div className={`${v.wrap} ${styles.labelled}`}>
           <div>
-            <h2 className={v.h2}>What Affects SEO Pricing for Accounting Firms?</h2>
-            <p className={`${v.p} ${styles.asideP}`}>Every accounting practice has different competitors, services, and growth objectives. These factors help determine the work required.</p>
+            <h2 className={v.h2}>What Affects SEO Pricing?</h2>
+            <p className={`${v.p} ${styles.asideP}`}>No two websites require the same amount of work. We consider three main factors when preparing a quote.</p>
           </div>
           <ol className={styles.factors}>
             {factors.map((f, i) => (
@@ -377,12 +388,13 @@ export default function PricingPage() {
         <div className={v.wrap}>
           <div className={`${v.ctaBox} ${styles.cta}`} data-nav="dark">
             <div>
-              <h2 className={v.h2}>Get a Quote for Your Accounting Firm</h2>
-              <p className={v.p}>Whether you&rsquo;re looking to improve organic visibility, launch Google Ads, or develop a new website, we&rsquo;ll review your firm&rsquo;s requirements and recommend a practical starting point.</p>
+              <h2 className={v.h2}>Get a Quote for Your Business</h2>
+              <p className={v.p}>Tell us about your website, the services you want to grow, and what you&rsquo;re looking to achieve through Google.</p>
+              <p className={v.p}>We&rsquo;ll review your requirements and recommend an approach based on your business and budget.</p>
               <Btn href={BOOKING_URL} external>Book a Consultation</Btn>
             </div>
             <ul className={styles.points}>
-              {["Experience with accounting firms in Canada and Australia", "Flexible month-to-month SEO campaigns", "Full ownership of your website, content, and data"].map((x) => <li key={x}>{x}</li>)}
+              {["Flexible month-to-month SEO campaigns", "No fixed packages or unnecessary services", "Full ownership of your website, content, and accounts"].map((x) => <li key={x}>{x}</li>)}
             </ul>
           </div>
         </div>
