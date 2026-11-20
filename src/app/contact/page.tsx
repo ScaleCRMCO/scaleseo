@@ -50,8 +50,8 @@ export default function ContactPage() {
                 </a>
               </div>
               <div>
-                <span className={styles.label}>/ Calgary office</span>
-                <address>1122 3 St SE Ste 1906<br />Calgary, AB T2G 0E7</address>
+                <span className={styles.label}>/ Location</span>
+                <address>Calgary, AB, Canada</address>
                 <a href="https://maps.app.goo.gl/FYWSaQ3p81VFnNcc7" target="_blank" rel="noopener noreferrer" className={styles.textLink}>
                   Get directions <Corner />
                 </a>

@@ -84,12 +84,8 @@ export default function Footer() {
               </div>
             </div>
             <div>
-              <div className={styles.colLabel}>/ Calgary Office</div>
-              <address className={styles.address}>
-                1122 3 St SE Ste 1906
-                <br />
-                Calgary, AB T2G 0E7, Canada
-              </address>
+              <div className={styles.colLabel}>/ Location</div>
+              <address className={styles.address}>Calgary, AB, Canada</address>
             </div>
             <div className={styles.badges}>
               <a href="https://agencies.semrush.com/scale-seo/" target="_blank" rel="noopener noreferrer" className={styles.badgeLink} aria-label="Semrush Certified Agency Partner">

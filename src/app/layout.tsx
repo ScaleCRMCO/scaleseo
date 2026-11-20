@@ -77,9 +77,7 @@ const jsonLd = {
       "telephone": "+1-403-875-1110",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "1122 3 St SE Ste 1906",
         "addressLocality": "Calgary",
-        "postalCode": "T2G 0E7",
         "addressRegion": "AB",
         "addressCountry": "CA"
       },
