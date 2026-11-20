@@ -12,13 +12,17 @@ import { Btn } from "../../sections/v3/ui";
 
 // Add the cover image to hand-written schema's BlogPosting/Article nodes
 // that don't already declare one.
-function withImage(schema: Record<string, unknown> | undefined, img?: string) {
-  if (!schema || !img) return schema;
+function withImage(schema: Record<string, unknown> | undefined, img?: string, dates?: { published: string; modified: string }) {
+  if (!schema) return schema;
   const clone = JSON.parse(JSON.stringify(schema));
   const nodes: Record<string, unknown>[] = Array.isArray(clone["@graph"]) ? clone["@graph"] : [clone];
   for (const n of nodes) {
-    if ((n["@type"] === "BlogPosting" || n["@type"] === "Article") && !n.image) {
+    if ((n["@type"] === "BlogPosting" || n["@type"] === "Article") && !n.image && img) {
       n.image = { "@type": "ImageObject", url: img, width: 1600, height: 1083 };
+    }
+    if ((n["@type"] === "BlogPosting" || n["@type"] === "Article") && dates) {
+      if (!n.datePublished) n.datePublished = dates.published;
+      if (!n.dateModified) n.dateModified = dates.modified;
     }
   }
   return clone;
@@ -100,21 +104,8 @@ export default function BlogPostPage({
     image: coverUrl(post.slug) ?? "https://scaleseo.co/images/logo-social.png",
     datePublished: post.date,
     dateModified: post.updated || post.date,
-    author: {
-      "@type": "Person",
-      "@id": "https://scaleseo.co/corbin-jensen#person",
-      name: "Corbin Jensen",
-      url: "https://scaleseo.co/corbin-jensen",
-    },
-    publisher: {
-      "@type": "Organization",
-      name: "Scale SEO",
-      url: "https://scaleseo.co",
-      logo: {
-        "@type": "ImageObject",
-        url: "https://scaleseo.co/images/logo-social.png",
-      },
-    },
+    author: { "@id": "https://scaleseo.co/corbin-jensen#person" },
+    publisher: { "@id": "https://scaleseo.co/#organization" },
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": `https://scaleseo.co/blog/${post.slug}`,
@@ -363,7 +354,7 @@ export default function BlogPostPage({
 
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(withImage(post.schema, coverUrl(post.slug)) ?? jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(withImage(post.schema, coverUrl(post.slug), { published: post.date, modified: post.updated || post.date }) ?? jsonLd) }}
       />
     </main>
   );
