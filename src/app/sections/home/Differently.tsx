@@ -17,18 +17,18 @@ const ICONS = {
 export const defaultPoints: DiffPoint[] = [
   {
     icon: ICONS.calc,
-    title: "Built for Accounting Firms",
-    body: "We understand the difference between generating more tax-season enquiries and attracting long-term business clients. Your strategy is built around your firm’s services, market, and growth goals.",
+    title: "01 \u2014 Accounting Industry Experience",
+    body: "We\u2019ve worked with accounting firms in Canada and Australia, improving websites and search visibility for corporate tax, bookkeeping, and business advisory services.",
   },
   {
-    icon: ICONS.lock,
-    title: "No Long-Term Contracts",
-    body: "Flexible month-to-month services with no lengthy commitments. We believe your marketing partner should earn your business every month.",
+    icon: "M14 6l4 4M3 21l9-9M12 4l8 8-3 3-8-8z",
+    title: "02 \u2014 Strategy & Implementation",
+    body: "We don\u2019t stop at audits and recommendations. We make the technical changes, develop the content, and improve the pages needed to put the strategy into practice.",
   },
   {
-    icon: ICONS.heart,
-    title: "100% Client Retention",
-    body: "Every ongoing SEO client has stayed with us, reflecting the value we place on results and lasting relationships.",
+    icon: ICONS.calendar,
+    title: "03 \u2014 Flexible Partnerships",
+    body: "Our SEO campaigns operate month-to-month, without long-term contracts. Clients retain ownership of their websites, content, and data.",
   },
 ];
 

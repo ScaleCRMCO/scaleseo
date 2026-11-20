@@ -80,7 +80,7 @@ export function Intro() {
             </p>
           </div>
         </div>
-        <h3 className={s.subhead}>Here&rsquo;s What We Do Differently.</h3>
+        <h2 className={s.subhead}>What Makes Scale SEO Different?</h2>
         <Points points={defaultPoints} cols={3} />
         <div className={s.endRow}>
           <Btn href="/about" tone="navy">More About Scale SEO</Btn>
