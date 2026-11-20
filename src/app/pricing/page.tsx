@@ -223,21 +223,43 @@ const jsonLd = {
       "@type": "OfferCatalog",
       "@id": "https://scaleseo.co/pricing#offers",
       "name": "Scale SEO Services & Starting Prices",
+      "description": "SEO, Google Ads, and website development services for accounting firms, professional services, and established businesses.",
       "itemListElement": [
         {
           "@type": "Offer",
-          "name": "Monthly SEO Campaign",
+          "name": "Monthly SEO Management",
           "url": "https://scaleseo.co/services/seo",
-          "price": "3000",
-          "priceCurrency": "CAD",
-          "description": "Ongoing SEO campaign management starting from $3,000 CAD per month plus GST.",
+          "description": "Ongoing SEO management starting at $3,000 CAD per month, plus applicable GST. Final pricing depends on campaign requirements.",
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "minPrice": 3000,
+            "priceCurrency": "CAD",
+            "description": "Minimum monthly management fee, excluding applicable taxes."
+          },
           "seller": {
             "@id": "https://scaleseo.co/#organization"
           },
           "itemOffered": {
             "@type": "Service",
-            "name": "Monthly SEO Campaign",
+            "name": "Monthly SEO Management",
             "url": "https://scaleseo.co/services/seo",
+            "provider": {
+              "@id": "https://scaleseo.co/#organization"
+            }
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "SEO & Google Ads Management",
+          "url": "https://scaleseo.co/services/google-ads-management",
+          "description": "Combined SEO and Google Ads management with custom pricing based on campaign requirements. Advertising spend is separate.",
+          "seller": {
+            "@id": "https://scaleseo.co/#organization"
+          },
+          "itemOffered": {
+            "@type": "Service",
+            "name": "SEO & Google Ads Management",
+            "url": "https://scaleseo.co/services/google-ads-management",
             "provider": {
               "@id": "https://scaleseo.co/#organization"
             }
@@ -247,9 +269,13 @@ const jsonLd = {
           "@type": "Offer",
           "name": "Website Design & Development",
           "url": "https://scaleseo.co/services/web-development",
-          "price": "6000",
-          "priceCurrency": "CAD",
-          "description": "Custom website design and development starting from $6,000 CAD as a one-time fee plus GST.",
+          "description": "Custom website design and development starting at $6,000 CAD, plus applicable GST. Final pricing depends on project scope.",
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "minPrice": 6000,
+            "priceCurrency": "CAD",
+            "description": "Minimum one-time website development fee, excluding applicable taxes."
+          },
           "seller": {
             "@id": "https://scaleseo.co/#organization"
           },
@@ -257,6 +283,22 @@ const jsonLd = {
             "@type": "Service",
             "name": "Website Design & Development",
             "url": "https://scaleseo.co/services/web-development",
+            "provider": {
+              "@id": "https://scaleseo.co/#organization"
+            }
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Enterprise & Multi-Location SEO",
+          "url": "https://scaleseo.co/pricing",
+          "description": "Custom SEO campaigns for larger websites, competitive markets, and businesses targeting multiple locations.",
+          "seller": {
+            "@id": "https://scaleseo.co/#organization"
+          },
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Enterprise & Multi-Location SEO",
             "provider": {
               "@id": "https://scaleseo.co/#organization"
             }
