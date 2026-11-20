@@ -248,8 +248,8 @@ export default function JensenCpaCaseStudy() {
           <p className={styles.note}><em>Source: Google Search Console, June 23&ndash;July 22 compared with October 19&ndash;November 17, 2026. Results reflect organic Google Search performance, not paid advertising.</em></p>
           <figure className={styles.figure}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/images/jensen-cpa-google-search-console.webp" alt="Google Search Console performance report for Jensen CPA" />
-            <figcaption>Google Search Console performance for Jensen CPA.</figcaption>
+            <img src="/images/jensen-cpa-google-search-console-performance-2026.webp" alt="Google Search Console performance report for jensencpa.ca showing 790 clicks and 93.3K impressions over six months, with impressions rising steadily from June to November 2026" width={2000} height={938} />
+            <figcaption>Google Search Console performance for Jensen CPA, June&ndash;November 2026.</figcaption>
           </figure>
 
           <h3>Visibility Beyond the Homepage</h3>
