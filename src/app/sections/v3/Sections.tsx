@@ -237,19 +237,18 @@ export function Founder() {
         </figure>
         <div>
           <h2 id="founder-h" className={s.h2}>Meet the Founder</h2>
-          <h3 className={s.founderName}>Corbin Jensen</h3>
           <div className={s.stack}>
             <p className={s.p}>Corbin Jensen founded Scale SEO in Calgary in 2025.</p>
             <p className={s.p}>His work spans technical SEO, website development, content strategy, and Google Ads, with a particular focus on accounting and professional services.</p>
             <p className={s.p}>Through his work with firms in Canada and Australia, Corbin has developed practical experience in how accounting practices present their services, compete in search, and attract new business.</p>
           </div>
           <blockquote className={s.quote}>
-            <p>&ldquo;I started Scale SEO because I believe good marketing should create real opportunities for the businesses investing in it. For accounting firms, that means more than appearing on Google. It means reaching the right clients, building a stronger reputation, and developing a reliable source of new business. Our focus is on doing the work properly, communicating clearly, and building relationships that last.&rdquo;</p>
+            <p>&ldquo;Every business has its own ambitions, challenges, and definition of success. I founded Scale SEO to bring a more considered approach to search, one that starts with understanding the client, values thoughtful execution, and places long-term relationships ahead of short-term gains.&rdquo;</p>
           </blockquote>
           <div className={s.signRow}>
             <div className={s.sign}>
               <Signature className={s.signature} />
-              <span className={s.small}><strong>Corbin Jensen</strong> &middot; Founder, Scale SEO</span>
+              <span className={s.small}>&mdash; <strong>Corbin Jensen</strong>, Founder of Scale SEO</span>
             </div>
             <Btn href="/corbin-jensen" tone="navy">Read Corbin&rsquo;s Bio</Btn>
           </div>
