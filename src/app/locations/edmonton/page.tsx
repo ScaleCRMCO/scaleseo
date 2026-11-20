@@ -118,10 +118,10 @@ const cases = [
     body: [
       "Jensen CPA is a Calgary accounting firm providing corporate tax, bookkeeping, and fractional CFO services.",
       "Scale SEO improved the firm\u2019s website structure, developed service-focused content, and implemented ongoing SEO improvements.",
-      "Comparing the first and latest 30-day periods (June\u2013November 2026), Google Search impressions increased by 396% and organic clicks increased by 205%.",
+      "Comparing the first and latest 30-day periods (June\u2013November 2026), Google Search impressions increased by 395% and organic clicks increased by 205%.",
     ],
     stats: [
-      { to: 396, prefix: "+", suffix: "%", label: "Increase in Google Search impressions" },
+      { to: 395, prefix: "+", suffix: "%", label: "Increase in Google Search impressions" },
       { to: 205, prefix: "+", suffix: "%", label: "Increase in organic clicks" },
     ],
     href: "/results/jensen-cpa",

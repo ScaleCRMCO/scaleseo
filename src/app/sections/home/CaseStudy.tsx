@@ -26,7 +26,7 @@ const homeCases: CaseCard[] = [
     client: "Jensen CPA",
     services: "SEO / Web Development / Content Strategy / Google Ads",
     image: "/images/jensen-cpa-cover.webp",
-    metric: { to: 396, prefix: "+", suffix: "%" },
+    metric: { to: 395, prefix: "+", suffix: "%" },
     metricLabel: "Google Search impressions",
   },
   {
@@ -57,7 +57,7 @@ const homeCases: CaseCard[] = [
 
 // Short problem-and-fix line under each case study image
 const summaries: Record<string, string> = {
-  "/results/jensen-cpa": "An established Calgary CPA firm was hard to find for its core services. We rebuilt the website and service pages, and Google Search impressions grew 396%.",
+  "/results/jensen-cpa": "An established Calgary CPA firm was hard to find for its core services. We rebuilt the website and service pages, and Google Search impressions grew 395%.",
   "/results/empire-accountants": "Empire's priority accounting searches sat on page five. Service-page, technical and content work moved them onto page one.",
   "/results/kinsmen-consulting": "A Calgary concrete contractor needed a website that won real projects. A new site and local SEO led to $500K in new jobs.",
   "/results/msv-plumbing-services": "A brand-new plumbing business started with no online presence. A new website, SEO and Google Ads built steady weekly bookings.",

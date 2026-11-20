@@ -89,7 +89,7 @@ const cases = [
     client: "Jensen CPA",
     services: "Service Page Content / Keyword Targeting / Internal Linking",
     image: "/images/jensen-cpa-cover.webp",
-    metric: { to: 396, prefix: "+", suffix: "%" },
+    metric: { to: 395, prefix: "+", suffix: "%" },
     metricLabel: "Google Search impressions",
   },
   {
@@ -268,7 +268,7 @@ export default function OnPageSeoPage() {
           title: "On-Page SEO From Real Client Projects",
           lead: "Our approach is based on work carried out for businesses across Canada and Australia. Rather than applying the same checklist to every website, we look at how each business operates, what customers are searching for, and which pages offer the greatest opportunity.",
           items: [
-            { name: "Jensen CPA", tag: cases[0].services, stats: [{ from: 0, to: 396, prefix: "+", suffix: "%", label: "Google Search impressions" }, { from: 0, to: 205, prefix: "+", suffix: "%", label: "Organic clicks" }], body: "Jensen CPA is a Calgary accounting firm providing corporate tax, bookkeeping, and fractional CFO services. Our SEO work included improving service-page content, keyword targeting, internal linking, and supporting articles focused on business accounting topics. Comparing the first and latest 30-day periods (June\u2013November 2026), Google Search impressions increased by 396% and organic clicks by 205%. These results reflect the broader SEO campaign, including on-page and technical improvements.", href: "/results/jensen-cpa", cta: "View Jensen CPA Case Study", img: "/images/jensen-cpa-cover.webp" },
+            { name: "Jensen CPA", tag: cases[0].services, stats: [{ from: 0, to: 395, prefix: "+", suffix: "%", label: "Google Search impressions" }, { from: 0, to: 205, prefix: "+", suffix: "%", label: "Organic clicks" }], body: "Jensen CPA is a Calgary accounting firm providing corporate tax, bookkeeping, and fractional CFO services. Our SEO work included improving service-page content, keyword targeting, internal linking, and supporting articles focused on business accounting topics. Comparing the first and latest 30-day periods (June\u2013November 2026), Google Search impressions increased by 395% and organic clicks by 205%. These results reflect the broader SEO campaign, including on-page and technical improvements.", href: "/results/jensen-cpa", cta: "View Jensen CPA Case Study", img: "/images/jensen-cpa-cover.webp" },
             { name: "Empire Accountants", tag: cases[1].services, stats: [{ from: 5, to: 1, prefix: "Page ", label: "Target rankings, up from page 5" }], body: "Empire Accountants wanted to strengthen its visibility for business accounting services. We improved important service pages covering business tax, bookkeeping, and advisory-related services, with clearer service descriptions, relevant search terms, improved page structure, and stronger internal links between related accounting services. This formed part of an ongoing SEO strategy to help the firm reach more business owners through organic search.", href: "/results/empire-accountants", cta: "View Empire Accountants Case Study", img: "/images/empire-accountants-cover.webp" },
           ],
         }}

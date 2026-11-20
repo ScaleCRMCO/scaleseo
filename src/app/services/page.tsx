@@ -83,8 +83,8 @@ const services = [
 const results = [
   {
     client: "Jensen CPA \u2014 Calgary, Canada",
-    metric: "+396% Search Impressions",
-    body: "Website redevelopment and SEO helped a Calgary accounting firm grow Google Search impressions by 396% and organic clicks by 205% (first vs. latest 30-day period, June\u2013November 2026).",
+    metric: "+395% Search Impressions",
+    body: "Website redevelopment and SEO helped a Calgary accounting firm grow Google Search impressions by 395% and organic clicks by 205% (first vs. latest 30-day period, June\u2013November 2026).",
     href: "/results/jensen-cpa",
     cta: "View Jensen CPA Case Study",
   },

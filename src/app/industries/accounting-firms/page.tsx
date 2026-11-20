@@ -92,7 +92,7 @@ const cases = [
     cta: "View Jensen CPA Case Study",
     img: "/images/jensen-cpa-cover.webp",
     stats: [
-      { to: 396, prefix: "+", suffix: "%", label: "Google Search impressions" },
+      { to: 395, prefix: "+", suffix: "%", label: "Google Search impressions" },
       { to: 205, prefix: "+", suffix: "%", label: "Organic clicks" },
     ],
   },

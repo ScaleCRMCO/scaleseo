@@ -20,7 +20,7 @@ const geoCases = [
     client: "Jensen CPA",
     services: "Service Pages / Author Information / Technical SEO",
     image: "/images/jensen-cpa-cover.webp",
-    metric: { to: 396, prefix: "+", suffix: "%" },
+    metric: { to: 395, prefix: "+", suffix: "%" },
     metricLabel: "Google Search impressions",
   },
   {

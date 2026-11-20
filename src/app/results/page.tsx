@@ -67,7 +67,7 @@ const studies: Study[] = [
     client: "Jensen CPA",
     meta: "Accounting & Tax · Calgary, Alberta",
     metrics: [
-      { value: "+396%", label: "Google Search impressions" },
+      { value: "+395%", label: "Google Search impressions" },
       { value: "+205%", label: "Organic clicks" },
     ],
     title: "Building a Stronger Digital Presence for a Calgary CPA Firm",

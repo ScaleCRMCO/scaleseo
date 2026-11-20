@@ -29,7 +29,7 @@ const work = [
     name: "Jensen CPA — Calgary, Canada",
     body: [
       "Website redevelopment and SEO for a Calgary accounting firm, including technical improvements, service-page optimization, and content strategy.",
-      "Comparing the first and latest 30-day periods (June\u2013November 2026), Google Search impressions increased by 396% and organic clicks increased by 205%.",
+      "Comparing the first and latest 30-day periods (June\u2013November 2026), Google Search impressions increased by 395% and organic clicks increased by 205%.",
     ],
     href: "/results/jensen-cpa",
     cta: "View Jensen CPA Case Study",

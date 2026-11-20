@@ -38,7 +38,7 @@ const accountingCases = [
     client: "Jensen CPA \u00b7 Calgary, Canada",
     services: "SEO / Website Development / Content Strategy / Google Ads",
     image: "/images/jensen-cpa-cover.webp",
-    metric: { to: 396, prefix: "+", suffix: "%" },
+    metric: { to: 395, prefix: "+", suffix: "%" },
     metricLabel: "Google Search Impressions",
     metricNote: "+205% organic clicks over the same comparison",
     summary:
