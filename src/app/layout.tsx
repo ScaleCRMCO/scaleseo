@@ -103,7 +103,7 @@ const jsonLd = {
       ],
       "sameAs": [
         "https://www.linkedin.com/company/scale-seo/",
-        "https://maps.app.goo.gl/DbV1TQJZQWrpiNf38",
+        "https://maps.app.goo.gl/FYWSaQ3p81VFnNcc7",
         "https://clutch.co/profile/scale-seo",
         "https://www.designrush.com/agency/profile/scale-seo",
         "https://www.yelp.ca/biz/scale-seo-calgary",
@@ -117,7 +117,7 @@ const jsonLd = {
       "name": "Corbin Jensen",
       "url": "https://scaleseo.co/corbin-jensen",
       "jobTitle": "Founder & SEO Specialist",
-      "image": "https://scaleseo.co/images/corbin-about.jpg",
+      "image": "https://scaleseo.co/images/corbin-portrait.webp",
       "worksFor": {
         "@id": "https://scaleseo.co/#organization"
       },

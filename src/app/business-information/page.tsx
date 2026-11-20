@@ -99,7 +99,7 @@ const profiles = [
   { name: "LinkedIn (Scale SEO)", href: "https://www.linkedin.com/company/scale-seo/" },
   { name: "LinkedIn (Corbin Jensen)", href: "https://www.linkedin.com/in/corbin-jensen-seo/" },
   { name: "Instagram", href: "https://www.instagram.com/scaleseo.co/" },
-  { name: "Google Business Profile", href: "https://maps.app.goo.gl/DbV1TQJZQWrpiNf38" },
+  { name: "Google Business Profile", href: "https://maps.app.goo.gl/FYWSaQ3p81VFnNcc7" },
   { name: "Clutch", href: "https://clutch.co/profile/scale-seo" },
 ];
 
