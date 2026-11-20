@@ -8,9 +8,9 @@ import { Faq } from "../sections/v3/Sections";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: { absolute: "SEO Pricing for Accounting Firms | Scale SEO" },
+  title: { absolute: "SEO & Website Development Pricing | Scale SEO" },
   description:
-    "Explore SEO pricing for accounting firms, CPA practices and tax accountants. Monthly SEO from $3,000 CAD, plus Google Ads and website development.",
+    "Explore SEO pricing from $3,000 CAD/month and custom website development from $6,000. Flexible SEO, Google Ads, and web development services.",
   alternates: { canonical: "/pricing" },
 };
 
@@ -200,8 +200,8 @@ const jsonLd = {
       "@type": "WebPage",
       "@id": "https://scaleseo.co/pricing#webpage",
       "url": "https://scaleseo.co/pricing",
-      "name": "SEO Pricing for Accounting Firms | Scale SEO",
-      "description": "Explore SEO pricing for accounting firms, CPA practices and tax accountants. Monthly SEO from $3,000 CAD, plus Google Ads and website development.",
+      "name": "SEO & Website Development Pricing | Scale SEO",
+      "description": "Explore SEO pricing from $3,000 CAD/month and custom website development from $6,000. Flexible SEO, Google Ads, and web development services.",
       "isPartOf": {
         "@id": "https://scaleseo.co/#website"
       },
