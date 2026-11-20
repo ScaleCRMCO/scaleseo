@@ -39,6 +39,8 @@ export type ServiceTemplateProps = {
   crumb: string;
   parent?: { name: string; href: string };
   primaryLabel?: string;
+  primaryHref?: string;
+  hideSecondary?: boolean;
   top?: ReactNode;
   title: string;
   heroLead: string;
@@ -78,8 +80,8 @@ export default function ServiceTemplate(p: ServiceTemplateProps) {
             <h1 className={s.h1}>{p.title}</h1>
             <p className={v.lead}>{p.heroLead}</p>
             <div className={s.btns}>
-              <Btn href={CAL} external>{p.primaryLabel ?? "Book a Strategy Call"}</Btn>
-              <Btn href={p.heroSecondary?.href ?? "/results"} tone="line">{p.heroSecondary?.label ?? "View Client Results"}</Btn>
+              {p.primaryHref ? <Btn href={p.primaryHref}>{p.primaryLabel ?? "Book a Strategy Call"}</Btn> : <Btn href={CAL} external>{p.primaryLabel ?? "Book a Strategy Call"}</Btn>}
+              {!p.hideSecondary && <Btn href={p.heroSecondary?.href ?? "/results"} tone="line">{p.heroSecondary?.label ?? "View Client Results"}</Btn>}
             </div>
             <div className={s.badges}>
               <a href="https://agencies.semrush.com/scale-seo/" target="_blank" rel="noopener noreferrer" aria-label="Semrush Certified Agency Partner">

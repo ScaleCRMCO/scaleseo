@@ -149,7 +149,8 @@ export default function AccountingFirmsPage() {
         title="SEO for Accounting Firms & CPA Practices in Canada"
         heroLead="Get your accounting firm in front of more businesses searching for corporate tax, bookkeeping, fractional CFO and advisory services."
         heroImage={{ src: "/images/gsc-performance-mockup-3d.webp", alt: "Google Search Console performance data showing clicks and impressions growth" }}
-        heroSecondary={{ href: "/results/jensen-cpa", label: "Jensen CPA Case Study" }}
+        primaryHref="/contact"
+        hideSecondary
         statementLabel="Canadian accounting firms"
         statement="We help Canadian accounting firms improve their Google rankings, build better websites, and attract enquiries for the services they want to grow."
         statementNote="Founder-led SEO · Month-to-month engagements · Market conflict checks"
