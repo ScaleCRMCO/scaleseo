@@ -71,3 +71,6 @@
 .skyline { position: relative; aspect-ratio: 16 / 5; margin-top: 72px; overflow: hidden; background: #F1F3F6; }
 .skyline img { object-fit: cover; object-position: center 40%; }
 @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } .cell { padding: 16px 0 16px 20px; } .skyline { aspect-ratio: 16 / 8; margin-top: 48px; } }
+.auLink { margin: 40px 0 0; padding: 20px 24px; background: #F1F3F6; font-size: 17px; }
+.auLink a { color: #081423; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.auLink a:hover { color: #0099FF; }

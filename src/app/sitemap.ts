@@ -22,6 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/services/seo-audits`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/industries`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/industries/accounting-firms`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${base}/industries/accounting-firms-australia`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/industries/law-firms`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/services/on-page-seo`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/services/national-seo`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },

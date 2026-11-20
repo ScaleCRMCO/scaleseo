@@ -128,12 +128,13 @@ const industriesJsonLd = {
       "@id": "https://scaleseo.co/industries#industries",
       "name": "Accounting Specialties Scale SEO Works With",
       "description": "Accounting and financial service specialties served by Scale SEO.",
-      "numberOfItems": 4,
+      "numberOfItems": 5,
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "CPA & Accounting Firms", "url": "https://scaleseo.co/industries/accounting-firms" },
         { "@type": "ListItem", "position": 2, "name": "Fractional CFO & Advisory Firms" },
         { "@type": "ListItem", "position": 3, "name": "Bookkeeping & Cloud Accounting" },
-        { "@type": "ListItem", "position": 4, "name": "Tax & Specialist Accounting Practices" }
+        { "@type": "ListItem", "position": 4, "name": "Tax & Specialist Accounting Practices" },
+        { "@type": "ListItem", "position": 5, "name": "Accounting Firms in Australia", "url": "https://scaleseo.co/industries/accounting-firms-australia" }
       ]
     },
     {
@@ -230,6 +231,7 @@ export default function IndustriesPage() {
               </div>
             ))}
           </div>
+          <p className={styles.auLink}>Working with accounting firms in Australia? <Link href="/industries/accounting-firms-australia">Explore SEO for Accounting Firms in Australia</Link></p>
           <div className={styles.skyline}>
             <Image src="/images/toronto-skyline-bw.webp" alt="Black and white downtown Toronto skyline" fill sizes="(max-width: 1360px) 100vw, 1280px" />
           </div>

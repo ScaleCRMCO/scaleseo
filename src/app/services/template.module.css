@@ -132,3 +132,15 @@
 .panelNote > p:first-child { font-size: 20px; font-weight: 500; color: #081423; }
 @media (max-width: 900px) { .panelNote { grid-template-columns: 1fr; gap: 12px; } }
 .splitBody a { color: #FEFEFE; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.ctaBtns { display: flex; flex-wrap: wrap; gap: 12px; position: relative; }
+.svcGrid { display: grid; grid-template-columns: repeat(4, 1fr); }
+.svcGrid > div { display: flex; flex-direction: column; gap: 12px; padding: 4px 28px 8px; border-left: 1px solid rgba(8, 20, 35, 0.12); }
+.svcIntro { display: grid; grid-template-columns: 1fr 1.6fr; gap: 64px; margin-bottom: 56px; }
+.svcIntro > div { display: flex; flex-direction: column; gap: 14px; }
+@media (max-width: 900px) { .svcGrid, .svcIntro { grid-template-columns: 1fr; gap: 24px; } .svcGrid > div { padding: 16px 0 0; border-left: 0; border-top: 1px solid rgba(8, 20, 35, 0.12); } }
+.callout { margin: 0; padding: 24px 28px; background: rgba(0, 153, 255, 0.07); border-left: 3px solid #0099FF; font-size: 18px; line-height: 1.5; font-weight: 500; color: #081423; }
+.splitList { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.splitList li { position: relative; padding-left: 20px; }
+.splitList li::before { content: ""; position: absolute; left: 0; top: 0.65em; width: 6px; height: 6px; background: #0099FF; }
+.splitSmall { font-size: 13px; opacity: 0.7; }
+.incCta { margin-top: 32px; }

@@ -205,3 +205,6 @@ h2.eyebrow { font-size: 14px !important; font-weight: 500 !important; line-heigh
 h2.subhead { font-size: 20px !important; font-weight: 600 !important; }
 .founderName { margin: 16px 0 0; font-size: 20px; font-weight: 600; color: #0077CC; }
 .metricNote { margin: -8px 0 0; font-size: 15px; font-weight: 600; color: #0077CC; }
+.ctaBox div.p { display: flex; flex-direction: column; gap: 12px; }
+.ctaBox div.p p { margin: 0; }
+.ctaBox .btn_line { border-color: rgba(254,254,254,0.35); color: #FEFEFE; }

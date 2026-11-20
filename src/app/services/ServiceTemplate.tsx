@@ -37,6 +37,9 @@ export const ICONS = {
 
 export type ServiceTemplateProps = {
   crumb: string;
+  parent?: { name: string; href: string };
+  primaryLabel?: string;
+  top?: ReactNode;
   title: string;
   heroLead: string;
   heroImage: { src: string; alt: string };
@@ -52,14 +55,14 @@ export type ServiceTemplateProps = {
   feature?: ReactNode;
   feature2?: ReactNode;
   splits?: { title: string; lead?: string; body: ReactNode; image: { src: string; alt: string }; cta?: { href: string; label: string } }[];
-  included?: { title: string; lead: string; items: { title: string; body: string | string[]; icon: string }[]; image: { src: string; alt: string } };
+  included?: { title: string; lead: string; cta?: { href: string; label: string }; items: { title: string; body: string | string[]; icon: string }[]; image: { src: string; alt: string } };
   cases?: { title: string; lead: string; items: { name: string; body: string; tag?: string; stats: { from: number; to: number; prefix?: string; suffix?: string; label: string }[]; href: string; cta: string; img: string }[]; note?: string };
   markets?: { title: string; items: { title: string; body: string; icon: string; href?: string; cta?: string }[]; outro?: string };
   process?: { title: string; lead: string; note?: string; items: { title: string; body: string }[] };
   fit?: { title: string; label: string; body: ReactNode };
   pricing?: { title: string; price: string; unit: string; from?: string; body: string[]; points: string[]; cta?: string };
   faqs?: { q: string; a: string[] }[];
-  cta: { title: string; lead: string };
+  cta: { title: string; lead: ReactNode; secondary?: { href: string; label: string } };
 };
 
 export default function ServiceTemplate(p: ServiceTemplateProps) {
@@ -70,12 +73,12 @@ export default function ServiceTemplate(p: ServiceTemplateProps) {
         <div className={`${v.wrap} ${s.heroGrid}`}>
           <div className={s.heroText}>
             <div className={s.crumbs}>
-              <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Services", href: "/services" }, { name: p.crumb }]} schema={false} />
+              <Breadcrumbs items={[{ name: "Home", href: "/" }, p.parent ?? { name: "Services", href: "/services" }, { name: p.crumb }]} schema={false} />
             </div>
             <h1 className={s.h1}>{p.title}</h1>
             <p className={v.lead}>{p.heroLead}</p>
             <div className={s.btns}>
-              <Btn href={CAL} external>Book a Strategy Call</Btn>
+              <Btn href={CAL} external>{p.primaryLabel ?? "Book a Strategy Call"}</Btn>
               <Btn href={p.heroSecondary?.href ?? "/results"} tone="line">{p.heroSecondary?.label ?? "View Client Results"}</Btn>
             </div>
             <div className={s.badges}>
@@ -115,6 +118,8 @@ export default function ServiceTemplate(p: ServiceTemplateProps) {
           </div>
         </div>
       </section>
+
+      {p.top}
 
       {/* Explainer (optional) */}
       {p.explainer && (
@@ -176,6 +181,7 @@ export default function ServiceTemplate(p: ServiceTemplateProps) {
                 <Image src={p.included.image.src} alt={p.included.image.alt} fill sizes="(max-width: 900px) 100vw, 600px" />
               </div>
             </div>
+            {p.included.cta && <div className={s.incCta}><Btn href={p.included.cta.href} tone="navy">{p.included.cta.label}</Btn></div>}
           </div>
         </section>
       )}
@@ -323,8 +329,11 @@ export default function ServiceTemplate(p: ServiceTemplateProps) {
         <div className={v.wrap}>
           <div className={v.ctaBox} data-nav="dark">
             <h2 className={v.h2}>{p.cta.title}</h2>
-            <p className={v.p}>{p.cta.lead}</p>
-            <Btn href={CAL} external>Book a Strategy Call</Btn>
+            <div className={v.p}>{p.cta.lead}</div>
+            <div className={s.ctaBtns}>
+              <Btn href={CAL} external>{p.primaryLabel ?? "Book a Strategy Call"}</Btn>
+              {p.cta.secondary && <Btn href={p.cta.secondary.href} tone="line">{p.cta.secondary.label}</Btn>}
+            </div>
           </div>
         </div>
       </section>
