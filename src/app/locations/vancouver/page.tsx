@@ -91,11 +91,11 @@ const cases = [
     name: "Jensen CPA",
     body: [
       "SEO and website development for a Calgary accounting firm, including improvements to corporate tax, bookkeeping, and other business accounting service pages.",
-      "The campaign recorded a 125% increase in Google Search impressions and a 92% increase in organic clicks during its initial four-month reporting period.",
+      "Comparing the first and latest 30-day periods (June\u2013November 2026), Google Search impressions increased by 396% and organic clicks increased by 205%.",
     ],
     stats: [
-      { to: 125, prefix: "+", suffix: "%", label: "Increase in Google Search impressions" },
-      { to: 92, prefix: "+", suffix: "%", label: "Increase in organic clicks" },
+      { to: 396, prefix: "+", suffix: "%", label: "Increase in Google Search impressions" },
+      { to: 205, prefix: "+", suffix: "%", label: "Increase in organic clicks" },
     ],
     href: "/results/jensen-cpa",
     cta: "View Jensen CPA Case Study",

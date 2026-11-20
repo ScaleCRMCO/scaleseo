@@ -146,7 +146,7 @@ export function Services() {
 }
 
 /* 4. Case studies — Bilberrry alternating image / text rows */
-type Case = { href: string; client: string; services: string; image: string; metric: { from?: number; to: number; prefix?: string; suffix?: string }; metricLabel: string; summary: string };
+type Case = { href: string; client: string; services: string; image: string; metric: { from?: number; to: number; prefix?: string; suffix?: string }; metricLabel: string; metricNote?: string; summary: string };
 
 export function Cases({ cases }: { cases: Case[] }) {
   return (
@@ -173,6 +173,7 @@ export function Cases({ cases }: { cases: Case[] }) {
                   <span className={s.statValue}><CountUp from={c.metric.from ?? 0} to={c.metric.to} prefix={c.metric.prefix} suffix={c.metric.suffix} /></span>
                   <span className={s.small}>{c.metricLabel}</span>
                 </p>
+                {c.metricNote && <p className={s.metricNote}>{c.metricNote}</p>}
                 <p className={s.p}>{c.summary}</p>
                 <ul className={s.tags}>
                   {c.services.split(" / ").map((t) => <li key={t}>/ {t}</li>)}

@@ -35,13 +35,14 @@ const webPageJsonLd = {
 const accountingCases = [
   {
     href: "/results/jensen-cpa",
-    client: "Jensen CPA \u2014 Calgary, Canada",
+    client: "Jensen CPA \u00b7 Calgary, Canada",
     services: "SEO / Website Development / Content Strategy / Google Ads",
     image: "/images/jensen-cpa-cover.webp",
-    metric: { to: 227, prefix: "+", suffix: "%" },
-    metricLabel: "Search Impressions",
+    metric: { to: 396, prefix: "+", suffix: "%" },
+    metricLabel: "Google Search Impressions",
+    metricNote: "+205% organic clicks over the same comparison",
     summary:
-      "Jensen CPA wanted to improve its visibility for corporate tax, bookkeeping, and fractional CFO services in Calgary. We improved the firm\u2019s website, developed dedicated service pages, strengthened its technical SEO, and built a content strategy around business accounting topics. The campaign helped increase Google Search visibility and establish stronger rankings for relevant accounting services.",
+      "We redeveloped Jensen CPA\u2019s website and improved its search presence for corporate tax, bookkeeping, and fractional CFO services. Through technical SEO, dedicated service pages, and accounting-focused content, the firm recorded nearly five times as many Google Search impressions and three times as many organic clicks when comparing the first and latest 30-day periods. Results measured June\u2013November 2026.",
   },
   {
     href: "/results/empire-accountants",

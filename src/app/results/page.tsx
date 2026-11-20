@@ -67,13 +67,13 @@ const studies: Study[] = [
     client: "Jensen CPA",
     meta: "Accounting & Tax · Calgary, Alberta",
     metrics: [
-      { value: "+227%", label: "Average daily search impressions" },
-      { value: "+92%", label: "Average daily organic clicks" },
+      { value: "+396%", label: "Google Search impressions" },
+      { value: "+205%", label: "Organic clicks" },
     ],
     title: "Building a Stronger Digital Presence for a Calgary CPA Firm",
     body: [
       "Website redevelopment, SEO, content strategy, and Google Ads combined to build a stronger digital presence for an established Calgary CPA firm.",
-      "Within the first four months, organic search visibility increased substantially, with first-page visibility for commercially relevant Calgary accounting searches.",
+      "Comparing the first and latest 30-day periods (June\u2013November 2026), the firm recorded nearly five times as many Google Search impressions and three times as many organic clicks.",
     ],
     caseStudyHref: "/results/jensen-cpa",
     image: "/images/jensen-cpa-cover.webp",

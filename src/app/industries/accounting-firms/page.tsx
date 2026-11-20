@@ -92,8 +92,8 @@ const cases = [
     cta: "View Jensen CPA Case Study",
     img: "/images/jensen-cpa-cover.webp",
     stats: [
-      { to: 227, prefix: "+", suffix: "%", label: "Average daily search impressions" },
-      { to: 92, prefix: "+", suffix: "%", label: "Average daily organic clicks" },
+      { to: 396, prefix: "+", suffix: "%", label: "Google Search impressions" },
+      { to: 205, prefix: "+", suffix: "%", label: "Organic clicks" },
     ],
   },
   {

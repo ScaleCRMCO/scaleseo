@@ -27,11 +27,11 @@ const cases = [
   {
     name: "Jensen CPA \u2014 Calgary, Canada",
     body: [
-      "Website redevelopment, technical SEO, and accounting service-page improvements helped Jensen CPA increase its organic search visibility during the first four months of the campaign.",
+      "We redeveloped Jensen CPA\u2019s website and improved its search presence for corporate tax, bookkeeping, and fractional CFO services. Through technical SEO, dedicated service pages, and accounting-focused content, the firm recorded nearly five times as many Google Search impressions and three times as many organic clicks when comparing the first and latest 30-day periods. Results measured June\u2013November 2026.",
     ],
     stats: [
-      { from: 0, to: 92, prefix: "+", suffix: "%", label: "Organic Clicks" },
-      { from: 0, to: 125, prefix: "+", suffix: "%", label: "Search Impressions" },
+      { from: 0, to: 396, prefix: "+", suffix: "%", label: "Google Search Impressions" },
+      { from: 0, to: 205, prefix: "+", suffix: "%", label: "Organic Clicks" },
     ],
     href: "/results/jensen-cpa",
     cta: "View Jensen CPA Case Study",

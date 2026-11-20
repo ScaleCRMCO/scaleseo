@@ -132,11 +132,11 @@ const cases = [
     name: "Jensen CPA",
     body: [
       "Scale SEO worked with Jensen CPA, a Calgary accounting firm, to improve service-page targeting, website structure, and content around corporate tax and other business accounting services.",
-      "During the first four months, Google Search impressions increased by 125%, while organic clicks increased by 92%.",
+      "Comparing the first and latest 30-day periods (June\u2013November 2026), Google Search impressions increased by 396% and organic clicks increased by 205%.",
     ],
     stats: [
-      { from: 0, to: 125, prefix: "+", suffix: "%", label: "Increase in Google Search impressions" },
-      { from: 0, to: 92, prefix: "+", suffix: "%", label: "Increase in organic clicks" },
+      { from: 0, to: 396, prefix: "+", suffix: "%", label: "Increase in Google Search impressions" },
+      { from: 0, to: 205, prefix: "+", suffix: "%", label: "Increase in organic clicks" },
     ],
     href: "/results/jensen-cpa",
     cta: "View Jensen CPA Case Study",

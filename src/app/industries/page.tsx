@@ -11,8 +11,8 @@ const industryCases = [
     client: "Jensen CPA \u2014 Calgary, Canada",
     services: "Website Development / Technical SEO / Service Pages",
     image: "/images/jensen-cpa-cover.webp",
-    metric: "+92%",
-    metricLabel: "Organic Clicks",
+    metric: "+396%",
+    metricLabel: "Google Search Impressions",
     summary: "Website redevelopment, technical SEO, service-page improvements, and ongoing search optimization helped Jensen CPA improve visibility for its accounting services.",
   },
   {
