@@ -68,13 +68,13 @@ const jsonLd = {
       "image": {
         "@id": "https://scaleseo.co/#logo"
       },
-      "description": "Scale SEO is an independent SEO practice based in Calgary, Alberta, providing SEO services, technical SEO, SEO audits, web development, Google Ads management, and AI search optimization for professional service and B2B businesses.",
+      "description": "Scale SEO is an independent SEO consultancy based in Calgary, Alberta, specializing in search engine optimization for accounting firms and professional service businesses. Founded in 2025 by Corbin Jensen, we provide SEO, Google Ads management, website development, technical SEO audits, and AI search optimization. Our work spans Canada and Australia, with experience across accounting, consulting, construction, and other service industries.",
       "foundingDate": "2025",
       "founder": {
         "@id": "https://scaleseo.co/corbin-jensen#person"
       },
       "email": "team@scaleseo.co",
-      "telephone": "(403) 875-1110",
+      "telephone": "+1-403-875-1110",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "1122 3 St SE Ste 1906",
@@ -95,13 +95,20 @@ const jsonLd = {
         {
           "@type": "Country",
           "name": "Canada"
+        },
+        {
+          "@type": "Country",
+          "name": "Australia"
         }
       ],
       "sameAs": [
         "https://www.linkedin.com/company/scale-seo/",
-        "https://www.instagram.com/scaleseo.co/",
         "https://maps.app.goo.gl/DbV1TQJZQWrpiNf38",
-        "https://clutch.co/profile/scale-seo"
+        "https://clutch.co/profile/scale-seo",
+        "https://www.designrush.com/agency/profile/scale-seo",
+        "https://www.yelp.ca/biz/scale-seo-calgary",
+        "https://agencies.semrush.com/scale-seo/",
+        "https://www.trustindex.io/reviews/scaleseo.co"
       ]
     },
     {
@@ -109,7 +116,7 @@ const jsonLd = {
       "@id": "https://scaleseo.co/corbin-jensen#person",
       "name": "Corbin Jensen",
       "url": "https://scaleseo.co/corbin-jensen",
-      "jobTitle": "SEO Specialist",
+      "jobTitle": "Founder & SEO Specialist",
       "image": "https://scaleseo.co/images/corbin-about.jpg",
       "worksFor": {
         "@id": "https://scaleseo.co/#organization"
