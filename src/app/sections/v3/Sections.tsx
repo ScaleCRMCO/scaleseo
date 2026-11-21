@@ -208,6 +208,12 @@ const help = [
   { title: "Turn More Visitors Into Enquiries", body: "Getting found is only part of the process. We improve how your website presents your services, answers potential clients’ questions, and guides visitors toward contacting your firm." },
 ];
 
+const HELP_ICONS = [
+  "M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM12 12h.01",
+  "M3 17l6-6 4 4 8-8M15 7h6v6",
+  "M4 4l7 17 2.5-7.5L21 11zM13.5 13.5L19 19",
+];
+
 export function Help() {
   return (
     <section className={`${s.grey} ${s.sec}`} aria-labelledby="help-h">
@@ -224,11 +230,15 @@ export function Help() {
             <Btn href="/services/seo" tone="navy">Explore Our SEO Services</Btn>
           </div>
         </div>
-        <ol className={`${s.cards} ${s.cols3}`}>
+        <ol className={s.pillars}>
           {help.map((h, i) => (
-            <li key={h.title} className={s.card}>
-              <span className={s.cardNum}>0{i + 1}</span>
-              <h3 className={s.h3}>{h.title}</h3>
+            <li key={h.title} className={s.pillar}>
+              <div className={s.pillarHead}>
+                <span className={`${s.pillarIcon} ${s["pillarTone" + i]}`} aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d={HELP_ICONS[i]} /></svg>
+                </span>
+                <h3 className={s.pillarTitle}>{h.title}</h3>
+              </div>
               <p className={s.p}>{h.body}</p>
             </li>
           ))}
