@@ -142,14 +142,17 @@ export default function AboutPage() {
       <section className={`${v.white} ${styles.statementSec}`}>
         <div className={`${v.wrap} ${styles.narrow}`}>
           <h2 className={styles.big}>A More Considered Approach to Search</h2>
-          <p className={`${v.lead} ${styles.statementLead}`}>
-            Scale SEO was founded in 2025 with a simple belief: good SEO starts with understanding the business, not just the website.
-          </p>
-          <div className={styles.cols2}>
-            <p className={v.p}>We&rsquo;re a Calgary-based consultancy working primarily with accounting firms and other professional service businesses across Canada and Australia.</p>
-            <p className={v.p}>Our focus on accounting has developed through working directly with firms, learning how their services are delivered, what their clients look for, and where the best opportunities for growth exist.</p>
+          <div className={styles.mambaCols}>
+            <div>
+              <p>Scale SEO was founded in 2025 with a simple belief: good SEO starts with understanding the business, not just the website.</p>
+              <p>We&rsquo;re a Calgary-based consultancy working primarily with accounting firms and other professional service businesses across Canada and Australia.</p>
+            </div>
+            <div>
+              <p>Our focus on accounting has developed through working directly with firms, learning how their services are delivered, what their clients look for, and where the best opportunities for growth exist.</p>
+              <p>We believe that experience matters. Especially when you&rsquo;re responsible for how another business presents itself online.</p>
+            </div>
           </div>
-          <p className={styles.callLine}>We believe that experience matters. Especially when you&rsquo;re responsible for how another business presents itself online.</p>
+          <Btn href="/contact">I&rsquo;m ready to be impressed</Btn>
         </div>
       </section>
 

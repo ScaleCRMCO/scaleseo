@@ -59,3 +59,9 @@
 .navyBody { display: flex; flex-direction: column; gap: 14px; margin-top: 28px; max-width: 720px; }
 .navyBody .lead, .navyBody > p:first-child { color: #FEFEFE; }
 .role { margin: 8px 0 0; font-size: 17px; color: #0077CC; }
+.statementSec .big { font-size: clamp(36px, 4.2vw, 58px) !important; line-height: 1.05; letter-spacing: -0.04em; padding-bottom: 40px; border-bottom: 1px solid rgba(8, 20, 35, 0.12); }
+.mambaCols { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin: 40px 0 48px; }
+.mambaCols > div { display: flex; flex-direction: column; gap: 16px; }
+.mambaCols p { margin: 0; font-size: 17px; line-height: 1.6; font-weight: 500; color: #081423; }
+@media (max-width: 900px) { .mambaCols { grid-template-columns: 1fr; gap: 16px; } }
+.statementSec .narrow { max-width: 1000px !important; }
