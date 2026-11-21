@@ -211,3 +211,9 @@ h2.subhead { font-size: 20px !important; font-weight: 600 !important; }
 .listIcon { display: grid; place-items: center; width: 52px; height: 52px; border-radius: 12px; background: rgba(254, 254, 254, 0.07); border: 1px solid rgba(254, 254, 254, 0.12); color: #FEFEFE; transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease, transform 0.25s ease; }
 .listIcon svg { width: 26px; height: 26px; }
 .listRow:hover .listIcon { background: var(--blue); border-color: var(--blue); transform: translateY(-2px); }
+.diffImg { position: relative; aspect-ratio: 3 / 1; margin-top: 96px; overflow: hidden; background: var(--grey); }
+.diffImg img { object-fit: cover; object-position: center 60%; }
+.diffRow { display: grid; grid-template-columns: 0.8fr 1fr 1fr 1fr; margin-top: 56px; }
+.diffLabel { margin: 0; padding-right: 32px; font-size: 18px !important; line-height: 1.35; font-weight: 600 !important; }
+.diffPoint { display: flex; flex-direction: column; gap: 12px; padding: 0 32px; border-left: 1px solid var(--rule); }
+@media (max-width: 900px) { .diffImg { aspect-ratio: 16 / 9; margin-top: 64px; } .diffRow { grid-template-columns: 1fr; gap: 28px; } .diffPoint { padding: 20px 0 0; border-left: 0; border-top: 1px solid var(--rule); } }

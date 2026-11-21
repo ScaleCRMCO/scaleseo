@@ -17,17 +17,17 @@ const ICONS = {
 export const defaultPoints: DiffPoint[] = [
   {
     icon: ICONS.calc,
-    title: "01 \u2014 Accounting Industry Experience",
+    title: "Accounting Industry Experience",
     body: "We\u2019ve worked with accounting firms in Canada and Australia, improving websites and search visibility for corporate tax, bookkeeping, and business advisory services.",
   },
   {
     icon: "M14 6l4 4M3 21l9-9M12 4l8 8-3 3-8-8z",
-    title: "02 \u2014 Strategy & Implementation",
+    title: "Strategy & Implementation",
     body: "We don\u2019t stop at audits and recommendations. We make the technical changes, develop the content, and improve the pages needed to put the strategy into practice.",
   },
   {
     icon: ICONS.calendar,
-    title: "03 \u2014 Flexible Partnerships",
+    title: "Flexible Partnerships",
     body: "Our SEO campaigns operate month-to-month, without long-term contracts. Clients retain ownership of their websites, content, and data.",
   },
 ];

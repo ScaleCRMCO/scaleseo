@@ -80,8 +80,18 @@ export function Intro() {
             </p>
           </div>
         </div>
-        <h2 className={s.subhead}>What Makes Scale SEO Different?</h2>
-        <Points points={defaultPoints} cols={3} />
+        <div className={s.diffImg}>
+          <Image src="/images/calgary-downtown-bow-river.webp" alt="Downtown Calgary skyline and the Bow River at sunset, home of Scale SEO" fill sizes="(max-width: 1360px) 100vw, 1280px" />
+        </div>
+        <div className={s.diffRow}>
+          <h2 className={s.diffLabel}>What Makes Scale SEO Different?</h2>
+          {defaultPoints.map((p) => (
+            <div key={p.title} className={s.diffPoint}>
+              <h3 className={s.h3}>{p.title}</h3>
+              <p className={s.p}>{p.body}</p>
+            </div>
+          ))}
+        </div>
         <div className={s.endRow}>
           <Btn href="/about" tone="navy">More About Scale SEO</Btn>
         </div>
