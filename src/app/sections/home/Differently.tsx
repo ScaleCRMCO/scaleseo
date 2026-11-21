@@ -18,17 +18,17 @@ export const defaultPoints: DiffPoint[] = [
   {
     icon: ICONS.calc,
     title: "Accounting Industry Experience",
-    body: "We\u2019ve worked with accounting firms in Canada and Australia, improving websites and search visibility for corporate tax, bookkeeping, and business advisory services.",
+    body: "We\u2019ve worked directly with accounting firms in Canada and Australia, developing search strategies around corporate tax, bookkeeping, and business advisory services.",
   },
   {
     icon: "M14 6l4 4M3 21l9-9M12 4l8 8-3 3-8-8z",
-    title: "Strategy & Implementation",
-    body: "We don\u2019t stop at audits and recommendations. We make the technical changes, develop the content, and improve the pages needed to put the strategy into practice.",
+    title: "Hands-On Implementation",
+    body: "We don\u2019t just hand over recommendations. We make the technical improvements, develop the content, and implement the changes needed to move your strategy forward.",
   },
   {
     icon: ICONS.calendar,
     title: "Flexible Partnerships",
-    body: "Our SEO campaigns operate month-to-month, without long-term contracts. Clients retain ownership of their websites, content, and data.",
+    body: "Our SEO engagements are month-to-month, without long-term lock-ins. You retain ownership of your website, content, and business data.",
   },
 ];
 
