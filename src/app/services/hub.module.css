@@ -24,7 +24,8 @@
 .rowBody { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
 .tags { display: flex; flex-wrap: wrap; gap: 6px 22px; list-style: none; margin: 6px 0 4px; padding: 0; font-size: 14px; color: rgba(8, 20, 35, 0.6); }
 .national { display: flex; justify-content: space-between; align-items: center; gap: 32px; margin-top: 48px; padding: 28px 32px; background: #F1F3F6; }
-.national p { margin: 0; max-width: 620px; font-size: 17px; line-height: 1.5; }
+.national h3 { margin: 0 0 6px; }
+.national p { margin: 8px 0 0; max-width: 620px; font-size: 17px; line-height: 1.5; }
 
 .statement { margin: 0; max-width: 20ch; font-size: clamp(30px, 3.2vw, 46px) !important; line-height: 1.1; font-weight: 600 !important; letter-spacing: -0.03em; }
 .navyLead { margin-top: 24px; max-width: 700px; }
@@ -50,3 +51,6 @@
   .row { grid-template-columns: 1fr; gap: 12px; padding: 32px 0; }
   .national { flex-direction: column; align-items: flex-start; padding: 24px 20px; }
 }
+
+.ctaSolo { grid-template-columns: 1fr; max-width: none; }
+.ctaSolo > div { max-width: 760px; }
