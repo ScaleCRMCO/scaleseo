@@ -74,3 +74,14 @@
 .auLink { margin: 40px 0 0; padding: 20px 24px; background: #F1F3F6; font-size: 17px; }
 .auLink a { color: #081423; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
 .auLink a:hover { color: #0099FF; }
+.copy { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
+.copyLead { margin: 0; font-size: 20px; line-height: 1.5; font-weight: 500; color: #081423; }
+.markets { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.market { display: flex; flex-direction: column; background: #FEFEFE; }
+.marketImg { position: relative; aspect-ratio: 16 / 9; overflow: hidden; }
+.marketImg img { object-fit: cover; }
+.marketText { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; padding: 32px; }
+.marketLabel { margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #0077CC; }
+.marketTitle { margin: 0; font-size: 22px; line-height: 1.25; font-weight: 600; letter-spacing: -0.015em; color: #081423; }
+.marketText > a { margin-top: 8px; }
+@media (max-width: 900px) { .markets { grid-template-columns: 1fr; } .marketText { padding: 24px; } }

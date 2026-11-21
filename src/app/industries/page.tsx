@@ -176,13 +176,12 @@ export default function IndustriesPage() {
             <div className={styles.crumbs}>
               <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Specialties" }]} schema={false} />
             </div>
-            <h1 className={styles.h1}>SEO for Accounting Firms &amp; Financial Professionals</h1>
+            <h1 className={styles.h1}>Industries We Work With</h1>
             <p className={v.lead}>
-              Specialized SEO and Google Ads strategies for CPA firms, tax accountants, bookkeeping practices, and financial advisory businesses across Canada and Australia.
+              Specialized SEO for accounting firms and professional service businesses across Canada and Australia.
             </p>
             <div className={styles.heroBtns}>
-              <Btn href={BOOKING_URL} external>Book a Consultation</Btn>
-              <Btn href="#industries" tone="line">Explore Accounting Specialties</Btn>
+              <Btn href="#specialties">Explore Our Specialties</Btn>
             </div>
             <div className={styles.badges}>
               <a href="https://agencies.semrush.com/scale-seo/" target="_blank" rel="noopener noreferrer" aria-label="Semrush Certified Agency Partner">
@@ -201,55 +200,57 @@ export default function IndustriesPage() {
         </div>
       </header>
 
-      {/* Labelled statement */}
-      <section className={`${v.grey} ${v.sec}`}>
+      {/* Focus */}
+      <section className={`${v.white} ${v.sec}`}>
         <div className={`${v.wrap} ${styles.labelled}`}>
-          <span className={styles.sideLabel}>Built for accounting and financial firms</span>
-          <p className={styles.statement}>
-            Every campaign focuses on improving visibility for the services that matter most to your firm, from corporate tax and bookkeeping to higher-value advisory work.
-          </p>
+          <h2 className={v.h2}>A Focus on Accounting &amp; Professional Services</h2>
+          <div className={styles.copy}>
+            <p className={styles.copyLead}>Good search strategy starts with understanding the industry behind the website.</p>
+            <p className={v.p}>An accounting firm seeking corporate tax clients has different priorities from a construction company pursuing commercial projects. What works for one business won&rsquo;t necessarily work for another.</p>
+            <p className={v.p}>At Scale SEO, accounting is our primary specialty. Our experience working with firms in Canada and Australia has given us practical insight into how professional services are searched for, compared, and selected.</p>
+            <p className={v.p}>We apply that understanding to every engagement, with a focus on the services and clients that matter most to the business.</p>
+          </div>
         </div>
       </section>
 
-      {/* Specialties accordion */}
-      <section className={`${v.white} ${v.sec}`} id="industries">
+      {/* Two markets */}
+      <section className={`${v.grey} ${v.sec}`} id="specialties">
         <div className={v.wrap}>
-          <div className={styles.accHead}>
-            <h2 className={v.h2}>Accounting Specialties We Work With</h2>
-            <Btn href="/industries/accounting-firms" tone="navy">Explore SEO for Accounting Firms</Btn>
+          <div className={v.head}>
+            <div><h2 className={v.h2}>Accounting Expertise Across Two Markets</h2></div>
+            <div className={v.headSide}>
+              <p className={v.p}>We&rsquo;ve worked with accounting firms in Canada and Australia, where regulations, terminology, and search behaviour can differ considerably.</p>
+              <p className={v.p}>Our approach is grounded in the same principle: understand the firm, its market, and the work it wants more of.</p>
+            </div>
           </div>
-          <div className={styles.grid}>
-            {industries.map((item) => (
-              <div key={item.num} className={styles.cell}>
-                <span className={v.icon} aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d={item.icon} /></svg>
-                </span>
-                <h3 className={styles.cellTitle}>{item.title}</h3>
-                <p className={styles.itemSub}>{item.sub}</p>
-                {item.body.map((p) => <p key={p} className={v.p}>{p}</p>)}
-                {item.href && <Link href={item.href} className={v.textLink}>{item.cta} <Corner /></Link>}
+          <div className={styles.markets}>
+            {[
+              { label: "Canada", title: "SEO for Canadian Accounting Firms", body: "Our Canadian experience includes corporate tax, bookkeeping, fractional CFO, and business advisory services, supported by our work with Jensen CPA in Calgary.", href: "/industries/accounting-firms", cta: "Explore Accounting SEO in Canada", img: "/images/calgary-downtown-bow-river.webp", alt: "Downtown Calgary skyline and the Bow River" },
+              { label: "Australia", title: "SEO for Australian Accounting Firms", body: "Our Australian experience includes business taxation, BAS, SMSF, bookkeeping, and advisory services, supported by our work with Empire Accountants in Brisbane.", href: "/industries/accounting-firms-australia", cta: "Explore Accounting SEO in Australia", img: "/images/melbourne-skyline-bw.webp", alt: "Black and white view of the downtown Melbourne skyline in Victoria, Australia" },
+            ].map((m) => (
+              <div key={m.label} className={styles.market}>
+                <div className={styles.marketImg}><Image src={m.img} alt={m.alt} fill sizes="(max-width: 900px) 100vw, 620px" /></div>
+                <div className={styles.marketText}>
+                  <h3 className={styles.marketLabel}>{m.label}</h3>
+                  <p className={styles.marketTitle}>{m.title}</p>
+                  <p className={v.p}>{m.body}</p>
+                  <Btn href={m.href} tone="navy">{m.cta}</Btn>
+                </div>
               </div>
             ))}
           </div>
-          <p className={styles.auLink}>Working with accounting firms in Australia? <Link href="/industries/accounting-firms-australia">Explore SEO for Accounting Firms in Australia</Link></p>
-          <div className={styles.skyline}>
-            <Image src="/images/toronto-skyline-bw.webp" alt="Black and white downtown Toronto skyline" fill sizes="(max-width: 1360px) 100vw, 1280px" />
-          </div>
         </div>
       </section>
 
-      {/* Strategy */}
+      {/* Beyond accounting */}
       <section className={`${v.white} ${v.sec}`}>
         <div className={`${v.wrap} ${styles.labelled}`}>
-          <span className={styles.sideLabel}>How we approach it</span>
-          <div>
-            <h2 className={v.h2}>Search Strategies Built Around Accounting Firms</h2>
-            <p className={`${v.lead} ${styles.stratLead}`}>Accounting firms often offer similar services, but their ideal clients and growth goals can be very different.</p>
-            <div className={styles.cols2}>
-              <p className={v.p}>A CPA firm targeting established corporations needs a different SEO strategy from a bookkeeping practice seeking monthly clients or an advisory firm promoting fractional CFO services.</p>
-              <p className={v.p}>Scale SEO develops each campaign around your firm&rsquo;s most valuable services, the searches prospective clients make, and the competitive landscape in your market.</p>
-            </div>
-            <p className={styles.callout}>The goal is not simply more website traffic. It&rsquo;s better visibility among businesses actively looking for the services your firm provides.</p>
+          <h2 className={v.h2}>Experience Beyond Accounting</h2>
+          <div className={styles.copy}>
+            <p className={styles.copyLead}>While accounting is our main focus, our experience extends to other professional and specialist service businesses.</p>
+            <p className={v.p}>We&rsquo;ve worked with businesses in consulting, construction, and skilled trades, where reputation, technical expertise, and relevant search visibility are equally important.</p>
+            <p className={v.p}>We take on selected projects outside accounting where our experience and approach are a good fit.</p>
+            <div><Btn href="/results" tone="navy">Explore Our Client Work</Btn></div>
           </div>
         </div>
       </section>
@@ -259,11 +260,10 @@ export default function IndustriesPage() {
         <div className={v.wrap}>
           <div className={v.head}>
             <div>
-              <h2 className={v.h2}>Results From Accounting Firm Campaigns</h2>
+              <h2 className={v.h2}>Selected Client Results</h2>
             </div>
             <div className={v.headSide}>
-              <p className={v.p}>Real SEO work with accounting firms in Canada and Australia.</p>
-              <Btn href="/results" tone="navy">View All Results</Btn>
+              <p className={v.p}>A look at our work with accounting firms in two different markets.</p>
             </div>
           </div>
           <div className={styles.results}>
@@ -276,7 +276,7 @@ export default function IndustriesPage() {
                   <span className={v.small}>{c.client}</span>
                   <span className={styles.metric}>{c.metric} <span className={v.small}>{c.metricLabel}</span></span>
                   <span className={v.p}>{c.summary}</span>
-                  <span className={v.textLink}>Read case study <Corner /></span>
+                  <span className={v.textLink}>Read the Case Study <Corner /></span>
                 </span>
               </Link>
             ))}
@@ -287,15 +287,11 @@ export default function IndustriesPage() {
       {/* CTA */}
       <section className={`${v.white} ${v.ctaSec}`} style={{ paddingTop: 40 }}>
         <div className={v.wrap}>
-          <div className={`${v.ctaBox} ${styles.cta}`} data-nav="dark">
-            <div>
-              <h2 className={v.h2}>Work Directly With an Accounting SEO Specialist</h2>
-              <p className={v.p}>Scale SEO is an independent SEO consultancy founded by Corbin Jensen. You work directly with the person researching, developing, and implementing your search strategy.</p>
-              <Btn href={BOOKING_URL} external>Book a Consultation</Btn>
-            </div>
-            <ul className={styles.points}>
-              {["Direct communication with Corbin, no account managers", "Month-to-month engagements without long-term contracts", "Full ownership of your website, content, and data", "Experience working with accounting firms in Canada and Australia"].map((x) => <li key={x}>{x}</li>)}
-            </ul>
+          <div className={v.ctaBox} data-nav="dark">
+            <h2 className={v.h2}>Work With Scale SEO</h2>
+            <p className={v.p}>We&rsquo;re an independent Calgary SEO consultancy working with accounting firms and selected professional service businesses across Canada and Australia.</p>
+            <p className={v.p}>If you&rsquo;re looking for a more considered approach to search, we&rsquo;d be glad to learn about your business.</p>
+            <Btn href={BOOKING_URL} external>Book a Consultation</Btn>
           </div>
         </div>
       </section>
