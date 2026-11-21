@@ -475,11 +475,10 @@ export function Cta() {
         <div className={s.ctaBox} data-nav="dark">
           <HeroMark className={s.ctaMark} />
           <Eyebrow>Contact</Eyebrow>
-          <h2 className={s.h2}>Ready to Grow Your Accounting Firm?</h2>
-          <p className={s.p}>
-            Let&rsquo;s discuss your firm&rsquo;s goals, current marketing, and opportunities to attract more clients through Google. Tell us about your practice and the services you want to grow. You&rsquo;ll hear back directly, usually within 24 hours.
-          </p>
-          <Btn href={CAL} external>Speak to an Expert</Btn>
+          <h2 className={s.h2}>Let&rsquo;s Talk About Your Business.</h2>
+          <p className={s.p}>Whether you&rsquo;re an accounting firm or another professional service business, we&rsquo;d be glad to learn about your goals and where you want to grow.</p>
+          <p className={s.p}>Tell us what you&rsquo;re working toward, and we&rsquo;ll discuss whether Scale SEO is the right fit.</p>
+          <Btn href={CAL} external>Book a Strategy Call</Btn>
         </div>
       </div>
     </section>
