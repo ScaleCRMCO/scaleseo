@@ -4,7 +4,7 @@ import { faqs } from "./sections/home/FAQ";
 import v3 from "./sections/v3/v3.module.css";
 
 export const metadata: Metadata = {
-  title: { absolute: "Calgary SEO Company | Founder-Led SEO Services | Scale SEO" },
+  title: { absolute: "Scale SEO | Calgary SEO Agency for Accounting Firms" },
   description:
     "Calgary SEO services for professional service and B2B businesses. Work directly with an SEO specialist on a month-to-month campaign with no long-term contracts.",
   alternates: { canonical: "/" },
@@ -17,7 +17,7 @@ const webPageJsonLd = {
   "@type": "WebPage",
   "@id": "https://scaleseo.co/#webpage",
   url: "https://scaleseo.co/",
-  name: "Calgary SEO Company | Founder-Led SEO Services | Scale SEO",
+  name: "Scale SEO | Calgary SEO Agency for Accounting Firms",
   description:
     "Scale SEO is a Calgary SEO company providing ongoing SEO services for professional service and B2B businesses across Canada. Campaigns combine technical SEO, content, local SEO and website improvements to grow organic visibility and qualified traffic.",
   isPartOf: {

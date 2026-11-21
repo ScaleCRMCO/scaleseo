@@ -27,7 +27,7 @@ export function Hero() {
         <HeroMark className={s.heroMark} />
         <div className={s.heroText}>
           <Eyebrow>Calgary SEO Company for Accountants</Eyebrow>
-          <h1 className={s.h1}>SEO &amp; Google Ads for Accounting Firms</h1>
+          <h1 className={s.h1}>SEO for Accounting Firms &amp; Professional Services</h1>
           <p className={s.lead}>Good SEO should pay for itself. That&rsquo;s what we work toward.</p>
           <div className={s.heroActions}>
             <Btn href={CAL} external>Book A Strategy Call</Btn>
@@ -65,19 +65,16 @@ export function Intro() {
           <h2 id="intro-h" className={s.eyebrow}><Mark /><span>About Scale SEO</span></h2>
           <div>
             <p className={s.statement}>
-              Scale SEO is an independent search consultancy based in Calgary, Alberta, founded in 2025 by Corbin Jensen.
+              Scale SEO is an independent SEO consultancy founded in Calgary, Alberta, in 2025.
             </p>
             <div className={s.twoCol}>
               <p className={s.p}>
-                Our focus is accounting and professional services. Through our work with firms in Canada and Australia, we&rsquo;ve developed experience across corporate tax, bookkeeping, fractional CFO, and business advisory marketing.
+                We specialize in search strategy for accounting firms and professional service businesses, drawing on practical experience working with clients in Canada and Australia.
               </p>
               <p className={s.p}>
-                We combine technical SEO, website development, and Google Ads to help businesses improve how they&rsquo;re found online and reach the clients they want to work with.
+                Our work brings together technical SEO, content, and website development to help businesses improve their search presence and reach the clients they want to work with.
               </p>
             </div>
-            <p className={`${s.p} ${s.introNote}`}>
-              While accounting is our specialty, we also work with established businesses across consulting, construction, and other service industries.
-            </p>
           </div>
         </div>
         <div className={s.diffImg}>
