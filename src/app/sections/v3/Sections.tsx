@@ -106,11 +106,11 @@ function Points({ points, cols }: { points: DiffPoint[]; cols: 3 | 4 }) {
 
 /* 3. Services — Bilberrry numbered list on navy */
 const services = [
-  { href: "/services/seo", title: "SEO for Accounting Firms", desc: "Improve your visibility for searches related to corporate tax, bookkeeping, business advisory, and other valuable accounting services. Our SEO campaigns cover technical improvements, service page optimization, content development, and local search." },
-  { href: "/services/google-ads-management", title: "Google Ads Management", desc: "Reach potential clients actively searching for accounting and tax services. We build and manage targeted Google Ads campaigns, focusing on relevant searches, lead tracking, and ongoing performance improvements." },
-  { href: "/services/web-development", title: "Accounting Website Development", desc: "Professional websites designed to represent your firm, explain your services clearly, and make it easier for potential clients to get in touch. Every website is developed with search visibility, usability, and long-term growth in mind." },
-  { href: "/services/seo-audits", title: "SEO Audits & Consulting", desc: "Understand what’s holding your accounting website back. We review technical issues, keyword targeting, existing content, competitors, and opportunities to improve your search visibility." },
-  { href: "/services/geo", title: "AI Search Optimization", desc: "Help search engines and AI-powered platforms better understand your firm, its services, and areas of expertise. We improve website content, structured data, and business information to support visibility across evolving search experiences." },
+  { href: "/services/seo", icon: "M11 19a8 8 0 1 0 0-16 8 8 0 0 0 0 16zM21 21l-4.3-4.3M8 13l2-2 2 2 3-3", title: "SEO for Accounting Firms", desc: "Improve your visibility for searches related to corporate tax, bookkeeping, business advisory, and other valuable accounting services. Our SEO campaigns cover technical improvements, service page optimization, content development, and local search." },
+  { href: "/services/google-ads-management", icon: "M3 11l14-6v14L3 13zM7 12v6a2 2 0 0 0 4 0v-5M21 9v6", title: "Google Ads Management", desc: "Reach potential clients actively searching for accounting and tax services. We build and manage targeted Google Ads campaigns, focusing on relevant searches, lead tracking, and ongoing performance improvements." },
+  { href: "/services/web-development", icon: "M3 4h18v12H3zM8 20h8M12 16v4M9 8l-2 2 2 2M15 8l2 2-2 2", title: "Accounting Website Development", desc: "Professional websites designed to represent your firm, explain your services clearly, and make it easier for potential clients to get in touch. Every website is developed with search visibility, usability, and long-term growth in mind." },
+  { href: "/services/seo-audits", icon: "M9 3h6v3H9zM6 5H5v16h14V5h-1M9 12l2 2 4-4", title: "SEO Audits & Consulting", desc: "Understand what’s holding your accounting website back. We review technical issues, keyword targeting, existing content, competitors, and opportunities to improve your search visibility." },
+  { href: "/services/geo", icon: "M12 3l1.8 4.7L18.5 9.5 13.8 11.3 12 16l-1.8-4.7L5.5 9.5l4.7-1.8zM19 15l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z", title: "AI Search Optimization", desc: "Help search engines and AI-powered platforms better understand your firm, its services, and areas of expertise. We improve website content, structured data, and business information to support visibility across evolving search experiences." },
 ];
 
 export function Services() {
@@ -130,7 +130,7 @@ export function Services() {
           {services.map((x, i) => (
             <li key={x.href}>
               <Link href={x.href} className={s.listRow}>
-                <span className={s.listNum}>/ 0{i + 1}</span>
+                <span className={s.listIcon} aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d={x.icon} /></svg></span>
                 <span className={s.listName}>{x.title} <Corner /></span>
                 <span className={s.listDesc}>{x.desc}</span>
               </Link>

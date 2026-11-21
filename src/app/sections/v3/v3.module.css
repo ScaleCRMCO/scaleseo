@@ -208,3 +208,6 @@ h2.subhead { font-size: 20px !important; font-weight: 600 !important; }
 .ctaBox div.p { display: flex; flex-direction: column; gap: 12px; }
 .ctaBox div.p p { margin: 0; }
 .ctaBox .btn_line { border-color: rgba(254,254,254,0.35); color: #FEFEFE; }
+.listIcon { display: grid; place-items: center; width: 52px; height: 52px; border-radius: 12px; background: rgba(254, 254, 254, 0.07); border: 1px solid rgba(254, 254, 254, 0.12); color: #FEFEFE; transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease, transform 0.25s ease; }
+.listIcon svg { width: 26px; height: 26px; }
+.listRow:hover .listIcon { background: var(--blue); border-color: var(--blue); transform: translateY(-2px); }
