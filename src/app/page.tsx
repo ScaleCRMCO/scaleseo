@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Hero, Intro, Services, Cases, Help, Founder, Industries, Process, Why, Reviews, Faq, Blog, Cta } from "./sections/v3/Sections";
+import { Hero, Intro, Services, Cases, Founder, Industries, Process, Why, Reviews, Faq, Blog, Cta } from "./sections/v3/Sections";
 import { faqs } from "./sections/home/FAQ";
 import v3 from "./sections/v3/v3.module.css";
 
@@ -67,7 +67,6 @@ export default function Home() {
       <Intro />
       <Services />
       <Cases cases={accountingCases} />
-      <Help />
       <Founder />
       <Industries />
       <Process />

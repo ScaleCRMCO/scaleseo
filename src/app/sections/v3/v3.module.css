@@ -227,3 +227,8 @@ h2.subhead { font-size: 20px !important; font-weight: 600 !important; }
 .pillarTone2 { background: #0A2A6B; }
 .pillarTitle { margin: 0; font-size: 22px; line-height: 1.25; font-weight: 600; letter-spacing: -0.015em; }
 @media (max-width: 900px) { .pillar { grid-template-columns: 1fr; gap: 16px; padding: 28px 0; } }
+.indGrid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 64px; align-items: start; }
+.indBody { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
+.indLead { margin: 0 0 4px; font-size: clamp(24px, 2.2vw, 30px); line-height: 1.2; font-weight: 600; letter-spacing: -0.02em; }
+.indBody .btn { margin-top: 12px; }
+@media (max-width: 900px) { .indGrid { grid-template-columns: 1fr; gap: 28px; } }

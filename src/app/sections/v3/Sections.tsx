@@ -289,23 +289,18 @@ export function Industries() {
   return (
     <section className={`${s.navy} ${s.sec}`} id="industries" data-nav="dark" aria-labelledby="ind-h">
       <div className={s.wrap}>
-        <div className={s.head}>
+        <div className={s.indGrid}>
           <div>
             <Eyebrow>Industries</Eyebrow>
-            <h2 id="ind-h" className={s.h2}>Who We Work With</h2>
+            <h2 id="ind-h" className={s.h2}>Industries We Work With</h2>
           </div>
-          <div className={s.headSide}>
+          <div className={s.indBody}>
+            <h3 className={s.indLead}>Accounting Is Our Specialty.</h3>
+            <p className={s.p}>We work primarily with accounting firms, tax practices, bookkeepers, and financial advisory businesses.</p>
+            <p className={s.p}>Through our work with firms in Canada and Australia, we&rsquo;ve developed an understanding of how accounting services are searched for, compared, and selected.</p>
+            <p className={s.p}>We also work with established professional service businesses in consulting, construction, and other specialist industries.</p>
             <Btn href="/industries/accounting-firms" tone="light">Explore SEO for Accounting Firms</Btn>
           </div>
-        </div>
-        <div className={`${s.boxes} ${s.cols4}`}>
-          {industries.map((x, i) => (
-            <div key={x.title} className={s.box}>
-              <span className={s.listNum}>/ 0{i + 1}</span>
-              <h3 className={s.h3}>{x.title}</h3>
-              <p className={s.p}>{x.body}</p>
-            </div>
-          ))}
         </div>
       </div>
     </section>
