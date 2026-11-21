@@ -113,11 +113,11 @@ function Points({ points, cols }: { points: DiffPoint[]; cols: 3 | 4 }) {
 
 /* 3. Services — Bilberrry numbered list on navy */
 const services = [
-  { href: "/services/seo", icon: "M11 19a8 8 0 1 0 0-16 8 8 0 0 0 0 16zM21 21l-4.3-4.3M8 13l2-2 2 2 3-3", title: "SEO for Accounting Firms", desc: "Improve your visibility for searches related to corporate tax, bookkeeping, business advisory, and other valuable accounting services. Our SEO campaigns cover technical improvements, service page optimization, content development, and local search." },
-  { href: "/services/google-ads-management", icon: "M3 11l14-6v14L3 13zM7 12v6a2 2 0 0 0 4 0v-5M21 9v6", title: "Google Ads Management", desc: "Reach potential clients actively searching for accounting and tax services. We build and manage targeted Google Ads campaigns, focusing on relevant searches, lead tracking, and ongoing performance improvements." },
-  { href: "/services/web-development", icon: "M3 4h18v12H3zM8 20h8M12 16v4M9 8l-2 2 2 2M15 8l2 2-2 2", title: "Accounting Website Development", desc: "Professional websites designed to represent your firm, explain your services clearly, and make it easier for potential clients to get in touch. Every website is developed with search visibility, usability, and long-term growth in mind." },
-  { href: "/services/seo-audits", icon: "M9 3h6v3H9zM6 5H5v16h14V5h-1M9 12l2 2 4-4", title: "SEO Audits & Consulting", desc: "Understand what’s holding your accounting website back. We review technical issues, keyword targeting, existing content, competitors, and opportunities to improve your search visibility." },
-  { href: "/services/geo", icon: "M12 3l1.8 4.7L18.5 9.5 13.8 11.3 12 16l-1.8-4.7L5.5 9.5l4.7-1.8zM19 15l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z", title: "AI Search Optimization", desc: "Help search engines and AI-powered platforms better understand your firm, its services, and areas of expertise. We improve website content, structured data, and business information to support visibility across evolving search experiences." },
+  { href: "/services/seo", icon: "M11 19a8 8 0 1 0 0-16 8 8 0 0 0 0 16zM21 21l-4.3-4.3M8 13l2-2 2 2 3-3", title: "Search Engine Optimization", desc: "Technical SEO, content strategy, and ongoing website improvements designed to increase relevant organic visibility and attract better-fit enquiries." },
+  { href: "/services/geo", icon: "M12 3l1.8 4.7L18.5 9.5 13.8 11.3 12 16l-1.8-4.7L5.5 9.5l4.7-1.8zM19 15l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z", title: "AI Search Optimization", desc: "Helping search engines and AI-powered platforms better understand your business through clear content, structured information, and a stronger online presence." },
+  { href: "/services/web-development", icon: "M3 4h18v12H3zM8 20h8M12 16v4M9 8l-2 2 2 2M15 8l2 2-2 2", title: "Website Development", desc: "Professional, search-friendly websites built around your business, your services, and the people you want to reach." },
+  { href: "/services/google-ads-management", icon: "M3 11l14-6v14L3 13zM7 12v6a2 2 0 0 0 4 0v-5M21 9v6", title: "Google Ads Management", desc: "Targeted paid search campaigns to complement your organic strategy and help reach prospective clients actively searching for your services." },
+  { href: "/services/seo-audits", icon: "M9 3h6v3H9zM6 5H5v16h14V5h-1M9 12l2 2 4-4", title: "SEO Audits & Consulting", desc: "Detailed website reviews to identify technical issues, content gaps, and opportunities to improve your search performance." },
 ];
 
 export function Services() {
@@ -127,11 +127,12 @@ export function Services() {
         <div className={s.head}>
           <div>
             <Eyebrow>Services</Eyebrow>
-            <h2 id="services-h" className={s.h2}>SEO &amp; Digital Marketing for Accounting Firms</h2>
+            <h2 id="services-h" className={s.h2}>Search &amp; Website Services</h2>
           </div>
-          <p className={s.p}>
-            SEO, Google Ads, and your website shouldn&rsquo;t operate as separate marketing efforts. We bring them together around your firm&rsquo;s goals, whether that&rsquo;s attracting more corporate tax clients, growing monthly bookkeeping revenue, or expanding your advisory services.
-          </p>
+          <div className={s.headSide}>
+            <p className={s.p}>Good search visibility starts with a strong website, useful content, and a clear understanding of your market.</p>
+            <p className={s.p}>We bring these elements together through practical SEO strategies, supported by website development, AI search optimization, and Google Ads where appropriate.</p>
+          </div>
         </div>
         <ol className={s.list}>
           {services.map((x, i) => (
@@ -162,10 +163,10 @@ export function Cases({ cases }: { cases: Case[] }) {
         <div className={s.head}>
           <div>
             <Eyebrow>Scale SEO Client Work</Eyebrow>
-            <h2 id="cases-h" className={s.h2}>SEO Results From Real Accounting Firms</h2>
+            <h2 id="cases-h" className={s.h2}>Selected Client Results</h2>
           </div>
           <p className={s.p}>
-            We work with accounting firms to improve their search visibility, strengthen their websites, and attract more of the clients they want to serve. Here&rsquo;s a look at some of our work.
+            Our work is measured by what it achieves for the businesses we support. Here are two accounting firms we&rsquo;ve helped improve their websites and visibility on Google.
           </p>
         </div>
         <div className={s.cases}>
