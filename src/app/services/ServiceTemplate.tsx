@@ -41,6 +41,7 @@ export type ServiceTemplateProps = {
   primaryLabel?: string;
   primaryHref?: string;
   hideSecondary?: boolean;
+  statementHeading?: boolean;
   top?: ReactNode;
   title: string;
   heroLead: string;
@@ -109,7 +110,7 @@ export default function ServiceTemplate(p: ServiceTemplateProps) {
         <div className={`${v.wrap} ${s.labelled}`}>
           <span className={s.sideLabel}>{p.statementLabel}</span>
           <div>
-            <p className={s.statement}>{p.statement}</p>
+            {p.statementHeading ? <h2 className={`${s.statement} ${s.statementH2}`}>{p.statement}</h2> : <p className={s.statement}>{p.statement}</p>}
             {p.statementNote && <p className={s.note}>{p.statementNote}</p>}
             {p.statementBody && (
               <div className={s.stBody}>{p.statementBody.map((b) => <p key={b} className={v.p}>{b}</p>)}</div>
@@ -333,7 +334,7 @@ export default function ServiceTemplate(p: ServiceTemplateProps) {
             <h2 className={v.h2}>{p.cta.title}</h2>
             <div className={v.p}>{p.cta.lead}</div>
             <div className={s.ctaBtns}>
-              <Btn href={CAL} external>{p.primaryLabel ?? "Book a Strategy Call"}</Btn>
+              {p.primaryHref ? <Btn href={p.primaryHref}>{p.primaryLabel ?? "Book a Strategy Call"}</Btn> : <Btn href={CAL} external>{p.primaryLabel ?? "Book a Strategy Call"}</Btn>}
               {p.cta.secondary && <Btn href={p.cta.secondary.href} tone="line">{p.cta.secondary.label}</Btn>}
             </div>
           </div>

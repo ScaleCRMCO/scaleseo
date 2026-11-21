@@ -157,3 +157,12 @@
 @media (max-width: 900px) { .expBox { grid-template-columns: 1fr; gap: 28px; padding: 24px; } .expStats { grid-template-columns: 1fr; } }
 .auNote { max-width: 1360px; margin: 0 auto; padding: 0 40px 40px; font-size: 16px; color: rgba(8,20,35,0.7); } .auNote a { color: #081423; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
 .ctaLink { color: #FEFEFE; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.statementH2 { font-size: clamp(30px, 3.1vw, 44px) !important; font-weight: 600 !important; }
+.lessons { list-style: none; margin: 0; padding: 0; border-top: 1px solid rgba(8,20,35,0.12); }
+.lessons li { display: grid; grid-template-columns: 80px 1fr 1.4fr; gap: 32px; padding: 36px 0; border-bottom: 1px solid rgba(8,20,35,0.12); }
+.lessons .lnum { font-size: 14px; font-weight: 600; color: #0099FF; padding-top: 4px; }
+.lessons h3 { margin: 0; font-size: 21px; line-height: 1.3; font-weight: 600; }
+.lessons .lbody { display: flex; flex-direction: column; gap: 12px; }
+.lessons .lbody p { margin: 0; font-size: 16px; line-height: 1.6; color: rgba(8,20,35,0.72); }
+@media (max-width: 900px) { .lessons li { grid-template-columns: 1fr; gap: 10px; } }
+.secLabel { display: block; margin-bottom: 14px; font-size: 14px; font-weight: 600; color: #0077CC; }
