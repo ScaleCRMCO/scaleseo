@@ -28,9 +28,9 @@ const industryCases = [
 import styles from "./hub.module.css";
 
 export const metadata: Metadata = {
-  title: { absolute: "SEO for Accounting & Financial Firms | Scale SEO" },
+  title: { absolute: "Industries We Work With | Scale SEO" },
   description:
-    "Specialized SEO for CPA firms, tax accountants, bookkeeping practices, and financial advisory businesses in Canada and Australia. Explore Scale SEO's expertise.",
+    "Explore Scale SEO’s experience with accounting firms and professional service businesses across Canada and Australia. View our specialties and client results.",
   alternates: { canonical: "/industries" },
 };
 
@@ -104,8 +104,8 @@ const industriesJsonLd = {
       "@type": "CollectionPage",
       "@id": "https://scaleseo.co/industries#webpage",
       "url": "https://scaleseo.co/industries",
-      "name": "SEO for Accounting & Financial Firms | Scale SEO",
-      "description": "Specialized SEO for CPA firms, tax accountants, bookkeeping practices, and financial advisory businesses in Canada and Australia.",
+      "name": "Industries We Work With | Scale SEO",
+      "description": "Explore Scale SEO’s experience with accounting firms and professional service businesses across Canada and Australia. View our specialties and client results.",
       "isPartOf": {
         "@id": "https://scaleseo.co/#website"
       },
