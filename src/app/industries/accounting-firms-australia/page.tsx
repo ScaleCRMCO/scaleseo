@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Image from "next/image";
 import ServiceTemplate, { ICONS } from "../../services/ServiceTemplate";
 import tpl from "../../services/template.module.css";
@@ -16,37 +17,6 @@ export const metadata: Metadata = {
   alternates: { canonical: "/industries/accounting-firms-australia" },
   openGraph: { title: TITLE, description: DESCRIPTION, url: URL, images: ["/images/melbourne-skyline-bw.webp"] },
 };
-
-const services = [
-  { title: "Business Tax & BAS", body: "Reach companies looking for tax compliance, BAS lodgements and ongoing business accounting." },
-  { title: "SMSF Accounting", body: "Improve visibility for SMSF setup, administration, annual returns and compliance support." },
-  { title: "Bookkeeping & Payroll", body: "Reach businesses searching for ongoing bookkeeping, payroll and cloud accounting support." },
-  { title: "Business Advisory", body: "Build visibility for businesses seeking financial reporting, cash flow support and strategic accounting advice." },
-];
-
-const included = [
-  { title: "Keyword & Competitor Research", icon: "search", body: "We identify how prospective clients search for your services, where competing firms are visible, and which opportunities deserve attention." },
-  { title: "Service-Page SEO", icon: "page", body: ["We improve existing pages and develop new ones for services such as business tax, BAS, SMSF accounting, bookkeeping and advisory.", "Each page is built to answer relevant client questions and make it easier to get in touch."] },
-  { title: "Technical SEO", icon: "gear", body: "We work directly on website structure, indexing, internal links, metadata and structured data to improve your site\u2019s technical foundations." },
-  { title: "Accounting Content", icon: "pen", body: "We develop useful content around the questions Australian business owners search for, including EOFY planning, company tax, SMSF administration and business expenses." },
-  { title: "Local SEO", icon: "pin", body: "We improve your firm\u2019s presence in relevant local searches through Google Business Profile, location targeting and website improvements." },
-  { title: "Ongoing Optimization", icon: "chart", body: "We monitor performance, review new opportunities and continue improving your website as your firm\u2019s priorities evolve." },
-];
-
-const reasons = [
-  { title: "We\u2019ve Done the Work Before.", icon: ICONS.pin, body: "Our experience with Empire Accountants means we\u2019re familiar with Australian accounting services, their search markets and the content needed to represent them online." },
-  { title: "We Handle the Implementation.", icon: ICONS.gear, body: "We don\u2019t just provide recommendations. We can improve service pages, website structure, technical SEO and content directly." },
-  { title: "You\u2019ll Know Who\u2019s Doing the Work.", icon: ICONS.briefcase, body: "Your campaign is managed directly by the person responsible for its strategy and implementation, with clear communication and reporting." },
-  { title: "No Long-Term Lock-In Contracts.", icon: ICONS.chart, body: "Our monthly SEO engagements are flexible, with a strategy and scope tailored to your firm." },
-];
-
-const faqs = [
-  { q: "How much does SEO cost for an Australian accounting firm?", a: ["Every campaign is quoted individually in AUD. Pricing depends on your website, competition, target services and the work required."] },
-  { q: "How long does accounting SEO take?", a: ["SEO typically takes several months to develop. We review your website and competitive market before recommending priorities and discussing realistic expectations."] },
-  { q: "Can you help us attract more business clients?", a: ["Yes. We can focus your SEO campaign on business tax, BAS, bookkeeping, SMSF and advisory services rather than general accounting searches alone."] },
-  { q: "Can you manage Google Ads alongside SEO?", a: ["Yes. We also manage Google Ads, allowing your firm to reach prospective clients through paid search while building its organic visibility."] },
-  { q: "Do you only work with Brisbane firms?", a: ["No. We work remotely with accounting firms throughout Australia. Our existing Australian accounting experience includes Empire Accountants in Brisbane."] },
-];
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -152,6 +122,29 @@ const jsonLd = {
   ]
 };
 
+const services = [
+  { title: "Business Tax & BAS", body: "For firms supporting companies with tax compliance, BAS and IAS lodgements, company tax returns, and ongoing accounting obligations." },
+  { title: "SMSF Accounting", body: "For practices providing SMSF setup, administration, annual reporting, tax compliance and audit coordination." },
+  { title: "Bookkeeping & Payroll", body: "For firms looking to build recurring client relationships through bookkeeping, payroll, cloud accounting and financial reporting." },
+  { title: "Business Advisory", body: "For practices working with business owners on financial performance, cash flow planning, budgeting and strategic decisions." },
+];
+
+const lessons: { title: string; body: React.ReactNode[] }[] = [
+  { title: "Business Clients Search Differently", body: ["Someone looking for help with an individual tax return has different needs from a company seeking ongoing accounting and advisory support.", "For firms prioritising business clients, broad accounting traffic isn’t always the most valuable opportunity.", "We consider the type of client behind each search and whether the service aligns with the firm’s commercial priorities."] },
+  { title: "Established Websites Still Have Room to Improve", body: ["A website doesn’t always need replacing to perform better.", "With Empire Accountants, we focused on improving the existing website by expanding important service pages, strengthening navigation, and creating clearer relationships between related content.", "That allowed us to build on what the firm already had rather than starting again."] },
+  { title: "Complex Services Need Clear Explanations", body: ["Business tax, BAS, SMSF accounting and advisory services involve different obligations, processes and client questions.", "Presenting these services clearly helps prospective clients understand what a firm offers and whether it suits their needs.", "Our work has included developing more useful information around specialist accounting services and connecting it with relevant supporting articles."] },
+  { title: "Local Search Matters, Even for Business-Focused Firms", body: ["Many businesses still look for an accountant in their city or surrounding area.", "We’ve worked on strengthening Empire Accountants’ local search presence in Brisbane through service-page improvements, business information, technical SEO and local optimisation.", "The right approach depends on where a firm operates and the clients it intends to serve."] },
+];
+
+const faqs = [
+  { q: "How much does SEO cost for an Australian accounting firm?", a: ["Australian campaigns are quoted individually in AUD. Pricing depends on your website, competition, target services and the work required."] },
+  { q: "Do you work with accounting firms outside Brisbane?", a: ["Yes. We work remotely with accounting firms across Australia. Our existing Australian accounting experience includes Empire Accountants in Brisbane."] },
+  { q: "How long does accounting SEO take?", a: ["SEO usually takes several months to produce meaningful improvements. The timeframe depends on your website’s current condition, competition and the changes required.", "We review those factors before establishing priorities and discussing realistic expectations."] },
+  { q: "Can you help our firm attract more business clients?", a: ["Yes. We can focus your search strategy on business tax, BAS, SMSF, bookkeeping and advisory services rather than pursuing general accounting traffic alone."] },
+  { q: "Can you develop content for Australian accounting services?", a: ["Yes. We develop and improve service pages, educational articles and supporting website content.", "Technical tax and accounting information should be reviewed by a qualified professional at your firm before publication."] },
+  { q: "Do you work with competing accounting firms?", a: ["We review potential conflicts before accepting new accounting engagements and avoid working with directly competing firms targeting the same services and customers in the same agreed market."] },
+];
+
 const Icon = ({ d }: { d: string }) => (
   <span className={v.icon} aria-hidden="true">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d={d} /></svg>
@@ -166,106 +159,149 @@ export default function AccountingFirmsAustraliaPage() {
         crumb="Accounting Firms Australia"
         parent={{ name: "Industries", href: "/industries" }}
         primaryLabel="Book a Consultation"
+        heroSecondary={{ href: "/results/empire-accountants", label: "View Our Australian Client Work" }}
         title="SEO for Accounting Firms in Australia"
-        heroLead="Get your accounting firm in front of more businesses searching for tax, bookkeeping, SMSF and advisory services."
+        heroLead="Specialist SEO for Australian accounting firms looking to grow their business tax, bookkeeping, SMSF and advisory services."
         heroImage={{ src: "/images/gsc-performance-mockup-3d.webp", alt: "Google Search Console performance data showing clicks and impressions growth" }}
-        heroSecondary={{ href: "/results/empire-accountants", label: "Empire Accountants Case Study" }}
         statementLabel="Australian accounting firms"
-        statement="We’ve helped Australian accounting practices improve their Google rankings, strengthen their websites, and attract more relevant client enquiries."
-        statementNote="Accounting industry experience · Hands-on SEO & web development · Month-to-month engagements"
+        statementHeading
+        statement="Better Visibility. Better-Fit Clients."
+        statementNote="Accounting industry experience · Hands-on implementation · Flexible monthly engagements"
+        statementBody={[
+          "More traffic isn’t always the answer. For an accounting firm looking to grow its business client base, attracting another hundred personal tax enquiries may not be particularly useful.",
+          "We work with Australian accounting practices to strengthen their websites, improve visibility for commercially relevant searches, and reach the clients they want to work with. Our approach is shaped by hands-on experience with Australian accounting websites, not a standard agency playbook.",
+        ]}
         top={
           <section className={`${v.white} ${v.sec}`} style={{ paddingTop: 0 }}>
             <div className={v.wrap}>
               <div className={tpl.svcIntro}>
-                <h2 className={v.h2}>We Know the Australian Accounting Market.</h2>
+                <h2 className={v.h2}>We Understand the Business Behind the Search.</h2>
                 <div>
-                  <p className={tpl.fitLabel}>Accounting is competitive, particularly when firms are trying to attract business clients rather than individual tax returns.</p>
-                  <p className={v.p}>We&rsquo;ve worked directly with Australian accounting practices, improving their websites and search visibility for services such as business tax, BAS, SMSF administration, bookkeeping and business advisory.</p>
-                  <p className={v.p}>That experience means we understand the difference between attracting more website traffic and reaching the clients your firm actually wants.</p>
-                </div>
-              </div>
-              <div className={tpl.expBox}>
-                <div className={tpl.expImg}>
-                  <Image src="/images/empire-accountants-cover.webp" alt="Empire Accountants, a Brisbane accounting firm and Scale SEO client" fill sizes="(max-width: 900px) 100vw, 560px" />
-                </div>
-                <div className={tpl.expText}>
-                  <h3 className={v.h3}>Experience You Can See.</h3>
-                  <p className={tpl.expClient}>Empire Accountants &mdash; Brisbane, Australia</p>
-                  <div className={tpl.expStats}>
-                    <div><strong>Page 5 &rarr; Page 1</strong><span>Priority Google keyword rankings</span></div>
-                    <div><strong>2&times;</strong><span>Organic search impressions and clicks</span></div>
-                    <div><strong>Regular enquiries</strong><span>New client opportunities through the firm&rsquo;s online presence</span></div>
-                  </div>
-                  <p className={v.p}>Our ongoing work with Empire Accountants has included technical SEO, service-page development, local search improvements and content focused on Australian business accounting.</p>
-                  <Btn href="/results/empire-accountants" tone="navy">Explore the Empire Accountants Case Study</Btn>
-                  <p className={tpl.splitSmall}><em>Results reflect one client engagement and are not a guarantee of future performance.</em></p>
+                  <p className={tpl.fitLabel}>Accounting firms don&rsquo;t all compete for the same work.</p>
+                  <p className={v.p}>Some focus on business tax and compliance. Others want to expand into SMSF administration, recurring bookkeeping, or higher-value business advisory engagements.</p>
+                  <p className={v.p}>Those differences matter when deciding which services to promote and how a website should be structured.</p>
+                  <p className={v.p}>Through our ongoing work with Empire Accountants in Brisbane, we&rsquo;ve gained practical experience with the way Australian accounting firms present their services and compete for relevant searches.</p>
+                  <p className={v.p}>Our focus is on connecting a firm&rsquo;s expertise with the businesses looking for it.</p>
                 </div>
               </div>
             </div>
           </section>
         }
-        included={{
-          title: "Your Website and SEO, Taken Care Of.",
-          lead: "From research and strategy to website improvements and reporting, we handle the work needed to strengthen your firm\u2019s organic search presence. No standard packages or unnecessary deliverables. We focus on the opportunities that make sense for your firm.",
-          items: included,
-          cta: { href: "/services/seo", label: "Explore Our SEO Services" },
-          image: { src: "/images/melbourne-skyline-bw.webp", alt: "Black and white view of the downtown Melbourne skyline in Victoria, Australia" },
-        }}
         feature={
-          <section className={`${v.white} ${v.sec}`}>
+          <section className={`${v.grey} ${v.sec}`}>
             <div className={v.wrap}>
               <div className={tpl.svcIntro}>
-                <h2 className={v.h2}>Built Around the Clients You Want.</h2>
                 <div>
-                  <p className={tpl.fitLabel}>Not every accounting firm wants more individual tax returns.</p>
-                  <p className={v.p}>You might be looking to grow your business advisory work, take on larger companies, or build a stronger base of recurring bookkeeping and tax clients.</p>
-                  <p className={v.p}>We start by understanding your firm&rsquo;s priorities, then focus your SEO campaign on the services and searches that support them.</p>
+                  <span className={tpl.secLabel}>Our work in Brisbane</span>
+                  <h2 className={v.h2}>Empire Accountants: Strengthening an Established Search Presence</h2>
+                </div>
+                <div>
+                  <p className={tpl.fitLabel}>Empire Accountants is a Brisbane accounting and business advisory firm providing taxation, bookkeeping, SMSF and advisory services.</p>
+                  <p className={v.p}>When we began working together, the firm already had an established website and experienced accounting team. The opportunity was to improve how its existing services were presented, connected and discovered through search.</p>
+                  <p className={v.p}>Our ongoing work has included improving service pages, strengthening internal links, developing Australian accounting content, and addressing technical and local SEO opportunities.</p>
                 </div>
               </div>
-              <div className={tpl.svcGrid}>
-                {services.map((x) => (
-                  <div key={x.title}>
-                    <h3 className={v.h3}>{x.title}</h3>
-                    <p className={v.p}>{x.body}</p>
+              <div className={tpl.expBox} style={{ background: "#FEFEFE" }}>
+                <div className={tpl.expImg}><Image src="/images/empire-accountants-cover.webp" alt="Empire Accountants, a Brisbane accounting firm and Scale SEO client" fill sizes="(max-width: 900px) 100vw, 560px" /></div>
+                <div className={tpl.expText}>
+                  <div className={tpl.expStats}>
+                    <div><strong>Page 5 &rarr; Page 1</strong><span>Priority commercial keyword rankings</span></div>
+                    <div><strong>2&times;</strong><span>Organic search impressions and clicks</span></div>
+                    <div><strong>Regular enquiries</strong><span>New client opportunities through the firm&rsquo;s online presence</span></div>
                   </div>
-                ))}
+                  <p className={v.p}>The improvements reflect ongoing work across the website, rather than one isolated change.</p>
+                  <Btn href="/results/empire-accountants" tone="navy">Read the Empire Accountants Case Study</Btn>
+                  <p className={tpl.splitSmall}><em>Results reflect an individual client engagement and do not guarantee equivalent outcomes.</em></p>
+                </div>
               </div>
             </div>
           </section>
         }
         feature2={
-          <section className={`${v.grey} ${v.sec}`}>
-            <div className={v.wrap}>
-              <div className={v.head}><div><h2 className={v.h2}>Why Work With Scale SEO?</h2></div></div>
-              <div className={`${v.points} ${v.cols4}`}>
-                {reasons.map((r) => (
-                  <div key={r.title} className={v.point}>
-                    <Icon d={r.icon} />
-                    <h3 className={v.h3}>{r.title}</h3>
-                    <p className={v.p}>{r.body}</p>
-                  </div>
-                ))}
+          <>
+            <section className={`${v.white} ${v.sec}`}>
+              <div className={v.wrap}>
+                <div className={v.head}>
+                  <div><h2 className={v.h2}>What We&rsquo;ve Learned Working With Australian Accountants</h2></div>
+                  <p className={v.p}>Working directly with an Australian accounting firm has given us a clearer understanding of where search strategy can make a difference.</p>
+                </div>
+                <ol className={tpl.lessons}>
+                  {lessons.map((l, i) => (
+                    <li key={l.title}>
+                      <span className={tpl.lnum}>0{i + 1}</span>
+                      <h3>{l.title}</h3>
+                      <div className={tpl.lbody}>{l.body.map((b, j) => <p key={j}>{b}</p>)}</div>
+                    </li>
+                  ))}
+                </ol>
               </div>
-            </div>
-          </section>
+            </section>
+            <section className={`${v.grey} ${v.sec}`}>
+              <div className={v.wrap}>
+                <div className={tpl.svcIntro}>
+                  <h2 className={v.h2}>Different Services. Different Opportunities.</h2>
+                  <div>
+                    <p className={tpl.fitLabel}>Every accounting practice has its own priorities. The work we recommend depends on which services your firm wants to grow.</p>
+                    <p className={v.p}>Rather than pursuing every accounting keyword, we focus on the opportunities relevant to your firm&rsquo;s services and target clients.</p>
+                    <div><Btn href="/services/seo" tone="navy">Explore Our SEO Services</Btn></div>
+                  </div>
+                </div>
+                <div className={tpl.svcGrid}>
+                  {services.map((x) => (
+                    <div key={x.title}>
+                      <h3 className={v.h3}>{x.title}</h3>
+                      <p className={v.p}>{x.body}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+            <section className={`${v.white} ${v.sec}`}>
+              <div className={v.wrap}>
+                <div className={tpl.svcIntro}>
+                  <h2 className={v.h2}>Working With Scale SEO</h2>
+                  <div>
+                    <p className={tpl.fitLabel}>We&rsquo;re an independent SEO consultancy based in Calgary, Canada, with established client relationships in Australia.</p>
+                    <p className={v.p}>Our approach is straightforward.</p>
+                  </div>
+                </div>
+                <div className={`${v.points} ${v.cols4}`}>
+                  {[
+                    { title: "Direct Involvement", icon: ICONS.briefcase, body: <>Your campaign is led by Scale SEO founder <Link href="/corbin-jensen" className={v.inlineLink}>Corbin Jensen</Link>, with hands-on involvement in strategy and implementation.</> },
+                    { title: "Practical Implementation", icon: ICONS.gear, body: <>We work directly on the website, from content and internal linking to technical improvements and ongoing optimisation.</> },
+                    { title: "Flexible Engagements", icon: ICONS.chart, body: <>Our ongoing SEO arrangements operate month-to-month, without lengthy lock-in contracts.</> },
+                    { title: "Clear Communication", icon: ICONS.pin, body: <>We maintain regular communication, explain what we&rsquo;re working on, and report on the performance that matters to your business.</> },
+                  ].map((r) => (
+                    <div key={r.title} className={v.point}>
+                      <Icon d={r.icon} />
+                      <h3 className={v.h3}>{r.title}</h3>
+                      <p className={v.p}>{r.body}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+          </>
         }
         fit={{
-          title: "Working With Australian Accounting Firms.",
-          label: "Scale SEO is based in Calgary, Canada, and works remotely with accounting practices across Australia.",
+          title: "Supporting Australian Accounting Firms, Wherever They’re Based.",
+          label: "Although Scale SEO is headquartered in Calgary, we’ve built working relationships with businesses in Australia, including Empire Accountants in Brisbane.",
           body: (
             <>
-              <p>We&rsquo;ve already established working relationships with Brisbane businesses and are familiar with managing websites, SEO campaigns and communication across time zones.</p>
-              <p>Australian campaigns are quoted individually in AUD, based on your website, competition and the services you want to grow.</p>
+              <p>We manage our Australian engagements remotely, with direct communication and a practical understanding of working across time zones.</p>
+              <p>Campaigns are individually scoped and quoted in <strong>Australian dollars (AUD)</strong>, based on your website, competitive market and business priorities.</p>
+              <p><a href="https://cal.com/corbinjensen-scaleseo/30min" target="_blank" rel="noopener noreferrer">Book a Consultation</a></p>
             </>
           ),
         }}
         faqs={faqs}
         cta={{
-          title: "Let\u2019s See What Your Firm Could Be Missing.",
+          title: "Let’s Talk About Your Firm.",
           lead: (
             <>
-              <p>Tell us about your website and the accounting services you&rsquo;re looking to grow.</p>
-              <p>We&rsquo;ll review your current search presence, discuss the opportunities in your market, and see whether we&rsquo;re the right fit.</p>
+              <p>Tell us about your accounting practice, the clients you want to reach, and the services you&rsquo;d like to grow.</p>
+              <p>We&rsquo;ll discuss your existing search presence, the opportunities worth considering, and whether Scale SEO is the right fit.</p>
+              <p>Based in Canada? <Link href="/industries/accounting-firms" className={tpl.ctaLink}>Explore our Canadian accounting SEO services</Link>.</p>
             </>
           ),
         }}
