@@ -399,7 +399,7 @@ export default function LawFirmsPage() {
       <section className={t.prioSection} style={{ background: "var(--h-navy)", color: "var(--h-white)" }}>
         <h2 className={t.prioTitle}>Law Firm SEO Pricing</h2>
         <div className={t.prioRow}>
-          <p className={t.prioLabel}>Ongoing SEO services start at $3,000 CAD per month, plus applicable taxes.</p>
+          <p className={t.prioLabel}>Ongoing SEO services start at $4,500 CAD per month, plus applicable taxes.</p>
           <div className={t.prioBody}>
             <p>
               Every campaign is scoped around your website, practice areas,

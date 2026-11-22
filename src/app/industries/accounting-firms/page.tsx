@@ -108,7 +108,7 @@ const lessons: { title: string; body: React.ReactNode[] }[] = [
 ];
 
 const faqs = [
-  { q: "How much does SEO cost for an accounting firm?", a: ["Our ongoing SEO engagements start at $3,000 CAD per month, plus applicable GST. Pricing depends on your website, target services, competition, and the work required."] },
+  { q: "How much does SEO cost for an accounting firm?", a: ["Our ongoing SEO engagements start at $4,500 CAD per month, plus applicable GST. Pricing depends on your website, target services, competition, and the work required."] },
   { q: "How long does accounting SEO take?", a: ["SEO generally takes several months to produce meaningful results. The timeline depends on your existing website, competition, and the changes required. We establish realistic priorities after reviewing your current search presence."] },
   { q: "Can you help our firm attract more corporate tax and business clients?", a: ["Yes. We can prioritize corporate tax, bookkeeping, fractional CFO, and business advisory searches rather than focusing exclusively on general accounting keywords."] },
   { q: "Can you develop content for our accounting website?", a: ["Yes. We develop service pages, educational articles, and other supporting website content. Technical tax and accounting information should be reviewed by a qualified professional at your firm before publication."] },
@@ -259,7 +259,7 @@ export default function AccountingFirmsPage() {
           body: (
             <>
               <p>Whether your firm operates in one city or serves clients nationally, we develop search strategies around your services, competition, and business objectives.</p>
-              <p>Monthly SEO engagements start at <strong>$3,000 CAD, plus applicable GST</strong>. Final pricing depends on the scope of your website and campaign.</p>
+              <p>Monthly SEO engagements start at <strong>$4,500 CAD, plus applicable GST</strong>. Final pricing depends on the scope of your website and campaign.</p>
               <p><Link href="/pricing">View Our Pricing</Link></p>
             </>
           ),

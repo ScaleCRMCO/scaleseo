@@ -88,7 +88,7 @@ const pricingPoints = [
 
 const faqs: FaqItem[] = [
   { q: "How long does SEO take to work?", a: ["SEO typically takes several months to produce meaningful improvements. Timelines depend on your website\u2019s existing visibility, competition, and the work required."] },
-  { q: "How much do SEO services cost?", a: ["Ongoing SEO starts at $3,000 CAD per month, plus applicable GST. Final pricing reflects your website, target markets, and campaign requirements."] },
+  { q: "How much do SEO services cost?", a: ["Ongoing SEO starts at $4,500 CAD per month, plus applicable GST. Final pricing reflects your website, target markets, and campaign requirements."] },
   { q: "Do you provide SEO outside Calgary?", a: ["Yes. Scale SEO is based in Calgary and works with businesses across Canada and Australia, with particular experience in accounting and professional services."] },
   { q: "Can you make SEO changes directly to our website?", a: ["Yes. Our services include hands-on implementation, from technical fixes and page optimization to content and website improvements. The exact scope depends on your website platform and engagement."] },
   { q: "Do you guarantee Google rankings?", a: ["No. Search rankings are influenced by competition, Google\u2019s algorithms, and other factors outside any agency\u2019s control. We focus on measurable improvements, relevant visibility, and sustainable growth."] },
@@ -289,7 +289,7 @@ export default function SeoServicePage() {
         }}
         pricing={{
           title: "Monthly SEO Pricing",
-          price: "$3,000 CAD",
+          price: "$4,500 CAD",
           unit: "per month + applicable GST",
           body: ["Our monthly SEO campaigns are scoped around your website, competitive market, and business objectives.", "Rather than fixed packages, we prioritize the work your website needs."],
           points: pricingPoints,

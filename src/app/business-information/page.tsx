@@ -40,13 +40,13 @@ const services = [
   {
     name: "SEO Services",
     href: "/services/seo",
-    price: "From $3,000 + GST per month",
+    price: "From $4,500 + GST per month",
     desc: "Ongoing SEO campaigns covering technical SEO, on-page optimization, content, local SEO, internal linking, website improvements, and reporting.",
   },
   {
     name: "National SEO",
     href: "/services/national-seo",
-    price: "From $3,000 + GST per month",
+    price: "From $4,500 + GST per month",
     desc: "SEO for businesses serving customers across Canada or another country rather than one city, including national keyword and competitor research, technical SEO, service page optimization, content strategy, website structure, and reporting.",
   },
   {

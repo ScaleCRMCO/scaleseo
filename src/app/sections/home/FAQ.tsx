@@ -12,7 +12,7 @@ export const faqs: { q: string; a: string[] }[] = [
   {
     q: "How much does SEO for accounting firms cost?",
     a: [
-      "Our ongoing SEO services start at $3,000 CAD per month, with the scope tailored to your firm\u2019s needs.",
+      "Our ongoing SEO services start at $4,500 CAD per month, with the scope tailored to your firm\u2019s needs.",
       "We also offer Google Ads management and website development. Combined services are quoted based on the work required.",
     ],
   },

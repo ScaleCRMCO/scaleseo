@@ -179,7 +179,7 @@ const faqs: FaqItem[] = [
   {
     q: "How much do on-page SEO services cost?",
     a: [
-      "On-page optimization is included in our ongoing SEO services, which start at $3,000 CAD per month plus applicable taxes.",
+      "On-page optimization is included in our ongoing SEO services, which start at $4,500 CAD per month plus applicable taxes.",
       "For businesses that need a specific set of improvements, we can also discuss a one-time project based on the work required.",
       "[View SEO Pricing](/pricing)",
     ],

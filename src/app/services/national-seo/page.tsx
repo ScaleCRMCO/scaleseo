@@ -176,7 +176,7 @@ const faqs: FaqItem[] = [
   {
     q: "How much do national SEO services cost?",
     a: [
-      "Ongoing SEO services at Scale SEO start from $3,000 CAD per month, plus applicable taxes.",
+      "Ongoing SEO services at Scale SEO start from $4,500 CAD per month, plus applicable taxes.",
       "The cost of a national campaign depends on your website, target market, competition, and the work required.",
       "[View SEO Pricing](/pricing)",
     ],
