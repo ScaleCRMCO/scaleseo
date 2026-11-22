@@ -9,6 +9,11 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: "/industries/law-firms",
+        destination: "/industries",
+        statusCode: 301,
+      },
+      {
         source: "/services/on-page-seo",
         destination: "/services/seo",
         statusCode: 301,

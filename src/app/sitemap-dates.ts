@@ -15,7 +15,6 @@ export const pageDates: Record<string, string> = {
   "/industries": "2026-11-21",
   "/industries/accounting-firms": "2026-11-22",
   "/industries/accounting-firms-australia": "2026-11-21",
-  "/industries/law-firms": "2026-11-22",
   "/results": "2026-11-20",
   "/results/jensen-cpa": "2026-11-20",
   "/results/empire-accountants": "2026-11-14",
