@@ -1,18 +1,35 @@
 /* Pricing — Bilberrry work-index layout on the shared v3 system */
-.hero { padding: 152px 0 72px; }
-.crumbs { margin-bottom: 40px; }
+.hero { position: relative; overflow: hidden; padding: 140px 0 56px; background: radial-gradient(ellipse 85% 70% at 50% 100%, rgba(0, 153, 255, 0.22) 0%, rgba(0, 153, 255, 0.08) 45%, rgba(254, 254, 254, 0) 75%), #FEFEFE; }
+.heroInner { display: flex; flex-direction: column; align-items: center; text-align: center; }
+.eyebrow { margin-top: 8px; font-size: 15px; font-weight: 600; color: #0099FF; }
+.heroP { margin: 14px 0 0; max-width: 620px; font-size: 16px; line-height: 1.6; color: rgba(8, 20, 35, 0.72); }
+.badges { display: flex; align-items: center; justify-content: center; gap: 36px; margin-top: 56px; }
+.badges a { display: block; transition: transform 0.2s ease; }
+.badges a:hover { transform: translateY(-2px); }
+.trusted { margin: 56px 0 0; font-size: 16px; font-weight: 500; color: #081423; }
+.marquee { margin-top: 32px; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); }
+.track { display: flex; width: max-content; animation: scroll 40s linear infinite; }
+.logoCell { flex: none; display: flex; align-items: center; justify-content: center; width: 260px; height: 64px; }
+.logoCell img { width: auto; max-width: 180px; object-fit: contain; filter: grayscale(1); opacity: 0.75; }
+@keyframes scroll { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .track { animation: none; } }
+.factorsEnd { display: flex; flex-direction: column; gap: 12px; margin-top: 28px; }
+.personal { display: flex; flex-direction: column; gap: 16px; max-width: 720px; }
+.personalLead { margin: 0; font-size: 24px; line-height: 1.4; font-weight: 500; letter-spacing: -0.015em; }
+.personalEnd { margin: 12px 0 0; padding-top: 20px; border-top: 1px solid rgba(254, 254, 254, 0.16); font-size: 20px; font-weight: 600; color: #0099FF; }
+.crumbs { margin-bottom: 40px; align-self: flex-start; }
 .labelled { display: grid; grid-template-columns: 1fr 2fr; gap: 64px; }
 .sideLabel { padding-top: 14px; font-size: 15px; font-weight: 600; }
-.h1 { margin: 0; max-width: 18ch; font-size: clamp(40px, 4.4vw, 60px); line-height: 1.04; font-weight: 600; letter-spacing: -0.035em; }
-.lead { margin: 24px 0 0; max-width: 680px; font-size: 20px; line-height: 1.5; color: #081423; }
+.h1 { margin: 16px 0 0; max-width: 16ch; font-size: clamp(42px, 6vw, 84px); line-height: 1.02; font-weight: 600; letter-spacing: -0.035em; }
+.lead { margin: 28px 0 8px; max-width: 640px; font-size: 20px; line-height: 1.5; font-weight: 500; color: #081423; }
 .cols2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 32px; padding-top: 32px; border-top: 1px solid rgba(8, 20, 35, 0.12); }
 
-.plansSec { padding-bottom: 112px; }
+.plansSec { padding: 64px 0 112px; }
 .tabsBar { position: sticky; top: 72px; z-index: 5; background: #FEFEFE; border-top: 1px solid rgba(8, 20, 35, 0.1); border-bottom: 1px solid rgba(8, 20, 35, 0.1); }
 .tabs { display: flex; gap: 40px; overflow-x: auto; scrollbar-width: none; }
 .tab { flex: none; padding: 22px 0 20px; border-bottom: 2px solid transparent; color: rgba(8, 20, 35, 0.6); font-size: 16px; font-weight: 500; text-decoration: none; transition: color 0.2s ease, border-color 0.2s ease; }
 .tab:hover { color: #081423; border-bottom-color: #0099FF; }
-.plansNote { margin: 40px 0 0; max-width: 760px; font-size: 14px; line-height: 1.55; color: rgba(8, 20, 35, 0.6); }
+.plansNote { margin: 0; max-width: 760px; font-size: 14px; line-height: 1.55; color: rgba(8, 20, 35, 0.6); }
 
 .row { display: grid; grid-template-columns: 1.15fr 1fr; gap: 80px; align-items: center; padding: 88px 0; border-bottom: 1px solid rgba(8, 20, 35, 0.1); scroll-margin-top: 150px; }
 .flip .pricePanel { order: -1; }
@@ -38,14 +55,17 @@
 .factors li { display: grid; grid-template-columns: 64px 1fr 1.4fr; gap: 24px; padding: 28px 0; border-bottom: 1px solid rgba(8, 20, 35, 0.12); }
 .num { font-size: 14px; color: rgba(8, 20, 35, 0.55); padding-top: 3px; }
 
-.cta { display: grid !important; grid-template-columns: 1.3fr 1fr; gap: 64px; align-items: center; }
+.cta { display: grid !important; grid-template-columns: minmax(0, 760px); gap: 64px; align-items: center; }
 .cta > div { display: flex; flex-direction: column; align-items: flex-start; gap: 20px; }
 .points { list-style: none; margin: 0; padding: 0; position: relative; }
 .points li { position: relative; padding: 14px 0 14px 24px; border-bottom: 1px solid rgba(254, 254, 254, 0.14); font-size: 16px; line-height: 1.45; }
 .points li::before { content: ""; position: absolute; left: 0; top: 1.3em; width: 8px; height: 8px; background: #0099FF; }
 
 @media (max-width: 900px) {
-  .hero { padding: 112px 0 48px; }
+  .hero { padding: 112px 0 40px; }
+  .badges { gap: 24px; margin-top: 40px; }
+  .logoCell { width: 180px; }
+  .personalLead { font-size: 20px; }
   .labelled, .cols2, .row, .cta { grid-template-columns: 1fr; gap: 28px; }
   .sideLabel { padding-top: 0; }
   .tabsBar { top: 64px; }
@@ -59,3 +79,5 @@
 }
 .summaryWrap { display: flex; flex-direction: column; gap: 12px; }
 .heroBtn { margin-top: 32px; }
+.navyLink { color: #FEFEFE; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.navyLink:hover { color: #0099FF; }

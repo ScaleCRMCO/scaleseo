@@ -7,10 +7,12 @@ import { Btn } from "../sections/v3/ui";
 import { Faq } from "../sections/v3/Sections";
 import styles from "./page.module.css";
 
+const DESC = "Founder-led SEO from $4,500 CAD/month and website development from $6,000 CAD. Individually scoped engagements for accounting firms and professional services.";
+
 export const metadata: Metadata = {
   title: { absolute: "SEO & Website Development Pricing | Scale SEO" },
   description:
-    "Explore SEO pricing from $3,000 CAD/month and custom website development from $6,000. Flexible SEO, Google Ads, and web development services.",
+    DESC,
   alternates: { canonical: "/pricing" },
 };
 
@@ -18,180 +20,84 @@ const BOOKING_URL = "https://cal.com/corbinjensen-scaleseo/30min";
 
 const plans = [
   {
-    "id": "monthly-seo",
-    "tab": "Monthly SEO",
-    "name": "Monthly SEO Management",
-    "price": "$3,000",
-    "unit": "/month + applicable GST",
-    "summary": [
-      "Ongoing SEO campaigns designed to improve your visibility on Google and attract more qualified enquiries.",
-      "We combine technical improvements, content strategy, and website development to help your business compete for the searches that matter."
+    id: "monthly-seo",
+    name: "Monthly SEO Management",
+    price: "$4,500",
+    unit: "CAD / month",
+    tagline: "An ongoing partnership, built around your business.",
+    body: [
+      "Good SEO requires more than a monthly checklist.",
+      "We work closely with a select number of businesses, taking responsibility for the strategy and implementation needed to improve their search presence.",
+      "Some months call for technical work and website improvements. Others require new content, competitor research, or authority development. We focus on what needs attention rather than working toward arbitrary page or word-count quotas.",
     ],
-    "listLabel": "Campaigns can include:",
-    "includes": [
-      "Technical SEO and website optimization",
-      "Keyword research and competitor analysis",
-      "Service-page development and on-page SEO",
-      "Local SEO and Google Business Profile optimization",
-      "Content strategy and internal linking",
-      "AI search visibility optimization",
-      "Monthly performance reporting"
+    listLabel: "Your engagement can include:",
+    includes: [
+      "SEO strategy, research, and ongoing implementation",
+      "Technical SEO and website improvements",
+      "Service-page development and content strategy",
+      "Local and national search optimization",
+      "Digital PR and relevant authority development",
+      "AI search optimization",
+      "Performance monitoring and reporting",
+      "Biweekly strategy calls and direct communication",
     ],
-    "note": "We prioritize the work based on your website’s needs, competitive market, and business goals.",
-    "href": "/services/seo",
-    "cta": "Explore SEO Services",
-    "featured": true
+    notes: [
+      "Every campaign is scoped to your business. The work may change as your website develops and new opportunities emerge.",
+      "Our ongoing SEO engagements operate month-to-month, without long-term lock-in contracts.",
+    ],
+    href: "/services/seo",
+    cta: "Explore Our SEO Services",
+    featured: true,
   },
   {
-    "id": "seo-google-ads",
-    "tab": "SEO & Google Ads",
-    "name": "SEO & Google Ads Management",
-    "price": "Custom Quote",
-    "unit": "",
-    "summary": [
-      "A combined approach to organic search and paid advertising, designed to reach potential customers while building long-term search visibility.",
-      "We manage SEO and Google Ads together, aligning campaign targeting, landing pages, and conversion tracking around your business objectives."
+    id: "website",
+    name: "Website Design & Development",
+    price: "$6,000",
+    unit: "CAD / project",
+    tagline: "Websites built around the businesses behind them.",
+    body: [
+      "We design and develop websites for accounting firms and established professional service businesses, with a focus on clear content, practical design, and strong technical foundations.",
+      "Projects range from improving existing websites to complete redevelopment, depending on what’s required.",
+      "Every website is individually scoped, with design, functionality, content requirements, and technical implementation agreed upon before work begins.",
     ],
-    "listLabel": "Campaigns can include:",
-    "includes": [
-      "Ongoing SEO management",
-      "Google Ads strategy and campaign management",
-      "Keyword research and search targeting",
-      "Landing page optimization",
-      "Conversion and enquiry tracking",
-      "Combined performance reporting"
-    ],
-    "note": "Google Ads management fees and advertising spend are quoted separately.",
-    "href": "/services/google-ads-management",
-    "cta": "Explore Google Ads Management",
-    "featured": false
+    listLabel: "",
+    includes: [] as string[],
+    notes: ["Ongoing website improvements may be included in an SEO engagement. Major redevelopment projects are quoted separately."],
+    href: "/services/web-development",
+    cta: "Explore Website Development",
+    featured: false,
   },
-  {
-    "id": "website",
-    "tab": "Website Development",
-    "name": "Website Design & Development",
-    "price": "$6,000",
-    "unit": "one-time + applicable GST",
-    "summary": [
-      "Custom websites built around your services, customers, and business goals.",
-      "Whether you’re replacing an outdated website or building something new, we focus on clear design, usability, and strong technical foundations for search."
-    ],
-    "listLabel": "Projects can include:",
-    "includes": [
-      "Custom website design and development",
-      "Dedicated service and industry pages",
-      "SEO-friendly website structure",
-      "Responsive design for mobile and desktop",
-      "Contact forms and conversion-focused layouts",
-      "Technical SEO and structured data",
-      "Analytics and search tracking setup"
-    ],
-    "note": "Website projects are scoped individually. Hosting, maintenance, and ongoing SEO services are available separately.",
-    "href": "/services/web-development",
-    "cta": "Explore Website Development",
-    "featured": false
-  },
-  {
-    "id": "enterprise",
-    "tab": "Enterprise & Multi-Location",
-    "name": "Enterprise & Multi-Location SEO",
-    "price": "Custom Quote",
-    "unit": "",
-    "summary": [
-      "Advanced SEO campaigns for established businesses with larger websites, multiple locations, or more competitive search markets.",
-      "These engagements may involve broader technical work, ongoing website development, and search strategies across several geographic areas."
-    ],
-    "listLabel": "Campaigns can include:",
-    "includes": [
-      "National and multi-location SEO",
-      "Advanced technical SEO and site architecture",
-      "Location and service-page development",
-      "Larger-scale content strategies",
-      "Ongoing website improvements",
-      "Custom reporting and performance analysis"
-    ],
-    "note": "Every engagement is scoped around your website, target markets, and business requirements.",
-    "href": "/contact",
-    "cta": "Request a Custom Quote",
-    "featured": false
-  }
 ];
 
 const factors = [
-  {
-    "title": "Competition & Target Market",
-    "body": "Your industry, location, and competitors influence the work required. A business competing across Canada will often need a different strategy from one serving a smaller local market."
-  },
-  {
-    "title": "Website Condition",
-    "body": "Some websites have strong foundations. Others need technical fixes, better navigation, new service pages, or improvements to existing content."
-  },
-  {
-    "title": "Campaign Scope",
-    "body": "The number of services, locations, and search opportunities you want to target determines the amount of ongoing work."
-  }
-];
-
-const termIcons = ["M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6", "M4 6h16v15H4zM4 10h16M9 3v4M15 3v4", "M7 11V7a5 5 0 0 1 10 0v4M5 11h14v10H5z"];
-const terms = [
-  {
-    "title": "Experience Across Industries",
-    "body": "We specialize in accounting and professional services, with additional experience across consulting, construction, and other established service businesses in Canada and Australia."
-  },
-  {
-    "title": "Flexible Monthly Engagements",
-    "body": "Our ongoing SEO campaigns operate month-to-month, without long-term contracts."
-  },
-  {
-    "title": "Ownership & Transparency",
-    "body": "You retain ownership of your website, content, and accounts. We provide clear reporting on the work completed and how your search performance is developing."
-  }
+  { title: "Your Market", body: "The services you’re targeting, the clients you want to attract, and the competition you’re facing." },
+  { title: "Your Website", body: "Its current performance, technical condition, content, and the improvements needed to support your goals." },
+  { title: "The Work Required", body: "The level of ongoing research, implementation, content development, and authority building needed to make meaningful progress." },
 ];
 
 const faqs: FaqItem[] = [
-  {
-    "q": "How much does monthly SEO cost?",
-    "a": [
-      "Our ongoing SEO campaigns start at $3,000 CAD per month, plus applicable GST.",
-      "Final pricing depends on your website, competition, target markets, and campaign requirements."
-    ]
-  },
-  {
-    "q": "What’s included in monthly SEO management?",
-    "a": [
-      "Campaigns can include technical SEO, keyword research, service-page improvements, content development, local SEO, internal linking, and performance reporting.",
-      "The scope is tailored to your business rather than a fixed monthly package."
-    ]
-  },
-  {
-    "q": "How much does a new website cost?",
-    "a": [
-      "Custom website design and development starts at $6,000 CAD, plus applicable GST.",
-      "Pricing depends on the number of pages, design requirements, functionality, and technical complexity."
-    ]
-  },
-  {
-    "q": "Can you manage both SEO and Google Ads?",
-    "a": [
-      "Yes. We provide Google Ads management independently or alongside monthly SEO.",
-      "Advertising spend is separate from our management fees, and you retain ownership of your Google Ads account."
-    ]
-  },
-  {
-    "q": "Do you require long-term contracts?",
-    "a": [
-      "No. Our ongoing SEO campaigns operate month-to-month, without long-term lock-in contracts.",
-      "Website development and other standalone projects are quoted separately."
-    ]
-  },
-  {
-    "q": "Do you work with businesses outside Calgary?",
-    "a": [
-      "Yes. Scale SEO is based in Calgary, Alberta, and works with businesses across Canada and Australia.",
-      "While accounting and professional services are our primary focus, we also work with established businesses in other industries."
-    ]
-  }
+  { q: "How much does monthly SEO cost?", a: [
+    "Our comprehensive monthly SEO engagements generally start at $4,500 CAD, plus applicable taxes.",
+    "Final pricing depends on your website, competition, and the work required. Smaller, focused engagements may be quoted below this amount when a full campaign isn’t necessary.",
+  ] },
+  { q: "What is included in a monthly SEO engagement?", a: [
+    "Every campaign is individually scoped. Depending on your priorities, work may include technical SEO, content development, website improvements, local and national search, and relevant authority-building initiatives.",
+    "We also provide ongoing reporting, direct communication, and biweekly strategy discussions.",
+  ] },
+  { q: "Are website development and Google Ads included?", a: [
+    "Ongoing website improvements can form part of your SEO engagement.",
+    "Complete website builds, major redevelopment projects, and Google Ads management are scoped separately where required. Advertising spend and approved external costs are not included unless expressly agreed.",
+  ] },
+  { q: "Do you require a long-term contract?", a: [
+    "No. Our ongoing SEO engagements operate month-to-month.",
+    "We establish the initial strategy and priorities together, with no requirement to commit to a lengthy fixed-term agreement.",
+  ] },
+  { q: "Do you work with businesses outside Calgary?", a: [
+    "Yes. We’re based in Calgary, Alberta, and work with businesses across Canada and Australia.",
+    "Australian engagements are individually quoted in AUD.",
+  ] },
 ];
+
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -199,227 +105,168 @@ const jsonLd = {
     {
       "@type": "WebPage",
       "@id": "https://scaleseo.co/pricing#webpage",
-      "url": "https://scaleseo.co/pricing",
-      "name": "SEO & Website Development Pricing | Scale SEO",
-      "description": "Explore SEO pricing from $3,000 CAD/month and custom website development from $6,000. Flexible SEO, Google Ads, and web development services.",
-      "isPartOf": {
-        "@id": "https://scaleseo.co/#website"
-      },
-      "about": {
-        "@id": "https://scaleseo.co/#organization"
-      },
-      "publisher": {
-        "@id": "https://scaleseo.co/#organization"
-      },
-      "breadcrumb": {
-        "@id": "https://scaleseo.co/pricing#breadcrumb"
-      },
-      "mainEntity": {
-        "@id": "https://scaleseo.co/pricing#offers"
-      },
-      "inLanguage": "en-CA"
+      url: "https://scaleseo.co/pricing",
+      name: "SEO & Website Development Pricing | Scale SEO",
+      description: DESC,
+      isPartOf: { "@id": "https://scaleseo.co/#website" },
+      about: { "@id": "https://scaleseo.co/#organization" },
+      publisher: { "@id": "https://scaleseo.co/#organization" },
+      breadcrumb: { "@id": "https://scaleseo.co/pricing#breadcrumb" },
+      mainEntity: { "@id": "https://scaleseo.co/pricing#offers" },
+      inLanguage: "en-CA",
     },
     {
       "@type": "OfferCatalog",
       "@id": "https://scaleseo.co/pricing#offers",
-      "name": "Scale SEO Services & Starting Prices",
-      "description": "SEO, Google Ads, and website development services for accounting firms, professional services, and established businesses.",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "name": "Monthly SEO Management",
-          "url": "https://scaleseo.co/services/seo",
-          "description": "Ongoing SEO management starting at $3,000 CAD per month, plus applicable GST. Final pricing depends on campaign requirements.",
-          "priceSpecification": {
-            "@type": "PriceSpecification",
-            "minPrice": 3000,
-            "priceCurrency": "CAD",
-            "description": "Minimum monthly management fee, excluding applicable taxes."
-          },
-          "seller": {
-            "@id": "https://scaleseo.co/#organization"
-          },
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Monthly SEO Management",
-            "url": "https://scaleseo.co/services/seo",
-            "provider": {
-              "@id": "https://scaleseo.co/#organization"
-            }
-          }
-        },
-        {
-          "@type": "Offer",
-          "name": "SEO & Google Ads Management",
-          "url": "https://scaleseo.co/services/google-ads-management",
-          "description": "Combined SEO and Google Ads management with custom pricing based on campaign requirements. Advertising spend is separate.",
-          "seller": {
-            "@id": "https://scaleseo.co/#organization"
-          },
-          "itemOffered": {
-            "@type": "Service",
-            "name": "SEO & Google Ads Management",
-            "url": "https://scaleseo.co/services/google-ads-management",
-            "provider": {
-              "@id": "https://scaleseo.co/#organization"
-            }
-          }
-        },
-        {
-          "@type": "Offer",
-          "name": "Website Design & Development",
-          "url": "https://scaleseo.co/services/web-development",
-          "description": "Custom website design and development starting at $6,000 CAD, plus applicable GST. Final pricing depends on project scope.",
-          "priceSpecification": {
-            "@type": "PriceSpecification",
-            "minPrice": 6000,
-            "priceCurrency": "CAD",
-            "description": "Minimum one-time website development fee, excluding applicable taxes."
-          },
-          "seller": {
-            "@id": "https://scaleseo.co/#organization"
-          },
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Website Design & Development",
-            "url": "https://scaleseo.co/services/web-development",
-            "provider": {
-              "@id": "https://scaleseo.co/#organization"
-            }
-          }
-        },
-        {
-          "@type": "Offer",
-          "name": "Enterprise & Multi-Location SEO",
-          "url": "https://scaleseo.co/pricing",
-          "description": "Custom SEO campaigns for larger websites, competitive markets, and businesses targeting multiple locations.",
-          "seller": {
-            "@id": "https://scaleseo.co/#organization"
-          },
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Enterprise & Multi-Location SEO",
-            "provider": {
-              "@id": "https://scaleseo.co/#organization"
-            }
-          }
-        }
-      ]
+      name: "Scale SEO Services & Starting Prices",
+      description: "SEO and website development for accounting firms and professional service businesses.",
+      itemListElement: [
+      {
+        "@type": "Offer",
+        name: "Monthly SEO Management",
+        url: "https://scaleseo.co/services/seo",
+        description: "Ongoing, individually scoped SEO management starting at $4,500 CAD per month, plus applicable taxes.",
+        priceSpecification: { "@type": "PriceSpecification", minPrice: 4500, priceCurrency: "CAD", description: "Starting monthly fee, excluding applicable taxes." },
+        seller: { "@id": "https://scaleseo.co/#organization" },
+        itemOffered: { "@type": "Service", name: "Monthly SEO Management", url: "https://scaleseo.co/services/seo", provider: { "@id": "https://scaleseo.co/#organization" } },
+      },
+      {
+        "@type": "Offer",
+        name: "Website Design & Development",
+        url: "https://scaleseo.co/services/web-development",
+        description: "Individually scoped website design and development starting at $6,000 CAD per project, plus applicable taxes.",
+        priceSpecification: { "@type": "PriceSpecification", minPrice: 6000, priceCurrency: "CAD", description: "Starting project fee, excluding applicable taxes." },
+        seller: { "@id": "https://scaleseo.co/#organization" },
+        itemOffered: { "@type": "Service", name: "Website Design & Development", url: "https://scaleseo.co/services/web-development", provider: { "@id": "https://scaleseo.co/#organization" } },
+      },
+      ],
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://scaleseo.co/pricing#breadcrumb",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://scaleseo.co/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Pricing",
-          "item": "https://scaleseo.co/pricing"
-        }
-      ]
-    }
-  ]
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://scaleseo.co/" },
+        { "@type": "ListItem", position: 2, name: "Pricing", item: "https://scaleseo.co/pricing" },
+      ],
+    },
+  ],
 };
 
 const Corner = () => (
   <svg className={v.corner} viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true"><path d="M1 1.5h7.5V9" /></svg>
 );
 
-// Bilberrry work-index layout: side-label hero, sticky plan tabs, then
-// alternating rows (plan details | price panel), factors, terms, FAQ, CTA
+const P = ({ t }: { t: string }) => <p className={v.p}>{t}</p>;
+
+// Mamba-style centred hero (gradient glow, badges, client logo marquee),
+// then the plan rows, factors, founder statement, FAQ and CTA
 export default function PricingPage() {
+  const logos = [
+    { src: "/images/client-logo-jensen-cpa.png", alt: "Jensen CPA", h: 24 },
+    { src: "/images/client-logo-kinsmen-consulting.png", alt: "Kinsmen Consulting Limited", h: 28 },
+    { src: "/images/client-logo-empire-accountants.png", alt: "Empire Accountants", h: 40 },
+    { src: "/images/client-logo-msv-plumbing.png", alt: "MSV Plumbing Services", h: 28 },
+  ];
   return (
     <main className={`v2 ${v.page}`}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
-      <header className={`${v.white} ${styles.hero}`}>
-        <div className={v.wrap}>
+      <header className={styles.hero}>
+        <div className={`${v.wrap} ${styles.heroInner}`}>
           <div className={styles.crumbs}>
             <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Pricing" }]} schema={false} />
           </div>
-          <div className={styles.labelled}>
-            <span className={styles.sideLabel}>Pricing</span>
-            <div>
-              <h1 className={styles.h1}>SEO &amp; Website Development Pricing</h1>
-              <p className={styles.lead}>Clear starting prices. Strategies built around your business.</p>
-              <div className={styles.cols2}>
-                <p className={v.p}>Scale SEO provides SEO, Google Ads management, and website development for accounting firms, professional services, and established businesses across Canada and Australia.</p>
-                <p className={v.p}>Every engagement is tailored to your website, competitive market, and growth objectives. We don&rsquo;t apply the same strategy or monthly checklist to every business.</p>
+          <span className={styles.eyebrow}>Pricing</span>
+          <h1 className={styles.h1}>SEO &amp; Website Development Pricing</h1>
+          <p className={styles.lead}>No fixed packages. No unnecessary deliverables. Just the work your business needs to move forward.</p>
+          <p className={styles.heroP}>Scale SEO provides founder-led SEO and website development for accounting firms and professional service businesses across Canada and Australia.</p>
+          <p className={styles.heroP}>Every engagement is individually scoped around your website, competitive market, and business priorities. We agree on the work and investment before getting started.</p>
+          <div className={styles.heroBtn}><Btn href="/services" tone="blue">Explore Our Services</Btn></div>
+          <div className={styles.badges}>
+            <a href="https://agencies.semrush.com/scale-seo/" target="_blank" rel="noopener noreferrer" aria-label="Scale SEO — Semrush Certified Agency Partner">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/images/semrush-agency-partner.svg" alt="Semrush Certified Agency Partner badge" width={64} height={64} />
+            </a>
+            <a href="https://clutch.co/profile/scale-seo" target="_blank" rel="noopener noreferrer" aria-label="Scale SEO reviews on Clutch">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/images/clutch-reviewed-dark.svg" alt="Reviewed on Clutch" width={168} height={32} />
+            </a>
+          </div>
+          <p className={styles.trusted}>Trusted by local &amp; national brands</p>
+        </div>
+        <div className={styles.marquee} aria-label="Selected clients">
+          <div className={styles.track}>
+            {[0, 1, 2, 3].map((n) => logos.map((l) => (
+              <div key={`${n}${l.src}`} className={styles.logoCell} aria-hidden={n > 0 || undefined}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={l.src} alt={n ? "" : l.alt} style={{ height: l.h }} />
               </div>
-              <div className={styles.heroBtn}><Btn href="/services" tone="navy">Explore Our Services</Btn></div>
-            </div>
+            )))}
           </div>
         </div>
       </header>
 
       <section className={`${v.white} ${styles.plansSec}`} id="plans">
-        <div className={styles.tabsBar}>
-          <nav className={`${v.wrap} ${styles.tabs}`} aria-label="Jump to a service">
-            {plans.map((p) => <a key={p.id} href={`#${p.id}`} className={styles.tab}>{p.tab}</a>)}
-          </nav>
-        </div>
         <div className={v.wrap}>
-          <p className={styles.plansNote}>All prices are in Canadian dollars (CAD), plus applicable GST. Final pricing is confirmed after reviewing your website, market, and project requirements. Australian engagements are quoted separately in AUD.</p>
+          <p className={styles.plansNote}>All starting prices are in Canadian dollars (CAD), excluding applicable taxes. Australian engagements are quoted separately in AUD.</p>
           {plans.map((p, i) => (
             <article key={p.id} id={p.id} className={`${styles.row} ${i % 2 ? styles.flip : ""}`}>
               <div className={styles.text}>
                 <h2 className={styles.planName}>{p.name}</h2>
-                <div className={styles.summaryWrap}><p className={styles.summary}>{p.summary[0]}</p><p className={v.p}>{p.summary[1]}</p></div>
-                <div>
-                  <p className={styles.listLabel}>{p.listLabel}</p>
-                  <ul className={styles.tags}>{p.includes.map((x) => <li key={x}>/ {x}</li>)}</ul>
-                </div>
-                <p className={v.small}>{p.note}</p>
+                <p className={styles.summary}>{p.tagline}</p>
+                <div className={styles.summaryWrap}>{p.body.map((t) => <P key={t} t={t} />)}</div>
+                {p.includes.length > 0 && (
+                  <div>
+                    <p className={styles.listLabel}>{p.listLabel}</p>
+                    <ul className={styles.tags}>{p.includes.map((x) => <li key={x}>/ {x}</li>)}</ul>
+                  </div>
+                )}
+                <div className={styles.summaryWrap}>{p.notes.map((t) => <p key={t} className={v.small}>{t}</p>)}</div>
                 <Link href={p.href} className={`${v.btn} ${v.btn_navy}`}><span>{p.cta}</span><Corner /></Link>
               </div>
               <div className={`${styles.pricePanel} ${p.featured ? styles.panelBlue : ""}`}>
-                <span className={styles.from}>{p.unit ? "Starting at" : "Pricing"}</span>
+                <span className={styles.from}>Starting at</span>
                 <span className={styles.price}>{p.price}</span>
-                {p.unit && <span className={styles.unit}>{p.unit}</span>}
+                <span className={styles.unit}>{p.unit}</span>
               </div>
             </article>
           ))}
-          <p className={styles.audit}>
-            Need a one-time website assessment? <Link href="/services/seo-audits">Explore SEO Audit Services</Link> for a standalone technical audit and tailored quote.
-          </p>
         </div>
       </section>
 
       <section className={`${v.grey} ${v.sec}`}>
         <div className={`${v.wrap} ${styles.labelled}`}>
           <div>
-            <h2 className={v.h2}>What Affects SEO Pricing?</h2>
-            <p className={`${v.p} ${styles.asideP}`}>No two websites require the same amount of work. We consider three main factors when preparing a quote.</p>
+            <h2 className={v.h2}>What Determines Your Investment?</h2>
+            <p className={`${v.p} ${styles.asideP}`}>No two businesses start from the same position. We consider three things when preparing a proposal.</p>
           </div>
-          <ol className={styles.factors}>
-            {factors.map((f, i) => (
-              <li key={f.title}>
-                <span className={styles.num}>/ 0{i + 1}</span>
-                <h3 className={v.h3}>{f.title}</h3>
-                <p className={v.p}>{f.body}</p>
-              </li>
-            ))}
-          </ol>
+          <div>
+            <ol className={styles.factors}>
+              {factors.map((f, i) => (
+                <li key={f.title}>
+                  <span className={styles.num}>/ 0{i + 1}</span>
+                  <h3 className={v.h3}>{f.title}</h3>
+                  <p className={v.p}>{f.body}</p>
+                </li>
+              ))}
+            </ol>
+            <div className={styles.factorsEnd}>
+              <p className={v.p}>Some businesses require a comprehensive campaign. Others need a smaller, more focused engagement.</p>
+              <p className={v.p}>We&rsquo;ll recommend the scope that makes sense rather than selling work you don&rsquo;t need.</p>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section className={`${v.white} ${v.sec}`}>
-        <div className={v.wrap}>
-          <div className={v.head}><div><h2 className={v.h2}>Working With Scale SEO</h2></div></div>
-          <div className={`${v.points} ${v.cols3}`}>
-            {terms.map((t, i) => (
-              <div key={t.title} className={v.point}>
-                <span className={v.icon} aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d={termIcons[i]} /></svg></span>
-                <h3 className={v.h3}>{t.title}</h3>
-                <p className={v.p}>{t.body}</p>
-              </div>
-            ))}
+      <section className={`${v.navy} ${v.sec}`} data-nav="dark">
+        <div className={`${v.wrap} ${styles.labelled}`}>
+          <h2 className={v.h2}>A More Personal Way to Work.</h2>
+          <div className={styles.personal}>
+            <p className={styles.personalLead}>When you work with Scale SEO, you&rsquo;re not passed between account managers.</p>
+            <p className={v.p}>You&rsquo;ll work directly with founder <Link href="/corbin-jensen" className={styles.navyLink}>Corbin Jensen</Link>, who remains involved in your strategy, implementation, and ongoing performance reviews.</p>
+            <p className={v.p}>We keep our client roster selective so we can give each engagement the attention it deserves.</p>
+            <p className={v.p}>That means regular strategy conversations, direct answers to your questions, and someone who understands your business beyond its website.</p>
+            <p className={styles.personalEnd}>One point of contact. Clear priorities. Work that gets done.</p>
           </div>
         </div>
       </section>
@@ -430,14 +277,11 @@ export default function PricingPage() {
         <div className={v.wrap}>
           <div className={`${v.ctaBox} ${styles.cta}`} data-nav="dark">
             <div>
-              <h2 className={v.h2}>Get a Quote for Your Business</h2>
-              <p className={v.p}>Tell us about your website, the services you want to grow, and what you&rsquo;re looking to achieve through Google.</p>
-              <p className={v.p}>We&rsquo;ll review your requirements and recommend an approach based on your business and budget.</p>
+              <h2 className={v.h2}>Let&rsquo;s Talk About Your Business.</h2>
+              <p className={v.p}>Tell us where your business stands today, what you&rsquo;re looking to achieve, and where you feel your website could be doing more.</p>
+              <p className={v.p}>We&rsquo;ll discuss your goals, review the work involved, and recommend an engagement that fits your business.</p>
               <Btn href={BOOKING_URL} external>Book a Consultation</Btn>
             </div>
-            <ul className={styles.points}>
-              {["Flexible month-to-month SEO campaigns", "No fixed packages or unnecessary services", "Full ownership of your website, content, and accounts"].map((x) => <li key={x}>{x}</li>)}
-            </ul>
           </div>
         </div>
       </section>
