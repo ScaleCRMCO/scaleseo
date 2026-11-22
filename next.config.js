@@ -9,6 +9,11 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: "/services/on-page-seo",
+        destination: "/services/seo",
+        statusCode: 301,
+      },
+      {
         source: "/locations/edmonton",
         destination: "/",
         statusCode: 301,

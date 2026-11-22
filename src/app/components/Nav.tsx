@@ -5,7 +5,6 @@ import styles from "./Nav.module.css";
 
 const seoLinks = [
   { href: "/services/seo", name: "SEO Services", sub: "Complete SEO management" },
-  { href: "/services/on-page-seo", name: "On-Page SEO", sub: "Content and page optimization" },
   { href: "/services/national-seo", name: "National SEO", sub: "Search visibility across Canada" },
   { href: "/services/seo-audits", name: "SEO Audits", sub: "Website analysis and recommendations" },
 ];
