@@ -261,7 +261,7 @@ export default function PricingPage() {
       <section className={`${v.white} ${v.sec}`}>
         <div className={`${v.wrap} ${styles.personalGrid}`}>
           <div className={styles.portrait}>
-            <Image src="/images/corbin-about.jpg" alt="Corbin Jensen, founder of Scale SEO" width={2143} height={2560} sizes="(max-width: 900px) 100vw, 480px" />
+            <Image src="/images/corbin-portrait.webp" alt="Corbin Jensen, founder of Scale SEO" width={985} height={900} sizes="(max-width: 900px) 100vw, 480px" />
           </div>
           <div>
             <h2 className={styles.personalH2}>A More Personal Way to Work.</h2>
