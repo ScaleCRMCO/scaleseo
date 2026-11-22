@@ -1,42 +1,47 @@
+import fs from "fs";
+import path from "path";
 import type { MetadataRoute } from "next";
 import { posts } from "./blog/posts";
+import { pageDates } from "./sitemap-dates";
+
+const BASE = "https://scaleseo.co";
+
+// Routes that exist as pages but must not be listed (noindex, utility pages).
+// Redirected URLs live in next.config.js and have no page file, so they
+// can never be picked up here.
+const EXCLUDE = new Set(["/thank-you"]);
+
+// Every static page.tsx under src/app becomes a sitemap URL automatically.
+// Dynamic routes ([slug]) are skipped and added from their data source below.
+function staticRoutes(dir = path.join(process.cwd(), "src/app"), route = ""): string[] {
+  const out: string[] = [];
+  for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+    if (e.isFile() && e.name === "page.tsx") out.push(route || "/");
+    if (e.isDirectory() && !e.name.startsWith("[") && !e.name.startsWith("_") && !e.name.startsWith("(")) {
+      out.push(...staticRoutes(path.join(dir, e.name), `${route}/${e.name}`));
+    }
+  }
+  return out;
+}
+
+const day = (iso: string) => new Date(iso).toISOString().slice(0, 10);
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://scaleseo.co";
-  const now = new Date();
+  const latestPost = posts.map((p) => day(p.updated ?? p.date)).sort().pop();
+  const dates: Record<string, string | undefined> = { ...pageDates, "/blog": latestPost };
 
-  const blogEntries: MetadataRoute.Sitemap = posts.map((post) => ({
-    url: `${base}/blog/${post.slug}`,
-    lastModified: new Date(post.date),
-    changeFrequency: "monthly",
-    priority: 0.7,
+  const pages: MetadataRoute.Sitemap = staticRoutes()
+    .filter((r) => !EXCLUDE.has(r))
+    .sort((a, b) => (a === "/" ? -1 : b === "/" ? 1 : a.localeCompare(b)))
+    .map((r) => ({
+      url: r === "/" ? BASE : `${BASE}${r}`,
+      ...(dates[r] ? { lastModified: dates[r] } : {}),
+    }));
+
+  const articles: MetadataRoute.Sitemap = posts.map((p) => ({
+    url: `${BASE}/blog/${p.slug}`,
+    lastModified: day(p.updated ?? p.date),
   }));
 
-  return [
-    { url: base, lastModified: now, changeFrequency: "weekly", priority: 1 },
-    { url: `${base}/services`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${base}/services/seo`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${base}/services/geo`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${base}/services/web-development`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${base}/services/google-ads-management`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${base}/services/seo-audits`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/industries`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${base}/industries/accounting-firms`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${base}/industries/accounting-firms-australia`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${base}/industries/law-firms`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${base}/services/national-seo`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/results`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/results/empire-accountants`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/results/kinsmen-consulting`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/results/msv-plumbing-services`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/results/jensen-cpa`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/pricing`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${base}/blog`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
-    ...blogEntries,
-    { url: `${base}/corbin-jensen`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
-    { url: `${base}/about`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/contact`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${base}/privacy-policy`, lastModified: now, changeFrequency: "yearly", priority: 0.2 },
-    { url: `${base}/business-information`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
-  ];
+  return [...pages, ...articles];
 }
