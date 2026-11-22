@@ -82,11 +82,13 @@
 .navyLink { color: #FEFEFE; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
 .navyLink:hover { color: #0099FF; }
 
-.heroImgWrap { position: relative; z-index: 1; width: min(1100px, calc(100% - 32px)); margin: 0 auto; padding-top: 64px; }
+.heroImgWrap { padding-top: 64px; }
+.photo { position: relative; aspect-ratio: 21 / 8; overflow: hidden; background: #F1F3F6; }
+.photo img { object-fit: cover; }
 .heroImg { display: block; width: 100%; height: auto; aspect-ratio: 2000 / 1083; object-fit: cover; }
 .personalGrid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 72px; align-items: center; }
 .portrait img { display: block; width: 100%; height: auto; aspect-ratio: 985 / 900; object-fit: cover; }
 .personalH2 { margin: 0; padding-bottom: 28px; border-bottom: 1px solid rgba(8, 20, 35, 0.12); font-size: clamp(32px, 3.6vw, 52px); line-height: 1.05; font-weight: 600; letter-spacing: -0.035em; }
 .personalCols { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 28px; }
 .personalCols .personalLead { font-size: 18px; line-height: 1.5; }
-@media (max-width: 900px) { .personalGrid, .personalCols { grid-template-columns: 1fr; gap: 28px; } .heroImgWrap { padding-top: 40px; } }
+@media (max-width: 900px) { .personalGrid, .personalCols { grid-template-columns: 1fr; gap: 28px; } .heroImgWrap { padding-top: 40px; } .photo { aspect-ratio: 4 / 3; } }

@@ -202,8 +202,12 @@ export default function PricingPage() {
       </header>
       <div className={v.white}>
       <div className={styles.heroImgWrap}>
-          <Image src="/images/calgary-downtown-bow-river.webp" alt="Downtown Calgary skyline along the Bow River" width={2000} height={1083} sizes="(max-width: 1100px) 100vw, 1100px" className={styles.heroImg} priority />
+        <div className={`${v.wrap}`}>
+          <div className={styles.photo}>
+            <Image src="/images/calgary-skyline-bw.webp" alt="Black and white panorama of the downtown Calgary skyline above the Bow River valley, home of Scale SEO" fill sizes="(max-width: 1360px) 100vw, 1280px" />
+          </div>
         </div>
+      </div>
       </div>
 
       <section className={`${v.white} ${styles.plansSec}`} id="plans">
