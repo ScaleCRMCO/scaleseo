@@ -172,9 +172,7 @@ export default function PricingPage() {
           <div className={styles.crumbs}>
             <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Pricing" }]} schema={false} />
           </div>
-          <span className={styles.eyebrow}>Pricing</span>
           <h1 className={styles.h1}>SEO &amp; Website Development Pricing</h1>
-          <p className={styles.lead}>No fixed packages. No unnecessary deliverables. Just the work your business needs to move forward.</p>
           <p className={styles.heroP}>Scale SEO provides founder-led SEO and website development for accounting firms and professional service businesses across Canada and Australia.</p>
           <p className={styles.heroP}>Every engagement is individually scoped around your website, competitive market, and business priorities. We agree on the work and investment before getting started.</p>
           <div className={styles.heroBtn}><Btn href="/services" tone="blue">Explore Our Services</Btn></div>

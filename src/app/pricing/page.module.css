@@ -20,7 +20,7 @@
 .crumbs { margin-bottom: 40px; align-self: flex-start; }
 .labelled { display: grid; grid-template-columns: 1fr 2fr; gap: 64px; }
 .sideLabel { padding-top: 14px; font-size: 15px; font-weight: 600; }
-.h1 { margin: 16px 0 0; max-width: 16ch; font-size: clamp(42px, 6vw, 84px); line-height: 1.02; font-weight: 600; letter-spacing: -0.035em; }
+.h1 { margin: 24px 0 16px; max-width: 13ch; font-size: clamp(38px, 4.4vw, 64px); line-height: 1.04; font-weight: 600; letter-spacing: -0.035em; }
 .lead { margin: 28px 0 8px; max-width: 640px; font-size: 20px; line-height: 1.5; font-weight: 500; color: #081423; }
 .cols2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 32px; padding-top: 32px; border-top: 1px solid rgba(8, 20, 35, 0.12); }
 
