@@ -166,3 +166,19 @@
 .lessons .lbody p { margin: 0; font-size: 16px; line-height: 1.6; color: rgba(8,20,35,0.72); }
 @media (max-width: 900px) { .lessons li { grid-template-columns: 1fr; gap: 10px; } }
 .secLabel { display: block; margin-bottom: 14px; font-size: 14px; font-weight: 600; color: #0077CC; }
+
+.priceNote { margin: -8px 0 16px; font-size: 13px; line-height: 1.5; opacity: 0.7; }
+.whoSec .whoGrid { display: grid; grid-template-columns: 1fr 2fr; gap: 64px; }
+.whoLabel { padding-top: 14px; font-size: 15px; font-weight: 600; }
+.whoH2 { margin: 0; font-size: clamp(32px, 3.6vw, 52px); line-height: 1.05; font-weight: 600; letter-spacing: -0.035em; }
+.whoLead { margin: 24px 0 0; font-size: 20px; line-height: 1.5; color: rgba(254, 254, 254, 0.85); }
+.whoCols { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 32px; padding-top: 32px; border-top: 1px solid rgba(254, 254, 254, 0.14); }
+.whoBtns { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 40px; }
+.perGrid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 72px; align-items: center; }
+.perImg img { display: block; width: 100%; height: auto; aspect-ratio: 985 / 900; object-fit: cover; }
+.perH2 { margin: 0; padding-bottom: 28px; border-bottom: 1px solid rgba(8, 20, 35, 0.12); font-size: clamp(32px, 3.6vw, 52px); line-height: 1.05; font-weight: 600; letter-spacing: -0.035em; }
+.perCols { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 28px; }
+.perCols > div { display: flex; flex-direction: column; gap: 16px; }
+.perLead { margin: 0; font-size: 18px; line-height: 1.5; font-weight: 500; color: #081423; }
+.perEnd { margin: 28px 0 0; font-size: 20px; font-weight: 600; color: #0099FF; }
+@media (max-width: 900px) { .whoSec .whoGrid, .whoCols, .perGrid, .perCols { grid-template-columns: 1fr; gap: 28px; } .whoLabel { padding-top: 0; } }

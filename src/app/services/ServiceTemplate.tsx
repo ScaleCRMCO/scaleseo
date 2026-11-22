@@ -33,6 +33,8 @@ export const ICONS = {
   building: "M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6",
   briefcase: "M4 8h16v12H4zM9 8V5h6v3M4 13h16",
   hammer: "M14 6l4 4M3 21l9-9M12 4l8 8-3 3-8-8z",
+  megaphone: "M3 11l14-6v14L3 13zM7 12v6a2 2 0 0 0 4 0v-5M21 9v6",
+  spark: "M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8zM19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8z",
 };
 
 export type ServiceTemplateProps = {
@@ -53,17 +55,20 @@ export type ServiceTemplateProps = {
   statementLabel: string;
   statement: string;
   statementNote?: string;
+  statementNoteAfter?: boolean;
+  afterCases?: ReactNode;
+  ctaMark?: boolean;
   statementBody?: string[];
   explainer?: { title: string; lead: string; body: ReactNode };
   feature?: ReactNode;
   feature2?: ReactNode;
   splits?: { title: string; lead?: string; body: ReactNode; image: { src: string; alt: string }; cta?: { href: string; label: string } }[];
-  included?: { title: string; lead: string; cta?: { href: string; label: string }; items: { title: string; body: string | string[]; icon: string }[]; image: { src: string; alt: string } };
-  cases?: { title: string; lead: string; items: { name: string; body: string; tag?: string; stats: { from: number; to: number; prefix?: string; suffix?: string; label: string }[]; href: string; cta: string; img: string }[]; note?: string };
+  included?: { title: string; lead: string; note?: string; cta?: { href: string; label: string }; items: { title: string; body: string | string[]; icon: string }[]; image: { src: string; alt: string } };
+  cases?: { title: string; lead: string; allLabel?: string; items: { name: string; body: string | string[]; note?: string; tag?: string; stats: { from: number; to: number; prefix?: string; suffix?: string; label: string }[]; href: string; cta: string; img: string }[]; note?: string };
   markets?: { title: string; items: { title: string; body: string; icon: string; href?: string; cta?: string }[]; outro?: string };
-  process?: { title: string; lead: string; note?: string; items: { title: string; body: string }[] };
+  process?: { title: string; lead: string; note?: string; items: { title: string; body: string | string[] }[] };
   fit?: { title: string; label: string; body: ReactNode };
-  pricing?: { title: string; price: string; unit: string; from?: string; body: string[]; points: string[]; cta?: string };
+  pricing?: { title: string; price: string; unit: string; from?: string; body: string[]; points: string[]; note?: string; cta?: string };
   faqs?: { q: string; a: string[] }[];
   cta: { title: string; lead: ReactNode; secondary?: { href: string; label: string } };
 };
@@ -111,10 +116,11 @@ export default function ServiceTemplate(p: ServiceTemplateProps) {
           <span className={s.sideLabel}>{p.statementLabel}</span>
           <div>
             {p.statementHeading ? <h2 className={`${s.statement} ${s.statementH2}`}>{p.statement}</h2> : <p className={s.statement}>{p.statement}</p>}
-            {p.statementNote && <p className={s.note}>{p.statementNote}</p>}
+            {p.statementNote && !p.statementNoteAfter && <p className={s.note}>{p.statementNote}</p>}
             {p.statementBody && (
               <div className={s.stBody}>{p.statementBody.map((b) => <p key={b} className={v.p}>{b}</p>)}</div>
             )}
+            {p.statementNote && p.statementNoteAfter && <p className={s.note}>{p.statementNote}</p>}
             {p.included && (
               <ul className={s.tags}>{p.included.items.map((x) => <li key={x.title}>/ {x.title}</li>)}</ul>
             )}
@@ -184,6 +190,7 @@ export default function ServiceTemplate(p: ServiceTemplateProps) {
                 <Image src={p.included.image.src} alt={p.included.image.alt} fill sizes="(max-width: 900px) 100vw, 600px" />
               </div>
             </div>
+            {p.included.note && <p className={s.note}>{p.included.note}</p>}
             {p.included.cta && <div className={s.incCta}><Btn href={p.included.cta.href} tone="navy">{p.included.cta.label}</Btn></div>}
           </div>
         </section>
@@ -218,7 +225,7 @@ export default function ServiceTemplate(p: ServiceTemplateProps) {
           <div className={v.wrap}>
             <div className={v.head}>
               <div><h2 className={v.h2}>{p.cases.title}</h2></div>
-              <div className={v.headSide}><p className={v.p}>{p.cases.lead}</p><Btn href="/results" tone="navy">Explore All Client Results</Btn></div>
+              <div className={v.headSide}><p className={v.p}>{p.cases.lead}</p><Btn href="/results" tone="navy">{p.cases.allLabel ?? "Explore All Client Results"}</Btn></div>
             </div>
             <div className={v.cases}>
               {p.cases.items.map((c, i) => (
@@ -237,7 +244,8 @@ export default function ServiceTemplate(p: ServiceTemplateProps) {
                         </p>
                       ))}
                     </div>
-                    <p className={v.p}>{c.body}</p>
+                    {(Array.isArray(c.body) ? c.body : [c.body]).map((b) => <p key={b} className={v.p}>{b}</p>)}
+                    {c.note && <p className={v.small}><em>{c.note}</em></p>}
                     <Link href={c.href} className={v.textLink}>{c.cta} <Corner /></Link>
                   </div>
                 </article>
@@ -247,6 +255,8 @@ export default function ServiceTemplate(p: ServiceTemplateProps) {
           </div>
         </section>
       )}
+
+      {p.afterCases}
 
       {/* Markets — Mamba: side label + ruled columns, wide skyline below */}
       {p.markets && (
@@ -283,7 +293,7 @@ export default function ServiceTemplate(p: ServiceTemplateProps) {
                 <li key={x.title} className={v.step}>
                   <span className={v.stepDot}>0{i + 1}</span>
                   <h3 className={v.h3}>{x.title}</h3>
-                  <p className={v.p}>{x.body}</p>
+                  {(Array.isArray(x.body) ? x.body : [x.body]).map((b) => <p key={b} className={v.p}>{b}</p>)}
                 </li>
               ))}
             </ol>
@@ -319,6 +329,7 @@ export default function ServiceTemplate(p: ServiceTemplateProps) {
                 <span className={s.unit}>{p.pricing.unit}</span>
                 {p.fit && p.pricing.body.map((b) => <p key={b} className={s.priceP}>{b}</p>)}
                 <ul className={s.points}>{p.pricing.points.map((x) => <li key={x}>{x}</li>)}</ul>
+                {p.pricing.note && <p className={s.priceNote}>{p.pricing.note}</p>}
                 <Btn href="/pricing">{p.pricing.cta ?? "View Pricing"}</Btn>
               </div>
             )}
@@ -331,6 +342,7 @@ export default function ServiceTemplate(p: ServiceTemplateProps) {
       <section className={`${v.white} ${v.ctaSec}`} style={{ paddingTop: 40 }}>
         <div className={v.wrap}>
           <div className={v.ctaBox} data-nav="dark">
+            {p.ctaMark && <HeroMark className={v.ctaMark} />}
             <h2 className={v.h2}>{p.cta.title}</h2>
             <div className={v.p}>{p.cta.lead}</div>
             <div className={s.ctaBtns}>
