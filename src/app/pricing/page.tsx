@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import Breadcrumbs from "../components/Breadcrumbs";
 import { type FaqItem } from "../services/ServicesFaq";
 import v from "../sections/v3/v3.module.css";
@@ -199,6 +200,11 @@ export default function PricingPage() {
           </div>
         </div>
       </header>
+      <div className={v.white}>
+      <div className={styles.heroImgWrap}>
+          <Image src="/images/calgary-downtown-bow-river.webp" alt="Downtown Calgary skyline along the Bow River" width={2000} height={1083} sizes="(max-width: 1100px) 100vw, 1100px" className={styles.heroImg} priority />
+        </div>
+      </div>
 
       <section className={`${v.white} ${styles.plansSec}`} id="plans">
         <div className={v.wrap}>
@@ -252,14 +258,23 @@ export default function PricingPage() {
         </div>
       </section>
 
-      <section className={`${v.navy} ${v.sec}`} data-nav="dark">
-        <div className={`${v.wrap} ${styles.labelled}`}>
-          <h2 className={v.h2}>A More Personal Way to Work.</h2>
-          <div className={styles.personal}>
-            <p className={styles.personalLead}>When you work with Scale SEO, you&rsquo;re not passed between account managers.</p>
-            <p className={v.p}>You&rsquo;ll work directly with founder <Link href="/corbin-jensen" className={styles.navyLink}>Corbin Jensen</Link>, who remains involved in your strategy, implementation, and ongoing performance reviews.</p>
-            <p className={v.p}>We keep our client roster selective so we can give each engagement the attention it deserves.</p>
-            <p className={v.p}>That means regular strategy conversations, direct answers to your questions, and someone who understands your business beyond its website.</p>
+      <section className={`${v.white} ${v.sec}`}>
+        <div className={`${v.wrap} ${styles.personalGrid}`}>
+          <div className={styles.portrait}>
+            <Image src="/images/corbin-about.jpg" alt="Corbin Jensen, founder of Scale SEO" width={2143} height={2560} sizes="(max-width: 900px) 100vw, 480px" />
+          </div>
+          <div>
+            <h2 className={styles.personalH2}>A More Personal Way to Work.</h2>
+            <div className={styles.personalCols}>
+              <div className={styles.personal}>
+                <p className={styles.personalLead}>When you work with Scale SEO, you&rsquo;re not passed between account managers.</p>
+                <p className={v.p}>You&rsquo;ll work directly with founder <Link href="/corbin-jensen" className={v.inlineLink}>Corbin Jensen</Link>, who remains involved in your strategy, implementation, and ongoing performance reviews.</p>
+              </div>
+              <div className={styles.personal}>
+                <p className={v.p}>We keep our client roster selective so we can give each engagement the attention it deserves.</p>
+                <p className={v.p}>That means regular strategy conversations, direct answers to your questions, and someone who understands your business beyond its website.</p>
+              </div>
+            </div>
             <p className={styles.personalEnd}>One point of contact. Clear priorities. Work that gets done.</p>
           </div>
         </div>
