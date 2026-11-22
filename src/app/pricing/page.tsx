@@ -24,16 +24,15 @@ const plans = [
     name: "Monthly SEO Management",
     price: "$4,500",
     unit: "CAD / month",
-    tagline: "An ongoing partnership, built around your business.",
+    tagline: "",
     body: [
-      "Good SEO requires more than a monthly checklist.",
-      "We work closely with a select number of businesses, taking responsibility for the strategy and implementation needed to improve their search presence.",
-      "Some months call for technical work and website improvements. Others require new content, competitor research, or authority development. We focus on what needs attention rather than working toward arbitrary page or word-count quotas.",
+      "We work closely with a select number of businesses, managing everything from strategy and technical SEO to content, website improvements, and authority development.",
+      "Every engagement includes our complete SEO service. The priorities and level of work in each area are tailored to your website, competitive market, and business goals.",
     ],
-    listLabel: "Your engagement can include:",
+    listLabel: "What’s included in every engagement:",
     includes: [
-      "SEO strategy, research, and ongoing implementation",
-      "Technical SEO and website improvements",
+      "SEO strategy, keyword research, and competitor analysis",
+      "Technical SEO and ongoing website improvements",
       "Service-page development and content strategy",
       "Local and national search optimization",
       "Digital PR and relevant authority development",
@@ -41,10 +40,7 @@ const plans = [
       "Performance monitoring and reporting",
       "Biweekly strategy calls and direct communication",
     ],
-    notes: [
-      "Every campaign is scoped to your business. The work may change as your website develops and new opportunities emerge.",
-      "Our ongoing SEO engagements operate month-to-month, without long-term lock-in contracts.",
-    ],
+    notes: ["Our ongoing SEO engagements operate month-to-month, without long-term lock-in contracts."],
     href: "/services/seo",
     cta: "Explore Our SEO Services",
     featured: true,
@@ -213,7 +209,7 @@ export default function PricingPage() {
             <article key={p.id} id={p.id} className={`${styles.row} ${i % 2 ? styles.flip : ""}`}>
               <div className={styles.text}>
                 <h2 className={styles.planName}>{p.name}</h2>
-                <p className={styles.summary}>{p.tagline}</p>
+                {p.tagline && <p className={styles.summary}>{p.tagline}</p>}
                 <div className={styles.summaryWrap}>{p.body.map((t) => <P key={t} t={t} />)}</div>
                 {p.includes.length > 0 && (
                   <div>
