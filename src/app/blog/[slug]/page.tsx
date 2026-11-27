@@ -224,7 +224,7 @@ export default function BlogPostPage({
             <section className={styles.takeaways} aria-label="Key takeaways">
               <span className={styles.takeLabel}>Key takeaways</span>
               <ul>
-                {post.takeaways.map((t) => <li key={t}>{t}</li>)}
+                {post.takeaways.map((t) => <li key={t}>{renderInline(t)}</li>)}
               </ul>
             </section>
           )}
