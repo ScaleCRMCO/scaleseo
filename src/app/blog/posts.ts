@@ -165,6 +165,10 @@ export const posts: Post[] = [
         "text": "As we discuss in our guide to [marketing an accounting firm](/blog/accounting-firm-marketing), attracting the right clients often matters more than attracting the highest number of visitors."
       },
       {
+        "type": "p",
+        "text": "Website structure is only one part of a successful strategy. Our guide to [how accounting firms can rank on Google in Canada](/blog/how-accounting-firms-rank-on-google-in-canada) explains the wider role of content, technical SEO, and search visibility."
+      },
+      {
         "type": "h2",
         "text": "2. Build a Clear Accounting Website Structure"
       },
