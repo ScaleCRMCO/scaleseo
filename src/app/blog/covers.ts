@@ -2,6 +2,11 @@
 // fill: true stretches the image across the full cover width (photos);
 // otherwise it sits centred on navy (3D illustrations).
 export const covers: Record<string, { src: string; alt: string; fill?: boolean }> = {
+  "accounting-firm-website-structure": {
+    src: "/images/blog-accounting-firm-website-structure.webp",
+    fill: true,
+    alt: "Black and white view of downtown Toronto with the CN Tower and an elevated expressway, representing accounting firm website structure",
+  },
   "accounting-firm-marketing": {
     src: "/images/vancouver-aerial-bw.webp",
     fill: true,

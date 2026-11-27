@@ -28,6 +28,759 @@ export type Post = {
 
 export const posts: Post[] = [
   {
+    "slug": "accounting-firm-website-structure",
+    "title": "How to Structure an Accounting Firm Website for SEO",
+    "metaTitle": "Accounting Firm Website Structure: SEO Guide | Scale SEO",
+    "description": "Learn how to structure an accounting firm website with dedicated service pages, clear navigation, and internal links. Includes practical CPA website examples.",
+    "date": "2026-11-27T09:00:00-07:00",
+    "readTime": "11 min read",
+    "category": "Accounting Firm Marketing",
+    "excerpt": "How to organize an accounting firm website around its services, with dedicated service pages, clear navigation, and useful internal links.",
+    "body": [
+      {
+        "type": "p",
+        "text": "An accounting firm can offer excellent services and still struggle to attract new clients through Google."
+      },
+      {
+        "type": "p",
+        "text": "Sometimes, the problem isn’t the quality of the work or even the amount of information on the website. It’s how that information is organized."
+      },
+      {
+        "type": "p",
+        "text": "Corporate tax, bookkeeping, payroll, and business advisory services all meet different needs. When they’re grouped onto one general page, potential clients may struggle to find the help they’re looking for."
+      },
+      {
+        "type": "p",
+        "text": "Search engines can also have a harder time understanding which pages are most relevant to each service."
+      },
+      {
+        "type": "p",
+        "text": "A clear website structure helps solve both problems."
+      },
+      {
+        "type": "p",
+        "text": "For Canadian accounting firms, that means building a website around the services they provide, the clients they want to reach, and the questions those clients ask."
+      },
+      {
+        "type": "p",
+        "text": "Here’s how to approach it."
+      },
+      {
+        "type": "h2",
+        "text": "Why Website Structure Matters for Accounting Firms"
+      },
+      {
+        "type": "p",
+        "text": "Your website structure is the way its pages are organized and connected."
+      },
+      {
+        "type": "p",
+        "text": "Think of it as a map."
+      },
+      {
+        "type": "p",
+        "text": "A visitor should be able to start on your homepage, find the accounting service they need, and understand how to contact your firm without searching through several unrelated pages."
+      },
+      {
+        "type": "p",
+        "text": "Google also follows links to discover pages and understand how they relate to one another."
+      },
+      {
+        "type": "p",
+        "text": "When important services have clear pages and useful internal links, it’s easier for both visitors and search engines to navigate the website."
+      },
+      {
+        "type": "p",
+        "text": "This is especially important for accounting firms offering a wide range of services."
+      },
+      {
+        "type": "p",
+        "text": "Someone looking for a corporate tax accountant may have little interest in personal tax preparation. A business seeking a fractional CFO may need a very different level of support from someone looking for basic bookkeeping."
+      },
+      {
+        "type": "p",
+        "text": "Your website should reflect those differences."
+      },
+      {
+        "type": "p",
+        "text": "The goal isn’t to create as many pages as possible. It’s to give every important service a clear place on the website."
+      },
+      {
+        "type": "h2",
+        "text": "1. Start With the Accounting Services You Want to Grow"
+      },
+      {
+        "type": "p",
+        "text": "Before changing your website, consider which services matter most to your practice."
+      },
+      {
+        "type": "p",
+        "text": "Not every accounting firm wants the same type of client."
+      },
+      {
+        "type": "p",
+        "text": "Some focus on personal tax returns. Others want ongoing relationships with established businesses that need corporate tax, bookkeeping, payroll, or financial advice."
+      },
+      {
+        "type": "p",
+        "text": "Your website should reflect the direction of your firm."
+      },
+      {
+        "type": "p",
+        "text": "For example, a Calgary CPA practice looking to grow its corporate client base might prioritize:"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Corporate tax and year-end filing",
+          "Monthly bookkeeping",
+          "Payroll services",
+          "Fractional CFO and controller support",
+          "Business advisory",
+          "Accounting for specific industries"
+        ]
+      },
+      {
+        "type": "p",
+        "text": "These services should be easy to find from the main navigation or a dedicated services section."
+      },
+      {
+        "type": "p",
+        "text": "Personal tax can still have its own page, but it doesn’t need to receive the same emphasis if it isn’t a growth priority."
+      },
+      {
+        "type": "p",
+        "text": "This decision should come before keyword research or website design."
+      },
+      {
+        "type": "p",
+        "text": "As we discuss in our guide to [marketing an accounting firm](/blog/accounting-firm-marketing), attracting the right clients often matters more than attracting the highest number of visitors."
+      },
+      {
+        "type": "h2",
+        "text": "2. Build a Clear Accounting Website Structure"
+      },
+      {
+        "type": "p",
+        "text": "A useful accounting website doesn’t need a complicated menu."
+      },
+      {
+        "type": "p",
+        "text": "For many firms, a simple structure is enough."
+      },
+      {
+        "type": "h3",
+        "text": "Example: Website Structure for a Canadian CPA Firm"
+      },
+      {
+        "type": "p",
+        "text": "**Homepage** — An introduction to the firm, its main services, team, and the types of clients it supports."
+      },
+      {
+        "type": "p",
+        "text": "**Accounting Services** — A central page introducing the firm’s services, with links to more detailed pages."
+      },
+      {
+        "type": "p",
+        "text": "**Individual Service Pages**"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Corporate Tax",
+          "Bookkeeping",
+          "Payroll",
+          "Fractional CFO",
+          "Business Advisory",
+          "Personal Tax"
+        ]
+      },
+      {
+        "type": "p",
+        "text": "**Industries Served** — Pages or sections explaining the firm’s experience with relevant types of businesses, where there is enough useful information to justify them."
+      },
+      {
+        "type": "p",
+        "text": "**About the Firm** — Background, team members, professional qualifications, and the firm’s approach."
+      },
+      {
+        "type": "p",
+        "text": "**Resources or Blog** — Helpful articles answering common accounting and tax questions."
+      },
+      {
+        "type": "p",
+        "text": "**Contact** — Office details, contact options, and a clear way to enquire about services."
+      },
+      {
+        "type": "p",
+        "text": "This structure gives visitors a logical path through the website."
+      },
+      {
+        "type": "p",
+        "text": "For example, a business owner looking for year-end tax support might visit the homepage, open the accounting services section, and select corporate tax."
+      },
+      {
+        "type": "p",
+        "text": "From there, they can learn what the firm provides, who the service is for, and how to get started."
+      },
+      {
+        "type": "p",
+        "text": "Google can follow many of those same links to discover the website’s content."
+      },
+      {
+        "type": "p",
+        "text": "The exact URLs aren’t what make this structure useful. Clear navigation, relevant pages, and links between related information are more important."
+      },
+      {
+        "type": "h2",
+        "text": "3. Give Important Accounting Services Their Own Pages"
+      },
+      {
+        "type": "p",
+        "text": "One of the most common problems with smaller accounting websites is placing every service on one page."
+      },
+      {
+        "type": "p",
+        "text": "A firm might have a page titled “Our Services” with a short paragraph about tax, another about bookkeeping, and a few lines about business advice."
+      },
+      {
+        "type": "p",
+        "text": "This can work as an introduction. However, it often leaves important questions unanswered."
+      },
+      {
+        "type": "p",
+        "text": "Consider two potential clients."
+      },
+      {
+        "type": "p",
+        "text": "The first needs a monthly bookkeeper to manage transactions, reconcile accounts, and prepare financial reports."
+      },
+      {
+        "type": "p",
+        "text": "The second needs help filing a corporate tax return and planning for future tax obligations."
+      },
+      {
+        "type": "p",
+        "text": "These clients are looking for different services."
+      },
+      {
+        "type": "p",
+        "text": "They may use different search terms and expect different information when they reach your website."
+      },
+      {
+        "type": "p",
+        "text": "Separate pages give the firm room to explain each service properly."
+      },
+      {
+        "type": "h3",
+        "text": "What Should an Accounting Service Page Include?"
+      },
+      {
+        "type": "p",
+        "text": "A useful service page should answer the questions a prospective client is likely to have."
+      },
+      {
+        "type": "p",
+        "text": "These generally include:"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "What does the service involve?",
+          "Who is it designed for?",
+          "What problems can the firm help solve?",
+          "What does the process look like?",
+          "What experience does the firm have?",
+          "How can someone get started?"
+        ]
+      },
+      {
+        "type": "p",
+        "text": "For a corporate tax page, that might mean explaining T2 corporate tax returns, year-end requirements, tax planning, and ongoing compliance."
+      },
+      {
+        "type": "p",
+        "text": "For a bookkeeping page, it could mean explaining monthly reporting, reconciliations, payroll, and cloud accounting support."
+      },
+      {
+        "type": "p",
+        "text": "Each page should have its own purpose."
+      },
+      {
+        "type": "p",
+        "text": "A dedicated page is valuable when it provides information that wouldn’t fit naturally on another page."
+      },
+      {
+        "type": "p",
+        "text": "This doesn’t mean every variation of an accounting keyword needs a separate URL."
+      },
+      {
+        "type": "p",
+        "text": "For example, “corporate tax accountant” and “corporate income tax accountant” may describe the same core service. A single well-developed page could serve both searches."
+      },
+      {
+        "type": "p",
+        "text": "Creating two nearly identical pages simply to target slightly different keywords may add little value."
+      },
+      {
+        "type": "h2",
+        "text": "4. Use Internal Links to Connect Related Services"
+      },
+      {
+        "type": "p",
+        "text": "Once the main service pages are in place, the next step is connecting them."
+      },
+      {
+        "type": "p",
+        "text": "An internal link takes a visitor from one page of your website to another."
+      },
+      {
+        "type": "p",
+        "text": "These links help people find related information. They also help Google discover pages and understand the relationships between them."
+      },
+      {
+        "type": "p",
+        "text": "For accounting websites, internal links should follow natural connections between services."
+      },
+      {
+        "type": "h3",
+        "text": "Example: Corporate Tax and Bookkeeping"
+      },
+      {
+        "type": "p",
+        "text": "A business using monthly bookkeeping services may also require corporate tax preparation at year-end."
+      },
+      {
+        "type": "p",
+        "text": "A bookkeeping page could include a sentence such as:"
+      },
+      {
+        "type": "p",
+        "text": "“Accurate monthly records also make year-end reporting easier. Our corporate tax team can help prepare the required filings and review your business tax obligations.”"
+      },
+      {
+        "type": "p",
+        "text": "The words “corporate tax team” could link to the firm’s corporate tax service page."
+      },
+      {
+        "type": "p",
+        "text": "That link makes sense because the services are closely related."
+      },
+      {
+        "type": "h3",
+        "text": "Example: Corporate Tax and Fractional CFO"
+      },
+      {
+        "type": "p",
+        "text": "A business receiving financial planning support may also need help with tax planning."
+      },
+      {
+        "type": "p",
+        "text": "A fractional CFO page could explain how financial forecasts and tax planning fit into the firm’s broader advisory work, with a link to its corporate tax page."
+      },
+      {
+        "type": "p",
+        "text": "The same principle applies to payroll, bookkeeping, year-end accounting, and business advisory."
+      },
+      {
+        "type": "h3",
+        "text": "What Makes a Good Internal Link?"
+      },
+      {
+        "type": "p",
+        "text": "Useful internal links should:"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Lead to information that helps the reader.",
+          "Use clear words that describe the linked page.",
+          "Appear naturally within relevant content.",
+          "Avoid sending every page back to the homepage.",
+          "Connect important service pages with related articles."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "For example, “learn more about our corporate tax services” is generally more helpful than “click here.”"
+      },
+      {
+        "type": "p",
+        "text": "Google recommends using descriptive link text and linking to related pages where they can help readers."
+      },
+      {
+        "type": "p",
+        "text": "There isn’t a required number of internal links per page."
+      },
+      {
+        "type": "p",
+        "text": "A few useful links are better than a large number added without a clear purpose."
+      },
+      {
+        "type": "h2",
+        "text": "5. Give Educational Articles a Clear Role"
+      },
+      {
+        "type": "p",
+        "text": "A blog can support an accounting firm’s website, but it shouldn’t exist simply to publish more content."
+      },
+      {
+        "type": "p",
+        "text": "The most useful articles answer questions clients genuinely have."
+      },
+      {
+        "type": "p",
+        "text": "For a Canadian accounting firm, relevant topics might include:"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "When corporate tax returns are due in Alberta",
+          "Salary versus dividends for business owners",
+          "How shareholder loans are treated",
+          "What capital cost allowance means",
+          "When a business might need a fractional CFO"
+        ]
+      },
+      {
+        "type": "p",
+        "text": "These subjects help explain complex accounting matters in plain language."
+      },
+      {
+        "type": "p",
+        "text": "They also create opportunities to connect useful information with relevant services."
+      },
+      {
+        "type": "p",
+        "text": "For example, an article about corporate tax filing deadlines could link to the firm’s corporate tax page when explaining how an accountant helps a business prepare its return."
+      },
+      {
+        "type": "p",
+        "text": "An article about salary versus dividends could link to business tax planning or advisory services."
+      },
+      {
+        "type": "p",
+        "text": "The connection should be useful, not forced."
+      },
+      {
+        "type": "p",
+        "text": "An article about corporate tax deadlines doesn’t need links to payroll, personal tax, bookkeeping, and every other service simply because those pages exist."
+      },
+      {
+        "type": "h3",
+        "text": "Keep the Accounting Advice Accurate"
+      },
+      {
+        "type": "p",
+        "text": "Tax rules can change, and different situations may require different advice."
+      },
+      {
+        "type": "p",
+        "text": "Accounting content should be developed with input from qualified professionals, supported by reliable sources, and reviewed when relevant rules change."
+      },
+      {
+        "type": "p",
+        "text": "For Canadian tax topics, the Canada Revenue Agency and provincial government websites are important reference points."
+      },
+      {
+        "type": "p",
+        "text": "Clear authorship and professional review also help readers understand who is responsible for the information."
+      },
+      {
+        "type": "p",
+        "text": "A useful article should answer a real question. Its value shouldn’t depend on how many keywords or internal links it contains."
+      },
+      {
+        "type": "h2",
+        "text": "6. What We Changed on Jensen CPA’s Website"
+      },
+      {
+        "type": "p",
+        "text": "We’ve applied these principles through our work with [Jensen CPA, a Calgary accounting firm](/results/jensen-cpa)."
+      },
+      {
+        "type": "p",
+        "text": "When the engagement began, Jensen CPA had an established team and a range of accounting services, but its website didn’t fully reflect that expertise."
+      },
+      {
+        "type": "p",
+        "text": "The original website used a basic template, with limited content and relatively few dedicated service pages."
+      },
+      {
+        "type": "p",
+        "text": "Important services weren’t explained in the depth they deserved."
+      },
+      {
+        "type": "p",
+        "text": "We approached the project as both a website redevelopment and an ongoing SEO campaign."
+      },
+      {
+        "type": "h3",
+        "text": "Building Around Core Accounting Services"
+      },
+      {
+        "type": "p",
+        "text": "We replaced the original website with a clearer structure built around the firm’s main services and target clients."
+      },
+      {
+        "type": "p",
+        "text": "This included dedicated pages for corporate tax, monthly bookkeeping, fractional CFO and controller services, personal tax, and accounting support for businesses and professionals."
+      },
+      {
+        "type": "p",
+        "text": "Rather than relying on one general services page, we gave these areas more space to explain the work involved."
+      },
+      {
+        "type": "p",
+        "text": "We also improved navigation and the way related pages connected."
+      },
+      {
+        "type": "h3",
+        "text": "Adding Useful Accounting Content"
+      },
+      {
+        "type": "p",
+        "text": "Alongside the service pages, we developed educational articles based on questions Canadian business owners ask."
+      },
+      {
+        "type": "p",
+        "text": "Topics have included corporate tax deadlines, capital cost allowance, shareholder loans, salary versus dividends, and Section 85 rollovers."
+      },
+      {
+        "type": "p",
+        "text": "These articles give the firm’s team a way to explain complex subjects while connecting readers to related accounting services."
+      },
+      {
+        "type": "h3",
+        "text": "The Results"
+      },
+      {
+        "type": "p",
+        "text": "Across the website redevelopment and ongoing campaign, approximately 25 pages were added."
+      },
+      {
+        "type": "p",
+        "text": "Jensen CPA also recorded:"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "**+395%** Google Search impressions",
+          "**+205%** organic search clicks"
+        ]
+      },
+      {
+        "type": "p",
+        "text": "These figures compare the first and latest 30-day reporting periods between June and November 2026, using Google Search Console data."
+      },
+      {
+        "type": "p",
+        "text": "The results reflect the broader campaign, including technical SEO, service-page development, content work, and ongoing improvements. They shouldn’t be attributed to website structure alone."
+      },
+      {
+        "type": "p",
+        "text": "The experience reinforced an important lesson: a website should be built around what a firm actually does, not simply around a standard template."
+      },
+      {
+        "type": "p",
+        "text": "[Read the full Jensen CPA SEO case study](/results/jensen-cpa)."
+      },
+      {
+        "type": "h2",
+        "text": "7. Common Website Structure Mistakes"
+      },
+      {
+        "type": "p",
+        "text": "A well-organized website doesn’t need hundreds of pages. In some cases, fewer and better pages are the right approach."
+      },
+      {
+        "type": "p",
+        "text": "Here are several problems worth checking."
+      },
+      {
+        "type": "h3",
+        "text": "Putting Every Accounting Service on One Page"
+      },
+      {
+        "type": "p",
+        "text": "A general services page may not provide enough detail for someone searching for specialist accounting support."
+      },
+      {
+        "type": "p",
+        "text": "Consider separate pages for important services where the client needs and information differ."
+      },
+      {
+        "type": "h3",
+        "text": "Creating Too Many Similar Pages"
+      },
+      {
+        "type": "p",
+        "text": "Building separate pages for every small keyword variation can create repetitive content."
+      },
+      {
+        "type": "p",
+        "text": "Before creating a new page, ask whether it serves a different need and offers information visitors can’t already find elsewhere."
+      },
+      {
+        "type": "h3",
+        "text": "Publishing Articles Without Linking Them to Services"
+      },
+      {
+        "type": "p",
+        "text": "An article may answer a useful question but leave the reader unsure where to go next."
+      },
+      {
+        "type": "p",
+        "text": "Where appropriate, connect the article to a relevant service page. Also link to related educational resources that provide useful next steps."
+      },
+      {
+        "type": "h3",
+        "text": "Creating City Pages Without Local Value"
+      },
+      {
+        "type": "p",
+        "text": "An accounting firm serving multiple Canadian cities may be tempted to create nearly identical pages for each location."
+      },
+      {
+        "type": "p",
+        "text": "But changing the city name in the heading doesn’t make the content locally useful."
+      },
+      {
+        "type": "p",
+        "text": "A location page should offer genuine information about the firm’s service in that market. Avoid implying the firm has an office where none exists."
+      },
+      {
+        "type": "h3",
+        "text": "Leaving Important Pages Difficult to Find"
+      },
+      {
+        "type": "p",
+        "text": "A service page may exist but receive few internal links."
+      },
+      {
+        "type": "p",
+        "text": "If visitors can’t reach it easily, the page may be difficult for search engines to discover as well."
+      },
+      {
+        "type": "p",
+        "text": "Check your main menu, services hub, and related content to make sure important pages are accessible."
+      },
+      {
+        "type": "h3",
+        "text": "Choosing Design Over Clarity"
+      },
+      {
+        "type": "p",
+        "text": "An attractive website is valuable, but appearance alone doesn’t explain what a firm offers."
+      },
+      {
+        "type": "p",
+        "text": "Important services should be easy to find, headings should be clear, and pages should work well on mobile devices."
+      },
+      {
+        "type": "p",
+        "text": "Our approach to [website design and development](/services/web-development) starts with these practical needs, alongside the visual design."
+      },
+      {
+        "type": "h2",
+        "text": "8. A Simple Accounting Website Structure Checklist"
+      },
+      {
+        "type": "p",
+        "text": "If you’re reviewing your own firm’s website, start with these questions:"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Can visitors find our main accounting services from the homepage?",
+          "Do our most important services have useful, dedicated pages?",
+          "Does each page explain who the service is for?",
+          "Are related services connected through natural internal links?",
+          "Do educational articles link to relevant accounting services?",
+          "Can visitors find information about our team and qualifications?",
+          "Are our contact details easy to find?",
+          "Are our pages accessible and useful on mobile devices?",
+          "Have we avoided duplicate or unnecessary location pages?",
+          "Can we explain why every important page deserves to exist?"
+        ]
+      },
+      {
+        "type": "p",
+        "text": "You don’t need to change everything at once."
+      },
+      {
+        "type": "p",
+        "text": "Start with the pages that matter most to your business and the problems that make it difficult for visitors to find what they need."
+      },
+      {
+        "type": "h2",
+        "text": "Building a Website That Reflects Your Firm"
+      },
+      {
+        "type": "p",
+        "text": "An accounting website should do more than list services."
+      },
+      {
+        "type": "p",
+        "text": "It should help prospective clients understand what the firm does, who it works with, and why its expertise is relevant to their needs."
+      },
+      {
+        "type": "p",
+        "text": "For some firms, that may require a full redevelopment. For others, improving a handful of service pages and internal links may be enough to create a better foundation."
+      },
+      {
+        "type": "p",
+        "text": "The right decision depends on the website, the firm’s goals, and the work that needs attention."
+      },
+      {
+        "type": "p",
+        "text": "At Scale SEO, our work with [Canadian accounting firms](/industries/accounting-firms) combines industry knowledge with practical website improvements and [ongoing SEO management](/services/seo)."
+      },
+      {
+        "type": "p",
+        "text": "Our starting point is straightforward: understand the firm’s services, organize the website around them, and make it easier for the right people to find the information they need."
+      },
+      {
+        "type": "h2",
+        "text": "Sources & Further Reading"
+      },
+      {
+        "type": "p",
+        "text": "The guidance in this article draws on Google’s published documentation and our firsthand work with Jensen CPA."
+      },
+      {
+        "type": "references",
+        "items": [
+          {
+            "title": "Google Search Central — SEO Starter Guide",
+            "href": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide",
+            "desc": "Google’s introduction to website structure, search visibility, and core SEO practices."
+          },
+          {
+            "title": "Google Search Central — SEO Link Best Practices",
+            "href": "https://developers.google.com/search/docs/crawling-indexing/links-crawlable",
+            "desc": "Guidance on crawlable links, useful anchor text, and connecting related pages."
+          },
+          {
+            "title": "Google Search Central — Creating Helpful, Reliable, People-First Content",
+            "href": "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+            "desc": "Guidance on writing useful, trustworthy content that serves readers."
+          },
+          {
+            "title": "Canada Revenue Agency — Corporate Income Tax",
+            "href": "https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/corporations.html",
+            "desc": "Official information about Canadian corporate income tax obligations."
+          },
+          {
+            "title": "Scale SEO — Jensen CPA Case Study",
+            "href": "https://scaleseo.co/results/jensen-cpa",
+            "desc": "Firsthand details of Jensen CPA’s website redevelopment, service-page development, content strategy, and reported search performance."
+          }
+        ]
+      }
+    ]
+  },
+  {
     "slug": "accounting-firm-marketing",
     "title": "Accounting Firm Marketing: How to Attract Better-Fit Clients",
     "metaTitle": "Accounting Firm Marketing: How to Attract Better Clients",
